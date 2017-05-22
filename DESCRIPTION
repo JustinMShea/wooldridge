@@ -1,11 +1,11 @@
-Package: WoolridgeData
+Package: Woolridge
 Type: Package
 Title: Data sets
 Version: 0.1.0
-Author: Justin Shea     
-Maintainer: Justin Shea <justin.shea@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Justin M. Shea     
+Maintainer: Justin Shea <jshea@mail.roosevelt.edu>
+Description: Contains all data for "Introductory Econometrics: A Modern Approach,
+    6th Edition" by Jeffrey M. Woolridge.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
