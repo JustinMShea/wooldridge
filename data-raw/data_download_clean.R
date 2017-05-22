@@ -30,7 +30,8 @@ file_info[order(file_info$size, decreasing = TRUE),]
 # it appears some were mistakenly saved as ".r" files and they are very large.
 list.files("data", pattern = ".r$")
 
-# So lets rename them to text and then save them as proper .Rdata files.
+# So lets rename their extensions to ".txt" so we can load them and then save
+# as proper .RData files.
 rfile_names <- paste("data", list.files("data", pattern = ".r$"), sep = "//")
 txtfile_names <- paste("data", gsub(".r$",".txt", list.files("data", pattern = ".txt$")), sep = "//")
 file.rename(rfile_names, txtfile_names)
@@ -38,7 +39,7 @@ file.rename(rfile_names, txtfile_names)
 # Are there any files left with a ".r" extension? No.
 list.files("data", pattern = ".r$")
 
-# import data
+# import .txt data
 clean_names <- gsub(".txt","", list.files("data", pattern = ".txt$"))
 
         for(i in clean_names) {
@@ -47,7 +48,6 @@ clean_names <- gsub(".txt","", list.files("data", pattern = ".txt$"))
                 }
 
 # Now, lets write them all to .Rdata files
-
 save(approval, file = "data/approval.RData")
 save(catholic, file = "data/catholic.RData")
 save(census2000, file = "data/census2000.RData")
@@ -55,19 +55,18 @@ save(countymurders, file = "data/countymurders.RData")
 save(econmath, file = "data/econmath.RData")
 save(meapsingle, file = "data/meapsingle.RData")
 
-# Did it work? Looks like it did.
+# Did it work? Yes
 clean_names <- gsub(".txt","", list.files("data", pattern = ".txt$"))
-
 clean_RData <- paste(paste("data", clean_names, sep="/"),".RData", sep="")
 file.info(clean_RData)
 
-# Next, import the new data files and see if it worked...success!
+# Next, import the new .RData files and see if it worked...success!
 for(i in clean_names) {
         file_location <- paste(paste("data", i, sep = "/"),"RData", sep =".")
         load(file_location)
 }
 
-# now, remove .txt files.
+# Finally, remove the .txt files.
 txt_files <- list.files("data", pattern = ".txt$")
 unlink(paste("data", txt_files, sep ="/"))
 
