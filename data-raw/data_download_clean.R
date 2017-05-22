@@ -66,9 +66,17 @@ for(i in clean_names) {
         load(file_location)
 }
 
+#lets test/check the file compression. 
+tools::checkRdaFiles("data")
+
+# Next, lets see if R can do better...its turns out it can.
+resaveRdaFiles("data", compress = "xz", compression_level = 9)
+
 # Finally, remove the .txt files.
 txt_files <- list.files("data", pattern = ".txt$")
 unlink(paste("data", txt_files, sep ="/"))
+
+
 
 
 
