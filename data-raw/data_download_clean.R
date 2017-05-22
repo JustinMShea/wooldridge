@@ -75,6 +75,8 @@ resaveRdaFiles("data", compress = "xz", compression_level = 9)
 # Lets find out how big all the datasets are...3,442,932
 sum(file.info(paste("data", list.files("data"), sep = "//"))$size)
 
+# Add datalist
+tools::add_datalist(getwd(), force = T)
 
 # Add the .Rd files
 devtools::document(roclets=c('rd', 'collate', 'namespace'))

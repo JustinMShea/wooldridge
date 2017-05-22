@@ -1,7 +1,6 @@
 .Rproj.user
 .Rhistory
-.RData
 .Ruserdata
 wooldRidge.Rproj
 Woolridge-Data.ZIP
-Data Sets- R/
+inst/doc

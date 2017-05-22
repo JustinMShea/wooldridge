@@ -1,0 +1,111 @@
+401k: data desc self
+401ksubs: data desc self
+admnrev: data desc self
+affairs: data desc self
+airfare: data desc self
+alcohol: .Random.seed data desc self
+apple: data desc self
+approval
+athlet1: data desc self
+athlet2: data desc self
+attend: data desc self
+audit: data desc self
+barium: data desc self
+beauty: data desc self
+benefits: .Random.seed data desc self
+beveridge: .Random.seed data desc self
+big9salary: .Random.seed data desc self
+bwght: data desc self
+bwght2: data desc self
+campus: data desc self
+card: data desc self
+catholic
+cement: data desc self
+census2000
+ceosal1: data desc self
+ceosal2: data desc self
+charity: data desc self
+consump: data desc self
+corn: data desc self
+countymurders
+cps78_85: data desc self
+cps91: data desc self
+crime1: data desc self
+crime2: data desc self
+crime3: data desc self
+crime4: data desc self
+discrim: data desc self
+driving: .Random.seed data desc self
+earns: data desc self
+econmath
+elem94_95: data desc self
+engin: data desc self
+expendshares: .Random.seed data desc self
+ezanders: data desc self
+ezunem: data desc self
+fair: data desc self
+fertil1: data desc self
+fertil2: data desc self
+fertil3: data desc self
+fish: data desc self
+fringe: data desc self
+gpa1: data desc self
+gpa2: data desc self
+gpa3: data desc self
+happiness: .Random.seed data desc self
+hprice1: data desc self
+hprice2: data desc self
+hprice3: data desc self
+hseinv: data desc self
+htv: data desc self
+infmrt: data desc self
+injury: data desc self
+intdef: data desc self
+intqrt: data desc self
+inven: data desc self
+jtrain: data desc self
+jtrain2: data desc self
+jtrain3: data desc self
+kielmc: data desc self
+lawsch85: data desc self
+loanapp: data desc self
+lowbrth: data desc self
+mathpnl: data desc self
+meap00_01: data desc self
+meap01: data desc self
+meap93: data desc self
+meapsingle
+minwage: data desc self
+mlb1: data desc self
+mroz: data desc self
+murder: data desc self
+nbasal: data desc self
+nyse: data desc self
+okun: data desc self
+openness: data desc self
+pension: data desc self
+phillips: data desc self
+pntsprd: data desc self
+prison: data desc self
+prminwge: data desc self
+rdchem: data desc self
+rdtelec: data desc self
+recid: data desc self
+rental: data desc self
+return: data desc self
+saving: data desc self
+sleep75: data desc self
+slp75_81: data desc self
+smoke: data desc self
+traffic1: data desc self
+traffic2: data desc self
+twoyear: data desc self
+volat: data desc self
+vote1: data desc self
+vote2: data desc self
+voucher: .Random.seed data desc self
+wage1: data desc self
+wage2: data desc self
+wagepan: data desc self
+wageprc: data desc self
+wine: data desc self
