@@ -72,6 +72,13 @@ tools::checkRdaFiles("data")
 # Next, lets see if R can do better...its turns out it can.
 resaveRdaFiles("data", compress = "xz", compression_level = 9)
 
+# Lets find out how big all the datasets are...3,442,932
+sum(file.info(paste("data", list.files("data"), sep = "//"))$size)
+
+
+# Add the .Rd files
+devtools::document(roclets=c('rd', 'collate', 'namespace'))
+
 # Finally, remove the .txt files.
 txt_files <- list.files("data", pattern = ".txt$")
 unlink(paste("data", txt_files, sep ="/"))

@@ -6,6 +6,7 @@ Author: Justin M. Shea
 Maintainer: Justin Shea <jshea@mail.roosevelt.edu>
 Description: Contains all data for "Introductory Econometrics: A Modern Approach,
     6th Edition" by Jeffrey M. Woolridge.
-License: What license is it under?
+License:  GNU Version 3
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.0.1
