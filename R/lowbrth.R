@@ -1,37 +1,41 @@
-"variable" "label"
-"1" "year" "1987 or 1990"
-"2" "lowbrth" "perc births low weight"
-"3" "infmort" "infant mortality rate"
-"4" "afdcprt" "# participants in AFDC, 1000s"
-"5" "popul" "population, 1000s"
-"6" "pcinc" "per capita income"
-"7" "physic" "# physicians, 1000s"
-"8" "afdcprc" "percent of pop in AFDC"
-"9" "d90" "=1 if year == 1990"
-"10" "lpcinc" "log of pcinc"
-"11" "cafdcprc" "change in afdcprc"
-"12" "clpcinc" "change in lpcinc"
-"13" "lphysic" "log of physic"
-"14" "clphysic" "change in lphysic"
-"15" "clowbrth" "change in lowbrth"
-"16" "cinfmort" "change in infmort"
-"17" "afdcpay" "avg monthly AFDC payment"
-"18" "afdcinc" "afdcpay as % pcinc"
-"19" "lafdcpay" "log of afdcpay"
-"20" "clafdcpy" "change in lafdcpay"
-"21" "cafdcinc" "change in afdcinc"
-"22" "stateabb" "state postal code"
-"23" "state" "name of state"
-"24" "beds" "# hospital beds, 1000s"
-"25" "bedspc" "beds per capita"
-"26" "lbedspc" "log(bedspc)"
-"27" "clbedspc" "change in lbedspc"
-"28" "povrate" "% people below poverty line"
-"29" "cpovrate" "change in povrate"
-"30" "afdcpsq" "afdcper^2"
-"31" "cafdcpsq" "change in afdcpsq"
-"32" "physicpc" "physicians per capita"
-"33" "lphypc" "log(physicpc)"
-"34" "clphypc" "change in lphypc"
-"35" "lpopul" "log(popul)"
-"36" "clpopul" "change in lpopul"
+#` lowbrth
+#` @format A data.frame with 100 rows and 36 variables:
+#` \describe{
+#`   \item{year}{1987 or 1990}
+#`   \item{lowbrth}{perc births low weight}
+#`   \item{infmort}{infant mortality rate}
+#`   \item{afdcprt}{# participants in AFDC, 1000s}
+#`   \item{popul}{population, 1000s}
+#`   \item{pcinc}{per capita income}
+#`   \item{physic}{# physicians, 1000s}
+#`   \item{afdcprc}{percent of pop in AFDC}
+#`   \item{d90}{=1 if year == 1990}
+#`   \item{lpcinc}{log of pcinc}
+#`   \item{cafdcprc}{change in afdcprc}
+#`   \item{clpcinc}{change in lpcinc}
+#`   \item{lphysic}{log of physic}
+#`   \item{clphysic}{change in lphysic}
+#`   \item{clowbrth}{change in lowbrth}
+#`   \item{cinfmort}{change in infmort}
+#`   \item{afdcpay}{avg monthly AFDC payment}
+#`   \item{afdcinc}{afdcpay as % pcinc}
+#`   \item{lafdcpay}{log of afdcpay}
+#`   \item{clafdcpy}{change in lafdcpay}
+#`   \item{cafdcinc}{change in afdcinc}
+#`   \item{stateabb}{state postal code}
+#`   \item{state}{name of state}
+#`   \item{beds}{# hospital beds, 1000s}
+#`   \item{bedspc}{beds per capita}
+#`   \item{lbedspc}{log(bedspc)}
+#`   \item{clbedspc}{change in lbedspc}
+#`   \item{povrate}{% people below poverty line}
+#`   \item{cpovrate}{change in povrate}
+#`   \item{afdcpsq}{afdcper^2}
+#`   \item{cafdcpsq}{change in afdcpsq}
+#`   \item{physicpc}{physicians per capita}
+#`   \item{lphypc}{log(physicpc)}
+#`   \item{clphypc}{change in lphypc}
+#`   \item{lpopul}{log(popul)}
+#`   \item{clpopul}{change in lpopul}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

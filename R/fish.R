@@ -1,21 +1,25 @@
-"variable" "label"
-"1" "prca" "price for Asian buyers"
-"2" "prcw" "price for white buyers"
-"3" "qtya" "quantity sold to Asians"
-"4" "qtyw" "quantity sold to whites"
-"5" "mon" "=1 if Monday"
-"6" "tues" "=1 if Tuesday"
-"7" "wed" "=1 if Wednesday"
-"8" "thurs" "=1 if Thursday"
-"9" "speed2" "min past 2 days wind speeds"
-"10" "wave2" "avg max last 2 days wave height"
-"11" "speed3" "3 day lagged max windspeed"
-"12" "wave3" "avg max wave hghts of 3 & 4 day lagged hghts"
-"13" "avgprc" "((prca*qtya) + (prcw*qtyw))/(qtya + qtyw)"
-"14" "totqty" "qtya + qtyw"
-"15" "lavgprc" "log(avgprc)"
-"16" "ltotqty" "log(totqty)"
-"17" "t" "time trend"
-"18" "lavgp_1" "lavgprc[_n-1]"
-"19" "gavgprc" "lavgprc - lavgp_1"
-"20" "gavgp_1" "gavgprc[_n-1]"
+#` fish
+#` @format A data.frame with 97 rows and 20 variables:
+#` \describe{
+#`   \item{prca}{price for Asian buyers}
+#`   \item{prcw}{price for white buyers}
+#`   \item{qtya}{quantity sold to Asians}
+#`   \item{qtyw}{quantity sold to whites}
+#`   \item{mon}{=1 if Monday}
+#`   \item{tues}{=1 if Tuesday}
+#`   \item{wed}{=1 if Wednesday}
+#`   \item{thurs}{=1 if Thursday}
+#`   \item{speed2}{min past 2 days wind speeds}
+#`   \item{wave2}{avg max last 2 days wave height}
+#`   \item{speed3}{3 day lagged max windspeed}
+#`   \item{wave3}{avg max wave hghts of 3 & 4 day lagged hghts}
+#`   \item{avgprc}{((prca*qtya) + (prcw*qtyw))/(qtya + qtyw)}
+#`   \item{totqty}{qtya + qtyw}
+#`   \item{lavgprc}{log(avgprc)}
+#`   \item{ltotqty}{log(totqty)}
+#`   \item{t}{time trend}
+#`   \item{lavgp_1}{lavgprc[_n-1]}
+#`   \item{gavgprc}{lavgprc - lavgp_1}
+#`   \item{gavgp_1}{gavgprc[_n-1]}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

@@ -1,48 +1,52 @@
-"variable" "label"
-"1" "salary" "1993 season salary"
-"2" "teamsal" "team payroll"
-"3" "nl" "=1 if national league"
-"4" "years" "years in major leagues"
-"5" "games" "career games played"
-"6" "atbats" "career at bats"
-"7" "runs" "career runs scored"
-"8" "hits" "career hits"
-"9" "doubles" "career doubles"
-"10" "triples" "career triples"
-"11" "hruns" "career home runs"
-"12" "rbis" "career runs batted in"
-"13" "bavg" "career batting average"
-"14" "bb" "career walks"
-"15" "so" "career strike outs"
-"16" "sbases" "career stolen bases"
-"17" "fldperc" "career fielding perc"
-"18" "frstbase" "= 1 if first base"
-"19" "scndbase" "=1 if second base"
-"20" "shrtstop" "=1 if shortstop"
-"21" "thrdbase" "=1 if third base"
-"22" "outfield" "=1 if outfield"
-"23" "catcher" "=1 if catcher"
-"24" "yrsallst" "years as all-star"
-"25" "hispan" "=1 if hispanic"
-"26" "black" "=1 if black"
-"27" "whitepop" "white pop. in city"
-"28" "blackpop" "black pop. in city"
-"29" "hisppop" "hispanic pop. in city"
-"30" "pcinc" "city per capita income"
-"31" "gamesyr" "games per year in league"
-"32" "hrunsyr" "home runs per year"
-"33" "atbatsyr" "at bats per year"
-"34" "allstar" "perc. of years an all-star"
-"35" "slugavg" "career slugging average"
-"36" "rbisyr" "rbis per year"
-"37" "sbasesyr" "stolen bases per year"
-"38" "runsyr" "runs scored per year"
-"39" "percwhte" "percent white in city"
-"40" "percblck" "percent black in city"
-"41" "perchisp" "percent hispanic in city"
-"42" "blckpb" "black*percblck"
-"43" "hispph" "hispan*perchisp"
-"44" "whtepw" "white*percwhte"
-"45" "blckph" "black*perchisp"
-"46" "hisppb" "hispan*percblck"
-"47" "lsalary" "log(salary)"
+#` mlb1
+#` @format A data.frame with 353 rows and 47 variables:
+#` \describe{
+#`   \item{salary}{1993 season salary}
+#`   \item{teamsal}{team payroll}
+#`   \item{nl}{=1 if national league}
+#`   \item{years}{years in major leagues}
+#`   \item{games}{career games played}
+#`   \item{atbats}{career at bats}
+#`   \item{runs}{career runs scored}
+#`   \item{hits}{career hits}
+#`   \item{doubles}{career doubles}
+#`   \item{triples}{career triples}
+#`   \item{hruns}{career home runs}
+#`   \item{rbis}{career runs batted in}
+#`   \item{bavg}{career batting average}
+#`   \item{bb}{career walks}
+#`   \item{so}{career strike outs}
+#`   \item{sbases}{career stolen bases}
+#`   \item{fldperc}{career fielding perc}
+#`   \item{frstbase}{= 1 if first base}
+#`   \item{scndbase}{=1 if second base}
+#`   \item{shrtstop}{=1 if shortstop}
+#`   \item{thrdbase}{=1 if third base}
+#`   \item{outfield}{=1 if outfield}
+#`   \item{catcher}{=1 if catcher}
+#`   \item{yrsallst}{years as all-star}
+#`   \item{hispan}{=1 if hispanic}
+#`   \item{black}{=1 if black}
+#`   \item{whitepop}{white pop. in city}
+#`   \item{blackpop}{black pop. in city}
+#`   \item{hisppop}{hispanic pop. in city}
+#`   \item{pcinc}{city per capita income}
+#`   \item{gamesyr}{games per year in league}
+#`   \item{hrunsyr}{home runs per year}
+#`   \item{atbatsyr}{at bats per year}
+#`   \item{allstar}{perc. of years an all-star}
+#`   \item{slugavg}{career slugging average}
+#`   \item{rbisyr}{rbis per year}
+#`   \item{sbasesyr}{stolen bases per year}
+#`   \item{runsyr}{runs scored per year}
+#`   \item{percwhte}{percent white in city}
+#`   \item{percblck}{percent black in city}
+#`   \item{perchisp}{percent hispanic in city}
+#`   \item{blckpb}{black*percblck}
+#`   \item{hispph}{hispan*perchisp}
+#`   \item{whtepw}{white*percwhte}
+#`   \item{blckph}{black*perchisp}
+#`   \item{hisppb}{hispan*percblck}
+#`   \item{lsalary}{log(salary)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

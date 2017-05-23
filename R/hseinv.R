@@ -1,15 +1,19 @@
-"variable" "label"
-"1" "year" "1947-1988"
-"2" "inv" "real housing inv, millions $"
-"3" "pop" "population, 1000s"
-"4" "price" "housing price index; 1982 = 1"
-"5" "linv" "log(inv)"
-"6" "lpop" "log(pop)"
-"7" "lprice" "log(price)"
-"8" "t" "time trend: t=1,...,42"
-"9" "invpc" "per capita inv: inv/pop"
-"10" "linvpc" "log(invpc)"
-"11" "lprice_1" "lprice[_n-1]"
-"12" "linvpc_1" "linvpc[_n-1]"
-"13" "gprice" "lprice - lprice_1"
-"14" "ginvpc" "linvpc - linvpc_1"
+#` hseinv
+#` @format A data.frame with 42 rows and 14 variables:
+#` \describe{
+#`   \item{year}{1947-1988}
+#`   \item{inv}{real housing inv, millions $}
+#`   \item{pop}{population, 1000s}
+#`   \item{price}{housing price index; 1982 = 1}
+#`   \item{linv}{log(inv)}
+#`   \item{lpop}{log(pop)}
+#`   \item{lprice}{log(price)}
+#`   \item{t}{time trend: t=1,...,42}
+#`   \item{invpc}{per capita inv: inv/pop}
+#`   \item{linvpc}{log(invpc)}
+#`   \item{lprice_1}{lprice[_n-1]}
+#`   \item{linvpc_1}{linvpc[_n-1]}
+#`   \item{gprice}{lprice - lprice_1}
+#`   \item{ginvpc}{linvpc - linvpc_1}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

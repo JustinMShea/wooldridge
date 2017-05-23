@@ -1,10 +1,14 @@
-"variable" "label"
-"1" "dcode" "district code"
-"2" "bcode" "building code"
-"3" "math4" "% students satisfactory, 4th grade math"
-"4" "read4" "% students satisfactory, 4th grade reading"
-"5" "lunch" "% students eligible for free or reduced lunch"
-"6" "enroll" "school enrollment"
-"7" "exppp" "expenditures per pupil: expend/enroll"
-"8" "lenroll" "log(enroll)"
-"9" "lexppp" "log(exppp)"
+#` meap00_01
+#` @format A data.frame with 1692 rows and 9 variables:
+#` \describe{
+#`   \item{dcode}{district code}
+#`   \item{bcode}{building code}
+#`   \item{math4}{% students satisfactory, 4th grade math}
+#`   \item{read4}{% students satisfactory, 4th grade reading}
+#`   \item{lunch}{% students eligible for free or reduced lunch}
+#`   \item{enroll}{school enrollment}
+#`   \item{exppp}{expenditures per pupil: expend/enroll}
+#`   \item{lenroll}{log(enroll)}
+#`   \item{lexppp}{log(exppp)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

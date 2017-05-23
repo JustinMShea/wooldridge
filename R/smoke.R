@@ -1,11 +1,15 @@
-"variable" "label"
-"1" "educ" "years of schooling"
-"2" "cigpric" "state cig. price, cents/pack"
-"3" "white" "=1 if white"
-"4" "age" "in years"
-"5" "income" "annual income, $"
-"6" "cigs" "cigs. smoked per day"
-"7" "restaurn" "=1 if rest. smk. restrictions"
-"8" "lincome" "log(income)"
-"9" "agesq" "age^2"
-"10" "lcigpric" "log(cigprice)"
+#` smoke
+#` @format A data.frame with 807 rows and 10 variables:
+#` \describe{
+#`   \item{educ}{years of schooling}
+#`   \item{cigpric}{state cig. price, cents/pack}
+#`   \item{white}{=1 if white}
+#`   \item{age}{in years}
+#`   \item{income}{annual income, $}
+#`   \item{cigs}{cigs. smoked per day}
+#`   \item{restaurn}{=1 if rest. smk. restrictions}
+#`   \item{lincome}{log(income)}
+#`   \item{agesq}{age^2}
+#`   \item{lcigpric}{log(cigprice)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

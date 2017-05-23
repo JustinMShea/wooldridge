@@ -1,49 +1,53 @@
-"variable" "label"
-"1" "year" "1981 to 1989"
-"2" "totacc" "statewide total accidents"
-"3" "fatacc" "statewide fatal accidents"
-"4" "injacc" "statewide injury accidents"
-"5" "pdoacc" "property damage only accidents"
-"6" "ntotacc" "noninterstate total acc."
-"7" "nfatacc" "noninterstate fatal acc."
-"8" "ninjacc" "noninterstate injur acc."
-"9" "npdoacc" "noninterstate property acc."
-"10" "rtotacc" "tot. acc. on rural 65 mph roads"
-"11" "rfatacc" "fat. acc. on rural 65 mph roads"
-"12" "rinjacc" "inj. acc. on rural 65 mph roads"
-"13" "rpdoacc" "prp. acc. on rural 65 mph roads"
-"14" "ushigh" "acc. on U.S. highways"
-"15" "cntyrds" "acc. on county roads"
-"16" "strtes" "acc. on state routes"
-"17" "t" "time trend"
-"18" "tsq" "t^2"
-"19" "unem" "state unemployment rate"
-"20" "spdlaw" "=1 after 65 mph in effect"
-"21" "beltlaw" "=1 after seatbelt law"
-"22" "wkends" "# weekends in month"
-"23" "feb" "=1 if month is Feb."
-"24" "mar" ""
-"25" "apr" ""
-"26" "may" ""
-"27" "jun" ""
-"28" "jul" ""
-"29" "aug" ""
-"30" "sep" ""
-"31" "oct" ""
-"32" "nov" ""
-"33" "dec" ""
-"34" "ltotacc" "log(totacc)"
-"35" "lfatacc" "log(fatacc)"
-"36" "prcfat" "100*(fatacc/totacc)"
-"37" "prcrfat" "100*(rfatacc/rtotacc)"
-"38" "lrtotacc" "log(rtotacc)"
-"39" "lrfatacc" "log(rfatacc)"
-"40" "lntotacc" "log(ntotacc)"
-"41" "lnfatacc" "log(nfatacc)"
-"42" "prcnfat" "100*(nfatacc/ntotacc)"
-"43" "lushigh" "log(ushigh)"
-"44" "lcntyrds" "log(cntyrds)"
-"45" "lstrtes" "log(strtes)"
-"46" "spdt" "spdlaw*t"
-"47" "beltt" "beltlaw*t"
-"48" "prcfat_1" "prcfat[_n-1]"
+#` traffic2
+#` @format A data.frame with 108 rows and 48 variables:
+#` \describe{
+#`   \item{year}{1981 to 1989}
+#`   \item{totacc}{statewide total accidents}
+#`   \item{fatacc}{statewide fatal accidents}
+#`   \item{injacc}{statewide injury accidents}
+#`   \item{pdoacc}{property damage only accidents}
+#`   \item{ntotacc}{noninterstate total acc.}
+#`   \item{nfatacc}{noninterstate fatal acc.}
+#`   \item{ninjacc}{noninterstate injur acc.}
+#`   \item{npdoacc}{noninterstate property acc.}
+#`   \item{rtotacc}{tot. acc. on rural 65 mph roads}
+#`   \item{rfatacc}{fat. acc. on rural 65 mph roads}
+#`   \item{rinjacc}{inj. acc. on rural 65 mph roads}
+#`   \item{rpdoacc}{prp. acc. on rural 65 mph roads}
+#`   \item{ushigh}{acc. on U.S. highways}
+#`   \item{cntyrds}{acc. on county roads}
+#`   \item{strtes}{acc. on state routes}
+#`   \item{t}{time trend}
+#`   \item{tsq}{t^2}
+#`   \item{unem}{state unemployment rate}
+#`   \item{spdlaw}{=1 after 65 mph in effect}
+#`   \item{beltlaw}{=1 after seatbelt law}
+#`   \item{wkends}{# weekends in month}
+#`   \item{feb}{=1 if month is Feb.}
+#`   \item{mar}{}
+#`   \item{apr}{}
+#`   \item{may}{}
+#`   \item{jun}{}
+#`   \item{jul}{}
+#`   \item{aug}{}
+#`   \item{sep}{}
+#`   \item{oct}{}
+#`   \item{nov}{}
+#`   \item{dec}{}
+#`   \item{ltotacc}{log(totacc)}
+#`   \item{lfatacc}{log(fatacc)}
+#`   \item{prcfat}{100*(fatacc/totacc)}
+#`   \item{prcrfat}{100*(rfatacc/rtotacc)}
+#`   \item{lrtotacc}{log(rtotacc)}
+#`   \item{lrfatacc}{log(rfatacc)}
+#`   \item{lntotacc}{log(ntotacc)}
+#`   \item{lnfatacc}{log(nfatacc)}
+#`   \item{prcnfat}{100*(nfatacc/ntotacc)}
+#`   \item{lushigh}{log(ushigh)}
+#`   \item{lcntyrds}{log(cntyrds)}
+#`   \item{lstrtes}{log(strtes)}
+#`   \item{spdt}{spdlaw*t}
+#`   \item{beltt}{beltlaw*t}
+#`   \item{prcfat_1}{prcfat[_n-1]}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

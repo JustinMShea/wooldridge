@@ -1,14 +1,18 @@
-"variable" "label"
-"1" "state" ""
-"2" "admn90" "=1 if admin. revoc., '90"
-"3" "admn85" "=1 if admin. revoc., '85"
-"4" "open90" "=1 if open cont. law, '90"
-"5" "open85" "=1 if open cont. law, '85"
-"6" "dthrte90" "deaths per 100 mill. miles, '90"
-"7" "dthrte85" "deaths per 100 mill. miles, '85"
-"8" "speed90" "=1 if 65 mph, 1990"
-"9" "speed85" "=0 always"
-"10" "cdthrte" "dthrte90 - dthrte85"
-"11" "cadmn" "admn90 - admn85"
-"12" "copen" "open90 - open85"
-"13" "cspeed" "speed90 - speed85"
+#` traffic1
+#` @format A data.frame with 51 rows and 13 variables:
+#` \describe{
+#`   \item{state}{}
+#`   \item{admn90}{=1 if admin. revoc., '90}
+#`   \item{admn85}{=1 if admin. revoc., '85}
+#`   \item{open90}{=1 if open cont. law, '90}
+#`   \item{open85}{=1 if open cont. law, '85}
+#`   \item{dthrte90}{deaths per 100 mill. miles, '90}
+#`   \item{dthrte85}{deaths per 100 mill. miles, '85}
+#`   \item{speed90}{=1 if 65 mph, 1990}
+#`   \item{speed85}{=0 always}
+#`   \item{cdthrte}{dthrte90 - dthrte85}
+#`   \item{cadmn}{admn90 - admn85}
+#`   \item{copen}{open90 - open85}
+#`   \item{cspeed}{speed90 - speed85}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

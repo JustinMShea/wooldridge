@@ -1,30 +1,34 @@
-"variable" "label"
-"1" "age" "in years"
-"2" "soph" "=1 if sophomore"
-"3" "junior" "=1 if junior"
-"4" "senior" "=1 if senior"
-"5" "senior5" "=1 if fifth year senior"
-"6" "male" "=1 if male"
-"7" "campus" "=1 if live on campus"
-"8" "business" "=1 if business major"
-"9" "engineer" "=1 if engineering major"
-"10" "colGPA" "MSU GPA"
-"11" "hsGPA" "high school GPA"
-"12" "ACT" "'achievement' score"
-"13" "job19" "=1 if job <= 19 hours"
-"14" "job20" "=1 if job >= 20 hours"
-"15" "drive" "=1 if drive to campus"
-"16" "bike" "=1 if bicycle to campus"
-"17" "walk" "=1 if walk to campus"
-"18" "voluntr" "=1 if do volunteer work"
-"19" "PC" "=1 of pers computer at sch"
-"20" "greek" "=1 if fraternity or sorority"
-"21" "car" "=1 if own car"
-"22" "siblings" "=1 if have siblings"
-"23" "bgfriend" "=1 if boy- or girlfriend"
-"24" "clubs" "=1 if belong to MSU club"
-"25" "skipped" "avg lectures missed per week"
-"26" "alcohol" "avg # days per week drink alc."
-"27" "gradMI" "=1 if Michigan high school"
-"28" "fathcoll" "=1 if father college grad"
-"29" "mothcoll" "=1 if mother college grad"
+#` gpa1
+#` @format A data.frame with 141 rows and 29 variables:
+#` \describe{
+#`   \item{age}{in years}
+#`   \item{soph}{=1 if sophomore}
+#`   \item{junior}{=1 if junior}
+#`   \item{senior}{=1 if senior}
+#`   \item{senior5}{=1 if fifth year senior}
+#`   \item{male}{=1 if male}
+#`   \item{campus}{=1 if live on campus}
+#`   \item{business}{=1 if business major}
+#`   \item{engineer}{=1 if engineering major}
+#`   \item{colGPA}{MSU GPA}
+#`   \item{hsGPA}{high school GPA}
+#`   \item{ACT}{'achievement' score}
+#`   \item{job19}{=1 if job <= 19 hours}
+#`   \item{job20}{=1 if job >= 20 hours}
+#`   \item{drive}{=1 if drive to campus}
+#`   \item{bike}{=1 if bicycle to campus}
+#`   \item{walk}{=1 if walk to campus}
+#`   \item{voluntr}{=1 if do volunteer work}
+#`   \item{PC}{=1 of pers computer at sch}
+#`   \item{greek}{=1 if fraternity or sorority}
+#`   \item{car}{=1 if own car}
+#`   \item{siblings}{=1 if have siblings}
+#`   \item{bgfriend}{=1 if boy- or girlfriend}
+#`   \item{clubs}{=1 if belong to MSU club}
+#`   \item{skipped}{avg lectures missed per week}
+#`   \item{alcohol}{avg # days per week drink alc.}
+#`   \item{gradMI}{=1 if Michigan high school}
+#`   \item{fathcoll}{=1 if father college grad}
+#`   \item{mothcoll}{=1 if mother college grad}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

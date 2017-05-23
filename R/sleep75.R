@@ -1,35 +1,39 @@
-"variable" "label"
-"1" "age" "in years"
-"2" "black" "=1 if black"
-"3" "case" "identifier"
-"4" "clerical" "=1 if clerical worker"
-"5" "construc" "=1 if construction worker"
-"6" "educ" "years of schooling"
-"7" "earns74" "total earnings, 1974"
-"8" "gdhlth" "=1 if in good or excel. health"
-"9" "inlf" "=1 if in labor force"
-"10" "leis1" "sleep - totwrk"
-"11" "leis2" "slpnaps - totwrk"
-"12" "leis3" "rlxall - totwrk"
-"13" "smsa" "=1 if live in smsa"
-"14" "lhrwage" "log hourly wage"
-"15" "lothinc" "log othinc, unless othinc < 0"
-"16" "male" "=1 if male"
-"17" "marr" "=1 if married"
-"18" "prot" "=1 if Protestant"
-"19" "rlxall" "slpnaps + personal activs"
-"20" "selfe" "=1 if self employed"
-"21" "sleep" "mins sleep at night, per wk"
-"22" "slpnaps" "minutes sleep, inc. naps"
-"23" "south" "=1 if live in south"
-"24" "spsepay" "spousal wage income"
-"25" "spwrk75" "=1 if spouse works"
-"26" "totwrk" "mins worked per week"
-"27" "union" "=1 if belong to union"
-"28" "worknrm" "mins work main job"
-"29" "workscnd" "mins work second job"
-"30" "exper" "age - educ - 6"
-"31" "yngkid" "=1 if children < 3 present"
-"32" "yrsmarr" "years married"
-"33" "hrwage" "hourly wage"
-"34" "agesq" "age^2"
+#` sleep75
+#` @format A data.frame with 706 rows and 34 variables:
+#` \describe{
+#`   \item{age}{in years}
+#`   \item{black}{=1 if black}
+#`   \item{case}{identifier}
+#`   \item{clerical}{=1 if clerical worker}
+#`   \item{construc}{=1 if construction worker}
+#`   \item{educ}{years of schooling}
+#`   \item{earns74}{total earnings, 1974}
+#`   \item{gdhlth}{=1 if in good or excel. health}
+#`   \item{inlf}{=1 if in labor force}
+#`   \item{leis1}{sleep - totwrk}
+#`   \item{leis2}{slpnaps - totwrk}
+#`   \item{leis3}{rlxall - totwrk}
+#`   \item{smsa}{=1 if live in smsa}
+#`   \item{lhrwage}{log hourly wage}
+#`   \item{lothinc}{log othinc, unless othinc < 0}
+#`   \item{male}{=1 if male}
+#`   \item{marr}{=1 if married}
+#`   \item{prot}{=1 if Protestant}
+#`   \item{rlxall}{slpnaps + personal activs}
+#`   \item{selfe}{=1 if self employed}
+#`   \item{sleep}{mins sleep at night, per wk}
+#`   \item{slpnaps}{minutes sleep, inc. naps}
+#`   \item{south}{=1 if live in south}
+#`   \item{spsepay}{spousal wage income}
+#`   \item{spwrk75}{=1 if spouse works}
+#`   \item{totwrk}{mins worked per week}
+#`   \item{union}{=1 if belong to union}
+#`   \item{worknrm}{mins work main job}
+#`   \item{workscnd}{mins work second job}
+#`   \item{exper}{age - educ - 6}
+#`   \item{yngkid}{=1 if children < 3 present}
+#`   \item{yrsmarr}{years married}
+#`   \item{hrwage}{hourly wage}
+#`   \item{agesq}{age^2}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

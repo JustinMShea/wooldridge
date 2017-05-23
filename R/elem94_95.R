@@ -1,15 +1,19 @@
-"variable" "label"
-"1" "distid" "district identifier"
-"2" "schid" "school identifier"
-"3" "lunch" "percent eligible, free lunch"
-"4" "enrol" "enrollment"
-"5" "staff" "staff per 1000 students"
-"6" "exppp" "expenditures per pupil"
-"7" "avgsal" "average teacher salary, $"
-"8" "avgben" "average teacher non-salary benefits, $"
-"9" "math4" "percent passing 4th grade math test"
-"10" "story4" "percent passing 4th grade reading test"
-"11" "bs" "avgben/avgsal"
-"12" "lavgsal" "log(avgsal)"
-"13" "lenrol" "log(enrol)"
-"14" "lstaff" "log(staff)"
+#` elem94_95
+#` @format A data.frame with 1848 rows and 14 variables:
+#` \describe{
+#`   \item{distid}{district identifier}
+#`   \item{schid}{school identifier}
+#`   \item{lunch}{percent eligible, free lunch}
+#`   \item{enrol}{enrollment}
+#`   \item{staff}{staff per 1000 students}
+#`   \item{exppp}{expenditures per pupil}
+#`   \item{avgsal}{average teacher salary, $}
+#`   \item{avgben}{average teacher non-salary benefits, $}
+#`   \item{math4}{percent passing 4th grade math test}
+#`   \item{story4}{percent passing 4th grade reading test}
+#`   \item{bs}{avgben/avgsal}
+#`   \item{lavgsal}{log(avgsal)}
+#`   \item{lenrol}{log(enrol)}
+#`   \item{lstaff}{log(staff)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

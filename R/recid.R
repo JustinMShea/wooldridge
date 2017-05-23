@@ -1,19 +1,23 @@
-"variable" "label"
-"1" "black" "=1 if black"
-"2" "alcohol" "=1 if alcohol problems"
-"3" "drugs" "=1 if drug history"
-"4" "super" "=1 if release supervised"
-"5" "married" "=1 if married when incarc."
-"6" "felon" "=1 if felony sentence"
-"7" "workprg" "=1 if in N.C. pris. work prg."
-"8" "property" "=1 if property crime"
-"9" "person" "=1 if crime against person"
-"10" "priors" "# prior convictions"
-"11" "educ" "years of schooling"
-"12" "rules" "# rules violations in prison"
-"13" "age" "in months"
-"14" "tserved" "time served, rounded to months"
-"15" "follow" "length follow period, months"
-"16" "durat" "min(time until return, follow)"
-"17" "cens" "=1 if duration right censored"
-"18" "ldurat" "log(durat)"
+#` recid
+#` @format A data.frame with 1445 rows and 18 variables:
+#` \describe{
+#`   \item{black}{=1 if black}
+#`   \item{alcohol}{=1 if alcohol problems}
+#`   \item{drugs}{=1 if drug history}
+#`   \item{super}{=1 if release supervised}
+#`   \item{married}{=1 if married when incarc.}
+#`   \item{felon}{=1 if felony sentence}
+#`   \item{workprg}{=1 if in N.C. pris. work prg.}
+#`   \item{property}{=1 if property crime}
+#`   \item{person}{=1 if crime against person}
+#`   \item{priors}{# prior convictions}
+#`   \item{educ}{years of schooling}
+#`   \item{rules}{# rules violations in prison}
+#`   \item{age}{in months}
+#`   \item{tserved}{time served, rounded to months}
+#`   \item{follow}{length follow period, months}
+#`   \item{durat}{min(time until return, follow)}
+#`   \item{cens}{=1 if duration right censored}
+#`   \item{ldurat}{log(durat)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

@@ -1,13 +1,17 @@
-"variable" "label"
-"1" "open" "imports as % GDP, '73-"
-"2" "inf" "avg. annual inflation, '73-"
-"3" "pcinc" "1980 per capita inc., U.S. $"
-"4" "land" "land area, square miles"
-"5" "oil" "=1 if major oil producer"
-"6" "good" "=1 if 'good' data"
-"7" "lpcinc" "log(pcinc)"
-"8" "lland" "log(land)"
-"9" "lopen" "log(open)"
-"10" "linf" "log(inf)"
-"11" "opendec" "open/100"
-"12" "linfdec" "log(inf/100)"
+#` openness
+#` @format A data.frame with 114 rows and 12 variables:
+#` \describe{
+#`   \item{open}{imports as % GDP, '73-}
+#`   \item{inf}{avg. annual inflation, '73-}
+#`   \item{pcinc}{1980 per capita inc., U.S. $}
+#`   \item{land}{land area, square miles}
+#`   \item{oil}{=1 if major oil producer}
+#`   \item{good}{=1 if 'good' data}
+#`   \item{lpcinc}{log(pcinc)}
+#`   \item{lland}{log(land)}
+#`   \item{lopen}{log(open)}
+#`   \item{linf}{log(inf)}
+#`   \item{opendec}{open/100}
+#`   \item{linfdec}{log(inf/100)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

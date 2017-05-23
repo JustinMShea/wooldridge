@@ -1,35 +1,39 @@
-"variable" "label"
-"1" "pop" "population"
-"2" "crimes" "total number index crimes"
-"3" "unem" "unemployment rate"
-"4" "officers" "number police officers"
-"5" "pcinc" "per capita income"
-"6" "west" "=1 if city in west"
-"7" "nrtheast" "=1 if city in NE"
-"8" "south" "=1 if city in south"
-"9" "year" "82 or 87"
-"10" "area" "land area, square miles"
-"11" "d87" "=1 if year = 87"
-"12" "popden" "people per sq mile"
-"13" "crmrte" "crimes per 1000 people"
-"14" "offarea" "officers per sq mile"
-"15" "lawexpc" "law enforce. expend. pc, $"
-"16" "polpc" "police per 1000 people"
-"17" "lpop" "log(pop)"
-"18" "loffic" "log(officers)"
-"19" "lpcinc" "log(pcinc)"
-"20" "llawexpc" "log(lawexpc)"
-"21" "lpopden" "log(popden)"
-"22" "lcrimes" "log(crimes)"
-"23" "larea" "log(area)"
-"24" "lcrmrte" "log(crmrte)"
-"25" "clcrimes" "change in lcrimes"
-"26" "clpop" "change in lpop"
-"27" "clcrmrte" "change in lcrmrte"
-"28" "lpolpc" "log(polpc)"
-"29" "clpolpc" "change in lpolpc"
-"30" "cllawexp" "change in llawexp"
-"31" "cunem" "change in unem"
-"32" "clpopden" "change in lpopden"
-"33" "lcrmrt_1" "lcrmrte lagged"
-"34" "ccrmrte" "change in crmrte"
+#` crime2
+#` @format A data.frame with 92 rows and 34 variables:
+#` \describe{
+#`   \item{pop}{population}
+#`   \item{crimes}{total number index crimes}
+#`   \item{unem}{unemployment rate}
+#`   \item{officers}{number police officers}
+#`   \item{pcinc}{per capita income}
+#`   \item{west}{=1 if city in west}
+#`   \item{nrtheast}{=1 if city in NE}
+#`   \item{south}{=1 if city in south}
+#`   \item{year}{82 or 87}
+#`   \item{area}{land area, square miles}
+#`   \item{d87}{=1 if year = 87}
+#`   \item{popden}{people per sq mile}
+#`   \item{crmrte}{crimes per 1000 people}
+#`   \item{offarea}{officers per sq mile}
+#`   \item{lawexpc}{law enforce. expend. pc, $}
+#`   \item{polpc}{police per 1000 people}
+#`   \item{lpop}{log(pop)}
+#`   \item{loffic}{log(officers)}
+#`   \item{lpcinc}{log(pcinc)}
+#`   \item{llawexpc}{log(lawexpc)}
+#`   \item{lpopden}{log(popden)}
+#`   \item{lcrimes}{log(crimes)}
+#`   \item{larea}{log(area)}
+#`   \item{lcrmrte}{log(crmrte)}
+#`   \item{clcrimes}{change in lcrimes}
+#`   \item{clpop}{change in lpop}
+#`   \item{clcrmrte}{change in lcrmrte}
+#`   \item{lpolpc}{log(polpc)}
+#`   \item{clpolpc}{change in lpolpc}
+#`   \item{cllawexp}{change in llawexp}
+#`   \item{cunem}{change in unem}
+#`   \item{clpopden}{change in lpopden}
+#`   \item{lcrmrt_1}{lcrmrte lagged}
+#`   \item{ccrmrte}{change in crmrte}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

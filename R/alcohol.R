@@ -1,34 +1,38 @@
-"variable" "label"
-"1" "abuse" "=1 if abuse alcohol"
-"2" "status" "out of workforce = 1; unemployed = 2, employed = 3"
-"3" "unemrate" "state unemployment rate"
-"4" "age" "age in years"
-"5" "educ" "years of schooling"
-"6" "married" "=1 if married"
-"7" "famsize" "family size"
-"8" "white" "=1 if white"
-"9" "exhealth" "=1 if in excellent health"
-"10" "vghealth" "=1 if in very good health"
-"11" "goodhealth" "=1 if in good health"
-"12" "fairhealth" "=1 if in fair health"
-"13" "northeast" "=1 if live in northeast"
-"14" "midwest" "=1 if live in midwest"
-"15" "south" "=1 if live in south"
-"16" "centcity" "=1 if live in central city of MSA"
-"17" "outercity" "=1 if in outer city of MSA"
-"18" "qrt1" "=1 if interviewed in first quarter"
-"19" "qrt2" "=1 if interviewed in second quarter"
-"20" "qrt3" "=1 if interviewed in third quarter"
-"21" "beertax" "state excise tax, $ per gallon"
-"22" "cigtax" "state cigarette tax, cents per pack"
-"23" "ethanol" "state per-capita ethanol consumption"
-"24" "mothalc" "=1 if mother an alcoholic"
-"25" "fathalc" "=1 if father an alcoholic"
-"26" "livealc" "=1 if lived with alcoholic"
-"27" "inwf" "=1 if status > 1"
-"28" "employ" "=1 if employed"
-"29" "agesq" "age^2"
-"30" "beertaxsq" "beertax^2"
-"31" "cigtaxsq" "cigtax^2"
-"32" "ethanolsq" "ethanol^2"
-"33" "educsq" "educ^2"
+#` alcohol
+#` @format A data.frame with 9822 rows and 33 variables:
+#` \describe{
+#`   \item{abuse}{=1 if abuse alcohol}
+#`   \item{status}{out of workforce = 1; unemployed = 2, employed = 3}
+#`   \item{unemrate}{state unemployment rate}
+#`   \item{age}{age in years}
+#`   \item{educ}{years of schooling}
+#`   \item{married}{=1 if married}
+#`   \item{famsize}{family size}
+#`   \item{white}{=1 if white}
+#`   \item{exhealth}{=1 if in excellent health}
+#`   \item{vghealth}{=1 if in very good health}
+#`   \item{goodhealth}{=1 if in good health}
+#`   \item{fairhealth}{=1 if in fair health}
+#`   \item{northeast}{=1 if live in northeast}
+#`   \item{midwest}{=1 if live in midwest}
+#`   \item{south}{=1 if live in south}
+#`   \item{centcity}{=1 if live in central city of MSA}
+#`   \item{outercity}{=1 if in outer city of MSA}
+#`   \item{qrt1}{=1 if interviewed in first quarter}
+#`   \item{qrt2}{=1 if interviewed in second quarter}
+#`   \item{qrt3}{=1 if interviewed in third quarter}
+#`   \item{beertax}{state excise tax, $ per gallon}
+#`   \item{cigtax}{state cigarette tax, cents per pack}
+#`   \item{ethanol}{state per-capita ethanol consumption}
+#`   \item{mothalc}{=1 if mother an alcoholic}
+#`   \item{fathalc}{=1 if father an alcoholic}
+#`   \item{livealc}{=1 if lived with alcoholic}
+#`   \item{inwf}{=1 if status > 1}
+#`   \item{employ}{=1 if employed}
+#`   \item{agesq}{age^2}
+#`   \item{beertaxsq}{beertax^2}
+#`   \item{cigtaxsq}{cigtax^2}
+#`   \item{ethanolsq}{ethanol^2}
+#`   \item{educsq}{educ^2}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

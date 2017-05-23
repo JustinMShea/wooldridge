@@ -1,32 +1,36 @@
-"variable" "label"
-"1" "chnimp" "Chinese imports, bar. chl."
-"2" "bchlimp" "total imports bar. chl."
-"3" "befile6" "=1 for all 6 mos before filing"
-"4" "affile6" "=1 for all 6 mos after filing"
-"5" "afdec6" "=1 for all 6 mos after decision"
-"6" "befile12" "=1 all 12 mos before filing"
-"7" "affile12" "=1 all 12 mos after filing"
-"8" "afdec12" "=1 all 12 mos after decision"
-"9" "chempi" "chemical production index"
-"10" "gas" "gasoline production"
-"11" "rtwex" "exchange rate index"
-"12" "spr" "=1 for spring months"
-"13" "sum" "=1 for summer months"
-"14" "fall" "=1 for fall months"
-"15" "lchnimp" "log(chnimp)"
-"16" "lgas" "log(gas)"
-"17" "lrtwex" "log(rtwex)"
-"18" "lchempi" "log(chempi)"
-"19" "t" "time trend"
-"20" "feb" "=1 if month is feb"
-"21" "mar" "=1 if month is march"
-"22" "apr" ""
-"23" "may" ""
-"24" "jun" ""
-"25" "jul" ""
-"26" "aug" ""
-"27" "sep" ""
-"28" "oct" ""
-"29" "nov" ""
-"30" "dec" ""
-"31" "percchn" "% imports from china"
+#` barium
+#` @format A data.frame with 131 rows and 31 variables:
+#` \describe{
+#`   \item{chnimp}{Chinese imports, bar. chl.}
+#`   \item{bchlimp}{total imports bar. chl.}
+#`   \item{befile6}{=1 for all 6 mos before filing}
+#`   \item{affile6}{=1 for all 6 mos after filing}
+#`   \item{afdec6}{=1 for all 6 mos after decision}
+#`   \item{befile12}{=1 all 12 mos before filing}
+#`   \item{affile12}{=1 all 12 mos after filing}
+#`   \item{afdec12}{=1 all 12 mos after decision}
+#`   \item{chempi}{chemical production index}
+#`   \item{gas}{gasoline production}
+#`   \item{rtwex}{exchange rate index}
+#`   \item{spr}{=1 for spring months}
+#`   \item{sum}{=1 for summer months}
+#`   \item{fall}{=1 for fall months}
+#`   \item{lchnimp}{log(chnimp)}
+#`   \item{lgas}{log(gas)}
+#`   \item{lrtwex}{log(rtwex)}
+#`   \item{lchempi}{log(chempi)}
+#`   \item{t}{time trend}
+#`   \item{feb}{=1 if month is feb}
+#`   \item{mar}{=1 if month is march}
+#`   \item{apr}{}
+#`   \item{may}{}
+#`   \item{jun}{}
+#`   \item{jul}{}
+#`   \item{aug}{}
+#`   \item{sep}{}
+#`   \item{oct}{}
+#`   \item{nov}{}
+#`   \item{dec}{}
+#`   \item{percchn}{% imports from china}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

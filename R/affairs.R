@@ -1,20 +1,24 @@
-"variable" "label"
-"1" "id" "identifier"
-"2" "male" "=1 if male"
-"3" "age" "in years"
-"4" "yrsmarr" "years married"
-"5" "kids" "=1 if have kids"
-"6" "relig" "5 = very relig., 4 = somewhat, 3 = slightly, 2 = not at all, 1 = anti"
-"7" "educ" "years schooling"
-"8" "occup" "occupation, reverse Hollingshead scale"
-"9" "ratemarr" "5 = vry hap marr, 4 = hap than avg, 3 = avg, 2 = smewht unhap, 1 = vry unhap"
-"10" "naffairs" "number of affairs within last year"
-"11" "affair" "=1 if had at least one affair"
-"12" "vryhap" "ratemarr == 5"
-"13" "hapavg" "ratemarr == 4"
-"14" "avgmarr" "ratemarr == 3"
-"15" "unhap" "ratemarr == 2"
-"16" "vryrel" "relig == 5"
-"17" "smerel" "relig == 4"
-"18" "slghtrel" "relig == 3"
-"19" "notrel" "relig == 2"
+#` affairs
+#` @format A data.frame with 601 rows and 19 variables:
+#` \describe{
+#`   \item{id}{identifier}
+#`   \item{male}{=1 if male}
+#`   \item{age}{in years}
+#`   \item{yrsmarr}{years married}
+#`   \item{kids}{=1 if have kids}
+#`   \item{relig}{5 = very relig., 4 = somewhat, 3 = slightly, 2 = not at all, 1 = anti}
+#`   \item{educ}{years schooling}
+#`   \item{occup}{occupation, reverse Hollingshead scale}
+#`   \item{ratemarr}{5 = vry hap marr, 4 = hap than avg, 3 = avg, 2 = smewht unhap, 1 = vry unhap}
+#`   \item{naffairs}{number of affairs within last year}
+#`   \item{affair}{=1 if had at least one affair}
+#`   \item{vryhap}{ratemarr == 5}
+#`   \item{hapavg}{ratemarr == 4}
+#`   \item{avgmarr}{ratemarr == 3}
+#`   \item{unhap}{ratemarr == 2}
+#`   \item{vryrel}{relig == 5}
+#`   \item{smerel}{relig == 4}
+#`   \item{slghtrel}{relig == 3}
+#`   \item{notrel}{relig == 2}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

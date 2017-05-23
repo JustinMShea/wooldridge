@@ -1,21 +1,25 @@
-"variable" "label"
-"1" "train" "=1 if in job training"
-"2" "age" "in years, 1977"
-"3" "educ" "years of schooling"
-"4" "black" "=1 if black"
-"5" "hisp" "=1 if Hispanic"
-"6" "married" "=1 if married"
-"7" "re74" "'74 earnings, $1000s '82"
-"8" "re75" "'75 earnings, $1000s '82"
-"9" "unem75" "=1 if unem. all of '75"
-"10" "unem74" "=1 if unem. all of '74"
-"11" "re78" "'78 earnings, $1000s '82"
-"12" "agesq" "age^2"
-"13" "trre74" "train*re74"
-"14" "trre75" "train*re75"
-"15" "trun74" "train*unem74"
-"16" "trun75" "train*unem75"
-"17" "avgre" "(re74 + re75)/2"
-"18" "travgre" "train*avgre"
-"19" "unem78" "=1 if unem. all of '78"
-"20" "em78" "1 - unem78"
+#` jtrain3
+#` @format A data.frame with 2675 rows and 20 variables:
+#` \describe{
+#`   \item{train}{=1 if in job training}
+#`   \item{age}{in years, 1977}
+#`   \item{educ}{years of schooling}
+#`   \item{black}{=1 if black}
+#`   \item{hisp}{=1 if Hispanic}
+#`   \item{married}{=1 if married}
+#`   \item{re74}{'74 earnings, $1000s '82}
+#`   \item{re75}{'75 earnings, $1000s '82}
+#`   \item{unem75}{=1 if unem. all of '75}
+#`   \item{unem74}{=1 if unem. all of '74}
+#`   \item{re78}{'78 earnings, $1000s '82}
+#`   \item{agesq}{age^2}
+#`   \item{trre74}{train*re74}
+#`   \item{trre75}{train*re75}
+#`   \item{trun74}{train*unem74}
+#`   \item{trun75}{train*unem75}
+#`   \item{avgre}{(re74 + re75)/2}
+#`   \item{travgre}{train*avgre}
+#`   \item{unem78}{=1 if unem. all of '78}
+#`   \item{em78}{1 - unem78}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

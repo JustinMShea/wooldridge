@@ -1,13 +1,17 @@
-"variable" "label"
-"1" "year" "1987 or 1990"
-"2" "infmort" "deaths per 1,000 live births"
-"3" "afdcprt" "afdc partic., 1000s"
-"4" "popul" "population, 1000s"
-"5" "pcinc" "per capita income"
-"6" "physic" "drs. per 100,000 civilian pop."
-"7" "afdcper" "percent on AFDC"
-"8" "d90" "=1 if year == 1990"
-"9" "lpcinc" "log(pcinc)"
-"10" "lphysic" "log(physic)"
-"11" "DC" "=1 for Washington DC"
-"12" "lpopul" "log(popul)"
+#` infmrt
+#` @format A data.frame with 102 rows and 12 variables:
+#` \describe{
+#`   \item{year}{1987 or 1990}
+#`   \item{infmort}{deaths per 1,000 live births}
+#`   \item{afdcprt}{afdc partic., 1000s}
+#`   \item{popul}{population, 1000s}
+#`   \item{pcinc}{per capita income}
+#`   \item{physic}{drs. per 100,000 civilian pop.}
+#`   \item{afdcper}{percent on AFDC}
+#`   \item{d90}{=1 if year == 1990}
+#`   \item{lpcinc}{log(pcinc)}
+#`   \item{lphysic}{log(physic)}
+#`   \item{DC}{=1 for Washington DC}
+#`   \item{lpopul}{log(popul)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

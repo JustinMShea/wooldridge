@@ -1,24 +1,28 @@
-"variable" "label"
-"1" "female" "=1 if female"
-"2" "phsrank" "% high school rank; 100 = best"
-"3" "BA" "=1 if Bachelor's degree"
-"4" "AA" "=1 if Associate's degree"
-"5" "black" "=1 if African-American"
-"6" "hispanic" "=1 if Hispanic"
-"7" "id" "ID Number"
-"8" "exper" "total (actual) work experience"
-"9" "jc" "total 2-year credits"
-"10" "univ" "total 4-year credits"
-"11" "lwage" "log hourly wage"
-"12" "stotal" "total standardized test score"
-"13" "smcity" "=1 if small city, 1972"
-"14" "medcity" "=1 if med. city, 1972"
-"15" "submed" "=1 if suburb med. city, 1972"
-"16" "lgcity" "=1 if large city, 1972"
-"17" "sublg" "=1 if suburb large city, 1972"
-"18" "vlgcity" "=1 if very large city, 1972"
-"19" "subvlg" "=1 if sub. very lge. city, 1972"
-"20" "ne" "=1 if northeast"
-"21" "nc" "=1 if north central"
-"22" "south" "=1 if south"
-"23" "totcoll" "jc + univ"
+#` twoyear
+#` @format A data.frame with 6763 rows and 23 variables:
+#` \describe{
+#`   \item{female}{=1 if female}
+#`   \item{phsrank}{% high school rank; 100 = best}
+#`   \item{BA}{=1 if Bachelor's degree}
+#`   \item{AA}{=1 if Associate's degree}
+#`   \item{black}{=1 if African-American}
+#`   \item{hispanic}{=1 if Hispanic}
+#`   \item{id}{ID Number}
+#`   \item{exper}{total (actual) work experience}
+#`   \item{jc}{total 2-year credits}
+#`   \item{univ}{total 4-year credits}
+#`   \item{lwage}{log hourly wage}
+#`   \item{stotal}{total standardized test score}
+#`   \item{smcity}{=1 if small city, 1972}
+#`   \item{medcity}{=1 if med. city, 1972}
+#`   \item{submed}{=1 if suburb med. city, 1972}
+#`   \item{lgcity}{=1 if large city, 1972}
+#`   \item{sublg}{=1 if suburb large city, 1972}
+#`   \item{vlgcity}{=1 if very large city, 1972}
+#`   \item{subvlg}{=1 if sub. very lge. city, 1972}
+#`   \item{ne}{=1 if northeast}
+#`   \item{nc}{=1 if north central}
+#`   \item{south}{=1 if south}
+#`   \item{totcoll}{jc + univ}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

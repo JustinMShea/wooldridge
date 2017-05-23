@@ -1,60 +1,64 @@
-"variable" "label"
-"1" "county" "county identifier"
-"2" "year" "81 to 87"
-"3" "crmrte" "crimes committed per person"
-"4" "prbarr" "'probability' of arrest"
-"5" "prbconv" "'probability' of conviction"
-"6" "prbpris" "'probability' of prison sentenc"
-"7" "avgsen" "avg. sentence, days"
-"8" "polpc" "police per capita"
-"9" "density" "people per sq. mile"
-"10" "taxpc" "tax revenue per capita"
-"11" "west" "=1 if in western N.C."
-"12" "central" "=1 if in central N.C."
-"13" "urban" "=1 if in SMSA"
-"14" "pctmin80" "perc. minority, 1980"
-"15" "wcon" "weekly wage, construction"
-"16" "wtuc" "wkly wge, trns, util, commun"
-"17" "wtrd" "wkly wge, whlesle, retail trade"
-"18" "wfir" "wkly wge, fin, ins, real est"
-"19" "wser" "wkly wge, service industry"
-"20" "wmfg" "wkly wge, manufacturing"
-"21" "wfed" "wkly wge, fed employees"
-"22" "wsta" "wkly wge, state employees"
-"23" "wloc" "wkly wge, local gov emps"
-"24" "mix" "offense mix: face-to-face/other"
-"25" "pctymle" "percent young male"
-"26" "d82" "=1 if year == 82"
-"27" "d83" "=1 if year == 83"
-"28" "d84" "=1 if year == 84"
-"29" "d85" "=1 if year == 85"
-"30" "d86" "=1 if year == 86"
-"31" "d87" "=1 if year == 87"
-"32" "lcrmrte" "log(crmrte)"
-"33" "lprbarr" "log(prbarr)"
-"34" "lprbconv" "log(prbconv)"
-"35" "lprbpris" "log(prbpris)"
-"36" "lavgsen" "log(avgsen)"
-"37" "lpolpc" "log(polpc)"
-"38" "ldensity" "log(density)"
-"39" "ltaxpc" "log(taxpc)"
-"40" "lwcon" "log(wcon)"
-"41" "lwtuc" "log(wtuc)"
-"42" "lwtrd" "log(wtrd)"
-"43" "lwfir" "log(wfir)"
-"44" "lwser" "log(wser)"
-"45" "lwmfg" "log(wmfg)"
-"46" "lwfed" "log(wfed)"
-"47" "lwsta" "log(wsta)"
-"48" "lwloc" "log(wloc)"
-"49" "lmix" "log(mix)"
-"50" "lpctymle" "log(pctymle)"
-"51" "lpctmin" "log(pctmin)"
-"52" "clcrmrte" "lcrmrte - lcrmrte[_n-1]"
-"53" "clprbarr" "lprbarr - lprbarr[_n-1]"
-"54" "clprbcon" "lprbconv - lprbconv[_n-1]"
-"55" "clprbpri" "lprbpri - lprbpri[t-1]"
-"56" "clavgsen" "lavgsen - lavgsen[t-1]"
-"57" "clpolpc" "lpolpc - lpolpc[t-1]"
-"58" "cltaxpc" "ltaxpc - ltaxpc[t-1]"
-"59" "clmix" "lmix - lmix[t-1]"
+#` crime4
+#` @format A data.frame with 630 rows and 59 variables:
+#` \describe{
+#`   \item{county}{county identifier}
+#`   \item{year}{81 to 87}
+#`   \item{crmrte}{crimes committed per person}
+#`   \item{prbarr}{'probability' of arrest}
+#`   \item{prbconv}{'probability' of conviction}
+#`   \item{prbpris}{'probability' of prison sentenc}
+#`   \item{avgsen}{avg. sentence, days}
+#`   \item{polpc}{police per capita}
+#`   \item{density}{people per sq. mile}
+#`   \item{taxpc}{tax revenue per capita}
+#`   \item{west}{=1 if in western N.C.}
+#`   \item{central}{=1 if in central N.C.}
+#`   \item{urban}{=1 if in SMSA}
+#`   \item{pctmin80}{perc. minority, 1980}
+#`   \item{wcon}{weekly wage, construction}
+#`   \item{wtuc}{wkly wge, trns, util, commun}
+#`   \item{wtrd}{wkly wge, whlesle, retail trade}
+#`   \item{wfir}{wkly wge, fin, ins, real est}
+#`   \item{wser}{wkly wge, service industry}
+#`   \item{wmfg}{wkly wge, manufacturing}
+#`   \item{wfed}{wkly wge, fed employees}
+#`   \item{wsta}{wkly wge, state employees}
+#`   \item{wloc}{wkly wge, local gov emps}
+#`   \item{mix}{offense mix: face-to-face/other}
+#`   \item{pctymle}{percent young male}
+#`   \item{d82}{=1 if year == 82}
+#`   \item{d83}{=1 if year == 83}
+#`   \item{d84}{=1 if year == 84}
+#`   \item{d85}{=1 if year == 85}
+#`   \item{d86}{=1 if year == 86}
+#`   \item{d87}{=1 if year == 87}
+#`   \item{lcrmrte}{log(crmrte)}
+#`   \item{lprbarr}{log(prbarr)}
+#`   \item{lprbconv}{log(prbconv)}
+#`   \item{lprbpris}{log(prbpris)}
+#`   \item{lavgsen}{log(avgsen)}
+#`   \item{lpolpc}{log(polpc)}
+#`   \item{ldensity}{log(density)}
+#`   \item{ltaxpc}{log(taxpc)}
+#`   \item{lwcon}{log(wcon)}
+#`   \item{lwtuc}{log(wtuc)}
+#`   \item{lwtrd}{log(wtrd)}
+#`   \item{lwfir}{log(wfir)}
+#`   \item{lwser}{log(wser)}
+#`   \item{lwmfg}{log(wmfg)}
+#`   \item{lwfed}{log(wfed)}
+#`   \item{lwsta}{log(wsta)}
+#`   \item{lwloc}{log(wloc)}
+#`   \item{lmix}{log(mix)}
+#`   \item{lpctymle}{log(pctymle)}
+#`   \item{lpctmin}{log(pctmin)}
+#`   \item{clcrmrte}{lcrmrte - lcrmrte[_n-1]}
+#`   \item{clprbarr}{lprbarr - lprbarr[_n-1]}
+#`   \item{clprbcon}{lprbconv - lprbconv[_n-1]}
+#`   \item{clprbpri}{lprbpri - lprbpri[t-1]}
+#`   \item{clavgsen}{lavgsen - lavgsen[t-1]}
+#`   \item{clpolpc}{lpolpc - lpolpc[t-1]}
+#`   \item{cltaxpc}{ltaxpc - ltaxpc[t-1]}
+#`   \item{clmix}{lmix - lmix[t-1]}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

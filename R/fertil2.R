@@ -1,28 +1,32 @@
-"variable" "label"
-"1" "mnthborn" "month woman born"
-"2" "yearborn" "year woman born"
-"3" "age" "age in years"
-"4" "electric" "=1 if has electricity"
-"5" "radio" "=1 if has radio"
-"6" "tv" "=1 if has tv"
-"7" "bicycle" "=1 if has bicycle"
-"8" "educ" "years of education"
-"9" "ceb" "children ever born"
-"10" "agefbrth" "age at first birth"
-"11" "children" "number of living children"
-"12" "knowmeth" "=1 if know about birth control"
-"13" "usemeth" "=1 if ever use birth control"
-"14" "monthfm" "month of first marriage"
-"15" "yearfm" "year of first marriage"
-"16" "agefm" "age at first marriage"
-"17" "idlnchld" "'ideal' number of children"
-"18" "heduc" "husband's years of education"
-"19" "agesq" "age^2"
-"20" "urban" "=1 if live in urban area"
-"21" "urb_educ" "urban*educ"
-"22" "spirit" "=1 if religion == spirit"
-"23" "protest" "=1 if religion == protestant"
-"24" "catholic" "=1 if religion == catholic"
-"25" "frsthalf" "=1 if mnthborn <= 6"
-"26" "educ0" "=1 if educ == 0"
-"27" "evermarr" "=1 if ever married"
+#` fertil2
+#` @format A data.frame with 4361 rows and 27 variables:
+#` \describe{
+#`   \item{mnthborn}{month woman born}
+#`   \item{yearborn}{year woman born}
+#`   \item{age}{age in years}
+#`   \item{electric}{=1 if has electricity}
+#`   \item{radio}{=1 if has radio}
+#`   \item{tv}{=1 if has tv}
+#`   \item{bicycle}{=1 if has bicycle}
+#`   \item{educ}{years of education}
+#`   \item{ceb}{children ever born}
+#`   \item{agefbrth}{age at first birth}
+#`   \item{children}{number of living children}
+#`   \item{knowmeth}{=1 if know about birth control}
+#`   \item{usemeth}{=1 if ever use birth control}
+#`   \item{monthfm}{month of first marriage}
+#`   \item{yearfm}{year of first marriage}
+#`   \item{agefm}{age at first marriage}
+#`   \item{idlnchld}{'ideal' number of children}
+#`   \item{heduc}{husband's years of education}
+#`   \item{agesq}{age^2}
+#`   \item{urban}{=1 if live in urban area}
+#`   \item{urb_educ}{urban*educ}
+#`   \item{spirit}{=1 if religion == spirit}
+#`   \item{protest}{=1 if religion == protestant}
+#`   \item{catholic}{=1 if religion == catholic}
+#`   \item{frsthalf}{=1 if mnthborn <= 6}
+#`   \item{educ0}{=1 if educ == 0}
+#`   \item{evermarr}{=1 if ever married}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

@@ -1,60 +1,64 @@
-"variable" "label"
-"1" "occ" "occupancy"
-"2" "loanamt" "loan amt in thousands"
-"3" "action" "type of action taken"
-"4" "msa" "msa number of property"
-"5" "suffolk" "=1 if property in suffolk co."
-"6" "appinc" "applicant income, $1000s"
-"7" "typur" "type of purchaser of loan"
-"8" "unit" "number of units in property"
-"9" "married" "=1 if applicant married"
-"10" "dep" "number of dependents"
-"11" "emp" "years employed in line of work"
-"12" "yjob" "years at this job"
-"13" "self" "=1 if self employed"
-"14" "atotinc" "total monthly income"
-"15" "cototinc" "coapp total monthly income"
-"16" "hexp" "propose housing expense"
-"17" "price" "purchase price"
-"18" "other" "other financing, $1000s"
-"19" "liq" "liquid assets"
-"20" "rep" "no. of credit reports"
-"21" "gdlin" "credit history meets guidelines"
-"22" "lines" "no. of credit lines on reports"
-"23" "mortg" "credit history on mortgage paym"
-"24" "cons" "credit history on consumer stuf"
-"25" "pubrec" "=1 if filed bankruptcy"
-"26" "hrat" "housing exp, % total inc"
-"27" "obrat" "other oblgs,  % total inc"
-"28" "fixadj" "fixed or adjustable rate?"
-"29" "term" "term of loan in months"
-"30" "apr" "appraised value"
-"31" "prop" "type of property"
-"32" "inss" "PMI sought"
-"33" "inson" "PMI approved"
-"34" "gift" "gift as down payment"
-"35" "cosign" "is there a cosigner"
-"36" "unver" "unverifiable info"
-"37" "review" "number of times reviewed"
-"38" "netw" "net worth"
-"39" "unem" "unemployment rate by industry"
-"40" "min30" "=1 if minority pop. > 30%"
-"41" "bd" "=1 if boarded-up val > MSA med"
-"42" "mi" "=1 if tract inc > MSA median"
-"43" "old" "=1 if applic age > MSA median"
-"44" "vr" "=1 if tract vac rte > MSA med"
-"45" "sch" "=1 if > 12 years schooling"
-"46" "black" "=1 if applicant black"
-"47" "hispan" "=1 if applicant Hispanic"
-"48" "male" "=1 if applicant male"
-"49" "reject" "=1 if action == 3"
-"50" "approve" "=1 if action == 1 or 2"
-"51" "mortno" "no mortgage history"
-"52" "mortperf" "no late mort. payments"
-"53" "mortlat1" "one or two late payments"
-"54" "mortlat2" "> 2 late payments"
-"55" "chist" "=0 if accnts deliq. >= 60 days"
-"56" "multi" "=1 if two or more units"
-"57" "loanprc" "amt/price"
-"58" "thick" "=1 if rep > 2"
-"59" "white" "=1 if applicant white"
+#` loanapp
+#` @format A data.frame with 1989 rows and 59 variables:
+#` \describe{
+#`   \item{occ}{occupancy}
+#`   \item{loanamt}{loan amt in thousands}
+#`   \item{action}{type of action taken}
+#`   \item{msa}{msa number of property}
+#`   \item{suffolk}{=1 if property in suffolk co.}
+#`   \item{appinc}{applicant income, $1000s}
+#`   \item{typur}{type of purchaser of loan}
+#`   \item{unit}{number of units in property}
+#`   \item{married}{=1 if applicant married}
+#`   \item{dep}{number of dependents}
+#`   \item{emp}{years employed in line of work}
+#`   \item{yjob}{years at this job}
+#`   \item{self}{=1 if self employed}
+#`   \item{atotinc}{total monthly income}
+#`   \item{cototinc}{coapp total monthly income}
+#`   \item{hexp}{propose housing expense}
+#`   \item{price}{purchase price}
+#`   \item{other}{other financing, $1000s}
+#`   \item{liq}{liquid assets}
+#`   \item{rep}{no. of credit reports}
+#`   \item{gdlin}{credit history meets guidelines}
+#`   \item{lines}{no. of credit lines on reports}
+#`   \item{mortg}{credit history on mortgage paym}
+#`   \item{cons}{credit history on consumer stuf}
+#`   \item{pubrec}{=1 if filed bankruptcy}
+#`   \item{hrat}{housing exp, % total inc}
+#`   \item{obrat}{other oblgs,  % total inc}
+#`   \item{fixadj}{fixed or adjustable rate?}
+#`   \item{term}{term of loan in months}
+#`   \item{apr}{appraised value}
+#`   \item{prop}{type of property}
+#`   \item{inss}{PMI sought}
+#`   \item{inson}{PMI approved}
+#`   \item{gift}{gift as down payment}
+#`   \item{cosign}{is there a cosigner}
+#`   \item{unver}{unverifiable info}
+#`   \item{review}{number of times reviewed}
+#`   \item{netw}{net worth}
+#`   \item{unem}{unemployment rate by industry}
+#`   \item{min30}{=1 if minority pop. > 30%}
+#`   \item{bd}{=1 if boarded-up val > MSA med}
+#`   \item{mi}{=1 if tract inc > MSA median}
+#`   \item{old}{=1 if applic age > MSA median}
+#`   \item{vr}{=1 if tract vac rte > MSA med}
+#`   \item{sch}{=1 if > 12 years schooling}
+#`   \item{black}{=1 if applicant black}
+#`   \item{hispan}{=1 if applicant Hispanic}
+#`   \item{male}{=1 if applicant male}
+#`   \item{reject}{=1 if action == 3}
+#`   \item{approve}{=1 if action == 1 or 2}
+#`   \item{mortno}{no mortgage history}
+#`   \item{mortperf}{no late mort. payments}
+#`   \item{mortlat1}{one or two late payments}
+#`   \item{mortlat2}{> 2 late payments}
+#`   \item{chist}{=0 if accnts deliq. >= 60 days}
+#`   \item{multi}{=1 if two or more units}
+#`   \item{loanprc}{amt/price}
+#`   \item{thick}{=1 if rep > 2}
+#`   \item{white}{=1 if applicant white}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

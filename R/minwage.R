@@ -1,59 +1,63 @@
-"variable" "label"
-"1" "emp232" "employment, sector 232, 1000s"
-"2" "wage232" "hourly wage, sector 232, $"
-"3" "emp236" ""
-"4" "wage236" ""
-"5" "emp234" ""
-"6" "wage234" ""
-"7" "emp314" ""
-"8" "wage314" ""
-"9" "emp228" ""
-"10" "wage228" ""
-"11" "emp233" ""
-"12" "wage233" ""
-"13" "emp394" ""
-"14" "wage394" ""
-"15" "emp231" ""
-"16" "wage231" ""
-"17" "emp226" ""
-"18" "wage226" ""
-"19" "emp387" ""
-"20" "wage387" ""
-"21" "emp056" ""
-"22" "wage056" ""
-"23" "unem" "civilian unemployment rate, %"
-"24" "cpi" "Consumer Price Index (urban), 1982-1984 = 100"
-"25" "minwage" "Federal minimum wage, $/hour"
-"26" "lemp232" "log(emp232)"
-"27" "lwage232" "log(wage232)"
-"28" "gemp232" "lemp232 - lemp232[_n-1]"
-"29" "gwage232" "lwage232 - lwage232[_n-1]"
-"30" "lminwage" "log(minwage)"
-"31" "gmwage" "lminwage - lminwage[_n-1]"
-"32" "gmwage_1" "gmwage[_n-1]"
-"33" "gmwage_2" ""
-"34" "gmwage_3" ""
-"35" "gmwage_4" ""
-"36" "gmwage_5" ""
-"37" "gmwage_6" ""
-"38" "gmwage_7" ""
-"39" "gmwage_8" ""
-"40" "gmwage_9" ""
-"41" "gmwage_10" ""
-"42" "gmwage_11" ""
-"43" "gmwage_12" ""
-"44" "lemp236" ""
-"45" "gcpi" "lcpi - lcpi[_n-1]"
-"46" "lcpi" "log(cpi)"
-"47" "lwage236" ""
-"48" "gemp236" ""
-"49" "gwage236" ""
-"50" "lemp234" ""
-"51" "lwage234" ""
-"52" "gemp234" ""
-"53" "gwage234" ""
-"54" "lemp314" ""
-"55" "lwage314" ""
-"56" "gemp314" ""
-"57" "gwage314" ""
-"58" "t" "linear time trend, 1 to 612"
+#` minwage
+#` @format A data.frame with 612 rows and 58 variables:
+#` \describe{
+#`   \item{emp232}{employment, sector 232, 1000s}
+#`   \item{wage232}{hourly wage, sector 232, $}
+#`   \item{emp236}{}
+#`   \item{wage236}{}
+#`   \item{emp234}{}
+#`   \item{wage234}{}
+#`   \item{emp314}{}
+#`   \item{wage314}{}
+#`   \item{emp228}{}
+#`   \item{wage228}{}
+#`   \item{emp233}{}
+#`   \item{wage233}{}
+#`   \item{emp394}{}
+#`   \item{wage394}{}
+#`   \item{emp231}{}
+#`   \item{wage231}{}
+#`   \item{emp226}{}
+#`   \item{wage226}{}
+#`   \item{emp387}{}
+#`   \item{wage387}{}
+#`   \item{emp056}{}
+#`   \item{wage056}{}
+#`   \item{unem}{civilian unemployment rate, %}
+#`   \item{cpi}{Consumer Price Index (urban), 1982-1984 = 100}
+#`   \item{minwage}{Federal minimum wage, $/hour}
+#`   \item{lemp232}{log(emp232)}
+#`   \item{lwage232}{log(wage232)}
+#`   \item{gemp232}{lemp232 - lemp232[_n-1]}
+#`   \item{gwage232}{lwage232 - lwage232[_n-1]}
+#`   \item{lminwage}{log(minwage)}
+#`   \item{gmwage}{lminwage - lminwage[_n-1]}
+#`   \item{gmwage_1}{gmwage[_n-1]}
+#`   \item{gmwage_2}{}
+#`   \item{gmwage_3}{}
+#`   \item{gmwage_4}{}
+#`   \item{gmwage_5}{}
+#`   \item{gmwage_6}{}
+#`   \item{gmwage_7}{}
+#`   \item{gmwage_8}{}
+#`   \item{gmwage_9}{}
+#`   \item{gmwage_10}{}
+#`   \item{gmwage_11}{}
+#`   \item{gmwage_12}{}
+#`   \item{lemp236}{}
+#`   \item{gcpi}{lcpi - lcpi[_n-1]}
+#`   \item{lcpi}{log(cpi)}
+#`   \item{lwage236}{}
+#`   \item{gemp236}{}
+#`   \item{gwage236}{}
+#`   \item{lemp234}{}
+#`   \item{lwage234}{}
+#`   \item{gemp234}{}
+#`   \item{gwage234}{}
+#`   \item{lemp314}{}
+#`   \item{lwage314}{}
+#`   \item{gemp314}{}
+#`   \item{gwage314}{}
+#`   \item{t}{linear time trend, 1 to 612}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

@@ -1,40 +1,44 @@
-"variable" "label"
-"1" "annearn" "annual earnings, $"
-"2" "hrearn" "hourly earnings, $"
-"3" "exper" "years work experience"
-"4" "age" "age in years"
-"5" "depends" "number of dependents"
-"6" "married" "=1 if married"
-"7" "tenure" "years with current employer"
-"8" "educ" "years schooling"
-"9" "nrtheast" "=1 if live in northeast"
-"10" "nrthcen" "=1 if live in north central"
-"11" "south" "=1 if live in south"
-"12" "male" "=1 if male"
-"13" "white" "=1 if white"
-"14" "union" "=1 if union member"
-"15" "office" ""
-"16" "annhrs" "annual hours worked"
-"17" "ind1" "industry dummy"
-"18" "ind2" ""
-"19" "ind3" ""
-"20" "ind4" ""
-"21" "ind5" ""
-"22" "ind6" ""
-"23" "ind7" ""
-"24" "ind8" ""
-"25" "ind9" ""
-"26" "vacdays" "$ value of vac. days"
-"27" "sicklve" "$ value of sick leave"
-"28" "insur" "$ value of employee insur"
-"29" "pension" "$ value of employee pension"
-"30" "annbens" "vacdays+sicklve+insur+pension"
-"31" "hrbens" "hourly benefits, $"
-"32" "annhrssq" "annhrs^2"
-"33" "beratio" "annbens/annearn"
-"34" "lannhrs" "log(annhrs)"
-"35" "tenuresq" "tenure^2"
-"36" "expersq" "exper^2"
-"37" "lannearn" "log(annearn)"
-"38" "peratio" "pension/annearn"
-"39" "vserat" "(vacdays+sicklve)/annearn"
+#` fringe
+#` @format A data.frame with 616 rows and 39 variables:
+#` \describe{
+#`   \item{annearn}{annual earnings, $}
+#`   \item{hrearn}{hourly earnings, $}
+#`   \item{exper}{years work experience}
+#`   \item{age}{age in years}
+#`   \item{depends}{number of dependents}
+#`   \item{married}{=1 if married}
+#`   \item{tenure}{years with current employer}
+#`   \item{educ}{years schooling}
+#`   \item{nrtheast}{=1 if live in northeast}
+#`   \item{nrthcen}{=1 if live in north central}
+#`   \item{south}{=1 if live in south}
+#`   \item{male}{=1 if male}
+#`   \item{white}{=1 if white}
+#`   \item{union}{=1 if union member}
+#`   \item{office}{}
+#`   \item{annhrs}{annual hours worked}
+#`   \item{ind1}{industry dummy}
+#`   \item{ind2}{}
+#`   \item{ind3}{}
+#`   \item{ind4}{}
+#`   \item{ind5}{}
+#`   \item{ind6}{}
+#`   \item{ind7}{}
+#`   \item{ind8}{}
+#`   \item{ind9}{}
+#`   \item{vacdays}{$ value of vac. days}
+#`   \item{sicklve}{$ value of sick leave}
+#`   \item{insur}{$ value of employee insur}
+#`   \item{pension}{$ value of employee pension}
+#`   \item{annbens}{vacdays+sicklve+insur+pension}
+#`   \item{hrbens}{hourly benefits, $}
+#`   \item{annhrssq}{annhrs^2}
+#`   \item{beratio}{annbens/annearn}
+#`   \item{lannhrs}{log(annhrs)}
+#`   \item{tenuresq}{tenure^2}
+#`   \item{expersq}{exper^2}
+#`   \item{lannearn}{log(annearn)}
+#`   \item{peratio}{pension/annearn}
+#`   \item{vserat}{(vacdays+sicklve)/annearn}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

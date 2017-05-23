@@ -1,8 +1,12 @@
-"variable" "label"
-"1" "year" "1948 through 2003"
-"2" "unem" "civilian unemployment rate, %"
-"3" "inf" "percentage change in CPI"
-"4" "inf_1" "inf[_n-1]"
-"5" "unem_1" "unem[_n-1]"
-"6" "cinf" "inf - inf_1"
-"7" "cunem" "unem - unem_1"
+#` phillips
+#` @format A data.frame with 56 rows and 7 variables:
+#` \describe{
+#`   \item{year}{1948 through 2003}
+#`   \item{unem}{civilian unemployment rate, %}
+#`   \item{inf}{percentage change in CPI}
+#`   \item{inf_1}{inf[_n-1]}
+#`   \item{unem_1}{unem[_n-1]}
+#`   \item{cinf}{inf - inf_1}
+#`   \item{cunem}{unem - unem_1}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

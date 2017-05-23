@@ -1,24 +1,28 @@
-"variable" "label"
-"1" "term" "fall = 1, spring = 2"
-"2" "sat" "SAT score"
-"3" "tothrs" "total hours prior to term"
-"4" "cumgpa" "cumulative GPA"
-"5" "season" "=1 if in season"
-"6" "frstsem" "=1 if student's 1st semester"
-"7" "crsgpa" "weighted course GPA"
-"8" "verbmath" "verbal SAT to math SAT ratio"
-"9" "trmgpa" "term GPA"
-"10" "hssize" "size h.s. grad. class"
-"11" "hsrank" "rank in h.s. class"
-"12" "id" "student identifier"
-"13" "spring" "=1 if spring term"
-"14" "female" "=1 if female"
-"15" "black" "=1 if black"
-"16" "white" "=1 if white"
-"17" "ctrmgpa" "change in trmgpa"
-"18" "ctothrs" "change in total hours"
-"19" "ccrsgpa" "change in crsgpa"
-"20" "ccrspop" "change in crspop"
-"21" "cseason" "change in season"
-"22" "hsperc" "percentile in h.s."
-"23" "football" "=1 if football player"
+#` gpa3
+#` @format A data.frame with 732 rows and 23 variables:
+#` \describe{
+#`   \item{term}{fall = 1, spring = 2}
+#`   \item{sat}{SAT score}
+#`   \item{tothrs}{total hours prior to term}
+#`   \item{cumgpa}{cumulative GPA}
+#`   \item{season}{=1 if in season}
+#`   \item{frstsem}{=1 if student's 1st semester}
+#`   \item{crsgpa}{weighted course GPA}
+#`   \item{verbmath}{verbal SAT to math SAT ratio}
+#`   \item{trmgpa}{term GPA}
+#`   \item{hssize}{size h.s. grad. class}
+#`   \item{hsrank}{rank in h.s. class}
+#`   \item{id}{student identifier}
+#`   \item{spring}{=1 if spring term}
+#`   \item{female}{=1 if female}
+#`   \item{black}{=1 if black}
+#`   \item{white}{=1 if white}
+#`   \item{ctrmgpa}{change in trmgpa}
+#`   \item{ctothrs}{change in total hours}
+#`   \item{ccrsgpa}{change in crsgpa}
+#`   \item{ccrspop}{change in crspop}
+#`   \item{cseason}{change in season}
+#`   \item{hsperc}{percentile in h.s.}
+#`   \item{football}{=1 if football player}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

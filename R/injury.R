@@ -1,31 +1,35 @@
-"variable" "label"
-"1" "durat" "duration of benefits"
-"2" "afchnge" "=1 if after change in benefits"
-"3" "highearn" "=1 if high earner"
-"4" "male" "=1 if male"
-"5" "married" "=1 if married"
-"6" "hosp" "=1 if inj. required hosp. stay"
-"7" "indust" "industry"
-"8" "injtype" "type of injury"
-"9" "age" "age at time of injury"
-"10" "prewage" "previous weekly wage, 1982 $"
-"11" "totmed" "total med. costs, 1982 $"
-"12" "injdes" "4 digit injury description"
-"13" "benefit" "real dollar value of benefit"
-"14" "ky" "=1 for kentucky"
-"15" "mi" "=1 for michigan"
-"16" "ldurat" "log(durat)"
-"17" "afhigh" "afchnge*highearn"
-"18" "lprewage" "log(wage)"
-"19" "lage" "log(age)"
-"20" "ltotmed" "log(totmed); = 0 if totmed < 1"
-"21" "head" "=1 if head injury"
-"22" "neck" "=1 if neck injury"
-"23" "upextr" "=1 if upper extremities injury"
-"24" "trunk" "=1 if trunk injury"
-"25" "lowback" "=1 if lower back injury"
-"26" "lowextr" "=1 if lower extremities injury"
-"27" "occdis" "=1 if occupational disease"
-"28" "manuf" "=1 if manufacturing industry"
-"29" "construc" "=1 if construction industry"
-"30" "highlpre" "highearn*lprewage"
+#` injury
+#` @format A data.frame with 7150 rows and 30 variables:
+#` \describe{
+#`   \item{durat}{duration of benefits}
+#`   \item{afchnge}{=1 if after change in benefits}
+#`   \item{highearn}{=1 if high earner}
+#`   \item{male}{=1 if male}
+#`   \item{married}{=1 if married}
+#`   \item{hosp}{=1 if inj. required hosp. stay}
+#`   \item{indust}{industry}
+#`   \item{injtype}{type of injury}
+#`   \item{age}{age at time of injury}
+#`   \item{prewage}{previous weekly wage, 1982 $}
+#`   \item{totmed}{total med. costs, 1982 $}
+#`   \item{injdes}{4 digit injury description}
+#`   \item{benefit}{real dollar value of benefit}
+#`   \item{ky}{=1 for kentucky}
+#`   \item{mi}{=1 for michigan}
+#`   \item{ldurat}{log(durat)}
+#`   \item{afhigh}{afchnge*highearn}
+#`   \item{lprewage}{log(wage)}
+#`   \item{lage}{log(age)}
+#`   \item{ltotmed}{log(totmed); = 0 if totmed < 1}
+#`   \item{head}{=1 if head injury}
+#`   \item{neck}{=1 if neck injury}
+#`   \item{upextr}{=1 if upper extremities injury}
+#`   \item{trunk}{=1 if trunk injury}
+#`   \item{lowback}{=1 if lower back injury}
+#`   \item{lowextr}{=1 if lower extremities injury}
+#`   \item{occdis}{=1 if occupational disease}
+#`   \item{manuf}{=1 if manufacturing industry}
+#`   \item{construc}{=1 if construction industry}
+#`   \item{highlpre}{highearn*lprewage}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

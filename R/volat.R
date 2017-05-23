@@ -1,18 +1,22 @@
-"variable" "label"
-"1" "date" "1947.01 to 1993.06"
-"2" "sp500" "S&P 500 index"
-"3" "divyld" "div. yield annualized rate"
-"4" "i3" "3 mo. T-bill annualized rate"
-"5" "ip" "index of industrial production"
-"6" "pcsp" "pct chg, sp500, ann rate"
-"7" "rsp500" "return on sp500: pcsp + divyld"
-"8" "pcip" "pct chg, IP, ann rate"
-"9" "ci3" "i3 - i3[_n-1]"
-"10" "ci3_1" "ci3[_n-1]"
-"11" "ci3_2" "ci3[_n-2]"
-"12" "pcip_1" "pcip[_n-1]"
-"13" "pcip_2" "pcip[_n-2]"
-"14" "pcip_3" "pcip[_n-3]"
-"15" "pcsp_1" "pcip[_n-1]"
-"16" "pcsp_2" "pcip[_n-2]"
-"17" "pcsp_3" "pcip[_n-3]"
+#` volat
+#` @format A data.frame with 558 rows and 17 variables:
+#` \describe{
+#`   \item{date}{1947.01 to 1993.06}
+#`   \item{sp500}{S&P 500 index}
+#`   \item{divyld}{div. yield annualized rate}
+#`   \item{i3}{3 mo. T-bill annualized rate}
+#`   \item{ip}{index of industrial production}
+#`   \item{pcsp}{pct chg, sp500, ann rate}
+#`   \item{rsp500}{return on sp500: pcsp + divyld}
+#`   \item{pcip}{pct chg, IP, ann rate}
+#`   \item{ci3}{i3 - i3[_n-1]}
+#`   \item{ci3_1}{ci3[_n-1]}
+#`   \item{ci3_2}{ci3[_n-2]}
+#`   \item{pcip_1}{pcip[_n-1]}
+#`   \item{pcip_2}{pcip[_n-2]}
+#`   \item{pcip_3}{pcip[_n-3]}
+#`   \item{pcsp_1}{pcip[_n-1]}
+#`   \item{pcsp_2}{pcip[_n-2]}
+#`   \item{pcsp_3}{pcip[_n-3]}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

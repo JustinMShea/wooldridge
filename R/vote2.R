@@ -1,27 +1,31 @@
-"variable" "label"
-"1" "state" "state postal code"
-"2" "district" "U.S. Congressional district"
-"3" "democ" "=1 if incumbent democrat"
-"4" "vote90" "inc. share two-party vote, 1990"
-"5" "vote88" "inc. share two-party vote, 1988"
-"6" "inexp90" "inc. camp. expends., 1990"
-"7" "chexp90" "chl. camp. expends., 1990"
-"8" "inexp88" "inc. camp. expends., 1988"
-"9" "chexp88" "chl. camp. expends., 1988"
-"10" "prtystr" "% vote pres., same party, 1988"
-"11" "rptchall" "=1 if a repeat challenger"
-"12" "tenure" "years in H.R."
-"13" "lawyer" "=1 if law degree"
-"14" "linexp90" "log(inexp90)"
-"15" "lchexp90" "log(chexp90)"
-"16" "linexp88" "log(inexp88)"
-"17" "lchexp88" "log(chexp88)"
-"18" "incshr90" "100*(inexp90/(inexp90+chexp90))"
-"19" "incshr88" "100*(inexp88/(inexp88+chexp88))"
-"20" "cvote" "vote90 - vote88"
-"21" "clinexp" "linexp90 - linexp88"
-"22" "clchexp" "lchexp90 - lchexp88"
-"23" "cincshr" "incshr90 - incshr88"
-"24" "win88" "=1 by definition"
-"25" "win90" "=1 if inc. wins, 1990"
-"26" "cwin" "win90 - win88"
+#` vote2
+#` @format A data.frame with 186 rows and 26 variables:
+#` \describe{
+#`   \item{state}{state postal code}
+#`   \item{district}{U.S. Congressional district}
+#`   \item{democ}{=1 if incumbent democrat}
+#`   \item{vote90}{inc. share two-party vote, 1990}
+#`   \item{vote88}{inc. share two-party vote, 1988}
+#`   \item{inexp90}{inc. camp. expends., 1990}
+#`   \item{chexp90}{chl. camp. expends., 1990}
+#`   \item{inexp88}{inc. camp. expends., 1988}
+#`   \item{chexp88}{chl. camp. expends., 1988}
+#`   \item{prtystr}{% vote pres., same party, 1988}
+#`   \item{rptchall}{=1 if a repeat challenger}
+#`   \item{tenure}{years in H.R.}
+#`   \item{lawyer}{=1 if law degree}
+#`   \item{linexp90}{log(inexp90)}
+#`   \item{lchexp90}{log(chexp90)}
+#`   \item{linexp88}{log(inexp88)}
+#`   \item{lchexp88}{log(chexp88)}
+#`   \item{incshr90}{100*(inexp90/(inexp90+chexp90))}
+#`   \item{incshr88}{100*(inexp88/(inexp88+chexp88))}
+#`   \item{cvote}{vote90 - vote88}
+#`   \item{clinexp}{linexp90 - linexp88}
+#`   \item{clchexp}{lchexp90 - lchexp88}
+#`   \item{cincshr}{incshr90 - incshr88}
+#`   \item{win88}{=1 by definition}
+#`   \item{win90}{=1 if inc. wins, 1990}
+#`   \item{cwin}{win90 - win88}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

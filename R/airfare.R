@@ -1,15 +1,19 @@
-"variable" "label"
-"1" "year" "1997, 1998, 1999, 2000"
-"2" "id" "route identifier"
-"3" "dist" "distance, in miles"
-"4" "passen" "avg. passengers per day"
-"5" "fare" "avg. one-way fare, $"
-"6" "bmktshr" "fraction market, biggest carrier"
-"7" "ldist" "log(distance)"
-"8" "y98" "=1 if year == 1998"
-"9" "y99" "=1 if year == 1999"
-"10" "y00" "=1 if year == 2000"
-"11" "lfare" "log(fare)"
-"12" "ldistsq" "ldist^2"
-"13" "concen" "= bmktshr"
-"14" "lpassen" "log(passen)"
+#` airfare
+#` @format A data.frame with 4596 rows and 14 variables:
+#` \describe{
+#`   \item{year}{1997, 1998, 1999, 2000}
+#`   \item{id}{route identifier}
+#`   \item{dist}{distance, in miles}
+#`   \item{passen}{avg. passengers per day}
+#`   \item{fare}{avg. one-way fare, $}
+#`   \item{bmktshr}{fraction market, biggest carrier}
+#`   \item{ldist}{log(distance)}
+#`   \item{y98}{=1 if year == 1998}
+#`   \item{y99}{=1 if year == 1999}
+#`   \item{y00}{=1 if year == 2000}
+#`   \item{lfare}{log(fare)}
+#`   \item{ldistsq}{ldist^2}
+#`   \item{concen}{= bmktshr}
+#`   \item{lpassen}{log(passen)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

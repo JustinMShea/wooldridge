@@ -1,57 +1,61 @@
-"variable" "label"
-"1" "year" "1980 through 2004"
-"2" "state" "48 continental states, alphabetical"
-"3" "sl55" "speed limit == 55"
-"4" "sl65" "speed limit == 65"
-"5" "sl70" "speed limit == 70"
-"6" "sl75" "speed limit == 75"
-"7" "slnone" "no speed limit"
-"8" "seatbelt" "=0 if none, =1 if primary, =2 if secondary"
-"9" "minage" "minimum drinking age"
-"10" "zerotol" "zero tolerance law"
-"11" "gdl" "graduated drivers license law"
-"12" "bac10" "blood alcohol limit .10"
-"13" "bac08" "blood alcohol limit .08"
-"14" "perse" "administrative license revocation (per se law)"
-"15" "totfat" "total traffic fatalities"
-"16" "nghtfat" "total nighttime fatalities"
-"17" "wkndfat" "total weekend fatalities"
-"18" "totfatpvm" "total fatalities per 100 million miles"
-"19" "nghtfatpvm" "nighttime fatalities per 100 million miles"
-"20" "wkndfatpvm" "weekend fatalities per 100 million miles"
-"21" "statepop" "state population"
-"22" "totfatrte" "total fatalities per 100,000 population"
-"23" "nghtfatrte" "nighttime fatalities per 100,000 population"
-"24" "wkndfatrte" "weekend accidents per 100,000 population"
-"25" "vehicmiles" "vehicle miles traveled, billions"
-"26" "unem" "unemployment rate, percent"
-"27" "perc14_24" "percent population aged 14 through 24"
-"28" "sl70plus" "sl70 + sl75 + slnone"
-"29" "sbprim" "=1 if primary seatbelt law"
-"30" "sbsecon" "=1 if secondary seatbelt law"
-"31" "d80" "=1 if year == 1980"
-"32" "d81" ""
-"33" "d82" ""
-"34" "d83" ""
-"35" "d84" ""
-"36" "d85" ""
-"37" "d86" ""
-"38" "d87" ""
-"39" "d88" ""
-"40" "d89" ""
-"41" "d90" ""
-"42" "d91" ""
-"43" "d92" ""
-"44" "d93" ""
-"45" "d94" ""
-"46" "d95" ""
-"47" "d96" ""
-"48" "d97" ""
-"49" "d98" ""
-"50" "d99" ""
-"51" "d00" ""
-"52" "d01" ""
-"53" "d02" ""
-"54" "d03" ""
-"55" "d04" "=1 if year == 2004"
-"56" "vehicmilespc" ""
+#` driving
+#` @format A data.frame with 1200 rows and 56 variables:
+#` \describe{
+#`   \item{year}{1980 through 2004}
+#`   \item{state}{48 continental states, alphabetical}
+#`   \item{sl55}{speed limit == 55}
+#`   \item{sl65}{speed limit == 65}
+#`   \item{sl70}{speed limit == 70}
+#`   \item{sl75}{speed limit == 75}
+#`   \item{slnone}{no speed limit}
+#`   \item{seatbelt}{=0 if none, =1 if primary, =2 if secondary}
+#`   \item{minage}{minimum drinking age}
+#`   \item{zerotol}{zero tolerance law}
+#`   \item{gdl}{graduated drivers license law}
+#`   \item{bac10}{blood alcohol limit .10}
+#`   \item{bac08}{blood alcohol limit .08}
+#`   \item{perse}{administrative license revocation (per se law)}
+#`   \item{totfat}{total traffic fatalities}
+#`   \item{nghtfat}{total nighttime fatalities}
+#`   \item{wkndfat}{total weekend fatalities}
+#`   \item{totfatpvm}{total fatalities per 100 million miles}
+#`   \item{nghtfatpvm}{nighttime fatalities per 100 million miles}
+#`   \item{wkndfatpvm}{weekend fatalities per 100 million miles}
+#`   \item{statepop}{state population}
+#`   \item{totfatrte}{total fatalities per 100,000 population}
+#`   \item{nghtfatrte}{nighttime fatalities per 100,000 population}
+#`   \item{wkndfatrte}{weekend accidents per 100,000 population}
+#`   \item{vehicmiles}{vehicle miles traveled, billions}
+#`   \item{unem}{unemployment rate, percent}
+#`   \item{perc14_24}{percent population aged 14 through 24}
+#`   \item{sl70plus}{sl70 + sl75 + slnone}
+#`   \item{sbprim}{=1 if primary seatbelt law}
+#`   \item{sbsecon}{=1 if secondary seatbelt law}
+#`   \item{d80}{=1 if year == 1980}
+#`   \item{d81}{}
+#`   \item{d82}{}
+#`   \item{d83}{}
+#`   \item{d84}{}
+#`   \item{d85}{}
+#`   \item{d86}{}
+#`   \item{d87}{}
+#`   \item{d88}{}
+#`   \item{d89}{}
+#`   \item{d90}{}
+#`   \item{d91}{}
+#`   \item{d92}{}
+#`   \item{d93}{}
+#`   \item{d94}{}
+#`   \item{d95}{}
+#`   \item{d96}{}
+#`   \item{d97}{}
+#`   \item{d98}{}
+#`   \item{d99}{}
+#`   \item{d00}{}
+#`   \item{d01}{}
+#`   \item{d02}{}
+#`   \item{d03}{}
+#`   \item{d04}{=1 if year == 2004}
+#`   \item{vehicmilespc}{}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

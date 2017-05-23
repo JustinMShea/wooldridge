@@ -1,20 +1,24 @@
-"variable" "label"
-"1" "year" "1978, 1981"
-"2" "age" "age of house"
-"3" "agesq" "age^2"
-"4" "nbh" "neighborhood, 1-6"
-"5" "cbd" "dist. to cent. bus. dstrct, ft."
-"6" "inst" "dist. to interstate, ft."
-"7" "linst" "log(inst)"
-"8" "price" "selling price"
-"9" "rooms" "# rooms in house"
-"10" "area" "square footage of house"
-"11" "land" "square footage lot"
-"12" "baths" "# bathrooms"
-"13" "dist" "dist. from house to incin., ft."
-"14" "ldist" "log(dist)"
-"15" "lprice" "log(price)"
-"16" "y81" "=1 if year = 1981"
-"17" "larea" "log(area)"
-"18" "lland" "log(land)"
-"19" "linstsq" "linst^2"
+#` hprice3
+#` @format A data.frame with 321 rows and 19 variables:
+#` \describe{
+#`   \item{year}{1978, 1981}
+#`   \item{age}{age of house}
+#`   \item{agesq}{age^2}
+#`   \item{nbh}{neighborhood, 1-6}
+#`   \item{cbd}{dist. to cent. bus. dstrct, ft.}
+#`   \item{inst}{dist. to interstate, ft.}
+#`   \item{linst}{log(inst)}
+#`   \item{price}{selling price}
+#`   \item{rooms}{# rooms in house}
+#`   \item{area}{square footage of house}
+#`   \item{land}{square footage lot}
+#`   \item{baths}{# bathrooms}
+#`   \item{dist}{dist. from house to incin., ft.}
+#`   \item{ldist}{log(dist)}
+#`   \item{lprice}{log(price)}
+#`   \item{y81}{=1 if year = 1981}
+#`   \item{larea}{log(area)}
+#`   \item{lland}{log(land)}
+#`   \item{linstsq}{linst^2}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

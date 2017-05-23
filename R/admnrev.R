@@ -1,6 +1,10 @@
-"variable" "label"
-"1" "state" "state postal code"
-"2" "year" "85, 90, or 95"
-"3" "admnrev" "=1 if admin. revoc. law"
-"4" "daysfrst" "days suspended, first offense"
-"5" "daysscnd" "days suspended, second offense"
+#` admnrev
+#` @format A data.frame with 153 rows and 5 variables:
+#` \describe{
+#`   \item{state}{state postal code}
+#`   \item{year}{85, 90, or 95}
+#`   \item{admnrev}{=1 if admin. revoc. law}
+#`   \item{daysfrst}{days suspended, first offense}
+#`   \item{daysscnd}{days suspended, second offense}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

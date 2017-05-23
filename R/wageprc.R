@@ -1,21 +1,25 @@
-"variable" "label"
-"1" "price" "consumer price index"
-"2" "wage" "nominal hourly wage"
-"3" "t" "time trend = 1, 2 , 3, ..."
-"4" "lprice" "log(price)"
-"5" "lwage" "log(wage)"
-"6" "gprice" "lprice - lprice[_n-1]"
-"7" "gwage" "lwage - lwage[_n-1]"
-"8" "gwage_1" "gwage[_n-1]"
-"9" "gwage_2" "gwage[_n-2]"
-"10" "gwage_3" ""
-"11" "gwage_4" ""
-"12" "gwage_5" ""
-"13" "gwage_6" ""
-"14" "gwage_7" ""
-"15" "gwage_8" ""
-"16" "gwage_9" ""
-"17" "gwage_10" ""
-"18" "gwage_11" ""
-"19" "gwage_12" ""
-"20" "gprice_1" "gprice[_n-1]"
+#` wageprc
+#` @format A data.frame with 286 rows and 20 variables:
+#` \describe{
+#`   \item{price}{consumer price index}
+#`   \item{wage}{nominal hourly wage}
+#`   \item{t}{time trend = 1, 2 , 3, ...}
+#`   \item{lprice}{log(price)}
+#`   \item{lwage}{log(wage)}
+#`   \item{gprice}{lprice - lprice[_n-1]}
+#`   \item{gwage}{lwage - lwage[_n-1]}
+#`   \item{gwage_1}{gwage[_n-1]}
+#`   \item{gwage_2}{gwage[_n-2]}
+#`   \item{gwage_3}{}
+#`   \item{gwage_4}{}
+#`   \item{gwage_5}{}
+#`   \item{gwage_6}{}
+#`   \item{gwage_7}{}
+#`   \item{gwage_8}{}
+#`   \item{gwage_9}{}
+#`   \item{gwage_10}{}
+#`   \item{gwage_11}{}
+#`   \item{gwage_12}{}
+#`   \item{gprice_1}{gprice[_n-1]}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

@@ -1,18 +1,22 @@
-"variable" "label"
-"1" "wage" "monthly earnings"
-"2" "hours" "average weekly hours"
-"3" "IQ" "IQ score"
-"4" "KWW" "knowledge of world work score"
-"5" "educ" "years of education"
-"6" "exper" "years of work experience"
-"7" "tenure" "years with current employer"
-"8" "age" "age in years"
-"9" "married" "=1 if married"
-"10" "black" "=1 if black"
-"11" "south" "=1 if live in south"
-"12" "urban" "=1 if live in SMSA"
-"13" "sibs" "number of siblings"
-"14" "brthord" "birth order"
-"15" "meduc" "mother's education"
-"16" "feduc" "father's education"
-"17" "lwage" "natural log of wage"
+#` wage2
+#` @format A data.frame with 935 rows and 17 variables:
+#` \describe{
+#`   \item{wage}{monthly earnings}
+#`   \item{hours}{average weekly hours}
+#`   \item{IQ}{IQ score}
+#`   \item{KWW}{knowledge of world work score}
+#`   \item{educ}{years of education}
+#`   \item{exper}{years of work experience}
+#`   \item{tenure}{years with current employer}
+#`   \item{age}{age in years}
+#`   \item{married}{=1 if married}
+#`   \item{black}{=1 if black}
+#`   \item{south}{=1 if live in south}
+#`   \item{urban}{=1 if live in SMSA}
+#`   \item{sibs}{number of siblings}
+#`   \item{brthord}{birth order}
+#`   \item{meduc}{mother's education}
+#`   \item{feduc}{father's education}
+#`   \item{lwage}{natural log of wage}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

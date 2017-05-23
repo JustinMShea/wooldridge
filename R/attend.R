@@ -1,12 +1,16 @@
-"variable" "label"
-"1" "attend" "classes attended out of 32"
-"2" "termGPA" "GPA for term"
-"3" "priGPA" "cumulative GPA prior to term"
-"4" "ACT" "ACT score"
-"5" "final" "final exam score"
-"6" "atndrte" "percent classes attended"
-"7" "hwrte" "percent homework turned in"
-"8" "frosh" "=1 if freshman"
-"9" "soph" "=1 if sophomore"
-"10" "missed" "number of classes missed"
-"11" "stndfnl" "(final - mean)/sd"
+#` attend
+#` @format A data.frame with 680 rows and 11 variables:
+#` \describe{
+#`   \item{attend}{classes attended out of 32}
+#`   \item{termGPA}{GPA for term}
+#`   \item{priGPA}{cumulative GPA prior to term}
+#`   \item{ACT}{ACT score}
+#`   \item{final}{final exam score}
+#`   \item{atndrte}{percent classes attended}
+#`   \item{hwrte}{percent homework turned in}
+#`   \item{frosh}{=1 if freshman}
+#`   \item{soph}{=1 if sophomore}
+#`   \item{missed}{number of classes missed}
+#`   \item{stndfnl}{(final - mean)/sd}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

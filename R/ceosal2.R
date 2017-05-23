@@ -1,16 +1,20 @@
-"variable" "label"
-"1" "salary" "1990 compensation, $1000s"
-"2" "age" "in years"
-"3" "college" "=1 if attended college"
-"4" "grad" "=1 if attended graduate school"
-"5" "comten" "years with company"
-"6" "ceoten" "years as ceo with company"
-"7" "sales" "1990 firm sales, millions"
-"8" "profits" "1990 profits, millions"
-"9" "mktval" "market value, end 1990, mills."
-"10" "lsalary" "log(salary)"
-"11" "lsales" "log(sales)"
-"12" "lmktval" "log(mktval)"
-"13" "comtensq" "comten^2"
-"14" "ceotensq" "ceoten^2"
-"15" "profmarg" "profits as % of sales"
+#` ceosal2
+#` @format A data.frame with 177 rows and 15 variables:
+#` \describe{
+#`   \item{salary}{1990 compensation, $1000s}
+#`   \item{age}{in years}
+#`   \item{college}{=1 if attended college}
+#`   \item{grad}{=1 if attended graduate school}
+#`   \item{comten}{years with company}
+#`   \item{ceoten}{years as ceo with company}
+#`   \item{sales}{1990 firm sales, millions}
+#`   \item{profits}{1990 profits, millions}
+#`   \item{mktval}{market value, end 1990, mills.}
+#`   \item{lsalary}{log(salary)}
+#`   \item{lsales}{log(sales)}
+#`   \item{lmktval}{log(mktval)}
+#`   \item{comtensq}{comten^2}
+#`   \item{ceotensq}{ceoten^2}
+#`   \item{profmarg}{profits as % of sales}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

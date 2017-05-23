@@ -1,25 +1,29 @@
-"variable" "label"
-"1" "wage" "average hourly earnings"
-"2" "educ" "years of education"
-"3" "exper" "years potential experience"
-"4" "tenure" "years with current employer"
-"5" "nonwhite" "=1 if nonwhite"
-"6" "female" "=1 if female"
-"7" "married" "=1 if married"
-"8" "numdep" "number of dependents"
-"9" "smsa" "=1 if live in SMSA"
-"10" "northcen" "=1 if live in north central U.S"
-"11" "south" "=1 if live in southern region"
-"12" "west" "=1 if live in western region"
-"13" "construc" "=1 if work in construc. indus."
-"14" "ndurman" "=1 if in nondur. manuf. indus."
-"15" "trcommpu" "=1 if in trans, commun, pub ut"
-"16" "trade" "=1 if in wholesale or retail"
-"17" "services" "=1 if in services indus."
-"18" "profserv" "=1 if in prof. serv. indus."
-"19" "profocc" "=1 if in profess. occupation"
-"20" "clerocc" "=1 if in clerical occupation"
-"21" "servocc" "=1 if in service occupation"
-"22" "lwage" "log(wage)"
-"23" "expersq" "exper^2"
-"24" "tenursq" "tenure^2"
+#` wage1
+#` @format A data.frame with 526 rows and 24 variables:
+#` \describe{
+#`   \item{wage}{average hourly earnings}
+#`   \item{educ}{years of education}
+#`   \item{exper}{years potential experience}
+#`   \item{tenure}{years with current employer}
+#`   \item{nonwhite}{=1 if nonwhite}
+#`   \item{female}{=1 if female}
+#`   \item{married}{=1 if married}
+#`   \item{numdep}{number of dependents}
+#`   \item{smsa}{=1 if live in SMSA}
+#`   \item{northcen}{=1 if live in north central U.S}
+#`   \item{south}{=1 if live in southern region}
+#`   \item{west}{=1 if live in western region}
+#`   \item{construc}{=1 if work in construc. indus.}
+#`   \item{ndurman}{=1 if in nondur. manuf. indus.}
+#`   \item{trcommpu}{=1 if in trans, commun, pub ut}
+#`   \item{trade}{=1 if in wholesale or retail}
+#`   \item{services}{=1 if in services indus.}
+#`   \item{profserv}{=1 if in prof. serv. indus.}
+#`   \item{profocc}{=1 if in profess. occupation}
+#`   \item{clerocc}{=1 if in clerical occupation}
+#`   \item{servocc}{=1 if in service occupation}
+#`   \item{lwage}{log(wage)}
+#`   \item{expersq}{exper^2}
+#`   \item{tenursq}{tenure^2}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

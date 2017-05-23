@@ -1,18 +1,22 @@
-"variable" "label"
-"1" "male" "=1 if male"
-"2" "educ" "highest grade completed"
-"3" "wage" "monthly salary, Thai baht"
-"4" "swage" "starting wage"
-"5" "exper" "years on current job"
-"6" "pexper" "previous experience"
-"7" "lwage" "log(wage)"
-"8" "expersq" "exper^2"
-"9" "highgrad" "=1 if high school graduate"
-"10" "college" "=1 if college graduate"
-"11" "grad" "=1 if some graduate school"
-"12" "polytech" "=1 if a polytech"
-"13" "highdrop" "=1 if no high school degree"
-"14" "lswage" "log(swage)"
-"15" "pexpersq" "pexper^2"
-"16" "mleeduc" "male*educ"
-"17" "mleeduc0" "male*(educ - 14)"
+#` engin
+#` @format A data.frame with 403 rows and 17 variables:
+#` \describe{
+#`   \item{male}{=1 if male}
+#`   \item{educ}{highest grade completed}
+#`   \item{wage}{monthly salary, Thai baht}
+#`   \item{swage}{starting wage}
+#`   \item{exper}{years on current job}
+#`   \item{pexper}{previous experience}
+#`   \item{lwage}{log(wage)}
+#`   \item{expersq}{exper^2}
+#`   \item{highgrad}{=1 if high school graduate}
+#`   \item{college}{=1 if college graduate}
+#`   \item{grad}{=1 if some graduate school}
+#`   \item{polytech}{=1 if a polytech}
+#`   \item{highdrop}{=1 if no high school degree}
+#`   \item{lswage}{log(swage)}
+#`   \item{pexpersq}{pexper^2}
+#`   \item{mleeduc}{male*educ}
+#`   \item{mleeduc0}{male*(educ - 14)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

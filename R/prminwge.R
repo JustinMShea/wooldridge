@@ -1,26 +1,30 @@
-"variable" "label"
-"1" "year" "1950-1987"
-"2" "avgmin" "weighted avg min wge, 44 indust"
-"3" "avgwage" "wghted avg hrly wge, 44 indust"
-"4" "kaitz" "Kaitz min wage index"
-"5" "avgcov" "wghted avg coverage, 8 indust"
-"6" "covt" "economy-wide coverage of min wg"
-"7" "mfgwage" "avg manuf. wage"
-"8" "prdef" "Puerto Rican price deflator"
-"9" "prepop" "PR employ/popul ratio"
-"10" "prepopf" "PR employ/popul ratio, alter."
-"11" "prgnp" "PR GNP"
-"12" "prunemp" "PR unemployment rate"
-"13" "usgnp" "US GNP"
-"14" "t" "time trend:  1 to 38"
-"15" "post74" "time trend:  starts in 1974"
-"16" "lprunemp" "log(prunemp)"
-"17" "lprgnp" "log(prgnp)"
-"18" "lusgnp" "log(usgnp)"
-"19" "lkaitz" "log(kaitz)"
-"20" "lprun_1" "lprunemp[_n-1]"
-"21" "lprepop" "log(prepop)"
-"22" "lprep_1" "lprepop[_n-1]"
-"23" "mincov" "(avgmin/avgwage)*avgcov"
-"24" "lmincov" "log(mincov)"
-"25" "lavgmin" "log(avgmin)"
+#` prminwge
+#` @format A data.frame with 38 rows and 25 variables:
+#` \describe{
+#`   \item{year}{1950-1987}
+#`   \item{avgmin}{weighted avg min wge, 44 indust}
+#`   \item{avgwage}{wghted avg hrly wge, 44 indust}
+#`   \item{kaitz}{Kaitz min wage index}
+#`   \item{avgcov}{wghted avg coverage, 8 indust}
+#`   \item{covt}{economy-wide coverage of min wg}
+#`   \item{mfgwage}{avg manuf. wage}
+#`   \item{prdef}{Puerto Rican price deflator}
+#`   \item{prepop}{PR employ/popul ratio}
+#`   \item{prepopf}{PR employ/popul ratio, alter.}
+#`   \item{prgnp}{PR GNP}
+#`   \item{prunemp}{PR unemployment rate}
+#`   \item{usgnp}{US GNP}
+#`   \item{t}{time trend:  1 to 38}
+#`   \item{post74}{time trend:  starts in 1974}
+#`   \item{lprunemp}{log(prunemp)}
+#`   \item{lprgnp}{log(prgnp)}
+#`   \item{lusgnp}{log(usgnp)}
+#`   \item{lkaitz}{log(kaitz)}
+#`   \item{lprun_1}{lprunemp[_n-1]}
+#`   \item{lprepop}{log(prepop)}
+#`   \item{lprep_1}{lprepop[_n-1]}
+#`   \item{mincov}{(avgmin/avgwage)*avgcov}
+#`   \item{lmincov}{log(mincov)}
+#`   \item{lavgmin}{log(avgmin)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

@@ -1,11 +1,15 @@
-"variable" "label"
-"1" "price" "house price, $1000s"
-"2" "assess" "assessed value, $1000s"
-"3" "bdrms" "number of bdrms"
-"4" "lotsize" "size of lot in square feet"
-"5" "sqrft" "size of house in square feet"
-"6" "colonial" "=1 if home is colonial style"
-"7" "lprice" "log(price)"
-"8" "lassess" "log(assess"
-"9" "llotsize" "log(lotsize)"
-"10" "lsqrft" "log(sqrft)"
+#` hprice1
+#` @format A data.frame with 88 rows and 10 variables:
+#` \describe{
+#`   \item{price}{house price, $1000s}
+#`   \item{assess}{assessed value, $1000s}
+#`   \item{bdrms}{number of bdrms}
+#`   \item{lotsize}{size of lot in square feet}
+#`   \item{sqrft}{size of house in square feet}
+#`   \item{colonial}{=1 if home is colonial style}
+#`   \item{lprice}{log(price)}
+#`   \item{lassess}{log(assess}
+#`   \item{llotsize}{log(lotsize)}
+#`   \item{lsqrft}{log(sqrft)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

@@ -1,24 +1,28 @@
-"variable" "label"
-"1" "mage" "mother's age, years"
-"2" "meduc" "mother's educ, years"
-"3" "monpre" "month prenatal care began"
-"4" "npvis" "total number of prenatal visits"
-"5" "fage" "father's age, years"
-"6" "feduc" "father's educ, years"
-"7" "bwght" "birth weight, grams"
-"8" "omaps" "one minute apgar score"
-"9" "fmaps" "five minute apgar score"
-"10" "cigs" "avg cigarettes per day"
-"11" "drink" "avg drinks per week"
-"12" "lbw" "=1 if bwght <= 2000"
-"13" "vlbw" "=1 if bwght <= 1500"
-"14" "male" "=1 if baby male"
-"15" "mwhte" "=1 if mother white"
-"16" "mblck" "=1 if mother black"
-"17" "moth" "=1 if mother is other"
-"18" "fwhte" "=1 if father white"
-"19" "fblck" "=1 if father black"
-"20" "foth" "=1 if father is other"
-"21" "lbwght" "log(bwght)"
-"22" "magesq" "mage^2"
-"23" "npvissq" "npvis^2"
+#` bwght2
+#` @format A data.frame with 1832 rows and 23 variables:
+#` \describe{
+#`   \item{mage}{mother's age, years}
+#`   \item{meduc}{mother's educ, years}
+#`   \item{monpre}{month prenatal care began}
+#`   \item{npvis}{total number of prenatal visits}
+#`   \item{fage}{father's age, years}
+#`   \item{feduc}{father's educ, years}
+#`   \item{bwght}{birth weight, grams}
+#`   \item{omaps}{one minute apgar score}
+#`   \item{fmaps}{five minute apgar score}
+#`   \item{cigs}{avg cigarettes per day}
+#`   \item{drink}{avg drinks per week}
+#`   \item{lbw}{=1 if bwght <= 2000}
+#`   \item{vlbw}{=1 if bwght <= 1500}
+#`   \item{male}{=1 if baby male}
+#`   \item{mwhte}{=1 if mother white}
+#`   \item{mblck}{=1 if mother black}
+#`   \item{moth}{=1 if mother is other}
+#`   \item{fwhte}{=1 if father white}
+#`   \item{fblck}{=1 if father black}
+#`   \item{foth}{=1 if father is other}
+#`   \item{lbwght}{log(bwght)}
+#`   \item{magesq}{mage^2}
+#`   \item{npvissq}{npvis^2}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

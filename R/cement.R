@@ -1,31 +1,35 @@
-"variable" "label"
-"1" "year" "1964-1989"
-"2" "month" "1-12"
-"3" "prccem" "BLS ppi for cement"
-"4" "ipcem" "industrial prod. index, cement"
-"5" "prcpet" "ppi for crude petroleum"
-"6" "rresc" "real residential construction"
-"7" "rnonc" "real nonres. construction"
-"8" "ip" "aggregate index of indus. prod."
-"9" "rdefs" "real defense spending"
-"10" "milemp" "military employment"
-"11" "gprc" "log(prccem) - log(prccem[_n-1])"
-"12" "gcem" "log(ipcem) - log(ipcem[_n-1])"
-"13" "gprcpet" "log(prcpet) - log(prcpet[_n-1])"
-"14" "gres" "log(rresc) - log(rresc[_n-1])"
-"15" "gnon" "log(rnonc) - log(rnonc[_n-1])"
-"16" "gip" "log(ip) - log(ip[_n-1])"
-"17" "gdefs" "log(rdefs) - log(rdefs[_n-1])"
-"18" "gmilemp" "log(milemp) - log(milemp[_n-1])"
-"19" "jan" "=1 if month == 1"
-"20" "feb" "=1 if month == 2"
-"21" "mar" "=1 if month == 3"
-"22" "apr" "=1 if month == 4"
-"23" "may" "=1 if month == 5"
-"24" "jun" "=1 if month == 6"
-"25" "jul" "=1 if month == 7"
-"26" "aug" "=1 if month == 8"
-"27" "sep" "=1 if month == 9"
-"28" "oct" "=1 if month == 10"
-"29" "nov" "=1 if month == 11"
-"30" "dec" "=1 if month == 12"
+#` cement
+#` @format A data.frame with 312 rows and 30 variables:
+#` \describe{
+#`   \item{year}{1964-1989}
+#`   \item{month}{1-12}
+#`   \item{prccem}{BLS ppi for cement}
+#`   \item{ipcem}{industrial prod. index, cement}
+#`   \item{prcpet}{ppi for crude petroleum}
+#`   \item{rresc}{real residential construction}
+#`   \item{rnonc}{real nonres. construction}
+#`   \item{ip}{aggregate index of indus. prod.}
+#`   \item{rdefs}{real defense spending}
+#`   \item{milemp}{military employment}
+#`   \item{gprc}{log(prccem) - log(prccem[_n-1])}
+#`   \item{gcem}{log(ipcem) - log(ipcem[_n-1])}
+#`   \item{gprcpet}{log(prcpet) - log(prcpet[_n-1])}
+#`   \item{gres}{log(rresc) - log(rresc[_n-1])}
+#`   \item{gnon}{log(rnonc) - log(rnonc[_n-1])}
+#`   \item{gip}{log(ip) - log(ip[_n-1])}
+#`   \item{gdefs}{log(rdefs) - log(rdefs[_n-1])}
+#`   \item{gmilemp}{log(milemp) - log(milemp[_n-1])}
+#`   \item{jan}{=1 if month == 1}
+#`   \item{feb}{=1 if month == 2}
+#`   \item{mar}{=1 if month == 3}
+#`   \item{apr}{=1 if month == 4}
+#`   \item{may}{=1 if month == 5}
+#`   \item{jun}{=1 if month == 6}
+#`   \item{jul}{=1 if month == 7}
+#`   \item{aug}{=1 if month == 8}
+#`   \item{sep}{=1 if month == 9}
+#`   \item{oct}{=1 if month == 10}
+#`   \item{nov}{=1 if month == 11}
+#`   \item{dec}{=1 if month == 12}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

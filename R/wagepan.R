@@ -1,45 +1,49 @@
-"variable" "label"
-"1" "nr" "person identifier"
-"2" "year" "1980 to 1987"
-"3" "agric" "=1 if in agriculture"
-"4" "black" "=1 if black"
-"5" "bus" ""
-"6" "construc" "=1 if in construction"
-"7" "ent" ""
-"8" "exper" "labor mkt experience"
-"9" "fin" ""
-"10" "hisp" "=1 if Hispanic"
-"11" "poorhlth" "=1 if in poor health"
-"12" "hours" "annual hours worked"
-"13" "manuf" "=1 if in manufacturing"
-"14" "married" "=1 if married"
-"15" "min" ""
-"16" "nrthcen" "=1 if north central"
-"17" "nrtheast" "=1 if north east"
-"18" "occ1" ""
-"19" "occ2" ""
-"20" "occ3" ""
-"21" "occ4" ""
-"22" "occ5" ""
-"23" "occ6" ""
-"24" "occ7" ""
-"25" "occ8" ""
-"26" "occ9" ""
-"27" "per" ""
-"28" "pro" ""
-"29" "pub" ""
-"30" "rur" ""
-"31" "south" "=1 if south"
-"32" "educ" "years of schooling"
-"33" "tra" ""
-"34" "trad" ""
-"35" "union" "=1 if in union"
-"36" "lwage" "log(wage)"
-"37" "d81" "=1 if year == 1981"
-"38" "d82" ""
-"39" "d83" ""
-"40" "d84" ""
-"41" "d85" ""
-"42" "d86" ""
-"43" "d87" ""
-"44" "expersq" "exper^2"
+#` wagepan
+#` @format A data.frame with 4360 rows and 44 variables:
+#` \describe{
+#`   \item{nr}{person identifier}
+#`   \item{year}{1980 to 1987}
+#`   \item{agric}{=1 if in agriculture}
+#`   \item{black}{=1 if black}
+#`   \item{bus}{}
+#`   \item{construc}{=1 if in construction}
+#`   \item{ent}{}
+#`   \item{exper}{labor mkt experience}
+#`   \item{fin}{}
+#`   \item{hisp}{=1 if Hispanic}
+#`   \item{poorhlth}{=1 if in poor health}
+#`   \item{hours}{annual hours worked}
+#`   \item{manuf}{=1 if in manufacturing}
+#`   \item{married}{=1 if married}
+#`   \item{min}{}
+#`   \item{nrthcen}{=1 if north central}
+#`   \item{nrtheast}{=1 if north east}
+#`   \item{occ1}{}
+#`   \item{occ2}{}
+#`   \item{occ3}{}
+#`   \item{occ4}{}
+#`   \item{occ5}{}
+#`   \item{occ6}{}
+#`   \item{occ7}{}
+#`   \item{occ8}{}
+#`   \item{occ9}{}
+#`   \item{per}{}
+#`   \item{pro}{}
+#`   \item{pub}{}
+#`   \item{rur}{}
+#`   \item{south}{=1 if south}
+#`   \item{educ}{years of schooling}
+#`   \item{tra}{}
+#`   \item{trad}{}
+#`   \item{union}{=1 if in union}
+#`   \item{lwage}{log(wage)}
+#`   \item{d81}{=1 if year == 1981}
+#`   \item{d82}{}
+#`   \item{d83}{}
+#`   \item{d84}{}
+#`   \item{d85}{}
+#`   \item{d86}{}
+#`   \item{d87}{}
+#`   \item{expersq}{exper^2}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

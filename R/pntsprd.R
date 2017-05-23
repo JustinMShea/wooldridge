@@ -1,13 +1,17 @@
-"variable" "label"
-"1" "favscr" "favored team's score"
-"2" "undscr" "underdog's score"
-"3" "spread" "las vegas spread"
-"4" "favhome" "=1 if favored team at home"
-"5" "neutral" "=1 if neutral site"
-"6" "fav25" "=1 if favored team in top 25"
-"7" "und25" "=1 if underdog in top 25"
-"8" "fregion" "favorite's region of country"
-"9" "uregion" "underdog's region of country"
-"10" "scrdiff" "favscr - undscr"
-"11" "sprdcvr" "=1 if spread covered"
-"12" "favwin" "=1 if favored team wins"
+#` pntsprd
+#` @format A data.frame with 553 rows and 12 variables:
+#` \describe{
+#`   \item{favscr}{favored team's score}
+#`   \item{undscr}{underdog's score}
+#`   \item{spread}{las vegas spread}
+#`   \item{favhome}{=1 if favored team at home}
+#`   \item{neutral}{=1 if neutral site}
+#`   \item{fav25}{=1 if favored team in top 25}
+#`   \item{und25}{=1 if underdog in top 25}
+#`   \item{fregion}{favorite's region of country}
+#`   \item{uregion}{underdog's region of country}
+#`   \item{scrdiff}{favscr - undscr}
+#`   \item{sprdcvr}{=1 if spread covered}
+#`   \item{favwin}{=1 if favored team wins}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

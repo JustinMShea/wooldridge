@@ -1,24 +1,28 @@
-"variable" "label"
-"1" "year" "1992 or 1993"
-"2" "apps" "# applics for admission"
-"3" "top25" "perc frsh class in 25 hs perc"
-"4" "ver500" "perc frsh >= 500 on verbal SAT"
-"5" "mth500" "perc frsh >= 500 on math SAT"
-"6" "stufac" "student-faculty ratio"
-"7" "bowl" "= 1 if bowl game in prev yr"
-"8" "btitle" "= 1 if men's cnf chmps prv yr"
-"9" "finfour" "= 1 if men's final 4 prv yr"
-"10" "lapps" "log(apps)"
-"11" "d93" "=1 if year = 1993"
-"12" "avg500" "(ver500+mth500)/2"
-"13" "cfinfour" "change in finfour"
-"14" "clapps" "change in lapps"
-"15" "cstufac" "change in stufac"
-"16" "cbowl" "change in bowl"
-"17" "cavg500" "change in avg500"
-"18" "cbtitle" "change in btitle"
-"19" "lapps_1" "lapps lagged"
-"20" "school" "name of university"
-"21" "ctop25" "change in top25"
-"22" "bball" "=1 if btitle or finfour"
-"23" "cbball" "change in bball"
+#` athlet1
+#` @format A data.frame with 118 rows and 23 variables:
+#` \describe{
+#`   \item{year}{1992 or 1993}
+#`   \item{apps}{# applics for admission}
+#`   \item{top25}{perc frsh class in 25 hs perc}
+#`   \item{ver500}{perc frsh >= 500 on verbal SAT}
+#`   \item{mth500}{perc frsh >= 500 on math SAT}
+#`   \item{stufac}{student-faculty ratio}
+#`   \item{bowl}{= 1 if bowl game in prev yr}
+#`   \item{btitle}{= 1 if men's cnf chmps prv yr}
+#`   \item{finfour}{= 1 if men's final 4 prv yr}
+#`   \item{lapps}{log(apps)}
+#`   \item{d93}{=1 if year = 1993}
+#`   \item{avg500}{(ver500+mth500)/2}
+#`   \item{cfinfour}{change in finfour}
+#`   \item{clapps}{change in lapps}
+#`   \item{cstufac}{change in stufac}
+#`   \item{cbowl}{change in bowl}
+#`   \item{cavg500}{change in avg500}
+#`   \item{cbtitle}{change in btitle}
+#`   \item{lapps_1}{lapps lagged}
+#`   \item{school}{name of university}
+#`   \item{ctop25}{change in top25}
+#`   \item{bball}{=1 if btitle or finfour}
+#`   \item{cbball}{change in bball}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

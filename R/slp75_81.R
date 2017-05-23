@@ -1,21 +1,25 @@
-"variable" "label"
-"1" "age75" "age in 1975"
-"2" "educ75" "years educ in '75"
-"3" "educ81" "years educ in '81"
-"4" "gdhlth75" "= 1 if good hlth in '75"
-"5" "gdhlth81" "=1 if good hlth in '81"
-"6" "male" "=1 if male"
-"7" "marr75" "= 1 if married in '75"
-"8" "marr81" "=1 if married in '81"
-"9" "slpnap75" "mins slp wk, inc naps, '75"
-"10" "slpnap81" "mins slp wk, inc naps, '81"
-"11" "totwrk75" "minutes worked per week, '75"
-"12" "totwrk81" "minutes worked per week, '81"
-"13" "yngkid75" "= 1 if child < 3, '75"
-"14" "yngkid81" "=1 if child < 3, '81"
-"15" "ceduc" "change in educ"
-"16" "cgdhlth" "change in gdhlth"
-"17" "cmarr" "change in marr"
-"18" "cslpnap" "change in slpnap"
-"19" "ctotwrk" "change in totwrk"
-"20" "cyngkid" "change in yngkid"
+#` slp75_81
+#` @format A data.frame with 239 rows and 20 variables:
+#` \describe{
+#`   \item{age75}{age in 1975}
+#`   \item{educ75}{years educ in '75}
+#`   \item{educ81}{years educ in '81}
+#`   \item{gdhlth75}{= 1 if good hlth in '75}
+#`   \item{gdhlth81}{=1 if good hlth in '81}
+#`   \item{male}{=1 if male}
+#`   \item{marr75}{= 1 if married in '75}
+#`   \item{marr81}{=1 if married in '81}
+#`   \item{slpnap75}{mins slp wk, inc naps, '75}
+#`   \item{slpnap81}{mins slp wk, inc naps, '81}
+#`   \item{totwrk75}{minutes worked per week, '75}
+#`   \item{totwrk81}{minutes worked per week, '81}
+#`   \item{yngkid75}{= 1 if child < 3, '75}
+#`   \item{yngkid81}{=1 if child < 3, '81}
+#`   \item{ceduc}{change in educ}
+#`   \item{cgdhlth}{change in gdhlth}
+#`   \item{cmarr}{change in marr}
+#`   \item{cslpnap}{change in slpnap}
+#`   \item{ctotwrk}{change in totwrk}
+#`   \item{cyngkid}{change in yngkid}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

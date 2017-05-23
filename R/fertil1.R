@@ -1,28 +1,32 @@
-"variable" "label"
-"1" "year" "72 to 84, even"
-"2" "educ" "years of schooling"
-"3" "meduc" "mother's education"
-"4" "feduc" "father's education"
-"5" "age" "in years"
-"6" "kids" "# children ever born"
-"7" "black" "= 1 if black"
-"8" "east" "= 1 if lived in east at 16"
-"9" "northcen" "= 1 if lived in nc at 16"
-"10" "west" "= 1 if lived in west at 16"
-"11" "farm" "= 1 if on farm at 16"
-"12" "othrural" "= 1 if other rural at 16"
-"13" "town" "= 1 if lived in town at 16"
-"14" "smcity" "= 1 if in small city at 16"
-"15" "y74" "= 1 if year = 74"
-"16" "y76" ""
-"17" "y78" ""
-"18" "y80" ""
-"19" "y82" ""
-"20" "y84" ""
-"21" "agesq" "age^2"
-"22" "y74educ" ""
-"23" "y76educ" ""
-"24" "y78educ" ""
-"25" "y80educ" ""
-"26" "y82educ" ""
-"27" "y84educ" ""
+#` fertil1
+#` @format A data.frame with 1129 rows and 27 variables:
+#` \describe{
+#`   \item{year}{72 to 84, even}
+#`   \item{educ}{years of schooling}
+#`   \item{meduc}{mother's education}
+#`   \item{feduc}{father's education}
+#`   \item{age}{in years}
+#`   \item{kids}{# children ever born}
+#`   \item{black}{= 1 if black}
+#`   \item{east}{= 1 if lived in east at 16}
+#`   \item{northcen}{= 1 if lived in nc at 16}
+#`   \item{west}{= 1 if lived in west at 16}
+#`   \item{farm}{= 1 if on farm at 16}
+#`   \item{othrural}{= 1 if other rural at 16}
+#`   \item{town}{= 1 if lived in town at 16}
+#`   \item{smcity}{= 1 if in small city at 16}
+#`   \item{y74}{= 1 if year = 74}
+#`   \item{y76}{}
+#`   \item{y78}{}
+#`   \item{y80}{}
+#`   \item{y82}{}
+#`   \item{y84}{}
+#`   \item{agesq}{age^2}
+#`   \item{y74educ}{}
+#`   \item{y76educ}{}
+#`   \item{y78educ}{}
+#`   \item{y80educ}{}
+#`   \item{y82educ}{}
+#`   \item{y84educ}{}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

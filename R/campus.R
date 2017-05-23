@@ -1,8 +1,12 @@
-"variable" "label"
-"1" "enroll" "total enrollment"
-"2" "priv" "=1 if private college"
-"3" "police" "employed officers"
-"4" "crime" "total campus crimes"
-"5" "lcrime" "log(crime)"
-"6" "lenroll" "log(enroll)"
-"7" "lpolice" "log(police)"
+#` campus
+#` @format A data.frame with 97 rows and 7 variables:
+#` \describe{
+#`   \item{enroll}{total enrollment}
+#`   \item{priv}{=1 if private college}
+#`   \item{police}{employed officers}
+#`   \item{crime}{total campus crimes}
+#`   \item{lcrime}{log(crime)}
+#`   \item{lenroll}{log(enroll)}
+#`   \item{lpolice}{log(police)}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

@@ -1,26 +1,30 @@
-"variable" "label"
-"1" "month" "name of month"
-"2" "uclms" "unemployment claims"
-"3" "ez" "=1 if enterprise zone"
-"4" "year" "1980 through 1988"
-"5" "y81" "=1 if year == 1981"
-"6" "y82" ""
-"7" "y83" ""
-"8" "y84" ""
-"9" "y85" ""
-"10" "y86" ""
-"11" "y87" ""
-"12" "y88" ""
-"13" "luclms" "log(uclms)"
-"14" "jan" "=1 if month == JAN"
-"15" "feb" ""
-"16" "mar" ""
-"17" "apr" ""
-"18" "may" ""
-"19" "jun" ""
-"20" "jul" ""
-"21" "aug" ""
-"22" "sep" ""
-"23" "oct" ""
-"24" "nov" ""
-"25" "dec" ""
+#` ezanders
+#` @format A data.frame with 108 rows and 25 variables:
+#` \describe{
+#`   \item{month}{name of month}
+#`   \item{uclms}{unemployment claims}
+#`   \item{ez}{=1 if enterprise zone}
+#`   \item{year}{1980 through 1988}
+#`   \item{y81}{=1 if year == 1981}
+#`   \item{y82}{}
+#`   \item{y83}{}
+#`   \item{y84}{}
+#`   \item{y85}{}
+#`   \item{y86}{}
+#`   \item{y87}{}
+#`   \item{y88}{}
+#`   \item{luclms}{log(uclms)}
+#`   \item{jan}{=1 if month == JAN}
+#`   \item{feb}{}
+#`   \item{mar}{}
+#`   \item{apr}{}
+#`   \item{may}{}
+#`   \item{jun}{}
+#`   \item{jul}{}
+#`   \item{aug}{}
+#`   \item{sep}{}
+#`   \item{oct}{}
+#`   \item{nov}{}
+#`   \item{dec}{}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

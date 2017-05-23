@@ -1,20 +1,24 @@
-"variable" "label"
-"1" "train" "=1 if assigned to job training"
-"2" "age" "age in 1977"
-"3" "educ" "years of education"
-"4" "black" "=1 if black"
-"5" "hisp" "=1 if Hispanic"
-"6" "married" "=1 if married"
-"7" "nodegree" "=1 if no high school degree"
-"8" "mosinex" "# mnths prior to 1/78 in expmnt"
-"9" "re74" "real earns., 1974, $1000s"
-"10" "re75" "real earns., 1975, $1000s"
-"11" "re78" "real earns., 1978, $1000s"
-"12" "unem74" "=1 if unem. all of 1974"
-"13" "unem75" "=1 if unem. all of 1975"
-"14" "unem78" "=1 if unem. all of 1978"
-"15" "lre74" "log(re74); zero if re74 == 0"
-"16" "lre75" "log(re75); zero if re75 == 0"
-"17" "lre78" "log(re78); zero if re78 == 0"
-"18" "agesq" "age^2"
-"19" "mostrn" "months in training"
+#` jtrain2
+#` @format A data.frame with 445 rows and 19 variables:
+#` \describe{
+#`   \item{train}{=1 if assigned to job training}
+#`   \item{age}{age in 1977}
+#`   \item{educ}{years of education}
+#`   \item{black}{=1 if black}
+#`   \item{hisp}{=1 if Hispanic}
+#`   \item{married}{=1 if married}
+#`   \item{nodegree}{=1 if no high school degree}
+#`   \item{mosinex}{# mnths prior to 1/78 in expmnt}
+#`   \item{re74}{real earns., 1974, $1000s}
+#`   \item{re75}{real earns., 1975, $1000s}
+#`   \item{re78}{real earns., 1978, $1000s}
+#`   \item{unem74}{=1 if unem. all of 1974}
+#`   \item{unem75}{=1 if unem. all of 1975}
+#`   \item{unem78}{=1 if unem. all of 1978}
+#`   \item{lre74}{log(re74); zero if re74 == 0}
+#`   \item{lre75}{log(re75); zero if re75 == 0}
+#`   \item{lre78}{log(re78); zero if re78 == 0}
+#`   \item{agesq}{age^2}
+#`   \item{mostrn}{months in training}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107

@@ -1,34 +1,38 @@
-"variable" "label"
-"1" "year" "gss year for this respondent"
-"2" "workstat" "work force status"
-"3" "prestige" "occupational prestige score"
-"4" "divorce" "ever been divorced or separated"
-"5" "widowed" "ever been widowed"
-"6" "educ" "highest year of school completed"
-"7" "reg16" "region of residence, age 16"
-"8" "babies" "household members less than 6 yrs old"
-"9" "preteen" "household members 6 thru 12 yrs old"
-"10" "teens" "household members 13 thru 17 yrs old"
-"11" "income" "total family income"
-"12" "region" "region of interview"
-"13" "attend" "how often r attends religious services"
-"14" "happy" "general happiness"
-"15" "owngun" "=1 if own gun"
-"16" "tvhours" "hours per day watching tv"
-"17" "vhappy" "=1 if 'very happy'"
-"18" "mothfath16" "=1 if live with mother and father at 16"
-"19" "black" "=1 if black"
-"20" "gwbush04" "=1 if voted for G.W. Bush in 2004"
-"21" "female" "=1 if female"
-"22" "blackfemale" "black*female"
-"23" "gwbush00" "=1 if voted for G.W. Bush in 2000"
-"24" "occattend" "=1 if attend is 3, 4, or 5"
-"25" "regattend" "=1 if attend is 6, 7, or 8"
-"26" "y94" "=1 if year == 1994"
-"27" "y96" ""
-"28" "y98" ""
-"29" "y00" ""
-"30" "y02" ""
-"31" "y04" ""
-"32" "y06" "=1 if year == 2006"
-"33" "unem10" "=1 if unemployed in last 10 years"
+#` happiness
+#` @format A data.frame with 17137 rows and 33 variables:
+#` \describe{
+#`   \item{year}{gss year for this respondent}
+#`   \item{workstat}{work force status}
+#`   \item{prestige}{occupational prestige score}
+#`   \item{divorce}{ever been divorced or separated}
+#`   \item{widowed}{ever been widowed}
+#`   \item{educ}{highest year of school completed}
+#`   \item{reg16}{region of residence, age 16}
+#`   \item{babies}{household members less than 6 yrs old}
+#`   \item{preteen}{household members 6 thru 12 yrs old}
+#`   \item{teens}{household members 13 thru 17 yrs old}
+#`   \item{income}{total family income}
+#`   \item{region}{region of interview}
+#`   \item{attend}{how often r attends religious services}
+#`   \item{happy}{general happiness}
+#`   \item{owngun}{=1 if own gun}
+#`   \item{tvhours}{hours per day watching tv}
+#`   \item{vhappy}{=1 if 'very happy'}
+#`   \item{mothfath16}{=1 if live with mother and father at 16}
+#`   \item{black}{=1 if black}
+#`   \item{gwbush04}{=1 if voted for G.W. Bush in 2004}
+#`   \item{female}{=1 if female}
+#`   \item{blackfemale}{black*female}
+#`   \item{gwbush00}{=1 if voted for G.W. Bush in 2000}
+#`   \item{occattend}{=1 if attend is 3, 4, or 5}
+#`   \item{regattend}{=1 if attend is 6, 7, or 8}
+#`   \item{y94}{=1 if year == 1994}
+#`   \item{y96}{}
+#`   \item{y98}{}
+#`   \item{y00}{}
+#`   \item{y02}{}
+#`   \item{y04}{}
+#`   \item{y06}{=1 if year == 2006}
+#`   \item{unem10}{=1 if unemployed in last 10 years}
+#` }
+#` @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107
