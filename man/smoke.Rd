@@ -19,9 +19,9 @@
   \item{lcigpric}{log(cigprice)}
 }}
 \usage{
-smoke
+attend
 }
 \description{
-smoke
+Data from wooldRidge package loads lazily, simply type smoke into the console.
 }
 \keyword{datasets}

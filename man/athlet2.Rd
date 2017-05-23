@@ -19,9 +19,9 @@
   \item{dpriv}{htpriv - vtpriv}
 }}
 \usage{
-athlet2
+attend
 }
 \description{
-athlet2
+Data from wooldRidge package loads lazily, simply type athlet2 into the console.
 }
 \keyword{datasets}

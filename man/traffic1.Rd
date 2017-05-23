@@ -22,9 +22,9 @@
   \item{cspeed}{speed90 - speed85}
 }}
 \usage{
-traffic1
+attend
 }
 \description{
-traffic1
+Data from wooldRidge package loads lazily, simply type traffic1 into the console.
 }
 \keyword{datasets}

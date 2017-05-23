@@ -29,9 +29,9 @@
   \item{em78}{1 - unem78}
 }}
 \usage{
-jtrain3
+attend
 }
 \description{
-jtrain3
+Data from wooldRidge package loads lazily, simply type jtrain3 into the console.
 }
 \keyword{datasets}

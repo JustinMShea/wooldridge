@@ -53,9 +53,9 @@
   \item{expersq}{exper^2}
 }}
 \usage{
-wagepan
+attend
 }
 \description{
-wagepan
+Data from wooldRidge package loads lazily, simply type wagepan into the console.
 }
 \keyword{datasets}

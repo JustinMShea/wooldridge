@@ -46,9 +46,9 @@
   \item{city}{city identifier, 1 through 22}
 }}
 \usage{
-ezunem
+attend
 }
 \description{
-ezunem
+Data from wooldRidge package loads lazily, simply type ezunem into the console.
 }
 \keyword{datasets}

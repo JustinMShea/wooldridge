@@ -33,9 +33,9 @@
   \item{lc_ly_2}{lc_ly[_n-2]}
 }}
 \usage{
-consump
+attend
 }
 \description{
-consump
+Data from wooldRidge package loads lazily, simply type consump into the console.
 }
 \keyword{datasets}

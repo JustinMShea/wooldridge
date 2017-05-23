@@ -16,9 +16,9 @@
   \item{cons}{annual consumption, $}
 }}
 \usage{
-saving
+attend
 }
 \description{
-saving
+Data from wooldRidge package loads lazily, simply type saving into the console.
 }
 \keyword{datasets}

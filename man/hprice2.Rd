@@ -21,9 +21,9 @@
   \item{lproptax}{log(proptax)}
 }}
 \usage{
-hprice2
+attend
 }
 \description{
-hprice2
+Data from wooldRidge package loads lazily, simply type hprice2 into the console.
 }
 \keyword{datasets}

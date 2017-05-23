@@ -32,9 +32,9 @@
   \item{football}{=1 if football player}
 }}
 \usage{
-gpa3
+attend
 }
 \description{
-gpa3
+Data from wooldRidge package loads lazily, simply type gpa3 into the console.
 }
 \keyword{datasets}

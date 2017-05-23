@@ -22,9 +22,9 @@
   \item{cunem_1}{cunem[_n-1]}
 }}
 \usage{
-murder
+attend
 }
 \description{
-murder
+Data from wooldRidge package loads lazily, simply type murder into the console.
 }
 \keyword{datasets}

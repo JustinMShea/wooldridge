@@ -13,9 +13,9 @@
   \item{cunem}{unem - unem[_n-1]}
 }}
 \usage{
-okun
+attend
 }
 \description{
-okun
+Data from wooldRidge package loads lazily, simply type okun into the console.
 }
 \keyword{datasets}

@@ -32,9 +32,9 @@
   \item{npvissq}{npvis^2}
 }}
 \usage{
-bwght2
+attend
 }
 \description{
-bwght2
+Data from wooldRidge package loads lazily, simply type bwght2 into the console.
 }
 \keyword{datasets}

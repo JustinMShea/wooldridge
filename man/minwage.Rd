@@ -6,9 +6,9 @@
 \title{minwage}
 \format{An object of class \code{data.frame} with 612 rows and 58 columns.}
 \usage{
-minwage
+attend
 }
 \description{
-minwage
+Data from wooldRidge package loads lazily, simply type minwage into the console.
 }
 \keyword{datasets}

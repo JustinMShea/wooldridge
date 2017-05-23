@@ -46,9 +46,9 @@
   \item{RR}{=1 if Roy Rogers}
 }}
 \usage{
-discrim
+attend
 }
 \description{
-discrim
+Data from wooldRidge package loads lazily, simply type discrim into the console.
 }
 \keyword{datasets}

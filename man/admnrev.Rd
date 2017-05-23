@@ -14,9 +14,9 @@
   \item{daysscnd}{days suspended, second offense}
 }}
 \usage{
-admnrev
+attend
 }
 \description{
-admnrev
+Data from wooldRidge package loads lazily, simply type admnrev into the console.
 }
 \keyword{datasets}

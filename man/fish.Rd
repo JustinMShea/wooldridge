@@ -29,9 +29,9 @@
   \item{gavgp_1}{gavgprc[_n-1]}
 }}
 \usage{
-fish
+attend
 }
 \description{
-fish
+Data from wooldRidge package loads lazily, simply type fish into the console.
 }
 \keyword{datasets}

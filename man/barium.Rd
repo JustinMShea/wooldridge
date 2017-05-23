@@ -6,9 +6,9 @@
 \title{barium}
 \format{An object of class \code{data.frame} with 131 rows and 31 columns.}
 \usage{
-barium
+attend
 }
 \description{
-barium
+Data from wooldRidge package loads lazily, simply type barium into the console.
 }
 \keyword{datasets}

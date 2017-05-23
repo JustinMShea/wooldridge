@@ -46,20 +46,28 @@ for(i in RData_names) {
         file_name <- i
         load(file_loc)
         assign(i, data)
-        title <- paste("#'",as.character(i), sep = " ")
-        message <- paste("#'", "@format", "A", class(data), "with", NROW(data), "rows and", NCOL(data), "variables:", sep = " ")
-        start <- paste("#'","\\describe{", sep=" ")
-        describe <- matrix(data = NA, nrow=nrow(desc), ncol = 1)
+        
+          title <- paste("#'",as.character(i), sep = " ")
+          intro <- paste("#'","Data from wooldRidge package loads lazily, simply type",as.character(i),"into the console.",  sep = " ")
+          type  <- paste("#' @docType data")
+          usage <- paste("#' @usage data(wooldRidge)", as.character(i), sep = " ")
+          message <- paste("#'", "@format", "A", class(data), "with", NROW(data), "rows and", NCOL(data), "variables:", sep = " ")
+           
+          start <- paste("#'","\\describe{", sep=" ")
+       describe <- matrix(data = NA, nrow=nrow(desc), ncol = 1)
+
         for(i in desc) {
-                describe[i] <- paste("#'   \\item","{",as.character(desc[i,1]),"}{",as.character(desc[i,2]),"}", sep = "")
+        describe[i] <- paste("#'   \\item","{",as.character(desc[i,1]),"}{",as.character(desc[i,2]),"}", sep = "")
         }
-        end <- "#' }"
-        source <- "#' @source \\url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107"
-        data_label <- paste("\"", file_name,"\"", sep = "")
-        space <- "#'"
-        blank <- " "
-        out <- c(title, space, message, space, start, describe, end, source, data_label, blank, blank)
-        write(out, paste(paste(getwd(),"R", "wooldRidge", sep="/"),"R", sep ="."), append = TRUE)
+
+            end <- "#' }"
+         source <- "#' @source \\url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107"
+     data_label <- paste("\"", file_name,"\"", sep = "")
+          space <- "#'"
+          blank <- " "
+            out <- c(title, space, intro, space, type, space, usage, space, message, space, start, describe, end, source, data_label, blank, blank)
+        
+write(out, paste(paste(getwd(),"R", "wooldRidge", sep="/"),"R", sep ="."), append = TRUE)
 }
 
 # time to roxygenize those .R description files we wrote!

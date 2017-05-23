@@ -14,9 +14,9 @@
   \item{liver}{liver disease dths per 100,000}
 }}
 \usage{
-wine
+attend
 }
 \description{
-wine
+Data from wooldRidge package loads lazily, simply type wine into the console.
 }
 \keyword{datasets}

@@ -43,9 +43,9 @@
   \item{agesq}{age^2}
 }}
 \usage{
-sleep75
+attend
 }
 \description{
-sleep75
+Data from wooldRidge package loads lazily, simply type sleep75 into the console.
 }
 \keyword{datasets}

@@ -26,9 +26,9 @@
   \item{numgt64}{# in household older than 64}
 }}
 \usage{
-apple
+attend
 }
 \description{
-apple
+Data from wooldRidge package loads lazily, simply type apple into the console.
 }
 \keyword{datasets}

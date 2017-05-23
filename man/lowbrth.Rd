@@ -6,9 +6,9 @@
 \title{lowbrth}
 \format{An object of class \code{data.frame} with 100 rows and 36 columns.}
 \usage{
-lowbrth
+attend
 }
 \description{
-lowbrth
+Data from wooldRidge package loads lazily, simply type lowbrth into the console.
 }
 \keyword{datasets}

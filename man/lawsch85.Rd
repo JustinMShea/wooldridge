@@ -30,9 +30,9 @@
   \item{lcost}{log(cost)}
 }}
 \usage{
-lawsch85
+attend
 }
 \description{
-lawsch85
+Data from wooldRidge package loads lazily, simply type lawsch85 into the console.
 }
 \keyword{datasets}

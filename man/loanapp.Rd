@@ -6,9 +6,9 @@
 \title{loanapp}
 \format{An object of class \code{data.frame} with 1989 rows and 59 columns.}
 \usage{
-loanapp
+attend
 }
 \description{
-loanapp
+Data from wooldRidge package loads lazily, simply type loanapp into the console.
 }
 \keyword{datasets}

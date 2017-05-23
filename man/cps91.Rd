@@ -33,9 +33,9 @@
   \item{lwage}{log(hrwage)}
 }}
 \usage{
-cps91
+attend
 }
 \description{
-cps91
+Data from wooldRidge package loads lazily, simply type cps91 into the console.
 }
 \keyword{datasets}

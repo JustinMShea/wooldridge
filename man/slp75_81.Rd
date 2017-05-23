@@ -29,9 +29,9 @@
   \item{cyngkid}{change in yngkid}
 }}
 \usage{
-slp75_81
+attend
 }
 \description{
-slp75_81
+Data from wooldRidge package loads lazily, simply type slp75_81 into the console.
 }
 \keyword{datasets}

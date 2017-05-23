@@ -6,9 +6,9 @@
 \title{phillips}
 \format{An object of class \code{data.frame} with 56 rows and 7 columns.}
 \usage{
-phillips
+attend
 }
 \description{
-phillips
+Data from wooldRidge package loads lazily, simply type phillips into the console.
 }
 \keyword{datasets}

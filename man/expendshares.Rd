@@ -22,9 +22,9 @@
   \item{agesq}{age^2}
 }}
 \usage{
-expendshares
+attend
 }
 \description{
-expendshares
+Data from wooldRidge package loads lazily, simply type expendshares into the console.
 }
 \keyword{datasets}

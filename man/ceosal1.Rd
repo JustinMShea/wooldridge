@@ -6,9 +6,9 @@
 \title{ceosal1}
 \format{An object of class \code{data.frame} with 209 rows and 12 columns.}
 \usage{
-ceosal1
+attend
 }
 \description{
-ceosal1
+Data from wooldRidge package loads lazily, simply type ceosal1 into the console.
 }
 \keyword{datasets}

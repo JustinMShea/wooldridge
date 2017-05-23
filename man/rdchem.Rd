@@ -17,9 +17,9 @@
   \item{lrd}{log(rd)}
 }}
 \usage{
-rdchem
+attend
 }
 \description{
-rdchem
+Data from wooldRidge package loads lazily, simply type rdchem into the console.
 }
 \keyword{datasets}

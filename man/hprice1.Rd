@@ -19,9 +19,9 @@
   \item{lsqrft}{log(sqrft)}
 }}
 \usage{
-hprice1
+attend
 }
 \description{
-hprice1
+Data from wooldRidge package loads lazily, simply type hprice1 into the console.
 }
 \keyword{datasets}

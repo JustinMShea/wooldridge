@@ -21,9 +21,9 @@
   \item{cclrprc2}{change in clrprc2}
 }}
 \usage{
-crime3
+attend
 }
 \description{
-crime3
+Data from wooldRidge package loads lazily, simply type crime3 into the console.
 }
 \keyword{datasets}

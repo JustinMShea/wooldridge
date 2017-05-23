@@ -6,9 +6,9 @@
 \title{return}
 \format{An object of class \code{data.frame} with 142 rows and 12 columns.}
 \usage{
-return
+attend
 }
 \description{
-return
+Data from wooldRidge package loads lazily, simply type return into the console.
 }
 \keyword{datasets}

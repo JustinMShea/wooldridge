@@ -17,9 +17,9 @@
   \item{cprice_1}{lagged cprice}
 }}
 \usage{
-nyse
+attend
 }
 \description{
-nyse
+Data from wooldRidge package loads lazily, simply type nyse into the console.
 }
 \keyword{datasets}

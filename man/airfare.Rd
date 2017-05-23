@@ -23,9 +23,9 @@
   \item{lpassen}{log(passen)}
 }}
 \usage{
-airfare
+attend
 }
 \description{
-airfare
+Data from wooldRidge package loads lazily, simply type airfare into the console.
 }
 \keyword{datasets}

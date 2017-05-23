@@ -39,9 +39,9 @@
   \item{highlpre}{highearn*lprewage}
 }}
 \usage{
-injury
+attend
 }
 \description{
-injury
+Data from wooldRidge package loads lazily, simply type injury into the console.
 }
 \keyword{datasets}

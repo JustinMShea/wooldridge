@@ -57,9 +57,9 @@
   \item{prcfat_1}{prcfat[_n-1]}
 }}
 \usage{
-traffic2
+attend
 }
 \description{
-traffic2
+Data from wooldRidge package loads lazily, simply type traffic2 into the console.
 }
 \keyword{datasets}

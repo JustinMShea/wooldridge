@@ -43,9 +43,9 @@
   \item{expersq}{exper^2}
 }}
 \usage{
-card
+attend
 }
 \description{
-card
+Data from wooldRidge package loads lazily, simply type card into the console.
 }
 \keyword{datasets}

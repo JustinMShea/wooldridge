@@ -39,9 +39,9 @@
   \item{lpubindx}{log(pubindx) if pubindx > 0}
 }}
 \usage{
-big9salary
+attend
 }
 \description{
-big9salary
+Data from wooldRidge package loads lazily, simply type big9salary into the console.
 }
 \keyword{datasets}

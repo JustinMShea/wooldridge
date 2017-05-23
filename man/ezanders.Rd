@@ -34,9 +34,9 @@
   \item{dec}{}
 }}
 \usage{
-ezanders
+attend
 }
 \description{
-ezanders
+Data from wooldRidge package loads lazily, simply type ezanders into the console.
 }
 \keyword{datasets}

@@ -6,9 +6,9 @@
 \title{vote2}
 \format{An object of class \code{data.frame} with 186 rows and 26 columns.}
 \usage{
-vote2
+attend
 }
 \description{
-vote2
+Data from wooldRidge package loads lazily, simply type vote2 into the console.
 }
 \keyword{datasets}

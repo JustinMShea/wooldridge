@@ -36,9 +36,9 @@
   \item{evermarr}{=1 if ever married}
 }}
 \usage{
-fertil2
+attend
 }
 \description{
-fertil2
+Data from wooldRidge package loads lazily, simply type fertil2 into the console.
 }
 \keyword{datasets}

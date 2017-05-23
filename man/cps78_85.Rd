@@ -24,9 +24,9 @@
   \item{y85union}{y85*union}
 }}
 \usage{
-cps78_85
+attend
 }
 \description{
-cps78_85
+Data from wooldRidge package loads lazily, simply type cps78_85 into the console.
 }
 \keyword{datasets}

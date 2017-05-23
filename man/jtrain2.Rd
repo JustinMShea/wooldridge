@@ -28,9 +28,9 @@
   \item{mostrn}{months in training}
 }}
 \usage{
-jtrain2
+attend
 }
 \description{
-jtrain2
+Data from wooldRidge package loads lazily, simply type jtrain2 into the console.
 }
 \keyword{datasets}

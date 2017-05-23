@@ -56,9 +56,9 @@
   \item{lsalary}{log(salary)}
 }}
 \usage{
-mlb1
+attend
 }
 \description{
-mlb1
+Data from wooldRidge package loads lazily, simply type mlb1 into the console.
 }
 \keyword{datasets}

@@ -26,9 +26,9 @@
   \item{lsalary}{log(salary)}
 }}
 \usage{
-meap93
+attend
 }
 \description{
-meap93
+Data from wooldRidge package loads lazily, simply type meap93 into the console.
 }
 \keyword{datasets}

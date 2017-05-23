@@ -54,9 +54,9 @@
   \item{final2}{=1 if dec on litig, prev 2 yrs}
 }}
 \usage{
-prison
+attend
 }
 \description{
-prison
+Data from wooldRidge package loads lazily, simply type prison into the console.
 }
 \keyword{datasets}

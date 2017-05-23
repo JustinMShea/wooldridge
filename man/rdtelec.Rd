@@ -15,9 +15,9 @@
   \item{salessq}{sales^2}
 }}
 \usage{
-rdtelec
+attend
 }
 \description{
-rdtelec
+Data from wooldRidge package loads lazily, simply type rdtelec into the console.
 }
 \keyword{datasets}

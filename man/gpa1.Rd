@@ -38,9 +38,9 @@
   \item{mothcoll}{=1 if mother college grad}
 }}
 \usage{
-gpa1
+attend
 }
 \description{
-gpa1
+Data from wooldRidge package loads lazily, simply type gpa1 into the console.
 }
 \keyword{datasets}

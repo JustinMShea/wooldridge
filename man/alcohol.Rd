@@ -42,9 +42,9 @@
   \item{educsq}{educ^2}
 }}
 \usage{
-alcohol
+attend
 }
 \description{
-alcohol
+Data from wooldRidge package loads lazily, simply type alcohol into the console.
 }
 \keyword{datasets}

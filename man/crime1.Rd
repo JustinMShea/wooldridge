@@ -25,9 +25,9 @@
   \item{inc86sq}{inc86^2}
 }}
 \usage{
-crime1
+attend
 }
 \description{
-crime1
+Data from wooldRidge package loads lazily, simply type crime1 into the console.
 }
 \keyword{datasets}

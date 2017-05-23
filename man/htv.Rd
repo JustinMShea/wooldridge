@@ -32,9 +32,9 @@
   \item{ctuit}{tuit18 - tuit17}
 }}
 \usage{
-htv
+attend
 }
 \description{
-htv
+Data from wooldRidge package loads lazily, simply type htv into the console.
 }
 \keyword{datasets}

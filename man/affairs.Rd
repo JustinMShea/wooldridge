@@ -28,9 +28,9 @@
   \item{notrel}{relig == 2}
 }}
 \usage{
-affairs
+attend
 }
 \description{
-affairs
+Data from wooldRidge package loads lazily, simply type affairs into the console.
 }
 \keyword{datasets}

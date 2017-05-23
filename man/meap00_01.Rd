@@ -6,9 +6,9 @@
 \title{meap00_01}
 \format{An object of class \code{data.frame} with 1692 rows and 9 columns.}
 \usage{
-meap00_01
+attend
 }
 \description{
-meap00_01
+Data from wooldRidge package loads lazily, simply type meap00_01 into the console.
 }
 \keyword{datasets}

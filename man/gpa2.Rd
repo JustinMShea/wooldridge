@@ -21,9 +21,9 @@
   \item{hsizesq}{hsize^2}
 }}
 \usage{
-gpa2
+attend
 }
 \description{
-gpa2
+Data from wooldRidge package loads lazily, simply type gpa2 into the console.
 }
 \keyword{datasets}

@@ -32,9 +32,9 @@
   \item{cbball}{change in bball}
 }}
 \usage{
-athlet1
+attend
 }
 \description{
-athlet1
+Data from wooldRidge package loads lazily, simply type athlet1 into the console.
 }
 \keyword{datasets}

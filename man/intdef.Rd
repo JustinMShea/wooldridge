@@ -6,9 +6,9 @@
 \title{intdef}
 \format{An object of class \code{data.frame} with 56 rows and 13 columns.}
 \usage{
-intdef
+attend
 }
 \description{
-intdef
+Data from wooldRidge package loads lazily, simply type intdef into the console.
 }
 \keyword{datasets}

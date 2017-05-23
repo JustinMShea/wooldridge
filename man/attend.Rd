@@ -23,6 +23,6 @@
 attend
 }
 \description{
-attend
+Data from wooldRidge package loads lazily, simply type attend into the console.
 }
 \keyword{datasets}

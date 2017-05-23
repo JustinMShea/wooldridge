@@ -23,9 +23,9 @@
   \item{lstaff}{log(staff)}
 }}
 \usage{
-elem94_95
+attend
 }
 \description{
-elem94_95
+Data from wooldRidge package loads lazily, simply type elem94_95 into the console.
 }
 \keyword{datasets}

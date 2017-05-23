@@ -6,9 +6,9 @@
 \title{openness}
 \format{An object of class \code{data.frame} with 114 rows and 12 columns.}
 \usage{
-openness
+attend
 }
 \description{
-openness
+Data from wooldRidge package loads lazily, simply type openness into the console.
 }
 \keyword{datasets}

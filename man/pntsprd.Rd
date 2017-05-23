@@ -21,9 +21,9 @@
   \item{favwin}{=1 if favored team wins}
 }}
 \usage{
-pntsprd
+attend
 }
 \description{
-pntsprd
+Data from wooldRidge package loads lazily, simply type pntsprd into the console.
 }
 \keyword{datasets}

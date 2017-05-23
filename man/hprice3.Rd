@@ -28,9 +28,9 @@
   \item{linstsq}{linst^2}
 }}
 \usage{
-hprice3
+attend
 }
 \description{
-hprice3
+Data from wooldRidge package loads lazily, simply type hprice3 into the console.
 }
 \keyword{datasets}

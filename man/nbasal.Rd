@@ -31,9 +31,9 @@
   \item{marrblck}{marr*black}
 }}
 \usage{
-nbasal
+attend
 }
 \description{
-nbasal
+Data from wooldRidge package loads lazily, simply type nbasal into the console.
 }
 \keyword{datasets}

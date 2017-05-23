@@ -23,9 +23,9 @@
   \item{lfaminc}{log(faminc)}
 }}
 \usage{
-bwght
+attend
 }
 \description{
-bwght
+Data from wooldRidge package loads lazily, simply type bwght into the console.
 }
 \keyword{datasets}

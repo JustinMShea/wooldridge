@@ -14,9 +14,9 @@
   \item{soypix}{soy pixels per hectare}
 }}
 \usage{
-corn
+attend
 }
 \description{
-corn
+Data from wooldRidge package loads lazily, simply type corn into the console.
 }
 \keyword{datasets}

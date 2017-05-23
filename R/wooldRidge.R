@@ -1,5 +1,11 @@
 #' 401k
 #'
+#' Data from wooldRidge package loads lazily, simply type 401k into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 1534 rows and 8 variables:
 #'
 #' \describe{
@@ -17,6 +23,12 @@
  
  
 #' 401ksubs
+#'
+#' Data from wooldRidge package loads lazily, simply type 401ksubs into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 9275 rows and 11 variables:
 #'
@@ -39,6 +51,12 @@
  
 #' admnrev
 #'
+#' Data from wooldRidge package loads lazily, simply type admnrev into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 153 rows and 5 variables:
 #'
 #' \describe{
@@ -53,6 +71,12 @@
  
  
 #' affairs
+#'
+#' Data from wooldRidge package loads lazily, simply type affairs into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 601 rows and 19 variables:
 #'
@@ -83,6 +107,12 @@
  
 #' airfare
 #'
+#' Data from wooldRidge package loads lazily, simply type airfare into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 4596 rows and 14 variables:
 #'
 #' \describe{
@@ -106,6 +136,12 @@
  
  
 #' alcohol
+#'
+#' Data from wooldRidge package loads lazily, simply type alcohol into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 9822 rows and 33 variables:
 #'
@@ -150,6 +186,12 @@
  
 #' apple
 #'
+#' Data from wooldRidge package loads lazily, simply type apple into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 660 rows and 17 variables:
 #'
 #' \describe{
@@ -176,6 +218,12 @@
  
  
 #' athlet1
+#'
+#' Data from wooldRidge package loads lazily, simply type athlet1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 118 rows and 23 variables:
 #'
@@ -210,6 +258,12 @@
  
 #' athlet2
 #'
+#' Data from wooldRidge package loads lazily, simply type athlet2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 30 rows and 10 variables:
 #'
 #' \describe{
@@ -229,6 +283,12 @@
  
  
 #' attend
+#'
+#' Data from wooldRidge package loads lazily, simply type attend into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 680 rows and 11 variables:
 #'
@@ -251,6 +311,12 @@
  
 #' audit
 #'
+#' Data from wooldRidge package loads lazily, simply type audit into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 241 rows and 3 variables:
 #'
 #' \describe{
@@ -263,6 +329,12 @@
  
  
 #' barium
+#'
+#' Data from wooldRidge package loads lazily, simply type barium into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 131 rows and 31 variables:
 #'
@@ -305,6 +377,12 @@
  
 #' beauty
 #'
+#' Data from wooldRidge package loads lazily, simply type beauty into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 1260 rows and 17 variables:
 #'
 #' \describe{
@@ -331,6 +409,12 @@
  
  
 #' benefits
+#'
+#' Data from wooldRidge package loads lazily, simply type benefits into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 1848 rows and 18 variables:
 #'
@@ -360,6 +444,12 @@
  
 #' beveridge
 #'
+#' Data from wooldRidge package loads lazily, simply type beveridge into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 135 rows and 8 variables:
 #'
 #' \describe{
@@ -377,6 +467,12 @@
  
  
 #' big9salary
+#'
+#' Data from wooldRidge package loads lazily, simply type big9salary into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 786 rows and 30 variables:
 #'
@@ -418,6 +514,12 @@
  
 #' bwght
 #'
+#' Data from wooldRidge package loads lazily, simply type bwght into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 1388 rows and 14 variables:
 #'
 #' \describe{
@@ -441,6 +543,12 @@
  
  
 #' bwght2
+#'
+#' Data from wooldRidge package loads lazily, simply type bwght2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 1832 rows and 23 variables:
 #'
@@ -475,6 +583,12 @@
  
 #' campus
 #'
+#' Data from wooldRidge package loads lazily, simply type campus into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 97 rows and 7 variables:
 #'
 #' \describe{
@@ -491,6 +605,12 @@
  
  
 #' card
+#'
+#' Data from wooldRidge package loads lazily, simply type card into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 3010 rows and 34 variables:
 #'
@@ -536,6 +656,12 @@
  
 #' cement
 #'
+#' Data from wooldRidge package loads lazily, simply type cement into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 312 rows and 30 variables:
 #'
 #' \describe{
@@ -576,6 +702,12 @@
  
 #' ceosal1
 #'
+#' Data from wooldRidge package loads lazily, simply type ceosal1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 209 rows and 12 variables:
 #'
 #' \describe{
@@ -597,6 +729,12 @@
  
  
 #' ceosal2
+#'
+#' Data from wooldRidge package loads lazily, simply type ceosal2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 177 rows and 15 variables:
 #'
@@ -623,6 +761,12 @@
  
 #' charity
 #'
+#' Data from wooldRidge package loads lazily, simply type charity into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 4268 rows and 8 variables:
 #'
 #' \describe{
@@ -640,6 +784,12 @@
  
  
 #' consump
+#'
+#' Data from wooldRidge package loads lazily, simply type consump into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 37 rows and 24 variables:
 #'
@@ -675,6 +825,12 @@
  
 #' corn
 #'
+#' Data from wooldRidge package loads lazily, simply type corn into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 37 rows and 5 variables:
 #'
 #' \describe{
@@ -689,6 +845,12 @@
  
  
 #' cps78_85
+#'
+#' Data from wooldRidge package loads lazily, simply type cps78_85 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 1084 rows and 15 variables:
 #'
@@ -714,6 +876,12 @@
  
  
 #' cps91
+#'
+#' Data from wooldRidge package loads lazily, simply type cps91 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 5634 rows and 24 variables:
 #'
@@ -749,6 +917,12 @@
  
 #' crime1
 #'
+#' Data from wooldRidge package loads lazily, simply type crime1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 2725 rows and 16 variables:
 #'
 #' \describe{
@@ -774,6 +948,12 @@
  
  
 #' crime2
+#'
+#' Data from wooldRidge package loads lazily, simply type crime2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 92 rows and 34 variables:
 #'
@@ -819,6 +999,12 @@
  
 #' crime3
 #'
+#' Data from wooldRidge package loads lazily, simply type crime3 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 106 rows and 12 variables:
 #'
 #' \describe{
@@ -840,6 +1026,12 @@
  
  
 #' crime4
+#'
+#' Data from wooldRidge package loads lazily, simply type crime4 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 630 rows and 59 variables:
 #'
@@ -910,6 +1102,12 @@
  
 #' discrim
 #'
+#' Data from wooldRidge package loads lazily, simply type discrim into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 410 rows and 37 variables:
 #'
 #' \describe{
@@ -956,6 +1154,12 @@
  
  
 #' driving
+#'
+#' Data from wooldRidge package loads lazily, simply type driving into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 1200 rows and 56 variables:
 #'
@@ -1023,6 +1227,12 @@
  
 #' earns
 #'
+#' Data from wooldRidge package loads lazily, simply type earns into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 41 rows and 14 variables:
 #'
 #' \describe{
@@ -1047,6 +1257,12 @@
  
 #' elem94_95
 #'
+#' Data from wooldRidge package loads lazily, simply type elem94_95 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 1848 rows and 14 variables:
 #'
 #' \describe{
@@ -1070,6 +1286,12 @@
  
  
 #' engin
+#'
+#' Data from wooldRidge package loads lazily, simply type engin into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 403 rows and 17 variables:
 #'
@@ -1098,6 +1320,12 @@
  
 #' expendshares
 #'
+#' Data from wooldRidge package loads lazily, simply type expendshares into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 1519 rows and 13 variables:
 #'
 #' \describe{
@@ -1120,6 +1348,12 @@
  
  
 #' ezanders
+#'
+#' Data from wooldRidge package loads lazily, simply type ezanders into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 108 rows and 25 variables:
 #'
@@ -1155,6 +1389,12 @@
  
  
 #' ezunem
+#'
+#' Data from wooldRidge package loads lazily, simply type ezunem into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 198 rows and 37 variables:
 #'
@@ -1203,6 +1443,12 @@
  
 #' fair
 #'
+#' Data from wooldRidge package loads lazily, simply type fair into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 21 rows and 28 variables:
 #'
 #' \describe{
@@ -1233,6 +1479,12 @@
  
  
 #' fertil1
+#'
+#' Data from wooldRidge package loads lazily, simply type fertil1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 1129 rows and 27 variables:
 #'
@@ -1271,6 +1523,12 @@
  
 #' fertil2
 #'
+#' Data from wooldRidge package loads lazily, simply type fertil2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 4361 rows and 27 variables:
 #'
 #' \describe{
@@ -1308,6 +1566,12 @@
  
 #' fertil3
 #'
+#' Data from wooldRidge package loads lazily, simply type fertil3 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 72 rows and 24 variables:
 #'
 #' \describe{
@@ -1342,6 +1606,12 @@
  
 #' fish
 #'
+#' Data from wooldRidge package loads lazily, simply type fish into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 97 rows and 20 variables:
 #'
 #' \describe{
@@ -1371,6 +1641,12 @@
  
  
 #' fringe
+#'
+#' Data from wooldRidge package loads lazily, simply type fringe into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 616 rows and 39 variables:
 #'
@@ -1421,6 +1697,12 @@
  
 #' gpa1
 #'
+#' Data from wooldRidge package loads lazily, simply type gpa1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 141 rows and 29 variables:
 #'
 #' \describe{
@@ -1460,6 +1742,12 @@
  
 #' gpa2
 #'
+#' Data from wooldRidge package loads lazily, simply type gpa2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 4137 rows and 12 variables:
 #'
 #' \describe{
@@ -1481,6 +1769,12 @@
  
  
 #' gpa3
+#'
+#' Data from wooldRidge package loads lazily, simply type gpa3 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 732 rows and 23 variables:
 #'
@@ -1514,6 +1808,12 @@
  
  
 #' happiness
+#'
+#' Data from wooldRidge package loads lazily, simply type happiness into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 17137 rows and 33 variables:
 #'
@@ -1558,6 +1858,12 @@
  
 #' hprice1
 #'
+#' Data from wooldRidge package loads lazily, simply type hprice1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 88 rows and 10 variables:
 #'
 #' \describe{
@@ -1577,6 +1883,12 @@
  
  
 #' hprice2
+#'
+#' Data from wooldRidge package loads lazily, simply type hprice2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 506 rows and 12 variables:
 #'
@@ -1599,6 +1911,12 @@
  
  
 #' hprice3
+#'
+#' Data from wooldRidge package loads lazily, simply type hprice3 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 321 rows and 19 variables:
 #'
@@ -1629,6 +1947,12 @@
  
 #' hseinv
 #'
+#' Data from wooldRidge package loads lazily, simply type hseinv into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 42 rows and 14 variables:
 #'
 #' \describe{
@@ -1652,6 +1976,12 @@
  
  
 #' htv
+#'
+#' Data from wooldRidge package loads lazily, simply type htv into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 1230 rows and 23 variables:
 #'
@@ -1686,6 +2016,12 @@
  
 #' infmrt
 #'
+#' Data from wooldRidge package loads lazily, simply type infmrt into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 102 rows and 12 variables:
 #'
 #' \describe{
@@ -1707,6 +2043,12 @@
  
  
 #' injury
+#'
+#' Data from wooldRidge package loads lazily, simply type injury into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 7150 rows and 30 variables:
 #'
@@ -1748,6 +2090,12 @@
  
 #' intdef
 #'
+#' Data from wooldRidge package loads lazily, simply type intdef into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 56 rows and 13 variables:
 #'
 #' \describe{
@@ -1770,6 +2118,12 @@
  
  
 #' intqrt
+#'
+#' Data from wooldRidge package loads lazily, simply type intqrt into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 124 rows and 23 variables:
 #'
@@ -1804,6 +2158,12 @@
  
 #' inven
 #'
+#' Data from wooldRidge package loads lazily, simply type inven into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 37 rows and 13 variables:
 #'
 #' \describe{
@@ -1826,6 +2186,12 @@
  
  
 #' jtrain
+#'
+#' Data from wooldRidge package loads lazily, simply type jtrain into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 471 rows and 30 variables:
 #'
@@ -1867,6 +2233,12 @@
  
 #' jtrain2
 #'
+#' Data from wooldRidge package loads lazily, simply type jtrain2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 445 rows and 19 variables:
 #'
 #' \describe{
@@ -1895,6 +2267,12 @@
  
  
 #' jtrain3
+#'
+#' Data from wooldRidge package loads lazily, simply type jtrain3 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 2675 rows and 20 variables:
 #'
@@ -1925,6 +2303,12 @@
  
  
 #' kielmc
+#'
+#' Data from wooldRidge package loads lazily, simply type kielmc into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 321 rows and 25 variables:
 #'
@@ -1961,6 +2345,12 @@
  
 #' lawsch85
 #'
+#' Data from wooldRidge package loads lazily, simply type lawsch85 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 156 rows and 21 variables:
 #'
 #' \describe{
@@ -1991,6 +2381,12 @@
  
  
 #' loanapp
+#'
+#' Data from wooldRidge package loads lazily, simply type loanapp into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 1989 rows and 59 variables:
 #'
@@ -2061,6 +2457,12 @@
  
 #' lowbrth
 #'
+#' Data from wooldRidge package loads lazily, simply type lowbrth into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 100 rows and 36 variables:
 #'
 #' \describe{
@@ -2106,6 +2508,12 @@
  
  
 #' mathpnl
+#'
+#' Data from wooldRidge package loads lazily, simply type mathpnl into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 3850 rows and 52 variables:
 #'
@@ -2169,6 +2577,12 @@
  
 #' meap00_01
 #'
+#' Data from wooldRidge package loads lazily, simply type meap00_01 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 1692 rows and 9 variables:
 #'
 #' \describe{
@@ -2187,6 +2601,12 @@
  
  
 #' meap01
+#'
+#' Data from wooldRidge package loads lazily, simply type meap01 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 1823 rows and 11 variables:
 #'
@@ -2208,6 +2628,12 @@
  
  
 #' meap93
+#'
+#' Data from wooldRidge package loads lazily, simply type meap93 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 408 rows and 17 variables:
 #'
@@ -2235,6 +2661,12 @@
  
  
 #' minwage
+#'
+#' Data from wooldRidge package loads lazily, simply type minwage into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 612 rows and 58 variables:
 #'
@@ -2304,6 +2736,12 @@
  
 #' mlb1
 #'
+#' Data from wooldRidge package loads lazily, simply type mlb1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 353 rows and 47 variables:
 #'
 #' \describe{
@@ -2361,6 +2799,12 @@
  
 #' mroz
 #'
+#' Data from wooldRidge package loads lazily, simply type mroz into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 753 rows and 22 variables:
 #'
 #' \describe{
@@ -2393,6 +2837,12 @@
  
 #' murder
 #'
+#' Data from wooldRidge package loads lazily, simply type murder into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 153 rows and 13 variables:
 #'
 #' \describe{
@@ -2415,6 +2865,12 @@
  
  
 #' nbasal
+#'
+#' Data from wooldRidge package loads lazily, simply type nbasal into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 269 rows and 22 variables:
 #'
@@ -2448,6 +2904,12 @@
  
 #' nyse
 #'
+#' Data from wooldRidge package loads lazily, simply type nyse into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 691 rows and 8 variables:
 #'
 #' \describe{
@@ -2466,6 +2928,12 @@
  
 #' okun
 #'
+#' Data from wooldRidge package loads lazily, simply type okun into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 47 rows and 4 variables:
 #'
 #' \describe{
@@ -2479,6 +2947,12 @@
  
  
 #' openness
+#'
+#' Data from wooldRidge package loads lazily, simply type openness into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 114 rows and 12 variables:
 #'
@@ -2501,6 +2975,12 @@
  
  
 #' pension
+#'
+#' Data from wooldRidge package loads lazily, simply type pension into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 194 rows and 19 variables:
 #'
@@ -2531,6 +3011,12 @@
  
 #' phillips
 #'
+#' Data from wooldRidge package loads lazily, simply type phillips into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 56 rows and 7 variables:
 #'
 #' \describe{
@@ -2547,6 +3033,12 @@
  
  
 #' pntsprd
+#'
+#' Data from wooldRidge package loads lazily, simply type pntsprd into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 553 rows and 12 variables:
 #'
@@ -2569,6 +3061,12 @@
  
  
 #' prison
+#'
+#' Data from wooldRidge package loads lazily, simply type prison into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 714 rows and 45 variables:
 #'
@@ -2625,6 +3123,12 @@
  
 #' prminwge
 #'
+#' Data from wooldRidge package loads lazily, simply type prminwge into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 38 rows and 25 variables:
 #'
 #' \describe{
@@ -2660,6 +3164,12 @@
  
 #' rdchem
 #'
+#' Data from wooldRidge package loads lazily, simply type rdchem into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 32 rows and 8 variables:
 #'
 #' \describe{
@@ -2678,6 +3188,12 @@
  
 #' rdtelec
 #'
+#' Data from wooldRidge package loads lazily, simply type rdtelec into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 29 rows and 6 variables:
 #'
 #' \describe{
@@ -2693,6 +3209,12 @@
  
  
 #' recid
+#'
+#' Data from wooldRidge package loads lazily, simply type recid into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 1445 rows and 18 variables:
 #'
@@ -2721,6 +3243,12 @@
  
  
 #' rental
+#'
+#' Data from wooldRidge package loads lazily, simply type rental into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 128 rows and 23 variables:
 #'
@@ -2755,6 +3283,12 @@
  
 #' return
 #'
+#' Data from wooldRidge package loads lazily, simply type return into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 142 rows and 12 variables:
 #'
 #' \describe{
@@ -2777,6 +3311,12 @@
  
 #' saving
 #'
+#' Data from wooldRidge package loads lazily, simply type saving into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 100 rows and 7 variables:
 #'
 #' \describe{
@@ -2793,6 +3333,12 @@
  
  
 #' sleep75
+#'
+#' Data from wooldRidge package loads lazily, simply type sleep75 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 706 rows and 34 variables:
 #'
@@ -2838,6 +3384,12 @@
  
 #' slp75_81
 #'
+#' Data from wooldRidge package loads lazily, simply type slp75_81 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 239 rows and 20 variables:
 #'
 #' \describe{
@@ -2868,6 +3420,12 @@
  
 #' smoke
 #'
+#' Data from wooldRidge package loads lazily, simply type smoke into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 807 rows and 10 variables:
 #'
 #' \describe{
@@ -2887,6 +3445,12 @@
  
  
 #' traffic1
+#'
+#' Data from wooldRidge package loads lazily, simply type traffic1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 51 rows and 13 variables:
 #'
@@ -2910,6 +3474,12 @@
  
  
 #' traffic2
+#'
+#' Data from wooldRidge package loads lazily, simply type traffic2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 108 rows and 48 variables:
 #'
@@ -2969,6 +3539,12 @@
  
 #' twoyear
 #'
+#' Data from wooldRidge package loads lazily, simply type twoyear into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 6763 rows and 23 variables:
 #'
 #' \describe{
@@ -3002,6 +3578,12 @@
  
 #' volat
 #'
+#' Data from wooldRidge package loads lazily, simply type volat into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 558 rows and 17 variables:
 #'
 #' \describe{
@@ -3029,6 +3611,12 @@
  
 #' vote1
 #'
+#' Data from wooldRidge package loads lazily, simply type vote1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 173 rows and 10 variables:
 #'
 #' \describe{
@@ -3048,6 +3636,12 @@
  
  
 #' vote2
+#'
+#' Data from wooldRidge package loads lazily, simply type vote2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 186 rows and 26 variables:
 #'
@@ -3085,6 +3679,12 @@
  
 #' voucher
 #'
+#' Data from wooldRidge package loads lazily, simply type voucher into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 990 rows and 19 variables:
 #'
 #' \describe{
@@ -3113,6 +3713,12 @@
  
  
 #' wage1
+#'
+#' Data from wooldRidge package loads lazily, simply type wage1 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 526 rows and 24 variables:
 #'
@@ -3148,6 +3754,12 @@
  
 #' wage2
 #'
+#' Data from wooldRidge package loads lazily, simply type wage2 into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 935 rows and 17 variables:
 #'
 #' \describe{
@@ -3174,6 +3786,12 @@
  
  
 #' wagepan
+#'
+#' Data from wooldRidge package loads lazily, simply type wagepan into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 4360 rows and 44 variables:
 #'
@@ -3229,6 +3847,12 @@
  
 #' wageprc
 #'
+#' Data from wooldRidge package loads lazily, simply type wageprc into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
+#'
 #' @format A data.frame with 286 rows and 20 variables:
 #'
 #' \describe{
@@ -3258,6 +3882,12 @@
  
  
 #' wine
+#'
+#' Data from wooldRidge package loads lazily, simply type wine into the console.
+#'
+#' @docType data
+#'
+#' @usage attend
 #'
 #' @format A data.frame with 21 rows and 5 variables:
 #'

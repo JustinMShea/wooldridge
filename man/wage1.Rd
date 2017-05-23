@@ -33,9 +33,9 @@
   \item{tenursq}{tenure^2}
 }}
 \usage{
-wage1
+attend
 }
 \description{
-wage1
+Data from wooldRidge package loads lazily, simply type wage1 into the console.
 }
 \keyword{datasets}

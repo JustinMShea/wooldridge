@@ -42,9 +42,9 @@
   \item{unem10}{=1 if unemployed in last 10 years}
 }}
 \usage{
-happiness
+attend
 }
 \description{
-happiness
+Data from wooldRidge package loads lazily, simply type happiness into the console.
 }
 \keyword{datasets}

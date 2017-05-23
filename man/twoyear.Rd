@@ -6,9 +6,9 @@
 \title{twoyear}
 \format{An object of class \code{data.frame} with 6763 rows and 23 columns.}
 \usage{
-twoyear
+attend
 }
 \description{
-twoyear
+Data from wooldRidge package loads lazily, simply type twoyear into the console.
 }
 \keyword{datasets}

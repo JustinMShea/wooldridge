@@ -48,9 +48,9 @@
   \item{vserat}{(vacdays+sicklve)/annearn}
 }}
 \usage{
-fringe
+attend
 }
 \description{
-fringe
+Data from wooldRidge package loads lazily, simply type fringe into the console.
 }
 \keyword{datasets}

@@ -23,9 +23,9 @@
   \item{ginvpc}{linvpc - linvpc_1}
 }}
 \usage{
-hseinv
+attend
 }
 \description{
-hseinv
+Data from wooldRidge package loads lazily, simply type hseinv into the console.
 }
 \keyword{datasets}

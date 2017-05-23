@@ -39,9 +39,9 @@
   \item{clhrsemp}{lhrsemp - lhrsemp[_n-1]}
 }}
 \usage{
-jtrain
+attend
 }
 \description{
-jtrain
+Data from wooldRidge package loads lazily, simply type jtrain into the console.
 }
 \keyword{datasets}

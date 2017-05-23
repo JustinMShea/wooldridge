@@ -22,9 +22,9 @@
   \item{ggdp}{log(gdp) - log(gdp[_n-1])}
 }}
 \usage{
-inven
+attend
 }
 \description{
-inven
+Data from wooldRidge package loads lazily, simply type inven into the console.
 }
 \keyword{datasets}

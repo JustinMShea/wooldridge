@@ -17,9 +17,9 @@
   \item{cvrate}{D.vrate}
 }}
 \usage{
-beveridge
+attend
 }
 \description{
-beveridge
+Data from wooldRidge package loads lazily, simply type beveridge into the console.
 }
 \keyword{datasets}

@@ -29,9 +29,9 @@
   \item{gprice_1}{gprice[_n-1]}
 }}
 \usage{
-wageprc
+attend
 }
 \description{
-wageprc
+Data from wooldRidge package loads lazily, simply type wageprc into the console.
 }
 \keyword{datasets}

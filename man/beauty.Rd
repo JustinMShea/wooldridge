@@ -26,9 +26,9 @@
   \item{educ}{years of schooling}
 }}
 \usage{
-beauty
+attend
 }
 \description{
-beauty
+Data from wooldRidge package loads lazily, simply type beauty into the console.
 }
 \keyword{datasets}

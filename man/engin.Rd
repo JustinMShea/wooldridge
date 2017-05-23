@@ -26,9 +26,9 @@
   \item{mleeduc0}{male*(educ - 14)}
 }}
 \usage{
-engin
+attend
 }
 \description{
-engin
+Data from wooldRidge package loads lazily, simply type engin into the console.
 }
 \keyword{datasets}

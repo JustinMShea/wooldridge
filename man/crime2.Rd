@@ -43,9 +43,9 @@
   \item{ccrmrte}{change in crmrte}
 }}
 \usage{
-crime2
+attend
 }
 \description{
-crime2
+Data from wooldRidge package loads lazily, simply type crime2 into the console.
 }
 \keyword{datasets}

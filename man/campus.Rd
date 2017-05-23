@@ -16,9 +16,9 @@
   \item{lpolice}{log(police)}
 }}
 \usage{
-campus
+attend
 }
 \description{
-campus
+Data from wooldRidge package loads lazily, simply type campus into the console.
 }
 \keyword{datasets}

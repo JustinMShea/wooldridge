@@ -28,9 +28,9 @@
   \item{choiceyrs4}{= 1 if choiceyrs == 4}
 }}
 \usage{
-voucher
+attend
 }
 \description{
-voucher
+Data from wooldRidge package loads lazily, simply type voucher into the console.
 }
 \keyword{datasets}

@@ -31,9 +31,9 @@
   \item{expersq}{exper^2}
 }}
 \usage{
-mroz
+attend
 }
 \description{
-mroz
+Data from wooldRidge package loads lazily, simply type mroz into the console.
 }
 \keyword{datasets}

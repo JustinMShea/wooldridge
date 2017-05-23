@@ -21,9 +21,9 @@
   \item{lpopul}{log(popul)}
 }}
 \usage{
-infmrt
+attend
 }
 \description{
-infmrt
+Data from wooldRidge package loads lazily, simply type infmrt into the console.
 }
 \keyword{datasets}

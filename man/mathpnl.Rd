@@ -6,9 +6,9 @@
 \title{mathpnl}
 \format{An object of class \code{data.frame} with 3850 rows and 52 columns.}
 \usage{
-mathpnl
+attend
 }
 \description{
-mathpnl
+Data from wooldRidge package loads lazily, simply type mathpnl into the console.
 }
 \keyword{datasets}

@@ -26,9 +26,9 @@
   \item{lwage}{natural log of wage}
 }}
 \usage{
-wage2
+attend
 }
 \description{
-wage2
+Data from wooldRidge package loads lazily, simply type wage2 into the console.
 }
 \keyword{datasets}

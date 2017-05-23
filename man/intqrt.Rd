@@ -32,9 +32,9 @@
   \item{cspr63}{spr63 - spr63_1}
 }}
 \usage{
-intqrt
+attend
 }
 \description{
-intqrt
+Data from wooldRidge package loads lazily, simply type intqrt into the console.
 }
 \keyword{datasets}

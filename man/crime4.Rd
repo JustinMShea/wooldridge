@@ -68,9 +68,9 @@
   \item{clmix}{lmix - lmix[t-1]}
 }}
 \usage{
-crime4
+attend
 }
 \description{
-crime4
+Data from wooldRidge package loads lazily, simply type crime4 into the console.
 }
 \keyword{datasets}

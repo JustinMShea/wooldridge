@@ -26,9 +26,9 @@
   \item{pcsp_3}{pcip[_n-3]}
 }}
 \usage{
-volat
+attend
 }
 \description{
-volat
+Data from wooldRidge package loads lazily, simply type volat into the console.
 }
 \keyword{datasets}

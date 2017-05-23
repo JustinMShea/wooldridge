@@ -27,9 +27,9 @@
   \item{lstaffbar}{within-district avg of lstaff}
 }}
 \usage{
-benefits
+attend
 }
 \description{
-benefits
+Data from wooldRidge package loads lazily, simply type benefits into the console.
 }
 \keyword{datasets}

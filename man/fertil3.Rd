@@ -33,9 +33,9 @@
   \item{gfr_2}{gfr[_n-2]}
 }}
 \usage{
-fertil3
+attend
 }
 \description{
-fertil3
+Data from wooldRidge package loads lazily, simply type fertil3 into the console.
 }
 \keyword{datasets}

@@ -12,9 +12,9 @@
   \item{y}{b - w}
 }}
 \usage{
-audit
+attend
 }
 \description{
-audit
+Data from wooldRidge package loads lazily, simply type audit into the console.
 }
 \keyword{datasets}

@@ -30,9 +30,9 @@
   \item{In1md}{I*n*(1-d)}
 }}
 \usage{
-fair
+attend
 }
 \description{
-fair
+Data from wooldRidge package loads lazily, simply type fair into the console.
 }
 \keyword{datasets}

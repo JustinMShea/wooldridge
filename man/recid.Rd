@@ -27,9 +27,9 @@
   \item{ldurat}{log(durat)}
 }}
 \usage{
-recid
+attend
 }
 \description{
-recid
+Data from wooldRidge package loads lazily, simply type recid into the console.
 }
 \keyword{datasets}

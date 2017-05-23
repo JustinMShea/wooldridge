@@ -34,9 +34,9 @@
   \item{lavgmin}{log(avgmin)}
 }}
 \usage{
-prminwge
+attend
 }
 \description{
-prminwge
+Data from wooldRidge package loads lazily, simply type prminwge into the console.
 }
 \keyword{datasets}

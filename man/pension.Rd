@@ -28,9 +28,9 @@
   \item{pctstck}{0=mstbnds,50=mixed,100=mststcks}
 }}
 \usage{
-pension
+attend
 }
 \description{
-pension
+Data from wooldRidge package loads lazily, simply type pension into the console.
 }
 \keyword{datasets}

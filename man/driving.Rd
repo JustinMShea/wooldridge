@@ -65,9 +65,9 @@
   \item{vehicmilespc}{}
 }}
 \usage{
-driving
+attend
 }
 \description{
-driving
+Data from wooldRidge package loads lazily, simply type driving into the console.
 }
 \keyword{datasets}

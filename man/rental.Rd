@@ -32,9 +32,9 @@
   \item{y90}{=1 if year == 90}
 }}
 \usage{
-rental
+attend
 }
 \description{
-rental
+Data from wooldRidge package loads lazily, simply type rental into the console.
 }
 \keyword{datasets}

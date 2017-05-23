@@ -36,9 +36,9 @@
   \item{y84educ}{}
 }}
 \usage{
-fertil1
+attend
 }
 \description{
-fertil1
+Data from wooldRidge package loads lazily, simply type fertil1 into the console.
 }
 \keyword{datasets}

@@ -23,9 +23,9 @@
   \item{lwkhours}{log(wkhours)}
 }}
 \usage{
-earns
+attend
 }
 \description{
-earns
+Data from wooldRidge package loads lazily, simply type earns into the console.
 }
 \keyword{datasets}

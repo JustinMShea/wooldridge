@@ -34,9 +34,9 @@
   \item{lrprice}{log(rprice)}
 }}
 \usage{
-kielmc
+attend
 }
 \description{
-kielmc
+Data from wooldRidge package loads lazily, simply type kielmc into the console.
 }
 \keyword{datasets}

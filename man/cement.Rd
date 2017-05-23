@@ -39,9 +39,9 @@
   \item{dec}{=1 if month == 12}
 }}
 \usage{
-cement
+attend
 }
 \description{
-cement
+Data from wooldRidge package loads lazily, simply type cement into the console.
 }
 \keyword{datasets}

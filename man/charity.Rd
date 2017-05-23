@@ -17,9 +17,9 @@
   \item{avggift}{average of past gifts}
 }}
 \usage{
-charity
+attend
 }
 \description{
-charity
+Data from wooldRidge package loads lazily, simply type charity into the console.
 }
 \keyword{datasets}
