@@ -54,11 +54,13 @@ for(i in RData_names) {
         }
         end <- "#` }"
         source <- "#` @source \\url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107"
-        out <- c(title, message, start, describe, end, source)
-        #write.table(out, paste(paste(getwd(),"R", file_name, sep="/"),"R", sep ="."))
+        data_label <- paste("\"", file_name,"\"", sep = "")
+        out <- c(title, message, start, describe, end, source, data_label)
         writeLines(out, paste(paste(getwd(),"R", file_name, sep="/"),"R", sep ="."))
 }
 
+# time to roxygenize those .R description files we wrote!
+devtools::document()
 
 # So lets rename the ".r" extensions to ".txt" so we can load them and then save as .RData files.
 rfile_names <- paste("Data Sets- R", list.files("Data Sets- R", pattern = ".r$"), sep = "//")
