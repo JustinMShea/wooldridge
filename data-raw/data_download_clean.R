@@ -90,7 +90,8 @@ tools::checkRdaFiles("data")
 # Next, clear .env and import the new .RData file and see if it worked...success!
 load("data/wooldridge.RData")
 
-# Lets find out how big all the datasets are...3,442,932...3,241,516...3,239,280
+# Lets find out how big all the datasets are...3,442,932...3,241,516...3,239,280...
+# 1933192
 sum(file.info(paste("data", list.files("data"), sep = "//"))$size)
 
 # Add the .Rd files
