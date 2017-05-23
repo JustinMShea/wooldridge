@@ -1,0 +1,5 @@
+"variable" "label"
+"1" "year" "1959 through 2005"
+"2" "pcrgdp" "percentage change in real GDP"
+"3" "unem" "civilian unemployment rate"
+"4" "cunem" "unem - unem[_n-1]"

@@ -1,0 +1,8 @@
+"variable" "label"
+"1" "enroll" "total enrollment"
+"2" "priv" "=1 if private college"
+"3" "police" "employed officers"
+"4" "crime" "total campus crimes"
+"5" "lcrime" "log(crime)"
+"6" "lenroll" "log(enroll)"
+"7" "lpolice" "log(police)"

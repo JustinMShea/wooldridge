@@ -1,0 +1,4 @@
+"variable" "label"
+"1" "w" "=1 if white app. got job offer"
+"2" "b" "=1 if black app. got job offer"
+"3" "y" "b - w"

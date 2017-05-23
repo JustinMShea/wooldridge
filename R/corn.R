@@ -1,0 +1,6 @@
+"variable" "label"
+"1" "county" "county number"
+"2" "cornhec" "corn per hectare"
+"3" "soyhec" "soybeans per hectare"
+"4" "cornpix" "corn pixels per hectare"
+"5" "soypix" "soy pixels per hectare"

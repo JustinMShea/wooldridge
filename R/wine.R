@@ -1,0 +1,6 @@
+"variable" "label"
+"1" "country" ""
+"2" "alcohol" "liters alcohol from wine, per capita"
+"3" "deaths" "deaths per 100,000"
+"4" "heart" "heart disease dths per 100,000"
+"5" "liver" "liver disease dths per 100,000"

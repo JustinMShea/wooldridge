@@ -11,23 +11,23 @@ vignette: >
 
 ## Effect of Job Training on Firm Scrap Rates
 
-From the text:
+From example 4.7 of the text:
 
 > "The scrap rate for a manufacturing firm is t he number of defective items-
-products that must be discarded-out of every 100 produced. THus, for a given number of items 
+products that must be discarded-out of every 100 produced. Thus, for a given number of items 
 produced, a decrease in the scrap rate reflects higher worker productivity."
 
 > "We can use the scrap rate to measure the effect of worker training on productivity.
-Using the data in JTRAIN.RAW, but only for the year 1987 and for nonunionized firms,
+Using the data in jtrain.RAW, but only for the year 1987 and for nonunionized firms,
 we obtain the following estimated equation:"
 
 ```r{}
 library(wooldRidge)
 
 
-JTRAIN_1987nonunion <- JTRAIN[JTRAIN$`1. year` == 1987 & JTRAIN$`9. union` == 0,]
+jtrain_1987nonunion <- jtrain[jtrain$`1. year` == 1987 & jtrain$`9. union` == 0,]
 
-linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = JTRAIN_1987nonunion)
+linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_1987nonunion)
 
 summary(linear_model)
 summary(linear_model)$adj.r.squared

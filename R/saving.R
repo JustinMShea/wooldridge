@@ -1,0 +1,8 @@
+"variable" "label"
+"1" "sav" "annual savings, $"
+"2" "inc" "annual income, $"
+"3" "size" "family size"
+"4" "educ" "years educ, household head"
+"5" "age" "age of household head"
+"6" "black" "=1 if household head is black"
+"7" "cons" "annual consumption, $"
