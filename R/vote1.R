@@ -1,0 +1,25 @@
+#' vote1
+#'
+#' Data from wooldRidge package loads lazily. Type data(vote1) into the console.
+#'
+#' @docType data
+#'
+#' @usage data(vote1)
+#'
+#' @format A data.frame with 173 rows and 10 variables:
+#' \describe{
+#'  \item{state}{state postal code}
+#'  \item{district}{congressional district}
+#'  \item{democA}{=1 if A is democrat}
+#'  \item{voteA}{percent vote for A}
+#'  \item{expendA}{camp. expends. by A, $1000s}
+#'  \item{expendB}{camp. expends. by B, $1000s}
+#'  \item{prtystrA}{percent vote for president}
+#'  \item{lexpendA}{log(expendA)}
+#'  \item{lexpendB}{log(expendB)}
+#'  \item{shareA}{100*(expendA/(expendA+expendB))}
+#' }
+#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+"vote1"
+ 
+ 
