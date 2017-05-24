@@ -25,6 +25,6 @@ Data from wooldRidge package loads lazily. Type data(401ksubs) into the console.
 }
 
 \examples{
-data(401k)
+data("401k")
 }
 \keyword{datasets}
