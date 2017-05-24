@@ -131,6 +131,7 @@ for (i in new_data_list) {
         path <- paste0("data/",i)
         load(path)
 }
+
 # Lets find out how big all the datasets are...3,442,932...3,241,516...3,239,280.
 sum(file.info(paste("data", list.files("data"), sep = "//"))$size)
 
