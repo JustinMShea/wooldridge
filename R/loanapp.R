@@ -69,6 +69,7 @@
 #'  \item{white}{=1 if applicant white}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(loanapp)
 "loanapp"
  
  

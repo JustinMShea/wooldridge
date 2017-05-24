@@ -24,6 +24,7 @@
 #'  \item{lstaff}{log(staff)}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(elem94_95)
 "elem94_95"
  
  

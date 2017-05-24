@@ -58,6 +58,7 @@
 #'  \item{prcfat_1}{prcfat[_n-1]}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(traffic2)
 "traffic2"
  
  

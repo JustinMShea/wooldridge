@@ -34,6 +34,7 @@
 #'  \item{tenursq}{tenure^2}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(wage1)
 "wage1"
  
  

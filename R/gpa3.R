@@ -33,6 +33,7 @@
 #'  \item{football}{=1 if football player}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(gpa3)
 "gpa3"
  
  

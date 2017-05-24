@@ -55,6 +55,7 @@
 #'  \item{final2}{=1 if dec on litig, prev 2 yrs}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(prison)
 "prison"
  
  

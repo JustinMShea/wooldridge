@@ -37,6 +37,7 @@
 #'  \item{y84educ}{}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(fertil1)
 "fertil1"
  
  

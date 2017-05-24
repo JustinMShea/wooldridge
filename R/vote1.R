@@ -20,6 +20,7 @@
 #'  \item{shareA}{100*(expendA/(expendA+expendB))}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(vote1)
 "vote1"
  
  

@@ -15,6 +15,7 @@
 #'  \item{liver}{liver disease dths per 100,000}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(wine)
 "wine"
  
  

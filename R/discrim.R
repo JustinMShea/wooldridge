@@ -47,6 +47,7 @@
 #'  \item{RR}{=1 if Roy Rogers}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(discrim)
 "discrim"
  
  

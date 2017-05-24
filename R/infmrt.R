@@ -22,6 +22,7 @@
 #'  \item{lpopul}{log(popul)}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(infmrt)
 "infmrt"
  
  

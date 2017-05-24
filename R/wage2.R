@@ -27,6 +27,7 @@
 #'  \item{lwage}{natural log of wage}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(wage2)
 "wage2"
  
  

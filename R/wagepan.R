@@ -54,6 +54,7 @@
 #'  \item{expersq}{exper^2}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(wagepan)
 "wagepan"
  
  

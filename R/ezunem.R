@@ -47,6 +47,7 @@
 #'  \item{city}{city identifier, 1 through 22}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(ezunem)
 "ezunem"
  
  

@@ -34,6 +34,7 @@
 #'  \item{gfr_2}{gfr[_n-2]}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(fertil3)
 "fertil3"
  
  

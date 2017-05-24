@@ -18,6 +18,7 @@
 #'  \item{cprice_1}{lagged cprice}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(nyse)
 "nyse"
  
  

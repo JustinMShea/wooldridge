@@ -15,6 +15,7 @@
 #'  \item{daysscnd}{days suspended, second offense}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(admnrev)
 "admnrev"
  
  

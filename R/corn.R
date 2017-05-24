@@ -15,6 +15,7 @@
 #'  \item{soypix}{soy pixels per hectare}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(corn)
 "corn"
  
  

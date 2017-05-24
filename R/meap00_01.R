@@ -19,6 +19,7 @@
 #'  \item{lexppp}{log(exppp)}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(meap00_01)
 "meap00_01"
  
  

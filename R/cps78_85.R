@@ -25,6 +25,7 @@
 #'  \item{y85union}{y85*union}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(cps78_85)
 "cps78_85"
  
  

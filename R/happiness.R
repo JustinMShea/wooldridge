@@ -43,6 +43,7 @@
 #'  \item{unem10}{=1 if unemployed in last 10 years}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(happiness)
 "happiness"
  
  

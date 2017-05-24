@@ -36,6 +36,7 @@
 #'  \item{cwin}{win90 - win88}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(vote2)
 "vote2"
  
  

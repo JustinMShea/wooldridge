@@ -1,7 +1,8 @@
-  #################################
- # function for downloading data #
-#################################
+  #################
+ # Download data #
+#################
   
+  # function for downloading data 
   download_data <- function(url, zipfile_name) { 
           
         if (as.character(zipfile_name) == FALSE) {
@@ -20,9 +21,10 @@
   
   ## Define the path to the data sets on the textbook website
   woolridge_cengage_url_6th  <- "http://academic.cengage.com/resource_uploads/downloads/130527010X_514733.zip"  
-  zipfile_name <- "Wooldridge6th.zip"
+  zipfile_name <- "Wooldridge-6th.zip"
   download_data(woolridge_cengage_url_6th, zipfile_name)
 
+  
   ##############################
  # Explore and clean the Data #
 ##############################
@@ -32,8 +34,8 @@ length(list.files("Data Sets- R"))
 list.files("Data Sets- R")
 
 # Lets find out how big all the datasets are...whoa! 8,811,446!
-sum(file.info(paste("Data Sets- R", list.files("Data Sets- R"), sep = "//"))$size)
-
+original_size <- sum(file.info(paste("Data Sets- R", list.files("Data Sets- R"), sep = "//"))$size)
+original_size
 # Explore size, and order by size.
 file_info <- file.info(paste("Data Sets- R", list.files("Data Sets- R"), sep = "//"))
 file_info[order(file_info$size, decreasing = TRUE),]
@@ -64,7 +66,6 @@ for(i in RData_names) {
         load(file_location)
         # rewrite to
         assign(i, data)
-        #save(self, file = paste0("data/", i, ".RData"))
         
           # Start documentation. Use contents of 'desc' metadata to construct
           # documentation using roxygen2 style syntax, written into .R files.
@@ -73,6 +74,7 @@ for(i in RData_names) {
           intro <- paste0("#' ", "Data from wooldRidge package loads lazily. Type data(",as.character(i), ") into the console.")
           type  <- paste0("#' @docType data")
           usage <- paste0("#' @usage data(", as.character(i),")")
+          example <- paste0("#' @examples "," str(",as.character(i),")")
         message <- paste("#'", "@format", "A", class(data), "with", NROW(data), "rows and", NCOL(data), "variables:", sep = " ")
           start <- paste0("#' ","\\describe{")
        describe <- matrix(data = NA, nrow=nrow(desc), ncol = 1)
@@ -84,7 +86,6 @@ for(i in RData_names) {
                    }
             end <- "#' }"
          source <- "#' @source \\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}"
-        example <- paste0("@examples "," data('", as.character(i),"')", " str(",as.character(i),")")    
      data_label <- paste0("\"", file_name,"\"")
           space <- "#'"
           blank <- " "
@@ -97,10 +98,15 @@ for(i in RData_names) {
         write(documentation, paste(paste(getwd(),"R", file_name, sep = "/"),"R", sep ="."), append = TRUE)
 }
 
+   #########################################################
+  # There are a few ".r" extensions, which must be errors.# 
+ # We need to rename with ".txt" extenstions and import. #
+#########################################################
 
-# There are a few ".r" extensions, which must be errors. Rename ".txt" and import.
+# get names of .r files.
 rfile_names <- paste("Data Sets- R", list.files("Data Sets- R", pattern = ".r$"), sep = "//")
-#  renaming to .txt
+
+#  rename to .txt files
 txtfile_names <- paste("Data Sets- R", gsub(".r$",".txt", list.files("Data Sets- R", pattern = ".r$")), sep = "//")
 file.rename(rfile_names, txtfile_names)
 
@@ -110,18 +116,65 @@ list.files("Data Sets- R", pattern = ".r$")
 # import .txt data
 clean_names <- gsub(".txt","", list.files("Data Sets- R", pattern = ".txt$"))
 
-        for(i in clean_names) {
-                file_location <- paste(paste(getwd(), "Data Sets- R", i, sep = "/"),"txt", sep =".")
-                assign(i, readr::read_csv(file_location))
-        }
+for(i in clean_names) {
+        file_location <- paste(paste(getwd(), "Data Sets- R", i, sep = "/"),"txt", sep =".")
+        assign(i, readr::read_csv(file_location))
+}
 
-# We have no data description files for six files above converted to .txt.
-# Download the excel version, which will have them.
 
-## Define the path to the excel data sets on the textbook website
-woolridge_excel_url_6th  <- "http://academic.cengage.com/resource_uploads/downloads/130527010X_520661.zip"  
-zipfile_name <- "Excel6th.zip"
-download_data(woolridge_excel_url_6th, zipfile_name)
+  #######################################################################
+ # Create data description files for six files above converted to .txt #
+#######################################################################
+
+# Nor are they found in the 5th or 6th edition of other file formats, such as excel.
+# In previous additions <= 4th, these dataa sets didn't exist.
+list.files("Data Sets- R", pattern = ".txt$")
+
+# Write documentation function to build documentation files from .txt imports.      
+documentation <- function(name, data) {        
+                          file_name <- name
+                          desc <- data.frame(variable=names(data))
+                         
+                # roxygen2 style syntax, written into .R files.
+                title <- paste0("#' ", file_name)
+                intro <- paste0("#' ", "Data from wooldRidge package loads lazily. Type data('",file_name, "') into the console.")
+                type  <- paste0("#' @docType data")
+                usage <- paste0("#' @usage data('", file_name,"')")
+                message <- paste("#'", "@format", "A", class(data), "with", NROW(data), "rows and", NCOL(data), "variables:", sep = " ")
+                start <- paste0("#' ","\\describe{")
+
+                # transform variables and descriptions into roxygen2 ready format.  
+                items <- matrix(data = NA, nrow=length(colnames(data)), ncol = 1)
+                for(i in desc) {
+                        items[i] <- paste0("#'  \\item","{",desc[i,1],"}")
+                }
+
+                end <- "#' }"
+                source <- "#' @source \\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}"
+                example <- paste0("#' @examples ", " str(",file_name,")")    
+                data_label <- paste0("\"", file_name,"\"")
+                space <- "#'"
+                blank <- " "
+
+                # Paste all strings together to prepare for file for line by line write.
+                help_file <- c(title, space, intro, space, type, space, usage, space, message, start, items, end, source, example, data_label, blank, blank)
+
+                # Write out 1 string per line, into a .R file labeled to match each dataset
+                write(help_file, paste(paste(getwd(),"R", file_name, sep = "/"),"R", sep ="."), append = TRUE)
+                
+                # function run complete.
+} 
+
+# View list of txt files to document
+clean_names
+
+# Call the functions
+documentation("approval", approval)
+documentation("catholic", catholic)
+documentation("census2000", census2000)
+documentation("countymurders", countymurders)
+documentation("econmath", econmath)
+documentation("meapsingle", meapsingle)
 
 
   ###########################################################
@@ -132,9 +185,9 @@ download_data(woolridge_excel_url_6th, zipfile_name)
 dir.create("data")
 
 # Create list of all datasets (from .Rdata and .r/txt files)
+# loop over list and write to individual files...'save' dynamics require care.
 dataset_list <- c(RData_names, clean_names)
 
-# loop over list and write to individual files...'save' dynamics require care.
 for (i in dataset_list) {
 save(list = i, file = paste0("data/", i, ".RData"), compress = "xz", compression_level = 9)
 }
@@ -153,9 +206,14 @@ for (i in new_data_list) {
  # Final items #
 ###############
 
-# Lets find out how big all the datasets are...3,442,932...3,241,516...3,239,280.
-sum(file.info(paste("data", list.files("data"), sep = "//"))$size)
+# Lets find out how big all the datasets are...3,404,056.
+new_size <- sum(file.info(paste("data", list.files("data"), sep = "//"))$size)
+new_size
 
+# compare with original size, calculate percentage change...whoa 38% less!
+original_size <- sum(file.info(paste("Data Sets- R", list.files("Data Sets- R"), sep = "//"))$size)
+compression_efficiency <- new_size/original_size *100 
+compression_efficiency
 # time to roxygenize those .R description files we wrote!
 devtools::document()
 

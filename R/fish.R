@@ -30,6 +30,7 @@
 #'  \item{gavgp_1}{gavgprc[_n-1]}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(fish)
 "fish"
  
  

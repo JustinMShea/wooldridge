@@ -40,6 +40,7 @@
 #'  \item{dec}{=1 if month == 12}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(cement)
 "cement"
  
  

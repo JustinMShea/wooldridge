@@ -13,6 +13,7 @@
 #'  \item{y}{b - w}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(audit)
 "audit"
  
  

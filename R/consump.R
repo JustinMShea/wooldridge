@@ -34,6 +34,7 @@
 #'  \item{lc_ly_2}{lc_ly[_n-2]}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(consump)
 "consump"
  
  

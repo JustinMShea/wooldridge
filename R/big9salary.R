@@ -40,6 +40,7 @@
 #'  \item{lpubindx}{log(pubindx) if pubindx > 0}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(big9salary)
 "big9salary"
  
  

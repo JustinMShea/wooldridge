@@ -33,6 +33,7 @@
 #'  \item{ctuit}{tuit18 - tuit17}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(htv)
 "htv"
  
  

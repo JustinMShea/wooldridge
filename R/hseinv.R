@@ -24,6 +24,7 @@
 #'  \item{ginvpc}{linvpc - linvpc_1}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @examples  str(hseinv)
 "hseinv"
  
  
