@@ -2,20 +2,26 @@
  # function for downloading data #
 #################################
   
-download_data <- function(x, ...) { 
+  download_data <- function(url, zipfile_name) { 
+          
+        if (as.character(zipfile_name) == FALSE) {
+        warning("Please Make sure zip file name is a charachter string")
+        }
+        # Define the path to your working directory, where you'd like the data to download to
+        download_destination_path <- normalizePath(paste(getwd(), zipfile_name, sep ="/"))
+        # Download files from the website to your working directory using the above file path 
+        download.file(url, download_destination_path, mode = "wb")
+        # Define where you want to unzip files to
+        unzip_file_path <- normalizePath(paste(getwd()))
+        # Unzip the file into a folder
+        unzip(zipfile=download_destination_path, exdir=unzip_file_path)
         
-## Define the path to the data sets on the textbook website
-   woolridge_cengage_url_6th  <- "http://academic.cengage.com/resource_uploads/downloads/130527010X_514733.zip"
- # Define the path to your working directory, where you'd like the data to download to
-   download_destination_path <- normalizePath(paste(getwd(), "Woolridge-Data.ZIP", sep ="/"))
- # Download files from the website to your working directory using the above file path 
-   download.file(woolridge_cengage_url_6th, download_destination_path, mode = "wb")
- # Define where you want to unzip files to
-   unzip_file_path <- normalizePath(paste(getwd()))
- # Unzip the file into a folder
-   unzip(zipfile=download_destination_path, exdir=unzip_file_path)
-        
-} 
+        } 
+  
+  ## Define the path to the data sets on the textbook website
+  woolridge_cengage_url_6th  <- "http://academic.cengage.com/resource_uploads/downloads/130527010X_514733.zip"  
+  zipfile_name <- "Wooldridge6th.zip"
+  download_data(woolridge_cengage_url_6th, zipfile_name)
 
   ##############################
  # Explore and clean the Data #
@@ -48,7 +54,8 @@ RData_names <- gsub(".RData","", list.files("Data Sets- R", pattern = ".RData$")
 unlink("R", recursive = TRUE)
 dir.create("R")
 
-# Loop over .RData files in folder, import them, and split them. 
+# Loop over .RData files in "Data Sets- R" folder, importing all and labeling.
+# In addition, transform descriptions in Roxygen2 .R files.
 for(i in RData_names) {
         # Define Location of dataset, save base name.
         file_location <- paste(getwd(),"/Data Sets- R/", i,".RData", sep="")
@@ -70,27 +77,28 @@ for(i in RData_names) {
           start <- paste0("#' ","\\describe{")
        describe <- matrix(data = NA, nrow=nrow(desc), ncol = 1)
           
-         # Loop over desc files to transform variables and descriptions into roxygen2 ready format.  
+         # nested loop over desc files to transform variables and descriptions into roxygen2 ready format.  
          # Use gsub to change "%" character to "percent" for variable description, or roxygenize will fail.           
        for(i in desc) {
     describe[i] <- paste0("#'  \\item","{",as.character(desc[i,1]),"}{",gsub("%","percent", as.character(desc[i,2])),"}")
                    }
             end <- "#' }"
          source <- "#' @source \\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}"
+        example <- paste0("@examples "," data('", as.character(i),"')", " str(",as.character(i),")")    
      data_label <- paste0("\"", file_name,"\"")
           space <- "#'"
           blank <- " "
             
-        # Paste all strings together to prepare for file write.
-        out <- c(title, space, intro, space, type, space, usage, space, message, start, describe, end, source, data_label, blank, blank)
+        # Paste all strings together to prepare for file for line by line write.
+        documentation <- c(title, space, intro, space, type, space, usage, space, message, start, describe, end, source, example, data_label, blank, blank)
         
         # Write out 1 string per line, into a .R file labeled to match each dataset
         # in the roxygen2 documentation format.
-        write(out, paste(paste(getwd(),"R", file_name, sep = "/"),"R", sep ="."), append = TRUE)
+        write(documentation, paste(paste(getwd(),"R", file_name, sep = "/"),"R", sep ="."), append = TRUE)
 }
 
 
-# There are a few ".r" extensions. Rename ".txt" and import.
+# There are a few ".r" extensions, which must be errors. Rename ".txt" and import.
 rfile_names <- paste("Data Sets- R", list.files("Data Sets- R", pattern = ".r$"), sep = "//")
 #  renaming to .txt
 txtfile_names <- paste("Data Sets- R", gsub(".r$",".txt", list.files("Data Sets- R", pattern = ".r$")), sep = "//")
@@ -105,7 +113,16 @@ clean_names <- gsub(".txt","", list.files("Data Sets- R", pattern = ".txt$"))
         for(i in clean_names) {
                 file_location <- paste(paste(getwd(), "Data Sets- R", i, sep = "/"),"txt", sep =".")
                 assign(i, readr::read_csv(file_location))
-                }
+        }
+
+# We have no data description files for six files above converted to .txt.
+# Download the excel version, which will have them.
+
+## Define the path to the excel data sets on the textbook website
+woolridge_excel_url_6th  <- "http://academic.cengage.com/resource_uploads/downloads/130527010X_520661.zip"  
+zipfile_name <- "Excel6th.zip"
+download_data(woolridge_excel_url_6th, zipfile_name)
+
 
   ###########################################################
  # Write all data sets to high compression xz .Rdata files #
@@ -132,13 +149,15 @@ for (i in new_data_list) {
         load(path)
 }
 
+  ###############
+ # Final items #
+###############
+
 # Lets find out how big all the datasets are...3,442,932...3,241,516...3,239,280.
 sum(file.info(paste("data", list.files("data"), sep = "//"))$size)
 
-
 # time to roxygenize those .R description files we wrote!
 devtools::document()
-
 
 # Add the .Rd files
 devtools::document(roclets=c('rd', 'collate', 'namespace'))
