@@ -23,4 +23,7 @@ data(saving)
 \description{
 Data from wooldRidge package loads lazily. Type data(saving) into the console.
 }
+\examples{
+ str(saving)
+}
 \keyword{datasets}

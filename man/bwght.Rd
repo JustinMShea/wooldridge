@@ -30,4 +30,7 @@ data(bwght)
 \description{
 Data from wooldRidge package loads lazily. Type data(bwght) into the console.
 }
+\examples{
+ str(bwght)
+}
 \keyword{datasets}

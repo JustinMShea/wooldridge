@@ -46,4 +46,7 @@ data(injury)
 \description{
 Data from wooldRidge package loads lazily. Type data(injury) into the console.
 }
+\examples{
+ str(injury)
+}
 \keyword{datasets}

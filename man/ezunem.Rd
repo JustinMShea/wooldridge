@@ -53,4 +53,7 @@ data(ezunem)
 \description{
 Data from wooldRidge package loads lazily. Type data(ezunem) into the console.
 }
+\examples{
+ str(ezunem)
+}
 \keyword{datasets}

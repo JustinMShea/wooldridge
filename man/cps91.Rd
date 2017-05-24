@@ -40,4 +40,7 @@ data(cps91)
 \description{
 Data from wooldRidge package loads lazily. Type data(cps91) into the console.
 }
+\examples{
+ str(cps91)
+}
 \keyword{datasets}

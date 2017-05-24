@@ -35,4 +35,7 @@ data(pension)
 \description{
 Data from wooldRidge package loads lazily. Type data(pension) into the console.
 }
+\examples{
+ str(pension)
+}
 \keyword{datasets}

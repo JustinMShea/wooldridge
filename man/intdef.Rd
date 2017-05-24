@@ -29,4 +29,7 @@ data(intdef)
 \description{
 Data from wooldRidge package loads lazily. Type data(intdef) into the console.
 }
+\examples{
+ str(intdef)
+}
 \keyword{datasets}

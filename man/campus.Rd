@@ -23,4 +23,7 @@ data(campus)
 \description{
 Data from wooldRidge package loads lazily. Type data(campus) into the console.
 }
+\examples{
+ str(campus)
+}
 \keyword{datasets}

@@ -33,4 +33,7 @@ data(wage2)
 \description{
 Data from wooldRidge package loads lazily. Type data(wage2) into the console.
 }
+\examples{
+ str(wage2)
+}
 \keyword{datasets}

@@ -37,4 +37,7 @@ data(lawsch85)
 \description{
 Data from wooldRidge package loads lazily. Type data(lawsch85) into the console.
 }
+\examples{
+ str(lawsch85)
+}
 \keyword{datasets}

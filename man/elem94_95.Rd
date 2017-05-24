@@ -30,4 +30,7 @@ data(elem94_95)
 \description{
 Data from wooldRidge package loads lazily. Type data(elem94_95) into the console.
 }
+\examples{
+ str(elem94_95)
+}
 \keyword{datasets}

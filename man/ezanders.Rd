@@ -41,4 +41,7 @@ data(ezanders)
 \description{
 Data from wooldRidge package loads lazily. Type data(ezanders) into the console.
 }
+\examples{
+ str(ezanders)
+}
 \keyword{datasets}

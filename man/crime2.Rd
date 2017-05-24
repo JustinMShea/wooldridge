@@ -50,4 +50,7 @@ data(crime2)
 \description{
 Data from wooldRidge package loads lazily. Type data(crime2) into the console.
 }
+\examples{
+ str(crime2)
+}
 \keyword{datasets}

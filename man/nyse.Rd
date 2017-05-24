@@ -24,4 +24,7 @@ data(nyse)
 \description{
 Data from wooldRidge package loads lazily. Type data(nyse) into the console.
 }
+\examples{
+ str(nyse)
+}
 \keyword{datasets}

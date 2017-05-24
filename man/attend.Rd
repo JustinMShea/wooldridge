@@ -27,4 +27,7 @@ data(attend)
 \description{
 Data from wooldRidge package loads lazily. Type data(attend) into the console.
 }
+\examples{
+ str(attend)
+}
 \keyword{datasets}

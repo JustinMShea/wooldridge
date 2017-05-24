@@ -42,4 +42,7 @@ data(vote2)
 \description{
 Data from wooldRidge package loads lazily. Type data(vote2) into the console.
 }
+\examples{
+ str(vote2)
+}
 \keyword{datasets}

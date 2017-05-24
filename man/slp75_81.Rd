@@ -36,4 +36,7 @@ data(slp75_81)
 \description{
 Data from wooldRidge package loads lazily. Type data(slp75_81) into the console.
 }
+\examples{
+ str(slp75_81)
+}
 \keyword{datasets}

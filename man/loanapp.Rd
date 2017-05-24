@@ -75,4 +75,7 @@ data(loanapp)
 \description{
 Data from wooldRidge package loads lazily. Type data(loanapp) into the console.
 }
+\examples{
+ str(loanapp)
+}
 \keyword{datasets}

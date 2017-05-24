@@ -50,4 +50,7 @@ data(sleep75)
 \description{
 Data from wooldRidge package loads lazily. Type data(sleep75) into the console.
 }
+\examples{
+ str(sleep75)
+}
 \keyword{datasets}

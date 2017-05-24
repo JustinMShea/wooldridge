@@ -26,4 +26,7 @@ data(hprice1)
 \description{
 Data from wooldRidge package loads lazily. Type data(hprice1) into the console.
 }
+\examples{
+ str(hprice1)
+}
 \keyword{datasets}

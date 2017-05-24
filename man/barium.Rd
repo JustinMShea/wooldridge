@@ -47,4 +47,7 @@ data(barium)
 \description{
 Data from wooldRidge package loads lazily. Type data(barium) into the console.
 }
+\examples{
+ str(barium)
+}
 \keyword{datasets}

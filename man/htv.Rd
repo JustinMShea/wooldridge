@@ -39,4 +39,7 @@ data(htv)
 \description{
 Data from wooldRidge package loads lazily. Type data(htv) into the console.
 }
+\examples{
+ str(htv)
+}
 \keyword{datasets}

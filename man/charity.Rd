@@ -24,4 +24,7 @@ data(charity)
 \description{
 Data from wooldRidge package loads lazily. Type data(charity) into the console.
 }
+\examples{
+ str(charity)
+}
 \keyword{datasets}

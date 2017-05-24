@@ -36,4 +36,7 @@ data(fish)
 \description{
 Data from wooldRidge package loads lazily. Type data(fish) into the console.
 }
+\examples{
+ str(fish)
+}
 \keyword{datasets}

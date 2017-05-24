@@ -33,4 +33,7 @@ data(apple)
 \description{
 Data from wooldRidge package loads lazily. Type data(apple) into the console.
 }
+\examples{
+ str(apple)
+}
 \keyword{datasets}

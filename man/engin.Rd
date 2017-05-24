@@ -33,4 +33,7 @@ data(engin)
 \description{
 Data from wooldRidge package loads lazily. Type data(engin) into the console.
 }
+\examples{
+ str(engin)
+}
 \keyword{datasets}

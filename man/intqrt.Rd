@@ -39,4 +39,7 @@ data(intqrt)
 \description{
 Data from wooldRidge package loads lazily. Type data(intqrt) into the console.
 }
+\examples{
+ str(intqrt)
+}
 \keyword{datasets}

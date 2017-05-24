@@ -41,4 +41,7 @@ data(prminwge)
 \description{
 Data from wooldRidge package loads lazily. Type data(prminwge) into the console.
 }
+\examples{
+ str(prminwge)
+}
 \keyword{datasets}

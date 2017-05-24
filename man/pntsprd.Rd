@@ -28,4 +28,7 @@ data(pntsprd)
 \description{
 Data from wooldRidge package loads lazily. Type data(pntsprd) into the console.
 }
+\examples{
+ str(pntsprd)
+}
 \keyword{datasets}

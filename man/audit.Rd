@@ -19,4 +19,7 @@ data(audit)
 \description{
 Data from wooldRidge package loads lazily. Type data(audit) into the console.
 }
+\examples{
+ str(audit)
+}
 \keyword{datasets}

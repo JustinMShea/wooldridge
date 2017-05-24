@@ -41,4 +41,7 @@ data(kielmc)
 \description{
 Data from wooldRidge package loads lazily. Type data(kielmc) into the console.
 }
+\examples{
+ str(kielmc)
+}
 \keyword{datasets}

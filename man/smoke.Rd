@@ -26,4 +26,7 @@ data(smoke)
 \description{
 Data from wooldRidge package loads lazily. Type data(smoke) into the console.
 }
+\examples{
+ str(smoke)
+}
 \keyword{datasets}

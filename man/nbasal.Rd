@@ -38,4 +38,7 @@ data(nbasal)
 \description{
 Data from wooldRidge package loads lazily. Type data(nbasal) into the console.
 }
+\examples{
+ str(nbasal)
+}
 \keyword{datasets}

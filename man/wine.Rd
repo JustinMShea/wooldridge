@@ -21,4 +21,7 @@ data(wine)
 \description{
 Data from wooldRidge package loads lazily. Type data(wine) into the console.
 }
+\examples{
+ str(wine)
+}
 \keyword{datasets}

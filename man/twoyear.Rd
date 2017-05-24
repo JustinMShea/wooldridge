@@ -39,4 +39,7 @@ data(twoyear)
 \description{
 Data from wooldRidge package loads lazily. Type data(twoyear) into the console.
 }
+\examples{
+ str(twoyear)
+}
 \keyword{datasets}

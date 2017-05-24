@@ -28,4 +28,7 @@ data(infmrt)
 \description{
 Data from wooldRidge package loads lazily. Type data(infmrt) into the console.
 }
+\examples{
+ str(infmrt)
+}
 \keyword{datasets}

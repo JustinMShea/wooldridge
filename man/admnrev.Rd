@@ -21,4 +21,7 @@ data(admnrev)
 \description{
 Data from wooldRidge package loads lazily. Type data(admnrev) into the console.
 }
+\examples{
+ str(admnrev)
+}
 \keyword{datasets}

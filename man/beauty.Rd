@@ -33,4 +33,7 @@ data(beauty)
 \description{
 Data from wooldRidge package loads lazily. Type data(beauty) into the console.
 }
+\examples{
+ str(beauty)
+}
 \keyword{datasets}

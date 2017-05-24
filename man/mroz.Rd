@@ -38,4 +38,7 @@ data(mroz)
 \description{
 Data from wooldRidge package loads lazily. Type data(mroz) into the console.
 }
+\examples{
+ str(mroz)
+}
 \keyword{datasets}

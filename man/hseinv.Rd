@@ -30,4 +30,7 @@ data(hseinv)
 \description{
 Data from wooldRidge package loads lazily. Type data(hseinv) into the console.
 }
+\examples{
+ str(hseinv)
+}
 \keyword{datasets}

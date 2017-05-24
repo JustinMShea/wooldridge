@@ -35,4 +35,7 @@ data(jtrain2)
 \description{
 Data from wooldRidge package loads lazily. Type data(jtrain2) into the console.
 }
+\examples{
+ str(jtrain2)
+}
 \keyword{datasets}

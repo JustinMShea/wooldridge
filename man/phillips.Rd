@@ -23,4 +23,7 @@ data(phillips)
 \description{
 Data from wooldRidge package loads lazily. Type data(phillips) into the console.
 }
+\examples{
+ str(phillips)
+}
 \keyword{datasets}

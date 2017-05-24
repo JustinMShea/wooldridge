@@ -40,4 +40,7 @@ data(consump)
 \description{
 Data from wooldRidge package loads lazily. Type data(consump) into the console.
 }
+\examples{
+ str(consump)
+}
 \keyword{datasets}

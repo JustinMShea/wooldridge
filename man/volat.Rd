@@ -33,4 +33,7 @@ data(volat)
 \description{
 Data from wooldRidge package loads lazily. Type data(volat) into the console.
 }
+\examples{
+ str(volat)
+}
 \keyword{datasets}

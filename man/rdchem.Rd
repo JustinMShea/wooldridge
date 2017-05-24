@@ -24,4 +24,7 @@ data(rdchem)
 \description{
 Data from wooldRidge package loads lazily. Type data(rdchem) into the console.
 }
+\examples{
+ str(rdchem)
+}
 \keyword{datasets}

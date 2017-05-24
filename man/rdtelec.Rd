@@ -22,4 +22,7 @@ data(rdtelec)
 \description{
 Data from wooldRidge package loads lazily. Type data(rdtelec) into the console.
 }
+\examples{
+ str(rdtelec)
+}
 \keyword{datasets}

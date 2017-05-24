@@ -61,4 +61,7 @@ data(prison)
 \description{
 Data from wooldRidge package loads lazily. Type data(prison) into the console.
 }
+\examples{
+ str(prison)
+}
 \keyword{datasets}

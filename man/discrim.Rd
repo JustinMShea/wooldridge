@@ -53,4 +53,7 @@ data(discrim)
 \description{
 Data from wooldRidge package loads lazily. Type data(discrim) into the console.
 }
+\examples{
+ str(discrim)
+}
 \keyword{datasets}

@@ -29,4 +29,7 @@ data(expendshares)
 \description{
 Data from wooldRidge package loads lazily. Type data(expendshares) into the console.
 }
+\examples{
+ str(expendshares)
+}
 \keyword{datasets}

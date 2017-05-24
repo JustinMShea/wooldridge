@@ -68,4 +68,7 @@ data(mathpnl)
 \description{
 Data from wooldRidge package loads lazily. Type data(mathpnl) into the console.
 }
+\examples{
+ str(mathpnl)
+}
 \keyword{datasets}

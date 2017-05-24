@@ -37,4 +37,7 @@ data(fair)
 \description{
 Data from wooldRidge package loads lazily. Type data(fair) into the console.
 }
+\examples{
+ str(fair)
+}
 \keyword{datasets}

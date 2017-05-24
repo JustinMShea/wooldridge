@@ -49,4 +49,7 @@ data(alcohol)
 \description{
 Data from wooldRidge package loads lazily. Type data(alcohol) into the console.
 }
+\examples{
+ str(alcohol)
+}
 \keyword{datasets}

@@ -72,4 +72,7 @@ data(driving)
 \description{
 Data from wooldRidge package loads lazily. Type data(driving) into the console.
 }
+\examples{
+ str(driving)
+}
 \keyword{datasets}

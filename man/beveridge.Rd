@@ -24,4 +24,7 @@ data(beveridge)
 \description{
 Data from wooldRidge package loads lazily. Type data(beveridge) into the console.
 }
+\examples{
+ str(beveridge)
+}
 \keyword{datasets}

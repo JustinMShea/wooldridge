@@ -28,4 +28,7 @@ data(openness)
 \description{
 Data from wooldRidge package loads lazily. Type data(openness) into the console.
 }
+\examples{
+ str(openness)
+}
 \keyword{datasets}

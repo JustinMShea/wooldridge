@@ -29,4 +29,7 @@ data(inven)
 \description{
 Data from wooldRidge package loads lazily. Type data(inven) into the console.
 }
+\examples{
+ str(inven)
+}
 \keyword{datasets}

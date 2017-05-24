@@ -35,4 +35,7 @@ data(voucher)
 \description{
 Data from wooldRidge package loads lazily. Type data(voucher) into the console.
 }
+\examples{
+ str(voucher)
+}
 \keyword{datasets}

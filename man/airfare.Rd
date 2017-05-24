@@ -30,4 +30,7 @@ data(airfare)
 \description{
 Data from wooldRidge package loads lazily. Type data(airfare) into the console.
 }
+\examples{
+ str(airfare)
+}
 \keyword{datasets}

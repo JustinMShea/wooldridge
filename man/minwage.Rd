@@ -74,4 +74,7 @@ data(minwage)
 \description{
 Data from wooldRidge package loads lazily. Type data(minwage) into the console.
 }
+\examples{
+ str(minwage)
+}
 \keyword{datasets}

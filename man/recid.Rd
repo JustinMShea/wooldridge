@@ -34,4 +34,7 @@ data(recid)
 \description{
 Data from wooldRidge package loads lazily. Type data(recid) into the console.
 }
+\examples{
+ str(recid)
+}
 \keyword{datasets}

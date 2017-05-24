@@ -43,4 +43,7 @@ data(fertil1)
 \description{
 Data from wooldRidge package loads lazily. Type data(fertil1) into the console.
 }
+\examples{
+ str(fertil1)
+}
 \keyword{datasets}

@@ -21,4 +21,7 @@ data(corn)
 \description{
 Data from wooldRidge package loads lazily. Type data(corn) into the console.
 }
+\examples{
+ str(corn)
+}
 \keyword{datasets}

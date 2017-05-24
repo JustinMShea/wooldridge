@@ -49,4 +49,7 @@ data(happiness)
 \description{
 Data from wooldRidge package loads lazily. Type data(happiness) into the console.
 }
+\examples{
+ str(happiness)
+}
 \keyword{datasets}

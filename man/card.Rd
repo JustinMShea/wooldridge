@@ -50,4 +50,7 @@ data(card)
 \description{
 Data from wooldRidge package loads lazily. Type data(card) into the console.
 }
+\examples{
+ str(card)
+}
 \keyword{datasets}

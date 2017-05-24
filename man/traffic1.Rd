@@ -29,4 +29,7 @@ data(traffic1)
 \description{
 Data from wooldRidge package loads lazily. Type data(traffic1) into the console.
 }
+\examples{
+ str(traffic1)
+}
 \keyword{datasets}

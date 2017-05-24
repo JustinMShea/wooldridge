@@ -36,4 +36,7 @@ data(wageprc)
 \description{
 Data from wooldRidge package loads lazily. Type data(wageprc) into the console.
 }
+\examples{
+ str(wageprc)
+}
 \keyword{datasets}

@@ -63,4 +63,7 @@ data(mlb1)
 \description{
 Data from wooldRidge package loads lazily. Type data(mlb1) into the console.
 }
+\examples{
+ str(mlb1)
+}
 \keyword{datasets}

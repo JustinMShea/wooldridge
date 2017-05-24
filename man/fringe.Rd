@@ -55,4 +55,7 @@ data(fringe)
 \description{
 Data from wooldRidge package loads lazily. Type data(fringe) into the console.
 }
+\examples{
+ str(fringe)
+}
 \keyword{datasets}

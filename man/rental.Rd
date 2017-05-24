@@ -39,4 +39,7 @@ data(rental)
 \description{
 Data from wooldRidge package loads lazily. Type data(rental) into the console.
 }
+\examples{
+ str(rental)
+}
 \keyword{datasets}

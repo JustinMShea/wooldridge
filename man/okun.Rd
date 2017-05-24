@@ -20,4 +20,7 @@ data(okun)
 \description{
 Data from wooldRidge package loads lazily. Type data(okun) into the console.
 }
+\examples{
+ str(okun)
+}
 \keyword{datasets}

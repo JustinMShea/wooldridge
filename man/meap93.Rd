@@ -33,4 +33,7 @@ data(meap93)
 \description{
 Data from wooldRidge package loads lazily. Type data(meap93) into the console.
 }
+\examples{
+ str(meap93)
+}
 \keyword{datasets}

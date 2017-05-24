@@ -31,4 +31,7 @@ data(ceosal2)
 \description{
 Data from wooldRidge package loads lazily. Type data(ceosal2) into the console.
 }
+\examples{
+ str(ceosal2)
+}
 \keyword{datasets}

@@ -46,4 +46,7 @@ data(big9salary)
 \description{
 Data from wooldRidge package loads lazily. Type data(big9salary) into the console.
 }
+\examples{
+ str(big9salary)
+}
 \keyword{datasets}

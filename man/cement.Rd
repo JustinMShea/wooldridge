@@ -46,4 +46,7 @@ data(cement)
 \description{
 Data from wooldRidge package loads lazily. Type data(cement) into the console.
 }
+\examples{
+ str(cement)
+}
 \keyword{datasets}

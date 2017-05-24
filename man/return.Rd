@@ -28,4 +28,7 @@ data(return)
 \description{
 Data from wooldRidge package loads lazily. Type data(return) into the console.
 }
+\examples{
+ str(return)
+}
 \keyword{datasets}

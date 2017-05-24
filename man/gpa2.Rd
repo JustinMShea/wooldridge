@@ -28,4 +28,7 @@ data(gpa2)
 \description{
 Data from wooldRidge package loads lazily. Type data(gpa2) into the console.
 }
+\examples{
+ str(gpa2)
+}
 \keyword{datasets}

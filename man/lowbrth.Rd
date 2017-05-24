@@ -52,4 +52,7 @@ data(lowbrth)
 \description{
 Data from wooldRidge package loads lazily. Type data(lowbrth) into the console.
 }
+\examples{
+ str(lowbrth)
+}
 \keyword{datasets}
