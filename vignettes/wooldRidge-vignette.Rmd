@@ -1,25 +1,24 @@
 ---
-title: "Example from Chapter 4"
+title: "wooldRidge-vignette"
 author: "Justin M Shea"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{wooldRidge-vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ## Effect of Job Training on Firm Scrap Rates
 
+One approach to learning is to find an example from your textbook,
+and then recreate it.
+
 From example 4.7 of the text:
 
-> "The scrap rate for a manufacturing firm is t he number of defective items-
-products that must be discarded-out of every 100 produced. Thus, for a given number of items 
-produced, a decrease in the scrap rate reflects higher worker productivity."
+> "The scrap rate for a manufacturing firm is the number of defective items - products that must be discarded - out of every 100 produced. Thus, for a given number of items produced, a decrease in the scrap rate reflects higher worker productivity."
 
-> "We can use the scrap rate to measure the effect of worker training on productivity.
-Using the data in jtrain.RAW, but only for the year 1987 and for nonunionized firms,
-we obtain the following estimated equation:"
+> "We can use the scrap rate to measure the effect of worker training on productivity. Using the data in jtrain, but only for the year 1987 and for nonunionized firms, we obtain the following estimated equation:"
 
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
 
@@ -28,7 +27,7 @@ library(wooldRidge)
 # Load jtrain data set.
   data("jtrain")
 
-# Create an index of which values happen in 1987 and are non-union
+# Create an index of which values occur in 1987 and are non-union
  index <- jtrain$year == 1987 & jtrain$union == 0
 
 # Next, subset clean data, by the index to return nonunion firms in 1987

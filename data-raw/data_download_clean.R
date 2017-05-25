@@ -221,8 +221,8 @@ new_size/15629000
 # time to roxygenize those .R description files we wrote!
 devtools::document()
 
-# Add the .Rd files
-devtools::document(roclets=c('rd', 'collate', 'namespace'))
+# Build vignette
+devtools::build_vignettes() 
 
 # Finally, remove the extra "Data Sets- R" folder
 unlink("Data Sets- R", recursive = TRUE)
