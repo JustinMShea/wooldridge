@@ -6,29 +6,30 @@
 #'
 #' @usage data('approval')
 #'
-#' @format A tbl_df with 78 rows and 16 variables:
-#' @format A tbl with 78 rows and 16 variables:
 #' @format A data.frame with 78 rows and 16 variables:
 #' \describe{
-#'  \item{id}
-#'  \item{month}
-#'  \item{year}
-#'  \item{sp500}
-#'  \item{cpi}
-#'  \item{cpifood}
-#'  \item{approve}
-#'  \item{gasprice}
-#'  \item{unemploy}
-#'  \item{katrina}
-#'  \item{rgasprice}
-#'  \item{lrgasprice}
-#'  \item{11-Sep}
-#'  \item{iraqinvade}
-#'  \item{lsp500}
-#'  \item{lcpifood}
+#'  \item{id}{Description not provided}
+#'  \item{month}{Description not provided}
+#'  \item{year}{Description not provided}
+#'  \item{sp500}{Description not provided}
+#'  \item{cpi}{Description not provided}
+#'  \item{cpifood}{Description not provided}
+#'  \item{approve}{Description not provided}
+#'  \item{gasprice}{Description not provided}
+#'  \item{unemploy}{Description not provided}
+#'  \item{katrina}{Description not provided}
+#'  \item{rgasprice}{Description not provided}
+#'  \item{lrgasprice}{Description not provided}
+#'  \item{11-Sep}{Description not provided}
+#'  \item{iraqinvade}{Description not provided}
+#'  \item{lsp500}{Description not provided}
+#'  \item{lcpifood}{Description not provided}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 #' @examples  str(approval)
 "approval"
+ 
+ 
+
  
  

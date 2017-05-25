@@ -6,33 +6,30 @@
 #'
 #' @usage data('countymurders')
 #'
-#' @format A tbl_df with 37349 rows and 20 variables:
-#' @format A tbl with 37349 rows and 20 variables:
 #' @format A data.frame with 37349 rows and 20 variables:
 #' \describe{
-#'  \item{arrests}
-#'  \item{countyid}
-#'  \item{density}
-#'  \item{popul}
-#'  \item{perc1019}
-#'  \item{perc2029}
-#'  \item{percblack}
-#'  \item{percmale}
-#'  \item{rpcincmaint}
-#'  \item{rpcpersinc}
-#'  \item{rpcunemins}
-#'  \item{year}
-#'  \item{murders}
-#'  \item{murdrate}
-#'  \item{arrestrate}
-#'  \item{statefips}
-#'  \item{countyfips}
-#'  \item{execs}
-#'  \item{lpopul}
-#'  \item{execrate}
+#'  \item{arrests}{Description not provided}
+#'  \item{countyid}{Description not provided}
+#'  \item{density}{Description not provided}
+#'  \item{popul}{Description not provided}
+#'  \item{perc1019}{Description not provided}
+#'  \item{perc2029}{Description not provided}
+#'  \item{percblack}{Description not provided}
+#'  \item{percmale}{Description not provided}
+#'  \item{rpcincmaint}{Description not provided}
+#'  \item{rpcpersinc}{Description not provided}
+#'  \item{rpcunemins}{Description not provided}
+#'  \item{year}{Description not provided}
+#'  \item{murders}{Description not provided}
+#'  \item{murdrate}{Description not provided}
+#'  \item{arrestrate}{Description not provided}
+#'  \item{statefips}{Description not provided}
+#'  \item{countyfips}{Description not provided}
+#'  \item{execs}{Description not provided}
+#'  \item{lpopul}{Description not provided}
+#'  \item{execrate}{Description not provided}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 #' @examples  str(countymurders)
 "countymurders"
- 
  

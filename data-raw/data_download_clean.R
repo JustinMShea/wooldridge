@@ -146,7 +146,7 @@ documentation <- function(name, data) {
                 # transform variables and descriptions into roxygen2 ready format.  
                 items <- matrix(data = NA, nrow=length(colnames(data)), ncol = 1)
                 for(i in desc) {
-                        items[i] <- paste0("#'  \\item","{",desc[i,1],"}")
+                        items[i] <- paste0("#'  \\item","{",desc[i,1],"}{Description not provided}")
                 }
 
                 end <- "#' }"

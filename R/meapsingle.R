@@ -6,31 +6,28 @@
 #'
 #' @usage data('meapsingle')
 #'
-#' @format A tbl_df with 229 rows and 18 variables:
-#' @format A tbl with 229 rows and 18 variables:
 #' @format A data.frame with 229 rows and 18 variables:
 #' \describe{
-#'  \item{dcode}
-#'  \item{bcode}
-#'  \item{math4}
-#'  \item{read4}
-#'  \item{enroll}
-#'  \item{exppp}
-#'  \item{free}
-#'  \item{reduced}
-#'  \item{lunch}
-#'  \item{medinc}
-#'  \item{totchild}
-#'  \item{married}
-#'  \item{single}
-#'  \item{pctsgle}
-#'  \item{zipcode}
-#'  \item{lenroll}
-#'  \item{lexppp}
-#'  \item{lmedinc}
+#'  \item{dcode}{Description not provided}
+#'  \item{bcode}{Description not provided}
+#'  \item{math4}{Description not provided}
+#'  \item{read4}{Description not provided}
+#'  \item{enroll}{Description not provided}
+#'  \item{exppp}{Description not provided}
+#'  \item{free}{Description not provided}
+#'  \item{reduced}{Description not provided}
+#'  \item{lunch}{Description not provided}
+#'  \item{medinc}{Description not provided}
+#'  \item{totchild}{Description not provided}
+#'  \item{married}{Description not provided}
+#'  \item{single}{Description not provided}
+#'  \item{pctsgle}{Description not provided}
+#'  \item{zipcode}{Description not provided}
+#'  \item{lenroll}{Description not provided}
+#'  \item{lexppp}{Description not provided}
+#'  \item{lmedinc}{Description not provided}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 #' @examples  str(meapsingle)
 "meapsingle"
- 
  
