@@ -214,6 +214,10 @@ new_size
 original_size <- sum(file.info(paste("Data Sets- R", list.files("Data Sets- R"), sep = "//"))$size)
 compression_efficiency <- new_size/original_size *100 
 compression_efficiency
+
+# vs excell
+new_size/15629000
+
 # time to roxygenize those .R description files we wrote!
 devtools::document()
 
