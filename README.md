@@ -40,7 +40,7 @@ If your using RStudio, try the `View()` function.
 View(jtrain)
 ```
 
-Lastly, please see the `wooldRidge-vignette` for and an example from the text.
+Lastly, please see the `wooldRidge-vignette` for an example from the text.
 
 ```{r}
  vignette("wooldRidge-vignette")
