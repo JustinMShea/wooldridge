@@ -13,8 +13,11 @@ Happy Econometric-ing!
 ## Installation
 
 ```r{}
-# Install from GitHub
-devtools::install_github("JustinMShea/wooldRidge")
+# First, install 'ghit', a lightweight github installer.
+install.packages("ghit")
+
+# Install 'wooldRidge' package from GitHub
+ghit::install_github("JustinMShea/wooldRidge")
 ```
 
 ## Example
