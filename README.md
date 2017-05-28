@@ -22,25 +22,23 @@ ghit::install_github("JustinMShea/wooldRidge")
 
 ## Example
 
-First, load the `wooldRidge` package.
+Load the `wooldRidge` package and use the `data()` function to load the desired set.
 ```{r}
 library(wooldRidge)
-```
-Next, use the `data()` function to load the desired set.
-```{r}
+
 data("jtrain")
 ```
-Check out the documentation and find out what the variable columns mean.
+Check out the documentation on the variable column names.
 ```{r}
 ?jtrain
 ```
 
-If your using RStudio, try the `View()` function.
+If your using RStudio, try the `View()` function to 'eyeball' the data set in a traditional spreadsheet format.
 ```{r}
 View(jtrain)
 ```
 
-Lastly, please see the `wooldRidge-vignette` for an example from the text.
+In addition, please see the `wooldRidge-vignette` for a recreation of an example from the text.
 
 ```{r}
  vignette("wooldRidge-vignette")
