@@ -182,15 +182,16 @@ documentation("meapsingle", meapsingle)
 ###########################################################
 
 # Create "data" folder
-dir.create("data")
+#dir.create("data")
 
 # Create list of all datasets (from .Rdata and .r/txt files)
 # loop over list and write to individual files...'save' dynamics require care.
-dataset_list <- c(RData_names, clean_names)
+# Commented out, so they don't execute.
 
-for (i in dataset_list) {
-save(list = i, file = paste0("data/", i, ".RData"), compress = "xz", compression_level = 9)
-}
+# dataset_list <- c(RData_names, clean_names)
+# for (i in dataset_list) {
+# save(list = i, file = paste0("data/", i, ".RData"), compress = "xz", compression_level = 9)
+# }
   
 #lets test/check the file compression. 
 tools::checkRdaFiles("data")
