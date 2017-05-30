@@ -223,10 +223,11 @@ new_size/15629000
 devtools::document()
 
 # Render .pdf vignette
-rmarkdown::render("vignettes/wooldRidge-vignette.Rmd", pdf_document(latex_engine = "lualatex"))
+#rmarkdown::render("vignettes/wooldRidge-vignette.Rmd",
+rmarkdown::render("inst/doc/wooldRidge-vignette.Rmd", pdf_document(latex_engine = "lualatex"))
 
 # Build vignette
-devtools::build_vignettes() 
+devtools::build_vignettes()
 
 # Finally, remove the extra "Data Sets- R" folder
 unlink("Data Sets- R", recursive = TRUE)

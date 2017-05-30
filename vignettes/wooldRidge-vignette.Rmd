@@ -2,7 +2,8 @@
 title: "wooldRidge-vignette"
 author: "Justin M Shea"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: html_vignette
+pdf_document: default
 vignette: >
   %\VignetteIndexEntry{wooldRidge-vignette}
   %\VignetteEngine{knitr::rmarkdown}
