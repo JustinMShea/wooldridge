@@ -39,7 +39,7 @@ If you are using RStudio, try the `View()` function to 'eyeball' the data set in
 View(jtrain)
 ```
 
-In addition, please see the [`wooldRidge-vignette`](https://github.com/JustinMShea/wooldRidge/blob/master/inst/doc/wooldRidge-vignette.pdf) for a recreation of an example from the text.
+In addition, please see the [`wooldRidge-vignette`](https://github.com/JustinMShea/wooldRidge/tree/master/vignettes/wooldRidge-vignette.pdf) for a recreation of an example from the text.
 
 ```{r}
  vignette("wooldRidge-vignette")
