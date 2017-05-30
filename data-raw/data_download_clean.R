@@ -222,11 +222,14 @@ new_size/15629000
 # time to roxygenize those .R description files we wrote!
 devtools::document()
 
+# Build vignette
+devtools::build_vignettes()
+# delete Building vignette folder as it creates build warning.
+unlink("inst/doc", recursive = TRUE)
+
 # Render .pdf vignette
 rmarkdown::render("vignettes/wooldRidge-vignette.Rmd", pdf_document())
 
-# Build vignette
-devtools::build_vignettes()
 
 # Finally, remove the extra "Data Sets- R" folder
 unlink("Data Sets- R", recursive = TRUE)
