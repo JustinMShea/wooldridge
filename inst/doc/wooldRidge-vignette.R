@@ -1,21 +1,15 @@
 ## ---- echo = TRUE, eval = TRUE, warning=FALSE----------------------------
-
 library(wooldRidge)
+data("jtrain")
 
-# Load jtrain data set.
-  data("jtrain")
+## ------------------------------------------------------------------------
+index <- jtrain$year == 1987 & jtrain$union == 0
 
-# Create an index of which values occur in 1987 and are non-union
- index <- jtrain$year == 1987 & jtrain$union == 0
+## ------------------------------------------------------------------------
+jtrain_1987_nonunion <- jtrain[index,]
 
-# Next, subset clean data, by the index to return nonunion firms in 1987
- jtrain_index <- jtrain[index,]
-
-# Now, create the linear model and view results
-  linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_index)
-  summary(linear_model)
-
-# Visualize
-  plot(linear_model)
-
+## ------------------------------------------------------------------------
+linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_1987_nonunion)
+linear_model$coefficients
+summary(linear_model)$r.squared
 

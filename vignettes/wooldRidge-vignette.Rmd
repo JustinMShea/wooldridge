@@ -47,7 +47,8 @@ $$lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy$$
 
 ```{r}
 linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_1987_nonunion)
-summary(linear_model)
+linear_model$coefficients
+summary(linear_model)$r.squared
 ```
 
 

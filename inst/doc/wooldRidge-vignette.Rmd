@@ -20,25 +20,35 @@ From example 4.7 of the text:
 
 > "We can use the scrap rate to measure the effect of worker training on productivity. Using the data in jtrain, but only for the year 1987 and for nonunionized firms, we obtain the following estimated equation:"
 
+
+First, load the wooldRidge package and `jtrain` data set.
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
-
 library(wooldRidge)
-
-# Load jtrain data set.
-  data("jtrain")
-
-# Create an index of which values occur in 1987 and are non-union
- index <- jtrain$year == 1987 & jtrain$union == 0
-
-# Next, subset clean data, by the index to return nonunion firms in 1987
- jtrain_index <- jtrain[index,]
-
-# Now, create the linear model and view results
-  linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_index)
-  summary(linear_model)
-
-# Visualize
-  plot(linear_model)
-
+data("jtrain")
 ```
+
+Next, create an index identifying which observations occur in 1987 and are non-union.
+
+```{r} 
+index <- jtrain$year == 1987 & jtrain$union == 0
+```
+
+Next, subset the jtrain data by the new index. This returns a data.frame of `jtrain` data
+ of non-union firms for the year 1987.
+```{r}
+jtrain_1987_nonunion <- jtrain[index,]
+```
+
+Finally, create the linear model regressing hrsemp(total hours training/total employees trained),
+the log of annual sales, and the log of the number of the employees, against the log of the scrape rate.
+
+$$lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy$$
+
+
+```{r}
+linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_1987_nonunion)
+linear_model$coefficients
+summary(linear_model)$r.squared
+```
+
 

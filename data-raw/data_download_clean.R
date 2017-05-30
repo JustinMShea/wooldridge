@@ -222,6 +222,9 @@ new_size/15629000
 # time to roxygenize those .R description files we wrote!
 devtools::document()
 
+# Render .pdf vignette
+rmarkdown::render("vignettes/wooldRidge-vignette.Rmd", pdf_document(latex_engine = "lualatex"))
+
 # Build vignette
 devtools::build_vignettes() 
 
