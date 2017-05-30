@@ -39,14 +39,17 @@ Next, subset the jtrain data by the new index. This returns a data.frame of `jtr
 jtrain_1987_nonunion <- jtrain[index,]
 ```
 
-Finally, create the linear model regressing hrsemp(total hours training/total employees trained),
-the log of annual sales, and the log of the number of the employees, against the log of the scrape rate.
+Now create the linear model regressing hrsemp(total hours training/total employees trained), the log of annual sales, and the log of the number of the employees, against the log of the scrape rate.
 
 $$lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy$$
 
 
 ```{r}
 linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_1987_nonunion)
+```
+
+Finally, print the `coefficients` of the model as well as its $R^2$. 
+```{r}
 linear_model$coefficients
 summary(linear_model)$r.squared
 ```

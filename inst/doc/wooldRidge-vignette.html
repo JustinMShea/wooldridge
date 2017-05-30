@@ -91,10 +91,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">index &lt;-<span class="st"> </span>jtrain$year ==<span class="st"> </span><span class="dv">1987</span> &amp;<span class="st"> </span>jtrain$union ==<span class="st"> </span><span class="dv">0</span></code></pre></div>
 <p>Next, subset the jtrain data by the new index. This returns a data.frame of <code>jtrain</code> data of non-union firms for the year 1987.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">jtrain_1987_nonunion &lt;-<span class="st"> </span>jtrain[index,]</code></pre></div>
-<p>Finally, create the linear model regressing hrsemp(total hours training/total employees trained), the log of annual sales, and the log of the number of the employees, against the log of the scrape rate.</p>
+<p>Now create the linear model regressing hrsemp(total hours training/total employees trained), the log of annual sales, and the log of the number of the employees, against the log of the scrape rate.</p>
 <p><span class="math display">\[lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy\]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lscrap ~<span class="st"> </span>hrsemp +<span class="st"> </span>lsales +<span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_1987_nonunion)
-linear_model$coefficients</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lscrap ~<span class="st"> </span>hrsemp +<span class="st"> </span>lsales +<span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_1987_nonunion)</code></pre></div>
+<p>Finally, print the <code>coefficients</code> of the model as well as its <span class="math inline">\(R^2\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linear_model$coefficients</code></pre></div>
 <pre><code>## (Intercept)      hrsemp      lsales     lemploy 
 ## 12.45837178 -0.02926893 -0.96202693  0.76147045</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(linear_model)$r.squared</code></pre></div>
