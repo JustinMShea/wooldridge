@@ -4,19 +4,20 @@
 
 For students of Econometrics who are new to R, loading and formatting data can present barriers to accessing the many statistical functions the language offers.
 
-The `wooldRidge` data package aims to make this process easy. It contains all 111 data sets discussed in **Introductory Econometrics: A Modern Approach, 6th Edition** by Jeffrey M. Wooldridge. The package efficiently stores formatted versions of each data set, complete with documentation. In addition, all data sets have been compressed resulting in a total data set that is 38.63% of its original size. 
-Just install the package, load it, and call the data set you wish to work with.
+The `wooldRidge` data package aims to make this process easy. It contains all 111 data sets discussed in **Introductory Econometrics: A Modern Approach, 6th Edition** by Jeffrey M. Wooldridge. The package efficiently stores formatted versions of each data set, complete with documentation. In addition, all data sets have been compressed resulting in a total data set that is 38.63% of its original size. Just install the package, load it, and call the data set you wish to work with.
 
 Happy Econometric-ing!
 
 
 ## Installation
 
-```r{}
-# First, install 'ghit', a lightweight github installer.
+If you don't alreaady have `devtools` installed, try the `ghit` package, which is a lightweight github installer.
+```{r}
 install.packages("ghit")
+```
 
-# Install 'wooldRidge' package from GitHub
+Next, install 'wooldRidge' package from my GitHub page.
+```{r}
 ghit::install_github("JustinMShea/wooldRidge")
 ```
 
@@ -25,15 +26,15 @@ ghit::install_github("JustinMShea/wooldRidge")
 Load the `wooldRidge` package and use the `data()` function to load the desired set.
 ```{r}
 library(wooldRidge)
-
 data("jtrain")
 ```
+
 Check out the documentation on the variable column names.
 ```{r}
 ?jtrain
 ```
 
-If your using RStudio, try the `View()` function to 'eyeball' the data set in a traditional spreadsheet format.
+If you are using RStudio, try the `View()` function to 'eyeball' the data set in a traditional spreadsheet format.
 ```{r}
 View(jtrain)
 ```
