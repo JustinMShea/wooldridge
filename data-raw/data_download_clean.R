@@ -226,6 +226,7 @@ devtools::document()
 devtools::build_vignettes()
 # delete Building vignette folder as it creates build warning.
 unlink("inst/doc", recursive = TRUE)
+unlink("inst", recursive = TRUE)
 
 # Render .pdf vignette
 rmarkdown::render("vignettes/wooldRidge-vignette.Rmd", pdf_document())
