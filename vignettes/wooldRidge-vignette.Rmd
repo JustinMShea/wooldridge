@@ -23,8 +23,9 @@ library(wooldRidge)
 
 **`Example 2.10:` A Log Wage Equation**
 
-> "Using the wage1 data as in Example 2.4, but using log(wage) as the dependent variable,
-we obtain the following relationship:"
+From the text:
+
+> "Using the wage1 data as in Example 2.4, but using log(wage) as the dependent variable, we obtain the following relationship:"
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ$$
 
@@ -49,6 +50,8 @@ summary(log_wage_model)$r.squared
 ## Chapter 3: Multiple Regression Analysis: Estimation
 
 **`Example 3.2:` Hourly Wage Equation**
+
+From the text:
 
 > "Using the 526 observations on workers in 'wage1', we include $educ$(years of education), $exper$(years of labor market experience), and $tenure$(years with the current employer) in an equation explain log($wage$)."
 
@@ -110,21 +113,23 @@ summary(linear_model)
 
 **`Example 5.3:` Economic Model of Crime**
 
-We illustrate the **Lagrange multiplier (LM) statistics** test by using a slight extension of the crime model from example 3.5.
+From the text:
+
+> "We illustrate the Lagrange Multiplier $(LM)$ statistics test by using a slight extension of the crime model from example 3.5."
 
 $$narr86 = \beta_0 + \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86 + \mu$$
 
-_narr86:_ number of times arrested, 1986.
+$narr86:$ number of times arrested, 1986.
 
-_pcnv:_ proportion of prior arrests leading to convictions.
+$pcnv:$ proportion of prior arrests leading to convictions.
 
-_avgsen:_ average sentence served, length in months.
+$avgsen:$ average sentence served, length in months.
 
-_tottime:_ time in prison since reaching the age of 18, length in months.
+$tottime:$ time in prison since reaching the age of 18, length in months.
 
-_ptime86:_ months in prison during 1986
+$ptime86:$ months in prison during 1986
 
-_qemp86:_ quarters employed, 1986
+$qemp86:$ quarters employed, 1986
 
 
 Load the `crime1` data set containing arrests during the year 1986 and other information on 2,725 men born in either 1960 or 1961 in California.
@@ -132,7 +137,9 @@ Load the `crime1` data set containing arrests during the year 1986 and other inf
 data(crime1)
 ```
 
-We use the _LM_ statistic to test the null hypothesis that _avgsen_ and _tottime_ have no effect on _narr86_ once other factors have been controlled for. First, estimate the restricted model by regressing _narr86_ on _pcnv, ptime86,_ and _qemp86_; the variables _avgsen_ and _tottime_ are excluded from this regression.
+From the text:
+
+> "We use the $LM$ statistic to test the null hypothesis that $avgsen$ and $tottime$ have no effect on $narr86$ once other factors have been controlled for. First, estimate the restricted model by regressing $narr86$ on $pcnv, ptime86,$ and $qemp86$; the variables $avgsen$ and $tottime$ are excluded from this regression."
 
 ```{r, tidy = TRUE}
 restricted_model <- lm(narr86 ~ pcnv + ptime86 + qemp86, data = crime1)
@@ -147,20 +154,17 @@ restricted_model_u <- restricted_model$residuals
 Next, we run the regression of:
 
 $$\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86$$
-As always, the order in which we list the independent variables is irrelevant.
+From the text:
+
+> "As always, the order in which we list the independent variables is irrelevant.This second regression produces $R^2_{\mu}$, which turns out to be about 0.0015."
 
 ```{r, tidy = TRUE}
 LM_u_model <- lm(restricted_model_u ~ pcnv + ptime86 + qemp86 + avgsen + tottime, data = crime1)
+
+summary(LM_u_model)$r.square
 ```
 
-This second regression produces $R^2_{\mu}$, which turns out to be about 0.0015.
-
-```{r}
-summary(LM_u_model)$r.squared
-```
-
-
-This may seem small, but we must multiple it by _n_ to get the _LM_ statistic: 
+> "This may seem small, but we must multiple it by $n$ to get the $LM$ statistic:"
 
 $$LM = 2,725(0.0015)$$
 
@@ -169,14 +173,14 @@ LM_test <- nobs(LM_u_model) * 0.0015
 LM_test
 ```
 
-The 10% critical value in a chi-square distribution with two degrees of freedom is about 4.61 (rounded to two decimal places). 
+> "The 10% critical value in a chi-square distribution with two degrees of freedom is about 4.61 (rounded to two decimal places)." 
 
 ```{r}
 qchisq(1 - 0.10, 2)
 ```
 
-Thus, we fail to reject the null hypothesis that $\beta_{avgsen} = 0$ and 
-$\beta_{tottime} = 0$ at the 10% level. 
+> "Thus, we fail to reject the null hypothesis that $\beta_{avgsen} = 0$ and 
+$\beta_{tottime} = 0$ at the 10% level."" 
 
 The _p_-value is:
 $$P(X^2_{2} > 4.09) \approx 0.129$$
@@ -191,28 +195,29 @@ so we would reject the $H_0$ at the 15% level.
 
 **Example 6.1:` Effects of Pollution on Housing Prices, standardized.**
 
-We use the data `hrprice2` to illustrate the use of beta coefficients. 
-Recall that the key independent variable is _nox_, a measure of nitrogen oxide
-in the air over each community. One way to understand the size of the pollution effect-without getting into the science underling nitrogen oxide's effect on air quality-is to compute beta coefficients. 
+From the text:
 
-The population equation is the level-level model:
+> "We use the data $hrprice2$ to illustrate the use of beta coefficients. 
+Recall that the key independent variable is $nox$, a measure of nitrogen oxide
+in the air over each community. One way to understand the size of the pollution effect-without getting into the science underling nitrogen oxide's effect on air quality-is to compute beta coefficients. 
+The population equation is the level-level model:"
 
 $$price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \beta_5stratio + \mu$$
 
-_price_: median housing price.
 
-_nox_: Nitrous Oxide concentration; parts per million.
+$price$: median housing price.
 
-_crime_: number of reported crimes per capita.
+$nox$: Nitrous Oxide concentration; parts per million.
 
-_rooms_: average number of rooms in houses in the community.
+$crime$: number of reported crimes per capita.
 
-_dist_: weighted distance of the community to 5 employment centers.
+$rooms$: average number of rooms in houses in the community.
 
-_stratio_: average student-teacher ratio of schools in the community.
+$dist$: weighted distance of the community to 5 employment centers.
 
+$stratio$: average student-teacher ratio of schools in the community.
 
-The beta coefficients are reported in the following equation (so each variable has been converted to its $z$-score):
+> "The beta coefficients are reported in the following equation (so each variable has been converted to its $z$-score):"
 
 $$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio$$
 
@@ -223,7 +228,7 @@ data(hrpice2)
 
 ```
 
-Next, estimate the coefficient with the usual `lm` regression model, but this time standardized coefficients by wraping each variable with R's `scale` function:
+Next, estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wraping each variable with R's `scale` function:
 
 ```{r, tidy = TRUE}
 housing_standard <- lm(scale(price)~0+scale(nox)+scale(crime)+scale(rooms)+scale(dist) + scale(stratio), data = hprice2)
@@ -243,3 +248,31 @@ summary(housing_interactive)
 
 ## Chapter 7: Multiple Regression Analysis with Qualitative Information 
 
+**`Example 7.4:` Housing Price Regression, Qualitative Binary variable**
+
+This time we use the `hrpice1` data.
+
+```r{}
+data(hrpice1)
+```
+
+Having just worked with `hrpice2`, it may be helpful to view the documentation on this data set and read the variable names.
+
+```{r, eval=FALSE}
+?hprice1
+```
+
+$$\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \beta_3bdrms + \beta_4colonial $$
+
+Estimate the coefficients of the above linear model on the `hprice` data set.
+
+```{r, tidy=TRUE}
+housing_qualitative <- lm(lprice ~ llotsize + lsqrft + bdrms + colonial, data=hprice1)
+
+summary(housing_qualitative)
+```
+
+Summary from the text:
+
+> "All the variables are self-explantory except $colonial$, which is a binary variable equal to one if the house is of the colonial style. 
+What does the coefficient on $colonial$ mean? For given levels of $lotsize$, $sqrt$, and $bdrms$, the difference in $\widehat{log(price)}$ between a house of colonial style and that of another styule is 0.54. This means that colonial-style house is predicted to sell for about 5.4% more, holding other factors fixed."
