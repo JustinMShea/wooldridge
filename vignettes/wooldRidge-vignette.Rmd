@@ -21,7 +21,7 @@ library(wooldRidge)
 
 ## Chapter 2: The Simple Regression Model
 
-**Example 2.10:** A Log Wage Equation
+**`Example 2.10:` A Log Wage Equation**
 
 > "Using the wage1 data as in Example 2.4, but using log(wage) as the dependent variable,
 we obtain the following relationship:"
@@ -48,11 +48,9 @@ summary(log_wage_model)$r.squared
 
 ## Chapter 3: Multiple Regression Analysis: Estimation
 
-**Example 3.2:** Hourly Wage Equation
+**`Example 3.2:` Hourly Wage Equation**
 
-> "Using the 526 observations on workers in 'wage1', we include educ(years of education),
-exper(years of labor market experience), and tenure(years with the current employer) in an
-equation explain log(wage)."
+> "Using the 526 observations on workers in 'wage1', we include $educ$(years of education), $exper$(years of labor market experience), and $tenure$(years with the current employer) in an equation explain log($wage$)."
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure$$
 
@@ -69,7 +67,7 @@ hourly_wage_model$coefficients
 
 ## Chapter 4: Multiple Regression Analysis: Inference
 
-**Example 4.7:** Effect of Job Training on Firm Scrap Rates
+**`Example 4.7` Effect of Job Training on Firm Scrap Rates**
 
 From the text:
 
@@ -88,8 +86,8 @@ Next, create a logical index identifying which observations occur in 1987 and ar
 index <- jtrain$year == 1987 & jtrain$union == 0
 ```
 
-Next, subset the jtrain data by the new index. This returns a data.frame of `jtrain` data
-of non-union firms for the year 1987.
+Next, subset the jtrain data by the new index. This returns a data.frame of `jtrain` data of non-union firms for the year 1987.
+
 ```{r}
 jtrain_1987_nonunion <- jtrain[index,]
 ```
@@ -110,7 +108,7 @@ summary(linear_model)
 
 ## Chapter 5: Multiple Regression Analysis: OLS Asymptotics
 
-**Example 5.3:** Economic Model of Crime
+**`Example 5.3:` Economic Model of Crime**
 
 We illustrate the **Lagrange multiplier (LM) statistics** test by using a slight extension of the crime model from example 3.5.
 
@@ -150,18 +148,22 @@ Next, we run the regression of:
 
 $$\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86$$
 As always, the order in which we list the independent variables is irrelevant.
+
 ```{r, tidy = TRUE}
 LM_u_model <- lm(restricted_model_u ~ pcnv + ptime86 + qemp86 + avgsen + tottime, data = crime1)
 ```
 
 This second regression produces $R^2_{\mu}$, which turns out to be about 0.0015.
+
 ```{r}
 summary(LM_u_model)$r.squared
 ```
 
+
 This may seem small, but we must multiple it by _n_ to get the _LM_ statistic: 
 
 $$LM = 2,725(0.0015)$$
+
 ```{r}
 LM_test <- nobs(LM_u_model) * 0.0015
 LM_test
@@ -187,7 +189,7 @@ so we would reject the $H_0$ at the 15% level.
 
 ## Chapter 6: Multiple Regression: Further Issues
 
-**Example 6.1:** Effects of Pollution on Housing Prices, standardized.
+**Example 6.1:` Effects of Pollution on Housing Prices, standardized.**
 
 We use the data `hrprice2` to illustrate the use of beta coefficients. 
 Recall that the key independent variable is _nox_, a measure of nitrogen oxide
@@ -217,7 +219,6 @@ $$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist 
 First, load the `hrpice2` data.
 
 ```r{}
-
 data(hrpice2)
 
 ```
@@ -230,11 +231,11 @@ housing_standard <- lm(scale(price)~0+scale(nox)+scale(crime)+scale(rooms)+scale
 housing_standard$coefficients
 ```
 
-**Example 6.2:** Effects of Pollution on Housing Prices, quadratic interactive term
+**`Example 6.2:` Effects of Pollution on Housing Prices, Quadratic Interactive Term**
 
 We modify the housing model, adding a quadratic term in _rooms_: 
 
-$$price = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu$$
+$$log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu$$
 ```{r}
 housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms+I(rooms^2) + stratio, data = hprice2)
 summary(housing_interactive)
