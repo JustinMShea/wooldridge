@@ -229,8 +229,8 @@ unlink("inst/doc", recursive = TRUE)
 unlink("inst", recursive = TRUE)
 
 # Render .pdf vignette
+library(rmarkdown)
 rmarkdown::render("vignettes/wooldRidge-vignette.Rmd", pdf_document())
-
 
 # Finally, remove the extra "Data Sets- R" folder
 unlink("Data Sets- R", recursive = TRUE)
