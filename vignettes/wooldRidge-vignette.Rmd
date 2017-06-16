@@ -25,7 +25,7 @@ library(wooldRidge)
 
 From the text:
 
-> "Using the wage1 data as in Example 2.4, but using log(wage) as the dependent variable, we obtain the following relationship:"
+> " Using the wage1 data as in Example 2.4, but using log(wage) as the dependent variable, we obtain the following relationship:"
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ$$
 
@@ -53,7 +53,7 @@ summary(log_wage_model)$r.squared
 
 From the text:
 
-> "Using the 526 observations on workers in 'wage1', we include $educ$(years of education), $exper$(years of labor market experience), and $tenure$(years with the current employer) in an equation explain log($wage$)."
+> " Using the 526 observations on workers in 'wage1', we include $educ$(years of education), $exper$(years of labor market experience), and $tenure$(years with the current employer) in an equation explain log($wage$)."
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure$$
 
@@ -74,9 +74,9 @@ hourly_wage_model$coefficients
 
 From the text:
 
-> "The scrap rate for a manufacturing firm is the number of defective items - products that must be discarded - out of every 100 produced. Thus, for a given number of items produced, a decrease in the scrap rate reflects higher worker productivity."
+> " The scrap rate for a manufacturing firm is the number of defective items - products that must be discarded - out of every 100 produced. Thus, for a given number of items produced, a decrease in the scrap rate reflects higher worker productivity."
 
-> "We can use the scrap rate to measure the effect of worker training on productivity. Using the data in jtrain, but only for the year 1987 and for nonunionized firms, we obtain the following estimated equation:"
+> "We can use the scrap rate to measure the effect of worker training on productivity. Using the data in jtrain, but only for the year 1987 and for non-unionized firms, we obtain the following estimated equation:"
 
 First, load the `jtrain` data set.
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
@@ -180,7 +180,7 @@ qchisq(1 - 0.10, 2)
 ```
 
 > "Thus, we fail to reject the null hypothesis that $\beta_{avgsen} = 0$ and 
-$\beta_{tottime} = 0$ at the 10% level."" 
+$\beta_{tottime} = 0$ at the 10% level." 
 
 The _p_-value is:
 $$P(X^2_{2} > 4.09) \approx 0.129$$
@@ -217,7 +217,7 @@ $dist$: weighted distance of the community to 5 employment centers.
 
 $stratio$: average student-teacher ratio of schools in the community.
 
-> "The beta coefficients are reported in the following equation (so each variable has been converted to its $z$-score):"
+ The beta coefficients are reported in the following equation (so each variable has been converted to its $z$-score):"
 
 $$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio$$
 
@@ -228,7 +228,7 @@ data(hrpice2)
 
 ```
 
-Next, estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wraping each variable with R's `scale` function:
+Next, estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wrapping each variable with R's `scale` function:
 
 ```{r, tidy = TRUE}
 housing_standard <- lm(scale(price)~0+scale(nox)+scale(crime)+scale(rooms)+scale(dist) + scale(stratio), data = hprice2)
@@ -274,5 +274,44 @@ summary(housing_qualitative)
 
 Summary from the text:
 
-> "All the variables are self-explantory except $colonial$, which is a binary variable equal to one if the house is of the colonial style. 
-What does the coefficient on $colonial$ mean? For given levels of $lotsize$, $sqrt$, and $bdrms$, the difference in $\widehat{log(price)}$ between a house of colonial style and that of another styule is 0.54. This means that colonial-style house is predicted to sell for about 5.4% more, holding other factors fixed."
+> "All the variables are self-explanatory except $colonial$, which is a binary variable equal to one if the house is of the colonial style. What does the coefficient on $colonial$ mean? For given levels of $lotsize$, $sqrt$, and $bdrms$, the difference in $\widehat{log(price)}$ between a house of colonial style and that of another style is 0.54. This means that colonial-style house is predicted to sell for about 5.4% more, holding other factors fixed."
+
+## Chapter 8: Heteroskedasticity
+
+**`Example 8.9:` Determinants of Personal Computer Ownership**
+
+> "We use the data in $GPA1$ to estimate the probability of owning a computer.
+Let $PC$ denote a binary indicator equal to unity if the student owns a computer, and zero otherwise. The variable $hsGPA$ is high school GPA, $ACT$ is achievement test score, and $parcoll$ is a binary indicator equal to unity if at least one parent attended college."
+
+> "The equation estimated by OLS is:"
+
+$$\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial $$
+
+
+
+Load the `gpa1` data and create a new variable combining the`fathcoll` and `mothcoll`, into one, `parcoll`. This new column indicates if any parent went to college, not just one or the other.
+
+```{r}
+data(GPA1)
+gpa1$parcoll <- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)
+```
+
+```{r}
+GPA_OLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1)
+
+summary(GPA_OLS)
+```
+
+> "Just as with example 8.8, there are no striking differences between the usual and robust standard errors. Nevertheless, we also estimate the model by Weighted Least Squares or $WLS$. Because all of the $OLS$ fitted values are inside the unit interval, no adjustments are needed"
+
+First, calculate the weights and then pass them to the same linear model.
+```{r}
+weights <- GPA_OLS$fitted.values * (1-GPA_OLS$fitted.values)
+
+GPA_WLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)
+summary(GPA_WLS)
+```
+
+> "There are no important differences in the OLS and WLS estimates. The only significant explanatory variable is $parcoll$, and in both cases we estimate that the probability of $PC$ ownership is about .22 higher if at least on parent attended college"
+
+
