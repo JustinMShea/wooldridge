@@ -341,12 +341,9 @@ Neither $sales$ nor $profmarg$ is statistically significant at even the 10% leve
 Of the 32 firms, 31 have annual sales less than $20$ billion. One firm has annual sales of almost $40$ billions. Figure 9.1 shows how far hthis firm is from the rest of the sample.
 
 ```{r, tidy=TRUE}
-outlier <- rdchem[which(rdchem$sales == max(rdchem$sales)),]
-
 plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem, 
      main = "FIGURE 9.1: Scatterplot of R&D intensity against firm sales", 
      xlab = "firm sales (in millions of dollars)", ylab = "R&D as a percentage of sales")
-text(x = outlier$rdintens, y = outlier$sales, labels = outlier$sales)
 ```
 
 > "In terms of sales, this firm is over twice as large as every other firm, so it might be a good idea to estimate the model without it. When we do this, we obtain:"
