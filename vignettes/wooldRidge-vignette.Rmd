@@ -305,6 +305,7 @@ summary(GPA_OLS)
 > "Just as with example 8.8, there are no striking differences between the usual and robust standard errors. Nevertheless, we also estimate the model by Weighted Least Squares or $WLS$. Because all of the $OLS$ fitted values are inside the unit interval, no adjustments are needed"
 
 First, calculate the weights and then pass them to the same linear model.
+
 ```{r}
 weights <- GPA_OLS$fitted.values * (1-GPA_OLS$fitted.values)
 
@@ -313,5 +314,46 @@ summary(GPA_WLS)
 ```
 
 > "There are no important differences in the OLS and WLS estimates. The only significant explanatory variable is $parcoll$, and in both cases we estimate that the probability of $PC$ ownership is about .22 higher if at least on parent attended college"
+
+
+# Chapter 9: More on Specification and Data Issues
+
+**`Example 9.8:` R&D Intensity and Firm Size**
+
+> "Suppose the R&D expenditures as a percentage of sales, $rdintens$, are realted to $sales$ (in millions) and profits as a percentage of sales, $profmarg$:"
+
+$$rdintens = \beta_0 + \beta_1slaes + \beta_2profmarg + \mu$$
+
+> "The $OLS$ equation using data on 32 chemical companies in $rdchem$ is"
+
+Load the data, run the model, and apply the `summary` diagnostics function to the model.
+
+```{r}
+data(rdchem)
+ 
+all_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem)
+
+summary(all_rdchem)
+```
+
+Neither $sales$ nor $profmarg$ is statistically significant at even the 10% level in this regression. 
+
+Of the 32 firms, 31 have annual sales less than $20$ billion. One firm has annual sales of almost $40$ billions. Figure 9.1 shows how far hthis firm is from the rest of the sample.
+
+```{r, tidy=TRUE}
+outlier <- rdchem[which(rdchem$sales == max(rdchem$sales)),]
+
+plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem, 
+     main = "FIGURE 9.1: Scatterplot of R&D intensity against firm sales", 
+     xlab = "firm sales (in millions of dollars)", ylab = "R&D as a percentage of sales")
+text(x = outlier$rdintens, y = outlier$sales, labels = outlier$sales)
+```
+
+> "In terms of sales, this firm is over twice as large as every other firm, so it might be a good idea to estimate the model without it. When we do this, we obtain:"
+
+```{r}
+smallest_rdchem<- lm(rdintens ~ sales + profmarg, data=rdchem, subset=(sales < max(sales)))
+summary(smallest_rdchem)
+```
 
 
