@@ -349,8 +349,9 @@ plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem,
 > "In terms of sales, this firm is over twice as large as every other firm, so it might be a good idea to estimate the model without it. When we do this, we obtain:"
 
 ```{r}
-smallest_rdchem<- lm(rdintens ~ sales + profmarg, data=rdchem, subset=(sales < max(sales)))
+smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem, 
+                      subset = (sales < max(sales)))
+
 summary(smallest_rdchem)
 ```
-
 
