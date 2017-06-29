@@ -530,3 +530,67 @@ summary(arch_model)
 > "The t statistic on $\hat{\mu^2_{t-1}}$ (mu2_hat_1) is over nine, indicating strong ARCH. As we discussed earlier, a larger error at time $t-1$ implies a larger variance in stock returns today.
 
 > "It is important to see that, though the $squared$ $OLS$ residuals are autocorrelated, the $OLS$ residuals themselves are not (as is consistent with the EMH). Regressing on $\hat{\mu_t}$ and $\hat{\mu_{t-1}}$ gives $\hat{p} = 0.0014$ with $t_{\hat{p}} = 0.038$.
+
+## Chapter 13: Pooling Cross Sections across Time: Simple Panel Data Methods
+
+**`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
+
+> "Many states in the United States have adopted different policies in an attempt to curb
+drunk driving. Two types of laws that we will study here are $open$ $container$ $laws$ -which make it illegal for passengers to have open containers of alcoholic beverages -and $administrative$ $per$ $se$ $laws$ -which allow courts to suspend licenses after a driver is arrested for drunk driving but before the driver is convicted. One possible analysis is to use a single cross section of states to regress driving fatalities (or those related to drunk driving) on dummy variable indicators for whether each law is present. This is unlikely to work well because states decide, through legislative processes, whether they need such laws. Therefore, the presence of laws is likely to be related to the average drunk driving fatalities in recent years. A more convincing analysis uses panel data over a time period where some states adopted new laws (and some states may have repealed existing laws). The
+file TRAFFIC1 contains data for 1985 and 1990 for all 50 states and the District of
+Columbia. The dependent variable is the number of traffic deaths per 100 million miles
+driven (dthrte). In 1985, 19 states had open container laws while 22 states had such laws
+in 1990. In 1985, 21 states had per se laws; the number had grown to 29 by 1990.
+Using OLS after first differencing gives:"
+
+$$\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}$$
+
+```{r}
+data("traffic1")
+ 
+DD_model <- lm(cdthrte ~ copen + cadmn, data = traffic1)
+
+summary(DD_model)
+```
+
+> "The estimates suggest that adopting an open container law lowered the traffic fatality rate by $0.42$, a nontrivial effect given that the average death rate in 1985 was
+2.7 with a standard deviation of about 0.6. The estimate is statistically significant at the 5% level against a twosided alternative. The administrative per se law has a smaller effect, and its t statistic is only -1.29; but the estimate is the sign we expect. The intercept in this equation shows that traffic fatalities fell substantially for all states over the five-year period, whether or not there were any law changes. The states that adopted an open container law over this period saw a further drop, on average, in fatality rates."
+
+> "Other laws might also affect traffic fatalities, such as seat belt laws, motorcycle helmet laws, and maximum speed limits. In addition, we might want to control for age and gender distributions, as well as measures of how influential an organization such as Mothers Against Drunk Driving is in each state."
+
+## Chapter 14: Advanced Panel Data Methods
+
+**`Example 14.1:` Effect of Job Training on Firm Scrap Rates**
+
+> "We use the data for three years, 1987, 1988, and 1989, on the 54 firms that reported scrap rates in each year. No firms received grants prior to 1988; in 1988, 19 firms received grants; in 1989, 10 different firms received grants. Therefore, we must also allow for the possibility that the additional job training in 1988 made workers more productive in 1989. This is easily done by including a lagged value of the grant indicator. We also include year dummies for 1988 and 1989. The results are given in Table below. 
+
+Install the `plm` package and check out the documentation. The model syntax for `plm` models is very similar to the linear model, with additional slots to further define various estimation methods.
+```{r, tidy=TRUE}
+library(plm)
+
+data("jtrain")
+ 
+scrap_panel <- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain,
+            index = c('fcode','year'), model = 'within', effect ='individual')
+
+summary(scrap_panel)
+```
+
+
+> "We have reported the results in a way that emphasizes the need to interpret the estimates in light of the unobserved effects model, (14.4). We are explicitly controlling for the unobserved, time-constant effects in $\alpha_i$. The time-demeaning allows us to estimate the $\Beta_j$, but (14.5) is not the best equation for iterpreting the estimates.
+
+> "Interestingly, the estimated lagged effect of the training grant is substantially
+larger than the contemporaneous effect: job training has an effect at least one year
+later. Because the dependent variable is in logarithmic form, obtaining a grant in
+1988 is predicted to lower the firm scrap rate in 1989 by about 34.4% $[exp(-0.422)-1 = -0.344]$; the coefficient on $grant_1$ is significant at the 5% level against a twosided alternative. The coefficient $grant$ is significant at the 10% level, and the
+size of the coefficient is hardly trivial. Notice the $df$ is obtained as $N(T-1) - k = 54(3-1)-4 = 104$"
+
+> "The coefficient on $d89$ indicates that the scrap rate was substantially lower in 1989
+than in the base year, 1987, even in the absence of job training grants. Thus, it is important to allow for these aggregate effects. If we omitted the year dummies, the secular increase in worker productivity would be attributed to the job training grants.
+The diagnostic results above shows that, even after controlling for aggregate trends in productivity, the job training grants had a large estimated effect."
+
+> "Finally, it is crucial to allow for the lagged effect in the model. If we omit $grant_1$, then we are assuming that the effect of job training does not last into the next year. The estimate on $grant$ when we drop $grant_1$ is -0.082 ($t = -0.65$); this is much smaller and statistically insignificant."
+
+
+
+
