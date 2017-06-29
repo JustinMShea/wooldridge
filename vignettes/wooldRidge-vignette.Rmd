@@ -494,14 +494,39 @@ summary(return_AR)
 
 $$\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t$$
 
-Calculated $\hat{\mu^2_t}$ by squaring the residuals contained in the `return_AR` model object and store the results in the variable named `return_mu2`. Then regress the `return_1` data also contained in the `return_AR` objects model matrix. Note the `data` arguement in the call to `lm` below.
+Calculated $\hat{\mu^2_t}$ by taking the residuals contained in the `return_AR` model object and store the results in the variable named `return_mu`. Then regress the `return_1` variable against the square of `return_mu`. Notice, we set data equal to the `return_AR` objects model matrix, which contains data free of leading missing values inherent to lagged variables.
 
 ```{r}
-return_mu2 <- return_AR$residuals^2
+return_mu <- residuals(return_AR)
 
-mu_squared_hat <- lm(return_mu2 ~ return_1, data = return_AR$model)
+mu2_hat_model <- lm(return_mu^2 ~ return_1, data = return_AR$model)
 
-summary(mu_squared_hat)
+summary(mu2_hat_model)
 ```
 
 > "The $t$ statistic on $return_{t-1}$ is about -5.5, indicating strong evidence of heteroskedasticity. Because the coeffict on $return_{t-1}$ is negative, we have the interesting finding that volatility in stock returns is lower the previous return was high, and vice versa. Therefore, we have found what is common in many financial studies: the expected value of stock returns does not depend on past returns, but the variance of returns does."
+
+**`Example 12.9:` ARCH in Stock Returns**
+
+> "In Example 12.8, we saw that there was heteroskedasticity in weekly stock returns. This
+heteroskedasticity is actually better characterized by the ARCH model in (12.50). If we
+compute the OLS residuals from (12.47), square these, and regress them on the lagged
+squared residual, we obtain:"
+
+$$\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t$$
+
+We still have `return_mu` in the working environment so we can use it to create $\hat{\mu^2_t}$, (`mu2_hat`) and $\hat{\mu^2_{t-1}}$ (`mu2_hat_1`). Notice the use `R`'s matrix subset operations to perform the lag operation. We drop the first observation of `mu2_hat` and squared the results. Next, we remove the last observation of `mu2_hat_1` using the subtraction operator combined with a call to the `NROW` function on `return_mu`. Now, both contain $688$ observations and we can run a standard linear model.
+
+```{r}
+mu2_hat  <- return_mu[-1]^2
+
+mu2_hat_1 <- return_mu[-NROW(return_mu)]^2
+
+arch_model <- lm(mu2_hat ~ mu2_hat_1)
+
+summary(arch_model)
+```
+
+> "The t statistic on $\hat{\mu^2_{t-1}}$ (mu2_hat_1) is over nine, indicating strong ARCH. As we discussed earlier, a larger error at time $t-1$ implies a larger variance in stock returns today.
+
+> "It is important to see that, though the $squared$ $OLS$ residuals are autocorrelated, the $OLS$ residuals themselves are not (as is consistent with the EMH). Regressing on $\hat{\mu_t}$ and $\hat{\mu_{t-1}}$ gives $\hat{p} = 0.0014$ with $t_{\hat{p}} = 0.038$.
