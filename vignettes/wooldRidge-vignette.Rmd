@@ -243,6 +243,7 @@ We modify the housing model, adding a quadratic term in _rooms_:
 $$log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu$$
 ```{r}
 housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms+I(rooms^2) + stratio, data = hprice2)
+
 summary(housing_interactive)
 ```
 
@@ -267,7 +268,7 @@ $$\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \be
 Estimate the coefficients of the above linear model on the `hprice` data set.
 
 ```{r, tidy=TRUE}
-housing_qualitative <- lm(lprice ~ llotsize + lsqrft + bdrms + colonial, data=hprice1)
+housing_qualitative <- lm(lprice ~ llotsize + lsqrft + bdrms + colonial, data = hprice1)
 
 summary(housing_qualitative)
 ```
@@ -310,6 +311,7 @@ First, calculate the weights and then pass them to the same linear model.
 weights <- GPA_OLS$fitted.values * (1-GPA_OLS$fitted.values)
 
 GPA_WLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)
+
 summary(GPA_WLS)
 ```
 
@@ -322,7 +324,7 @@ summary(GPA_WLS)
 
 > "Suppose the R&D expenditures as a percentage of sales, $rdintens$, are realted to $sales$ (in millions) and profits as a percentage of sales, $profmarg$:"
 
-$$rdintens = \beta_0 + \beta_1slaes + \beta_2profmarg + \mu$$
+$$rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu$$
 
 > "The $OLS$ equation using data on 32 chemical companies in $rdchem$ is"
 
@@ -338,7 +340,8 @@ summary(all_rdchem)
 
 Neither $sales$ nor $profmarg$ is statistically significant at even the 10% level in this regression. 
 
-Of the 32 firms, 31 have annual sales less than $20$ billion. One firm has annual sales of almost $40$ billions. Figure 9.1 shows how far hthis firm is from the rest of the sample.
+Of the 32 firms, 31 have annual sales less than $20$ billion. One firm has annual sales of almost $40$ billions. Figure 9.1 shows how far this firm is from the rest of the sample.
+
 
 ```{r, tidy=TRUE}
 plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem, 
@@ -354,4 +357,51 @@ smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem,
 
 summary(smallest_rdchem)
 ```
+
+# Chapter 10: Basic Regression Analysis with Time Series Data
+
+**`Example 10.2:` Effects of Inflation and Deficits on Interest Rates**
+
+> "The data in INTDEF.RAW come from the 2004 Economic Report of the President (Tables B-73 and B-79) and span the years 1948 through 2003. The variable $i3$ is the three-month T-bill rate, $inf$ is the annual inflation rate based on the consumer price index (CPI), and $def$ is the federal budget deficit as a percentage of GDP. The estimated equation is:"
+
+$$\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t$$
+
+```{r}
+data("intdef")
+
+tbill_model <- lm(i3 ~ inf + def, data = intdef)
+
+summary(tbill_model)
+```
+
+> "These estimates show that increases in inflation or the relative size of the deficit increase short-term interest rates, both of which are expected from basic economics. For example, a ceteris paribus one percentage point increase in the inflation rate increases i3 by .606 points. Both inf and def are very statistically significant, assuming, of course, that the CLM assumptions hold."
+
+**`Example 10.11:` Seasonal Effects of Antidumping Filings**
+
+In _Example 10.5_, we used monthly data (in the file `BARIUM`) that have not been seasonally adjusted. 
+
+```{r}
+# Example 10.5
+
+data("barium")
+
+barium_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
+
+summary(barium_model)
+```
+
+> "Therefore, we should add seasonal dummy variables to make sure none of the important conclusions change. It could be that the months just before the suit was filed are months where imports are higher or lower, on average, than in other months." 
+
+```{r}
+
+barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6 + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec, data = barium)
+
+barium_seasonal_hat <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
+
+anova(barium_seasonal,barium_seasonal_hat)
+
+```
+
+
+> "When we add the 11 monthly dummy variables as in 10.41 and test their joint significance, we obtain $p-value 5 .5852$, and so the seasonal dummies are jointly insignificant. In addition, nothing important changes in the estimates once statistical significance is taken into account. Krupp and Pollard (1996) actually used three dummy variables for the seasons (fall, spring, and summer, with winter as the base season), rather than a full set of monthly dummies; the outcome is essentially the same."
 
