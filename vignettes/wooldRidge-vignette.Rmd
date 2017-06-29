@@ -318,7 +318,7 @@ summary(GPA_WLS)
 > "There are no important differences in the OLS and WLS estimates. The only significant explanatory variable is $parcoll$, and in both cases we estimate that the probability of $PC$ ownership is about .22 higher if at least on parent attended college"
 
 
-# Chapter 9: More on Specification and Data Issues
+## Chapter 9: More on Specification and Data Issues
 
 **`Example 9.8:` R&D Intensity and Firm Size**
 
@@ -358,7 +358,7 @@ smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem,
 summary(smallest_rdchem)
 ```
 
-# Chapter 10: Basic Regression Analysis with Time Series Data
+## Chapter 10: Basic Regression Analysis with Time Series Data
 
 **`Example 10.2:` Effects of Inflation and Deficits on Interest Rates**
 
@@ -382,26 +382,55 @@ In _Example 10.5_, we used monthly data (in the file `BARIUM`) that have not bee
 
 ```{r}
 # Example 10.5
-
 data("barium")
 
-barium_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
-
-summary(barium_model)
+lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 ```
 
 > "Therefore, we should add seasonal dummy variables to make sure none of the important conclusions change. It could be that the months just before the suit was filed are months where imports are higher or lower, on average, than in other months." 
 
 ```{r}
-
 barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6 + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec, data = barium)
 
 barium_seasonal_hat <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 
-anova(barium_seasonal,barium_seasonal_hat)
+anova(barium_seasonal, barium_seasonal_hat)
 
 ```
 
 
-> "When we add the 11 monthly dummy variables as in 10.41 and test their joint significance, we obtain $p-value 5 .5852$, and so the seasonal dummies are jointly insignificant. In addition, nothing important changes in the estimates once statistical significance is taken into account. Krupp and Pollard (1996) actually used three dummy variables for the seasons (fall, spring, and summer, with winter as the base season), rather than a full set of monthly dummies; the outcome is essentially the same."
+> "When we add the 11 monthly dummy variables as in 10.41 and test their joint significance, we obtain $p-value = 5 .5852$, and so the seasonal dummies are jointly insignificant. In addition, nothing important changes in the estimates once statistical significance is taken into account. Krupp and Pollard (1996) actually used three dummy variables for the seasons (fall, spring, and summer, with winter as the base season), rather than a full set of monthly dummies; the outcome is essentially the same."
 
+## Chapter 11: Further Issues in Using OLS with with Time Series Data
+
+**`Example 11.7:` Wages and Productivity**
+
+> "The variable $hrwage$ is average hourly wage in the U.S. economy, and $outphr$ is output per
+hour. One way to estimate the elasticity of hourly wage with respect to output per hour is
+to estimate the equation:"
+
+
+$$\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t$$
+
+> "where the time trend is included because $log(hrwage)$ and $log(outphr)$ both display clear,
+upward, linear trends. Using the data in 'EARNS' for the years 1947 through 1987, we obtain:"
+
+```{r}
+data("earns")
+
+wage_time <- lm(lhrwage ~ loutphr + t, data = earns)
+        
+summary(wage_time)
+````
+
+> "(We have reported the usual goodness-of-fit measures here; it would be better to report those based on the detrended dependent variable, as in Section 10.5.). The estimated elasticity seems too large: a 1% increase in productivity increases real wages by about 1.64%. Because the standard error is so small, the 95% confidence interval easily excludes a unit elasticity. U.S. workers would probably have trouble believing that their wages increase by more than 1.5% for every 1% increase in productivity."
+
+> "The regression results must be viewed with caution. Even after linearly detrending $log(hrwage)$, the first order autocorrelation is .967, and for detrended $log(outphr), \hat{p} = 0.945$. These suggest that both series have unit roots, so we reestimate the equation in first differences (and we no longer need a time trend):"
+
+```{r}
+wage_diff <- lm(diff(lhrwage) ~ diff(loutphr), data = earns)
+
+summary(wage_diff)
+````
+
+> "Now, a 1% increase in productivity is estimated to increase real wages by about 0.81%, and the estimate is not statistically different from one. The adjusted R‑squared shows that the growth in output explains about 35% of the growth in real wages."
