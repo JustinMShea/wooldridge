@@ -434,3 +434,74 @@ summary(wage_diff)
 ````
 
 > "Now, a 1% increase in productivity is estimated to increase real wages by about 0.81%, and the estimate is not statistically different from one. The adjusted R‑squared shows that the growth in output explains about 35% of the growth in real wages."
+
+## Chapter 12: Serial Correlation and Heteroskedasticiy in Time Series Regressions
+
+**`Example 12.4:` Prais-Winsten Estimation in the Event Study**
+
+> "Again using the data in BARIUM, we estimate the equation in Example 10.5 using iterated Prais-Winsten estimation."
+
+> "The coefficients that are statistically significant in the Prais-Winsten estimation do
+not differ by much from the OLS estimates [in particular, the coefficients on $log(chempi)$, $log(rtwex)$, and $afdec6$]. It is not surprising for statistically insignificant coefficients to change, perhaps markedly, across different estimation methods.
+
+First, run the linear model from example 10.5 and 10.11. 
+
+```{r}
+data("barium")
+# Example 10.5
+barium_linear_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
+
+barium_linear_model
+```
+
+Then load the `prais` package and use the `prais.winsten` function to estimate the same model. Print the names of both models to the console to compare the results of both.
+
+```{r}
+library(prais)
+barium_prais_winsten <- prais.winsten(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
+
+barium_prais_winsten
+```
+
+
+> "Notice how the standard errors in the second column are uniformly higher than the
+standard errors in column (1). This is common. The Prais-Winsten standard errors account
+for serial correlation; the $OLS$ standard errors do not. As we saw in Section 12.1, the OLS standard errors usually understate the actual sampling variation in the OLS estimates and should not be relied upon when significant serial correlation is present. Therefore, the effect on Chinese imports after the International Trade Commission’s decision is now less statistically significant than we thought."
+
+> "Finally, an R-squared is reported he $PW$ estimation that is well below the
+R-squared for the $OLS$ estimation in this case. However, these R-squareds should not be
+compared. For $OLS$, the R-squared, as usual, is based on the regression with the untransformed dependent and independent variables. For $PW$, the R-squared comes from the final regression of the $transformed$ dendent variable on the transformed independent vari-ables. It is not clear what this $R^2$ actually measuring; nevertheless, it is traditionally reported."
+
+**`Example 12.8:` Heteroskedasticity and the Efficient Markets Hypothesis**
+
+> "In Example 11.4, we estimated the simple $AR(1)$ model:"
+
+$$return_t = \beta_0 + \beta_1return_{t-1} + \mu_t$$
+
+> "The EMH states that $\beta_1 = 0$. When we tested this hypothesis using the data in 'NYSE', we obtained $t_b{1} = 1.55$ with $n = 689$. 
+
+```{r}
+data("nyse")
+ 
+return_AR <-lm(return ~ return_1, data = nyse)
+
+summary(return_AR)
+```
+
+
+> "With such a large sample, this is not much evidence against the EMH. Although the EMH states that the expected return given past observable information should be constant, it says nothing about the conditional variance. In fact, the Breusch-Pagan test for heteroskedasticity entails regressing the squared $OLS$ residuals $\hat{\mu^2_t}$ on $return_{t-1}$""
+
+
+$$\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t$$
+
+Calculated $\hat{\mu^2_t}$ by squaring the residuals contained in the `return_AR` model object and store the results in the variable named `return_mu2`. Then regress the `return_1` data also contained in the `return_AR` objects model matrix. Note the `data` arguement in the call to `lm` below.
+
+```{r}
+return_mu2 <- return_AR$residuals^2
+
+mu_squared_hat <- lm(return_mu2 ~ return_1, data = return_AR$model)
+
+summary(mu_squared_hat)
+```
+
+> "The $t$ statistic on $return_{t-1}$ is about -5.5, indicating strong evidence of heteroskedasticity. Because the coeffict on $return_{t-1}$ is negative, we have the interesting finding that volatility in stock returns is lower the previous return was high, and vice versa. Therefore, we have found what is common in many financial studies: the expected value of stock returns does not depend on past returns, but the variance of returns does."
