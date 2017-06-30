@@ -349,9 +349,10 @@ Of the 32 firms, 31 have annual sales less than $20$ billion. One firm has annua
 
 
 ```{r, tidy=TRUE}
-plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem, 
-     main = "FIGURE 9.1: Scatterplot of R&D intensity against firm sales", 
-     xlab = "firm sales (in millions of dollars)", ylab = "R&D as a percentage of sales")
+plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem,
+     main = "FIGURE 9.1: Scatterplot of R&D intensity against firm sales",
+     xlab = "firm sales (in millions of dollars)",
+     ylab = "R&D as a percentage of sales")
 ```
 
 > "In terms of sales, this firm is over twice as large as every other firm, so it might be a good idea to estimate the model without it. When we do this, we obtain:"
@@ -359,7 +360,6 @@ plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem,
 ```{r}
 smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem, 
                       subset = (sales < max(sales)))
-
 summary(smallest_rdchem)
 ```
 \newpage
@@ -607,7 +607,7 @@ The diagnostic results above shows that, even after controlling for aggregate tr
 
 \newpage
 
-## Chapter 15: Advanced Panel Data Methods
+## Chapter 15: Instrumental Variables Estimation and Two Stage Least Squares
 
 **`Example 15.1:` Estimating the Return to Education for Married Women**
 
@@ -717,8 +717,8 @@ the key equation by OLS, he uses instrumental variables. While Romer does not sp
 both equations in a simultaneous system, he has in mind a two-equation system:"
 
 $$inf = \beta_{10} + \alpha_1open + \beta_{11}log(pcinc) + \mu_1$$
-
 $$open = \beta_{20} + \alpha_2inf + \beta_{21}log(pcinc) + \beta_{22}log(land) + \mu_2$$
+
 
 > "where $pcinc$ is 1980 per capita income, in U.S. dollars, assumed to be exogenous, and
 $land$ is the land area of the country in square miles, also assumed to be exogenous. The first equation is the one of interest, with the hypothesis that $\alpha < 0$. More open
@@ -734,6 +734,7 @@ The idea is that, ceteris paribus, a smaller country is likely to be more open, 
 > "Before we estimate the first equation in 16.4 using the data in $openness$, we check to see whether $open$ has sufficient partial correlation with the proposed $IV$, $log(land)$. The reduced form regression is:"
 
 $$\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)$$
+
 
 ```{r}
 data("openness")
