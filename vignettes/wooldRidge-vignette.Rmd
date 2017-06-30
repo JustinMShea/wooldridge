@@ -690,9 +690,54 @@ summary(wage_educ_exper_IV, diagnostics = TRUE)
 
 > "The estimated return to education is about 6.1%, compared with an $OLS$ estimate of about 10.8%. Because of its relatively large standard error, the 2SLS estimate is barely statistically significant at the 5% level against a two-sided alternative."
 
-## Chapter 15: Advanced Panel Data Methods
+## Chapter 16: Simultaneous Equations Models
 
-**`Example 15.1:` Estimating the Return to Education for Married Women**
+**`Example 16.4:` INFLATION AND OPENNESS**
 
+> "Romer (1993) proposes theoretical models of inflation that imply that more "open" countries should have lower inflation rates. His empirical analysis explains average annual inflation rates (since 1973) in terms of the average share of imports in gross domestic product since 1973 - which is his measure of openness. In addition to estimating
+the key equation by OLS, he uses instrumental variables. While Romer does not specify
+both equations in a simultaneous system, he has in mind a two-equation system:"
 
+$$inf = \beta_{10} + \alpha_1open + \beta_{11}log(pcinc) + \mu_1$$
+
+$$open = \beta_{20} + \alpha_2inf + \beta_{21}log(pcinc) + \beta_{22}log(land) + \mu_2$$
+
+> "where $pcinc$ is 1980 per capita income, in U.S. dollars, assumed to be exogenous, and
+$land$ is the land area of the country in square miles, also assumed to be exogenous. The first equation is the one of interest, with the hypothesis that $\alpha < 0$. More open
+economies have lower inflation rates."
+
+> "The second equation reflects the fact that the degree of openness might depend on the average inflation rate, as well as other factors. The variable $log(pcinc)$ appears in both equations, but $log(land)$ is assumed to appear only in the second equation.
+The idea is that, ceteris paribus, a smaller country is likely to be more open, so $\beta_{22} < 0$."
+
+> "Using the identification rule that was stated earlier, the first equation is identified, provided $\beta_{22} \ne 0$. The second equation is $not$ identified because it contains both exogenous variables. Be we are interested in the first equation.
+
+**`Example 16.6:` INFLATION AND OPENNESS**
+
+> "Before we estimate the first equation in 16.4 using the data in $openness$, we check to see whether $open$ has sufficient partial correlation with the proposed $IV$, $log(land)$. The reduced form regression is:"
+
+$$\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)$$
+
+```{r}
+data("openness")
+ 
+open_model <-lm(open ~ lpcinc + lland, data = openness)
+
+summary(open_model)
+```
+
+> "The $t$ statistic on $long(land)$ is over nine in absolute value, which verifies Romer's assertion that smaller countries are more open. The fact that $log(pcinc)$ is so insignificant in this regression is irrelevant."
+
+> "Estimating the first equation using $log(land)$ as an $IV$ for $open$ gives:"
+
+$$\widehat{inf} = \beta_0 + \beta_{1}open + \beta_{2}log(pcinc)$$
+
+```{r}
+library(AER)
+
+inflation_IV <- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)
+
+summary(inflation_IV)
+```
+
+The coefficient on open is statistically significant at about the 1% level against a one sided alternative of $\alpha_1 < 0$. The effect is economically important as well: for every percentage point increase in the import share of GDP, annual inflation is about 1/3 of a percentage point lower. For comparison, the OLS estimate is -0.215, $se = 0.095$.
 
