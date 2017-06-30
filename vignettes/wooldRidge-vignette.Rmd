@@ -47,6 +47,8 @@ log_wage_model$coefficients
 summary(log_wage_model)$r.squared
 ```
 
+\newpage
+
 ## Chapter 3: Multiple Regression Analysis: Estimation
 
 **`Example 3.2:` Hourly Wage Equation**
@@ -66,7 +68,7 @@ Again, print the estimated model coefficients:
 ```{r}
 hourly_wage_model$coefficients
 ```
-
+\newpage
 
 ## Chapter 4: Multiple Regression Analysis: Inference
 
@@ -108,7 +110,7 @@ Finally, print the complete summary statistic diagnostics of the model.
 ```{r}
 summary(linear_model)
 ```
-
+\newpage
 ## Chapter 5: Multiple Regression Analysis: OLS Asymptotics
 
 **`Example 5.3:` Economic Model of Crime**
@@ -189,7 +191,7 @@ so we would reject the $H_0$ at the 15% level.
 ```{r}
 1-pchisq(LM_test, 2)
 ```
-
+\newpage
 
 ## Chapter 6: Multiple Regression: Further Issues
 
@@ -246,7 +248,7 @@ housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms+I(rooms^2) + stratio
 
 summary(housing_interactive)
 ```
-
+\newpage
 ## Chapter 7: Multiple Regression Analysis with Qualitative Information 
 
 **`Example 7.4:` Housing Price Regression, Qualitative Binary variable**
@@ -276,6 +278,8 @@ summary(housing_qualitative)
 Summary from the text:
 
 > "All the variables are self-explanatory except $colonial$, which is a binary variable equal to one if the house is of the colonial style. What does the coefficient on $colonial$ mean? For given levels of $lotsize$, $sqrt$, and $bdrms$, the difference in $\widehat{log(price)}$ between a house of colonial style and that of another style is 0.54. This means that colonial-style house is predicted to sell for about 5.4% more, holding other factors fixed."
+
+\newpage
 
 ## Chapter 8: Heteroskedasticity
 
@@ -317,6 +321,7 @@ summary(GPA_WLS)
 
 > "There are no important differences in the OLS and WLS estimates. The only significant explanatory variable is $parcoll$, and in both cases we estimate that the probability of $PC$ ownership is about .22 higher if at least on parent attended college"
 
+\newpage
 
 ## Chapter 9: More on Specification and Data Issues
 
@@ -357,6 +362,7 @@ smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem,
 
 summary(smallest_rdchem)
 ```
+\newpage
 
 ## Chapter 10: Basic Regression Analysis with Time Series Data
 
@@ -401,6 +407,8 @@ anova(barium_seasonal, barium_seasonal_hat)
 
 > "When we add the 11 monthly dummy variables as in 10.41 and test their joint significance, we obtain $p-value = 5 .5852$, and so the seasonal dummies are jointly insignificant. In addition, nothing important changes in the estimates once statistical significance is taken into account. Krupp and Pollard (1996) actually used three dummy variables for the seasons (fall, spring, and summer, with winter as the base season), rather than a full set of monthly dummies; the outcome is essentially the same."
 
+\newpage
+
 ## Chapter 11: Further Issues in Using OLS with with Time Series Data
 
 **`Example 11.7:` Wages and Productivity**
@@ -435,9 +443,11 @@ summary(wage_diff)
 
 > "Now, a 1% increase in productivity is estimated to increase real wages by about 0.81%, and the estimate is not statistically different from one. The adjusted R‑squared shows that the growth in output explains about 35% of the growth in real wages."
 
+\newpage
+
 ## Chapter 12: Serial Correlation and Heteroskedasticiy in Time Series Regressions
 
-**`Example 12.4:` Prais-Winsten Estimation in the Event Study**
+**`Example 12.4`: Prais-Winsten Estimation in the Event Study**
 
 > "Again using the data in BARIUM, we estimate the equation in Example 10.5 using iterated Prais-Winsten estimation."
 
@@ -446,7 +456,7 @@ not differ by much from the OLS estimates [in particular, the coefficients on $l
 
 First, run the linear model from example 10.5 and 10.11. 
 
-```{r}
+```{r, tidy=TRUE}
 data("barium")
 # Example 10.5
 barium_linear_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
@@ -531,6 +541,8 @@ summary(arch_model)
 
 > "It is important to see that, though the $squared$ $OLS$ residuals are autocorrelated, the $OLS$ residuals themselves are not (as is consistent with the EMH). Regressing on $\hat{\mu_t}$ and $\hat{\mu_{t-1}}$ gives $\hat{p} = 0.0014$ with $t_{\hat{p}} = 0.038$.
 
+\newpage
+
 ## Chapter 13: Pooling Cross Sections across Time: Simple Panel Data Methods
 
 **`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
@@ -557,6 +569,8 @@ summary(DD_model)
 2.7 with a standard deviation of about 0.6. The estimate is statistically significant at the 5% level against a twosided alternative. The administrative per se law has a smaller effect, and its t statistic is only -1.29; but the estimate is the sign we expect. The intercept in this equation shows that traffic fatalities fell substantially for all states over the five-year period, whether or not there were any law changes. The states that adopted an open container law over this period saw a further drop, on average, in fatality rates."
 
 > "Other laws might also affect traffic fatalities, such as seat belt laws, motorcycle helmet laws, and maximum speed limits. In addition, we might want to control for age and gender distributions, as well as measures of how influential an organization such as Mothers Against Drunk Driving is in each state."
+
+\newpage
 
 ## Chapter 14: Advanced Panel Data Methods
 
@@ -590,6 +604,8 @@ than in the base year, 1987, even in the absence of job training grants. Thus, i
 The diagnostic results above shows that, even after controlling for aggregate trends in productivity, the job training grants had a large estimated effect."
 
 > "Finally, it is crucial to allow for the lagged effect in the model. If we omit $grant_1$, then we are assuming that the effect of job training does not last into the next year. The estimate on $grant$ when we drop $grant_1$ is -0.082 $t = -0.65$; this is much smaller and statistically insignificant."
+
+\newpage
 
 ## Chapter 15: Advanced Panel Data Methods
 
@@ -689,6 +705,8 @@ summary(wage_educ_exper_IV, diagnostics = TRUE)
 ```
 
 > "The estimated return to education is about 6.1%, compared with an $OLS$ estimate of about 10.8%. Because of its relatively large standard error, the 2SLS estimate is barely statistically significant at the 5% level against a two-sided alternative."
+
+\newpage
 
 ## Chapter 16: Simultaneous Equations Models
 
