@@ -1,7 +1,7 @@
 ---
 title: "wooldRidge-vignette"
 author: "Justin M Shea"
-date: "`r Sys.Date()`"
+date: ""
 output: html_vignette
 pdf_document: default
 vignette: >
@@ -690,6 +690,9 @@ summary(wage_educ_exper_IV, diagnostics = TRUE)
 
 > "The estimated return to education is about 6.1%, compared with an $OLS$ estimate of about 10.8%. Because of its relatively large standard error, the 2SLS estimate is barely statistically significant at the 5% level against a two-sided alternative."
 
+## Chapter 15: Advanced Panel Data Methods
+
+**`Example 15.1:` Estimating the Return to Education for Married Women**
 
 
 
