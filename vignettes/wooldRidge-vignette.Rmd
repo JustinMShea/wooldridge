@@ -577,19 +577,118 @@ summary(scrap_panel)
 ```
 
 
-> "We have reported the results in a way that emphasizes the need to interpret the estimates in light of the unobserved effects model, (14.4). We are explicitly controlling for the unobserved, time-constant effects in $\alpha_i$. The time-demeaning allows us to estimate the $\Beta_j$, but (14.5) is not the best equation for iterpreting the estimates.
+> "We have reported the results in a way that emphasizes the need to interpret the estimates in light of the unobserved effects model, (14.4). We are explicitly controlling for the unobserved, time-constant effects in $\alpha_i$. The time-demeaning allows us to estimate the $\beta_j$, but (14.5) is not the best equation for interpreting the estimates.
 
 > "Interestingly, the estimated lagged effect of the training grant is substantially
 larger than the contemporaneous effect: job training has an effect at least one year
 later. Because the dependent variable is in logarithmic form, obtaining a grant in
-1988 is predicted to lower the firm scrap rate in 1989 by about 34.4% $[exp(-0.422)-1 = -0.344]$; the coefficient on $grant_1$ is significant at the 5% level against a twosided alternative. The coefficient $grant$ is significant at the 10% level, and the
-size of the coefficient is hardly trivial. Notice the $df$ is obtained as $N(T-1) - k = 54(3-1)-4 = 104$"
+1988 is predicted to lower the firm scrap rate in 1989 by about 34.4% [exp(-0.422)-1 = -0.344]; the coefficient on $grant_1$ is significant at the 5% level against a twosided alternative. The coefficient $grant$ is significant at the 10% level, and the
+size of the coefficient is hardly trivial. Notice the $df$ is obtained as N(T-1) - k = 54(3-1)-4 = 104"
 
 > "The coefficient on $d89$ indicates that the scrap rate was substantially lower in 1989
 than in the base year, 1987, even in the absence of job training grants. Thus, it is important to allow for these aggregate effects. If we omitted the year dummies, the secular increase in worker productivity would be attributed to the job training grants.
 The diagnostic results above shows that, even after controlling for aggregate trends in productivity, the job training grants had a large estimated effect."
 
-> "Finally, it is crucial to allow for the lagged effect in the model. If we omit $grant_1$, then we are assuming that the effect of job training does not last into the next year. The estimate on $grant$ when we drop $grant_1$ is -0.082 ($t = -0.65$); this is much smaller and statistically insignificant."
+> "Finally, it is crucial to allow for the lagged effect in the model. If we omit $grant_1$, then we are assuming that the effect of job training does not last into the next year. The estimate on $grant$ when we drop $grant_1$ is -0.082 $t = -0.65$; this is much smaller and statistically insignificant."
+
+## Chapter 15: Advanced Panel Data Methods
+
+**`Example 15.1:` Estimating the Return to Education for Married Women**
+
+> "We use the data on married working women in $mroz$ to estimate the return to education in the simple regression model"
+
+$$log(wage) = \beta_0 + \beta_1educ + \mu$$
+
+> "For comparison, we first obtain the $OLS$ estimates:"
+
+
+
+```{r, message=FALSE}
+data("mroz")
+ 
+wage_educ_model <- lm(lwage ~ educ, data = mroz)
+
+summary(wage_educ_model)
+```
+
+> "The estimate for $\beta_1$ implies an almost 11% return for another year of education."
+
+> "Next, we use father's education $fatheduc$ as an instrumental variable for $educ$. We have to maintain that $fatheduc$ is uncorrelated with $\mu$. The second requirement is that $educ$ and $fatheduc$ are correlated. We can check this very easily using a simple regression of $educ$ on $fatheduc$, using only the working women in the sample:"
+
+$$\widehat{educ} = \beta_0 + \beta_1fatheduc$$
+
+We run the typical linear model, but notice the use of the `subset` argument. `inlf` is a binary variable in which a value of 1 means they are "In the Labor Force". By sub-setting the `mroz` data.frame by observations in which `inlf==1`, only working women will be in the sample.
+
+```{r}
+fatheduc_model <- lm(educ ~ fatheduc, data = mroz, subset = (inlf==1))
+
+summary(fatheduc_model)
+```
+
+> "The $t$ statistic on $fatheduc$ is $9.42$, which indicates that $educ$ and $fatheduc$ have a statistically significant positive correlation. In fact, $fatheduc$ explains about 17% of the variation in $educ$ in the sample. Using fatheduc as an $IV$ for $educ$ gives:"
+
+
+In this section, we will perform an **Instrumental-Variable Regression**, using the  `ivreg` function in the `AER (Applied Econometrics with R)` package.
+
+```{r, message=FALSE}
+library("AER")
+
+wage_educ_IV <- ivreg(lwage ~ educ | fatheduc, data = mroz)
+
+summary(wage_educ_IV, diagnostics = TRUE)
+```
+
+> "The $IV$ estimate of the return to education is 5.9%, which is barely more than one half of the OLS. This suggests that the $OLS$ estimate is too high and is consistent with omitted ability bias. But we should remember that these are estimates from just one sample: we can never know whether $0.109$ is above the true return to education, or whether $0.059$ is closer to the true return to education. Further, the standard error of the $IV$ estimate is two and one-half times as large as the $OLS$ standard error this is expected, for the reasons we gave earlier. The 95% confidence interval for using $OLS$ is much tighter than that using the $IV$. In fact, the $IV$ confidence interval actuay contains the $OLS$ estimate. Therefore, although the differences between 15.15 and 15.17 are practically large, we cannot say whether the difference is statistically significant. We will show how to test this in Section 15.5."
+
+**`Example 15.2:` Estimating the Return to Education for Men**
+
+> "We now use $wage2$ data to estimate the return to education for men. We use the variable $sibs$, or number of siblings, as an instrument for $educ$. These are negatively correlated, as we can verify from a simple regression:"
+
+$$\widehat{educ} = \beta_0 + sibs$$
+
+```{r, warning=FALSE}
+data("wage2")
+ 
+educ_sibs_model <- lm(educ ~ sibs, data = wage2)
+
+summary(educ_sibs_model)
+```
+
+> "This equation implies that every sibling is associated with, on average, about 0.23 less of a year of education. If we assume that sibs is uncorrelated with the error term in 15.14, then the IV estimator is consistent. Estimating equation 15.14 from example 15.1, using $sibs$ as an IV for $educ$ gives:"
+
+$$\widehat{log(wage)} = \beta_0 + educ$$
+
+In this section, we will perform an **Instrumental-Variable Regression**, using the  `ivreg` function in the `AER (Applied Econometrics with R)` package.
+
+```{r, message=FALSE}
+library("AER")
+
+educ_sibs_IV <- ivreg(lwage ~ educ | sibs, data = wage2)
+
+summary(educ_sibs_IV, diagnostics = TRUE)
+```
+
+> "For comparison, the OLS estimate of $\beta_1$ is 0.059 with a standard error of 0.006. Unlike in the previous example, the $IV$ estimate is now much higher than the $OLS$ estimate. While we do not know whether the difference is statistically significant, this does not mesh with the omitted ability bias from $OLS$. It could be that $sibs$ is also correlated with ability: more siblings means, on average, less parental attention, which could result in lower ability. Another interpretation is that the $OLS$ estimator is biased toward zero because of measurement error in $educ$. This is not entirely convincing because, as we discussed in Section 9.3, educ is unlikely to satisfy the classical errors-in-variables model."
+
+**`Example 15.5:` Return to Education for Working Women**
+
+> "We estimate equation 15.40 using the data in $mroz$. First, we test 
+$H_0: \pi_3 = 0, \pi_4 = 0$ in 15.41using an $F$ test. The result is $F = 55.40$, and $p-value = 0.0000$. As expected, $educ$ is partially correlated with parents education."
+
+> "When we estimate 15.40 by 2SLS, we obtain, in equation form,"
+
+$$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_2exper + \beta_3exper^2$$
+
+```{r, tidy=TRUE}
+library(AER)
+data("mroz")
+
+wage_educ_exper_IV <- ivreg(lwage ~ educ + exper + expersq | exper + expersq + motheduc + fatheduc, data = mroz)
+
+summary(wage_educ_exper_IV, diagnostics = TRUE)
+```
+
+> "The estimated return to education is about 6.1%, compared with an $OLS$ estimate of about 10.8%. Because of its relatively large standard error, the 2SLS estimate is barely statistically significant at the 5% level against a two-sided alternative."
 
 
 
