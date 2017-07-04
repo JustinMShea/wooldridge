@@ -17,6 +17,10 @@ provided here should get you through most of the book.
 Load the `wooldRidge` package to access data in the manner specified in each example.
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
 library(wooldRidge)
+library(stargazer)
+library(xtable)
+options(xtable.comment = FALSE)
+ 
 ```
 
 ## Chapter 2: The Simple Regression Model
@@ -42,9 +46,9 @@ log_wage_model <- lm(lwage ~ educ, data = wage1)
 
 Finally, print the coefficients and $R^2$.
 
-```{r}
-log_wage_model$coefficients
-summary(log_wage_model)$r.squared
+```{r star, results = 'asis', warning=FALSE, message=FALSE}
+xtable(log_wage_model)
+stargazer(log_wage_model, omit.table.layout = "n")
 ```
 
 \newpage
@@ -744,7 +748,7 @@ open_model <-lm(open ~ lpcinc + lland, data = openness)
 summary(open_model)
 ```
 
-> "The $t$ statistic on $long(land)$ is over nine in absolute value, which verifies Romer's assertion that smaller countries are more open. The fact that $log(pcinc)$ is so insignificant in this regression is irrelevant."
+> "The $t$ statistic on $log(land)$ is over nine in absolute value, which verifies Romer's assertion that smaller countries are more open. The fact that $log(pcinc)$ is so insignificant in this regression is irrelevant."
 
 > "Estimating the first equation using $log(land)$ as an $IV$ for $open$ gives:"
 
@@ -759,4 +763,77 @@ summary(inflation_IV)
 ```
 
 The coefficient on open is statistically significant at about the 1% level against a one sided alternative of $\alpha_1 < 0$. The effect is economically important as well: for every percentage point increase in the import share of GDP, annual inflation is about 1/3 of a percentage point lower. For comparison, the OLS estimate is -0.215, $se = 0.095$.
+
+\newpage
+
+## Chapter 17: Limited Dependent Variable Models and Sample Selection Corrections
+
+**`Example 17.3:` POISSON REGRESSION FOR NUMBER OF ARRESTS**
+
+We now apply the Poisson regression model to the arrest data in $crime1$ data, used,
+among other places, in Example 9.1. The dependent variable, $narr86$, is the number of
+times a man is arrested during 1986. This variable is zero for 1,970 of the 2,725 men in the
+sample, and only eight values of $narr86$ are greater than five. Thus, a Poisson regression
+model is more appropriate than a linear regression model. The table below also presents the
+results of OLS estimation of a linear regression model.
+
+```{r, tidy=TRUE, warning=FALSE}
+data("crime1")
+
+
+formula <- (narr86 ~ pcnv + avgsen + tottime + ptime86 + qemp86 + inc86 + black + hispan + born60)
+
+econ_crime_model <- lm(formula, data = crime1)
+
+
+```
+
+
+The standard errors for OLS are the usual ones; we could certainly have made these
+robust to heteroskedasticity. The standard errors for Poisson regression are the usual
+maximum likelihood standard errors. Because $\hat{\sigma} = 1.232$, the standard errors for Poisson regression should be inflated by this factor (so each corrected standard error is about 23% higher). For example, a more reliable standard error for $tottime$ is $1.23(.015) \approx 0.0185$, which gives a $t$ statistic of about 1.3. The adjustment to the standard errors reduces the significance of all variables, but several of them are still very statistically significant.
+
+The OLS and Poisson coefficients are not directly comparable, and they have very
+different meanings. For example, the coefficient on $pcnv$ implies that, if $\Delta pcnv = -.10$, the expected number of arrests falls by $0.013$ ($pcnv$ is the proportion of prior arrests that led to conviction). The Poisson coefficient implies that $\Delta pncv = 0.10$ reduces expected arrests by about 4% [0.402(.10) = 0.0402, and we multiply this by 100 to get the percentage effect]. As a policy matter, this suggests we can reduce overall arrests by about 4% if we can increase the probability of conviction by 0.1.
+
+\newpage
+
+## Chapter 18: Advanced Time Series Topics
+
+**`Example 18.8:` FORECASTING THE U.S. UNEMPLOYMENT RATE**
+
+> "We use the $PHILLIPS$ DATA, but only for the years 1948 through 1996, to forecast
+the U.S. civilian unemployment rate for 1997. We use two models. The first is a simple
+AR(1) model for $unem$:"
+
+$$\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}$$
+> "In a second model, we add inflation with a lag of one year:"
+
+$$\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}$$
+
+```{r}
+data("phillips")
+
+library(dynlm)
+
+phillips <- ts(phillips, start = 1948)
+
+unem_AR1 <- dynlm(unem ~ unem_1, data = phillips, end = 1996)
+unem_inf_VAR1 <- dynlm(unem ~ unem_1 + inf_1, data = phillips, end = 1996)
+```
+
+```{r, results = 'asis', warning=FALSE, message=FALSE}
+stargazer(unem_AR1, unem_inf_VAR1, type = "text")
+          #keep.stat=c("n","adj.rsq","ser"))
+```
+
+> "The lagged inflation rate is very significant in the second model $(t \approx 4.5)$, and the adjusted R-squared much higher than that from the first. Nevertheless, this does not necessarily mean that the second equation will produce a better forecast for 1997. All we can say so far is that, using the data up through 1996, a lag of inflation helps to explain variation in the unemployment rate."
+
+> "To obtain the forecasts for 1997, we need to know $unemployment$ and $inflation$ in 1996. These are 5.4 and 3.0, respectively. Therefore, the forecast of $unem_{1997}$ from the first equation is $1.572 + .732(5.4)$, or about $5.52$. The forecast from the second equation is $1.304 + 0.647(5.4) + 0.184(3.0)$, or about $5.35$. The actual civilian unemployment rate for 1997 was $4.9$, so both
+equations overpredict the actual rate. The second equation does provide a somewhat better forecast."
+
+> "We can easily obtain a 95% forecast interval. When we regress $unem_1$ on $(unem_{t-1} - 5.4)$
+and $(inf_{t-1} - 3.0)$, we obtain $5.35$ as the intercept - which we already computed as the forecast - and $se({\hat{f_n}}) = 0.137$. Therefore, because $\hat{\sigma} = 0.883$, we have $se({\hat{e_{n+1}}}) = [(0.137)^2 + (0.883)^2]^{1/2} \approx 0.894$. The 95% forecast interval of $\hat{f_n} \frac{+}{-} 1.96*se(\hat{e_{n-1}})$ is $5.35 \frac{+}{-} 1.96(0.894)$, or about [3.6, 7.1]. This is a wide interval, and the realized 1997 value, $4.9$, is well within the interval. As expected, the standard error of $\mu_{n+1}$, which is .883, is a very large fraction of $se(\hat{e_{n-1}})$"
+
+
 
