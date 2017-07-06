@@ -1,11 +1,11 @@
 ---
-title: "wooldRidge-vignette"
+title: "wooldridge-vignette"
 author: "Justin M Shea"
 date: ""
 output: html_vignette
 pdf_document: default
 vignette: >
-  %\VignetteIndexEntry{wooldRidge-vignette}
+  %\VignetteIndexEntry{wooldridge-vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
