@@ -14,7 +14,7 @@ An excellent approach to learning is to find an example from your textbook
 and then recreate it. Below are examples from every chapter and the syntax 
 provided here should get you through most of the book.
 
-Load the `wooldRidge` package to access data in the manner specified in each example.
+Load the `wooldridge` package to access data in the manner specified in each example.
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
 library(wooldridge)
 ```
