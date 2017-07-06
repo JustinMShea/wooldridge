@@ -16,7 +16,7 @@ provided here should get you through most of the book.
 
 Load the `wooldRidge` package to access data in the manner specified in each example.
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
-library(wooldRidge)
+library(wooldridge)
 ```
 
 ```{r, echo=FALSE, eval=TRUE, warning=FALSE, message=FALSE}
