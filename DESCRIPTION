@@ -1,13 +1,13 @@
 Package: wooldridge
 Type: Package
-Title: 111 data sets from "Introductory Econometrics" by Jeffrey M. Woolridge
+Title: 105 data sets from "Introductory Econometrics" by Jeffrey M. Woolridge
 Version: 1.0.0
 Author: Justin M. Shea     
 Maintainer: Justin M. Shea <jshea@mail.roosevelt.edu>
 Description: Students who find themselves new to both Econometrics and R may find the dual tasks of 
-    mastering the material while learning R daunting. For them, Econometrics is the focus, not data wrangling. 
-    This package aims to help by handling data importation and wrangling. It lazily loads 111 data sets used in
-    the popular text "Introductory Econometrics: A Modern Approach, 6th Edition" by Jeffrey M. Woolridge. 
+    mastering the material while learning R daunting. Econometrics is the focus, not data wrangling. 
+    This package aims to help by handling data munging activities. It lazily loads all data sets used in
+    the popular text "Introductory Econometrics: A Modern Approach, 5th Edition" by Jeffrey M. Woolridge. 
     All data sets have been cleaned, documented, and compressed into compact .RData files. 
     In addition, a vignette reproduces examples for 18 chapters of the book, offering a guide to R's model syntax.
 Depends: R (>= 3.4.0)
@@ -15,5 +15,6 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Suggests: knitr, rmarkdown
+Imports: AER, plm, dynlm, prais, stargazer
+Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
