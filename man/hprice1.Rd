@@ -5,26 +5,26 @@
 \alias{hprice1}
 \title{hprice1}
 \format{A data.frame with 88 rows and 10 variables:
-\describe{
- \item{price}{house price, $1000s}
- \item{assess}{assessed value, $1000s}
- \item{bdrms}{number of bdrms}
- \item{lotsize}{size of lot in square feet}
- \item{sqrft}{size of house in square feet}
- \item{colonial}{=1 if home is colonial style}
- \item{lprice}{log(price)}
- \item{lassess}{log(assess}
- \item{llotsize}{log(lotsize)}
- \item{lsqrft}{log(sqrft)}
+\itemize{
+ \item price. house price, $1000s
+ \item assess. assessed value, $1000s
+ \item bdrms. number of bdrms
+ \item lotsize. size of lot in square feet
+ \item sqrft. size of house in square feet
+ \item colonial. =1 if home is colonial style
+ \item lprice. log(price)
+ \item lassess. log(assess
+ \item llotsize. log(lotsize)
+ \item lsqrft. log(sqrft)
 }}
 \source{
-\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+\url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
 data(hprice1)
 }
 \description{
-Data from wooldRidge package loads lazily. Type data(hprice1) into the console.
+Data loads lazily. Type data(hprice1) into the console.
 }
 \examples{
  str(hprice1)

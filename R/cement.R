@@ -1,45 +1,45 @@
 #' cement
 #'
-#' Data from wooldRidge package loads lazily. Type data(cement) into the console.
+#' Data loads lazily. Type data(cement) into the console.
 #'
 #' @docType data
 #'
 #' @usage data(cement)
 #'
 #' @format A data.frame with 312 rows and 30 variables:
-#' \describe{
-#'  \item{year}{1964-1989}
-#'  \item{month}{1-12}
-#'  \item{prccem}{BLS ppi for cement}
-#'  \item{ipcem}{industrial prod. index, cement}
-#'  \item{prcpet}{ppi for crude petroleum}
-#'  \item{rresc}{real residential construction}
-#'  \item{rnonc}{real nonres. construction}
-#'  \item{ip}{aggregate index of indus. prod.}
-#'  \item{rdefs}{real defense spending}
-#'  \item{milemp}{military employment}
-#'  \item{gprc}{log(prccem) - log(prccem[_n-1])}
-#'  \item{gcem}{log(ipcem) - log(ipcem[_n-1])}
-#'  \item{gprcpet}{log(prcpet) - log(prcpet[_n-1])}
-#'  \item{gres}{log(rresc) - log(rresc[_n-1])}
-#'  \item{gnon}{log(rnonc) - log(rnonc[_n-1])}
-#'  \item{gip}{log(ip) - log(ip[_n-1])}
-#'  \item{gdefs}{log(rdefs) - log(rdefs[_n-1])}
-#'  \item{gmilemp}{log(milemp) - log(milemp[_n-1])}
-#'  \item{jan}{=1 if month == 1}
-#'  \item{feb}{=1 if month == 2}
-#'  \item{mar}{=1 if month == 3}
-#'  \item{apr}{=1 if month == 4}
-#'  \item{may}{=1 if month == 5}
-#'  \item{jun}{=1 if month == 6}
-#'  \item{jul}{=1 if month == 7}
-#'  \item{aug}{=1 if month == 8}
-#'  \item{sep}{=1 if month == 9}
-#'  \item{oct}{=1 if month == 10}
-#'  \item{nov}{=1 if month == 11}
-#'  \item{dec}{=1 if month == 12}
+#' \itemize{
+#'  \item year. 1964-1989
+#'  \item month. 1-12
+#'  \item prccem. BLS ppi for cement
+#'  \item ipcem. industrial prod. index, cement
+#'  \item prcpet. ppi for crude petroleum
+#'  \item rresc. real residential construction
+#'  \item rnonc. real nonres. construction
+#'  \item ip. aggregate index of indus. prod.
+#'  \item rdefs. real defense spending
+#'  \item milemp. military employment
+#'  \item gprc. log(prccem) - log(prccem[_n-1])
+#'  \item gcem. log(ipcem) - log(ipcem[_n-1])
+#'  \item gprcpet. log(prcpet) - log(prcpet[_n-1])
+#'  \item gres. log(rresc) - log(rresc[_n-1])
+#'  \item gnon. log(rnonc) - log(rnonc[_n-1])
+#'  \item gip. log(ip) - log(ip[_n-1])
+#'  \item gdefs. log(rdefs) - log(rdefs[_n-1])
+#'  \item gmilemp. log(milemp) - log(milemp[_n-1])
+#'  \item jan. =1 if month == 1
+#'  \item feb. =1 if month == 2
+#'  \item mar. =1 if month == 3
+#'  \item apr. =1 if month == 4
+#'  \item may. =1 if month == 5
+#'  \item jun. =1 if month == 6
+#'  \item jul. =1 if month == 7
+#'  \item aug. =1 if month == 8
+#'  \item sep. =1 if month == 9
+#'  \item oct. =1 if month == 10
+#'  \item nov. =1 if month == 11
+#'  \item dec. =1 if month == 12
 #' }
-#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(cement)
 "cement"
  

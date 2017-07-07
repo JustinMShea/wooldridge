@@ -5,49 +5,49 @@
 \alias{happiness}
 \title{happiness}
 \format{A data.frame with 17137 rows and 33 variables:
-\describe{
- \item{year}{gss year for this respondent}
- \item{workstat}{work force status}
- \item{prestige}{occupational prestige score}
- \item{divorce}{ever been divorced or separated}
- \item{widowed}{ever been widowed}
- \item{educ}{highest year of school completed}
- \item{reg16}{region of residence, age 16}
- \item{babies}{household members less than 6 yrs old}
- \item{preteen}{household members 6 thru 12 yrs old}
- \item{teens}{household members 13 thru 17 yrs old}
- \item{income}{total family income}
- \item{region}{region of interview}
- \item{attend}{how often r attends religious services}
- \item{happy}{general happiness}
- \item{owngun}{=1 if own gun}
- \item{tvhours}{hours per day watching tv}
- \item{vhappy}{=1 if 'very happy'}
- \item{mothfath16}{=1 if live with mother and father at 16}
- \item{black}{=1 if black}
- \item{gwbush04}{=1 if voted for G.W. Bush in 2004}
- \item{female}{=1 if female}
- \item{blackfemale}{black*female}
- \item{gwbush00}{=1 if voted for G.W. Bush in 2000}
- \item{occattend}{=1 if attend is 3, 4, or 5}
- \item{regattend}{=1 if attend is 6, 7, or 8}
- \item{y94}{=1 if year == 1994}
- \item{y96}{}
- \item{y98}{}
- \item{y00}{}
- \item{y02}{}
- \item{y04}{}
- \item{y06}{=1 if year == 2006}
- \item{unem10}{=1 if unemployed in last 10 years}
+\itemize{
+ \item year. gss year for this respondent
+ \item workstat. work force status
+ \item prestige. occupational prestige score
+ \item divorce. ever been divorced or separated
+ \item widowed. ever been widowed
+ \item educ. highest year of school completed
+ \item reg16. region of residence, age 16
+ \item babies. household members less than 6 yrs old
+ \item preteen. household members 6 thru 12 yrs old
+ \item teens. household members 13 thru 17 yrs old
+ \item income. total family income
+ \item region. region of interview
+ \item attend. how often r attends religious services
+ \item happy. general happiness
+ \item owngun. =1 if own gun
+ \item tvhours. hours per day watching tv
+ \item vhappy. =1 if 'very happy'
+ \item mothfath16. =1 if live with mother and father at 16
+ \item black. =1 if black
+ \item gwbush04. =1 if voted for G.W. Bush in 2004
+ \item female. =1 if female
+ \item blackfemale. black*female
+ \item gwbush00. =1 if voted for G.W. Bush in 2000
+ \item occattend. =1 if attend is 3, 4, or 5
+ \item regattend. =1 if attend is 6, 7, or 8
+ \item y94. =1 if year == 1994
+ \item y96. 
+ \item y98. 
+ \item y00. 
+ \item y02. 
+ \item y04. 
+ \item y06. =1 if year == 2006
+ \item unem10. =1 if unemployed in last 10 years
 }}
 \source{
-\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+\url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
 data(happiness)
 }
 \description{
-Data from wooldRidge package loads lazily. Type data(happiness) into the console.
+Data loads lazily. Type data(happiness) into the console.
 }
 \examples{
  str(happiness)

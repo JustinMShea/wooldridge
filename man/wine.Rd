@@ -5,21 +5,21 @@
 \alias{wine}
 \title{wine}
 \format{A data.frame with 21 rows and 5 variables:
-\describe{
- \item{country}{}
- \item{alcohol}{liters alcohol from wine, per capita}
- \item{deaths}{deaths per 100,000}
- \item{heart}{heart disease dths per 100,000}
- \item{liver}{liver disease dths per 100,000}
+\itemize{
+ \item country. 
+ \item alcohol. liters alcohol from wine, per capita
+ \item deaths. deaths per 100,000
+ \item heart. heart disease dths per 100,000
+ \item liver. liver disease dths per 100,000
 }}
 \source{
-\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+\url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
 data(wine)
 }
 \description{
-Data from wooldRidge package loads lazily. Type data(wine) into the console.
+Data loads lazily. Type data(wine) into the console.
 }
 \examples{
  str(wine)

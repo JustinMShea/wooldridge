@@ -1,42 +1,42 @@
 #' fertil1
 #'
-#' Data from wooldRidge package loads lazily. Type data(fertil1) into the console.
+#' Data loads lazily. Type data(fertil1) into the console.
 #'
 #' @docType data
 #'
 #' @usage data(fertil1)
 #'
 #' @format A data.frame with 1129 rows and 27 variables:
-#' \describe{
-#'  \item{year}{72 to 84, even}
-#'  \item{educ}{years of schooling}
-#'  \item{meduc}{mother's education}
-#'  \item{feduc}{father's education}
-#'  \item{age}{in years}
-#'  \item{kids}{# children ever born}
-#'  \item{black}{= 1 if black}
-#'  \item{east}{= 1 if lived in east at 16}
-#'  \item{northcen}{= 1 if lived in nc at 16}
-#'  \item{west}{= 1 if lived in west at 16}
-#'  \item{farm}{= 1 if on farm at 16}
-#'  \item{othrural}{= 1 if other rural at 16}
-#'  \item{town}{= 1 if lived in town at 16}
-#'  \item{smcity}{= 1 if in small city at 16}
-#'  \item{y74}{= 1 if year = 74}
-#'  \item{y76}{}
-#'  \item{y78}{}
-#'  \item{y80}{}
-#'  \item{y82}{}
-#'  \item{y84}{}
-#'  \item{agesq}{age^2}
-#'  \item{y74educ}{}
-#'  \item{y76educ}{}
-#'  \item{y78educ}{}
-#'  \item{y80educ}{}
-#'  \item{y82educ}{}
-#'  \item{y84educ}{}
+#' \itemize{
+#'  \item year. 72 to 84, even
+#'  \item educ. years of schooling
+#'  \item meduc. mother's education
+#'  \item feduc. father's education
+#'  \item age. in years
+#'  \item kids. # children ever born
+#'  \item black. = 1 if black
+#'  \item east. = 1 if lived in east at 16
+#'  \item northcen. = 1 if lived in nc at 16
+#'  \item west. = 1 if lived in west at 16
+#'  \item farm. = 1 if on farm at 16
+#'  \item othrural. = 1 if other rural at 16
+#'  \item town. = 1 if lived in town at 16
+#'  \item smcity. = 1 if in small city at 16
+#'  \item y74. = 1 if year = 74
+#'  \item y76. 
+#'  \item y78. 
+#'  \item y80. 
+#'  \item y82. 
+#'  \item y84. 
+#'  \item agesq. age^2
+#'  \item y74educ. 
+#'  \item y76educ. 
+#'  \item y78educ. 
+#'  \item y80educ. 
+#'  \item y82educ. 
+#'  \item y84educ. 
 #' }
-#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(fertil1)
 "fertil1"
  

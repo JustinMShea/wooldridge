@@ -5,72 +5,72 @@
 \alias{driving}
 \title{driving}
 \format{A data.frame with 1200 rows and 56 variables:
-\describe{
- \item{year}{1980 through 2004}
- \item{state}{48 continental states, alphabetical}
- \item{sl55}{speed limit == 55}
- \item{sl65}{speed limit == 65}
- \item{sl70}{speed limit == 70}
- \item{sl75}{speed limit == 75}
- \item{slnone}{no speed limit}
- \item{seatbelt}{=0 if none, =1 if primary, =2 if secondary}
- \item{minage}{minimum drinking age}
- \item{zerotol}{zero tolerance law}
- \item{gdl}{graduated drivers license law}
- \item{bac10}{blood alcohol limit .10}
- \item{bac08}{blood alcohol limit .08}
- \item{perse}{administrative license revocation (per se law)}
- \item{totfat}{total traffic fatalities}
- \item{nghtfat}{total nighttime fatalities}
- \item{wkndfat}{total weekend fatalities}
- \item{totfatpvm}{total fatalities per 100 million miles}
- \item{nghtfatpvm}{nighttime fatalities per 100 million miles}
- \item{wkndfatpvm}{weekend fatalities per 100 million miles}
- \item{statepop}{state population}
- \item{totfatrte}{total fatalities per 100,000 population}
- \item{nghtfatrte}{nighttime fatalities per 100,000 population}
- \item{wkndfatrte}{weekend accidents per 100,000 population}
- \item{vehicmiles}{vehicle miles traveled, billions}
- \item{unem}{unemployment rate, percent}
- \item{perc14_24}{percent population aged 14 through 24}
- \item{sl70plus}{sl70 + sl75 + slnone}
- \item{sbprim}{=1 if primary seatbelt law}
- \item{sbsecon}{=1 if secondary seatbelt law}
- \item{d80}{=1 if year == 1980}
- \item{d81}{}
- \item{d82}{}
- \item{d83}{}
- \item{d84}{}
- \item{d85}{}
- \item{d86}{}
- \item{d87}{}
- \item{d88}{}
- \item{d89}{}
- \item{d90}{}
- \item{d91}{}
- \item{d92}{}
- \item{d93}{}
- \item{d94}{}
- \item{d95}{}
- \item{d96}{}
- \item{d97}{}
- \item{d98}{}
- \item{d99}{}
- \item{d00}{}
- \item{d01}{}
- \item{d02}{}
- \item{d03}{}
- \item{d04}{=1 if year == 2004}
- \item{vehicmilespc}{}
+\itemize{
+ \item year. 1980 through 2004
+ \item state. 48 continental states, alphabetical
+ \item sl55. speed limit == 55
+ \item sl65. speed limit == 65
+ \item sl70. speed limit == 70
+ \item sl75. speed limit == 75
+ \item slnone. no speed limit
+ \item seatbelt. =0 if none, =1 if primary, =2 if secondary
+ \item minage. minimum drinking age
+ \item zerotol. zero tolerance law
+ \item gdl. graduated drivers license law
+ \item bac10. blood alcohol limit .10
+ \item bac08. blood alcohol limit .08
+ \item perse. administrative license revocation (per se law)
+ \item totfat. total traffic fatalities
+ \item nghtfat. total nighttime fatalities
+ \item wkndfat. total weekend fatalities
+ \item totfatpvm. total fatalities per 100 million miles
+ \item nghtfatpvm. nighttime fatalities per 100 million miles
+ \item wkndfatpvm. weekend fatalities per 100 million miles
+ \item statepop. state population
+ \item totfatrte. total fatalities per 100,000 population
+ \item nghtfatrte. nighttime fatalities per 100,000 population
+ \item wkndfatrte. weekend accidents per 100,000 population
+ \item vehicmiles. vehicle miles traveled, billions
+ \item unem. unemployment rate, percent
+ \item perc14_24. percent population aged 14 through 24
+ \item sl70plus. sl70 + sl75 + slnone
+ \item sbprim. =1 if primary seatbelt law
+ \item sbsecon. =1 if secondary seatbelt law
+ \item d80. =1 if year == 1980
+ \item d81. 
+ \item d82. 
+ \item d83. 
+ \item d84. 
+ \item d85. 
+ \item d86. 
+ \item d87. 
+ \item d88. 
+ \item d89. 
+ \item d90. 
+ \item d91. 
+ \item d92. 
+ \item d93. 
+ \item d94. 
+ \item d95. 
+ \item d96. 
+ \item d97. 
+ \item d98. 
+ \item d99. 
+ \item d00. 
+ \item d01. 
+ \item d02. 
+ \item d03. 
+ \item d04. =1 if year == 2004
+ \item vehicmilespc. 
 }}
 \source{
-\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+\url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
 data(driving)
 }
 \description{
-Data from wooldRidge package loads lazily. Type data(driving) into the console.
+Data loads lazily. Type data(driving) into the console.
 }
 \examples{
  str(driving)

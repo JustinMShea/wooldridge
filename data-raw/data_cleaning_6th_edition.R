@@ -1,9 +1,9 @@
 
-  ##############################
- # Explore and clean the Data #
-##############################
+  ###########################################################
+ # Explore and clean the Six edition Data that is corrupted #
+############################################################
   
-data_folder <-  "R data sets for 5e"
+data_folder <-  "Data Sets- R"
   
 # list files in the data set file, and verify they downloaded.
 length(list.files(data_folder))
@@ -19,7 +19,6 @@ file_info[order(file_info$size, decreasing = TRUE),]
 
 # TEST: Have any files mistakenly been saved as ".r" files?
 list.files(data_folder, pattern = ".r$")
-
 
 
    #########################################################
@@ -126,6 +125,4 @@ for (i in new_data_list) {
         path <- paste0("data/",i)
         load(path)
 }
-
-
 
