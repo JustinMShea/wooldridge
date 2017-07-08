@@ -3,7 +3,7 @@ Type: Package
 Title: 105 data sets from "Introductory Econometrics" by Jeffrey M. Woolridge
 Version: 0.1.0.9000
 Author: Justin M. Shea     
-Maintainer: Justin M. Shea <jshea at mail.roosevelt.edu>
+Maintainer: Justin M. Shea <jshea@mail.roosevelt.edu>
 Description: Students who find themselves new to both Econometrics and R may find the dual tasks daunting. 
     This package aims to help by handling data management activities. It lazily loads any data set used in
     the popular text with a single command. In addition, examples from every chapter of the text offer a guide 
