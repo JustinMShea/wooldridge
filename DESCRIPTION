@@ -1,9 +1,9 @@
 Package: wooldridge
 Type: Package
 Title: 105 data sets from "Introductory Econometrics" by Jeffrey M. Woolridge
-Version: 1.0.0
+Version: 0.1.0.9000
 Author: Justin M. Shea     
-Maintainer: Justin M. Shea <jshea@mail.roosevelt.edu>
+Maintainer: Justin M. Shea <jshea at mail.roosevelt.edu>
 Description: Students who find themselves new to both Econometrics and R may find the dual tasks of 
     mastering the material while learning R daunting. Econometrics is the focus, not data wrangling. 
     This package aims to help by handling data munging activities. It lazily loads all data sets used in
@@ -17,3 +17,6 @@ LazyData: true
 RoxygenNote: 6.0.1
 Suggests: knitr, rmarkdown, testthat, AER, plm, dynlm, prais, stargazer
 VignetteBuilder: knitr
+url: https://github.com/JustinMShea/wooldridge
+url
+BugReports: https://github.com/JustinMShea/wooldridge/issues
