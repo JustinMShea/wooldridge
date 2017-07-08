@@ -5,9 +5,9 @@ sudo: false
 cache: packages
 
 r_packages:
-  - covr
+  - wooldridge
 
 after_success:
-  - Rscript -e 'library(covr); codecov()'
+  - Rscript -e 'library(wooldridge); codecov()'
   
   
