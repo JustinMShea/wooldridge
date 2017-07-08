@@ -8,6 +8,6 @@ r_packages:
   - wooldridge
 
 after_success:
-  - Rscript -e 'library(wooldridge); codecov()'
+  - Rscript -e 'library(wooldridge)'
   
   
