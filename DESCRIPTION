@@ -4,12 +4,10 @@ Title: 105 data sets from "Introductory Econometrics" by Jeffrey M. Woolridge
 Version: 0.1.0.9000
 Author: Justin M. Shea     
 Maintainer: Justin M. Shea <jshea at mail.roosevelt.edu>
-Description: Students who find themselves new to both Econometrics and R may find the dual tasks of 
-    mastering the material while learning R daunting. Econometrics is the focus, not data wrangling. 
-    This package aims to help by handling data munging activities. It lazily loads all data sets used in
-    the popular text "Introductory Econometrics: A Modern Approach, 5th Edition" by Jeffrey M. Woolridge. 
-    All data sets have been cleaned, documented, and compressed into compact .RData files. 
-    In addition, a vignette reproduces examples for 18 chapters of the book, offering a guide to R's model syntax.
+Description: Students who find themselves new to both Econometrics and R may find the dual tasks daunting. 
+    This package aims to help by handling data management activities. It lazily loads any data set used in
+    the popular text with a single command. In addition, examples from every chapter of the text offer a guide 
+    to R's statistical/econometric model syntax.
 Depends: R (>= 3.4.0)
 License: GPL-3
 Encoding: UTF-8
