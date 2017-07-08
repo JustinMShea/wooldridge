@@ -16,5 +16,4 @@ RoxygenNote: 6.0.1
 Suggests: knitr, rmarkdown, testthat, AER, plm, dynlm, prais, stargazer
 VignetteBuilder: knitr
 url: https://github.com/JustinMShea/wooldridge
-url
 BugReports: https://github.com/JustinMShea/wooldridge/issues
