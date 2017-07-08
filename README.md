@@ -1,6 +1,6 @@
 # wooldridge 
 
-[![Travis-CI Build Status](https://travis-ci.org/JustinMShea/wooldRidge.svg?branch=master)](https://travis-ci.org/JustinMShea/wooldridge)
+[![Travis-CI Build Status](https://travis-ci.org/JustinMShea/wooldridge.svg?branch=master)](https://travis-ci.org/JustinMShea/wooldridge)
 
 For students of Econometrics who are new to R, loading and formatting data can present barriers to experimenting with the many statistical functions the language offers.
 
