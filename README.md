@@ -2,6 +2,8 @@
 
 [![Travis-CI Build Status](https://travis-ci.org/JustinMShea/wooldridge.svg?branch=master)](https://travis-ci.org/JustinMShea/wooldridge)
 
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/JustinMShea/wooldRidge?branch=master&svg=true)](https://ci.appveyor.com/project/JustinMShea/wooldRidge)
+
 For students of Econometrics who are new to R, loading and formatting data can present barriers to experimenting with the many statistical functions the language offers.
 
 The `wooldridge` data package aims to make this process easy. It contains 105 data sets discussed in **Introductory Econometrics: A Modern Approach, 5th Edition** by Jeffrey M. Wooldridge. The package efficiently stores formatted versions of each data set, complete with documentation. In addition, all data sets have been compressed resulting in a total data set that is 62.73% of its original size. Just install the package, load it, and call the data set you wish to work with.
