@@ -21,7 +21,7 @@
 #'  \item cclrprc1. change in clrprc1
 #'  \item cclrprc2. change in clrprc2
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(crime3)
 "crime3"
  

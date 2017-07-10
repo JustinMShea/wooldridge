@@ -33,7 +33,7 @@
 #'  \item cgfr_4. cgfr[_n-4]
 #'  \item gfr_2. gfr[_n-2]
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(fertil3)
 "fertil3"
  

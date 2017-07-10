@@ -48,7 +48,7 @@
 #'  \item peratio. pension/annearn
 #'  \item vserat. (vacdays+sicklve)/annearn
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(fringe)
 "fringe"
  

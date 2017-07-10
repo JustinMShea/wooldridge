@@ -36,7 +36,7 @@
 #'  \item y82educ. 
 #'  \item y84educ. 
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(fertil1)
 "fertil1"
  

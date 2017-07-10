@@ -65,7 +65,7 @@
 #'  \item d04. =1 if year == 2004
 #'  \item vehicmilespc. 
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(driving)
 "driving"
  

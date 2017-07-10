@@ -18,7 +18,7 @@
 #'  \item lenroll. log(enroll)
 #'  \item lexppp. log(exppp)
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(meap00_01)
 "meap00_01"
  

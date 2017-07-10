@@ -23,7 +23,7 @@
 #'  \item packs. packs smked per day while preg
 #'  \item lfaminc. log(faminc)
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(bwght)
 "bwght"
  

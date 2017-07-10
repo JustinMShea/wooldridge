@@ -35,7 +35,7 @@
 #'  \item win90. =1 if inc. wins, 1990
 #'  \item cwin. win90 - win88
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(vote2)
 "vote2"
  

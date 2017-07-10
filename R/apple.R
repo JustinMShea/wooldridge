@@ -26,7 +26,7 @@
 #'  \item num18_64. # in household 18 to 64
 #'  \item numgt64. # in household older than 64
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(apple)
 "apple"
  

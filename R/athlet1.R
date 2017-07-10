@@ -32,7 +32,7 @@
 #'  \item bball. =1 if btitle or finfour
 #'  \item cbball. change in bball
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(athlet1)
 "athlet1"
  

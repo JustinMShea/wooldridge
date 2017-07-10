@@ -32,7 +32,7 @@
 #'  \item r6_1. r6[_n-1]
 #'  \item cspr63. spr63 - spr63_1
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(intqrt)
 "intqrt"
  

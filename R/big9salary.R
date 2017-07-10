@@ -39,7 +39,7 @@
 #'  \item pubindx0. =1 if pubindx == 0
 #'  \item lpubindx. log(pubindx) if pubindx > 0
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(big9salary)
 "big9salary"
  

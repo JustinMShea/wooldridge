@@ -38,7 +38,7 @@
 #'  \item fathcoll. =1 if father college grad
 #'  \item mothcoll. =1 if mother college grad
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(gpa1)
 "gpa1"
  

@@ -48,7 +48,7 @@ for(i in RData_names) {
     describe[i] <- paste0("#'  \\item"," ",as.character(desc[i,1]),". ",gsub("%","percent", as.character(desc[i,2])))
   }
   end <- "#' }"
-  source <- "#' @source \\url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}"
+  source <- "#' @source \\url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}"
   data_label <- paste0("\"", file_name,"\"")
   space <- "#'"
   blank <- " "

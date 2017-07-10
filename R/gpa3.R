@@ -32,7 +32,7 @@
 #'  \item hsperc. percentile in h.s.
 #'  \item football. =1 if football player
 #' }
-#' @source \url{http://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(gpa3)
 "gpa3"
  
