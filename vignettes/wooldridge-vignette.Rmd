@@ -69,7 +69,7 @@ hourly_wage_model <- lm(lwage ~ educ + exper + tenure, data = wage1)
 Again, print the estimated model coefficients:
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE}
-stargazer(hourly_wage_model, single.row = TRUE, header = FALSE)
+stargazer(hourly_wage_model,  single.row = TRUE, header = FALSE)
 ```
 
 \newpage
@@ -113,7 +113,7 @@ linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_1987_nonuni
 Finally, print the complete summary statistic diagnostics of the model.
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE}
-stargazer(linear_model, single.row = TRUE, header = FALSE)
+stargazer(linear_model,  single.row = TRUE, header = FALSE)
 ```
 
 \newpage
@@ -241,7 +241,7 @@ housing_standard <- lm(scale(price)~0+scale(nox)+scale(crime)+scale(rooms)+scale
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE}
-stargazer(housing_standard, single.row = TRUE, header = FALSE)
+stargazer(housing_standard,  single.row = TRUE, header = FALSE)
 ```
 
 
@@ -258,7 +258,7 @@ housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms+I(rooms^2) + stratio
 Lets compare the results with the model from `example 6.1`.
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(housing_standard, housing_interactive, single.row = TRUE, header = FALSE)
+stargazer(housing_standard,  echo=FALSE, housing_interactive, single.row = TRUE, header = FALSE)
 ```
 
 \newpage
@@ -288,7 +288,7 @@ housing_qualitative <- lm(lprice ~ llotsize + lsqrft + bdrms + colonial, data = 
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(housing_qualitative, single.row = TRUE, header = FALSE)
+stargazer(housing_qualitative,  single.row = TRUE, header = FALSE)
 ```
 
 Summary from the text:
@@ -334,7 +334,7 @@ GPA_WLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)
 Compare the OLS and WLS model in the table below:
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(GPA_OLS, GPA_WLS, single.row = TRUE, header = FALSE)
+stargazer(GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE)
 ```
 
 > "There are no important differences in the OLS and WLS estimates. The only significant explanatory variable is $parcoll$, and in both cases we estimate that the probability of $PC$ ownership is about .22 higher if at least on parent attended college"
@@ -380,7 +380,7 @@ smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem,
 The table below compares the results of both models side by side. By removing the outlier firm, $sales$ become a more significant determination of R&D expenditures.
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(all_rdchem, smallest_rdchem, single.row = TRUE, header = FALSE)
+stargazer(all_rdchem, smallest_rdchem,  single.row = TRUE, header = FALSE)
 ```
 
 
@@ -424,9 +424,9 @@ barium_anova <- anova(barium_imports, barium_seasonal)
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(barium_imports, barium_seasonal, single.row = TRUE, header = FALSE)
+stargazer(barium_imports, barium_seasonal,  single.row = TRUE, header = FALSE)
 
-stargazer(barium_anova, single.row = TRUE, header = FALSE)
+stargazer(barium_anova,  single.row = TRUE, header = FALSE)
 ```
 > "When we add the 11 monthly dummy variables as in 10.41 and test their joint significance, we obtain $p-value = 5 .5852$, and so the seasonal dummies are jointly insignificant. In addition, nothing important changes in the estimates once statistical significance is taken into account. Krupp and Pollard (1996) actually used three dummy variables for the seasons (fall, spring, and summer, with winter as the base season), rather than a full set of monthly dummies; the outcome is essentially the same."
 
@@ -460,7 +460,7 @@ wage_diff <- lm(diff(lhrwage) ~ diff(loutphr), data = earns)
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(wage_time, wage_diff, single.row = TRUE, header = FALSE)
+stargazer(wage_time, wage_diff,  single.row = TRUE, header = FALSE)
 ```
 
 > "Now, a 1% increase in productivity is estimated to increase real wages by about 0.81%, and the estimate is not statistically different from one. The adjusted $R^2$ shows that the growth in output explains about 35% of the growth in real wages."
@@ -536,7 +536,7 @@ return_mu <- residuals(return_AR1)
 mu2_hat_model <- lm(return_mu^2 ~ return_1, data = return_AR1$model)
 ```
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(return_AR1, mu2_hat_model, single.row = TRUE, header = FALSE)
+stargazer(return_AR1, mu2_hat_model,  single.row = TRUE, header = FALSE)
 ```
 > "The $t$ statistic on $return_{t-1}$ is about -5.5, indicating strong evidence of heteroskedasticity. Because the coeffict on $return_{t-1}$ is negative, we have the interesting finding that volatility in stock returns is lower the previous return was high, and vice versa. Therefore, we have found what is common in many financial studies: the expected value of stock returns does not depend on past returns, but the variance of returns does."
 
@@ -591,7 +591,7 @@ DD_model <- lm(cdthrte ~ copen + cadmn, data = traffic1)
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(DD_model, single.row = TRUE, header = FALSE)
+stargazer(DD_model,  single.row = TRUE, header = FALSE)
 ```
 
 > "The estimates suggest that adopting an open container law lowered the traffic fatality rate by $0.42$, a nontrivial effect given that the average death rate in 1985 was
@@ -614,7 +614,7 @@ scrap_panel <- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain,
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(scrap_panel, single.row = TRUE, header = FALSE)
+stargazer(scrap_panel,  single.row = TRUE, header = FALSE)
 ```
 > "We have reported the results in a way that emphasizes the need to interpret the estimates in light of the unobserved effects model, (14.4). We are explicitly controlling for the unobserved, time-constant effects in $\alpha_i$. The time-demeaning allows us to estimate the $\beta_j$, but (14.5) is not the best equation for interpreting the estimates.
 
@@ -704,7 +704,7 @@ educ_sibs_IV <- ivreg(lwage ~ educ | sibs, data = wage2)
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(educ_sibs_model, educ_sibs_IV, wage_educ_IV, single.row = TRUE, header = FALSE)
+stargazer(educ_sibs_model, educ_sibs_IV, wage_educ_IV,  single.row = TRUE, header = FALSE)
 ```
 
 > "For comparison, the OLS estimate of $\beta_1$ is 0.059 with a standard error of 0.006. Unlike in the previous example, the $IV$ estimate is now much higher than the $OLS$ estimate. While we do not know whether the difference is statistically significant, this does not mesh with the omitted ability bias from $OLS$. It could be that $sibs$ is also correlated with ability: more siblings means, on average, less parental attention, which could result in lower ability. Another interpretation is that the $OLS$ estimator is biased toward zero because of measurement error in $educ$. This is not entirely convincing because, as we discussed in Section 9.3, educ is unlikely to satisfy the classical errors-in-variables model."
@@ -724,7 +724,7 @@ wage_educ_exper_IV <- ivreg(lwage ~ educ + exper + expersq | exper + expersq + m
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE, echo=FALSE}
-stargazer(wage_educ_exper_IV, single.row = TRUE, header = FALSE)
+stargazer(wage_educ_exper_IV,  single.row = TRUE, header = FALSE)
 ```
 
 > "The estimated return to education is about 6.1%, compared with an $OLS$ estimate of about 10.8%. Because of its relatively large standard error, the 2SLS estimate is barely statistically significant at the 5% level against a two-sided alternative."
@@ -777,7 +777,7 @@ inflation_IV <- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(open_model, inflation_IV, single.row = TRUE, header = FALSE)
+stargazer(open_model, inflation_IV,  single.row = TRUE, header = FALSE)
 ```
 
 > "The coefficient on open is statistically significant at about the 1% level against a one sided alternative of $\alpha_1 < 0$. The effect is economically important as well: for every percentage point increase in the import share of GDP, annual inflation is about 1/3 of a percentage point lower. For comparison, the OLS estimate is -0.215, $se = 0.095$.""
@@ -806,7 +806,7 @@ econ_crim_poisson <- glm(formula, data = crime1, family=poisson)
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(econ_crime_model, econ_crim_poisson, single.row = TRUE, header = FALSE)
+stargazer(econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALSE)
 ```
 
 
@@ -841,7 +841,7 @@ unem_inf_VAR1 <- dynlm(unem ~ unem_1 + inf_1, data = phillips, end = 1996)
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, echo=FALSE}
-stargazer(unem_AR1, unem_inf_VAR1, single.row = TRUE, header = FALSE)
+stargazer(unem_AR1, unem_inf_VAR1,  single.row = TRUE, header = FALSE)
 ```
 
 > "The lagged inflation rate is very significant in the second model $(t \approx 4.5)$, and the adjusted R-squared much higher than that from the first. Nevertheless, this does not necessarily mean that the second equation will produce a better forecast for 1997. All we can say so far is that, using the data up through 1996, a lag of inflation helps to explain variation in the unemployment rate."
