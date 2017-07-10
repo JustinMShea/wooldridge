@@ -17,5 +17,11 @@ unlink("inst", recursive = TRUE)
 library(rmarkdown)
 rmarkdown::render("vignettes/wooldridge-vignette.Rmd", pdf_document())
 
+
+# build checks
+use_travis()
+use_appveyor()
+build_win()
+
 # Finally, remove the extra data_folder folder
 unlink(data_folder, recursive = TRUE)
