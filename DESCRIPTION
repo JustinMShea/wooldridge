@@ -1,7 +1,7 @@
 Package: wooldridge
 Type: Package
 Title: 105 Data Sets from "Introductory Econometrics" by Jeffrey M. Wooldridge
-Version: 0.9.9.9115
+Version: 1.0.0
 Author: Justin M. Shea     
 Maintainer: Justin M. Shea <jshea@mail.roosevelt.edu>
 Description: Students new to both Econometrics and R may find the dual tasks daunting. 
