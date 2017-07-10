@@ -1,18 +1,17 @@
 ---
 title: "wooldridge-vignette"
 author: "Justin M Shea"
-date: ""
-output: html_vignette
-pdf_document: default
+date: " "
+output: 
+  pdf_document:
+        toc: true
 vignette: >
   %\VignetteIndexEntry{wooldridge-vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-An excellent approach to learning is to find an example from your textbook
-and then recreate it. Below are examples from every chapter and the syntax 
-provided here should get you through most of the book.
+This vignette contains examples from every chapter, which show you how to load data from the `wooldridge` data package, and run the appropriate model to match the results of the text examples. The syntax provided here should get you through the book.
 
 Load the `wooldridge` package to access data in the manner specified in each example.
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
