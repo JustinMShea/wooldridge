@@ -1,3 +1,10 @@
+## Resubmission
+This is a resubmission. As requested I have:
+
+* Added the full name of the text book in the `Description` section.
+* Added the text book ISBN and edition number.
+
+
 ## Test environments passing
 * Local: Windows 10 (64-bit) install, R 3.4.0
 * win-builder: x86_64-w64-mingw32 (64-bit), R Under development (2017-07-09 r72907)
@@ -25,7 +32,6 @@ Done. Your build exited with 0.
 Build success
   
 ## rhub
-
 macOS 10.11 El Capitan:── 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
 Ubuntu Linux 16.04 LTS:── 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
