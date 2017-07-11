@@ -17,7 +17,6 @@ Build success
 
 ## win-builder
 Status: 1 NOTE
-Version contains large components (0.9.9.9112)
 Possibly mis-spelled words in DESCRIPTION:
   Econometrics (3:41, 8:35)
   Wooldridge (4:9)
