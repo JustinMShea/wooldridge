@@ -11,9 +11,14 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+\newpage
+
+## Introduction
+
 This vignette contains examples from every chapter, which show you how to load data from the `wooldridge` data package, and run the appropriate model to match the results of the text examples. The syntax provided here should get you through the book.
 
 Load the `wooldridge` package to access data in the manner specified in each example.
+
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
 library(wooldridge)
 ```
@@ -364,10 +369,11 @@ Neither $sales$ nor $profmarg$ is statistically significant at even the 10% leve
 Of the 32 firms, 31 have annual sales less than $20$ billion. One firm has annual sales of almost $40$ billions. Figure 9.1 shows how far this firm is from the rest of the sample.
 
 ```{r, tidy=TRUE}
-plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem,
-     main = "FIGURE 9.1: Scatterplot of R&D intensity against firm sales",
-     xlab = "firm sales (in millions of dollars)",
-     ylab = "R&D as a percentage of sales")
+plot_title <- "FIGURE 9.1: Scatterplot of R&D intensity against firm sales"
+x_axis <- "firm sales (in millions of dollars)"
+y_axis <- "R&D as a percentage of sales"
+
+plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem, main = plot_title, xlab = x_axis, ylab = y_axis)
 ```
 
 > "In terms of sales, this firm is over twice as large as every other firm, so it might be a good idea to estimate the model without it. When we do this, we obtain:"
