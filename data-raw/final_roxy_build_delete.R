@@ -15,7 +15,7 @@ unlink("inst", recursive = TRUE)
 
 # Render .pdf vignette
 library(rmarkdown)
-rmarkdown::render("vignettes/wooldridge-vignette.Rmd", pdf_document())
+rmarkdown::render("vignettes/wooldridge-vignette.Rmd", pdf_document(toc=TRUE))
 
 
 # build checks
