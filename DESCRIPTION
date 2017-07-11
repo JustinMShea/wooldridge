@@ -10,14 +10,9 @@ Description: Economics students new to both Econometrics and R may find the task
         in luck! The `wooldridge` data package aims to lighten the task by loading 
         any data set from the text with a single command. In addition, a vignette 
         shows you how to recreate examples from every chapter of the text, offering 
-        an introduction to R's statistical model syntax. While Wooldridge makes 
-        data sets available in formats compatible with E-View, Excel, MiniTab, 
-        and Stata, R is the only open source option. R is also the most scalable 
-        of the bunch,  giving the curious student the most potential to explore 
-        statistical approaches reaching far beyond the scope of the text. 
-        Note: All data sets are from the 5th edition 
-        (Wooldridge 2013, ISBN-13:978-1-111-53104-1), which is fully backward 
-        compatible with earlier editions. 
+        an introduction to R's statistical model syntax. Note: All data sets are 
+        from the 5th edition (Wooldridge 2013, ISBN-13:978-1-111-53104-1), which 
+        backward compatible with earlier editions.
 Depends: R (>= 3.4.0)
 License: GPL-3
 Encoding: UTF-8
