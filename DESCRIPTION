@@ -12,7 +12,7 @@ Description: Economics students new to both Econometrics and R may find the task
         shows you how to recreate examples from every chapter of the text, offering 
         an introduction to R's statistical model syntax. Note: All data sets are 
         from the 5th edition (Wooldridge 2013, ISBN-13:978-1-111-53104-1), which 
-        backward compatible with earlier editions.
+        compatible with most other editions.
 Depends: R (>= 3.4.0)
 License: GPL-3
 Encoding: UTF-8

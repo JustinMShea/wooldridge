@@ -10,7 +10,7 @@ _**But wait...there's more!**_ Contained in the package is also the [`wooldridge
 offering a relevant introduction to R's statistical model syntax.
 
 
-**Note:** All data sets are from the 5th edition (Wooldridge 2013, `ISBN-13:978-1-111-53104-1`), which is compatible with other editions.
+**Note:** All data sets are from the 5th edition (Wooldridge 2013, `ISBN-13:978-1-111-53104-1`), which is compatible with most other editions.
 
 
 ## Installation
