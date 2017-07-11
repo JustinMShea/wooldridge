@@ -834,10 +834,10 @@ $$\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}$$
 
 ```{r}
 data("phillips")
-library(dynlm)
-phillips <- ts(phillips, start = 1948)
-unem_AR1 <- dynlm(unem ~ unem_1, data = phillips, end = 1996)
-unem_inf_VAR1 <- dynlm(unem ~ unem_1 + inf_1, data = phillips, end = 1996)
+
+unem_AR1 <- lm(unem ~ unem_1, data = phillips, subset = (year <= 1996))
+
+unem_inf_VAR1 <- lm(unem ~ unem_1 + inf_1, data = phillips, subset = (year <= 1996))
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, echo=FALSE}
