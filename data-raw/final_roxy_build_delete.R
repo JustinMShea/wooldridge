@@ -6,17 +6,16 @@
 # time to roxygenize those .R description files we wrote!
 devtools::document()
 
-# Build vignette
-devtools::build_vignettes()
+# Build package
+devtools::build()
 
 # delete Building vignette folder as it creates build warning.
 unlink("inst/doc", recursive = TRUE)
 unlink("inst", recursive = TRUE)
 
-# Render .pdf vignette
+# Render .pdf and .html vignettes
 library(rmarkdown)
-rmarkdown::render("vignettes/wooldridge-vignette.Rmd", pdf_document(toc=TRUE))
-
+rmarkdown::render("vignettes/wooldridge-vignette.Rmd", "all")
 
 # build checks
 use_travis()

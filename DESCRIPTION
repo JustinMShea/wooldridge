@@ -8,13 +8,12 @@ Description: Economics students new to both Econometrics and R may find the
     tasks of learning both a bit daunting. However, if your text is "Introductory 
     Econometrics: A Modern Approach" by Jeffrey M. Wooldridge, then you are in 
     luck! The `wooldridge` data package aims to lighten the task by loading any 
-    data set from the text with a single command. In addition, the package contains 
+    data set from the text with a single command. The package contains 
     documentation for each data set and all data has been efficiently compressed 
     resulting in a total size that is 62.73% of its original. A wooldridge-vignette 
-    recreates examples from every chapter of the text, offering a relevant 
-    introduction to R's statistical model syntax. Note: Data sets are from the 
-    5th edition (Wooldridge 2013, ISBN-13:978-1-111-53104-1), which is compatible 
-    with all other editions.
+    provides examples from the text, offering a relevant introduction to R's
+    econometric modelling syntax. Note: Data sets are from the 5th edition 
+    (Wooldridge 2013, ISBN-13:978-1-111-53104-1), and are compatible with other editions.
 Depends: R (>= 3.1.0)
 License: GPL-3
 Encoding: UTF-8
