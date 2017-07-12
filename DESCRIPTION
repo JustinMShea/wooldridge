@@ -1,7 +1,7 @@
 Package: wooldridge
 Type: Package
 Title: 105 Data Sets from "Introductory Econometrics: A Modern Approach" by Jeffrey M. Wooldridge
-Version: 1.0.1.9010
+Version: 1.0.1.9011
 Author: Justin M. Shea     
 Maintainer: Justin M. Shea <jshea@mail.roosevelt.edu>
 Description: Economics students new to both Econometrics and R may find the 
