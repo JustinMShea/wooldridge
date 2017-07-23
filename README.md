@@ -9,7 +9,7 @@ The `wooldridge` data package aims to lighten the task by loading any data set f
 
 _**But wait...there's more!**_ Act now (or at anytime) and you will receive the  [`wooldridge-vignette`](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf)!:sparkles: The vignette illustrates examples provided in the text, offering a relevant introduction to getting started with R's econometric modelling syntax.
 
-While the course companion site also provides publicly available data sets for E-views, Excel, MiniTab, and Stata commercial software products, **R** is an open source option. Furthermore, taking the step to use **R** while building a foundation in Econometrics, offers the curious Student a gateway to accessing advanced topics available in the greater package ecosystem.
+While the course companion site also provides publicly available data sets for EViews, Excel, MiniTab, and Stata commercial software products, **R** is an open source option. Furthermore, taking the step to use **R** while building a foundation in Econometrics, offers the curious student a gateway to accessing advanced topics available in the greater package ecosystem.
 
 **Note:** All data sets are from the 5th edition (Wooldridge 2013, `ISBN-13: 978-1-111-53104-1`), which is compatible with most other editions.
 
