@@ -3,14 +3,16 @@ title: "wooldridge-vignette"
 author: "Justin M Shea"
 date: ' '
 output:
-  html_document:
-    toc: yes
   pdf_document:
     toc: yes
   rmarkdown::html_document:
     toc: yes
-vignette: |
-  %\VignetteIndexEntry{wooldridge-vignette} %\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8}
+vignette: >
+  %\VignetteIndexEntry{wooldridge-vignette}  
+  %\VignetteEngine{knitr::rmarkdown}  
+  %\VignetteEncoding{UTF-8}
+
+
 ---
 
 \newpage
@@ -19,7 +21,9 @@ vignette: |
 
 This vignette contains examples of using R with _"Introductory Econometrics: A Modern Approach"_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, run econometric models, and view the results with **R**.
 
-While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software products, **R** is an open source option. Furthermore, taking the step to use **R** while building a foundation in Econometrics, offers the curious Student a gateway to accessing advanced topics available in the greater package ecosystem.
+While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software products, **R** is an open source option. Furthermore, taking the step to use **R** while building a foundation in Econometrics, offers the curious student a gateway to accessing advanced topics available in the greater package ecosystem.
+
+In addition to this vignette, please see the **Additional Resources** section on using R for Econometrics. It contains information on the excellent and in depth _"Using R for Introductory Econometrics"_ by Florian Hess, written to compliment the Wooldridge text as well.
 
 First, load the `wooldridge` package to access data in the manner specified in each example.
 
@@ -683,4 +687,33 @@ unem_inf_VAR1 <- lm(unem ~ unem_1 + inf_1, data = phillips, subset = (year <= 19
 stargazer(unem_AR1, unem_inf_VAR1,  single.row = TRUE, header = FALSE)
 ```
 
-# References
+
+\newpage
+
+# Additional Resources
+
+##**Using R for Introductory Econometrics**
+
+Florian Hess
+
+ISBN: 978-1-523-28513-6
+
+address: Dusseldorf, Germany
+
+year: 2016
+
+url: https://urfie.net
+
+
+##**Econometrics in R**
+
+Grant Farnsworth
+
+address: Evanston, IL
+
+year: 2008
+
+url: https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf
+
+
+

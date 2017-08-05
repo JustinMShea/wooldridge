@@ -141,6 +141,10 @@ $(document).ready(function () {
 <li><a href="#chapter-16-simultaneous-equations-models">Chapter 16: Simultaneous Equations Models</a></li>
 <li><a href="#chapter-17-limited-dependent-variable-models-and-sample-selection-corrections">Chapter 17: Limited Dependent Variable Models and Sample Selection Corrections</a></li>
 <li><a href="#chapter-18-advanced-time-series-topics">Chapter 18: Advanced Time Series Topics</a></li>
+<li><a href="#additional-resources">Additional Resources</a><ul>
+<li><a href="#using-r-for-introductory-econometrics"><strong>Using R for Introductory Econometrics</strong></a></li>
+<li><a href="#econometrics-in-r"><strong>Econometrics in R</strong></a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -148,7 +152,8 @@ $(document).ready(function () {
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>This vignette contains examples of using R with <em>“Introductory Econometrics: A Modern Approach”</em> by Jeffrey M. Wooldridge. Each example illustrates how to load data, run econometric models, and view the results with <strong>R</strong>.</p>
-<p>While the course companion site also provides publicly available data sets for E-views, Excel, MiniTab, and Stata commercial software products, <strong>R</strong> is an open source option. Furthermore, taking the step to use <strong>R</strong> while building a foundation in Econometrics, offers the curious Student a gateway to accessing advanced topics available in the greater package ecosystem.</p>
+<p>While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software products, <strong>R</strong> is an open source option. Furthermore, taking the step to use <strong>R</strong> while building a foundation in Econometrics, offers the curious student a gateway to accessing advanced topics available in the greater package ecosystem.</p>
+<p>In addition to this vignette, please see the <strong>Additional Resources</strong> section on using R for Econometrics. It contains information on the excellent and in depth <em>“Using R for Introductory Econometrics”</em> by Florian Hess, written to compliment the Wooldridge text as well.</p>
 <p>First, load the <code>wooldridge</code> package to access data in the manner specified in each example.</p>
 <pre class="r"><code>library(wooldridge)</code></pre>
 </div>
@@ -525,6 +530,25 @@ unem_AR1 &lt;- lm(unem ~ unem_1, data = phillips, subset = (year &lt;= 1996))
 
 unem_inf_VAR1 &lt;- lm(unem ~ unem_1 + inf_1, data = phillips, subset = (year &lt;= 1996))</code></pre>
 
+
+</div>
+<div id="additional-resources" class="section level1">
+<h1>Additional Resources</h1>
+<div id="using-r-for-introductory-econometrics" class="section level2">
+<h2><strong>Using R for Introductory Econometrics</strong></h2>
+<p>Florian Hess</p>
+<p>ISBN: 978-1-523-28513-6</p>
+<p>address: Dusseldorf, Germany</p>
+<p>year: 2016</p>
+<p>url: <a href="https://urfie.net" class="uri">https://urfie.net</a></p>
+</div>
+<div id="econometrics-in-r" class="section level2">
+<h2><strong>Econometrics in R</strong></h2>
+<p>Grant Farnsworth</p>
+<p>address: Evanston, IL</p>
+<p>year: 2008</p>
+<p>url: <a href="https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf" class="uri">https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf</a></p>
+</div>
 </div>
 
 
