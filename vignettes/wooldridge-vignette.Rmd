@@ -1,17 +1,16 @@
 ---
 title: "wooldridge-vignette"
 author: "Justin M Shea"
-date: " "
-output: 
-  rmarkdown::html_document:
-    toc: true
+date: ' '
+output:
+  html_document:
+    toc: yes
   pdf_document:
-    toc: true
-
-vignette: >
-  %\VignetteIndexEntry{wooldridge-vignette}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+    toc: yes
+  rmarkdown::html_document:
+    toc: yes
+vignette: |
+  %\VignetteIndexEntry{wooldridge-vignette} %\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8}
 ---
 
 \newpage
@@ -20,7 +19,7 @@ vignette: >
 
 This vignette contains examples of using R with _"Introductory Econometrics: A Modern Approach"_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, run econometric models, and view the results with **R**.
 
-While the course companion site also provides publicly available data sets for E-views, Excel, MiniTab, and Stata commercial software products, **R** is an open source option. Furthermore, taking the step to use **R** while building a foundation in Econometrics, offers the curious Student a gateway to accessing advanced topics available in the greater package ecosystem.
+While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software products, **R** is an open source option. Furthermore, taking the step to use **R** while building a foundation in Econometrics, offers the curious Student a gateway to accessing advanced topics available in the greater package ecosystem.
 
 First, load the `wooldridge` package to access data in the manner specified in each example.
 
@@ -684,5 +683,14 @@ unem_inf_VAR1 <- lm(unem ~ unem_1 + inf_1, data = phillips, subset = (year <= 19
 stargazer(unem_AR1, unem_inf_VAR1,  single.row = TRUE, header = FALSE)
 ```
 
+# References
 
-
+  @Article{,
+    title = {Panel Data Econometrics in {R}: The {plm} Package},
+    author = {Yves Croissant and Giovanni Millo},
+    journal = {Journal of Statistical Software},
+    year = {2008},
+    volume = {27},
+    number = {2},
+    url = {http://www.jstatsoft.org/v27/i02/},
+  }
