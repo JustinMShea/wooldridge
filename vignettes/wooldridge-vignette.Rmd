@@ -19,13 +19,15 @@ vignette: >
 
 ## Introduction
 
-This vignette contains examples of using R with _"Introductory Econometrics: A Modern Approach"_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, run econometric models, and view the results with **R**.
+This vignette contains examples from every chapter of _Introductory Econometrics: A Modern Approach_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute their estimates with **R**.
 
-While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software products, **R** is an open source option. Furthermore, taking the step to use **R** while building a foundation in Econometrics, offers the curious student a gateway to accessing advanced topics available in the greater package ecosystem.
+Economics students new to both Econometrics and **R** may find the tasks of learning both a bit daunting. In particular, the necessary process of loading and preparing data prior to building one's first Econometric model can present challenges for those without computer science experience. The `wooldridge` data package aims to lighten this task. It contains 105 data sets from _Introductory Econometrics: A Modern Approach_, and will load any data set by simply typing its name into the R console.
 
-In addition to this vignette, please see the **Additional Resources** section on using R for Econometrics. It contains information on the excellent and in depth _"Using R for Introductory Econometrics"_ by Florian Hess, written to compliment the Wooldridge text as well.
+While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the only open source option. Furthermore, taking the step to use **R** while building a foundation in Econometrics, offers experience with a language that can be scaled to study innovative new methods and handle larger modern data sets.
 
-First, load the `wooldridge` package to access data in the manner specified in each example.
+In addition to this vignette, please visit the Appendix for more in depth sources on using R for Econometrics. For example, an excellent reference is [_"Using R for Introductory Econometrics"_ by Florian Hess](http://www.urfie.net/index.html), written to compliment _Introductory Econometrics: A Modern Approach_. The full text can be viewed on the book website.
+
+Now, load the `wooldridge` package and lets get started.
 
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
 library(wooldridge)
@@ -35,6 +37,8 @@ library(wooldridge)
 library(stargazer)
 ```
 
+\newpage
+
 ## Chapter 2: The Simple Regression Model
 
 **`Example 2.10:` A Log Wage Equation**
@@ -43,6 +47,7 @@ library(stargazer)
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ$$
 
 First, load the `wage1` data.
+
 ```{r}
 data(wage1)
 ```
@@ -53,7 +58,7 @@ Next, estimate a linear relationship between the log of _wage_ and _education_.
 log_wage_model <- lm(lwage ~ educ, data = wage1)
 ```
 
-Finally, print the coefficients and $R^2$.
+Finally, print the results. I'm using the `stargazer` package to print the model results in a clean and easy to read format.
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE}
 stargazer(log_wage_model, single.row = TRUE, header = FALSE)
@@ -68,11 +73,12 @@ stargazer(log_wage_model, single.row = TRUE, header = FALSE)
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure$$
 
 Estimate the model regressing _education_, _experience_, and _tenure_ against _log(wage)_.
+
 ```{r}
 hourly_wage_model <- lm(lwage ~ educ + exper + tenure, data = wage1)
 ```
 
-Again, print the estimated model coefficients:
+Print the estimated model coefficients:
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE}
 stargazer(hourly_wage_model,  single.row = TRUE, header = FALSE)
@@ -85,12 +91,17 @@ stargazer(hourly_wage_model,  single.row = TRUE, header = FALSE)
 **`Example 4.7` Effect of Job Training on Firm Scrap Rates**
 
 
-First, load the `jtrain` data set.
+Load the `jtrain` data set and if you are using R Studio, `View` the data set
+
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
 data("jtrain")
 ```
 
-Next, create a logical index identifying which observations occur in 1987 and are non-union.
+```{r, echo = TRUE, eval = FALSE, warning=FALSE}
+View(jtrain)
+```
+
+Create a logical index, identifying which observations occur in 1987 and are non-union.
 
 ```{r} 
 index <- jtrain$year == 1987 & jtrain$union == 0
@@ -99,10 +110,10 @@ index <- jtrain$year == 1987 & jtrain$union == 0
 Next, subset the jtrain data by the new index. This returns a data.frame of `jtrain` data of non-union firms for the year 1987.
 
 ```{r}
-jtrain_1987_nonunion <- jtrain[index,]
+jtrain_1987_nonunion <- jtrain[index, ]
 ```
 
-Now create the linear model regressing hrsemp(total hours training/total employees trained), the log of annual sales, and the log of the number of the employees, against the log of the scrape rate.
+Now create the linear model regressing `hrsemp`(total hours training/total employees trained), the `lsales`(log of annual sales), and `lemploy`(the log of the number of the employees), against `lscrap`(the log of the scrape rate).
 
 $$lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy$$
 
@@ -134,29 +145,30 @@ $avgsen:$ average sentence served, length in months.
 
 $tottime:$ time in prison since reaching the age of 18, length in months.
 
-$ptime86:$ months in prison during 1986
+$ptime86:$ months in prison during 1986.
 
-$qemp86:$ quarters employed, 1986
+$qemp86:$ quarters employed, 1986.
 
 
-Load the `crime1` data set containing arrests during the year 1986 and other information on 2,725 men born in either 1960 or 1961 in California.
+Load the `crime1` data set.
 
 ```{r}
 data(crime1)
 ```
 
+Estimate the model.
 
 ```{r, tidy = TRUE}
 restricted_model <- lm(narr86 ~ pcnv + ptime86 + qemp86, data = crime1)
 ```
 
-We obtain the residuals $\tilde{\mu}$ from this regression, 2,725 of them. 
+Create a new variable `restricted_model_u` containing the residuals $\tilde{\mu}$ from the above regression.
 
 ```{r}
 restricted_model_u <- restricted_model$residuals
 ```
 
-Next, we run the regression of:
+Next, regress `pcnv, ptime86, qemp86, avgsen`, and `tottime`, against the residuals $\tilde{\mu}$ saved in `restricted_model_u`.
 
 $$\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86$$
 
@@ -182,11 +194,11 @@ qchisq(1 - 0.10, 2)
 
 The _p_-value is:
 $$P(X^2_{2} > 4.09) \approx 0.129$$
-so we would reject the $H_0$ at the 15% level.
 
 ```{r}
 1-pchisq(LM_test, 2)
 ```
+
 \newpage
 
 ## Chapter 6: Multiple Regression: Further Issues
@@ -216,7 +228,7 @@ First, load the `hrpice2` data.
 data(hrpice2)
 ```
 
-Next, estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wrapping each variable with R's `scale` function:
+Estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wrapping each variable with R's `scale` function:
 
 ```{r, tidy = TRUE}
 housing_standard <- lm(scale(price)~0+scale(nox)+scale(crime)+scale(rooms)+scale(dist) + scale(stratio), data = hprice2)
@@ -282,10 +294,11 @@ stargazer(housing_qualitative,  single.row = TRUE, header = FALSE)
 
 $$\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial $$
 
-Create a new variable combining the`fathcoll` and `mothcoll`, into `parcoll`. This new column indicates if either parent went to college.
+Load `gpa1` and create a new variable combining the `fathcoll` and `mothcoll`, into `parcoll`. This new column indicates if either parent went to college.
 
 ```{r}
 data("gpa1")
+
 gpa1$parcoll <- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)
 ```
 
@@ -294,7 +307,7 @@ GPA_OLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1)
 ```
 
 
-First, calculate the weights and then pass them to the same linear model.
+Calculate the weights and then pass them to the same linear model.
 
 ```{r}
 weights <- GPA_OLS$fitted.values * (1-GPA_OLS$fitted.values)
@@ -318,7 +331,7 @@ stargazer(GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE)
 
 $$rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu$$
 
-Load the data, run the model, and apply the `summary` diagnostics function to the model.
+Load the data, run the model.
 
 ```{r}
 data(rdchem)
@@ -326,15 +339,17 @@ data(rdchem)
 all_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem)
 ```
 
-Notice the outlier on the far right of the plot.
+Plotting the data reveals the outlier on the far right of the plot, which will skew the results of our model.
 
 ```{r, tidy=TRUE}
 plot_title <- "FIGURE 9.1: Scatterplot of R&D intensity against firm sales"
 x_axis <- "firm sales (in millions of dollars)"
 y_axis <- "R&D as a percentage of sales"
 
-plot(rdintens ~ sales, pch = 21, bg = "lightblue", data = rdchem, main = plot_title, xlab = x_axis, ylab = y_axis)
+plot(rdintens ~ sales, pch = 21, bg = "lightgrey", data = rdchem, main = plot_title, xlab = x_axis, ylab = y_axis)
 ```
+
+So, we can estimate the model without that data point to gain a better understanding of how `sales` and `profmarg` describe `rdintens` for most firms. We can use the `subset` argument of the linear model function to indicate that we only want to estimate the model using data that is less than the highest sales.
 
 ```{r}
 smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem, 
@@ -369,13 +384,13 @@ stargazer(tbill_model, single.row = TRUE, header = FALSE)
 
 **`Example 10.11:` Seasonal Effects of Antidumping Filings**
 
-In _Example 10.5_, we used monthly data (in the file `BARIUM`) that have not been seasonally adjusted. 
-
+Load the data and estimate the model.
 ```{r, tidy=TRUE}
 data("barium")
 barium_imports <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 ```
 
+Estimate a new model, `barium_seasonal` which accounts for seasonality by adding dummy variables contained in the data. Compute the `anova` between the two models.
 
 ```{r, tidy=TRUE}
 barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6 + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec, data = barium)
@@ -441,18 +456,13 @@ barium_prais_winsten
 
 $$return_t = \beta_0 + \beta_1return_{t-1} + \mu_t$$
 
-
-
 ```{r}
 data("nyse")
  
 return_AR1 <-lm(return ~ return_1, data = nyse)
 ```
 
-
-
 $$\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t$$
-
 
 
 ```{r}
@@ -579,7 +589,7 @@ educ_sibs_model <- lm(educ ~ sibs, data = wage2)
 
 $$\widehat{log(wage)} = \beta_0 + educ$$
 
-In this section, we will perform an **Instrumental-Variable Regression**, using the  `ivreg` function in the `AER (Applied Econometrics with R)` package.
+Again, estimate the model using the  `ivreg` function in the `AER (Applied Econometrics with R)` package.
 
 ```{r, message=FALSE}
 library("AER")
@@ -651,14 +661,20 @@ stargazer(open_model, inflation_IV,  single.row = TRUE, header = FALSE)
 
 ```{r, tidy=TRUE, warning=FALSE}
 data("crime1")
-
-formula <- (narr86 ~ pcnv + avgsen + tottime + ptime86 + qemp86 + inc86 + black + hispan + born60)
-
-econ_crime_model <- lm(formula, data = crime1)
-
-econ_crim_poisson <- glm(formula, data = crime1, family=poisson)
 ```
-
+Sometimes, when estimating a model with many variables, defining a `model` object containing the formula makes for much cleaner code. 
+```{r, tidy=TRUE, warning=FALSE}
+formula <- (narr86 ~ pcnv + avgsen + tottime + ptime86 + qemp86 + inc86 + black + hispan + born60)
+```
+Then, pass the `formula` object into the `lm` function, and define the `data` argument as usual. 
+```{r, tidy=TRUE, warning=FALSE}
+econ_crime_model <- lm(formula, data = crime1)
+```
+To estimate the `poisson` regression, use the general linear model function `glm` and define the `family` argument as `poisson`.
+```{r, tidy=TRUE, warning=FALSE}
+econ_crim_poisson <- glm(formula, data = crime1, family = poisson)
+```
+Use the `stargazer` package to easily compare diagnostic tables of both models.
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALSE)
 ```
@@ -670,18 +686,22 @@ stargazer(econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALS
 
 **`Example 18.8:` FORECASTING THE U.S. UNEMPLOYMENT RATE**
 
+```{r}
+data("phillips")
+```
 
 $$\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}$$
+```{r}
+unem_AR1 <- lm(unem ~ unem_1, data = phillips, subset = (year <= 1996))
+```
 
 $$\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}$$
 
 ```{r}
-data("phillips")
-
-unem_AR1 <- lm(unem ~ unem_1, data = phillips, subset = (year <= 1996))
-
 unem_inf_VAR1 <- lm(unem ~ unem_1 + inf_1, data = phillips, subset = (year <= 1996))
 ```
+
+Use the `stargazer` package to compare both models.
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, echo=FALSE}
 stargazer(unem_AR1, unem_inf_VAR1,  single.row = TRUE, header = FALSE)
@@ -690,30 +710,68 @@ stargazer(unem_AR1, unem_inf_VAR1,  single.row = TRUE, header = FALSE)
 
 \newpage
 
-# Additional Resources
 
-##**Using R for Introductory Econometrics**
+## Bibliography
 
-Florian Hess
-
-ISBN: 978-1-523-28513-6
-
-address: Dusseldorf, Germany
-
-year: 2016
-
-url: https://urfie.net
+Yves Croissant, Giovanni Millo (2008). _Panel Data Econometrics in R: The plm Package_. Journal of Statistical Software 27(2). URL www.jstatsoft.org/v27/i02/.
 
 
-##**Econometrics in R**
+Marek Hlavac (2015). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2. https://CRAN.R-project.org/package=stargazer
 
-Grant Farnsworth
 
-address: Evanston, IL
+Christian Kleiber and Achim Zeileis (2008). _Applied Econometrics with R_. New York:
+Springer-Verlag. ISBN 978-0-387-77316-2. URL https://CRAN.R-project.org/package=AER
 
-year: 2008
 
-url: https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf
+Franz Mohr (2015). _prais: Prais-Winsten Estimation Procedure for AR(1) Serial Correlation_. R package version 0.1.1. https://CRAN.R-project.org/package=prais
+
+
+R Core Team (2017). _R: A language and environment for statistical computing_. 
+R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+
+Hadley Wickham and Winston Chang (2016). _devtools: Tools to Make Developing R Packages Easier_. R package version 1.12.0. https://CRAN.R-project.org/package=devtools
+
+
+Hadley Wickham. _testthat: Get Started with Testing_. R package version 1.0.2. https://CRAN.R-project.org/package=testthat
+
+
+Jeffrey M. Wooldridge (2013). _Introductory Econometrics: A Modern Approach_. 
+Mason, Ohio :South-Western Cengage Learning.
+
+
+Yihui Xie (2017). _knitr: A General-Purpose Package for Dynamic Report Generation in R_. R package version 1.16. https://CRAN.R-project.org/package=knitr
+
+
+\newpage
+
+
+# Appendix
+
+###**Econometrics in R**
+
+This 50 pg document is posted on the Comprehensive R Archive Network site and contains useful econometric recipes.
+
+Farnsworth, Grant. _Econometrics in R_. 2008, Evanston, IL. 
+[url: https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf](https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf)
+
+
+###**Using R for Introductory Econometrics**
+
+From the text website:
+
+>  This book introduces the popular, powerful and free programming language and software package R with a focus on the implementation of standard tools and methods used in econometrics. Unlike other books on similar topics, it does not attempt to provide a self-contained discussion of econometric models and methods. Instead, it builds on the excellent and popular textbook "Introductory Econometrics" by Jeffrey M. Wooldridge.
+
+Hess, Florian. _Using R for Introductory Econometrics_. ISBN: 978-1-523-28513-6, CreateSpace Independent Publishing Platform, 2016, Dusseldorf, Germany. [url: https://urfie.net](https://urfie.net).
+
+
+
+
+
+
+
+
+
 
 
 
