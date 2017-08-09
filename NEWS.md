@@ -5,13 +5,13 @@ output: github_document
 
 # wooldridge 1.1.0
 
-##Updates to vingette
+##Updates to vignette
 
-One update here is removing descriptions of the examples, putting more emphasis on viewing clean code with short descriptions to describe what function arguments or to point out the use of various R packages. For descriptions of, and the rational behind example problems, students should refer to their text as content offered by Wooldridge is quite clear.
+I removed written descriptions of the example problems, putting more emphasis on viewing clean code. Short notes point to what function arguments are used or to the use of various R packages. For descriptions of the examples and the rational behind working through each example problem, students should refer to their text as the content offered by Wooldridge is quite clear.
 
-In addition, a bibliography section was added to cite packages and their authors.
+A bibliography section has been added, including package citations and their authors.
 
-An Appendix was also added, pointing readers to a few good sources for doing Econometrics with R.
+An Appendix has been added, pointing readers to a few excellent sources for computing Econometric models with R. These are "Econometrics in R" by Grant Farnsworth and "Using R for Introductory Econometrics" by Florian Hess.
 
 
 # wooldridge 1.0.0
