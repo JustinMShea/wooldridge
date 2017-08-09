@@ -5,11 +5,11 @@
 
 Economics students new to both Econometrics and **R** may find the tasks of learning both a bit daunting. However, if your text is **"Introductory Econometrics: A Modern Approach"** by Jeffrey M. Wooldridge, then you are in luck! 
 
-The `wooldridge` data package aims to lighten the task by loading any data set from the text with a single command. The package contains documentation for each data set and all data has been efficiently compressed resulting in a total size that is **62.73%** of its original. Just install the package, load it, and call the data set you need to work with.
+The `wooldridge` data package aims to lighten the task by loading any data set from the text with a single command. The package contains documentation for all data and each set has been compressed resulting in a total size that is **62.73%** of its original. Just install the package, load it, and call the data set you need to work with.
 
-_**But wait...there's more!**_ Act now (or at anytime) and you will receive the  [`wooldridge-vignette`](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf)!:sparkles: The vignette illustrates examples provided in the text, offering a relevant introduction to getting started with R's econometric modelling syntax.
+_**But wait...there's more!**_ Act now and you will receive the  [`wooldridge-vignette`](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf)!:sparkles: The vignette illustrates solutions to examples from the text computed with **R**, offering a relevant introduction to getting started with econometric modelling syntax. In addition, the vignette provides references to helpful Econometric resources, such as Florian Hess's _Using R for Introductory Econometrics _.
 
-While the course companion site also provides publicly available data sets for EViews, Excel, MiniTab, and Stata commercial software products, **R** is an open source option. Furthermore, taking the step to use **R** while building a foundation in Econometrics, offers the curious student a gateway to accessing advanced topics available in the greater package ecosystem.
+While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in Econometrics, can become the first step in a student's longer journey toward using the most innovative new methods in statistical computing and handling larger, more modern data sets.
 
 **Note:** All data sets are from the 5th edition (Wooldridge 2013, `ISBN-13: 978-1-111-53104-1`), which is compatible with most other editions.
 
@@ -29,7 +29,7 @@ install from GitHub.
 devtools::install_github("JustinMShea/wooldridge")
 ```
 
-Or:
+Note: the vignette may fail to build with older versions of R, knitr, and devtools. However, you can download that here and the data will still be accessible.
 
 ```{r}
 devtools::install_github("JustinMShea/wooldridge", build_vignettes = TRUE)
@@ -39,6 +39,7 @@ devtools::install_github("JustinMShea/wooldridge", build_vignettes = TRUE)
 ## Example
 
 Load the `wooldridge` package and use the `data()` function to load the desired set.
+
 ```{r}
 library(wooldridge)
 data("jtrain")
