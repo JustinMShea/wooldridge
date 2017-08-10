@@ -4,22 +4,26 @@ Title: 105 Data Sets from "Introductory Econometrics: A Modern Approach" by Jeff
 Version: 1.1.0
 Author: Justin M. Shea     
 Maintainer: Justin M. Shea <jshea@mail.roosevelt.edu>
-Description: Economics students new to both Econometrics and R may find the 
-    tasks of learning both a bit daunting. However, if your text is "Introductory 
-    Econometrics: A Modern Approach" by Jeffrey M. Wooldridge, then you are in 
-    luck! The `wooldridge` data package aims to lighten the task by loading any 
-    data set from the text with a single command. The package contains 
-    documentation for each data set and all data has been efficiently compressed 
-    resulting in a total size that is 62.73% of its original. A wooldridge-vignette 
-    provides examples from the text, offering a relevant introduction to R's
-    econometric modelling syntax. Note: Data sets are from the 5th edition 
-    (Wooldridge 2013, ISBN-13:978-1-111-53104-1), and are compatible with other editions.
+Description: Economics students new to both econometrics and R may find the 
+    simultaneous introduction to both challenging. In particular, the process of 
+    loading and preparing data before building one's first model can present 
+    challenges. The `wooldridge` data package aims to lighten the task by loading 
+    any data set from the text into one's R workspace with a single command. 
+    The package contains documentation for each set and all data has been 
+    compressed to 62.73% of its original size. Just install the package, load it, 
+    and use the `data()` function to call the data set you need to work with.
+    In addition, a wooldridge-vignette illustrates solutions to examples from 
+    each chapter of the text, offering a relevant introduction to econometric 
+    modelling with R. The vignette also includes an Appendix to helpful resources
+    for using R for Econometrics. Note: Data sets are from the 5th edition 
+    (Wooldridge 2013, ISBN-13:978-1-111-53104-1), and are compatible with others.
 Depends: R (>= 3.4.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Suggests: knitr, rmarkdown, testthat, AER, plm, prais, stargazer
+Suggests: knitr, rmarkdown, testthat, AER, plm, prais, stargazer,
+    covr
 VignetteBuilder: knitr
 URL: https://CRAN.R-project.org/package=wooldridge
 BugReports: https://github.com/JustinMShea/wooldridge/issues
