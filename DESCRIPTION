@@ -8,14 +8,14 @@ Description: Economics students new to both econometrics and R may find the
     simultaneous introduction to both challenging. In particular, the process of 
     loading and preparing data before building one's first model can present 
     challenges. The `wooldridge` data package aims to lighten the task by loading 
-    any data set from the text into one's R workspace with a single command. 
+    any data set from the text into the current working environment with a single command. 
     The package contains documentation for each set and all data has been 
     compressed to 62.73% of its original size. Just install the package, load it, 
     and use the `data()` function to call the data set you need to work with.
     In addition, a wooldridge-vignette illustrates solutions to examples from 
     each chapter of the text, offering a relevant introduction to econometric 
-    modelling with R. The vignette also includes an Appendix to helpful resources
-    for using R for Econometrics. Note: Data sets are from the 5th edition 
+    modelling with R. The vignette also includes an Appendix to helpful resources 
+    about using R for econometrics. Note: Data sets are from the 5th edition 
     (Wooldridge 2013, ISBN-13:978-1-111-53104-1), and are compatible with others.
 Depends: R (>= 3.4.0)
 License: GPL-3
