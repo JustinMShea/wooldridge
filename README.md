@@ -9,7 +9,7 @@ The `wooldridge` data package aims to lighten the task by loading any data set f
 
 _**But wait...there's more!**_ Act now and you will receive the  [`wooldridge-vignette`](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf)!:sparkles: The vignette illustrates solutions to examples from the text computed with **R**, offering a relevant introduction to getting started with econometric modelling syntax. In addition, the vignette provides references to helpful Econometric resources, such as Florian Hess's *Using R for Introductory Econometrics*.
 
-While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometrics, can become the first step in a student's longer journey toward using the most innovative new methods in statistical computing and handling larger, more modern data sets.
+While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometrics, can become the first step in a student's longer journey toward using the most innovative new methods in statistical computing for handling larger, more modern data sets.
 
 **Note:** All data sets are from the 5th edition (Wooldridge 2013, `ISBN-13: 978-1-111-53104-1`), which is compatible with most other editions.
 
@@ -38,19 +38,28 @@ devtools::install_github("JustinMShea/wooldridge", build_vignettes = TRUE)
 
 ## Example
 
-Load the `wooldridge` package and use the `data()` function to load the desired set.
+Load the `wooldridge` package and use the `data()` function to load the desired data set.
+Data set names match those in the text.
 
 ```{r}
 library(wooldridge)
+
 data("jtrain")
 ```
 
-Check out the documentation on the variable column names and what they are.
+View the `jtrain` data set
+
+```{r}
+View(jtrain)
+```
+
+Check out the documentation on `jtrain`, including variable column names and what they are.
+
 ```{r}
 ?jtrain
 ```
 
-In addition, load [`wooldridge-vignette`](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf) for a recreation of examples from the text.
+In addition, load the [`wooldridge-vignette`](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf) for a recreation of examples from the text.
 
 ```{r}
  vignette("wooldridge-vignette")
