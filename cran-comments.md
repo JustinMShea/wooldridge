@@ -18,7 +18,7 @@ R CMD check succeeded
 
 ## win-builder
 Status: 1 NOTE
-Possibly mis-spelled words in DESCRIPTION:
+Possibly mis-spelled words in DESCRIPTION: econometrics (8:45)
 
 ## travis-ci
 Done. Your build exited with 0.
