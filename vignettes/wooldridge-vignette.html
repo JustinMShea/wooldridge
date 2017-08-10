@@ -152,10 +152,10 @@ $(document).ready(function () {
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>This vignette contains examples from every chapter of <em>Introductory Econometrics: A Modern Approach</em> by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute their estimates with <strong>R</strong>.</p>
-<p>Economics students new to both Econometrics and <strong>R</strong> may find the tasks of learning both a bit daunting. In particular, the necessary process of loading and preparing data prior to building one’s first Econometric model can present challenges for those without computer science experience. The <code>wooldridge</code> data package aims to lighten this task. It contains 105 data sets from <em>Introductory Econometrics: A Modern Approach</em>, and will load any data set by simply typing its name into the R console.</p>
-<p>While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, <strong>R</strong> is the only open source option. Furthermore, taking the step to use <strong>R</strong> while building a foundation in Econometrics, offers experience with a language that can be scaled to study innovative new methods and handle larger modern data sets.</p>
-<p>In addition to this vignette, please visit the Appendix for more in depth sources on using R for Econometrics. For example, an excellent reference is <a href="http://www.urfie.net/index.html"><em>“Using R for Introductory Econometrics”</em> by Florian Hess</a>, written to compliment <em>Introductory Econometrics: A Modern Approach</em>. The full text can be viewed on the book website.</p>
+<p>This vignette contains examples from every chapter of <em>Introductory Econometrics: A Modern Approach</em> by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with <strong>R</strong>.</p>
+<p>Economics students new to both econometrics and <strong>R</strong> may find the introduction to both a bit challenging. In particular, the process of loading and preparing data prior to building one’s first econometric model can present challenges. The <code>wooldridge</code> data package aims to lighten this task. It contains 105 data sets from <em>Introductory Econometrics: A Modern Approach</em>, and will load any set by typing its name into the <code>data()</code> function.</p>
+<p>While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, <strong>R</strong> is the open source option. Furthermore, using <strong>R</strong> while building a foundation in econometrics, can become the first step in a student’s longer journey toward using the most innovative new methods in statistical computing for handling larger, more modern data sets.</p>
+<p>In addition, please visit the <strong>Appendix</strong> for sources on using R for econometrics. For example, an excellent reference is <a href="http://www.urfie.net/index.html"><em>“Using R for Introductory Econometrics”</em> by Florian Hess</a>, written to compliment <em>Introductory Econometrics: A Modern Approach</em>. The full text can be viewed on the book website.</p>
 <p>Now, load the <code>wooldridge</code> package and lets get started.</p>
 <pre class="r"><code>library(wooldridge)</code></pre>
 
@@ -164,11 +164,11 @@ $(document).ready(function () {
 <h2>Chapter 2: The Simple Regression Model</h2>
 <p><strong><code>Example 2.10:</code> A Log Wage Equation</strong></p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ\]</span></p>
-<p>First, load the <code>wage1</code> data.</p>
+<p>Load the <code>wage1</code> data.</p>
 <pre class="r"><code>data(wage1)</code></pre>
-<p>Next, estimate a linear relationship between the log of <em>wage</em> and <em>education</em>.</p>
+<p>Estimate a linear relationship between the <em>log of wage</em> and <em>education</em>.</p>
 <pre class="r"><code>log_wage_model &lt;- lm(lwage ~ educ, data = wage1)</code></pre>
-<p>Finally, print the results. I’m using the <code>stargazer</code> package to print the model results in a clean and easy to read format.</p>
+<p>Print the results. I’m using the <code>stargazer</code> package to print the model results in a clean and easy to read format. See the bibliography for more information.</p>
 <pre class="r"><code>stargazer(log_wage_model, single.row = TRUE, header = FALSE)</code></pre>
 
 
@@ -187,7 +187,7 @@ $(document).ready(function () {
 <div id="chapter-4-multiple-regression-analysis-inference" class="section level2">
 <h2>Chapter 4: Multiple Regression Analysis: Inference</h2>
 <p><strong><code>Example 4.7</code> Effect of Job Training on Firm Scrap Rates</strong></p>
-<p>Load the <code>jtrain</code> data set and if you are using R Studio, <code>View</code> the data set</p>
+<p>Load the <code>jtrain</code> data set and if you are using R Studio, <code>View</code> the data set.</p>
 <pre class="r"><code>data(&quot;jtrain&quot;)</code></pre>
 <pre class="r"><code>View(jtrain)</code></pre>
 <p>Create a logical index, identifying which observations occur in 1987 and are non-union.</p>
@@ -227,6 +227,7 @@ summary(LM_u_model)$r.square</code></pre>
 <pre><code>## [1] 0.001493846</code></pre>
 <p><span class="math display">\[LM = 2,725(0.0015)\]</span></p>
 <pre class="r"><code>LM_test &lt;- nobs(LM_u_model) * 0.0015
+
 LM_test</code></pre>
 <pre><code>## [1] 4.0875</code></pre>
 <pre class="r"><code>qchisq(1 - 0.10, 2)</code></pre>
@@ -246,8 +247,10 @@ LM_test</code></pre>
 <p><span class="math inline">\(rooms\)</span>: average number of rooms in houses in the community.</p>
 <p><span class="math inline">\(dist\)</span>: weighted distance of the community to 5 employment centers.</p>
 <p><span class="math inline">\(stratio\)</span>: average student-teacher ratio of schools in the community.</p>
-<p><span class="math display">\[\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio\]</span> First, load the <code>hrpice2</code> data.</p>
-<pre class="r{}"><code>data(hrpice2)</code></pre>
+<p><span class="math display">\[\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio\]</span></p>
+<p>Load the <code>hrpice2</code> data.</p>
+<pre class="r"><code>data(hrpice2)</code></pre>
+<pre><code>## Warning in data(hrpice2): data set 'hrpice2' not found</code></pre>
 <p>Estimate the coefficient with the usual <code>lm</code> regression model but this time, standardized coefficients by wrapping each variable with R’s <code>scale</code> function:</p>
 <pre class="r"><code>housing_standard &lt;- lm(scale(price) ~ 0 + scale(nox) + scale(crime) + scale(rooms) + 
     scale(dist) + scale(stratio), data = hprice2)</code></pre>
@@ -255,10 +258,10 @@ LM_test</code></pre>
 
 
 <p><strong><code>Example 6.2:</code> Effects of Pollution on Housing Prices, Quadratic Interactive Term</strong></p>
-<p>We modify the housing model, adding a quadratic term in <em>rooms</em>:</p>
+<p>Modify the housing model, adding a quadratic term in <em>rooms</em>:</p>
 <p><span class="math display">\[log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu\]</span></p>
 <pre class="r"><code>housing_interactive &lt;- lm(lprice ~ lnox + log(dist) + rooms+I(rooms^2) + stratio, data = hprice2)</code></pre>
-<p>Lets compare the results with the model from <code>example 6.1</code>.</p>
+<p>Compare the results with the model from <code>example 6.1</code>.</p>
 <pre class="r"><code>stargazer(housing_standard, housing_interactive, single.row = TRUE, header = FALSE)</code></pre>
 
 
@@ -266,9 +269,9 @@ LM_test</code></pre>
 <div id="chapter-7-multiple-regression-analysis-with-qualitative-information" class="section level2">
 <h2>Chapter 7: Multiple Regression Analysis with Qualitative Information</h2>
 <p><strong><code>Example 7.4:</code> Housing Price Regression, Qualitative Binary variable</strong></p>
-<p>This time we use the <code>hrpice1</code> data.</p>
+<p>This time, use the <code>hrpice1</code> data.</p>
 <pre class="r{}"><code>data(hrpice1)</code></pre>
-<p>Having just worked with <code>hrpice2</code>, it may be helpful to view the documentation on this data set and read the variable names.</p>
+<p>If you recently worked with <code>hrpice2</code>, it may be helpful to view the documentation on this data set and read the variable names.</p>
 <pre class="r"><code>?hprice1</code></pre>
 <p><span class="math display">\[\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \beta_3bdrms + \beta_4colonial \]</span></p>
 <p>Estimate the coefficients of the above linear model on the <code>hprice</code> data set.</p>
@@ -286,7 +289,7 @@ LM_test</code></pre>
 
 gpa1$parcoll &lt;- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)</code></pre>
 <pre class="r"><code>GPA_OLS &lt;- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1)</code></pre>
-<p>Calculate the weights and then pass them to the same linear model.</p>
+<p>Calculate the weights and then pass them to the <code>weights</code> argument.</p>
 <pre class="r"><code>weights &lt;- GPA_OLS$fitted.values * (1-GPA_OLS$fitted.values)
 
 GPA_WLS &lt;- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)</code></pre>
@@ -299,7 +302,7 @@ GPA_WLS &lt;- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)</
 <h2>Chapter 9: More on Specification and Data Issues</h2>
 <p><strong><code>Example 9.8:</code> R&amp;D Intensity and Firm Size</strong></p>
 <p><span class="math display">\[rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu\]</span></p>
-<p>Load the data, run the model.</p>
+<p>Load the data and estimate the model.</p>
 <pre class="r"><code>data(rdchem)
  
 all_rdchem &lt;- lm(rdintens ~ sales + profmarg, data = rdchem)</code></pre>
@@ -329,7 +332,6 @@ tbill_model &lt;- lm(i3 ~ inf + def, data = intdef)</code></pre>
 <pre class="r"><code>stargazer(tbill_model, single.row = TRUE, header = FALSE)</code></pre>
 
 <p><strong><code>Example 10.11:</code> Seasonal Effects of Antidumping Filings</strong></p>
-<p>Load the data and estimate the model.</p>
 <pre class="r"><code>data(&quot;barium&quot;)
 barium_imports &lt;- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + 
     afdec6, data = barium)</code></pre>
@@ -423,7 +425,7 @@ mu2_hat_model &lt;- lm(return_mu^2 ~ return_1, data = return_AR1$model)</code></
 
 <p><strong><code>Example 12.9:</code> ARCH in Stock Returns</strong></p>
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t\]</span></p>
-<p>We still have <code>return_mu</code> in the working environment so we can use it to create <span class="math inline">\(\hat{\mu^2_t}\)</span>, (<code>mu2_hat</code>) and <span class="math inline">\(\hat{\mu^2_{t-1}}\)</span> (<code>mu2_hat_1</code>). Notice the use <code>R</code>’s matrix subset operations to perform the lag operation. We drop the first observation of <code>mu2_hat</code> and squared the results. Next, we remove the last observation of <code>mu2_hat_1</code> using the subtraction operator combined with a call to the <code>NROW</code> function on <code>return_mu</code>. Now, both contain <span class="math inline">\(688\)</span> observations and we can run a standard linear model.</p>
+<p>We still have <code>return_mu</code> in the working environment so we can use it to create <span class="math inline">\(\hat{\mu^2_t}\)</span>, (<code>mu2_hat</code>) and <span class="math inline">\(\hat{\mu^2_{t-1}}\)</span> (<code>mu2_hat_1</code>). Notice the use <code>R</code>’s matrix subset operations to perform the lag operation. We drop the first observation of <code>mu2_hat</code> and squared the results. Next, we remove the last observation of <code>mu2_hat_1</code> using the subtraction operator combined with a call to the <code>NROW</code> function on <code>return_mu</code>. Now, both contain <span class="math inline">\(688\)</span> observations and we can estimate a standard linear model.</p>
 <pre class="r"><code>mu2_hat  &lt;- return_mu[-1]^2
 
 mu2_hat_1 &lt;- return_mu[-NROW(return_mu)]^2
@@ -447,7 +449,7 @@ DD_model &lt;- lm(cdthrte ~ copen + cadmn, data = traffic1)</code></pre>
 <div id="chapter-14-advanced-panel-data-methods" class="section level2">
 <h2>Chapter 14: Advanced Panel Data Methods</h2>
 <p><strong><code>Example 14.1:</code> Effect of Job Training on Firm Scrap Rates</strong></p>
-<p>In this section, we will estimate a linear panel modeg using the <code>plm</code> function in the <code>plm: Linear Models for Panel Data</code> package.</p>
+<p>In this section, we will estimate a linear panel modeg using the <code>plm</code> function from the <code>plm: Linear Models for Panel Data</code> package. See the bibliography for more information.</p>
 <pre class="r"><code>library(plm)
 
 data(&quot;jtrain&quot;)
@@ -467,7 +469,7 @@ wage_educ_model &lt;- lm(lwage ~ educ, data = mroz)</code></pre>
 <p><span class="math display">\[\widehat{educ} = \beta_0 + \beta_1fatheduc\]</span></p>
 <p>We run the typical linear model, but notice the use of the <code>subset</code> argument. <code>inlf</code> is a binary variable in which a value of 1 means they are “In the Labor Force”. By sub-setting the <code>mroz</code> data.frame by observations in which <code>inlf==1</code>, only working women will be in the sample.</p>
 <pre class="r"><code>fatheduc_model &lt;- lm(educ ~ fatheduc, data = mroz, subset = (inlf==1))</code></pre>
-<p>In this section, we will perform an <strong>Instrumental-Variable Regression</strong>, using the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package.</p>
+<p>In this section, we will perform an <strong>Instrumental-Variable Regression</strong>, using the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package. See the bibliography for more information.</p>
 <pre class="r"><code>library(&quot;AER&quot;)
 wage_educ_IV &lt;- ivreg(lwage ~ educ | fatheduc, data = mroz)</code></pre>
 <pre class="r"><code>stargazer(wage_educ_model, fatheduc_model, wage_educ_IV, single.row = TRUE, 
@@ -489,6 +491,7 @@ educ_sibs_IV &lt;- ivreg(lwage ~ educ | sibs, data = wage2)</code></pre>
 
 <p><strong><code>Example 15.5:</code> Return to Education for Working Women</strong></p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_2exper + \beta_3exper^2\]</span></p>
+<p>Use the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package to estimate.</p>
 <pre class="r"><code>data(&quot;mroz&quot;)
 wage_educ_exper_IV &lt;- ivreg(lwage ~ educ + exper + expersq | exper + expersq + 
     motheduc + fatheduc, data = mroz)</code></pre>
@@ -505,6 +508,7 @@ wage_educ_exper_IV &lt;- ivreg(lwage ~ educ + exper + expersq | exper + expersq 
  
 open_model &lt;-lm(open ~ lpcinc + lland, data = openness)</code></pre>
 <p><span class="math display">\[\widehat{inf} = \beta_0 + \beta_{1}open + \beta_{2}log(pcinc)\]</span></p>
+<p>Use the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package to estimate.</p>
 <pre class="r"><code>library(AER)
 
 inflation_IV &lt;- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)</code></pre>
@@ -533,10 +537,10 @@ inflation_IV &lt;- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)<
 <p><strong><code>Example 18.8:</code> FORECASTING THE U.S. UNEMPLOYMENT RATE</strong></p>
 <pre class="r"><code>data(&quot;phillips&quot;)</code></pre>
 <p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}\]</span></p>
+<p>Estimate the linear model in the usual way and note the use of the <code>subset</code> argument to define data equal to and before the year 1996.</p>
 <pre class="r"><code>unem_AR1 &lt;- lm(unem ~ unem_1, data = phillips, subset = (year &lt;= 1996))</code></pre>
 <p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}\]</span></p>
 <pre class="r"><code>unem_inf_VAR1 &lt;- lm(unem ~ unem_1 + inf_1, data = phillips, subset = (year &lt;= 1996))</code></pre>
-<p>Use the <code>stargazer</code> package to compare both models.</p>
 
 
 </div>
@@ -557,12 +561,12 @@ inflation_IV &lt;- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)<
 <h1>Appendix</h1>
 <div id="econometrics-in-r" class="section level3">
 <h3><strong>Econometrics in R</strong></h3>
-<p>This 50 pg document is posted on the Comprehensive R Archive Network site and contains useful econometric recipes.</p>
+<p>This 50 pg. document is posted on the Comprehensive R Archive Network site and contains useful econometric recipes as well as general information about R.</p>
 <p>Farnsworth, Grant. <em>Econometrics in R</em>. 2008, Evanston, IL. <a href="https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf">url: https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf</a></p>
 </div>
 <div id="using-r-for-introductory-econometrics" class="section level3">
 <h3><strong>Using R for Introductory Econometrics</strong></h3>
-<p>From the text website:</p>
+<p>This excerpt from the books excellent website:</p>
 <blockquote>
 <p>This book introduces the popular, powerful and free programming language and software package R with a focus on the implementation of standard tools and methods used in econometrics. Unlike other books on similar topics, it does not attempt to provide a self-contained discussion of econometric models and methods. Instead, it builds on the excellent and popular textbook “Introductory Econometrics” by Jeffrey M. Wooldridge.</p>
 </blockquote>
