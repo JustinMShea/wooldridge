@@ -3,7 +3,7 @@ Type: Package
 Title: 105 Data Sets from "Introductory Econometrics: A Modern Approach" by Jeffrey M. Wooldridge
 Version: 1.1.0
 Author: Justin M. Shea     
-Maintainer: Justin M. Shea <jshea@mail.roosevelt.edu>
+Maintainer: Justin M. Shea <jshea@roosevelt.edu>
 Description: Economics students new to both econometrics and R may find the 
     simultaneous introduction to both challenging. In particular, the process of 
     loading and preparing data before building one's first model can present 
