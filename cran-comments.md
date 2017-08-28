@@ -34,15 +34,7 @@ Build success
 
 
 # Test environments failing
-* r-hub: macos-mavericks-oldrel: macOS 10.9 Mavericks, R-oldrel (experimental)
 * r-hub: solaris-x86-patched: Oracle Solaris 10, x86, 32 bit, R-patched (experimental)
-* r-hub: fedora-clang-devel: Fedora Linux, R-devel, clang, gfortran
-
-## r-hub: macos-mavericks-oldrel
-── 1 error ✖ | 0 warnings ✔ | 0 notes ✔
-* checking whether package ‘wooldridge’ can be installed ... ERROR
-Installation failed.
-See ‘/Users/usernEmCwTzl/wooldridge.Rcheck/00install.out’ for details.
 
 ## r-hub: solaris-x86-patched:
 ── 1 error ✖ | 0 warnings ✔ | 0 notes ✔
@@ -58,33 +50,3 @@ variable _R_CHECK_FORCE_SUGGESTS_ to a false value.
 See section ‘The DESCRIPTION file’ in the ‘Writing R Extensions’
 manual.
 
-## r-hub: fedora-clang-devel
-── 0 errors ✔ | 1 warning ✖ | 0 notes ✔
-* checking re-building of vignette outputs ... WARNING
-Error in re-building vignettes:
-  ...
-reason: Error in loadNamespace(name) : there is no package called 'formatR'
-
-Warning in block_exec(params) :
-  failed to tidy R code in chunk <unnamed-chunk-71>
-reason: Error in loadNamespace(name) : there is no package called 'formatR'
-
-Warning in block_exec(params) :
-  failed to tidy R code in chunk <unnamed-chunk-72>
-reason: Error in loadNamespace(name) : there is no package called 'formatR'
-
-! LaTeX Error: File `framed.sty' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.39 \definecolor
-
-pandoc: Error producing PDF
-Error: processing vignette 'wooldridge-vignette.Rmd' failed with diagnostics:
-pandoc document conversion failed with error 43
-Execution halted
