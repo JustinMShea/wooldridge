@@ -49,7 +49,7 @@ $$\widehat{log(wage)} = \beta_0 + \beta_1educ$$
 Load the `wage1` data.
 
 ```{r}
-data(wage1)
+data("wage1")
 ```
 
 Estimate a linear relationship between the _log of wage_ and _education_.
@@ -153,7 +153,7 @@ $qemp86:$ quarters employed, 1986.
 Load the `crime1` data set.
 
 ```{r}
-data(crime1)
+data("crime1")
 ```
 
 Estimate the model.
@@ -223,11 +223,11 @@ $stratio$: average student-teacher ratio of schools in the community.
 
 $$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio$$
 
-Load the `hrpice2` data.
+Load the `hprice2` data.
 
 
 ```{r}
-data(hrpice2)
+data("hprice2")
 ```
 
 Estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wrapping each variable with R's `scale` function:
@@ -264,10 +264,10 @@ stargazer(housing_standard, housing_interactive, single.row = TRUE, header = FAL
 
 **`Example 7.4:` Housing Price Regression, Qualitative Binary variable**
 
-This time, use the `hrpice1` data.
+This time, use the `hrprice1` data.
 
-```r{}
-data(hrpice1)
+```{r}
+data("hprice1")
 ```
 
 If you recently worked with `hrpice2`, it may be helpful to view the documentation on this data set and read the variable names.
@@ -335,7 +335,7 @@ $$rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu$$
 Load the data and estimate the model.
 
 ```{r}
-data(rdchem)
+data("rdchem")
  
 all_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem)
 ```
@@ -770,7 +770,7 @@ Farnsworth, Grant. _Econometrics in R_. 2008, Evanston, IL.
 
 ###**Using R for Introductory Econometrics**
 
-This excerpt from the books excellent website:
+This excerpt from the book's website:
 
 >  This book introduces the popular, powerful and free programming language and software package R with a focus on the implementation of standard tools and methods used in econometrics. Unlike other books on similar topics, it does not attempt to provide a self-contained discussion of econometric models and methods. Instead, it builds on the excellent and popular textbook "Introductory Econometrics" by Jeffrey M. Wooldridge.
 
