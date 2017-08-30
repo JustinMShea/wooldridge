@@ -3,7 +3,7 @@ title: "NEWS"
 output: github_document
 ---
 
-# wooldridge 1.2.0
+# wooldridge 1.1.1
 
 ##Updates to vignette
 
@@ -14,11 +14,6 @@ Fixed chapter 6 misspelling of the data set called within the load function. How
 While I have an old affinity for Farnsworth document, it contains outdated information. I removed it as it might do students more harm than good.
 
 I added a citation for the book, Applied Econometrics with R. While I already cited the package above, it should go in the Appendix as well for those seeking to expand their knowledge beyond this text. 
-
-A also added a citation for The Cult of Statistical Significance, an important conversation students need to know about.
-
-In addition, I added a link to the American Statistical Associations statement on p-values.
-
 
 
 # wooldridge 1.1.0
