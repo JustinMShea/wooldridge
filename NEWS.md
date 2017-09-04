@@ -3,6 +3,15 @@ title: "NEWS"
 output: github_document
 ---
 
+# wooldridge 1.1.1.90xx
+
+##Integrate Descriptions of data sets
+
+Presently, the documentation contians the column variable names to all data sets.
+However, the companion site did not contain sources for the original data set.
+However, I was able to acquire a .pdf file listing 101 of the 105 data sets and will begin the process of integrating those into the documentation. 
+
+
 # wooldridge 1.1.1
 
 ##Updates to vignette
