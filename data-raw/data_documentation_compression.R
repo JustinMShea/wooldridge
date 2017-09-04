@@ -5,6 +5,11 @@
 # We must decompose and resave them as .RData and .Rd documentation files. #
 ############################################################################
 
+## WARNING: Manual manipulation of files ahead! ###
+# 401k.Rdata and 401ksubs.Rdata run into documentation problems, they start with a number.
+# You have mannually change the name of the files by adding another "k" in front of the name.
+# ie k401k and k401ksubs. Do this in the "data_folder" and in the "doc_path".
+
 # Define data folder, which we will use throughout this script.
 data_folder <-  "R data sets for 5e"
 
@@ -40,7 +45,10 @@ for(i in RData_names) {
   # documentation using roxygen2 style syntax, written into .R files.
   # This automagically creates documentation for all data sets.
   title <- paste0("#' ", as.character(i))
-  intro <- paste0("#' ", data_doc[data_doc$Name == file_name,]$Notes, " ", data_doc[data_doc$Name == file_name,]$Source, " Data loads lazily.")
+  intro <- paste0("#' ", "Wooldridge ", data_doc[data_doc$Name == file_name,]$Source, " Data loads lazily.")
+  section <- paste0("#' @section Additional Info:")
+  notes <-  paste0("#' ", "Wooldridge ", data_doc[data_doc$Name == file_name,]$Notes)
+  text <- paste0("#' ", data_doc[data_doc$Name == file_name,]$Text)
   type  <- paste0("#' @docType data")
   usage <- paste0("#' @usage data('", as.character(i),"')")
   example <- paste0("#' @examples "," str(",as.character(i),")")
@@ -61,7 +69,7 @@ for(i in RData_names) {
   blank <- " "
   
   # Paste all strings together to prepare for file for line by line write.
-  documentation <- c(title, space, intro, space, type, space, usage, space, message, start, describe, end, source, example, data_label, blank, blank)
+  documentation <- c(title, space, intro, section, space, notes, space, type, space, usage, space, text, message, start, describe, end, source, example, data_label, blank, blank)
   
   # Write out 1 string per line, into a .R file labeled to match each dataset
   # in the roxygen2 documentation format.
