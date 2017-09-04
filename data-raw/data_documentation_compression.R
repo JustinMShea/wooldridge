@@ -17,10 +17,10 @@ dir.create("R")
 
 
 # Upload file with data set descriptions.
-library(readr)
-documentation_path <- path.expand("~/R/wooldridge/data-raw/WooldridgeDataSetHandbook_5eUTF.txt")
-WooldridgeDataSetHandbook_5e <- read_delim(documentation_path, "\t", 
-                                           escape_double = FALSE, trim_ws = TRUE)
+doc_path <- path.expand("~/R/wooldridge/data-raw/WooldridgeDataSetHandbook_5eUTF.txt")
+data_doc <- read.delim(doc_path, stringsAsFactors = FALSE)
+colnames(data_doc) <- c("Name", "Source", "Text", "Notes")
+data_doc$Name <- tolower(gsub(".RAW","", data_doc$Name))
 
   #############################################################################
  # Loop over .RData files in data_folder folder, importing all and labeling. #
@@ -40,11 +40,11 @@ for(i in RData_names) {
   # documentation using roxygen2 style syntax, written into .R files.
   # This automagically creates documentation for all data sets.
   title <- paste0("#' ", as.character(i))
-  intro <- paste0("#' ", "Data loads lazily. Type data(",as.character(i), ") into the console.")
+  intro <- paste0("#' ", data_doc[data_doc$Name == file_name,]$Notes, " ", data_doc[data_doc$Name == file_name,]$Source, " Data loads lazily.")
   type  <- paste0("#' @docType data")
-  usage <- paste0("#' @usage data(", as.character(i),")")
+  usage <- paste0("#' @usage data('", as.character(i),"')")
   example <- paste0("#' @examples "," str(",as.character(i),")")
-  message <- paste("#'", "@format", "A", class(data), "with", NROW(data), "rows and", NCOL(data), "variables:", sep = " ")
+  message <- paste("#'", "@format", "A", class(data), "with", NROW(data), "observations on", NCOL(data), "variables:", sep = " ")
   
   start <- paste0("#' ","\\itemize{")
   describe <- matrix(data = NA, nrow=nrow(desc), ncol = 1)
@@ -52,10 +52,10 @@ for(i in RData_names) {
   # nested loop over desc files to transform variables and descriptions into roxygen2 ready format.  
   # Use gsub to change "%" character to "percent" for variable description, or roxygenize will fail.           
   for(i in desc) {
-    describe[i] <- paste0("#'  \\item"," ",as.character(desc[i,1]),": ",gsub("%","percent", as.character(desc[i,2])))
+    describe[i] <- paste0("#'  \\item \\strong{", as.character(desc[i,1]), ":} ", gsub("%","percent", as.character(desc[i,2])))
   }
   end <- "#' }"
-  source <- "#' @source \\url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}"
+  source <- paste0("#' @source ", "\\url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}")
   data_label <- paste0("\"", file_name,"\"")
   space <- "#'"
   blank <- " "
