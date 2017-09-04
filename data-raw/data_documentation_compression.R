@@ -52,7 +52,7 @@ for(i in RData_names) {
   # nested loop over desc files to transform variables and descriptions into roxygen2 ready format.  
   # Use gsub to change "%" character to "percent" for variable description, or roxygenize will fail.           
   for(i in desc) {
-    describe[i] <- paste0("#'  \\item"," ",as.character(desc[i,1]),". ",gsub("%","percent", as.character(desc[i,2])))
+    describe[i] <- paste0("#'  \\item"," ",as.character(desc[i,1]),": ",gsub("%","percent", as.character(desc[i,2])))
   }
   end <- "#' }"
   source <- "#' @source \\url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}"
