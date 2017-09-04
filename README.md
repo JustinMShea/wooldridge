@@ -28,7 +28,7 @@ devtools::install_github("JustinMShea/wooldridge")
 ```
 
 For developer version (with dependencies relaxed to R version >= 3.1.0),
-install from GitHub with the follow. Note: the vignette may fail to build with older versions of R, knitr, and devtools. However, you can download it [here](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf) and the data will still be accessible.
+install from the GitHub dev branch. Note: the vignette may fail to build with older versions of R, knitr, and devtools. However, you can download it [here](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf).
 
 ```{r}
 devtools::install_github("JustinMShea/wooldridge@dev")
