@@ -21,19 +21,22 @@ Install directly from CRAN, which depends on R version >= 3.4.0.
 install.packages("wooldridge")
 ```
 
-For developer version (with dependencies relaxed to R version >= 3.1.0),
-install from GitHub.
+Or, install from the Github master branch on R version >= 3.4.0.
 
 ```{r}
 devtools::install_github("JustinMShea/wooldridge")
 ```
 
-Note: the vignette may fail to build with older versions of R, knitr, and devtools. However, you can download that here and the data will still be accessible.
+For developer version (with dependencies relaxed to R version >= 3.1.0),
+install from the GitHub dev branch. Note: the vignette may fail to build with older versions of R, knitr, and devtools. However, you can download it [here](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf).
 
 ```{r}
-devtools::install_github("JustinMShea/wooldridge", build_vignettes = TRUE)
+devtools::install_github("JustinMShea/wooldridge@dev")
 ```
-
+Or
+```{r}
+devtools::install_github("JustinMShea/wooldridge@dev", build_vignettes = TRUE)
+```
 
 ## Example
 
