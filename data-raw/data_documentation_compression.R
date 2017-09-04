@@ -15,6 +15,13 @@ RData_names <- gsub(".RData", "", list.files(data_folder, pattern = ".RData$"))
 unlink("R", recursive = TRUE)
 dir.create("R")
 
+
+# Upload file with data set descriptions.
+library(readr)
+documentation_path <- path.expand("~/R/wooldridge/data-raw/WooldridgeDataSetHandbook_5eUTF.txt")
+WooldridgeDataSetHandbook_5e <- read_delim(documentation_path, "\t", 
+                                           escape_double = FALSE, trim_ws = TRUE)
+
   #############################################################################
  # Loop over .RData files in data_folder folder, importing all and labeling. #
 # In addition, transform descriptions in Roxygen2 .R files.                 #
