@@ -143,8 +143,8 @@ $(document).ready(function () {
 <li><a href="#chapter-18-advanced-time-series-topics">Chapter 18: Advanced Time Series Topics</a></li>
 <li><a href="#bibliography">Bibliography</a></li>
 <li><a href="#appendix">Appendix</a><ul>
-<li><a href="#econometrics-in-r"><strong>Econometrics in R</strong></a></li>
 <li><a href="#using-r-for-introductory-econometrics"><strong>Using R for Introductory Econometrics</strong></a></li>
+<li><a href="#applied-econometrics-with-r"><strong>Applied Econometrics with R</strong></a></li>
 </ul></li>
 </ul>
 </div>
@@ -154,9 +154,10 @@ $(document).ready(function () {
 <h2>Introduction</h2>
 <p>This vignette contains examples from every chapter of <em>Introductory Econometrics: A Modern Approach</em> by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with <strong>R</strong>.</p>
 <p>Economics students new to both econometrics and <strong>R</strong> may find the introduction to both a bit challenging. In particular, the process of loading and preparing data prior to building one’s first econometric model can present challenges. The <code>wooldridge</code> data package aims to lighten this task. It contains 105 data sets from <em>Introductory Econometrics: A Modern Approach</em>, and will load any set by typing its name into the <code>data()</code> function.</p>
-<p>While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, <strong>R</strong> is the open source option. Furthermore, using <strong>R</strong> while building a foundation in econometrics, can become the first step in a student’s longer journey toward using the most innovative new methods in statistical computing for handling larger, more modern data sets.</p>
+<p>While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, <strong>R</strong> is the open source option. Furthermore, using <strong>R</strong> while building a foundation in econometrics, can become the first step in a student’s journey toward using the most innovative new methods in statistical computing for handling larger, more modern data sets.</p>
 <p>In addition, please visit the <strong>Appendix</strong> for sources on using R for econometrics. For example, an excellent reference is <a href="http://www.urfie.net/index.html"><em>“Using R for Introductory Econometrics”</em> by Florian Hess</a>, written to compliment <em>Introductory Econometrics: A Modern Approach</em>. The full text can be viewed on the book website.</p>
-<p>Now, load the <code>wooldridge</code> package and lets get started.</p>
+<p>Now, install and load the <code>wooldridge</code> package and lets get started.</p>
+<pre class="r"><code>install.packages(&quot;wooldridge&quot;)</code></pre>
 <pre class="r"><code>library(wooldridge)</code></pre>
 
 </div>
@@ -164,8 +165,10 @@ $(document).ready(function () {
 <h2>Chapter 2: The Simple Regression Model</h2>
 <p><strong><code>Example 2.10:</code> A Log Wage Equation</strong></p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ\]</span></p>
-<p>Load the <code>wage1</code> data.</p>
-<pre class="r"><code>data(wage1)</code></pre>
+<p>Load the <code>wage1</code> data and check out the documentation.</p>
+<pre class="r"><code>data(&quot;wage1&quot;)
+?wage1</code></pre>
+<p>These are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.</p>
 <p>Estimate a linear relationship between the <em>log of wage</em> and <em>education</em>.</p>
 <pre class="r"><code>log_wage_model &lt;- lm(lwage ~ educ, data = wage1)</code></pre>
 <p>Print the results. I’m using the <code>stargazer</code> package to print the model results in a clean and easy to read format. See the bibliography for more information.</p>
@@ -177,7 +180,7 @@ $(document).ready(function () {
 <h2>Chapter 3: Multiple Regression Analysis: Estimation</h2>
 <p><strong><code>Example 3.2:</code> Hourly Wage Equation</strong></p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure\]</span></p>
-<p>Estimate the model regressing <em>education</em>, <em>experience</em>, and <em>tenure</em> against <em>log(wage)</em>.</p>
+<p>Estimate the model regressing <em>education</em>, <em>experience</em>, and <em>tenure</em> against <em>log(wage)</em>. The <code>wage1</code> data should still be in your working environment.</p>
 <pre class="r"><code>hourly_wage_model &lt;- lm(lwage ~ educ + exper + tenure, data = wage1)</code></pre>
 <p>Print the estimated model coefficients:</p>
 <pre class="r"><code>stargazer(hourly_wage_model,  single.row = TRUE, header = FALSE)</code></pre>
@@ -189,7 +192,9 @@ $(document).ready(function () {
 <p><strong><code>Example 4.7</code> Effect of Job Training on Firm Scrap Rates</strong></p>
 <p>Load the <code>jtrain</code> data set and if you are using R Studio, <code>View</code> the data set.</p>
 <pre class="r"><code>data(&quot;jtrain&quot;)</code></pre>
-<pre class="r"><code>View(jtrain)</code></pre>
+<p>From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), <em>Are Training Subsidies Effective? The Michigan Experience</em>, Industrial and Labor Relations Review 46, 625-636. The authors kindly provided the data.</p>
+<pre class="r"><code>?jtrain
+View(jtrain)</code></pre>
 <p>Create a logical index, identifying which observations occur in 1987 and are non-union.</p>
 <pre class="r"><code>index &lt;- jtrain$year == 1987 &amp; jtrain$union == 0</code></pre>
 <p>Next, subset the jtrain data by the new index. This returns a data.frame of <code>jtrain</code> data of non-union firms for the year 1987.</p>
@@ -205,15 +210,17 @@ $(document).ready(function () {
 <div id="chapter-5-multiple-regression-analysis-ols-asymptotics" class="section level2">
 <h2>Chapter 5: Multiple Regression Analysis: OLS Asymptotics</h2>
 <p><strong><code>Example 5.3:</code> Economic Model of Crime</strong></p>
+<p>From J. Grogger (1991), <em>Certainty vs. Severity of Punishment</em>, Economic Inquiry 29, 297-309. Professor Grogger kindly provided a subset of the data he used in his article.</p>
 <p><span class="math display">\[narr86 = \beta_0 + \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86 + \mu\]</span></p>
-<p><span class="math inline">\(narr86:\)</span> number of times arrested, 1986.</p>
-<p><span class="math inline">\(pcnv:\)</span> proportion of prior arrests leading to convictions.</p>
-<p><span class="math inline">\(avgsen:\)</span> average sentence served, length in months.</p>
-<p><span class="math inline">\(tottime:\)</span> time in prison since reaching the age of 18, length in months.</p>
-<p><span class="math inline">\(ptime86:\)</span> months in prison during 1986.</p>
-<p><span class="math inline">\(qemp86:\)</span> quarters employed, 1986.</p>
+<p><span class="math inline">\(narr86:\)</span> number of times arrested, 1986.<br />
+<span class="math inline">\(pcnv:\)</span> proportion of prior arrests leading to convictions.<br />
+<span class="math inline">\(avgsen:\)</span> average sentence served, length in months.<br />
+<span class="math inline">\(tottime:\)</span> time in prison since reaching the age of 18, length in months.<br />
+<span class="math inline">\(ptime86:\)</span> months in prison during 1986.<br />
+<span class="math inline">\(qemp86:\)</span> quarters employed, 1986.</p>
 <p>Load the <code>crime1</code> data set.</p>
-<pre class="r"><code>data(crime1)</code></pre>
+<pre class="r"><code>data(&quot;crime1&quot;)
+?crime1</code></pre>
 <p>Estimate the model.</p>
 <pre class="r"><code>restricted_model &lt;- lm(narr86 ~ pcnv + ptime86 + qemp86, data = crime1)</code></pre>
 <p>Create a new variable <code>restricted_model_u</code> containing the residuals <span class="math inline">\(\tilde{\mu}\)</span> from the above regression.</p>
@@ -222,12 +229,10 @@ $(document).ready(function () {
 <p><span class="math display">\[\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86\]</span></p>
 <pre class="r"><code>LM_u_model &lt;- lm(restricted_model_u ~ pcnv + ptime86 + qemp86 + avgsen + tottime, 
     data = crime1)
-
 summary(LM_u_model)$r.square</code></pre>
 <pre><code>## [1] 0.001493846</code></pre>
 <p><span class="math display">\[LM = 2,725(0.0015)\]</span></p>
 <pre class="r"><code>LM_test &lt;- nobs(LM_u_model) * 0.0015
-
 LM_test</code></pre>
 <pre><code>## [1] 4.0875</code></pre>
 <pre class="r"><code>qchisq(1 - 0.10, 2)</code></pre>
@@ -248,9 +253,10 @@ LM_test</code></pre>
 <p><span class="math inline">\(dist\)</span>: weighted distance of the community to 5 employment centers.</p>
 <p><span class="math inline">\(stratio\)</span>: average student-teacher ratio of schools in the community.</p>
 <p><span class="math display">\[\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio\]</span></p>
-<p>Load the <code>hrpice2</code> data.</p>
-<pre class="r"><code>data(hrpice2)</code></pre>
-<pre><code>## Warning in data(hrpice2): data set 'hrpice2' not found</code></pre>
+<p>Load the <code>hprice2</code> data and view the documentation.</p>
+<pre class="r"><code>data(&quot;hprice2&quot;)
+?hprice2</code></pre>
+<p>Data from <em>Hedonic Housing Prices and the Demand for Clean Air</em>, by Harrison, D. and D.L.Rubinfeld, Journal of Environmental Economics and Management 5, 81-102. Diego Garcia, a former Ph.D. student in economics at MIT, kindly provided these data, which he obtained from the book Regression Diagnostics: Identifying Influential Data and Sources of Collinearity, by D.A. Belsey, E. Kuh, and R. Welsch, 1990. New York: Wiley.</p>
 <p>Estimate the coefficient with the usual <code>lm</code> regression model but this time, standardized coefficients by wrapping each variable with R’s <code>scale</code> function:</p>
 <pre class="r"><code>housing_standard &lt;- lm(scale(price) ~ 0 + scale(nox) + scale(crime) + scale(rooms) + 
     scale(dist) + scale(stratio), data = hprice2)</code></pre>
@@ -269,9 +275,10 @@ LM_test</code></pre>
 <div id="chapter-7-multiple-regression-analysis-with-qualitative-information" class="section level2">
 <h2>Chapter 7: Multiple Regression Analysis with Qualitative Information</h2>
 <p><strong><code>Example 7.4:</code> Housing Price Regression, Qualitative Binary variable</strong></p>
-<p>This time, use the <code>hrpice1</code> data.</p>
-<pre class="r{}"><code>data(hrpice1)</code></pre>
-<p>If you recently worked with <code>hrpice2</code>, it may be helpful to view the documentation on this data set and read the variable names.</p>
+<p>This time, use the <code>hrprice1</code> data.</p>
+<pre class="r"><code>data(&quot;hprice1&quot;)</code></pre>
+<p>Data collected from the real estate pages of the Boston Globe during 1990. These are homes that sold in the Boston, MA area.</p>
+<p>If you recently worked with <code>hprice2</code>, it may be helpful to view the documentation on this data set and read the variable names.</p>
 <pre class="r"><code>?hprice1</code></pre>
 <p><span class="math display">\[\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \beta_3bdrms + \beta_4colonial \]</span></p>
 <p>Estimate the coefficients of the above linear model on the <code>hprice</code> data set.</p>
@@ -283,11 +290,10 @@ LM_test</code></pre>
 <div id="chapter-8-heteroskedasticity" class="section level2">
 <h2>Chapter 8: Heteroskedasticity</h2>
 <p><strong><code>Example 8.9:</code> Determinants of Personal Computer Ownership</strong></p>
-<p><span class="math display">\[\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial \]</span></p>
-<p>Load <code>gpa1</code> and create a new variable combining the <code>fathcoll</code> and <code>mothcoll</code>, into <code>parcoll</code>. This new column indicates if either parent went to college.</p>
+<p><span class="math display">\[\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial \]</span> Christopher Lemmon, a former MSU undergraduate, collected these data from a survey he took of MSU students in Fall 1994. Load <code>gpa1</code> and create a new variable combining the <code>fathcoll</code> and <code>mothcoll</code>, into <code>parcoll</code>. This new column indicates if either parent went to college.</p>
 <pre class="r"><code>data(&quot;gpa1&quot;)
-
-gpa1$parcoll &lt;- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)</code></pre>
+?gpa1</code></pre>
+<pre class="r"><code>gpa1$parcoll &lt;- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)</code></pre>
 <pre class="r"><code>GPA_OLS &lt;- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1)</code></pre>
 <p>Calculate the weights and then pass them to the <code>weights</code> argument.</p>
 <pre class="r"><code>weights &lt;- GPA_OLS$fitted.values * (1-GPA_OLS$fitted.values)
@@ -302,10 +308,10 @@ GPA_WLS &lt;- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)</
 <h2>Chapter 9: More on Specification and Data Issues</h2>
 <p><strong><code>Example 9.8:</code> R&amp;D Intensity and Firm Size</strong></p>
 <p><span class="math display">\[rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu\]</span></p>
-<p>Load the data and estimate the model.</p>
-<pre class="r"><code>data(rdchem)
- 
-all_rdchem &lt;- lm(rdintens ~ sales + profmarg, data = rdchem)</code></pre>
+<p>From <em>Businessweek R&amp;D Scoreboard</em>, October 25, 1991. Load the data and estimate the model.</p>
+<pre class="r"><code>data(&quot;rdchem&quot;)
+?rdchem </code></pre>
+<pre class="r"><code>all_rdchem &lt;- lm(rdintens ~ sales + profmarg, data = rdchem)</code></pre>
 <p>Plotting the data reveals the outlier on the far right of the plot, which will skew the results of our model.</p>
 <pre class="r"><code>plot_title &lt;- &quot;FIGURE 9.1: Scatterplot of R&amp;D intensity against firm sales&quot;
 x_axis &lt;- &quot;firm sales (in millions of dollars)&quot;
@@ -325,21 +331,22 @@ plot(rdintens ~ sales, pch = 21, bg = &quot;lightgrey&quot;, data = rdchem, main
 <div id="chapter-10-basic-regression-analysis-with-time-series-data" class="section level2">
 <h2>Chapter 10: Basic Regression Analysis with Time Series Data</h2>
 <p><strong><code>Example 10.2:</code> Effects of Inflation and Deficits on Interest Rates</strong></p>
-<p><span class="math display">\[\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t\]</span></p>
+<p><span class="math display">\[\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t\]</span> Data from the <em>Economic Report of the President, 2004</em>, Tables B-64, B-73, and B-79.</p>
 <pre class="r"><code>data(&quot;intdef&quot;)
-
-tbill_model &lt;- lm(i3 ~ inf + def, data = intdef)</code></pre>
+?intdef</code></pre>
+<pre class="r"><code>tbill_model &lt;- lm(i3 ~ inf + def, data = intdef)</code></pre>
 <pre class="r"><code>stargazer(tbill_model, single.row = TRUE, header = FALSE)</code></pre>
 
 <p><strong><code>Example 10.11:</code> Seasonal Effects of Antidumping Filings</strong></p>
+<p>C.M. Krupp and P.S. Pollard (1999), <em>Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry</em>, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988.</p>
 <pre class="r"><code>data(&quot;barium&quot;)
-barium_imports &lt;- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + 
+?barium</code></pre>
+<pre class="r"><code>barium_imports &lt;- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + 
     afdec6, data = barium)</code></pre>
 <p>Estimate a new model, <code>barium_seasonal</code> which accounts for seasonality by adding dummy variables contained in the data. Compute the <code>anova</code> between the two models.</p>
 <pre class="r"><code>barium_seasonal &lt;- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + 
     afdec6 + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec, 
     data = barium)
-
 barium_anova &lt;- anova(barium_imports, barium_seasonal)</code></pre>
 <pre class="r"><code>stargazer(barium_imports, barium_seasonal, single.row = TRUE, header = FALSE)</code></pre>
 
@@ -350,10 +357,10 @@ barium_anova &lt;- anova(barium_imports, barium_seasonal)</code></pre>
 <div id="chapter-11-further-issues-in-using-ols-with-with-time-series-data" class="section level2">
 <h2>Chapter 11: Further Issues in Using OLS with with Time Series Data</h2>
 <p><strong><code>Example 11.7:</code> Wages and Productivity</strong></p>
-<p><span class="math display">\[\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t\]</span></p>
+<p><span class="math display">\[\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t\]</span> Data from the <em>Economic Report of the President, 1989</em>, Table B-47. The data are for the non-farm business sector.</p>
 <pre class="r"><code>data(&quot;earns&quot;)
-
-wage_time &lt;- lm(lhrwage ~ loutphr + t, data = earns)</code></pre>
+?earns</code></pre>
+<pre class="r"><code>wage_time &lt;- lm(lhrwage ~ loutphr + t, data = earns)</code></pre>
 <pre class="r"><code>wage_diff &lt;- lm(diff(lhrwage) ~ diff(loutphr), data = earns)</code></pre>
 <pre class="r"><code>stargazer(wage_time, wage_diff, single.row = TRUE, header = FALSE)</code></pre>
 
@@ -412,13 +419,13 @@ barium_prais_winsten &lt;- prais.winsten(lchnimp ~ lchempi + lgas + lrtwex + bef
 ##  0.2932171        3.483363          8</code></pre>
 
 <p><strong><code>Example 12.8:</code> Heteroskedasticity and the Efficient Markets Hypothesis</strong></p>
+<p>These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, <a href="https://www.nyse.com/data-and-tech">www.nyse.com</a>.</p>
 <p><span class="math display">\[return_t = \beta_0 + \beta_1return_{t-1} + \mu_t\]</span></p>
 <pre class="r"><code>data(&quot;nyse&quot;)
- 
-return_AR1 &lt;-lm(return ~ return_1, data = nyse)</code></pre>
+?nyse </code></pre>
+<pre class="r"><code>return_AR1 &lt;-lm(return ~ return_1, data = nyse)</code></pre>
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t\]</span></p>
 <pre class="r"><code>return_mu &lt;- residuals(return_AR1)
-
 mu2_hat_model &lt;- lm(return_mu^2 ~ return_1, data = return_AR1$model)</code></pre>
 <pre class="r"><code>stargazer(return_AR1, mu2_hat_model, single.row = TRUE, header = FALSE)</code></pre>
 
@@ -427,9 +434,7 @@ mu2_hat_model &lt;- lm(return_mu^2 ~ return_1, data = return_AR1$model)</code></
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t\]</span></p>
 <p>We still have <code>return_mu</code> in the working environment so we can use it to create <span class="math inline">\(\hat{\mu^2_t}\)</span>, (<code>mu2_hat</code>) and <span class="math inline">\(\hat{\mu^2_{t-1}}\)</span> (<code>mu2_hat_1</code>). Notice the use <code>R</code>’s matrix subset operations to perform the lag operation. We drop the first observation of <code>mu2_hat</code> and squared the results. Next, we remove the last observation of <code>mu2_hat_1</code> using the subtraction operator combined with a call to the <code>NROW</code> function on <code>return_mu</code>. Now, both contain <span class="math inline">\(688\)</span> observations and we can estimate a standard linear model.</p>
 <pre class="r"><code>mu2_hat  &lt;- return_mu[-1]^2
-
 mu2_hat_1 &lt;- return_mu[-NROW(return_mu)]^2
-
 arch_model &lt;- lm(mu2_hat ~ mu2_hat_1)</code></pre>
 <pre class="r"><code>stargazer(arch_model, single.row = TRUE, header = FALSE)</code></pre>
 
@@ -438,10 +443,10 @@ arch_model &lt;- lm(mu2_hat ~ mu2_hat_1)</code></pre>
 <div id="chapter-13-pooling-cross-sections-across-time-simple-panel-data-methods" class="section level2">
 <h2>Chapter 13: Pooling Cross Sections across Time: Simple Panel Data Methods</h2>
 <p><strong><code>Example 13.7:</code> Effect of Drunk Driving Laws on Traffic Fatalities</strong></p>
-<p><span class="math display">\[\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}\]</span></p>
+<p>Wooldridge collected these data from two sources, the 1992 <em>Statistical Abstract of the United States</em> (Tables 1009, 1012) and <em>A Digest of State Alcohol-Highway Safety Related Legislation</em>, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. <span class="math display">\[\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}\]</span></p>
 <pre class="r"><code>data(&quot;traffic1&quot;)
-
-DD_model &lt;- lm(cdthrte ~ copen + cadmn, data = traffic1)</code></pre>
+?traffic1</code></pre>
+<pre class="r"><code>DD_model &lt;- lm(cdthrte ~ copen + cadmn, data = traffic1)</code></pre>
 <pre class="r"><code>stargazer(DD_model, single.row = TRUE, header = FALSE)</code></pre>
 
 
@@ -451,9 +456,7 @@ DD_model &lt;- lm(cdthrte ~ copen + cadmn, data = traffic1)</code></pre>
 <p><strong><code>Example 14.1:</code> Effect of Job Training on Firm Scrap Rates</strong></p>
 <p>In this section, we will estimate a linear panel modeg using the <code>plm</code> function from the <code>plm: Linear Models for Panel Data</code> package. See the bibliography for more information.</p>
 <pre class="r"><code>library(plm)
-
 data(&quot;jtrain&quot;)
-
 scrap_panel &lt;- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain, index = c(&quot;fcode&quot;, 
     &quot;year&quot;), model = &quot;within&quot;, effect = &quot;individual&quot;)</code></pre>
 <pre class="r"><code>stargazer(scrap_panel, single.row = TRUE, header = FALSE)</code></pre>
@@ -463,9 +466,11 @@ scrap_panel &lt;- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain, index
 <div id="chapter-15-instrumental-variables-estimation-and-two-stage-least-squares" class="section level2">
 <h2>Chapter 15: Instrumental Variables Estimation and Two Stage Least Squares</h2>
 <p><strong><code>Example 15.1:</code> Estimating the Return to Education for Married Women</strong></p>
+<p>T.A. Mroz (1987), <em>The Sensitivity of an Empirical Model of Married Women’s Hours of Work to Economic and Statistical Assumptions</em>, Econometrica 55, 765-799. Professor Ernst R. Berndt, of MIT, kindly provided the data, which he obtained from Professor Mroz.</p>
 <p><span class="math display">\[log(wage) = \beta_0 + \beta_1educ + \mu\]</span></p>
 <pre class="r"><code>data(&quot;mroz&quot;)
-wage_educ_model &lt;- lm(lwage ~ educ, data = mroz)</code></pre>
+?mroz</code></pre>
+<pre class="r"><code>wage_educ_model &lt;- lm(lwage ~ educ, data = mroz)</code></pre>
 <p><span class="math display">\[\widehat{educ} = \beta_0 + \beta_1fatheduc\]</span></p>
 <p>We run the typical linear model, but notice the use of the <code>subset</code> argument. <code>inlf</code> is a binary variable in which a value of 1 means they are “In the Labor Force”. By sub-setting the <code>mroz</code> data.frame by observations in which <code>inlf==1</code>, only working women will be in the sample.</p>
 <pre class="r"><code>fatheduc_model &lt;- lm(educ ~ fatheduc, data = mroz, subset = (inlf==1))</code></pre>
@@ -477,14 +482,14 @@ wage_educ_IV &lt;- ivreg(lwage ~ educ | fatheduc, data = mroz)</code></pre>
 
 
 <p><strong><code>Example 15.2:</code> Estimating the Return to Education for Men</strong></p>
+<p>Data from M. Blackburn and D. Neumark (1992), <em>Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials</em>, Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which Wooldridge uses the data for 1980.</p>
 <p><span class="math display">\[\widehat{educ} = \beta_0 + sibs\]</span></p>
 <pre class="r"><code>data(&quot;wage2&quot;)
- 
-educ_sibs_model &lt;- lm(educ ~ sibs, data = wage2)</code></pre>
+?wage2</code></pre>
+<pre class="r"><code>educ_sibs_model &lt;- lm(educ ~ sibs, data = wage2)</code></pre>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + educ\]</span></p>
 <p>Again, estimate the model using the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package.</p>
 <pre class="r"><code>library(&quot;AER&quot;)
-
 educ_sibs_IV &lt;- ivreg(lwage ~ educ | sibs, data = wage2)</code></pre>
 <pre class="r"><code>stargazer(educ_sibs_model, educ_sibs_IV, wage_educ_IV, single.row = TRUE, header = FALSE)</code></pre>
 
@@ -501,16 +506,16 @@ wage_educ_exper_IV &lt;- ivreg(lwage ~ educ + exper + expersq | exper + expersq 
 <div id="chapter-16-simultaneous-equations-models" class="section level2">
 <h2>Chapter 16: Simultaneous Equations Models</h2>
 <p><strong><code>Example 16.4:</code> INFLATION AND OPENNESS</strong></p>
+<p>Data from D. Romer (1993), <em>Openness and Inflation: Theory and Evidence</em>, Quarterly Journal of Economics 108, 869-903. The data are included in the article.</p>
 <p><span class="math display">\[inf = \beta_{10} + \alpha_1open + \beta_{11}log(pcinc) + \mu_1\]</span> <span class="math display">\[open = \beta_{20} + \alpha_2inf + \beta_{21}log(pcinc) + \beta_{22}log(land) + \mu_2\]</span></p>
 <p><strong><code>Example 16.6:</code> INFLATION AND OPENNESS</strong></p>
 <p><span class="math display">\[\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)\]</span></p>
 <pre class="r"><code>data(&quot;openness&quot;)
- 
-open_model &lt;-lm(open ~ lpcinc + lland, data = openness)</code></pre>
+?openness</code></pre>
+<pre class="r"><code>open_model &lt;-lm(open ~ lpcinc + lland, data = openness)</code></pre>
 <p><span class="math display">\[\widehat{inf} = \beta_0 + \beta_{1}open + \beta_{2}log(pcinc)\]</span></p>
 <p>Use the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package to estimate.</p>
 <pre class="r"><code>library(AER)
-
 inflation_IV &lt;- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)</code></pre>
 <pre class="r"><code>stargazer(open_model, inflation_IV, single.row = TRUE, header = FALSE)</code></pre>
 
@@ -535,7 +540,9 @@ inflation_IV &lt;- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)<
 <div id="chapter-18-advanced-time-series-topics" class="section level2">
 <h2>Chapter 18: Advanced Time Series Topics</h2>
 <p><strong><code>Example 18.8:</code> FORECASTING THE U.S. UNEMPLOYMENT RATE</strong></p>
-<pre class="r"><code>data(&quot;phillips&quot;)</code></pre>
+<p>Data from <em>Economic Report of the President, 2004</em>, Tables B-42 and B-64.</p>
+<pre class="r"><code>data(&quot;phillips&quot;)
+?phillips</code></pre>
 <p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}\]</span></p>
 <p>Estimate the linear model in the usual way and note the use of the <code>subset</code> argument to define data equal to and before the year 1996.</p>
 <pre class="r"><code>unem_AR1 &lt;- lm(unem ~ unem_1, data = phillips, subset = (year &lt;= 1996))</code></pre>
@@ -559,18 +566,22 @@ inflation_IV &lt;- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)<
 </div>
 <div id="appendix" class="section level1">
 <h1>Appendix</h1>
-<div id="econometrics-in-r" class="section level3">
-<h3><strong>Econometrics in R</strong></h3>
-<p>This 50 pg. document is posted on the Comprehensive R Archive Network site and contains useful econometric recipes as well as general information about R.</p>
-<p>Farnsworth, Grant. <em>Econometrics in R</em>. 2008, Evanston, IL. <a href="https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf">url: https://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf</a></p>
-</div>
 <div id="using-r-for-introductory-econometrics" class="section level3">
 <h3><strong>Using R for Introductory Econometrics</strong></h3>
-<p>This excerpt from the books excellent website:</p>
+<p>This is an excellent open source complimentary text to “Introductory Econometrics” by Jeffrey M. Wooldridge and should be your number one resource. This excerpt from the book’s website:</p>
 <blockquote>
 <p>This book introduces the popular, powerful and free programming language and software package R with a focus on the implementation of standard tools and methods used in econometrics. Unlike other books on similar topics, it does not attempt to provide a self-contained discussion of econometric models and methods. Instead, it builds on the excellent and popular textbook “Introductory Econometrics” by Jeffrey M. Wooldridge.</p>
 </blockquote>
-<p>Hess, Florian. <em>Using R for Introductory Econometrics</em>. ISBN: 978-1-523-28513-6, CreateSpace Independent Publishing Platform, 2016, Dusseldorf, Germany. <a href="https://urfie.net">url: https://urfie.net</a>.</p>
+<p>Hess, Florian. <em>Using R for Introductory Econometrics</em>. ISBN: 978-1-523-28513-6, CreateSpace Independent Publishing Platform, 2016, Dusseldorf, Germany.</p>
+<p><a href="https://urfie.net">url: https://urfie.net</a>.</p>
+</div>
+<div id="applied-econometrics-with-r" class="section level3">
+<h3><strong>Applied Econometrics with R</strong></h3>
+<p>From the publisher’s website:</p>
+<blockquote>
+<p>This is the first book on applied econometrics using the R system for statistical computing and graphics. It presents hands-on examples for a wide range of econometric models, from classical linear regression models for cross-section, time series or panel data and the common non-linear models of microeconometrics such as logit, probit and tobit models, to recent semiparametric extensions. In addition, it provides a chapter on programming, including simulations, optimization, and an introduction to R tools enabling reproducible econometric research. An R package accompanying this book, AER, is available from the Comprehensive R Archive Network (CRAN) at <a href="http://CRAN.R-project.org/package=AER" class="uri">http://CRAN.R-project.org/package=AER</a>.</p>
+</blockquote>
+<p>Kleiber, Christian and Achim Zeileis. <em>Applied Econometrics with R</em>. ISBN 978-0-387-77316-2, Springer-Verlag, 2008, New York. <a href="http://www.springer.com/us/book/9780387773162" class="uri">http://www.springer.com/us/book/9780387773162</a></p>
 </div>
 </div>
 
