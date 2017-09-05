@@ -1,0 +1,28 @@
+#' k401k
+#'
+#' Wooldridge Source: L.E. Papke (1995), “Participation in and Contributions to 401(k) Pension Plans:Evidence from Plan Data,” Journal of Human Resources 30, 311-325. Professor Papke kindly provided these data. She gathered them from the Internal Revenue Service’s Form 5500 tapes. Data loads lazily.
+#'
+#' @section Notes: This data set is used in a variety of ways in the text. One additional possibility is to investigate whether the coefficients from the regression of prate on mrate, log(totemp) differ by whether the plan is a sole plan. The Chow test (see Section 7.4), and the less restrictive version that allows different intercepts, can be used.
+#'
+#' Used in Text: pages 63, 79, 136, 174, 219, 692
+#'
+#' @docType data
+#'
+#' @usage data('k401k')
+#'
+#' @format A data.frame with 1534 observations on 8 variables:
+#' \itemize{
+#'  \item \strong{prate:} participation rate, percent
+#'  \item \strong{mrate:} 401k plan match rate
+#'  \item \strong{totpart:} total 401k participants
+#'  \item \strong{totelg:} total eligible for 401k plan
+#'  \item \strong{age:} age of 401k plan
+#'  \item \strong{totemp:} total number of firm employees
+#'  \item \strong{sole:} = 1 if 401k is firm's sole plan
+#'  \item \strong{ltotemp:} log of totemp
+#' }
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
+#' @examples  str(k401k)
+"k401k"
+ 
+ 
