@@ -27,7 +27,11 @@ While the course companion site also provides publicly available data sets for E
 
 In addition, please visit the **Appendix** for sources on using R for econometrics. For example, an excellent reference is [_"Using R for Introductory Econometrics"_ by Florian Hess](http://www.urfie.net/index.html), written to compliment _Introductory Econometrics: A Modern Approach_. The full text can be viewed on the book website.
 
-Now, load the `wooldridge` package and lets get started.
+Now, install and load the `wooldridge` package and lets get started.
+
+```{r, echo = TRUE, eval = FALSE, warning=FALSE}
+install.packages(wooldridge)
+```
 
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
 library(wooldridge)
@@ -270,7 +274,7 @@ This time, use the `hrprice1` data.
 data("hprice1")
 ```
 
-If you recently worked with `hrpice2`, it may be helpful to view the documentation on this data set and read the variable names.
+If you recently worked with `hprice2`, it may be helpful to view the documentation on this data set and read the variable names.
 
 ```{r, eval=FALSE}
 ?hprice1
