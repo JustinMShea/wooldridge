@@ -15,3 +15,6 @@ unlink(data_folder, recursive = TRUE)
 # Render .pdf and .html vignettes
 library(rmarkdown)
 rmarkdown::render("vignettes/wooldridge-vignette.Rmd", "all")
+
+# submit to CRAN
+devtools::release()
