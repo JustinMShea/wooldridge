@@ -33,7 +33,7 @@ Now, install and load the `wooldridge` package and lets get started.
 install.packages("wooldridge")
 ```
 
-```{r, echo = TRUE, eval = TRUE, warning=FALSE}
+```{r, echo = TRUE, eval = TRUE, warning=FALSE, message=FALSE}
 library(wooldridge)
 ```
 
@@ -52,7 +52,7 @@ $$\widehat{log(wage)} = \beta_0 + \beta_1educ$$
 
 Load the `wage1` data and check out the documentation.
 
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 data("wage1")
 ?wage1
 ```
@@ -154,7 +154,7 @@ $qemp86:$ quarters employed, 1986.
 
 Load the `crime1` data set.
 
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 data("crime1")
 ?crime1
 ```
@@ -227,7 +227,7 @@ $$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist 
 Load the `hprice2` data and view the documentation.
 
 
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 data("hprice2")
 ?hprice2
 ```
@@ -303,9 +303,11 @@ stargazer(housing_qualitative,  single.row = TRUE, header = FALSE)
 $$\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial $$
 Christopher Lemmon, a former MSU undergraduate, collected these data from a survey he took of MSU students in Fall 1994. Load `gpa1` and create a new variable combining the `fathcoll` and `mothcoll`, into `parcoll`. This new column indicates if either parent went to college.
 
-```{r}
+```{r, message=FALSE, eval=FALSE}
 data("gpa1")
 ?gpa1
+```
+```{r}
 gpa1$parcoll <- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)
 ```
 
@@ -339,9 +341,11 @@ $$rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu$$
 
 From _Businessweek R&D Scoreboard_, October 25, 1991. Load the data and estimate the model.
 
-```{r}
+```{r, message=FALSE, eval=FALSE}
 data("rdchem")
 ?rdchem 
+```
+```{r}
 all_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem)
 ```
 
@@ -377,9 +381,11 @@ stargazer(all_rdchem, smallest_rdchem,  single.row = TRUE, header = FALSE)
 
 $$\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t$$
 Data from the _Economic Report of the President, 2004_, Tables B-64, B-73, and B-79.
-```{r}
+```{r, message=FALSE, eval=FALSE}
 data("intdef")
 ?intdef
+```
+```{r}
 tbill_model <- lm(i3 ~ inf + def, data = intdef)
 ```
 
@@ -392,9 +398,11 @@ stargazer(tbill_model, single.row = TRUE, header = FALSE)
 
 C.M. Krupp and P.S. Pollard (1999), _Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry_, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988. 
 
-```{r, tidy=TRUE}
+```{r, message=FALSE, eval=FALSE}
 data("barium")
 ?barium
+```
+```{r, tidy=TRUE}
 barium_imports <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 ```
 
@@ -421,9 +429,11 @@ stargazer(barium_anova,  single.row = TRUE, header = FALSE)
 $$\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t$$
 Data from the _Economic Report of the President, 1989_, Table B-47. The data are for the non-farm business sector.
 
-```{r}
+```{r, message=FALSE, eval=FALSE}
 data("earns")
 ?earns
+```
+```{r}
 wage_time <- lm(lhrwage ~ loutphr + t, data = earns)
 ```
 
@@ -464,9 +474,11 @@ These are Wednesday closing prices of value-weighted NYSE average, available in 
 
 $$return_t = \beta_0 + \beta_1return_{t-1} + \mu_t$$
 
-```{r}
+```{r, message=FALSE, eval=FALSE}
 data("nyse")
 ?nyse 
+```
+```{r}
 return_AR1 <-lm(return ~ return_1, data = nyse)
 ```
 
@@ -511,9 +523,11 @@ stargazer(arch_model, single.row = TRUE, header = FALSE)
 Wooldridge collected these data from two sources, the 1992 _Statistical Abstract of the United States_ (Tables 1009, 1012) and _A Digest of State Alcohol-Highway Safety Related Legislation_, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. 
 $$\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}$$
 
-```{r}
+```{r, message=FALSE, eval=FALSE}
 data("traffic1")
 ?traffic1
+```
+```{r}
 DD_model <- lm(cdthrte ~ copen + cadmn, data = traffic1)
 ```
 
@@ -550,9 +564,11 @@ T.A. Mroz (1987), _The Sensitivity of an Empirical Model of Married Women's Hour
 
 $$log(wage) = \beta_0 + \beta_1educ + \mu$$
 
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 data("mroz")
 ?mroz
+```
+```{r}
 wage_educ_model <- lm(lwage ~ educ, data = mroz)
 ```
 
@@ -585,9 +601,10 @@ Data from M. Blackburn and D. Neumark (1992), _Unobserved Ability, Efficiency Wa
 
 $$\widehat{educ} = \beta_0 + sibs$$
 
-```{r, warning=FALSE}
+```{r, message=FALSE, eval=FALSE}
 data("wage2")
 ?wage2
+```{r}
 educ_sibs_model <- lm(educ ~ sibs, data = wage2)
 ```
 
@@ -639,9 +656,10 @@ $$open = \beta_{20} + \alpha_2inf + \beta_{21}log(pcinc) + \beta_{22}log(land) +
 $$\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)$$
 
 
-```{r}
+```{r, message=FALSE, eval=FALSE}
 data("openness")
 ?openness
+```{r}
 open_model <-lm(open ~ lpcinc + lland, data = openness)
 ```
 
@@ -703,7 +721,7 @@ stargazer(econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALS
 
 Data from _Economic Report of the President, 2004_, Tables B-42 and B-64.
 
-```{r}
+```{r, message=FALSE, eval=FALSE}
 data("phillips")
 ?phillips
 ```

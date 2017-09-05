@@ -292,8 +292,8 @@ LM_test</code></pre>
 <p><strong><code>Example 8.9:</code> Determinants of Personal Computer Ownership</strong></p>
 <p><span class="math display">\[\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial \]</span> Christopher Lemmon, a former MSU undergraduate, collected these data from a survey he took of MSU students in Fall 1994. Load <code>gpa1</code> and create a new variable combining the <code>fathcoll</code> and <code>mothcoll</code>, into <code>parcoll</code>. This new column indicates if either parent went to college.</p>
 <pre class="r"><code>data(&quot;gpa1&quot;)
-?gpa1
-gpa1$parcoll &lt;- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)</code></pre>
+?gpa1</code></pre>
+<pre class="r"><code>gpa1$parcoll &lt;- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)</code></pre>
 <pre class="r"><code>GPA_OLS &lt;- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1)</code></pre>
 <p>Calculate the weights and then pass them to the <code>weights</code> argument.</p>
 <pre class="r"><code>weights &lt;- GPA_OLS$fitted.values * (1-GPA_OLS$fitted.values)
@@ -310,8 +310,8 @@ GPA_WLS &lt;- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)</
 <p><span class="math display">\[rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu\]</span></p>
 <p>From <em>Businessweek R&amp;D Scoreboard</em>, October 25, 1991. Load the data and estimate the model.</p>
 <pre class="r"><code>data(&quot;rdchem&quot;)
-?rdchem 
-all_rdchem &lt;- lm(rdintens ~ sales + profmarg, data = rdchem)</code></pre>
+?rdchem </code></pre>
+<pre class="r"><code>all_rdchem &lt;- lm(rdintens ~ sales + profmarg, data = rdchem)</code></pre>
 <p>Plotting the data reveals the outlier on the far right of the plot, which will skew the results of our model.</p>
 <pre class="r"><code>plot_title &lt;- &quot;FIGURE 9.1: Scatterplot of R&amp;D intensity against firm sales&quot;
 x_axis &lt;- &quot;firm sales (in millions of dollars)&quot;
@@ -333,15 +333,15 @@ plot(rdintens ~ sales, pch = 21, bg = &quot;lightgrey&quot;, data = rdchem, main
 <p><strong><code>Example 10.2:</code> Effects of Inflation and Deficits on Interest Rates</strong></p>
 <p><span class="math display">\[\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t\]</span> Data from the <em>Economic Report of the President, 2004</em>, Tables B-64, B-73, and B-79.</p>
 <pre class="r"><code>data(&quot;intdef&quot;)
-?intdef
-tbill_model &lt;- lm(i3 ~ inf + def, data = intdef)</code></pre>
+?intdef</code></pre>
+<pre class="r"><code>tbill_model &lt;- lm(i3 ~ inf + def, data = intdef)</code></pre>
 <pre class="r"><code>stargazer(tbill_model, single.row = TRUE, header = FALSE)</code></pre>
 
 <p><strong><code>Example 10.11:</code> Seasonal Effects of Antidumping Filings</strong></p>
 <p>C.M. Krupp and P.S. Pollard (1999), <em>Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry</em>, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988.</p>
 <pre class="r"><code>data(&quot;barium&quot;)
-`?`(barium)
-barium_imports &lt;- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + 
+?barium</code></pre>
+<pre class="r"><code>barium_imports &lt;- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + 
     afdec6, data = barium)</code></pre>
 <p>Estimate a new model, <code>barium_seasonal</code> which accounts for seasonality by adding dummy variables contained in the data. Compute the <code>anova</code> between the two models.</p>
 <pre class="r"><code>barium_seasonal &lt;- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + 
@@ -359,8 +359,8 @@ barium_anova &lt;- anova(barium_imports, barium_seasonal)</code></pre>
 <p><strong><code>Example 11.7:</code> Wages and Productivity</strong></p>
 <p><span class="math display">\[\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t\]</span> Data from the <em>Economic Report of the President, 1989</em>, Table B-47. The data are for the non-farm business sector.</p>
 <pre class="r"><code>data(&quot;earns&quot;)
-?earns
-wage_time &lt;- lm(lhrwage ~ loutphr + t, data = earns)</code></pre>
+?earns</code></pre>
+<pre class="r"><code>wage_time &lt;- lm(lhrwage ~ loutphr + t, data = earns)</code></pre>
 <pre class="r"><code>wage_diff &lt;- lm(diff(lhrwage) ~ diff(loutphr), data = earns)</code></pre>
 <pre class="r"><code>stargazer(wage_time, wage_diff, single.row = TRUE, header = FALSE)</code></pre>
 
@@ -422,8 +422,8 @@ barium_prais_winsten &lt;- prais.winsten(lchnimp ~ lchempi + lgas + lrtwex + bef
 <p>These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, <a href="https://www.nyse.com/data-and-tech">www.nyse.com</a>.</p>
 <p><span class="math display">\[return_t = \beta_0 + \beta_1return_{t-1} + \mu_t\]</span></p>
 <pre class="r"><code>data(&quot;nyse&quot;)
-?nyse 
-return_AR1 &lt;-lm(return ~ return_1, data = nyse)</code></pre>
+?nyse </code></pre>
+<pre class="r"><code>return_AR1 &lt;-lm(return ~ return_1, data = nyse)</code></pre>
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t\]</span></p>
 <pre class="r"><code>return_mu &lt;- residuals(return_AR1)
 mu2_hat_model &lt;- lm(return_mu^2 ~ return_1, data = return_AR1$model)</code></pre>
@@ -445,8 +445,8 @@ arch_model &lt;- lm(mu2_hat ~ mu2_hat_1)</code></pre>
 <p><strong><code>Example 13.7:</code> Effect of Drunk Driving Laws on Traffic Fatalities</strong></p>
 <p>Wooldridge collected these data from two sources, the 1992 <em>Statistical Abstract of the United States</em> (Tables 1009, 1012) and <em>A Digest of State Alcohol-Highway Safety Related Legislation</em>, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. <span class="math display">\[\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}\]</span></p>
 <pre class="r"><code>data(&quot;traffic1&quot;)
-?traffic1
-DD_model &lt;- lm(cdthrte ~ copen + cadmn, data = traffic1)</code></pre>
+?traffic1</code></pre>
+<pre class="r"><code>DD_model &lt;- lm(cdthrte ~ copen + cadmn, data = traffic1)</code></pre>
 <pre class="r"><code>stargazer(DD_model, single.row = TRUE, header = FALSE)</code></pre>
 
 
@@ -469,8 +469,8 @@ scrap_panel &lt;- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain, index
 <p>T.A. Mroz (1987), <em>The Sensitivity of an Empirical Model of Married Women’s Hours of Work to Economic and Statistical Assumptions</em>, Econometrica 55, 765-799. Professor Ernst R. Berndt, of MIT, kindly provided the data, which he obtained from Professor Mroz.</p>
 <p><span class="math display">\[log(wage) = \beta_0 + \beta_1educ + \mu\]</span></p>
 <pre class="r"><code>data(&quot;mroz&quot;)
-?mroz
-wage_educ_model &lt;- lm(lwage ~ educ, data = mroz)</code></pre>
+?mroz</code></pre>
+<pre class="r"><code>wage_educ_model &lt;- lm(lwage ~ educ, data = mroz)</code></pre>
 <p><span class="math display">\[\widehat{educ} = \beta_0 + \beta_1fatheduc\]</span></p>
 <p>We run the typical linear model, but notice the use of the <code>subset</code> argument. <code>inlf</code> is a binary variable in which a value of 1 means they are “In the Labor Force”. By sub-setting the <code>mroz</code> data.frame by observations in which <code>inlf==1</code>, only working women will be in the sample.</p>
 <pre class="r"><code>fatheduc_model &lt;- lm(educ ~ fatheduc, data = mroz, subset = (inlf==1))</code></pre>
@@ -485,8 +485,8 @@ wage_educ_IV &lt;- ivreg(lwage ~ educ | fatheduc, data = mroz)</code></pre>
 <p>Data from M. Blackburn and D. Neumark (1992), <em>Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials</em>, Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which Wooldridge uses the data for 1980.</p>
 <p><span class="math display">\[\widehat{educ} = \beta_0 + sibs\]</span></p>
 <pre class="r"><code>data(&quot;wage2&quot;)
-?wage2
-educ_sibs_model &lt;- lm(educ ~ sibs, data = wage2)</code></pre>
+?wage2</code></pre>
+<pre class="r"><code>educ_sibs_model &lt;- lm(educ ~ sibs, data = wage2)</code></pre>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + educ\]</span></p>
 <p>Again, estimate the model using the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package.</p>
 <pre class="r"><code>library(&quot;AER&quot;)
@@ -511,8 +511,8 @@ wage_educ_exper_IV &lt;- ivreg(lwage ~ educ + exper + expersq | exper + expersq 
 <p><strong><code>Example 16.6:</code> INFLATION AND OPENNESS</strong></p>
 <p><span class="math display">\[\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)\]</span></p>
 <pre class="r"><code>data(&quot;openness&quot;)
-?openness
-open_model &lt;-lm(open ~ lpcinc + lland, data = openness)</code></pre>
+?openness</code></pre>
+<pre class="r"><code>open_model &lt;-lm(open ~ lpcinc + lland, data = openness)</code></pre>
 <p><span class="math display">\[\widehat{inf} = \beta_0 + \beta_{1}open + \beta_{2}log(pcinc)\]</span></p>
 <p>Use the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package to estimate.</p>
 <pre class="r"><code>library(AER)
