@@ -7,29 +7,19 @@ output: github_document
 
 ## Integrate Descriptions of data sets
 
-In previous versions, the documentation mainly contained the column variable names to all data sets as that was all that was offered on the text book companion site.
-However, I after scouring the internet, I was able to acquire a .pdf file listing descriptions of original sources as well as the page numbers on which the data set appears, for 101 of the 105 data sets. In addition, some data sets have notes by Wooldridge himself about interesting features of the data set. After transforming the .pdf into a UTF text file, I programmatically extracted the useful elements and wove them into the roxygen style .R files.
+In previous versions, the documentation mainly contained the column variable names to all data sets, which is all that is available on the text book companion site. After scouring the internet, I acquired a lone .pdf, listing descriptions of original sources as well as the page numbers on which the data set appears, for 101 of the 105 data sets! In addition, most of it appears to be written by Wooldridge himself and contains interesting commentary and features of the data set. After wrangling the .pdf into a proper data.frame, I programmatically extracted the useful elements and wove them into the roxygen2 style .R files.
 
 ## Updates to vignette
 
-Added original description of data sets for every example, as well as instructions on calling each one. After all, it is a data package.
+Fixed chapter 6 misspelling of the data set called within the load function. The example still worked due to lazy loading of data.
+
+While I have an old affinity for Farnsworth document, it was pointed out to me that it contains some outdated information. I removed it as it might do new learners more harm than good. In its place, I added a citation for the book, Applied Econometrics with R. While I already cited the package, it should go in the Appendix as a resource to expand knowledge beyond the text.
+
+The newly acquired original description of data sets have also been added for every example, with the syntax for calling documentation on each one.
 
 ## Updates to README.md 
 
-Added instructions to access dev branch.
-
-# wooldridge 1.1.1
-
-## Updates to vignette
-
-Fixed chapter 6 misspelling of the data set called within the load function. However, the example worked due to lazy loading of data, so I did not catch it before.
-
-## Updated vignette Apendix items
-
-While I have an old affinity for Farnsworth document, it was pointed out to me that it contains some outdated information. I removed it as it might do students more harm than good.
-
-In its place, I added a citation for the book, Applied Econometrics with R. While I already cited the package above, it should go in the Appendix as well for those seeking to expand their knowledge beyond this text.
-
+Added instructions to access dev branch, which I pushed to Github.
 
 # wooldridge 1.1.0
 

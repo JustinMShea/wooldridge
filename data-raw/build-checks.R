@@ -1,14 +1,14 @@
 # Check and build package
-devtools::check()	
 devtools::build()
+devtools::check()
 
 # build for windows and submit to win-builder-r-project.org
-devtools::build_win()
+devtools::build_win(version = "R-release")
 
 # Setup Continuos Integration checks
 devtools::use_travis()
 devtools::use_appveyor()
-devtools::use_coverage(pkg = ".", type = c("codecov", "coveralls"))
+#devtools::use_coverage(pkg = ".", type = c("codecov", "coveralls"))
 
 # R-hub Build
 rhub::list_validated_emails()

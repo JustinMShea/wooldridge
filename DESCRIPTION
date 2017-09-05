@@ -4,25 +4,28 @@ Title: 105 Data Sets from "Introductory Econometrics: A Modern Approach" by Jeff
 Version: 1.2.0
 Author: Justin M. Shea     
 Maintainer: Justin M. Shea <jshea@roosevelt.edu>
-Description: Economics students new to both econometrics and R may find the 
-    simultaneous introduction to both challenging. In particular, the process of 
-    loading and preparing data before building one's first model can present 
-    challenges. The `wooldridge` data package aims to lighten the task by loading 
-    any data set from the text into the current working environment with a single command. 
-    The package contains documentation for each set and all data has been 
-    compressed to 62.73% of its original size. Just install the package, load it, 
-    and use the `data()` function to call the data set you need to work with.
-    In addition, a wooldridge-vignette illustrates solutions to examples from 
-    each chapter of the text, offering a relevant introduction to econometric 
-    modelling with R. The vignette also includes an Appendix to helpful resources 
-    about using R for econometrics. Note: Data sets are from the 5th edition 
-    (Wooldridge 2013, ISBN-13:978-1-111-53104-1), and are compatible with others.
+Description: Those new to econometrics and R may find themselves challenged by data 
+    management tasks inherent to both. The wooldridge data package aims to lighten 
+    the task by efficiently loading any data set from the text with a single command. 
+    Collectively, all data sets have been compressed to 62.73% of their original
+    size. Most sets have robust documentation including page numbers on which they 
+    are used, original data sources, original year of publication, and notes which 
+    chronicle their history while offering ideas for further exploration and research.
+    To resurrect a data set, one can pass it's name to the `data()` function or just
+    define it as the `data =` argument of the model function. The data will lazily load 
+    and, provided the syntax is correct, model estimates shall spring forth from 
+    the otherwise lifeless abyss of your R console! If the syntax is an issue, the 
+    wooldridge-vignette displays solutions to examples from each chapter of the 
+    text, providing a relevant introduction to econometric modeling with R. The 
+    vignette contains an Appendix of excellent sources on using R for econometrics. Note: 
+    Data sets are from the 5th edition (Wooldridge 2013, ISBN-13:978-1-111-53104-1), 
+    and are compatible with all others.
 Depends: R (>= 3.4.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Suggests: knitr, rmarkdown, testthat, AER, plm, prais, stargazer, curl
+Suggests: knitr, rmarkdown, testthat, AER, plm, prais, stargazer
 VignetteBuilder: knitr
 URL: https://CRAN.R-project.org/package=wooldridge
 BugReports: https://github.com/JustinMShea/wooldridge/issues
