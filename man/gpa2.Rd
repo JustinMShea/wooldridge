@@ -4,30 +4,36 @@
 \name{gpa2}
 \alias{gpa2}
 \title{gpa2}
-\format{A data.frame with 4137 rows and 12 variables:
+\format{A data.frame with 4137 observations on 12 variables:
 \itemize{
- \item sat. combined SAT score
- \item tothrs. total hours through fall semest
- \item colgpa. GPA after fall semester
- \item athlete. =1 if athlete
- \item verbmath. verbal/math SAT score
- \item hsize. size grad. class, 100s
- \item hsrank. rank in grad. class
- \item hsperc. high school percentile, from top
- \item female. =1 if female
- \item white. =1 if white
- \item black. =1 if black
- \item hsizesq. hsize^2
+ \item \strong{sat:} combined SAT score
+ \item \strong{tothrs:} total hours through fall semest
+ \item \strong{colgpa:} GPA after fall semester
+ \item \strong{athlete:} =1 if athlete
+ \item \strong{verbmath:} verbal/math SAT score
+ \item \strong{hsize:} size grad. class, 100s
+ \item \strong{hsrank:} rank in grad. class
+ \item \strong{hsperc:} high school percentile, from top
+ \item \strong{female:} =1 if female
+ \item \strong{white:} =1 if white
+ \item \strong{black:} =1 if black
+ \item \strong{hsizesq:} hsize^2
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(gpa2)
+data('gpa2')
 }
 \description{
-Data loads lazily. Type data(gpa2) into the console.
+Wooldridge Source: For confidentiality reasons, I cannot provide the source of these data. I can say that Data loads lazily.
 }
+\section{Used in Text}{
+ pages 106, 184, 208-209, 210-211, 221, 259, 262-263
+
+they come from a midsize research university that also supports men’s and women’s athletics at the Division I level.
+}
+
 \examples{
  str(gpa2)
 }

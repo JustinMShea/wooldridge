@@ -1,30 +1,34 @@
 #' wage2
 #'
-#' Data loads lazily. Type data(wage2) into the console.
+#' Wooldridge Source: M. Blackburn and D. Neumark (1992), “Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials,” Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which I used just the data for 1980. Data loads lazily.
+#'
+#' @section Notes: As with WAGE1.RAW, there are some clear inconsistencies among the variables tenure, exper, and age. I have not been able to track down the causes, and so any changes would be effectively arbitrary. Instead, I am using the data as provided by the authors of the above QJE article.
+#'
+#' Used in Text: pages 64, 106, 111, 165, 218-219, 220-221, 262, 310-312, 338, 519-520, 534, 546-547, 549, 678
 #'
 #' @docType data
 #'
-#' @usage data(wage2)
+#' @usage data('wage2')
 #'
-#' @format A data.frame with 935 rows and 17 variables:
+#' @format A data.frame with 935 observations on 17 variables:
 #' \itemize{
-#'  \item wage. monthly earnings
-#'  \item hours. average weekly hours
-#'  \item IQ. IQ score
-#'  \item KWW. knowledge of world work score
-#'  \item educ. years of education
-#'  \item exper. years of work experience
-#'  \item tenure. years with current employer
-#'  \item age. age in years
-#'  \item married. =1 if married
-#'  \item black. =1 if black
-#'  \item south. =1 if live in south
-#'  \item urban. =1 if live in SMSA
-#'  \item sibs. number of siblings
-#'  \item brthord. birth order
-#'  \item meduc. mother's education
-#'  \item feduc. father's education
-#'  \item lwage. natural log of wage
+#'  \item \strong{wage:} monthly earnings
+#'  \item \strong{hours:} average weekly hours
+#'  \item \strong{IQ:} IQ score
+#'  \item \strong{KWW:} knowledge of world work score
+#'  \item \strong{educ:} years of education
+#'  \item \strong{exper:} years of work experience
+#'  \item \strong{tenure:} years with current employer
+#'  \item \strong{age:} age in years
+#'  \item \strong{married:} =1 if married
+#'  \item \strong{black:} =1 if black
+#'  \item \strong{south:} =1 if live in south
+#'  \item \strong{urban:} =1 if live in SMSA
+#'  \item \strong{sibs:} number of siblings
+#'  \item \strong{brthord:} birth order
+#'  \item \strong{meduc:} mother's education
+#'  \item \strong{feduc:} father's education
+#'  \item \strong{lwage:} natural log of wage
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(wage2)

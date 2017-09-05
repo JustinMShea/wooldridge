@@ -4,28 +4,34 @@
 \name{athlet2}
 \alias{athlet2}
 \title{athlet2}
-\format{A data.frame with 30 rows and 10 variables:
+\format{A data.frame with 30 observations on 10 variables:
 \itemize{
- \item dscore. home scr. - vist. scr., 1993
- \item dinstt. diff. in-state tuit., 1994
- \item doutstt. diff. out-state tuit., 1994
- \item htpriv. =1 if home team priv. sch.
- \item vtpriv. =1 if vist. team priv. sch.
- \item dapps. diff. in applications, 1994
- \item htwrd. =1 if home win. record, 1993
- \item vtwrd. =1 if vist. win. record, 1993
- \item dwinrec. htwrd - vtwrd
- \item dpriv. htpriv - vtpriv
+ \item \strong{dscore:} home scr. - vist. scr., 1993
+ \item \strong{dinstt:} diff. in-state tuit., 1994
+ \item \strong{doutstt:} diff. out-state tuit., 1994
+ \item \strong{htpriv:} =1 if home team priv. sch.
+ \item \strong{vtpriv:} =1 if vist. team priv. sch.
+ \item \strong{dapps:} diff. in applications, 1994
+ \item \strong{htwrd:} =1 if home win. record, 1993
+ \item \strong{vtwrd:} =1 if vist. win. record, 1993
+ \item \strong{dwinrec:} htwrd - vtwrd
+ \item \strong{dpriv:} htpriv - vtpriv
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(athlet2)
+data('athlet2')
 }
 \description{
-Data loads lazily. Type data(athlet2) into the console.
+Wooldridge Sources: Peterson's Guide to Four Year Colleges, 1995 (25th edition). Princeton University Press. 1995 Information Please Sports Almanac (6th edition). Houghton Mifflin. New York, NY Data loads lazily.
 }
+\section{Notes}{
+ These data were collected by Paul Anderson, an MSU economics major, for a term project. The score from football outcomes for natural rivals (Michigan-Michigan State, California-Stanford, Florida-Florida State, to name a few) is matched with application and academic data. The application and tuition data are for Fall 1994. Football records and scores are from 1993 football season. Extended these data to obtain a long stretch of panel data and other “natural” rivals could be very interesting.
+
+Used in Text: page 697
+}
+
 \examples{
  str(athlet2)
 }

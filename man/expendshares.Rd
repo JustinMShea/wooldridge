@@ -4,31 +4,37 @@
 \name{expendshares}
 \alias{expendshares}
 \title{expendshares}
-\format{A data.frame with 1519 rows and 13 variables:
+\format{A data.frame with 1519 observations on 13 variables:
 \itemize{
- \item sfood. share of food expenditures (out of total)
- \item sfuel. share of fuel expenditures
- \item sclothes. share of clothing expenditures
- \item salcohol. share of alcohol expenditures
- \item stransport. share of transportation expenditures
- \item sother. share of other expenditures
- \item totexpend. total expenditure, British pounds per week
- \item income. family income, British pounds per week
- \item age. age of household head
- \item kids. number of children: 1 or 2
- \item ltotexpend. log(totexpend)
- \item lincome. log(income)
- \item agesq. age^2
+ \item \strong{sfood:} share of food expenditures (out of total)
+ \item \strong{sfuel:} share of fuel expenditures
+ \item \strong{sclothes:} share of clothing expenditures
+ \item \strong{salcohol:} share of alcohol expenditures
+ \item \strong{stransport:} share of transportation expenditures
+ \item \strong{sother:} share of other expenditures
+ \item \strong{totexpend:} total expenditure, British pounds per week
+ \item \strong{income:} family income, British pounds per week
+ \item \strong{age:} age of household head
+ \item \strong{kids:} number of children: 1 or 2
+ \item \strong{ltotexpend:} log(totexpend)
+ \item \strong{lincome:} log(income)
+ \item \strong{agesq:} age^2
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(expendshares)
+data('expendshares')
 }
 \description{
-Data loads lazily. Type data(expendshares) into the console.
+Wooldridge Source: Blundell, R., A. Duncan, and K. Pendakur (1998), “Semiparametric Estimation and Consumer Demand,” Journal of Applied Econometrics 13, 435-461. I obtained these data from the Journal of Applied Econometrics data archive at http://qed.econ.queensu.ca/jae/. Data loads lazily.
 }
+\section{Notes}{
+ The dependent variables in this data set – the expenditure shares – are necessarily bounded between zero and one. The linear model is at best an approximation, but the usual IV estimator likely gives good estimates of the average partial effects.
+
+Used in Text: pages 581-582
+}
+
 \examples{
  str(expendshares)
 }

@@ -1,47 +1,51 @@
 #' crime2
 #'
-#' Data loads lazily. Type data(crime2) into the console.
+#' Wooldridge Source: These data were collected by David Dicicco, a former MSU undergraduate, for a final project. They came from various issues of the County and City Data Book, and are for the years 1982 and 1985. Unfortunately, I do not have the list of cities. Data loads lazily.
+#'
+#' @section Notes: Very rich crime data sets, at the county, or even city, level, can be collected using the FBI’s Uniform Crime Reports. These data can be matched up with demographic and economic data, at least for census years. The County and City Data Book contains a variety of statistics, but the years do not always match up. These data sets can be used investigate issues such as the effects of casinos on city or county crime rates.
+#'
+#' Used in Text: pages 313-314, 459-460
 #'
 #' @docType data
 #'
-#' @usage data(crime2)
+#' @usage data('crime2')
 #'
-#' @format A data.frame with 92 rows and 34 variables:
+#' @format A data.frame with 92 observations on 34 variables:
 #' \itemize{
-#'  \item pop. population
-#'  \item crimes. total number index crimes
-#'  \item unem. unemployment rate
-#'  \item officers. number police officers
-#'  \item pcinc. per capita income
-#'  \item west. =1 if city in west
-#'  \item nrtheast. =1 if city in NE
-#'  \item south. =1 if city in south
-#'  \item year. 82 or 87
-#'  \item area. land area, square miles
-#'  \item d87. =1 if year = 87
-#'  \item popden. people per sq mile
-#'  \item crmrte. crimes per 1000 people
-#'  \item offarea. officers per sq mile
-#'  \item lawexpc. law enforce. expend. pc, $
-#'  \item polpc. police per 1000 people
-#'  \item lpop. log(pop)
-#'  \item loffic. log(officers)
-#'  \item lpcinc. log(pcinc)
-#'  \item llawexpc. log(lawexpc)
-#'  \item lpopden. log(popden)
-#'  \item lcrimes. log(crimes)
-#'  \item larea. log(area)
-#'  \item lcrmrte. log(crmrte)
-#'  \item clcrimes. change in lcrimes
-#'  \item clpop. change in lpop
-#'  \item clcrmrte. change in lcrmrte
-#'  \item lpolpc. log(polpc)
-#'  \item clpolpc. change in lpolpc
-#'  \item cllawexp. change in llawexp
-#'  \item cunem. change in unem
-#'  \item clpopden. change in lpopden
-#'  \item lcrmrt_1. lcrmrte lagged
-#'  \item ccrmrte. change in crmrte
+#'  \item \strong{pop:} population
+#'  \item \strong{crimes:} total number index crimes
+#'  \item \strong{unem:} unemployment rate
+#'  \item \strong{officers:} number police officers
+#'  \item \strong{pcinc:} per capita income
+#'  \item \strong{west:} =1 if city in west
+#'  \item \strong{nrtheast:} =1 if city in NE
+#'  \item \strong{south:} =1 if city in south
+#'  \item \strong{year:} 82 or 87
+#'  \item \strong{area:} land area, square miles
+#'  \item \strong{d87:} =1 if year = 87
+#'  \item \strong{popden:} people per sq mile
+#'  \item \strong{crmrte:} crimes per 1000 people
+#'  \item \strong{offarea:} officers per sq mile
+#'  \item \strong{lawexpc:} law enforce. expend. pc, $
+#'  \item \strong{polpc:} police per 1000 people
+#'  \item \strong{lpop:} log(pop)
+#'  \item \strong{loffic:} log(officers)
+#'  \item \strong{lpcinc:} log(pcinc)
+#'  \item \strong{llawexpc:} log(lawexpc)
+#'  \item \strong{lpopden:} log(popden)
+#'  \item \strong{lcrimes:} log(crimes)
+#'  \item \strong{larea:} log(area)
+#'  \item \strong{lcrmrte:} log(crmrte)
+#'  \item \strong{clcrimes:} change in lcrimes
+#'  \item \strong{clpop:} change in lpop
+#'  \item \strong{clcrmrte:} change in lcrmrte
+#'  \item \strong{lpolpc:} log(polpc)
+#'  \item \strong{clpolpc:} change in lpolpc
+#'  \item \strong{cllawexp:} change in llawexp
+#'  \item \strong{cunem:} change in unem
+#'  \item \strong{clpopden:} change in lpopden
+#'  \item \strong{lcrmrt_1:} lcrmrte lagged
+#'  \item \strong{ccrmrte:} change in crmrte
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(crime2)

@@ -1,25 +1,29 @@
 #' pntsprd
 #'
-#' Data loads lazily. Type data(pntsprd) into the console.
+#' Wooldridge Source: Collected by Scott Resnick, a former MSU undergraduate, from various newspaper sources. Data loads lazily.
+#'
+#' @section Notes: The data are for the 1994-1995 men’s college basketball seasons. The spread is for the day before the game was played. One might collect more recent data and determine whether the spread has become a less accurate predictor of the actual outcome in more recent years. In other words, in the simple regression of the actual score differential on the spread, is the variance larger in more recent years. (We should fully expect the slope coefficient not to be statistically different from one.)
+#'
+#' Used in Text: pages 300, 624, 697
 #'
 #' @docType data
 #'
-#' @usage data(pntsprd)
+#' @usage data('pntsprd')
 #'
-#' @format A data.frame with 553 rows and 12 variables:
+#' @format A data.frame with 553 observations on 12 variables:
 #' \itemize{
-#'  \item favscr. favored team's score
-#'  \item undscr. underdog's score
-#'  \item spread. las vegas spread
-#'  \item favhome. =1 if favored team at home
-#'  \item neutral. =1 if neutral site
-#'  \item fav25. =1 if favored team in top 25
-#'  \item und25. =1 if underdog in top 25
-#'  \item fregion. favorite's region of country
-#'  \item uregion. underdog's region of country
-#'  \item scrdiff. favscr - undscr
-#'  \item sprdcvr. =1 if spread covered
-#'  \item favwin. =1 if favored team wins
+#'  \item \strong{favscr:} favored team's score
+#'  \item \strong{undscr:} underdog's score
+#'  \item \strong{spread:} las vegas spread
+#'  \item \strong{favhome:} =1 if favored team at home
+#'  \item \strong{neutral:} =1 if neutral site
+#'  \item \strong{fav25:} =1 if favored team in top 25
+#'  \item \strong{und25:} =1 if underdog in top 25
+#'  \item \strong{fregion:} favorite's region of country
+#'  \item \strong{uregion:} underdog's region of country
+#'  \item \strong{scrdiff:} favscr - undscr
+#'  \item \strong{sprdcvr:} =1 if spread covered
+#'  \item \strong{favwin:} =1 if favored team wins
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(pntsprd)

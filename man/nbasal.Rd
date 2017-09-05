@@ -4,40 +4,46 @@
 \name{nbasal}
 \alias{nbasal}
 \title{nbasal}
-\format{A data.frame with 269 rows and 22 variables:
+\format{A data.frame with 269 observations on 22 variables:
 \itemize{
- \item marr. =1 if married
- \item wage. annual salary, thousands $
- \item exper. years as professional player
- \item age. age in years
- \item coll. years played in college
- \item games. average games per year
- \item minutes. average minutes per year
- \item guard. =1 if guard
- \item forward. =1 if forward
- \item center. =1 if center
- \item points. points per game
- \item rebounds. rebounds per game
- \item assists. assists per game
- \item draft. draft number
- \item allstar. =1 if ever all star
- \item avgmin. minutes per game
- \item lwage. log(wage)
- \item black. =1 if black
- \item children. =1 if has children
- \item expersq. exper^2
- \item agesq. age^2
- \item marrblck. marr*black
+ \item \strong{marr:} =1 if married
+ \item \strong{wage:} annual salary, thousands $
+ \item \strong{exper:} years as professional player
+ \item \strong{age:} age in years
+ \item \strong{coll:} years played in college
+ \item \strong{games:} average games per year
+ \item \strong{minutes:} average minutes per year
+ \item \strong{guard:} =1 if guard
+ \item \strong{forward:} =1 if forward
+ \item \strong{center:} =1 if center
+ \item \strong{points:} points per game
+ \item \strong{rebounds:} rebounds per game
+ \item \strong{assists:} assists per game
+ \item \strong{draft:} draft number
+ \item \strong{allstar:} =1 if ever all star
+ \item \strong{avgmin:} minutes per game
+ \item \strong{lwage:} log(wage)
+ \item \strong{black:} =1 if black
+ \item \strong{children:} =1 if has children
+ \item \strong{expersq:} exper^2
+ \item \strong{agesq:} age^2
+ \item \strong{marrblck:} marr*black
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(nbasal)
+data('nbasal')
 }
 \description{
-Data loads lazily. Type data(nbasal) into the console.
+Wooldridge Source: Collected by Christopher Torrente, a former MSU undergraduate, for a term project. He obtained the salary data and the career statistics from The Complete Handbook of Pro Basketball, 1995, edited by Zander Hollander. New York: Signet. The demographic information (marital status, number of children, and so on) was obtained from the teams’ 1994-1995 media guides. Data loads lazily.
 }
+\section{Notes}{
+ A panel version of this data set could be useful for further isolating productivity effects of marital status. One would need to obtain information on enough different players in at least two years, where some players who were not married in the initial year are married in later years. Fixed effects (or first differencing, for two years) is the natural estimation method.
+
+Used in Text: pages 222-223, 264-265
+}
+
 \examples{
  str(nbasal)
 }

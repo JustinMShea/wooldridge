@@ -1,25 +1,29 @@
 #' infmrt
 #'
-#' Data loads lazily. Type data(infmrt) into the console.
+#' Wooldridge Source: Statistical Abstract of the United States, 1990 and 1994. (For example, the infant mortality rates come from Table 113 in 1990 and Table 123 in 1994.) Data loads lazily.
+#'
+#' @section Notes: An interesting exercise is to add the percentage of the population on AFDC (afdcper) to the infant mortality equation. Pooled OLS and first differencing can give very different estimates. Adding the years 1998 and 2002 and applying fixed effects seems natural. Intervening years can be added, too, although variation in the key variables from year to year might be minimal.
+#'
+#' Used in Text: pages 330-331, 339
 #'
 #' @docType data
 #'
-#' @usage data(infmrt)
+#' @usage data('infmrt')
 #'
-#' @format A data.frame with 102 rows and 12 variables:
+#' @format A data.frame with 102 observations on 12 variables:
 #' \itemize{
-#'  \item year. 1987 or 1990
-#'  \item infmort. deaths per 1,000 live births
-#'  \item afdcprt. afdc partic., 1000s
-#'  \item popul. population, 1000s
-#'  \item pcinc. per capita income
-#'  \item physic. drs. per 100,000 civilian pop.
-#'  \item afdcper. percent on AFDC
-#'  \item d90. =1 if year == 1990
-#'  \item lpcinc. log(pcinc)
-#'  \item lphysic. log(physic)
-#'  \item DC. =1 for Washington DC
-#'  \item lpopul. log(popul)
+#'  \item \strong{year:} 1987 or 1990
+#'  \item \strong{infmort:} deaths per 1,000 live births
+#'  \item \strong{afdcprt:} afdc partic., 1000s
+#'  \item \strong{popul:} population, 1000s
+#'  \item \strong{pcinc:} per capita income
+#'  \item \strong{physic:} drs. per 100,000 civilian pop.
+#'  \item \strong{afdcper:} percent on AFDC
+#'  \item \strong{d90:} =1 if year == 1990
+#'  \item \strong{lpcinc:} log(pcinc)
+#'  \item \strong{lphysic:} log(physic)
+#'  \item \strong{DC:} =1 for Washington DC
+#'  \item \strong{lpopul:} log(popul)
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(infmrt)

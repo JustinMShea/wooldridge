@@ -1,46 +1,50 @@
 #' happiness
 #'
-#' Data loads lazily. Type data(happiness) into the console.
+#' Wooldridge  Data loads lazily.
+#'
+#' @section 
+#'
+#' 
 #'
 #' @docType data
 #'
-#' @usage data(happiness)
+#' @usage data('happiness')
 #'
-#' @format A data.frame with 17137 rows and 33 variables:
+#' @format A data.frame with 17137 observations on 33 variables:
 #' \itemize{
-#'  \item year. gss year for this respondent
-#'  \item workstat. work force status
-#'  \item prestige. occupational prestige score
-#'  \item divorce. ever been divorced or separated
-#'  \item widowed. ever been widowed
-#'  \item educ. highest year of school completed
-#'  \item reg16. region of residence, age 16
-#'  \item babies. household members less than 6 yrs old
-#'  \item preteen. household members 6 thru 12 yrs old
-#'  \item teens. household members 13 thru 17 yrs old
-#'  \item income. total family income
-#'  \item region. region of interview
-#'  \item attend. how often r attends religious services
-#'  \item happy. general happiness
-#'  \item owngun. =1 if own gun
-#'  \item tvhours. hours per day watching tv
-#'  \item vhappy. =1 if 'very happy'
-#'  \item mothfath16. =1 if live with mother and father at 16
-#'  \item black. =1 if black
-#'  \item gwbush04. =1 if voted for G.W. Bush in 2004
-#'  \item female. =1 if female
-#'  \item blackfemale. black*female
-#'  \item gwbush00. =1 if voted for G.W. Bush in 2000
-#'  \item occattend. =1 if attend is 3, 4, or 5
-#'  \item regattend. =1 if attend is 6, 7, or 8
-#'  \item y94. =1 if year == 1994
-#'  \item y96. 
-#'  \item y98. 
-#'  \item y00. 
-#'  \item y02. 
-#'  \item y04. 
-#'  \item y06. =1 if year == 2006
-#'  \item unem10. =1 if unemployed in last 10 years
+#'  \item \strong{year:} gss year for this respondent
+#'  \item \strong{workstat:} work force status
+#'  \item \strong{prestige:} occupational prestige score
+#'  \item \strong{divorce:} ever been divorced or separated
+#'  \item \strong{widowed:} ever been widowed
+#'  \item \strong{educ:} highest year of school completed
+#'  \item \strong{reg16:} region of residence, age 16
+#'  \item \strong{babies:} household members less than 6 yrs old
+#'  \item \strong{preteen:} household members 6 thru 12 yrs old
+#'  \item \strong{teens:} household members 13 thru 17 yrs old
+#'  \item \strong{income:} total family income
+#'  \item \strong{region:} region of interview
+#'  \item \strong{attend:} how often r attends religious services
+#'  \item \strong{happy:} general happiness
+#'  \item \strong{owngun:} =1 if own gun
+#'  \item \strong{tvhours:} hours per day watching tv
+#'  \item \strong{vhappy:} =1 if 'very happy'
+#'  \item \strong{mothfath16:} =1 if live with mother and father at 16
+#'  \item \strong{black:} =1 if black
+#'  \item \strong{gwbush04:} =1 if voted for G.W. Bush in 2004
+#'  \item \strong{female:} =1 if female
+#'  \item \strong{blackfemale:} black*female
+#'  \item \strong{gwbush00:} =1 if voted for G.W. Bush in 2000
+#'  \item \strong{occattend:} =1 if attend is 3, 4, or 5
+#'  \item \strong{regattend:} =1 if attend is 6, 7, or 8
+#'  \item \strong{y94:} =1 if year == 1994
+#'  \item \strong{y96:} 
+#'  \item \strong{y98:} 
+#'  \item \strong{y00:} 
+#'  \item \strong{y02:} 
+#'  \item \strong{y04:} 
+#'  \item \strong{y06:} =1 if year == 2006
+#'  \item \strong{unem10:} =1 if unemployed in last 10 years
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(happiness)

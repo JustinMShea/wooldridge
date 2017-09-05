@@ -4,28 +4,34 @@
 \name{smoke}
 \alias{smoke}
 \title{smoke}
-\format{A data.frame with 807 rows and 10 variables:
+\format{A data.frame with 807 observations on 10 variables:
 \itemize{
- \item educ. years of schooling
- \item cigpric. state cig. price, cents/pack
- \item white. =1 if white
- \item age. in years
- \item income. annual income, $
- \item cigs. cigs. smoked per day
- \item restaurn. =1 if rest. smk. restrictions
- \item lincome. log(income)
- \item agesq. age^2
- \item lcigpric. log(cigprice)
+ \item \strong{educ:} years of schooling
+ \item \strong{cigpric:} state cig. price, cents/pack
+ \item \strong{white:} =1 if white
+ \item \strong{age:} in years
+ \item \strong{income:} annual income, $
+ \item \strong{cigs:} cigs. smoked per day
+ \item \strong{restaurn:} =1 if rest. smk. restrictions
+ \item \strong{lincome:} log(income)
+ \item \strong{agesq:} age^2
+ \item \strong{lcigpric:} log(cigprice)
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(smoke)
+data('smoke')
 }
 \description{
-Data loads lazily. Type data(smoke) into the console.
+Wooldridge Source: J. Mullahy (1997), “Instrumental-Variable Estimation of Count Data Models: Applications to Models of Cigarette Smoking Behavior,” Review of Economics and Statistics 79, 596-593. Professor Mullahy kindly provided the data. Data loads lazily.
 }
+\section{Notes}{
+ If you want to do a “fancy” IV version of Computer Exercise C16.1, you could estimate a reduced form count model for cigs using the Poisson regression methods in Section 17.3, and then use the fitted values as an IV for cigs. Presumably, this would be for a fairly advanced class.
+
+Used in Text: pages 183, 288-289, 298, 301, 578, 627
+}
+
 \examples{
  str(smoke)
 }

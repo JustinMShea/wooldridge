@@ -4,62 +4,66 @@
 \name{wagepan}
 \alias{wagepan}
 \title{wagepan}
-\format{A data.frame with 4360 rows and 44 variables:
+\format{A data.frame with 4360 observations on 44 variables:
 \itemize{
- \item nr. person identifier
- \item year. 1980 to 1987
- \item agric. =1 if in agriculture
- \item black. =1 if black
- \item bus. 
- \item construc. =1 if in construction
- \item ent. 
- \item exper. labor mkt experience
- \item fin. 
- \item hisp. =1 if Hispanic
- \item poorhlth. =1 if in poor health
- \item hours. annual hours worked
- \item manuf. =1 if in manufacturing
- \item married. =1 if married
- \item min. 
- \item nrthcen. =1 if north central
- \item nrtheast. =1 if north east
- \item occ1. 
- \item occ2. 
- \item occ3. 
- \item occ4. 
- \item occ5. 
- \item occ6. 
- \item occ7. 
- \item occ8. 
- \item occ9. 
- \item per. 
- \item pro. 
- \item pub. 
- \item rur. 
- \item south. =1 if south
- \item educ. years of schooling
- \item tra. 
- \item trad. 
- \item union. =1 if in union
- \item lwage. log(wage)
- \item d81. =1 if year == 1981
- \item d82. 
- \item d83. 
- \item d84. 
- \item d85. 
- \item d86. 
- \item d87. 
- \item expersq. exper^2
+ \item \strong{nr:} person identifier
+ \item \strong{year:} 1980 to 1987
+ \item \strong{agric:} =1 if in agriculture
+ \item \strong{black:} =1 if black
+ \item \strong{bus:} 
+ \item \strong{construc:} =1 if in construction
+ \item \strong{ent:} 
+ \item \strong{exper:} labor mkt experience
+ \item \strong{fin:} 
+ \item \strong{hisp:} =1 if Hispanic
+ \item \strong{poorhlth:} =1 if in poor health
+ \item \strong{hours:} annual hours worked
+ \item \strong{manuf:} =1 if in manufacturing
+ \item \strong{married:} =1 if married
+ \item \strong{min:} 
+ \item \strong{nrthcen:} =1 if north central
+ \item \strong{nrtheast:} =1 if north east
+ \item \strong{occ1:} 
+ \item \strong{occ2:} 
+ \item \strong{occ3:} 
+ \item \strong{occ4:} 
+ \item \strong{occ5:} 
+ \item \strong{occ6:} 
+ \item \strong{occ7:} 
+ \item \strong{occ8:} 
+ \item \strong{occ9:} 
+ \item \strong{per:} 
+ \item \strong{pro:} 
+ \item \strong{pub:} 
+ \item \strong{rur:} 
+ \item \strong{south:} =1 if south
+ \item \strong{educ:} years of schooling
+ \item \strong{tra:} 
+ \item \strong{trad:} 
+ \item \strong{union:} =1 if in union
+ \item \strong{lwage:} log(wage)
+ \item \strong{d81:} =1 if year == 1981
+ \item \strong{d82:} 
+ \item \strong{d83:} 
+ \item \strong{d84:} 
+ \item \strong{d85:} 
+ \item \strong{d86:} 
+ \item \strong{d87:} 
+ \item \strong{expersq:} exper^2
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(wagepan)
+data('wagepan')
 }
 \description{
-Data loads lazily. Type data(wagepan) into the console.
+Wooldridge Source: F. Vella and M. Verbeek (1998), “Whose Wages Do Unions Raise? A Dynamic Model of Unionism and Wage Rate Determination for Young Men,” Journal of Applied Econometrics 13, 163-183. I obtained the data from the Journal of Applied Econometrics data archive at http://qed.econ.queensu.ca/jae/. This is generally a nice resource for undergraduates looking to replicate or extend a published study. Data loads lazily.
 }
+\section{Used in Text}{
+ pages 480, 494-495, 505
+}
+
 \examples{
  str(wagepan)
 }

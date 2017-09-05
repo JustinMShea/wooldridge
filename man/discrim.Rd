@@ -4,55 +4,61 @@
 \name{discrim}
 \alias{discrim}
 \title{discrim}
-\format{A data.frame with 410 rows and 37 variables:
+\format{A data.frame with 410 observations on 37 variables:
 \itemize{
- \item psoda. price of medium soda, 1st wave
- \item pfries. price of small fries, 1st wave
- \item pentree. price entree (burger or chicken), 1st wave
- \item wagest. starting wage, 1st wave
- \item nmgrs. number of managers, 1st wave
- \item nregs. number of registers, 1st wave
- \item hrsopen. hours open, 1st wave
- \item emp. number of employees, 1st wave
- \item psoda2. price of medium soday, 2nd wave
- \item pfries2. price of small fries, 2nd wave
- \item pentree2. price entree, 2nd wave
- \item wagest2. starting wage, 2nd wave
- \item nmgrs2. number of managers, 2nd wave
- \item nregs2. number of registers, 2nd wave
- \item hrsopen2. hours open, 2nd wave
- \item emp2. number of employees, 2nd wave
- \item compown. =1 if company owned
- \item chain. BK = 1, KFC = 2, Roy Rogers = 3, Wendy's = 4
- \item density. population density, town
- \item crmrte. crime rate, town
- \item state. NJ = 1, PA = 2
- \item prpblck. proportion black, zipcode
- \item prppov. proportion in poverty, zipcode
- \item prpncar. proportion no car, zipcode
- \item hseval. median housing value, zipcode
- \item nstores. number of stores, zipcode
- \item income. median family income, zipcode
- \item county. county label
- \item lpsoda. log(psoda)
- \item lpfries. log(pfries)
- \item lhseval. log(hseval)
- \item lincome. log(income)
- \item ldensity. log(density)
- \item NJ. =1 for New Jersey
- \item BK. =1 if Burger King
- \item KFC. =1 if Kentucky Fried Chicken
- \item RR. =1 if Roy Rogers
+ \item \strong{psoda:} price of medium soda, 1st wave
+ \item \strong{pfries:} price of small fries, 1st wave
+ \item \strong{pentree:} price entree (burger or chicken), 1st wave
+ \item \strong{wagest:} starting wage, 1st wave
+ \item \strong{nmgrs:} number of managers, 1st wave
+ \item \strong{nregs:} number of registers, 1st wave
+ \item \strong{hrsopen:} hours open, 1st wave
+ \item \strong{emp:} number of employees, 1st wave
+ \item \strong{psoda2:} price of medium soday, 2nd wave
+ \item \strong{pfries2:} price of small fries, 2nd wave
+ \item \strong{pentree2:} price entree, 2nd wave
+ \item \strong{wagest2:} starting wage, 2nd wave
+ \item \strong{nmgrs2:} number of managers, 2nd wave
+ \item \strong{nregs2:} number of registers, 2nd wave
+ \item \strong{hrsopen2:} hours open, 2nd wave
+ \item \strong{emp2:} number of employees, 2nd wave
+ \item \strong{compown:} =1 if company owned
+ \item \strong{chain:} BK = 1, KFC = 2, Roy Rogers = 3, Wendy's = 4
+ \item \strong{density:} population density, town
+ \item \strong{crmrte:} crime rate, town
+ \item \strong{state:} NJ = 1, PA = 2
+ \item \strong{prpblck:} proportion black, zipcode
+ \item \strong{prppov:} proportion in poverty, zipcode
+ \item \strong{prpncar:} proportion no car, zipcode
+ \item \strong{hseval:} median housing value, zipcode
+ \item \strong{nstores:} number of stores, zipcode
+ \item \strong{income:} median family income, zipcode
+ \item \strong{county:} county label
+ \item \strong{lpsoda:} log(psoda)
+ \item \strong{lpfries:} log(pfries)
+ \item \strong{lhseval:} log(hseval)
+ \item \strong{lincome:} log(income)
+ \item \strong{ldensity:} log(density)
+ \item \strong{NJ:} =1 for New Jersey
+ \item \strong{BK:} =1 if Burger King
+ \item \strong{KFC:} =1 if Kentucky Fried Chicken
+ \item \strong{RR:} =1 if Roy Rogers
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(discrim)
+data('discrim')
 }
 \description{
-Data loads lazily. Type data(discrim) into the console.
+Wooldridge Source: K. Graddy (1997), “Do Fast-Food Chains Price Discriminate on the Race and Income Characteristics of an Area?” Journal of Business and Economic Statistics 15, 391-401. Professor Graddy kindly provided the data set. Data loads lazily.
 }
+\section{Notes}{
+ If you want to assign a common final project, this would be a good data set. There are many possible dependent variables, namely, prices of various fast-food items. The key variable is the fraction of the population that is black, along with controls for poverty, income, housing values, and so on. These data were also used in a famous study by David Card and Alan Krueger on estimation of minimum wage effects on employment. See the book by Card and Krueger, Myth and Measurement, 1997, Princeton University Press, for a detailed analysis.
+
+Used in Text: pages 112, 166, 699-700
+}
+
 \examples{
  str(discrim)
 }

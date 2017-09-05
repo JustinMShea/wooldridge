@@ -4,30 +4,36 @@
 \name{crime3}
 \alias{crime3}
 \title{crime3}
-\format{A data.frame with 106 rows and 12 variables:
+\format{A data.frame with 106 observations on 12 variables:
 \itemize{
- \item district. district number
- \item year. 72 or 78
- \item crime. crimes per 1000 people
- \item clrprc1. clear-up perc, prior year
- \item clrprc2. clear-up perc, two-years prior
- \item d78. =1 if year = 78
- \item avgclr. (clrprc1 + clrprc2)/2
- \item lcrime. log(crime)
- \item clcrime. change in lcrime
- \item cavgclr. change in avgclr
- \item cclrprc1. change in clrprc1
- \item cclrprc2. change in clrprc2
+ \item \strong{district:} district number
+ \item \strong{year:} 72 or 78
+ \item \strong{crime:} crimes per 1000 people
+ \item \strong{clrprc1:} clear-up perc, prior year
+ \item \strong{clrprc2:} clear-up perc, two-years prior
+ \item \strong{d78:} =1 if year = 78
+ \item \strong{avgclr:} (clrprc1 + clrprc2)/2
+ \item \strong{lcrime:} log(crime)
+ \item \strong{clcrime:} change in lcrime
+ \item \strong{cavgclr:} change in avgclr
+ \item \strong{cclrprc1:} change in clrprc1
+ \item \strong{cclrprc2:} change in clrprc2
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(crime3)
+data('crime3')
 }
 \description{
-Data loads lazily. Type data(crime3) into the console.
+Wooldridge Source: E. Eide (1994), Economics of Crime: Deterrence of the Rational Offender. Amsterdam: North Holland. The data come from Tables A3 and A6. Data loads lazily.
 }
+\section{Notes}{
+ These data are for the years 1972 and 1978 for 53 police districts in Norway. Much larger data sets for more years can be obtained for the United States, although a measure of the “clear-up” rate is needed.
+
+Used in Text: pages 464-465, 477-478
+}
+
 \examples{
  str(crime3)
 }

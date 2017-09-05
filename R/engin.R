@@ -1,30 +1,34 @@
 #' engin
 #'
-#' Data loads lazily. Type data(engin) into the console.
+#' Wooldridge Source: Thada Chaisawangwong, a former graduate student at MSU, obtained these data for a term project in applied econometrics. They come from the Material Requirement Planning Survey carried out in Thailand during 1998. Data loads lazily.
+#'
+#' @section Notes: This is a nice change of pace from wage data sets for the United States. These data are for engineers in Thailand, and represents a more homogeneous group than data sets that consist of people across a variety of occupations. Plus, the starting salary is also provided in the data set, so factors affecting wage growth – and not just wage levels at a given point in time – can be studied. This is a good data set for a common term project that tests basic understanding of multiple regression and the interpretation of models with a logarithm for a dependent variable.
+#'
+#' Used in Text: not used
 #'
 #' @docType data
 #'
-#' @usage data(engin)
+#' @usage data('engin')
 #'
-#' @format A data.frame with 403 rows and 17 variables:
+#' @format A data.frame with 403 observations on 17 variables:
 #' \itemize{
-#'  \item male. =1 if male
-#'  \item educ. highest grade completed
-#'  \item wage. monthly salary, Thai baht
-#'  \item swage. starting wage
-#'  \item exper. years on current job
-#'  \item pexper. previous experience
-#'  \item lwage. log(wage)
-#'  \item expersq. exper^2
-#'  \item highgrad. =1 if high school graduate
-#'  \item college. =1 if college graduate
-#'  \item grad. =1 if some graduate school
-#'  \item polytech. =1 if a polytech
-#'  \item highdrop. =1 if no high school degree
-#'  \item lswage. log(swage)
-#'  \item pexpersq. pexper^2
-#'  \item mleeduc. male*educ
-#'  \item mleeduc0. male*(educ - 14)
+#'  \item \strong{male:} =1 if male
+#'  \item \strong{educ:} highest grade completed
+#'  \item \strong{wage:} monthly salary, Thai baht
+#'  \item \strong{swage:} starting wage
+#'  \item \strong{exper:} years on current job
+#'  \item \strong{pexper:} previous experience
+#'  \item \strong{lwage:} log(wage)
+#'  \item \strong{expersq:} exper^2
+#'  \item \strong{highgrad:} =1 if high school graduate
+#'  \item \strong{college:} =1 if college graduate
+#'  \item \strong{grad:} =1 if some graduate school
+#'  \item \strong{polytech:} =1 if a polytech
+#'  \item \strong{highdrop:} =1 if no high school degree
+#'  \item \strong{lswage:} log(swage)
+#'  \item \strong{pexpersq:} pexper^2
+#'  \item \strong{mleeduc:} male*educ
+#'  \item \strong{mleeduc0:} male*(educ - 14)
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(engin)

@@ -4,43 +4,49 @@
 \name{prminwge}
 \alias{prminwge}
 \title{prminwge}
-\format{A data.frame with 38 rows and 25 variables:
+\format{A data.frame with 38 observations on 25 variables:
 \itemize{
- \item year. 1950-1987
- \item avgmin. weighted avg min wge, 44 indust
- \item avgwage. wghted avg hrly wge, 44 indust
- \item kaitz. Kaitz min wage index
- \item avgcov. wghted avg coverage, 8 indust
- \item covt. economy-wide coverage of min wg
- \item mfgwage. avg manuf. wage
- \item prdef. Puerto Rican price deflator
- \item prepop. PR employ/popul ratio
- \item prepopf. PR employ/popul ratio, alter.
- \item prgnp. PR GNP
- \item prunemp. PR unemployment rate
- \item usgnp. US GNP
- \item t. time trend:  1 to 38
- \item post74. time trend:  starts in 1974
- \item lprunemp. log(prunemp)
- \item lprgnp. log(prgnp)
- \item lusgnp. log(usgnp)
- \item lkaitz. log(kaitz)
- \item lprun_1. lprunemp[_n-1]
- \item lprepop. log(prepop)
- \item lprep_1. lprepop[_n-1]
- \item mincov. (avgmin/avgwage)*avgcov
- \item lmincov. log(mincov)
- \item lavgmin. log(avgmin)
+ \item \strong{year:} 1950-1987
+ \item \strong{avgmin:} weighted avg min wge, 44 indust
+ \item \strong{avgwage:} wghted avg hrly wge, 44 indust
+ \item \strong{kaitz:} Kaitz min wage index
+ \item \strong{avgcov:} wghted avg coverage, 8 indust
+ \item \strong{covt:} economy-wide coverage of min wg
+ \item \strong{mfgwage:} avg manuf. wage
+ \item \strong{prdef:} Puerto Rican price deflator
+ \item \strong{prepop:} PR employ/popul ratio
+ \item \strong{prepopf:} PR employ/popul ratio, alter.
+ \item \strong{prgnp:} PR GNP
+ \item \strong{prunemp:} PR unemployment rate
+ \item \strong{usgnp:} US GNP
+ \item \strong{t:} time trend:  1 to 38
+ \item \strong{post74:} time trend:  starts in 1974
+ \item \strong{lprunemp:} log(prunemp)
+ \item \strong{lprgnp:} log(prgnp)
+ \item \strong{lusgnp:} log(usgnp)
+ \item \strong{lkaitz:} log(kaitz)
+ \item \strong{lprun_1:} lprunemp[_n-1]
+ \item \strong{lprepop:} log(prepop)
+ \item \strong{lprep_1:} lprepop[_n-1]
+ \item \strong{mincov:} (avgmin/avgwage)*avgcov
+ \item \strong{lmincov:} log(mincov)
+ \item \strong{lavgmin:} log(avgmin)
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(prminwge)
+data('prminwge')
 }
 \description{
-Data loads lazily. Type data(prminwge) into the console.
+Wooldridge Source: A.J. Castillo-Freeman and R.B. Freeman (1992), “When the Minimum Wage Really Bites: The Effect of the U.S.-Level Minimum Wage on Puerto Rico,” in Immigration and the Work Force, edited by G.J. Borjas and R.B. Freeman, 177-211. Chicago: University of Chicago Press. The data are reported in the article. Data loads lazily.
 }
+\section{Notes}{
+ Given the ongoing debate on the employment effects of the minimum wage, this would be a great data set to try to update. The coverage rates are the most difficult variables to construct.
+
+Used in Text: pages 356-357, 369-370, 420-421, 434
+}
+
 \examples{
  str(prminwge)
 }

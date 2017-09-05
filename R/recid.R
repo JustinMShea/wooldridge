@@ -1,31 +1,35 @@
 #' recid
 #'
-#' Data loads lazily. Type data(recid) into the console.
+#' Wooldridge Source: C.-F. Chung, P. Schmidt, and A.D. Witte (1991), “Survival Analysis: A Survey,” Journal of Quantitative Criminology 7, 59-98. Professor Chung kindly provided the data. Data loads lazily.
+#'
+#' @section 
+#'
+#' Used in Text: pages 611-612, 625
 #'
 #' @docType data
 #'
-#' @usage data(recid)
+#' @usage data('recid')
 #'
-#' @format A data.frame with 1445 rows and 18 variables:
+#' @format A data.frame with 1445 observations on 18 variables:
 #' \itemize{
-#'  \item black. =1 if black
-#'  \item alcohol. =1 if alcohol problems
-#'  \item drugs. =1 if drug history
-#'  \item super. =1 if release supervised
-#'  \item married. =1 if married when incarc.
-#'  \item felon. =1 if felony sentence
-#'  \item workprg. =1 if in N.C. pris. work prg.
-#'  \item property. =1 if property crime
-#'  \item person. =1 if crime against person
-#'  \item priors. # prior convictions
-#'  \item educ. years of schooling
-#'  \item rules. # rules violations in prison
-#'  \item age. in months
-#'  \item tserved. time served, rounded to months
-#'  \item follow. length follow period, months
-#'  \item durat. min(time until return, follow)
-#'  \item cens. =1 if duration right censored
-#'  \item ldurat. log(durat)
+#'  \item \strong{black:} =1 if black
+#'  \item \strong{alcohol:} =1 if alcohol problems
+#'  \item \strong{drugs:} =1 if drug history
+#'  \item \strong{super:} =1 if release supervised
+#'  \item \strong{married:} =1 if married when incarc.
+#'  \item \strong{felon:} =1 if felony sentence
+#'  \item \strong{workprg:} =1 if in N.C. pris. work prg.
+#'  \item \strong{property:} =1 if property crime
+#'  \item \strong{person:} =1 if crime against person
+#'  \item \strong{priors:} # prior convictions
+#'  \item \strong{educ:} years of schooling
+#'  \item \strong{rules:} # rules violations in prison
+#'  \item \strong{age:} in months
+#'  \item \strong{tserved:} time served, rounded to months
+#'  \item \strong{follow:} length follow period, months
+#'  \item \strong{durat:} min(time until return, follow)
+#'  \item \strong{cens:} =1 if duration right censored
+#'  \item \strong{ldurat:} log(durat)
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(recid)

@@ -1,32 +1,36 @@
 #' voucher
 #'
-#' Data loads lazily. Type data(voucher) into the console.
+#' Wooldridge Source: Rouse, C.E. (1998), “Private School Vouchers and Student Achievement: An Evaluation of the Milwaukee Parental Choice Program,” Quarterly Journal of Economics 113, 553-602. Professor Rouse kindly provided the original data set from her paper. Data loads lazily.
+#'
+#' @section Notes: This is a condensed version of the data set used by Professor Rouse. The original data set had missing information on many variables, including post-policy and pre-policy test scores. I did not impute any missing data and have dropped observations that were unusable without filling in missing data. There are 990 students in the current data set but pre-policy test scores are available for only 328 of them. This is a good example of where eligibility for a program is randomized but participation need not be. In addition, even if we look at just the effect of eligibility (captured in the variable selectyrs) on the math test score (mnce), we need to confront the fact that attrition (students leaving the district) can bias the results. Controlling for the pre-policy test score, mnce90, can help – but at the cost of losing two-thirds of the observations. A simple regression of mnce on selectyrs followed by a multiple regression that adds mnce90 as a control is informative. The selectyrs dummy variables can be used as instrumental variables for the choiceyrs variable to try to estimate the effect of actually participating in the program (rather than estimating the so- called intention-to-treat effect). Computer Exercise C15.11 steps through the details.
+#'
+#' Used in Text: pages 550-551
 #'
 #' @docType data
 #'
-#' @usage data(voucher)
+#' @usage data('voucher')
 #'
-#' @format A data.frame with 990 rows and 19 variables:
+#' @format A data.frame with 990 observations on 19 variables:
 #' \itemize{
-#'  \item studyid. student identifier
-#'  \item black. = 1 if African-American
-#'  \item hispanic. = 1 if Hispanic
-#'  \item female. = 1 if female
-#'  \item appyear. year of first application: 90 to 93
-#'  \item mnce. math NCE test score, 1994
-#'  \item select. = 1 if ever selected to attend choice school
-#'  \item choice. = 1 if attending choice school, 1994
-#'  \item selectyrs. years selected to attend choice school
-#'  \item choiceyrs. years attended choice school
-#'  \item mnce90. mnce in 1990
-#'  \item selectyrs1. = 1 if selectyrs == 1
-#'  \item selectyrs2. = 1 if selectyrs == 2
-#'  \item selectyrs3. = 1 if selectyrs == 3
-#'  \item selectyrs4. = 1 if selectyrs == 4
-#'  \item choiceyrs1. = 1 if choiceyrs == 1
-#'  \item choiceyrs2. = 1 if choiceyrs == 2
-#'  \item choiceyrs3. = 1 if choiceyrs == 3
-#'  \item choiceyrs4. = 1 if choiceyrs == 4
+#'  \item \strong{studyid:} student identifier
+#'  \item \strong{black:} = 1 if African-American
+#'  \item \strong{hispanic:} = 1 if Hispanic
+#'  \item \strong{female:} = 1 if female
+#'  \item \strong{appyear:} year of first application: 90 to 93
+#'  \item \strong{mnce:} math NCE test score, 1994
+#'  \item \strong{select:} = 1 if ever selected to attend choice school
+#'  \item \strong{choice:} = 1 if attending choice school, 1994
+#'  \item \strong{selectyrs:} years selected to attend choice school
+#'  \item \strong{choiceyrs:} years attended choice school
+#'  \item \strong{mnce90:} mnce in 1990
+#'  \item \strong{selectyrs1:} = 1 if selectyrs == 1
+#'  \item \strong{selectyrs2:} = 1 if selectyrs == 2
+#'  \item \strong{selectyrs3:} = 1 if selectyrs == 3
+#'  \item \strong{selectyrs4:} = 1 if selectyrs == 4
+#'  \item \strong{choiceyrs1:} = 1 if choiceyrs == 1
+#'  \item \strong{choiceyrs2:} = 1 if choiceyrs == 2
+#'  \item \strong{choiceyrs3:} = 1 if choiceyrs == 3
+#'  \item \strong{choiceyrs4:} = 1 if choiceyrs == 4
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(voucher)

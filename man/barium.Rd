@@ -4,49 +4,55 @@
 \name{barium}
 \alias{barium}
 \title{barium}
-\format{A data.frame with 131 rows and 31 variables:
+\format{A data.frame with 131 observations on 31 variables:
 \itemize{
- \item chnimp. Chinese imports, bar. chl.
- \item bchlimp. total imports bar. chl.
- \item befile6. =1 for all 6 mos before filing
- \item affile6. =1 for all 6 mos after filing
- \item afdec6. =1 for all 6 mos after decision
- \item befile12. =1 all 12 mos before filing
- \item affile12. =1 all 12 mos after filing
- \item afdec12. =1 all 12 mos after decision
- \item chempi. chemical production index
- \item gas. gasoline production
- \item rtwex. exchange rate index
- \item spr. =1 for spring months
- \item sum. =1 for summer months
- \item fall. =1 for fall months
- \item lchnimp. log(chnimp)
- \item lgas. log(gas)
- \item lrtwex. log(rtwex)
- \item lchempi. log(chempi)
- \item t. time trend
- \item feb. =1 if month is feb
- \item mar. =1 if month is march
- \item apr. 
- \item may. 
- \item jun. 
- \item jul. 
- \item aug. 
- \item sep. 
- \item oct. 
- \item nov. 
- \item dec. 
- \item percchn. percent imports from china
+ \item \strong{chnimp:} Chinese imports, bar. chl.
+ \item \strong{bchlimp:} total imports bar. chl.
+ \item \strong{befile6:} =1 for all 6 mos before filing
+ \item \strong{affile6:} =1 for all 6 mos after filing
+ \item \strong{afdec6:} =1 for all 6 mos after decision
+ \item \strong{befile12:} =1 all 12 mos before filing
+ \item \strong{affile12:} =1 all 12 mos after filing
+ \item \strong{afdec12:} =1 all 12 mos after decision
+ \item \strong{chempi:} chemical production index
+ \item \strong{gas:} gasoline production
+ \item \strong{rtwex:} exchange rate index
+ \item \strong{spr:} =1 for spring months
+ \item \strong{sum:} =1 for summer months
+ \item \strong{fall:} =1 for fall months
+ \item \strong{lchnimp:} log(chnimp)
+ \item \strong{lgas:} log(gas)
+ \item \strong{lrtwex:} log(rtwex)
+ \item \strong{lchempi:} log(chempi)
+ \item \strong{t:} time trend
+ \item \strong{feb:} =1 if month is feb
+ \item \strong{mar:} =1 if month is march
+ \item \strong{apr:} 
+ \item \strong{may:} 
+ \item \strong{jun:} 
+ \item \strong{jul:} 
+ \item \strong{aug:} 
+ \item \strong{sep:} 
+ \item \strong{oct:} 
+ \item \strong{nov:} 
+ \item \strong{dec:} 
+ \item \strong{percchn:} percent imports from china
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(barium)
+data('barium')
 }
 \description{
-Data loads lazily. Type data(barium) into the console.
+Wooldridge Source: C.M. Krupp and P.S. Pollard (1999), Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988. Data loads lazily.
 }
+\section{Note}{
+ Rather than just having intercept shifts for the different regimes, one could conduct a full Chow test across the different regimes.
+
+Used in Text: pages 361-362, 372, 377, 426, 442-443, 445, 663, 665, 672
+}
+
 \examples{
  str(barium)
 }

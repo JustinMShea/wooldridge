@@ -1,36 +1,40 @@
 #' twoyear
 #'
-#' Data loads lazily. Type data(twoyear) into the console.
+#' Wooldridge Source: T.J. Kane and C.E. Rouse (1995), Labor-Market Returns to Two- and Four-Year Colleges, American Economic Review 85, 600-614. With Professor Rouse’s kind assistance, I obtained the data from her web site at Princeton University. Data loads lazily.
+#'
+#' @section Notes: As possible extensions, students can explore whether the returns to two-year or four-year colleges depend on race or gender. This is partly done in Problem 7.9 but where college is aggregated into one number. Also, should experience appear as a quadratic in the wage specification?
+#'
+#' Used in Text: pages 140-143, 165, 261, 340
 #'
 #' @docType data
 #'
-#' @usage data(twoyear)
+#' @usage data('twoyear')
 #'
-#' @format A data.frame with 6763 rows and 23 variables:
+#' @format A data.frame with 6763 observations on 23 variables:
 #' \itemize{
-#'  \item female. =1 if female
-#'  \item phsrank. percent high school rank; 100 = best
-#'  \item BA. =1 if Bachelor's degree
-#'  \item AA. =1 if Associate's degree
-#'  \item black. =1 if African-American
-#'  \item hispanic. =1 if Hispanic
-#'  \item id. ID Number
-#'  \item exper. total (actual) work experience
-#'  \item jc. total 2-year credits
-#'  \item univ. total 4-year credits
-#'  \item lwage. log hourly wage
-#'  \item stotal. total standardized test score
-#'  \item smcity. =1 if small city, 1972
-#'  \item medcity. =1 if med. city, 1972
-#'  \item submed. =1 if suburb med. city, 1972
-#'  \item lgcity. =1 if large city, 1972
-#'  \item sublg. =1 if suburb large city, 1972
-#'  \item vlgcity. =1 if very large city, 1972
-#'  \item subvlg. =1 if sub. very lge. city, 1972
-#'  \item ne. =1 if northeast
-#'  \item nc. =1 if north central
-#'  \item south. =1 if south
-#'  \item totcoll. jc + univ
+#'  \item \strong{female:} =1 if female
+#'  \item \strong{phsrank:} percent high school rank; 100 = best
+#'  \item \strong{BA:} =1 if Bachelor's degree
+#'  \item \strong{AA:} =1 if Associate's degree
+#'  \item \strong{black:} =1 if African-American
+#'  \item \strong{hispanic:} =1 if Hispanic
+#'  \item \strong{id:} ID Number
+#'  \item \strong{exper:} total (actual) work experience
+#'  \item \strong{jc:} total 2-year credits
+#'  \item \strong{univ:} total 4-year credits
+#'  \item \strong{lwage:} log hourly wage
+#'  \item \strong{stotal:} total standardized test score
+#'  \item \strong{smcity:} =1 if small city, 1972
+#'  \item \strong{medcity:} =1 if med. city, 1972
+#'  \item \strong{submed:} =1 if suburb med. city, 1972
+#'  \item \strong{lgcity:} =1 if large city, 1972
+#'  \item \strong{sublg:} =1 if suburb large city, 1972
+#'  \item \strong{vlgcity:} =1 if very large city, 1972
+#'  \item \strong{subvlg:} =1 if sub. very lge. city, 1972
+#'  \item \strong{ne:} =1 if northeast
+#'  \item \strong{nc:} =1 if north central
+#'  \item \strong{south:} =1 if south
+#'  \item \strong{totcoll:} jc + univ
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(twoyear)
