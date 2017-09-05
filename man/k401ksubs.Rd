@@ -27,9 +27,8 @@ data('k401ksubs')
 \description{
 Wooldridge Source: A. Abadie (2003), “Semiparametric Instrumental Variable Estimation of Treatment Response Models,” Journal of Econometrics 113, 231-263. Professor Abadie kindly provided these data. He obtained them from the 1991 Survey of Income and Program Participation (SIPP). Data loads lazily.
 }
-\section{Additional Info}{
-
-Wooldridge Notes: This data set can also be used to illustrate the binary response models, probit and logit, in Chapter 17, where, say, pira (an indicator for having an individual retirement account) is the dependent variable, and e401k [the 401(k) eligibility indicator] is the key explanatory variable.
+\section{Notes}{
+ This data set can also be used to illustrate the binary response models, probit and logit, in Chapter 17, where, say, pira (an indicator for having an individual retirement account) is the dependent variable, and e401k [the 401(k) eligibility indicator] is the key explanatory variable.
 
 Used in Text: pages 166, 174, 223, 264, 283, 301-302, 340, 549
 }

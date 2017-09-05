@@ -1,8 +1,8 @@
 #' k401k
 #'
 #' Wooldridge Source: L.E. Papke (1995), “Participation in and Contributions to 401(k) Pension Plans:Evidence from Plan Data,” Journal of Human Resources 30, 311-325. Professor Papke kindly provided these data. She gathered them from the Internal Revenue Service’s Form 5500 tapes. Data loads lazily.
-#' @section Additional Info:
-#' Wooldridge Notes: This data set is used in a variety of ways in the text. One additional possibility is to investigate whether the coefficients from the regression of prate on mrate, log(totemp) differ by whether the plan is a sole plan. The Chow test (see Section 7.4), and the less restrictive version that allows different intercepts, can be used.
+#'
+#' @section Notes: This data set is used in a variety of ways in the text. One additional possibility is to investigate whether the coefficients from the regression of prate on mrate, log(totemp) differ by whether the plan is a sole plan. The Chow test (see Section 7.4), and the less restrictive version that allows different intercepts, can be used.
 #'
 #' Used in Text: pages 63, 79, 136, 174, 219, 692
 #'
