@@ -46,8 +46,7 @@ for(i in RData_names) {
   # This automagically creates documentation for all data sets.
   title <- paste0("#' ", as.character(i))
   intro <- paste0("#' ", "Wooldridge ", data_doc[data_doc$Name == file_name,]$Source, " Data loads lazily.")
-  section <- paste0("#' @section Additional Info:")
-  notes <-  paste0("#' ", data_doc[data_doc$Name == file_name,]$Notes)
+  section <- paste0("#' @section ", data_doc[data_doc$Name == file_name,]$Notes)
   text <- paste0("#' ", data_doc[data_doc$Name == file_name,]$Text)
   type  <- paste0("#' @docType data")
   usage <- paste0("#' @usage data('", as.character(i),"')")
@@ -69,7 +68,7 @@ for(i in RData_names) {
   blank <- " "
   
   # Paste all strings together to prepare for file for line by line write.
-  documentation <- c(title, space, intro, section, notes, space, text, space, type, space, usage, space, message, start, describe, end, source, example, data_label, blank, blank)
+  documentation <- c(title, space, intro, space, section, space, text, space, type, space, usage, space, message, start, describe, end, source, example, data_label, blank, blank)
   
   # Write out 1 string per line, into a .R file labeled to match each dataset
   # in the roxygen2 documentation format.
