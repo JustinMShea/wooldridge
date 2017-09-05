@@ -16,8 +16,8 @@ Description: Those new to econometrics and R may find themselves challenged by d
     and, provided the syntax is correct, model estimates shall spring forth from 
     the otherwise lifeless abyss of your R console! If the syntax is an issue, the 
     wooldridge-vignette displays solutions to examples from each chapter of the 
-    text, providing a relevant introduction to econometric modeling with R. The 
-    vignette contains an Appendix of excellent sources on using R for econometrics. Note: 
+    text, providing a relevant introduction to econometric modeling with R. The vignette 
+    closes with an Appendix of recommended sources for R and econometrics. Note: 
     Data sets are from the 5th edition (Wooldridge 2013, ISBN-13:978-1-111-53104-1), 
     and are compatible with all others.
 Depends: R (>= 3.4.0)
