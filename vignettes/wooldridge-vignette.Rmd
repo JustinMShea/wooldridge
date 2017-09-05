@@ -30,7 +30,7 @@ In addition, please visit the **Appendix** for sources on using R for econometri
 Now, install and load the `wooldridge` package and lets get started.
 
 ```{r, echo = TRUE, eval = FALSE, warning=FALSE}
-install.packages(wooldridge)
+install.packages("wooldridge")
 ```
 
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE}
@@ -50,11 +50,13 @@ library(stargazer)
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ$$
 
-Load the `wage1` data.
+Load the `wage1` data and check out the documentation.
 
-```{r}
+```{r, message=FALSE}
 data("wage1")
+?wage1
 ```
+These are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.
 
 Estimate a linear relationship between the _log of wage_ and _education_.
 
@@ -76,7 +78,7 @@ stargazer(log_wage_model, single.row = TRUE, header = FALSE)
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure$$
 
-Estimate the model regressing _education_, _experience_, and _tenure_ against _log(wage)_.
+Estimate the model regressing _education_, _experience_, and _tenure_ against _log(wage)_. The `wage1` data should still be in your working environment.
 
 ```{r}
 hourly_wage_model <- lm(lwage ~ educ + exper + tenure, data = wage1)
@@ -94,14 +96,15 @@ stargazer(hourly_wage_model,  single.row = TRUE, header = FALSE)
 
 **`Example 4.7` Effect of Job Training on Firm Scrap Rates**
 
-
 Load the `jtrain` data set and if you are using R Studio, `View` the data set.
 
-```{r, echo = TRUE, eval = TRUE, warning=FALSE}
+```{r, echo = TRUE, eval = TRUE, warning=FALSE, message=FALSE}
 data("jtrain")
 ```
+From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), _Are Training Subsidies Effective? The Michigan Experience_, Industrial and Labor Relations Review 46, 625-636. The authors kindly provided the data.
 
 ```{r, echo = TRUE, eval = FALSE, warning=FALSE}
+?jtrain
 View(jtrain)
 ```
 
@@ -138,26 +141,22 @@ stargazer(linear_model,  single.row = TRUE, header = FALSE)
 
 **`Example 5.3:` Economic Model of Crime**
 
+From  J. Grogger (1991), _Certainty vs. Severity of Punishment_, Economic Inquiry 29, 297-309. Professor Grogger kindly provided a subset of the data he used in his article.
 
 $$narr86 = \beta_0 + \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86 + \mu$$
 
-$narr86:$ number of times arrested, 1986.
-
-$pcnv:$ proportion of prior arrests leading to convictions.
-
-$avgsen:$ average sentence served, length in months.
-
-$tottime:$ time in prison since reaching the age of 18, length in months.
-
-$ptime86:$ months in prison during 1986.
-
+$narr86:$ number of times arrested, 1986.  
+$pcnv:$ proportion of prior arrests leading to convictions.  
+$avgsen:$ average sentence served, length in months.  
+$tottime:$ time in prison since reaching the age of 18, length in months.  
+$ptime86:$ months in prison during 1986.  
 $qemp86:$ quarters employed, 1986.
-
 
 Load the `crime1` data set.
 
-```{r}
+```{r, message=FALSE}
 data("crime1")
+?crime1
 ```
 
 Estimate the model.
@@ -179,7 +178,6 @@ $$\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + 
 
 ```{r, tidy = TRUE}
 LM_u_model <- lm(restricted_model_u ~ pcnv + ptime86 + qemp86 + avgsen + tottime, data = crime1)
-
 summary(LM_u_model)$r.square
 ```
 
@@ -187,7 +185,6 @@ $$LM = 2,725(0.0015)$$
 
 ```{r}
 LM_test <- nobs(LM_u_model) * 0.0015
-
 LM_test
 ```
 
@@ -227,12 +224,16 @@ $stratio$: average student-teacher ratio of schools in the community.
 
 $$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio$$
 
-Load the `hprice2` data.
+Load the `hprice2` data and view the documentation.
 
 
-```{r}
+```{r, message=FALSE}
 data("hprice2")
+?hprice2
 ```
+
+Data from _Hedonic Housing Prices and the Demand for Clean Air_, by Harrison, D. and D.L.Rubinfeld, Journal of Environmental Economics and Management 5, 81-102. Diego Garcia, a former Ph.D. student in economics at MIT, kindly provided these data, which he obtained from the book Regression Diagnostics: Identifying Influential Data and Sources of Collinearity, by D.A. Belsey, E. Kuh, and R. Welsch, 1990. New York: Wiley. 
+
 
 Estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wrapping each variable with R's `scale` function:
 
@@ -273,6 +274,7 @@ This time, use the `hrprice1` data.
 ```{r}
 data("hprice1")
 ```
+Data collected from the real estate pages of the Boston Globe during 1990. These are homes that sold in the Boston, MA area.
 
 If you recently worked with `hprice2`, it may be helpful to view the documentation on this data set and read the variable names.
 
@@ -299,12 +301,11 @@ stargazer(housing_qualitative,  single.row = TRUE, header = FALSE)
 **`Example 8.9:` Determinants of Personal Computer Ownership**
 
 $$\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial $$
-
-Load `gpa1` and create a new variable combining the `fathcoll` and `mothcoll`, into `parcoll`. This new column indicates if either parent went to college.
+Christopher Lemmon, a former MSU undergraduate, collected these data from a survey he took of MSU students in Fall 1994. Load `gpa1` and create a new variable combining the `fathcoll` and `mothcoll`, into `parcoll`. This new column indicates if either parent went to college.
 
 ```{r}
 data("gpa1")
-
+?gpa1
 gpa1$parcoll <- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)
 ```
 
@@ -336,11 +337,11 @@ stargazer(GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE)
 
 $$rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu$$
 
-Load the data and estimate the model.
+From _Businessweek R&D Scoreboard_, October 25, 1991. Load the data and estimate the model.
 
 ```{r}
 data("rdchem")
- 
+?rdchem 
 all_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem)
 ```
 
@@ -375,10 +376,10 @@ stargazer(all_rdchem, smallest_rdchem,  single.row = TRUE, header = FALSE)
 **`Example 10.2:` Effects of Inflation and Deficits on Interest Rates**
 
 $$\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t$$
-
+Data from the _Economic Report of the President, 2004_, Tables B-64, B-73, and B-79.
 ```{r}
 data("intdef")
-
+?intdef
 tbill_model <- lm(i3 ~ inf + def, data = intdef)
 ```
 
@@ -389,8 +390,11 @@ stargazer(tbill_model, single.row = TRUE, header = FALSE)
 
 **`Example 10.11:` Seasonal Effects of Antidumping Filings**
 
+C.M. Krupp and P.S. Pollard (1999), _Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry_, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988. 
+
 ```{r, tidy=TRUE}
 data("barium")
+?barium
 barium_imports <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 ```
 
@@ -398,7 +402,6 @@ Estimate a new model, `barium_seasonal` which accounts for seasonality by adding
 
 ```{r, tidy=TRUE}
 barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6 + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec, data = barium)
-
 barium_anova <- anova(barium_imports, barium_seasonal)
 ```
 
@@ -416,11 +419,11 @@ stargazer(barium_anova,  single.row = TRUE, header = FALSE)
 
 
 $$\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t$$
-
+Data from the _Economic Report of the President, 1989_, Table B-47. The data are for the non-farm business sector.
 
 ```{r}
 data("earns")
-
+?earns
 wage_time <- lm(lhrwage ~ loutphr + t, data = earns)
 ```
 
@@ -457,12 +460,13 @@ barium_prais_winsten
 
 **`Example 12.8:` Heteroskedasticity and the Efficient Markets Hypothesis**
 
+These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, [www.nyse.com](https://www.nyse.com/data-and-tech). 
 
 $$return_t = \beta_0 + \beta_1return_{t-1} + \mu_t$$
 
 ```{r}
 data("nyse")
- 
+?nyse 
 return_AR1 <-lm(return ~ return_1, data = nyse)
 ```
 
@@ -471,7 +475,6 @@ $$\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t$$
 
 ```{r}
 return_mu <- residuals(return_AR1)
-
 mu2_hat_model <- lm(return_mu^2 ~ return_1, data = return_AR1$model)
 ```
 ```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
@@ -490,9 +493,7 @@ We still have `return_mu` in the working environment so we can use it to create 
 
 ```{r}
 mu2_hat  <- return_mu[-1]^2
-
 mu2_hat_1 <- return_mu[-NROW(return_mu)]^2
-
 arch_model <- lm(mu2_hat ~ mu2_hat_1)
 ```
 
@@ -507,12 +508,12 @@ stargazer(arch_model, single.row = TRUE, header = FALSE)
 
 **`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
 
-
+Wooldridge collected these data from two sources, the 1992 _Statistical Abstract of the United States_ (Tables 1009, 1012) and _A Digest of State Alcohol-Highway Safety Related Legislation_, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. 
 $$\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}$$
 
 ```{r}
 data("traffic1")
-
+?traffic1
 DD_model <- lm(cdthrte ~ copen + cadmn, data = traffic1)
 ```
 
@@ -530,9 +531,7 @@ In this section, we will estimate a linear panel modeg using the `plm` function 
 
 ```{r, tidy=TRUE}
 library(plm)
-
 data("jtrain")
-
 scrap_panel <- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain,
             index = c('fcode','year'), model = 'within', effect ='individual')
 ```
@@ -547,11 +546,13 @@ stargazer(scrap_panel,  single.row = TRUE, header = FALSE)
 
 **`Example 15.1:` Estimating the Return to Education for Married Women**
 
+T.A. Mroz (1987), _The Sensitivity of an Empirical Model of Married Women's Hours of Work to Economic and Statistical Assumptions_, Econometrica 55, 765-799. Professor Ernst R. Berndt, of MIT, kindly provided the data, which he obtained from Professor Mroz.
 
 $$log(wage) = \beta_0 + \beta_1educ + \mu$$
 
 ```{r, message=FALSE}
 data("mroz")
+?mroz
 wage_educ_model <- lm(lwage ~ educ, data = mroz)
 ```
 
@@ -580,12 +581,13 @@ stargazer(wage_educ_model, fatheduc_model, wage_educ_IV, single.row = TRUE, head
 
 **`Example 15.2:` Estimating the Return to Education for Men**
 
+Data from M. Blackburn and D. Neumark (1992), _Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials_, Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which Wooldridge uses the data for 1980.
 
 $$\widehat{educ} = \beta_0 + sibs$$
 
 ```{r, warning=FALSE}
 data("wage2")
- 
+?wage2
 educ_sibs_model <- lm(educ ~ sibs, data = wage2)
 ```
 
@@ -596,7 +598,6 @@ Again, estimate the model using the  `ivreg` function in the `AER (Applied Econo
 
 ```{r, message=FALSE}
 library("AER")
-
 educ_sibs_IV <- ivreg(lwage ~ educ | sibs, data = wage2)
 ```
 
@@ -628,19 +629,19 @@ stargazer(wage_educ_exper_IV,  single.row = TRUE, header = FALSE)
 
 **`Example 16.4:` INFLATION AND OPENNESS**
 
+Data from D. Romer (1993), _Openness and Inflation: Theory and Evidence_, Quarterly Journal of Economics 108, 869-903. The data are included in the article.
 
 $$inf = \beta_{10} + \alpha_1open + \beta_{11}log(pcinc) + \mu_1$$
 $$open = \beta_{20} + \alpha_2inf + \beta_{21}log(pcinc) + \beta_{22}log(land) + \mu_2$$
 
 **`Example 16.6:` INFLATION AND OPENNESS**
 
-
 $$\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)$$
 
 
 ```{r}
 data("openness")
- 
+?openness
 open_model <-lm(open ~ lpcinc + lland, data = openness)
 ```
 
@@ -650,7 +651,6 @@ Use the  `ivreg` function in the `AER (Applied Econometrics with R)` package to 
 
 ```{r}
 library(AER)
-
 inflation_IV <- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)
 ```
 
@@ -701,8 +701,11 @@ stargazer(econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALS
 
 **`Example 18.8:` FORECASTING THE U.S. UNEMPLOYMENT RATE**
 
+Data from _Economic Report of the President, 2004_, Tables B-42 and B-64.
+
 ```{r}
 data("phillips")
+?phillips
 ```
 
 $$\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}$$

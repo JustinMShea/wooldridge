@@ -10,6 +10,10 @@ output: github_document
 In previous versions, the documentation mainly contained the column variable names to all data sets as that was all that was offered on the text book companion site.
 However, I after scouring the internet, I was able to acquire a .pdf file listing descriptions of original sources as well as the page numbers on which the data set appears, for 101 of the 105 data sets. In addition, some data sets have notes by Wooldridge himself about interesting features of the data set. After transforming the .pdf into a UTF text file, I programmatically extracted the useful elements and wove them into the roxygen style .R files.
 
+## Updates to vignette
+
+Added original description of data sets for every example, as well as instructions on calling each one. After all, it is a data package.
+
 ## Updates to README.md 
 
 Added instructions to access dev branch.
