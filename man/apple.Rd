@@ -4,35 +4,41 @@
 \name{apple}
 \alias{apple}
 \title{apple}
-\format{A data.frame with 660 rows and 17 variables:
+\format{A data.frame with 660 observations on 17 variables:
 \itemize{
- \item id. respondent identifier
- \item educ. years schooling
- \item date. date:  month/day/year
- \item state. home state
- \item regprc. price of regular apples
- \item ecoprc. price of ecolabeled apples
- \item inseason. =1 if interviewed in Nov.
- \item hhsize. household size
- \item male. =1 if male
- \item faminc. family income, thousands
- \item age. in years
- \item reglbs. quantity regular apples, pounds
- \item ecolbs. quantity ecolabeled apples, lbs
- \item numlt5. # in household younger than 5
- \item num5_17. # in household 5 to 17
- \item num18_64. # in household 18 to 64
- \item numgt64. # in household older than 64
+ \item \strong{id:} respondent identifier
+ \item \strong{educ:} years schooling
+ \item \strong{date:} date:  month/day/year
+ \item \strong{state:} home state
+ \item \strong{regprc:} price of regular apples
+ \item \strong{ecoprc:} price of ecolabeled apples
+ \item \strong{inseason:} =1 if interviewed in Nov.
+ \item \strong{hhsize:} household size
+ \item \strong{male:} =1 if male
+ \item \strong{faminc:} family income, thousands
+ \item \strong{age:} in years
+ \item \strong{reglbs:} quantity regular apples, pounds
+ \item \strong{ecolbs:} quantity ecolabeled apples, lbs
+ \item \strong{numlt5:} # in household younger than 5
+ \item \strong{num5_17:} # in household 5 to 17
+ \item \strong{num18_64:} # in household 18 to 64
+ \item \strong{numgt64:} # in household older than 64
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(apple)
+data('apple')
 }
 \description{
-Data loads lazily. Type data(apple) into the console.
+Wooldridge Source: These data were used in the doctoral dissertation of Jeffrey Blend, Department of Agricultural Economics, Michigan State University, 1998. The thesis was supervised by Professor Eileen van Ravensway. Drs. Blend and van Ravensway kindly provided the data, which were obtained from a telephone survey conducted by the Institute for Public Policy and Social Research at MSU. Data loads lazily.
 }
+\section{Notes}{
+ This data set is close to a true experimental data set because the price pairs facing a family were randomly determined. In other words, the family head was presented with prices for the eco-labeled and regular apples, and then asked how much of each kind of apple the family would buy at the given prices. As predicted by basic economics, the own price effect is negative (and strong) and the cross price effect is positive (and strong). While the main dependent variable, ecolbs, piles up at zero, estimating a linear model is still worthwhile. Interestingly, because the survey design induces a strong positive correlation between the prices of eco-labeled and regular apples, there is an omitted variable problem if either of the price variables is dropped from the demand equation. A good exam question is to show a simple regression of ecolbs on ecoprc and then a multiple regression on both prices, and ask students to decide whether the price variables must be positively or negatively correlated.
+
+Used in Text: pages 201, 223, 266, 626-627
+}
+
 \examples{
  str(apple)
 }

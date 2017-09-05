@@ -1,21 +1,25 @@
 #' nyse
 #'
-#' Data loads lazily. Type data(nyse) into the console.
+#' Wooldridge Source: These are Wednesday closing prices of value-weighted NYSE average, available in many publications. I do not recall the particular source I used when I collected these data at MIT. Probably the easiest way to get similar data is to go to the NYSE web site, www.nyse.com. Data loads lazily.
+#'
+#' @section 
+#'
+#' Used in Text: pages 388-389, 407, 436, 438, 440-441, 442, 663-664
 #'
 #' @docType data
 #'
-#' @usage data(nyse)
+#' @usage data('nyse')
 #'
-#' @format A data.frame with 691 rows and 8 variables:
+#' @format A data.frame with 691 observations on 8 variables:
 #' \itemize{
-#'  \item price. NYSE stock price index
-#'  \item return. 100*(p - p(-1))/p(-1))
-#'  \item return_1. lagged return
-#'  \item t. 
-#'  \item price_1. 
-#'  \item price_2. 
-#'  \item cprice. price - price_1
-#'  \item cprice_1. lagged cprice
+#'  \item \strong{price:} NYSE stock price index
+#'  \item \strong{return:} 100*(p - p(-1))/p(-1))
+#'  \item \strong{return_1:} lagged return
+#'  \item \strong{t:} 
+#'  \item \strong{price_1:} 
+#'  \item \strong{price_2:} 
+#'  \item \strong{cprice:} price - price_1
+#'  \item \strong{cprice_1:} lagged cprice
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(nyse)

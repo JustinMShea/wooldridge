@@ -1,43 +1,47 @@
 #' cement
 #'
-#' Data loads lazily. Type data(cement) into the console.
+#' Wooldridge Source: J. Shea (1993), “The Input-Output Approach to Instrument Selection,” Journal of Business and Economic Statistics 11, 145-156. Professor Shea kindly provided these data. Data loads lazily.
+#'
+#' @section Notes: Compared with Shea’s analysis, the producer price index (PPI) for fuels and power has been replaced with the PPI for petroleum. The data are monthly and have not been seasonally adjusted.
+#'
+#' Used in Text: pages 579
 #'
 #' @docType data
 #'
-#' @usage data(cement)
+#' @usage data('cement')
 #'
-#' @format A data.frame with 312 rows and 30 variables:
+#' @format A data.frame with 312 observations on 30 variables:
 #' \itemize{
-#'  \item year. 1964-1989
-#'  \item month. 1-12
-#'  \item prccem. BLS ppi for cement
-#'  \item ipcem. industrial prod. index, cement
-#'  \item prcpet. ppi for crude petroleum
-#'  \item rresc. real residential construction
-#'  \item rnonc. real nonres. construction
-#'  \item ip. aggregate index of indus. prod.
-#'  \item rdefs. real defense spending
-#'  \item milemp. military employment
-#'  \item gprc. log(prccem) - log(prccem[_n-1])
-#'  \item gcem. log(ipcem) - log(ipcem[_n-1])
-#'  \item gprcpet. log(prcpet) - log(prcpet[_n-1])
-#'  \item gres. log(rresc) - log(rresc[_n-1])
-#'  \item gnon. log(rnonc) - log(rnonc[_n-1])
-#'  \item gip. log(ip) - log(ip[_n-1])
-#'  \item gdefs. log(rdefs) - log(rdefs[_n-1])
-#'  \item gmilemp. log(milemp) - log(milemp[_n-1])
-#'  \item jan. =1 if month == 1
-#'  \item feb. =1 if month == 2
-#'  \item mar. =1 if month == 3
-#'  \item apr. =1 if month == 4
-#'  \item may. =1 if month == 5
-#'  \item jun. =1 if month == 6
-#'  \item jul. =1 if month == 7
-#'  \item aug. =1 if month == 8
-#'  \item sep. =1 if month == 9
-#'  \item oct. =1 if month == 10
-#'  \item nov. =1 if month == 11
-#'  \item dec. =1 if month == 12
+#'  \item \strong{year:} 1964-1989
+#'  \item \strong{month:} 1-12
+#'  \item \strong{prccem:} BLS ppi for cement
+#'  \item \strong{ipcem:} industrial prod. index, cement
+#'  \item \strong{prcpet:} ppi for crude petroleum
+#'  \item \strong{rresc:} real residential construction
+#'  \item \strong{rnonc:} real nonres. construction
+#'  \item \strong{ip:} aggregate index of indus. prod.
+#'  \item \strong{rdefs:} real defense spending
+#'  \item \strong{milemp:} military employment
+#'  \item \strong{gprc:} log(prccem) - log(prccem[_n-1])
+#'  \item \strong{gcem:} log(ipcem) - log(ipcem[_n-1])
+#'  \item \strong{gprcpet:} log(prcpet) - log(prcpet[_n-1])
+#'  \item \strong{gres:} log(rresc) - log(rresc[_n-1])
+#'  \item \strong{gnon:} log(rnonc) - log(rnonc[_n-1])
+#'  \item \strong{gip:} log(ip) - log(ip[_n-1])
+#'  \item \strong{gdefs:} log(rdefs) - log(rdefs[_n-1])
+#'  \item \strong{gmilemp:} log(milemp) - log(milemp[_n-1])
+#'  \item \strong{jan:} =1 if month == 1
+#'  \item \strong{feb:} =1 if month == 2
+#'  \item \strong{mar:} =1 if month == 3
+#'  \item \strong{apr:} =1 if month == 4
+#'  \item \strong{may:} =1 if month == 5
+#'  \item \strong{jun:} =1 if month == 6
+#'  \item \strong{jul:} =1 if month == 7
+#'  \item \strong{aug:} =1 if month == 8
+#'  \item \strong{sep:} =1 if month == 9
+#'  \item \strong{oct:} =1 if month == 10
+#'  \item \strong{nov:} =1 if month == 11
+#'  \item \strong{dec:} =1 if month == 12
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(cement)

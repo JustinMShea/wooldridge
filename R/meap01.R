@@ -1,24 +1,28 @@
 #' meap01
 #'
-#' Data loads lazily. Type data(meap01) into the console.
+#' Wooldridge Source: Michigan Department of Education, www.michigan.gov/mde Data loads lazily.
+#'
+#' @section Notes: This is another good data set to compare simple and multiple regression estimates. The expenditure variable (in logs, say) and the poverty measure (lunch) are negatively correlated in this data set. A simple regression of math4 on lexppp gives a negative coefficient. Controlling for lunch makes the spending coefficient positive and significant.
+#'
+#' Used in Text: page 18
 #'
 #' @docType data
 #'
-#' @usage data(meap01)
+#' @usage data('meap01')
 #'
-#' @format A data.frame with 1823 rows and 11 variables:
+#' @format A data.frame with 1823 observations on 11 variables:
 #' \itemize{
-#'  \item dcode. district code
-#'  \item bcode. building code
-#'  \item math4. percent students satisfactory, 4th grade math
-#'  \item read4. percent students satisfactory, 4th grade reading
-#'  \item lunch. percent students eligible for free or reduced lunch
-#'  \item enroll. school enrollment
-#'  \item expend. total spending, $
-#'  \item exppp. expenditures per pupil: expend/enroll
-#'  \item lenroll. log(enroll)
-#'  \item lexpend. log(expend)
-#'  \item lexppp. log(exppp)
+#'  \item \strong{dcode:} district code
+#'  \item \strong{bcode:} building code
+#'  \item \strong{math4:} percent students satisfactory, 4th grade math
+#'  \item \strong{read4:} percent students satisfactory, 4th grade reading
+#'  \item \strong{lunch:} percent students eligible for free or reduced lunch
+#'  \item \strong{enroll:} school enrollment
+#'  \item \strong{expend:} total spending, $
+#'  \item \strong{exppp:} expenditures per pupil: expend/enroll
+#'  \item \strong{lenroll:} log(enroll)
+#'  \item \strong{lexpend:} log(expend)
+#'  \item \strong{lexppp:} log(exppp)
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(meap01)

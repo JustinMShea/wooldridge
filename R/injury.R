@@ -1,43 +1,47 @@
 #' injury
 #'
-#' Data loads lazily. Type data(injury) into the console.
+#' Wooldridge Source: B.D. Meyer, W.K. Viscusi, and D.L. Durbin (1995), “Workers’ Compensation and Injury Duration: Evidence from a Natural Experiment,” American Economic Review 85, 322-340. Professor Meyer kindly provided the data. Data loads lazily.
+#'
+#' @section Notes: This data set also can be used to illustrate the Chow test in Chapter 7. In particular, students can test whether the regression functions differ between Kentucky and Michigan. Or, allowing for different intercepts for the two states, do the slopes differ? A good lesson from this example is that a small R-squared is compatible with the ability to estimate the effects of a policy. Of course, for the Michigan data, which has a smaller sample size, the estimated effect is much less precise (but of virtually identical magnitude).
+#'
+#' Used in Text: pages 458-459, 475-476
 #'
 #' @docType data
 #'
-#' @usage data(injury)
+#' @usage data('injury')
 #'
-#' @format A data.frame with 7150 rows and 30 variables:
+#' @format A data.frame with 7150 observations on 30 variables:
 #' \itemize{
-#'  \item durat. duration of benefits
-#'  \item afchnge. =1 if after change in benefits
-#'  \item highearn. =1 if high earner
-#'  \item male. =1 if male
-#'  \item married. =1 if married
-#'  \item hosp. =1 if inj. required hosp. stay
-#'  \item indust. industry
-#'  \item injtype. type of injury
-#'  \item age. age at time of injury
-#'  \item prewage. previous weekly wage, 1982 $
-#'  \item totmed. total med. costs, 1982 $
-#'  \item injdes. 4 digit injury description
-#'  \item benefit. real dollar value of benefit
-#'  \item ky. =1 for kentucky
-#'  \item mi. =1 for michigan
-#'  \item ldurat. log(durat)
-#'  \item afhigh. afchnge*highearn
-#'  \item lprewage. log(wage)
-#'  \item lage. log(age)
-#'  \item ltotmed. log(totmed); = 0 if totmed < 1
-#'  \item head. =1 if head injury
-#'  \item neck. =1 if neck injury
-#'  \item upextr. =1 if upper extremities injury
-#'  \item trunk. =1 if trunk injury
-#'  \item lowback. =1 if lower back injury
-#'  \item lowextr. =1 if lower extremities injury
-#'  \item occdis. =1 if occupational disease
-#'  \item manuf. =1 if manufacturing industry
-#'  \item construc. =1 if construction industry
-#'  \item highlpre. highearn*lprewage
+#'  \item \strong{durat:} duration of benefits
+#'  \item \strong{afchnge:} =1 if after change in benefits
+#'  \item \strong{highearn:} =1 if high earner
+#'  \item \strong{male:} =1 if male
+#'  \item \strong{married:} =1 if married
+#'  \item \strong{hosp:} =1 if inj. required hosp. stay
+#'  \item \strong{indust:} industry
+#'  \item \strong{injtype:} type of injury
+#'  \item \strong{age:} age at time of injury
+#'  \item \strong{prewage:} previous weekly wage, 1982 $
+#'  \item \strong{totmed:} total med. costs, 1982 $
+#'  \item \strong{injdes:} 4 digit injury description
+#'  \item \strong{benefit:} real dollar value of benefit
+#'  \item \strong{ky:} =1 for kentucky
+#'  \item \strong{mi:} =1 for michigan
+#'  \item \strong{ldurat:} log(durat)
+#'  \item \strong{afhigh:} afchnge*highearn
+#'  \item \strong{lprewage:} log(wage)
+#'  \item \strong{lage:} log(age)
+#'  \item \strong{ltotmed:} log(totmed); = 0 if totmed < 1
+#'  \item \strong{head:} =1 if head injury
+#'  \item \strong{neck:} =1 if neck injury
+#'  \item \strong{upextr:} =1 if upper extremities injury
+#'  \item \strong{trunk:} =1 if trunk injury
+#'  \item \strong{lowback:} =1 if lower back injury
+#'  \item \strong{lowextr:} =1 if lower extremities injury
+#'  \item \strong{occdis:} =1 if occupational disease
+#'  \item \strong{manuf:} =1 if manufacturing industry
+#'  \item \strong{construc:} =1 if construction industry
+#'  \item \strong{highlpre:} highearn*lprewage
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(injury)

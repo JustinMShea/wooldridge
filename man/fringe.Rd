@@ -4,57 +4,63 @@
 \name{fringe}
 \alias{fringe}
 \title{fringe}
-\format{A data.frame with 616 rows and 39 variables:
+\format{A data.frame with 616 observations on 39 variables:
 \itemize{
- \item annearn. annual earnings, $
- \item hrearn. hourly earnings, $
- \item exper. years work experience
- \item age. age in years
- \item depends. number of dependents
- \item married. =1 if married
- \item tenure. years with current employer
- \item educ. years schooling
- \item nrtheast. =1 if live in northeast
- \item nrthcen. =1 if live in north central
- \item south. =1 if live in south
- \item male. =1 if male
- \item white. =1 if white
- \item union. =1 if union member
- \item office. 
- \item annhrs. annual hours worked
- \item ind1. industry dummy
- \item ind2. 
- \item ind3. 
- \item ind4. 
- \item ind5. 
- \item ind6. 
- \item ind7. 
- \item ind8. 
- \item ind9. 
- \item vacdays. $ value of vac. days
- \item sicklve. $ value of sick leave
- \item insur. $ value of employee insur
- \item pension. $ value of employee pension
- \item annbens. vacdays+sicklve+insur+pension
- \item hrbens. hourly benefits, $
- \item annhrssq. annhrs^2
- \item beratio. annbens/annearn
- \item lannhrs. log(annhrs)
- \item tenuresq. tenure^2
- \item expersq. exper^2
- \item lannearn. log(annearn)
- \item peratio. pension/annearn
- \item vserat. (vacdays+sicklve)/annearn
+ \item \strong{annearn:} annual earnings, $
+ \item \strong{hrearn:} hourly earnings, $
+ \item \strong{exper:} years work experience
+ \item \strong{age:} age in years
+ \item \strong{depends:} number of dependents
+ \item \strong{married:} =1 if married
+ \item \strong{tenure:} years with current employer
+ \item \strong{educ:} years schooling
+ \item \strong{nrtheast:} =1 if live in northeast
+ \item \strong{nrthcen:} =1 if live in north central
+ \item \strong{south:} =1 if live in south
+ \item \strong{male:} =1 if male
+ \item \strong{white:} =1 if white
+ \item \strong{union:} =1 if union member
+ \item \strong{office:} 
+ \item \strong{annhrs:} annual hours worked
+ \item \strong{ind1:} industry dummy
+ \item \strong{ind2:} 
+ \item \strong{ind3:} 
+ \item \strong{ind4:} 
+ \item \strong{ind5:} 
+ \item \strong{ind6:} 
+ \item \strong{ind7:} 
+ \item \strong{ind8:} 
+ \item \strong{ind9:} 
+ \item \strong{vacdays:} $ value of vac. days
+ \item \strong{sicklve:} $ value of sick leave
+ \item \strong{insur:} $ value of employee insur
+ \item \strong{pension:} $ value of employee pension
+ \item \strong{annbens:} vacdays+sicklve+insur+pension
+ \item \strong{hrbens:} hourly benefits, $
+ \item \strong{annhrssq:} annhrs^2
+ \item \strong{beratio:} annbens/annearn
+ \item \strong{lannhrs:} log(annhrs)
+ \item \strong{tenuresq:} tenure^2
+ \item \strong{expersq:} exper^2
+ \item \strong{lannearn:} log(annearn)
+ \item \strong{peratio:} pension/annearn
+ \item \strong{vserat:} (vacdays+sicklve)/annearn
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(fringe)
+data('fringe')
 }
 \description{
-Data loads lazily. Type data(fringe) into the console.
+Wooldridge Source: F. Vella (1993), “A Simple Estimator for Simultaneous Models with Censored Endogenous Regressors,” International Economic Review 34, 441-457. Professor Vella kindly provided the data. Data loads lazily.
 }
+\section{Notes}{
+ Currently, this data set is used in only one Computer Exercise – to illustrate the Tobit model. It can be used much earlier. First, one could just ignore the pileup at zero and use a linear model where any of the hourly benefit measures is the dependent variable. Another possibility is to use this data set for a problem set in Chapter 4, after students have read Example 4.10. That example, which uses teacher salary/benefit data at the school level, finds the expected tradeoff, although it appears to less than one-to-one. By contrast, if you do a similar analysis with FRINGE.RAW, you will not find a tradeoff. A positive coefficient on the benefit/salary ratio is not too surprising because we probably cannot control for enough factors, especially when looking across different occupations. The Michigan school-level data is more aggregated than one would like, but it does restrict attention to a more homogeneous group: high school teachers in Michigan.
+
+Used in Text: page 624-625
+}
+
 \examples{
  str(fringe)
 }

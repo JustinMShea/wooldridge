@@ -4,31 +4,35 @@
 \name{inven}
 \alias{inven}
 \title{inven}
-\format{A data.frame with 37 rows and 13 variables:
+\format{A data.frame with 37 observations on 13 variables:
 \itemize{
- \item year. 1959-1995
- \item i3. 3 mo. T-bill rate
- \item inf. CPI inflation rate
- \item inven. inventories, billions '92 $
- \item gdp. GDP, billions '92 $
- \item r3. real interest: i3 - inf
- \item cinven. inven - inven[_n-1]
- \item cgdp. gdp - gdp[_n-1]
- \item cr3. r3 - r3[_n-1]
- \item ci3. i3 - i3[_n-1]
- \item cinf. inf - inf[_n-1]
- \item ginven. log(inven) - log(inven[_n-1])
- \item ggdp. log(gdp) - log(gdp[_n-1])
+ \item \strong{year:} 1959-1995
+ \item \strong{i3:} 3 mo. T-bill rate
+ \item \strong{inf:} CPI inflation rate
+ \item \strong{inven:} inventories, billions '92 $
+ \item \strong{gdp:} GDP, billions '92 $
+ \item \strong{r3:} real interest: i3 - inf
+ \item \strong{cinven:} inven - inven[_n-1]
+ \item \strong{cgdp:} gdp - gdp[_n-1]
+ \item \strong{cr3:} r3 - r3[_n-1]
+ \item \strong{ci3:} i3 - i3[_n-1]
+ \item \strong{cinf:} inf - inf[_n-1]
+ \item \strong{ginven:} log(inven) - log(inven[_n-1])
+ \item \strong{ggdp:} log(gdp) - log(gdp[_n-1])
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(inven)
+data('inven')
 }
 \description{
-Data loads lazily. Type data(inven) into the console.
+Wooldridge Source: Economic Report of the President, 1997, Tables B-4, B-20, B-61, and B-71. Data loads lazily.
 }
+\section{Used in Text}{
+ pages 408, 444, 643, 830
+}
+
 \examples{
  str(inven)
 }

@@ -1,28 +1,32 @@
 #' ceosal2
 #'
-#' Data loads lazily. Type data(ceosal2) into the console.
+#' Wooldridge Source: See CEOSAL1.RAW Data loads lazily.
+#'
+#' @section Notes: Compared with CEOSAL1.RAW, in this CEO data set more information about the CEO, rather than about the company, is included.
+#'
+#' Used in Text: pages 64, 111, 163, 214, 335, 699
 #'
 #' @docType data
 #'
-#' @usage data(ceosal2)
+#' @usage data('ceosal2')
 #'
-#' @format A data.frame with 177 rows and 15 variables:
+#' @format A data.frame with 177 observations on 15 variables:
 #' \itemize{
-#'  \item salary. 1990 compensation, $1000s
-#'  \item age. in years
-#'  \item college. =1 if attended college
-#'  \item grad. =1 if attended graduate school
-#'  \item comten. years with company
-#'  \item ceoten. years as ceo with company
-#'  \item sales. 1990 firm sales, millions
-#'  \item profits. 1990 profits, millions
-#'  \item mktval. market value, end 1990, mills.
-#'  \item lsalary. log(salary)
-#'  \item lsales. log(sales)
-#'  \item lmktval. log(mktval)
-#'  \item comtensq. comten^2
-#'  \item ceotensq. ceoten^2
-#'  \item profmarg. profits as percent of sales
+#'  \item \strong{salary:} 1990 compensation, $1000s
+#'  \item \strong{age:} in years
+#'  \item \strong{college:} =1 if attended college
+#'  \item \strong{grad:} =1 if attended graduate school
+#'  \item \strong{comten:} years with company
+#'  \item \strong{ceoten:} years as ceo with company
+#'  \item \strong{sales:} 1990 firm sales, millions
+#'  \item \strong{profits:} 1990 profits, millions
+#'  \item \strong{mktval:} market value, end 1990, mills.
+#'  \item \strong{lsalary:} log(salary)
+#'  \item \strong{lsales:} log(sales)
+#'  \item \strong{lmktval:} log(mktval)
+#'  \item \strong{comtensq:} comten^2
+#'  \item \strong{ceotensq:} ceoten^2
+#'  \item \strong{profmarg:} profits as percent of sales
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(ceosal2)

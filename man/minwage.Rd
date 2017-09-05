@@ -4,76 +4,82 @@
 \name{minwage}
 \alias{minwage}
 \title{minwage}
-\format{A data.frame with 612 rows and 58 variables:
+\format{A data.frame with 612 observations on 58 variables:
 \itemize{
- \item emp232. employment, sector 232, 1000s
- \item wage232. hourly wage, sector 232, $
- \item emp236. 
- \item wage236. 
- \item emp234. 
- \item wage234. 
- \item emp314. 
- \item wage314. 
- \item emp228. 
- \item wage228. 
- \item emp233. 
- \item wage233. 
- \item emp394. 
- \item wage394. 
- \item emp231. 
- \item wage231. 
- \item emp226. 
- \item wage226. 
- \item emp387. 
- \item wage387. 
- \item emp056. 
- \item wage056. 
- \item unem. civilian unemployment rate, percent
- \item cpi. Consumer Price Index (urban), 1982-1984 = 100
- \item minwage. Federal minimum wage, $/hour
- \item lemp232. log(emp232)
- \item lwage232. log(wage232)
- \item gemp232. lemp232 - lemp232[_n-1]
- \item gwage232. lwage232 - lwage232[_n-1]
- \item lminwage. log(minwage)
- \item gmwage. lminwage - lminwage[_n-1]
- \item gmwage_1. gmwage[_n-1]
- \item gmwage_2. 
- \item gmwage_3. 
- \item gmwage_4. 
- \item gmwage_5. 
- \item gmwage_6. 
- \item gmwage_7. 
- \item gmwage_8. 
- \item gmwage_9. 
- \item gmwage_10. 
- \item gmwage_11. 
- \item gmwage_12. 
- \item lemp236. 
- \item gcpi. lcpi - lcpi[_n-1]
- \item lcpi. log(cpi)
- \item lwage236. 
- \item gemp236. 
- \item gwage236. 
- \item lemp234. 
- \item lwage234. 
- \item gemp234. 
- \item gwage234. 
- \item lemp314. 
- \item lwage314. 
- \item gemp314. 
- \item gwage314. 
- \item t. linear time trend, 1 to 612
+ \item \strong{emp232:} employment, sector 232, 1000s
+ \item \strong{wage232:} hourly wage, sector 232, $
+ \item \strong{emp236:} 
+ \item \strong{wage236:} 
+ \item \strong{emp234:} 
+ \item \strong{wage234:} 
+ \item \strong{emp314:} 
+ \item \strong{wage314:} 
+ \item \strong{emp228:} 
+ \item \strong{wage228:} 
+ \item \strong{emp233:} 
+ \item \strong{wage233:} 
+ \item \strong{emp394:} 
+ \item \strong{wage394:} 
+ \item \strong{emp231:} 
+ \item \strong{wage231:} 
+ \item \strong{emp226:} 
+ \item \strong{wage226:} 
+ \item \strong{emp387:} 
+ \item \strong{wage387:} 
+ \item \strong{emp056:} 
+ \item \strong{wage056:} 
+ \item \strong{unem:} civilian unemployment rate, percent
+ \item \strong{cpi:} Consumer Price Index (urban), 1982-1984 = 100
+ \item \strong{minwage:} Federal minimum wage, $/hour
+ \item \strong{lemp232:} log(emp232)
+ \item \strong{lwage232:} log(wage232)
+ \item \strong{gemp232:} lemp232 - lemp232[_n-1]
+ \item \strong{gwage232:} lwage232 - lwage232[_n-1]
+ \item \strong{lminwage:} log(minwage)
+ \item \strong{gmwage:} lminwage - lminwage[_n-1]
+ \item \strong{gmwage_1:} gmwage[_n-1]
+ \item \strong{gmwage_2:} 
+ \item \strong{gmwage_3:} 
+ \item \strong{gmwage_4:} 
+ \item \strong{gmwage_5:} 
+ \item \strong{gmwage_6:} 
+ \item \strong{gmwage_7:} 
+ \item \strong{gmwage_8:} 
+ \item \strong{gmwage_9:} 
+ \item \strong{gmwage_10:} 
+ \item \strong{gmwage_11:} 
+ \item \strong{gmwage_12:} 
+ \item \strong{lemp236:} 
+ \item \strong{gcpi:} lcpi - lcpi[_n-1]
+ \item \strong{lcpi:} log(cpi)
+ \item \strong{lwage236:} 
+ \item \strong{gemp236:} 
+ \item \strong{gwage236:} 
+ \item \strong{lemp234:} 
+ \item \strong{lwage234:} 
+ \item \strong{gemp234:} 
+ \item \strong{gwage234:} 
+ \item \strong{lemp314:} 
+ \item \strong{lwage314:} 
+ \item \strong{gemp314:} 
+ \item \strong{gwage314:} 
+ \item \strong{t:} linear time trend, 1 to 612
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(minwage)
+data('minwage')
 }
 \description{
-Data loads lazily. Type data(minwage) into the console.
+Wooldridge Source: P. Wolfson and D. Belman (2004), “The Minimum Wage: Consequences for Prices and Quantities in Low-Wage Labor Markets,” Journal of Business & Economic Statistics 22, 296-311. Professor Belman kindly provided the data. Data loads lazily.
 }
+\section{Notes}{
+ The sectors corresponding to the different numbers in the data file are provided in the Wolfson and Bellman and article.
+
+Used in Text: pages 379, 410, 444-445, 674-675
+}
+
 \examples{
  str(minwage)
 }

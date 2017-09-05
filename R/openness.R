@@ -1,25 +1,29 @@
 #' openness
 #'
-#' Data loads lazily. Type data(openness) into the console.
+#' Wooldridge Source: D. Romer (1993), “Openness and Inflation: Theory and Evidence,” Quarterly Journal of Economics 108, 869-903. The data are included in the article. Data loads lazily.
+#'
+#' @section 
+#'
+#' Used in Text: pages 566, 579
 #'
 #' @docType data
 #'
-#' @usage data(openness)
+#' @usage data('openness')
 #'
-#' @format A data.frame with 114 rows and 12 variables:
+#' @format A data.frame with 114 observations on 12 variables:
 #' \itemize{
-#'  \item open. imports as percent GDP, '73-
-#'  \item inf. avg. annual inflation, '73-
-#'  \item pcinc. 1980 per capita inc., U.S. $
-#'  \item land. land area, square miles
-#'  \item oil. =1 if major oil producer
-#'  \item good. =1 if 'good' data
-#'  \item lpcinc. log(pcinc)
-#'  \item lland. log(land)
-#'  \item lopen. log(open)
-#'  \item linf. log(inf)
-#'  \item opendec. open/100
-#'  \item linfdec. log(inf/100)
+#'  \item \strong{open:} imports as percent GDP, '73-
+#'  \item \strong{inf:} avg. annual inflation, '73-
+#'  \item \strong{pcinc:} 1980 per capita inc., U.S. $
+#'  \item \strong{land:} land area, square miles
+#'  \item \strong{oil:} =1 if major oil producer
+#'  \item \strong{good:} =1 if 'good' data
+#'  \item \strong{lpcinc:} log(pcinc)
+#'  \item \strong{lland:} log(land)
+#'  \item \strong{lopen:} log(open)
+#'  \item \strong{linf:} log(inf)
+#'  \item \strong{opendec:} open/100
+#'  \item \strong{linfdec:} log(inf/100)
 #' }
 #' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 #' @examples  str(openness)

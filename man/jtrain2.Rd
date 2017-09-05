@@ -4,37 +4,43 @@
 \name{jtrain2}
 \alias{jtrain2}
 \title{jtrain2}
-\format{A data.frame with 445 rows and 19 variables:
+\format{A data.frame with 445 observations on 19 variables:
 \itemize{
- \item train. =1 if assigned to job training
- \item age. age in 1977
- \item educ. years of education
- \item black. =1 if black
- \item hisp. =1 if Hispanic
- \item married. =1 if married
- \item nodegree. =1 if no high school degree
- \item mosinex. # mnths prior to 1/78 in expmnt
- \item re74. real earns., 1974, $1000s
- \item re75. real earns., 1975, $1000s
- \item re78. real earns., 1978, $1000s
- \item unem74. =1 if unem. all of 1974
- \item unem75. =1 if unem. all of 1975
- \item unem78. =1 if unem. all of 1978
- \item lre74. log(re74); zero if re74 == 0
- \item lre75. log(re75); zero if re75 == 0
- \item lre78. log(re78); zero if re78 == 0
- \item agesq. age^2
- \item mostrn. months in training
+ \item \strong{train:} =1 if assigned to job training
+ \item \strong{age:} age in 1977
+ \item \strong{educ:} years of education
+ \item \strong{black:} =1 if black
+ \item \strong{hisp:} =1 if Hispanic
+ \item \strong{married:} =1 if married
+ \item \strong{nodegree:} =1 if no high school degree
+ \item \strong{mosinex:} # mnths prior to 1/78 in expmnt
+ \item \strong{re74:} real earns., 1974, $1000s
+ \item \strong{re75:} real earns., 1975, $1000s
+ \item \strong{re78:} real earns., 1978, $1000s
+ \item \strong{unem74:} =1 if unem. all of 1974
+ \item \strong{unem75:} =1 if unem. all of 1975
+ \item \strong{unem78:} =1 if unem. all of 1978
+ \item \strong{lre74:} log(re74); zero if re74 == 0
+ \item \strong{lre75:} log(re75); zero if re75 == 0
+ \item \strong{lre78:} log(re78); zero if re78 == 0
+ \item \strong{agesq:} age^2
+ \item \strong{mostrn:} months in training
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(jtrain2)
+data('jtrain2')
 }
 \description{
-Data loads lazily. Type data(jtrain2) into the console.
+Wooldridge Source: R.J. Lalonde (1986), “Evaluating the Econometric Evaluations of Training Programs with Experimental Data,” American Economic Review 76, 604-620. Professor Jeff Biddle, at MSU, kindly passed the data set along to me. He obtained it from Professor Lalonde. Data loads lazily.
 }
+\section{Notes}{
+ Professor Lalonde obtained the data from the National Supported Work Demonstration job-training program conducted by the Manpower Demonstration Research Corporation in the mid 1970s. Training status was randomly assigned, so this is essentially experimental data. Computer Exercise C17.8 looks only at the effects of training on subsequent unemployment probabilities. For illustrating the more advanced methods in Chapter 17, a good exercise would be to have the students estimate a Tobit of re78 on train, and obtain estimates of the expected values for those with and without training. These can be compared with the sample averages.
+
+Used in Text: pages 18, 340-341, 626
+}
+
 \examples{
  str(jtrain2)
 }

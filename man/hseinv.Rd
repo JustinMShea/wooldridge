@@ -4,32 +4,36 @@
 \name{hseinv}
 \alias{hseinv}
 \title{hseinv}
-\format{A data.frame with 42 rows and 14 variables:
+\format{A data.frame with 42 observations on 14 variables:
 \itemize{
- \item year. 1947-1988
- \item inv. real housing inv, millions $
- \item pop. population, 1000s
- \item price. housing price index; 1982 = 1
- \item linv. log(inv)
- \item lpop. log(pop)
- \item lprice. log(price)
- \item t. time trend: t=1,...,42
- \item invpc. per capita inv: inv/pop
- \item linvpc. log(invpc)
- \item lprice_1. lprice[_n-1]
- \item linvpc_1. linvpc[_n-1]
- \item gprice. lprice - lprice_1
- \item ginvpc. linvpc - linvpc_1
+ \item \strong{year:} 1947-1988
+ \item \strong{inv:} real housing inv, millions $
+ \item \strong{pop:} population, 1000s
+ \item \strong{price:} housing price index; 1982 = 1
+ \item \strong{linv:} log(inv)
+ \item \strong{lpop:} log(pop)
+ \item \strong{lprice:} log(price)
+ \item \strong{t:} time trend: t=1,...,42
+ \item \strong{invpc:} per capita inv: inv/pop
+ \item \strong{linvpc:} log(invpc)
+ \item \strong{lprice_1:} lprice[_n-1]
+ \item \strong{linvpc_1:} linvpc[_n-1]
+ \item \strong{gprice:} lprice - lprice_1
+ \item \strong{ginvpc:} linvpc - linvpc_1
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(hseinv)
+data('hseinv')
 }
 \description{
-Data loads lazily. Type data(hseinv) into the console.
+Wooldridge Source: D. McFadden (1994), “Demographics, the Housing Market, and the Welfare of the Elderly,” in D.A. Wise (ed.), Studies in the Economics of Aging. Chicago: University of Chicago Press, 225-285. The data are contained in the article. Data loads lazily.
 }
+\section{Used in Text}{
+ pages 367, 370, 407, 638-639, 822?
+}
+
 \examples{
  str(hseinv)
 }

@@ -4,77 +4,83 @@
 \name{crime4}
 \alias{crime4}
 \title{crime4}
-\format{A data.frame with 630 rows and 59 variables:
+\format{A data.frame with 630 observations on 59 variables:
 \itemize{
- \item county. county identifier
- \item year. 81 to 87
- \item crmrte. crimes committed per person
- \item prbarr. 'probability' of arrest
- \item prbconv. 'probability' of conviction
- \item prbpris. 'probability' of prison sentenc
- \item avgsen. avg. sentence, days
- \item polpc. police per capita
- \item density. people per sq. mile
- \item taxpc. tax revenue per capita
- \item west. =1 if in western N.C.
- \item central. =1 if in central N.C.
- \item urban. =1 if in SMSA
- \item pctmin80. perc. minority, 1980
- \item wcon. weekly wage, construction
- \item wtuc. wkly wge, trns, util, commun
- \item wtrd. wkly wge, whlesle, retail trade
- \item wfir. wkly wge, fin, ins, real est
- \item wser. wkly wge, service industry
- \item wmfg. wkly wge, manufacturing
- \item wfed. wkly wge, fed employees
- \item wsta. wkly wge, state employees
- \item wloc. wkly wge, local gov emps
- \item mix. offense mix: face-to-face/other
- \item pctymle. percent young male
- \item d82. =1 if year == 82
- \item d83. =1 if year == 83
- \item d84. =1 if year == 84
- \item d85. =1 if year == 85
- \item d86. =1 if year == 86
- \item d87. =1 if year == 87
- \item lcrmrte. log(crmrte)
- \item lprbarr. log(prbarr)
- \item lprbconv. log(prbconv)
- \item lprbpris. log(prbpris)
- \item lavgsen. log(avgsen)
- \item lpolpc. log(polpc)
- \item ldensity. log(density)
- \item ltaxpc. log(taxpc)
- \item lwcon. log(wcon)
- \item lwtuc. log(wtuc)
- \item lwtrd. log(wtrd)
- \item lwfir. log(wfir)
- \item lwser. log(wser)
- \item lwmfg. log(wmfg)
- \item lwfed. log(wfed)
- \item lwsta. log(wsta)
- \item lwloc. log(wloc)
- \item lmix. log(mix)
- \item lpctymle. log(pctymle)
- \item lpctmin. log(pctmin)
- \item clcrmrte. lcrmrte - lcrmrte[_n-1]
- \item clprbarr. lprbarr - lprbarr[_n-1]
- \item clprbcon. lprbconv - lprbconv[_n-1]
- \item clprbpri. lprbpri - lprbpri[t-1]
- \item clavgsen. lavgsen - lavgsen[t-1]
- \item clpolpc. lpolpc - lpolpc[t-1]
- \item cltaxpc. ltaxpc - ltaxpc[t-1]
- \item clmix. lmix - lmix[t-1]
+ \item \strong{county:} county identifier
+ \item \strong{year:} 81 to 87
+ \item \strong{crmrte:} crimes committed per person
+ \item \strong{prbarr:} 'probability' of arrest
+ \item \strong{prbconv:} 'probability' of conviction
+ \item \strong{prbpris:} 'probability' of prison sentenc
+ \item \strong{avgsen:} avg. sentence, days
+ \item \strong{polpc:} police per capita
+ \item \strong{density:} people per sq. mile
+ \item \strong{taxpc:} tax revenue per capita
+ \item \strong{west:} =1 if in western N.C.
+ \item \strong{central:} =1 if in central N.C.
+ \item \strong{urban:} =1 if in SMSA
+ \item \strong{pctmin80:} perc. minority, 1980
+ \item \strong{wcon:} weekly wage, construction
+ \item \strong{wtuc:} wkly wge, trns, util, commun
+ \item \strong{wtrd:} wkly wge, whlesle, retail trade
+ \item \strong{wfir:} wkly wge, fin, ins, real est
+ \item \strong{wser:} wkly wge, service industry
+ \item \strong{wmfg:} wkly wge, manufacturing
+ \item \strong{wfed:} wkly wge, fed employees
+ \item \strong{wsta:} wkly wge, state employees
+ \item \strong{wloc:} wkly wge, local gov emps
+ \item \strong{mix:} offense mix: face-to-face/other
+ \item \strong{pctymle:} percent young male
+ \item \strong{d82:} =1 if year == 82
+ \item \strong{d83:} =1 if year == 83
+ \item \strong{d84:} =1 if year == 84
+ \item \strong{d85:} =1 if year == 85
+ \item \strong{d86:} =1 if year == 86
+ \item \strong{d87:} =1 if year == 87
+ \item \strong{lcrmrte:} log(crmrte)
+ \item \strong{lprbarr:} log(prbarr)
+ \item \strong{lprbconv:} log(prbconv)
+ \item \strong{lprbpris:} log(prbpris)
+ \item \strong{lavgsen:} log(avgsen)
+ \item \strong{lpolpc:} log(polpc)
+ \item \strong{ldensity:} log(density)
+ \item \strong{ltaxpc:} log(taxpc)
+ \item \strong{lwcon:} log(wcon)
+ \item \strong{lwtuc:} log(wtuc)
+ \item \strong{lwtrd:} log(wtrd)
+ \item \strong{lwfir:} log(wfir)
+ \item \strong{lwser:} log(wser)
+ \item \strong{lwmfg:} log(wmfg)
+ \item \strong{lwfed:} log(wfed)
+ \item \strong{lwsta:} log(wsta)
+ \item \strong{lwloc:} log(wloc)
+ \item \strong{lmix:} log(mix)
+ \item \strong{lpctymle:} log(pctymle)
+ \item \strong{lpctmin:} log(pctmin)
+ \item \strong{clcrmrte:} lcrmrte - lcrmrte[_n-1]
+ \item \strong{clprbarr:} lprbarr - lprbarr[_n-1]
+ \item \strong{clprbcon:} lprbconv - lprbconv[_n-1]
+ \item \strong{clprbpri:} lprbpri - lprbpri[t-1]
+ \item \strong{clavgsen:} lavgsen - lavgsen[t-1]
+ \item \strong{clpolpc:} lpolpc - lpolpc[t-1]
+ \item \strong{cltaxpc:} ltaxpc - ltaxpc[t-1]
+ \item \strong{clmix:} lmix - lmix[t-1]
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(crime4)
+data('crime4')
 }
 \description{
-Data loads lazily. Type data(crime4) into the console.
+Wooldridge Source: From C. Cornwell and W. Trumball (1994), “Estimating the Economic Model of Crime with Panel Data,” Review of Economics and Statistics 76, 360-366. Professor Cornwell kindly provided the data. Data loads lazily.
 }
+\section{Notes}{
+ Computer Exercise C16.7 shows that variables that might seem to be good instrumental variable candidates are not always so good, especially after applying a transformation such as differencing across time. You could have the students do an IV analysis for just, say, 1987.
+
+Used in Text: pages 471-472, 479, 504, 580
+}
+
 \examples{
  str(crime4)
 }

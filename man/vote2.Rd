@@ -4,44 +4,50 @@
 \name{vote2}
 \alias{vote2}
 \title{vote2}
-\format{A data.frame with 186 rows and 26 variables:
+\format{A data.frame with 186 observations on 26 variables:
 \itemize{
- \item state. state postal code
- \item district. U.S. Congressional district
- \item democ. =1 if incumbent democrat
- \item vote90. inc. share two-party vote, 1990
- \item vote88. inc. share two-party vote, 1988
- \item inexp90. inc. camp. expends., 1990
- \item chexp90. chl. camp. expends., 1990
- \item inexp88. inc. camp. expends., 1988
- \item chexp88. chl. camp. expends., 1988
- \item prtystr. percent vote pres., same party, 1988
- \item rptchall. =1 if a repeat challenger
- \item tenure. years in H.R.
- \item lawyer. =1 if law degree
- \item linexp90. log(inexp90)
- \item lchexp90. log(chexp90)
- \item linexp88. log(inexp88)
- \item lchexp88. log(chexp88)
- \item incshr90. 100*(inexp90/(inexp90+chexp90))
- \item incshr88. 100*(inexp88/(inexp88+chexp88))
- \item cvote. vote90 - vote88
- \item clinexp. linexp90 - linexp88
- \item clchexp. lchexp90 - lchexp88
- \item cincshr. incshr90 - incshr88
- \item win88. =1 by definition
- \item win90. =1 if inc. wins, 1990
- \item cwin. win90 - win88
+ \item \strong{state:} state postal code
+ \item \strong{district:} U.S. Congressional district
+ \item \strong{democ:} =1 if incumbent democrat
+ \item \strong{vote90:} inc. share two-party vote, 1990
+ \item \strong{vote88:} inc. share two-party vote, 1988
+ \item \strong{inexp90:} inc. camp. expends., 1990
+ \item \strong{chexp90:} chl. camp. expends., 1990
+ \item \strong{inexp88:} inc. camp. expends., 1988
+ \item \strong{chexp88:} chl. camp. expends., 1988
+ \item \strong{prtystr:} percent vote pres., same party, 1988
+ \item \strong{rptchall:} =1 if a repeat challenger
+ \item \strong{tenure:} years in H.R.
+ \item \strong{lawyer:} =1 if law degree
+ \item \strong{linexp90:} log(inexp90)
+ \item \strong{lchexp90:} log(chexp90)
+ \item \strong{linexp88:} log(inexp88)
+ \item \strong{lchexp88:} log(chexp88)
+ \item \strong{incshr90:} 100*(inexp90/(inexp90+chexp90))
+ \item \strong{incshr88:} 100*(inexp88/(inexp88+chexp88))
+ \item \strong{cvote:} vote90 - vote88
+ \item \strong{clinexp:} linexp90 - linexp88
+ \item \strong{clchexp:} lchexp90 - lchexp88
+ \item \strong{cincshr:} incshr90 - incshr88
+ \item \strong{win88:} =1 by definition
+ \item \strong{win90:} =1 if inc. wins, 1990
+ \item \strong{cwin:} win90 - win88
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(vote2)
+data('vote2')
 }
 \description{
-Data loads lazily. Type data(vote2) into the console.
+Wooldridge Source: See VOTE1.RAW Data loads lazily.
 }
+\section{Notes}{
+ These are panel data, at the Congressional district level, collected for the 1988 and 1990 U.S. House of Representative elections. Of course, much more recent data are available, possibly even in electronic form.
+
+Used in Text: pages 335-336, 478, 699
+}
+
 \examples{
  str(vote2)
 }

@@ -4,28 +4,32 @@
 \name{vote1}
 \alias{vote1}
 \title{vote1}
-\format{A data.frame with 173 rows and 10 variables:
+\format{A data.frame with 173 observations on 10 variables:
 \itemize{
- \item state. state postal code
- \item district. congressional district
- \item democA. =1 if A is democrat
- \item voteA. percent vote for A
- \item expendA. camp. expends. by A, $1000s
- \item expendB. camp. expends. by B, $1000s
- \item prtystrA. percent vote for president
- \item lexpendA. log(expendA)
- \item lexpendB. log(expendB)
- \item shareA. 100*(expendA/(expendA+expendB))
+ \item \strong{state:} state postal code
+ \item \strong{district:} congressional district
+ \item \strong{democA:} =1 if A is democrat
+ \item \strong{voteA:} percent vote for A
+ \item \strong{expendA:} camp. expends. by A, $1000s
+ \item \strong{expendB:} camp. expends. by B, $1000s
+ \item \strong{prtystrA:} percent vote for president
+ \item \strong{lexpendA:} log(expendA)
+ \item \strong{lexpendB:} log(expendB)
+ \item \strong{shareA:} 100*(expendA/(expendA+expendB))
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(vote1)
+data('vote1')
 }
 \description{
-Data loads lazily. Type data(vote1) into the console.
+Wooldridge Source: From M. Barone and G. Ujifusa, The Almanac of American Politics, 1992. Washington, DC: National Journal. Data loads lazily.
 }
+\section{Used in Text}{
+ pages 34, 39, 164, 221-222, 299, 699
+}
+
 \examples{
  str(vote1)
 }

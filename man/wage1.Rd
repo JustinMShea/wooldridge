@@ -4,42 +4,48 @@
 \name{wage1}
 \alias{wage1}
 \title{wage1}
-\format{A data.frame with 526 rows and 24 variables:
+\format{A data.frame with 526 observations on 24 variables:
 \itemize{
- \item wage. average hourly earnings
- \item educ. years of education
- \item exper. years potential experience
- \item tenure. years with current employer
- \item nonwhite. =1 if nonwhite
- \item female. =1 if female
- \item married. =1 if married
- \item numdep. number of dependents
- \item smsa. =1 if live in SMSA
- \item northcen. =1 if live in north central U.S
- \item south. =1 if live in southern region
- \item west. =1 if live in western region
- \item construc. =1 if work in construc. indus.
- \item ndurman. =1 if in nondur. manuf. indus.
- \item trcommpu. =1 if in trans, commun, pub ut
- \item trade. =1 if in wholesale or retail
- \item services. =1 if in services indus.
- \item profserv. =1 if in prof. serv. indus.
- \item profocc. =1 if in profess. occupation
- \item clerocc. =1 if in clerical occupation
- \item servocc. =1 if in service occupation
- \item lwage. log(wage)
- \item expersq. exper^2
- \item tenursq. tenure^2
+ \item \strong{wage:} average hourly earnings
+ \item \strong{educ:} years of education
+ \item \strong{exper:} years potential experience
+ \item \strong{tenure:} years with current employer
+ \item \strong{nonwhite:} =1 if nonwhite
+ \item \strong{female:} =1 if female
+ \item \strong{married:} =1 if married
+ \item \strong{numdep:} number of dependents
+ \item \strong{smsa:} =1 if live in SMSA
+ \item \strong{northcen:} =1 if live in north central U.S
+ \item \strong{south:} =1 if live in southern region
+ \item \strong{west:} =1 if live in western region
+ \item \strong{construc:} =1 if work in construc. indus.
+ \item \strong{ndurman:} =1 if in nondur. manuf. indus.
+ \item \strong{trcommpu:} =1 if in trans, commun, pub ut
+ \item \strong{trade:} =1 if in wholesale or retail
+ \item \strong{services:} =1 if in services indus.
+ \item \strong{profserv:} =1 if in prof. serv. indus.
+ \item \strong{profocc:} =1 if in profess. occupation
+ \item \strong{clerocc:} =1 if in clerical occupation
+ \item \strong{servocc:} =1 if in service occupation
+ \item \strong{lwage:} log(wage)
+ \item \strong{expersq:} exper^2
+ \item \strong{tenursq:} tenure^2
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(wage1)
+data('wage1')
 }
 \description{
-Data loads lazily. Type data(wage1) into the console.
+Wooldridge Source: These are data from the 1976 Current Population Survey, collected by Henry Farber when he and I were colleagues at MIT in 1988. Data loads lazily.
 }
+\section{Notes}{
+ Barry Murphy, of the University of Portsmouth in the UK, has pointed out that for several observations the values for exper and tenure are in logical conflict. In particular, for some workers the number of years with current employer (tenure) is greater than overall work experience (exper). At least some of these conflicts are due to the definition of exper as “potential” work experience, but probably not all. Nevertheless, I am using the data set as it was supplied to me.
+
+Used in Text: pages 7, 17, 33-34, 37, 76, 91, 125, 183, 194-195, 220, 231, 234, 235-236, 240-241, 243-244, 263, 272, 326, 678
+}
+
 \examples{
  str(wage1)
 }

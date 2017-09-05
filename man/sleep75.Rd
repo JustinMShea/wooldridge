@@ -4,52 +4,58 @@
 \name{sleep75}
 \alias{sleep75}
 \title{sleep75}
-\format{A data.frame with 706 rows and 34 variables:
+\format{A data.frame with 706 observations on 34 variables:
 \itemize{
- \item age. in years
- \item black. =1 if black
- \item case. identifier
- \item clerical. =1 if clerical worker
- \item construc. =1 if construction worker
- \item educ. years of schooling
- \item earns74. total earnings, 1974
- \item gdhlth. =1 if in good or excel. health
- \item inlf. =1 if in labor force
- \item leis1. sleep - totwrk
- \item leis2. slpnaps - totwrk
- \item leis3. rlxall - totwrk
- \item smsa. =1 if live in smsa
- \item lhrwage. log hourly wage
- \item lothinc. log othinc, unless othinc < 0
- \item male. =1 if male
- \item marr. =1 if married
- \item prot. =1 if Protestant
- \item rlxall. slpnaps + personal activs
- \item selfe. =1 if self employed
- \item sleep. mins sleep at night, per wk
- \item slpnaps. minutes sleep, inc. naps
- \item south. =1 if live in south
- \item spsepay. spousal wage income
- \item spwrk75. =1 if spouse works
- \item totwrk. mins worked per week
- \item union. =1 if belong to union
- \item worknrm. mins work main job
- \item workscnd. mins work second job
- \item exper. age - educ - 6
- \item yngkid. =1 if children < 3 present
- \item yrsmarr. years married
- \item hrwage. hourly wage
- \item agesq. age^2
+ \item \strong{age:} in years
+ \item \strong{black:} =1 if black
+ \item \strong{case:} identifier
+ \item \strong{clerical:} =1 if clerical worker
+ \item \strong{construc:} =1 if construction worker
+ \item \strong{educ:} years of schooling
+ \item \strong{earns74:} total earnings, 1974
+ \item \strong{gdhlth:} =1 if in good or excel. health
+ \item \strong{inlf:} =1 if in labor force
+ \item \strong{leis1:} sleep - totwrk
+ \item \strong{leis2:} slpnaps - totwrk
+ \item \strong{leis3:} rlxall - totwrk
+ \item \strong{smsa:} =1 if live in smsa
+ \item \strong{lhrwage:} log hourly wage
+ \item \strong{lothinc:} log othinc, unless othinc < 0
+ \item \strong{male:} =1 if male
+ \item \strong{marr:} =1 if married
+ \item \strong{prot:} =1 if Protestant
+ \item \strong{rlxall:} slpnaps + personal activs
+ \item \strong{selfe:} =1 if self employed
+ \item \strong{sleep:} mins sleep at night, per wk
+ \item \strong{slpnaps:} minutes sleep, inc. naps
+ \item \strong{south:} =1 if live in south
+ \item \strong{spsepay:} spousal wage income
+ \item \strong{spwrk75:} =1 if spouse works
+ \item \strong{totwrk:} mins worked per week
+ \item \strong{union:} =1 if belong to union
+ \item \strong{worknrm:} mins work main job
+ \item \strong{workscnd:} mins work second job
+ \item \strong{exper:} age - educ - 6
+ \item \strong{yngkid:} =1 if children < 3 present
+ \item \strong{yrsmarr:} years married
+ \item \strong{hrwage:} hourly wage
+ \item \strong{agesq:} age^2
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(sleep75)
+data('sleep75')
 }
 \description{
-Data loads lazily. Type data(sleep75) into the console.
+Wooldridge Source: J.E. Biddle and D.S. Hamermesh (1990), “Sleep and the Allocation of Time,” Journal of Political Economy 98, 922-943. Professor Biddle kindly provided the data. Data loads lazily.
 }
+\section{Notes}{
+ In their article, Biddle and Hamermesh include an hourly wage measure in the sleep equation. An econometric problem that arises is that the hourly wage is missing for those who do not work. Plus, the wage offer may be endogenous (even if it were always observed). Biddle and Hamermesh employ extensions of the sample selection methods in Section 17.5. See their article for details.
+
+Used in Text: pages 64, 106-107, 162, 259, 263, 299
+}
+
 \examples{
  str(sleep75)
 }

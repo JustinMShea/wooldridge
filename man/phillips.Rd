@@ -4,25 +4,29 @@
 \name{phillips}
 \alias{phillips}
 \title{phillips}
-\format{A data.frame with 56 rows and 7 variables:
+\format{A data.frame with 56 observations on 7 variables:
 \itemize{
- \item year. 1948 through 2003
- \item unem. civilian unemployment rate, percent
- \item inf. percentage change in CPI
- \item inf_1. inf[_n-1]
- \item unem_1. unem[_n-1]
- \item cinf. inf - inf_1
- \item cunem. unem - unem_1
+ \item \strong{year:} 1948 through 2003
+ \item \strong{unem:} civilian unemployment rate, percent
+ \item \strong{inf:} percentage change in CPI
+ \item \strong{inf_1:} inf[_n-1]
+ \item \strong{unem_1:} unem[_n-1]
+ \item \strong{cinf:} inf - inf_1
+ \item \strong{cunem:} unem - unem_1
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(phillips)
+data('phillips')
 }
 \description{
-Data loads lazily. Type data(phillips) into the console.
+Wooldridge Source: Economic Report of the President, 2004, Tables B-42 and B-64. Data loads lazily.
 }
+\section{Used in Text}{
+ pages 355-356, 379, 390-391, 408, 409, 409, 418, 428, 443, 548-549, 642, 656, 659, 662, 672, 817.
+}
+
 \examples{
  str(phillips)
 }

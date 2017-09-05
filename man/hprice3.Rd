@@ -4,37 +4,41 @@
 \name{hprice3}
 \alias{hprice3}
 \title{hprice3}
-\format{A data.frame with 321 rows and 19 variables:
+\format{A data.frame with 321 observations on 19 variables:
 \itemize{
- \item year. 1978, 1981
- \item age. age of house
- \item agesq. age^2
- \item nbh. neighborhood, 1-6
- \item cbd. dist. to cent. bus. dstrct, ft.
- \item inst. dist. to interstate, ft.
- \item linst. log(inst)
- \item price. selling price
- \item rooms. # rooms in house
- \item area. square footage of house
- \item land. square footage lot
- \item baths. # bathrooms
- \item dist. dist. from house to incin., ft.
- \item ldist. log(dist)
- \item lprice. log(price)
- \item y81. =1 if year = 1981
- \item larea. log(area)
- \item lland. log(land)
- \item linstsq. linst^2
+ \item \strong{year:} 1978, 1981
+ \item \strong{age:} age of house
+ \item \strong{agesq:} age^2
+ \item \strong{nbh:} neighborhood, 1-6
+ \item \strong{cbd:} dist. to cent. bus. dstrct, ft.
+ \item \strong{inst:} dist. to interstate, ft.
+ \item \strong{linst:} log(inst)
+ \item \strong{price:} selling price
+ \item \strong{rooms:} # rooms in house
+ \item \strong{area:} square footage of house
+ \item \strong{land:} square footage lot
+ \item \strong{baths:} # bathrooms
+ \item \strong{dist:} dist. from house to incin., ft.
+ \item \strong{ldist:} log(dist)
+ \item \strong{lprice:} log(price)
+ \item \strong{y81:} =1 if year = 1981
+ \item \strong{larea:} log(area)
+ \item \strong{lland:} log(land)
+ \item \strong{linstsq:} linst^2
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(hprice3)
+data('hprice3')
 }
 \description{
-Data loads lazily. Type data(hprice3) into the console.
+Wooldridge  Data loads lazily.
 }
+\section{}{
+NA
+}
+
 \examples{
  str(hprice3)
 }

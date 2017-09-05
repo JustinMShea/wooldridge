@@ -4,26 +4,30 @@
 \name{beveridge}
 \alias{beveridge}
 \title{beveridge}
-\format{A data.frame with 135 rows and 8 variables:
+\format{A data.frame with 135 observations on 8 variables:
 \itemize{
- \item month. dec 200 through feb 2012
- \item urate. unemployment rate, percent
- \item vrate. vacancy rate, percent
- \item t. linear time trend
- \item urate_1. L.urate
- \item vrate_1. L.vrate
- \item curate. D.urate
- \item cvrate. D.vrate
+ \item \strong{month:} dec 200 through feb 2012
+ \item \strong{urate:} unemployment rate, percent
+ \item \strong{vrate:} vacancy rate, percent
+ \item \strong{t:} linear time trend
+ \item \strong{urate_1:} L.urate
+ \item \strong{vrate_1:} L.vrate
+ \item \strong{curate:} D.urate
+ \item \strong{cvrate:} D.vrate
 }}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
 \usage{
-data(beveridge)
+data('beveridge')
 }
 \description{
-Data loads lazily. Type data(beveridge) into the console.
+Wooldridge  Data loads lazily.
 }
+\section{}{
+NA
+}
+
 \examples{
  str(beveridge)
 }
