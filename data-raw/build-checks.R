@@ -17,10 +17,15 @@ rhub::validate_email()
 rhub::platforms()
 rhub::platforms()$name
 
-rhub::check(platform = rhub::platforms()$name[1])
+rhub::check(platform = rhub::platforms()$name[3])
 rhub::check(platform = rhub::platforms()$name[4])
+rhub::check(platform = rhub::platforms()$name[5])
 rhub::check(platform = rhub::platforms()$name[9])
 rhub::check(platform = rhub::platforms()$name[10])
 rhub::check(platform = rhub::platforms()$name[11])
 rhub::check(platform = rhub::platforms()$name[12])
+rhub::check(platform = rhub::platforms()$name[13])
+rhub::check(platform = rhub::platforms()$name[15])
+rhub::check(platform = rhub::platforms()$name[16])
+rhub::check(platform = rhub::platforms()$name[18])
 
