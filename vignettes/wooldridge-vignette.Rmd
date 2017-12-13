@@ -21,7 +21,7 @@ vignette: >
 
 This vignette contains examples from every chapter of _Introductory Econometrics: A Modern Approach_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with **R**.
 
-Economics students new to both econometrics and **R** may find the introduction to both a bit challenging. In particular, the process of loading and preparing data prior to building one's first econometric model can present challenges. The `wooldridge` data package aims to lighten this task. It contains 105 data sets from _Introductory Econometrics: A Modern Approach_, and will load any set by typing its name into the `data()` function.
+Students new to both econometrics and **R** may find the introduction to both a bit challenging. In particular, the process of loading and preparing data prior to building one's first econometric model can present challenges. The `wooldridge` data package aims to lighten this task. It contains 105 data sets from _Introductory Econometrics: A Modern Approach_, and will load any set by typing its name into the `data()` function.
 
 While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometrics, can become the first step in a student's journey toward using the most innovative new methods in statistical computing for handling larger, more modern data sets.
 
