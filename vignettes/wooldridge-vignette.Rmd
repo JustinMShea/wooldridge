@@ -39,6 +39,7 @@ library(wooldridge)
 
 ```{r, echo=FALSE, eval=TRUE, warning=FALSE, message=FALSE}
 library(stargazer)
+library(knitr)
 ```
 
 \newpage
@@ -731,18 +732,34 @@ $$\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}$$
 Estimate the linear model in the usual way and note the use of the `subset` argument to define data equal to and before the year 1996.
 
 ```{r}
-unem_AR1 <- lm(unem ~ unem_1, data = phillips, subset = (year <= 1996))
+phillips_train <- subset(phillips, year <= 1996)
+
+unem_AR1 <- lm(unem ~ unem_1, data = phillips_train)
 ```
 
 $$\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}$$
 
 ```{r}
-unem_inf_VAR1 <- lm(unem ~ unem_1 + inf_1, data = phillips, subset = (year <= 1996))
+unem_inf_VAR1 <- lm(unem ~ unem_1 + inf_1, data = phillips_train)
 ```
 
 ```{r, results = 'asis', warning=FALSE, message=FALSE, echo=FALSE}
 stargazer(unem_AR1, unem_inf_VAR1,  single.row = TRUE, header = FALSE)
 ```
+
+Now, use the `subset` argument to create our testing data set containing observation after 1996.
+Next, pass the both the model object and the test set to the `predict` function for both models.
+Finally, `cbind` or "column bind" both forecasts as well as the year and unemployment rate of the test set.
+
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+phillips_test <- subset(phillips, year >= 1997)
+
+AR1_forecast <- predict.lm(unem_AR1, newdata = phillips_test)
+VAR1_forecast <- predict.lm(unem_inf_VAR1, newdata = phillips_test)
+
+kable(cbind(phillips_test[ ,c("year", "unem")], AR1_forecast, VAR1_forecast))
+```
+
 
 
 \newpage
