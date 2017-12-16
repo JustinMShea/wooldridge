@@ -8,9 +8,11 @@ Economics students new to both econometrics and **R** may find the simultaneous 
 
 The `wooldridge` data package aims to lighten the task by loading any data set from the text through a single command. The package contains documentation for each set and all data has been compressed to 62.73% of its original size. Just install the package, load it, and use the `data()` function to call the data set you need to work with.
 
-_**But wait...there's more!**_ Act now and you will receive the  [`wooldridge-vignette`](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf)!:sparkles: The vignette illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modeling with **R**. The vignette also includes an Appendix to helpful resources, such as *Using R for Introductory Econometrics* by Florian Hess.
+_**But wait...there's more!**_ Act now and you will receive the  [`wooldridge-vignette`](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf)!:sparkles: 
 
-While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometrics, can become the first step in a student's longer journey toward using the most innovative new methods in statistical computing for handling larger, more modern data sets.
+The vignette illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix to helpful resources, such as *Using R for Introductory Econometrics* by Florian Hess.
+
+While the course companion site provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometric modeling introduces one to software tools capable of scaling with the demands of modern methods in statistical computing.
 
 **Note:** All data sets are from the 5th edition (Wooldridge 2013, `ISBN-13: 978-1-111-53104-1`), which is compatible with most other editions.
 
