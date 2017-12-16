@@ -5,17 +5,30 @@ output: github_document
 
 # wooldridge 1.2.1
 
+### DESCRIPTION
+
+Relaxed depency from `R (>= 3.4.0)` to `R (>= 3.0.0)`. 
+Minor content edits to Description section.
+
 ### Adding pkgdown
 
-It turns out that if you like to document everything, pkgdown uses all of your work to create a Github pages website for your package.
+Created a Github pages site for the package, which will include the vigenttes.
+
+### README.md
+
+Updates to links from pdf vignette to Github pages site as well as `R (>= 3.0.0)`.
+Added downloads by month button as well.
+
+### Updates to vignette
+
+Changed the name of the vignette to "Introductory Econometrics Examples".
+In addition, I changed stargazer output to `type = "html"`.
 
 ### tests
 
-Added an additional test, build will halt if the data size is over the CRAN requirement.
+Added additional tests, checking number of data sets and if they all load correctly as `data.frames`.
 
-### updates to vignette
 
-In addition, I added some code to the vignette. 
 
 # wooldridge 1.2.0
 

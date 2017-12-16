@@ -17,27 +17,22 @@ While the course companion site also provides publicly available data sets for E
 
 ## Installation
 
-Install directly from CRAN, which depends on R version >= 3.4.0.
+Install directly from CRAN, which depends on R version >= 3.0.0.
 
 ```{r}
 install.packages("wooldridge")
 ```
 
-Or, install from the Github master branch on R version >= 3.4.0.
+Or, install from the Github master branch.
 
 ```{r}
 devtools::install_github("JustinMShea/wooldridge")
 ```
 
-For developer version (with dependencies relaxed to R version >= 3.1.0),
-install from the GitHub dev branch. Note: the vignette may fail to build with older versions of R, knitr, and devtools. However, you can download it [here](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf).
+For developer version, install from the GitHub dev branch.
 
 ```{r}
 devtools::install_github("JustinMShea/wooldridge@dev")
-```
-Or
-```{r}
-devtools::install_github("JustinMShea/wooldridge@dev", build_vignettes = TRUE)
 ```
 
 ## Example
@@ -63,9 +58,4 @@ Check out the documentation on `jtrain`, including variable column names and wha
 ?jtrain
 ```
 
-In addition, load the [`wooldridge-vignette`](https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf) for a recreation of examples from the text.
-
-```{r}
- vignette("wooldridge-vignette")
-```
 
