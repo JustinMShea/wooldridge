@@ -3,11 +3,10 @@ title: "Introductory Econometrics Examples"
 author: "Justin M Shea"
 date: ' '
 output:
-    prettydoc::html_pretty:
-    theme: lumen
+    rmarkdown::html_vignette:
     toc: yes
 vignette: >
-  %\VignetteIndexEntry{Introductory-Econometrics-Examples}  
+  %\VignetteIndexEntry{Introductory Econometrics Examples}  
   %\VignetteEngine{knitr::rmarkdown}  
   %\VignetteEncoding{UTF-8}
 ---
