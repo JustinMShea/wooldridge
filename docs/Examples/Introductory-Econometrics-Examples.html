@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>wooldridge-vignette • wooldridge</title>
+<title>Introductory Econometrics Examples • wooldridge</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
@@ -45,7 +45,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/wooldridge-vignette.html">wooldridge-vignette</a>
+      <a href="../articles/Introductory-Econometrics-Examples.html">Introductory Econometrics Examples</a>
     </li>
   </ul>
 </li>
@@ -65,7 +65,7 @@
       </header><div class="row">
   <div class="col-md-9">
     <div class="page-header toc-ignore">
-      <h1>wooldridge-vignette</h1>
+      <h1>Introductory Econometrics Examples</h1>
                         <h4 class="author">Justin M Shea</h4>
             
           </div>
@@ -78,9 +78,9 @@
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
 <p>This vignette contains examples from every chapter of <em>Introductory Econometrics: A Modern Approach</em> by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with <strong>R</strong>.</p>
-<p>Students new to both econometrics and <strong>R</strong> may find the introduction to both a bit challenging. In particular, the process of loading and preparing data prior to building one’s first econometric model can present challenges. The <code>wooldridge</code> data package aims to lighten this task. It contains 105 data sets from <em>Introductory Econometrics: A Modern Approach</em>, and will load any set by typing its name into the <code>data()</code> function.</p>
-<p>While the course companion site also provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, <strong>R</strong> is the open source option. Furthermore, using <strong>R</strong> while building a foundation in econometrics, can become the first step in a student’s journey toward using the most innovative new methods in statistical computing for handling larger, more modern data sets.</p>
-<p>In addition, please visit the <strong>Appendix</strong> for sources on using R for econometrics. For example, an excellent reference is <a href="http://www.urfie.net/index.html"><em>“Using R for Introductory Econometrics”</em> by Florian Hess</a>, written to compliment <em>Introductory Econometrics: A Modern Approach</em>. The full text can be viewed on the book website.</p>
+<p>Students new to both econometrics and <strong>R</strong> may find the introduction to both a bit challenging. In particular, the process of loading and preparing data prior to building one’s first econometric model can present challenges. The <code>wooldridge</code> data package aims to lighten this task. It contains 105 data sets from <em>Introductory Econometrics: A Modern Approach</em>, which can be loaded with a simple call to the <code>data()</code> function.</p>
+<p>While the course companion site provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, <strong>R</strong> is the open source option. Furthermore, using <strong>R</strong> while building a foundation in econometric modeling introduces one to software tools capable of scaling with the demands of modern methods in statistical computing.</p>
+<p>In addition, the <strong>Appendix</strong> cites additional sources about using R for econometrics.</p>
 <p>Now, install and load the <code>wooldridge</code> package and lets get started.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"wooldridge"</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(wooldridge)</code></pre></div>
@@ -98,9 +98,108 @@
 <p>Estimate a linear relationship between the <em>log of wage</em> and <em>education</em>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">log_wage_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> wage1)</code></pre></div>
 <p>Print the results. I’m using the <code>stargazer</code> package to print the model results in a clean and easy to read format. See the bibliography for more information.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(log_wage_model, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+lwage
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+educ
+</td>
+<td>
+0.083<sup>***</sup> (0.008)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+0.584<sup>***</sup> (0.097)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+526
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.186
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.184
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.480 (df = 524)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+119.582<sup>***</sup> (df = 1; 524)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-3-multiple-regression-analysis-estimation" class="section level2">
 <h2 class="hasAnchor">
@@ -110,9 +209,124 @@
 <p>Estimate the model regressing <em>education</em>, <em>experience</em>, and <em>tenure</em> against <em>log(wage)</em>. The <code>wage1</code> data should still be in your working environment.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hourly_wage_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>tenure, <span class="dt">data =</span> wage1)</code></pre></div>
 <p>Print the estimated model coefficients:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(hourly_wage_model,  <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+lwage
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+educ
+</td>
+<td>
+0.092<sup>***</sup> (0.007)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+exper
+</td>
+<td>
+0.004<sup>**</sup> (0.002)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+tenure
+</td>
+<td>
+0.022<sup>***</sup> (0.003)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+0.284<sup>***</sup> (0.104)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+526
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.316
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.312
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.441 (df = 522)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+80.391<sup>***</sup> (df = 3; 522)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-4-multiple-regression-analysis-inference" class="section level2">
 <h2 class="hasAnchor">
@@ -131,9 +345,124 @@
 <p><span class="math display">\[lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>hrsemp <span class="op">+</span><span class="st"> </span>lsales <span class="op">+</span><span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_1987_nonunion)</code></pre></div>
 <p>Finally, print the complete summary statistic diagnostics of the model.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(linear_model,  <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+lscrap
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+hrsemp
+</td>
+<td>
+-0.029 (0.023)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lsales
+</td>
+<td>
+-0.962<sup>**</sup> (0.453)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lemploy
+</td>
+<td>
+0.761<sup>*</sup> (0.407)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+12.458<sup>**</sup> (5.687)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+29
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.262
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.174
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+1.376 (df = 25)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+2.965<sup>*</sup> (df = 3; 25)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-5-multiple-regression-analysis-ols-asymptotics" class="section level2">
 <h2 class="hasAnchor">
@@ -185,17 +514,361 @@ LM_test</code></pre></div>
 <p>Estimate the coefficient with the usual <code>lm</code> regression model but this time, standardized coefficients by wrapping each variable with R’s <code>scale</code> function:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_standard &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">scale</span>(price) <span class="op">~</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(nox) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(crime) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(rooms) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">scale</span>(dist) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(stratio), <span class="dt">data =</span> hprice2)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(housing_standard,  <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+scale(price)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(nox)
+</td>
+<td>
+-0.340<sup>***</sup> (0.044)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(crime)
+</td>
+<td>
+-0.143<sup>***</sup> (0.031)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(rooms)
+</td>
+<td>
+0.514<sup>***</sup> (0.030)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(dist)
+</td>
+<td>
+-0.235<sup>***</sup> (0.043)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(stratio)
+</td>
+<td>
+-0.270<sup>***</sup> (0.030)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+506
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.636
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.632
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.606 (df = 501)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+174.822<sup>***</sup> (df = 5; 501)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 <p><strong><code>Example 6.2:</code> Effects of Pollution on Housing Prices, Quadratic Interactive Term</strong></p>
 <p>Modify the housing model, adding a quadratic term in <em>rooms</em>:</p>
 <p><span class="math display">\[log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_interactive &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>lnox <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(dist) <span class="op">+</span><span class="st"> </span>rooms<span class="op">+</span><span class="kw">I</span>(rooms<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)</code></pre></div>
 <p>Compare the results with the model from <code>example 6.1</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(housing_standard, housing_interactive, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+scale(price)
+</td>
+<td>
+lprice
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(nox)
+</td>
+<td>
+-0.340<sup>***</sup> (0.044)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(crime)
+</td>
+<td>
+-0.143<sup>***</sup> (0.031)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(rooms)
+</td>
+<td>
+0.514<sup>***</sup> (0.030)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(dist)
+</td>
+<td>
+-0.235<sup>***</sup> (0.043)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+scale(stratio)
+</td>
+<td>
+-0.270<sup>***</sup> (0.030)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lnox
+</td>
+<td>
+</td>
+<td>
+-0.902<sup>***</sup> (0.115)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+log(dist)
+</td>
+<td>
+</td>
+<td>
+-0.087<sup>**</sup> (0.043)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+rooms
+</td>
+<td>
+</td>
+<td>
+-0.545<sup>***</sup> (0.165)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+I(rooms2)
+</td>
+<td>
+</td>
+<td>
+0.062<sup>***</sup> (0.013)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+stratio
+</td>
+<td>
+</td>
+<td>
+-0.048<sup>***</sup> (0.006)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+</td>
+<td>
+13.385<sup>***</sup> (0.566)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+506
+</td>
+<td>
+506
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.636
+</td>
+<td>
+0.603
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.632
+</td>
+<td>
+0.599
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.606 (df = 501)
+</td>
+<td>
+0.259 (df = 500)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+174.822<sup>***</sup> (df = 5; 501)
+</td>
+<td>
+151.770<sup>***</sup> (df = 5; 500)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-7-multiple-regression-analysis-with-qualitative-information" class="section level2">
 <h2 class="hasAnchor">
@@ -209,9 +882,132 @@ LM_test</code></pre></div>
 <p><span class="math display">\[\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \beta_3bdrms + \beta_4colonial \]</span></p>
 <p>Estimate the coefficients of the above linear model on the <code>hprice</code> data set.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_qualitative &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>llotsize <span class="op">+</span><span class="st"> </span>lsqrft <span class="op">+</span><span class="st"> </span>bdrms <span class="op">+</span><span class="st"> </span>colonial, <span class="dt">data =</span> hprice1)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(housing_qualitative, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+lprice
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+llotsize
+</td>
+<td>
+0.168<sup>***</sup> (0.038)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lsqrft
+</td>
+<td>
+0.707<sup>***</sup> (0.093)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+bdrms
+</td>
+<td>
+0.027 (0.029)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+colonial
+</td>
+<td>
+0.054 (0.045)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-1.350<sup>**</sup> (0.651)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+88
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.649
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.632
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.184 (df = 83)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+38.378<sup>***</sup> (df = 4; 83)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-8-heteroskedasticity" class="section level2">
 <h2 class="hasAnchor">
@@ -227,9 +1023,161 @@ LM_test</code></pre></div>
 
 GPA_WLS &lt;-<span class="st"> </span><span class="kw">lm</span>(PC <span class="op">~</span><span class="st"> </span>hsGPA <span class="op">+</span><span class="st"> </span>ACT <span class="op">+</span><span class="st"> </span>parcoll, <span class="dt">data =</span> gpa1, <span class="dt">weights =</span> <span class="dv">1</span><span class="op">/</span>weights)</code></pre></div>
 <p>Compare the OLS and WLS model in the table below:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(GPA_OLS, GPA_WLS, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+PC
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+hsGPA
+</td>
+<td>
+0.065 (0.137)
+</td>
+<td>
+0.033 (0.130)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+ACT
+</td>
+<td>
+0.001 (0.015)
+</td>
+<td>
+0.004 (0.015)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+parcoll
+</td>
+<td>
+0.221<sup>**</sup> (0.093)
+</td>
+<td>
+0.215<sup>**</sup> (0.086)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-0.0004 (0.491)
+</td>
+<td>
+0.026 (0.477)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+141
+</td>
+<td>
+141
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.042
+</td>
+<td>
+0.046
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.021
+</td>
+<td>
+0.026
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error (df = 137)
+</td>
+<td>
+0.486
+</td>
+<td>
+1.016
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic (df = 3; 137)
+</td>
+<td>
+1.979
+</td>
+<td>
+2.224<sup>*</sup>
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-9-more-on-specification-and-data-issues" class="section level2">
 <h2 class="hasAnchor">
@@ -247,14 +1195,155 @@ y_axis &lt;-<span class="st"> "R&amp;D as a percentage of sales"</span>
 
 <span class="kw">plot</span>(rdintens <span class="op">~</span><span class="st"> </span>sales, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">data =</span> rdchem, <span class="dt">main =</span> plot_title, 
     <span class="dt">xlab =</span> x_axis, <span class="dt">ylab =</span> y_axis)</code></pre></div>
-<p><img src="wooldridge-vignette_files/figure-html/unnamed-chunk-38-1.png" width="672"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-38-1.png" width="672"></p>
 <p>So, we can estimate the model without that data point to gain a better understanding of how <code>sales</code> and <code>profmarg</code> describe <code>rdintens</code> for most firms. We can use the <code>subset</code> argument of the linear model function to indicate that we only want to estimate the model using data that is less than the highest sales.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smallest_rdchem &lt;-<span class="st"> </span><span class="kw">lm</span>(rdintens <span class="op">~</span><span class="st"> </span>sales <span class="op">+</span><span class="st"> </span>profmarg, <span class="dt">data =</span> rdchem, 
                       <span class="dt">subset =</span> (sales <span class="op">&lt;</span><span class="st"> </span><span class="kw">max</span>(sales)))</code></pre></div>
 <p>The table below compares the results of both models side by side. By removing the outlier firm, <span class="math inline">\(sales\)</span> become a more significant determination of R&amp;D expenditures.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(all_rdchem, smallest_rdchem, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+rdintens
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+sales
+</td>
+<td>
+0.0001 (0.00004)
+</td>
+<td>
+0.0002<sup>**</sup> (0.0001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+profmarg
+</td>
+<td>
+0.045 (0.046)
+</td>
+<td>
+0.048 (0.044)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+2.625<sup>***</sup> (0.586)
+</td>
+<td>
+2.297<sup>***</sup> (0.592)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+32
+</td>
+<td>
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.076
+</td>
+<td>
+0.173
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.012
+</td>
+<td>
+0.114
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+1.862 (df = 29)
+</td>
+<td>
+1.792 (df = 28)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+1.195 (df = 2; 29)
+</td>
+<td>
+2.925<sup>*</sup> (df = 2; 28)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-10-basic-regression-analysis-with-time-series-data" class="section level2">
 <h2 class="hasAnchor">
@@ -264,8 +1353,116 @@ y_axis &lt;-<span class="st"> "R&amp;D as a percentage of sales"</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"intdef"</span>)
 ?intdef</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tbill_model &lt;-<span class="st"> </span><span class="kw">lm</span>(i3 <span class="op">~</span><span class="st"> </span>inf <span class="op">+</span><span class="st"> </span>def, <span class="dt">data =</span> intdef)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(tbill_model, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+i3
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+inf
+</td>
+<td>
+0.606<sup>***</sup> (0.082)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+def
+</td>
+<td>
+0.513<sup>***</sup> (0.118)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+1.733<sup>***</sup> (0.432)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+56
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.602
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.587
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+1.843 (df = 53)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+40.094<sup>***</sup> (df = 2; 53)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 <p><strong><code>Example 10.11:</code> Seasonal Effects of Antidumping Filings</strong></p>
 <p>C.M. Krupp and P.S. Pollard (1999), <em>Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry</em>, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"barium"</span>)
@@ -277,11 +1474,454 @@ y_axis &lt;-<span class="st"> "R&amp;D as a percentage of sales"</span>
 <span class="st">    </span>afdec6 <span class="op">+</span><span class="st"> </span>feb <span class="op">+</span><span class="st"> </span>mar <span class="op">+</span><span class="st"> </span>apr <span class="op">+</span><span class="st"> </span>may <span class="op">+</span><span class="st"> </span>jun <span class="op">+</span><span class="st"> </span>jul <span class="op">+</span><span class="st"> </span>aug <span class="op">+</span><span class="st"> </span>sep <span class="op">+</span><span class="st"> </span>oct <span class="op">+</span><span class="st"> </span>nov <span class="op">+</span><span class="st"> </span>dec, 
     <span class="dt">data =</span> barium)
 barium_anova &lt;-<span class="st"> </span><span class="kw">anova</span>(barium_imports, barium_seasonal)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(barium_imports, barium_seasonal, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(barium_anova, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+lchnimp
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lchempi
+</td>
+<td>
+3.117<sup>***</sup> (0.479)
+</td>
+<td>
+3.265<sup>***</sup> (0.493)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lgas
+</td>
+<td>
+0.196 (0.907)
+</td>
+<td>
+-1.278 (1.389)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lrtwex
+</td>
+<td>
+0.983<sup>**</sup> (0.400)
+</td>
+<td>
+0.663 (0.471)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+befile6
+</td>
+<td>
+0.060 (0.261)
+</td>
+<td>
+0.140 (0.267)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+affile6
+</td>
+<td>
+-0.032 (0.264)
+</td>
+<td>
+0.013 (0.279)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+afdec6
+</td>
+<td>
+-0.565<sup>*</sup> (0.286)
+</td>
+<td>
+-0.521<sup>*</sup> (0.302)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+feb
+</td>
+<td>
+</td>
+<td>
+-0.418 (0.304)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+mar
+</td>
+<td>
+</td>
+<td>
+0.059 (0.265)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+apr
+</td>
+<td>
+</td>
+<td>
+-0.451<sup>*</sup> (0.268)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+may
+</td>
+<td>
+</td>
+<td>
+0.033 (0.269)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+jun
+</td>
+<td>
+</td>
+<td>
+-0.206 (0.269)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+jul
+</td>
+<td>
+</td>
+<td>
+0.004 (0.279)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+aug
+</td>
+<td>
+</td>
+<td>
+-0.157 (0.278)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+sep
+</td>
+<td>
+</td>
+<td>
+-0.134 (0.268)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+oct
+</td>
+<td>
+</td>
+<td>
+0.052 (0.267)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+nov
+</td>
+<td>
+</td>
+<td>
+-0.246 (0.263)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+dec
+</td>
+<td>
+</td>
+<td>
+0.133 (0.271)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-17.803 (21.045)
+</td>
+<td>
+16.779 (32.429)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+131
+</td>
+<td>
+131
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.305
+</td>
+<td>
+0.358
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.271
+</td>
+<td>
+0.262
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.597 (df = 124)
+</td>
+<td>
+0.601 (df = 113)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+9.064<sup>***</sup> (df = 6; 124)
+</td>
+<td>
+3.712<sup>***</sup> (df = 17; 113)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Statistic
+</td>
+<td>
+N
+</td>
+<td>
+Mean
+</td>
+<td>
+St. Dev.
+</td>
+<td>
+Min
+</td>
+<td>
+Max
+</td>
+</tr>
+<tr>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Res.Df
+</td>
+<td>
+2
+</td>
+<td>
+118.500
+</td>
+<td>
+7.778
+</td>
+<td>
+113
+</td>
+<td>
+124
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+RSS
+</td>
+<td>
+2
+</td>
+<td>
+42.545
+</td>
+<td>
+2.406
+</td>
+<td>
+40.844
+</td>
+<td>
+44.247
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Df
+</td>
+<td>
+1
+</td>
+<td>
+11.000
+</td>
+<td>
+</td>
+<td>
+11
+</td>
+<td>
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Sum of Sq
+</td>
+<td>
+1
+</td>
+<td>
+3.403
+</td>
+<td>
+</td>
+<td>
+3.403
+</td>
+<td>
+3.403
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F
+</td>
+<td>
+1
+</td>
+<td>
+0.856
+</td>
+<td>
+</td>
+<td>
+0.856
+</td>
+<td>
+0.856
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Pr(&gt; F)
+</td>
+<td>
+1
+</td>
+<td>
+0.585
+</td>
+<td>
+</td>
+<td>
+0.585
+</td>
+<td>
+0.585
+</td>
+</tr>
+<tr>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-11-further-issues-in-using-ols-with-with-time-series-data" class="section level2">
 <h2 class="hasAnchor">
@@ -292,9 +1932,161 @@ barium_anova &lt;-<span class="st"> </span><span class="kw">anova</span>(barium_
 ?earns</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wage_time &lt;-<span class="st"> </span><span class="kw">lm</span>(lhrwage <span class="op">~</span><span class="st"> </span>loutphr <span class="op">+</span><span class="st"> </span>t, <span class="dt">data =</span> earns)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wage_diff &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">diff</span>(lhrwage) <span class="op">~</span><span class="st"> </span><span class="kw">diff</span>(loutphr), <span class="dt">data =</span> earns)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(wage_time, wage_diff, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+lhrwage
+</td>
+<td>
+diff(lhrwage)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+loutphr
+</td>
+<td>
+1.640<sup>***</sup> (0.093)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+t
+</td>
+<td>
+-0.018<sup>***</sup> (0.002)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+diff(loutphr)
+</td>
+<td>
+</td>
+<td>
+0.809<sup>***</sup> (0.173)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-5.328<sup>***</sup> (0.374)
+</td>
+<td>
+-0.004 (0.004)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+41
+</td>
+<td>
+40
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.971
+</td>
+<td>
+0.364
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.970
+</td>
+<td>
+0.348
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error (df = 38)
+</td>
+<td>
+0.029
+</td>
+<td>
+0.017
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+641.224<sup>***</sup> (df = 2; 38)
+</td>
+<td>
+21.771<sup>***</sup> (df = 1; 38)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-12-serial-correlation-and-heteroskedasticiy-in-time-series-regressions" class="section level2">
 <h2 class="hasAnchor">
@@ -302,22 +2094,153 @@ barium_anova &lt;-<span class="st"> </span><span class="kw">anova</span>(barium_
 <p><strong><code>Example 12.4</code>: Prais-Winsten Estimation in the Event Study</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"barium"</span>)
 barium_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6, 
-    <span class="dt">data =</span> barium)
-<span class="co"># Load the `prais` package, use the `prais.winsten` function to estimate.</span>
-<span class="kw">library</span>(prais)
+    <span class="dt">data =</span> barium)</code></pre></div>
+<p>Load the <code>prais</code> package, use the <code>prais.winsten</code> function to estimate.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(prais)
 barium_prais_winsten &lt;-<span class="st"> </span><span class="kw">prais.winsten</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6, <span class="dt">data =</span> barium)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">barium_model</code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + 
-##     afdec6, data = barium)
-## 
-## Coefficients:
-## (Intercept)      lchempi         lgas       lrtwex      befile6  
-##   -17.80300      3.11719      0.19635      0.98302      0.05957  
-##     affile6       afdec6  
-##    -0.03241     -0.56524</code></pre>
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+lchnimp
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lchempi
+</td>
+<td>
+3.117<sup>***</sup> (0.479)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lgas
+</td>
+<td>
+0.196 (0.907)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lrtwex
+</td>
+<td>
+0.983<sup>**</sup> (0.400)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+befile6
+</td>
+<td>
+0.060 (0.261)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+affile6
+</td>
+<td>
+-0.032 (0.264)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+afdec6
+</td>
+<td>
+-0.565<sup>*</sup> (0.286)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-17.803 (21.045)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+131
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.305
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.271
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.597 (df = 124)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+9.064<sup>***</sup> (df = 6; 124)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">barium_prais_winsten</code></pre></div>
 <pre><code>## [[1]]
 ## 
@@ -358,18 +2281,250 @@ barium_prais_winsten &lt;-<span class="st"> </span><span class="kw">prais.winste
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">return_mu &lt;-<span class="st"> </span><span class="kw">residuals</span>(return_AR1)
 mu2_hat_model &lt;-<span class="st"> </span><span class="kw">lm</span>(return_mu<span class="op">^</span><span class="dv">2</span> <span class="op">~</span><span class="st"> </span>return_<span class="dv">1</span>, <span class="dt">data =</span> return_AR1<span class="op">$</span>model)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(return_AR1, mu2_hat_model, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+return
+</td>
+<td>
+return_mu2
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+return_1
+</td>
+<td>
+0.059 (0.038)
+</td>
+<td>
+-1.104<sup>***</sup> (0.201)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+0.180<sup>**</sup> (0.081)
+</td>
+<td>
+4.657<sup>***</sup> (0.428)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+689
+</td>
+<td>
+689
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.003
+</td>
+<td>
+0.042
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.002
+</td>
+<td>
+0.041
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error (df = 687)
+</td>
+<td>
+2.110
+</td>
+<td>
+11.178
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic (df = 1; 687)
+</td>
+<td>
+2.399
+</td>
+<td>
+30.055<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 <p><strong><code>Example 12.9:</code> ARCH in Stock Returns</strong></p>
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t\]</span></p>
 <p>We still have <code>return_mu</code> in the working environment so we can use it to create <span class="math inline">\(\hat{\mu^2_t}\)</span>, (<code>mu2_hat</code>) and <span class="math inline">\(\hat{\mu^2_{t-1}}\)</span> (<code>mu2_hat_1</code>). Notice the use <code>R</code>’s matrix subset operations to perform the lag operation. We drop the first observation of <code>mu2_hat</code> and squared the results. Next, we remove the last observation of <code>mu2_hat_1</code> using the subtraction operator combined with a call to the <code>NROW</code> function on <code>return_mu</code>. Now, both contain <span class="math inline">\(688\)</span> observations and we can estimate a standard linear model.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu2_hat  &lt;-<span class="st"> </span>return_mu[<span class="op">-</span><span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span>
 mu2_hat_<span class="dv">1</span> &lt;-<span class="st"> </span>return_mu[<span class="op">-</span><span class="kw">NROW</span>(return_mu)]<span class="op">^</span><span class="dv">2</span>
 arch_model &lt;-<span class="st"> </span><span class="kw">lm</span>(mu2_hat <span class="op">~</span><span class="st"> </span>mu2_hat_<span class="dv">1</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(arch_model, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+mu2_hat
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+mu2_hat_1
+</td>
+<td>
+0.337<sup>***</sup> (0.036)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+2.947<sup>***</sup> (0.440)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+688
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.114
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.112
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+10.759 (df = 686)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+87.923<sup>***</sup> (df = 1; 686)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-13-pooling-cross-sections-across-time-simple-panel-data-methods" class="section level2">
 <h2 class="hasAnchor">
@@ -379,23 +2534,236 @@ arch_model &lt;-<span class="st"> </span><span class="kw">lm</span>(mu2_hat <spa
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"traffic1"</span>)
 ?traffic1</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DD_model &lt;-<span class="st"> </span><span class="kw">lm</span>(cdthrte <span class="op">~</span><span class="st"> </span>copen <span class="op">+</span><span class="st"> </span>cadmn, <span class="dt">data =</span> traffic1)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(DD_model, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+cdthrte
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+copen
+</td>
+<td>
+-0.420<sup>**</sup> (0.206)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+cadmn
+</td>
+<td>
+-0.151 (0.117)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-0.497<sup>***</sup> (0.052)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+51
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.119
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.082
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.344 (df = 48)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+3.231<sup>**</sup> (df = 2; 48)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-14-advanced-panel-data-methods" class="section level2">
 <h2 class="hasAnchor">
 <a href="#chapter-14-advanced-panel-data-methods" class="anchor"></a>Chapter 14: Advanced Panel Data Methods</h2>
 <p><strong><code>Example 14.1:</code> Effect of Job Training on Firm Scrap Rates</strong></p>
 <p>In this section, we will estimate a linear panel modeg using the <code>plm</code> function from the <code>plm: Linear Models for Panel Data</code> package. See the bibliography for more information.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plm)</code></pre></div>
-<pre><code>## Loading required package: Formula</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"jtrain"</span>)
-scrap_panel &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/plm/topics/plm">plm</a></span>(lscrap <span class="op">~</span><span class="st"> </span>d88 <span class="op">+</span><span class="st"> </span>d89 <span class="op">+</span><span class="st"> </span>grant <span class="op">+</span><span class="st"> </span>grant_<span class="dv">1</span>, <span class="dt">data =</span> jtrain, <span class="dt">index =</span> <span class="kw">c</span>(<span class="st">"fcode"</span>, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plm)
+<span class="kw">data</span>(<span class="st">"jtrain"</span>)
+scrap_panel &lt;-<span class="st"> </span><span class="kw">plm</span>(lscrap <span class="op">~</span><span class="st"> </span>d88 <span class="op">+</span><span class="st"> </span>d89 <span class="op">+</span><span class="st"> </span>grant <span class="op">+</span><span class="st"> </span>grant_<span class="dv">1</span>, <span class="dt">data =</span> jtrain, <span class="dt">index =</span> <span class="kw">c</span>(<span class="st">"fcode"</span>, 
     <span class="st">"year"</span>), <span class="dt">model =</span> <span class="st">"within"</span>, <span class="dt">effect =</span> <span class="st">"individual"</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(scrap_panel, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+lscrap
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+d88
+</td>
+<td>
+-0.080 (0.109)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+d89
+</td>
+<td>
+-0.247<sup>*</sup> (0.133)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+grant
+</td>
+<td>
+-0.252<sup>*</sup> (0.151)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+grant_1
+</td>
+<td>
+-0.422<sup>**</sup> (0.210)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+162
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.201
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+-0.237
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+6.543<sup>***</sup> (df = 4; 104)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-15-instrumental-variables-estimation-and-two-stage-least-squares" class="section level2">
 <h2 class="hasAnchor">
@@ -412,10 +2780,205 @@ scrap_panel &lt;-<span class="st"> </span><span class="kw"><a href="http://www.r
 <p>In this section, we will perform an <strong>Instrumental-Variable Regression</strong>, using the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package. See the bibliography for more information.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"AER"</span>)
 wage_educ_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">|</span><span class="st"> </span>fatheduc, <span class="dt">data =</span> mroz)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(wage_educ_model, fatheduc_model, wage_educ_IV, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, 
-    <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+lwage
+</td>
+<td>
+educ
+</td>
+<td>
+lwage
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>OLS</em>
+</td>
+<td>
+<em>OLS</em>
+</td>
+<td>
+<em>instrumental</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em></em>
+</td>
+<td>
+<em></em>
+</td>
+<td>
+<em>variable</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+educ
+</td>
+<td>
+0.109<sup>***</sup> (0.014)
+</td>
+<td>
+</td>
+<td>
+0.059<sup>*</sup> (0.035)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+fatheduc
+</td>
+<td>
+</td>
+<td>
+0.269<sup>***</sup> (0.029)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-0.185 (0.185)
+</td>
+<td>
+10.237<sup>***</sup> (0.276)
+</td>
+<td>
+0.441 (0.446)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+428
+</td>
+<td>
+428
+</td>
+<td>
+428
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.118
+</td>
+<td>
+0.173
+</td>
+<td>
+0.093
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.116
+</td>
+<td>
+0.171
+</td>
+<td>
+0.091
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error (df = 426)
+</td>
+<td>
+0.680
+</td>
+<td>
+2.081
+</td>
+<td>
+0.689
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic (df = 1; 426)
+</td>
+<td>
+56.929<sup>***</sup>
+</td>
+<td>
+88.841<sup>***</sup>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="3" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 <p><strong><code>Example 15.2:</code> Estimating the Return to Education for Men</strong></p>
 <p>Data from M. Blackburn and D. Neumark (1992), <em>Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials</em>, Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which Wooldridge uses the data for 1980.</p>
 <p><span class="math display">\[\widehat{educ} = \beta_0 + sibs\]</span></p>
@@ -426,17 +2989,311 @@ wage_educ_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <
 <p>Again, estimate the model using the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"AER"</span>)
 educ_sibs_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">|</span><span class="st"> </span>sibs, <span class="dt">data =</span> wage2)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(educ_sibs_model, educ_sibs_IV, wage_educ_IV, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+educ
+</td>
+<td colspan="2">
+lwage
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>OLS</em>
+</td>
+<td colspan="2">
+<em>instrumental</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em></em>
+</td>
+<td colspan="2">
+<em>variable</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+sibs
+</td>
+<td>
+-0.228<sup>***</sup> (0.030)
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+educ
+</td>
+<td>
+</td>
+<td>
+0.122<sup>***</sup> (0.026)
+</td>
+<td>
+0.059<sup>*</sup> (0.035)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+14.139<sup>***</sup> (0.113)
+</td>
+<td>
+5.130<sup>***</sup> (0.355)
+</td>
+<td>
+0.441 (0.446)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+935
+</td>
+<td>
+935
+</td>
+<td>
+428
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.057
+</td>
+<td>
+-0.009
+</td>
+<td>
+0.093
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.056
+</td>
+<td>
+-0.010
+</td>
+<td>
+0.091
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+2.134 (df = 933)
+</td>
+<td>
+0.423 (df = 933)
+</td>
+<td>
+0.689 (df = 426)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+56.667<sup>***</sup> (df = 1; 933)
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="3" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 <p><strong><code>Example 15.5:</code> Return to Education for Working Women</strong></p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_2exper + \beta_3exper^2\]</span></p>
 <p>Use the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package to estimate.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"mroz"</span>)
 wage_educ_exper_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>expersq <span class="op">|</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>expersq <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span>motheduc <span class="op">+</span><span class="st"> </span>fatheduc, <span class="dt">data =</span> mroz)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+lwage
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+educ
+</td>
+<td>
+0.061<sup>*</sup> (0.031)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+exper
+</td>
+<td>
+0.044<sup>***</sup> (0.013)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+expersq
+</td>
+<td>
+-0.001<sup>**</sup> (0.0004)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+0.048 (0.400)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+428
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.136
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.130
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.675 (df = 424)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-16-simultaneous-equations-models" class="section level2">
 <h2 class="hasAnchor">
@@ -453,9 +3310,181 @@ wage_educ_exper_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(l
 <p>Use the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package to estimate.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(AER)
 inflation_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(inf <span class="op">~</span><span class="st"> </span>open <span class="op">+</span><span class="st"> </span>lpcinc <span class="op">|</span><span class="st"> </span>lpcinc <span class="op">+</span><span class="st"> </span>lland, <span class="dt">data =</span> openness)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(open_model, inflation_IV, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+open
+</td>
+<td>
+inf
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>OLS</em>
+</td>
+<td>
+<em>instrumental</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em></em>
+</td>
+<td>
+<em>variable</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+open
+</td>
+<td>
+</td>
+<td>
+-0.337<sup>**</sup> (0.144)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lpcinc
+</td>
+<td>
+0.546 (1.493)
+</td>
+<td>
+0.376 (2.015)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+lland
+</td>
+<td>
+-7.567<sup>***</sup> (0.814)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+117.085<sup>***</sup> (15.848)
+</td>
+<td>
+26.899<sup>*</sup> (15.401)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+114
+</td>
+<td>
+114
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.449
+</td>
+<td>
+0.031
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.439
+</td>
+<td>
+0.013
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error (df = 111)
+</td>
+<td>
+17.796
+</td>
+<td>
+23.836
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+45.165<sup>***</sup> (df = 2; 111)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-17-limited-dependent-variable-models-and-sample-selection-corrections" class="section level2">
 <h2 class="hasAnchor">
@@ -470,9 +3499,253 @@ inflation_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(inf <sp
 <p>To estimate the <code>poisson</code> regression, use the general linear model function <code>glm</code> and define the <code>family</code> argument as <code>poisson</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">econ_crim_poisson &lt;-<span class="st"> </span><span class="kw">glm</span>(formula, <span class="dt">data =</span> crime1, <span class="dt">family =</span> poisson)</code></pre></div>
 <p>Use the <code>stargazer</code> package to easily compare diagnostic tables of both models.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stargazer</span>(econ_crime_model, econ_crim_poisson, <span class="dt">single.row =</span> <span class="ot">TRUE</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</code></pre></div>
-
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+narr86
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>OLS</em>
+</td>
+<td>
+<em>Poisson</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+pcnv
+</td>
+<td>
+-0.132<sup>***</sup> (0.040)
+</td>
+<td>
+-0.402<sup>***</sup> (0.085)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+avgsen
+</td>
+<td>
+-0.011 (0.012)
+</td>
+<td>
+-0.024 (0.020)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+tottime
+</td>
+<td>
+0.012 (0.009)
+</td>
+<td>
+0.024<sup>*</sup> (0.015)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+ptime86
+</td>
+<td>
+-0.041<sup>***</sup> (0.009)
+</td>
+<td>
+-0.099<sup>***</sup> (0.021)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+qemp86
+</td>
+<td>
+-0.051<sup>***</sup> (0.014)
+</td>
+<td>
+-0.038 (0.029)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+inc86
+</td>
+<td>
+-0.001<sup>***</sup> (0.0003)
+</td>
+<td>
+-0.008<sup>***</sup> (0.001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+black
+</td>
+<td>
+0.327<sup>***</sup> (0.045)
+</td>
+<td>
+0.661<sup>***</sup> (0.074)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+hispan
+</td>
+<td>
+0.194<sup>***</sup> (0.040)
+</td>
+<td>
+0.500<sup>***</sup> (0.074)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+born60
+</td>
+<td>
+-0.022 (0.033)
+</td>
+<td>
+-0.051 (0.064)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+0.577<sup>***</sup> (0.038)
+</td>
+<td>
+-0.600<sup>***</sup> (0.067)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+2,725
+</td>
+<td>
+2,725
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.072
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.069
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Log Likelihood
+</td>
+<td>
+</td>
+<td>
+-2,248.761
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Akaike Inf. Crit.
+</td>
+<td>
+</td>
+<td>
+4,517.522
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.829 (df = 2715)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+23.572<sup>***</sup> (df = 9; 2715)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 </div>
 <div id="chapter-18-advanced-time-series-topics" class="section level2">
 <h2 class="hasAnchor">
@@ -488,7 +3761,149 @@ inflation_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(inf <sp
 unem_AR1 &lt;-<span class="st"> </span><span class="kw">lm</span>(unem <span class="op">~</span><span class="st"> </span>unem_<span class="dv">1</span>, <span class="dt">data =</span> phillips_train)</code></pre></div>
 <p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">unem_inf_VAR1 &lt;-<span class="st"> </span><span class="kw">lm</span>(unem <span class="op">~</span><span class="st"> </span>unem_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>inf_<span class="dv">1</span>, <span class="dt">data =</span> phillips_train)</code></pre></div>
-
+<table style="text-align:center" class="table">
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+unem
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+unem_1
+</td>
+<td>
+0.732<sup>***</sup> (0.097)
+</td>
+<td>
+0.647<sup>***</sup> (0.084)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+inf_1
+</td>
+<td>
+</td>
+<td>
+0.184<sup>***</sup> (0.041)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+1.572<sup>***</sup> (0.577)
+</td>
+<td>
+1.304<sup>**</sup> (0.490)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+48
+</td>
+<td>
+48
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.554
+</td>
+<td>
+0.691
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.544
+</td>
+<td>
+0.677
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+1.049 (df = 46)
+</td>
+<td>
+0.883 (df = 45)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+57.132<sup>***</sup> (df = 1; 46)
+</td>
+<td>
+50.219<sup>***</sup> (df = 2; 45)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+</td>
+</tr>
+</table>
 <p>Now, use the <code>subset</code> argument to create our testing data set containing observation after 1996. Next, pass the both the model object and the test set to the <code>predict</code> function for both models. Finally, <code>cbind</code> or “column bind” both forecasts as well as the year and unemployment rate of the test set.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">phillips_test &lt;-<span class="st"> </span><span class="kw">subset</span>(phillips, year <span class="op">&gt;=</span><span class="st"> </span><span class="dv">1997</span>)
 
@@ -557,6 +3972,29 @@ VAR1_forecast &lt;-<span class="st"> </span><span class="kw">predict.lm</span>(u
 </tbody>
 </table>
 </div>
+<div id="appendix" class="section level1">
+<h1 class="hasAnchor">
+<a href="#appendix" class="anchor"></a>Appendix</h1>
+<div id="using-r-for-introductory-econometrics" class="section level3">
+<h3 class="hasAnchor">
+<a href="#using-r-for-introductory-econometrics" class="anchor"></a>Using R for Introductory Econometrics</h3>
+<p>This is an excellent open source complimentary text to “Introductory Econometrics” by Jeffrey M. Wooldridge and should be your number one resource. This excerpt from the book’s website:</p>
+<blockquote>
+<p>This book introduces the popular, powerful and free programming language and software package R with a focus on the implementation of standard tools and methods used in econometrics. Unlike other books on similar topics, it does not attempt to provide a self-contained discussion of econometric models and methods. Instead, it builds on the excellent and popular textbook “Introductory Econometrics” by Jeffrey M. Wooldridge.</p>
+</blockquote>
+<p>Hess, Florian. <em>Using R for Introductory Econometrics</em>. ISBN: 978-1-523-28513-6, CreateSpace Independent Publishing Platform, 2016, Dusseldorf, Germany.</p>
+<p><a href="https://urfie.net">url: https://urfie.net</a>.</p>
+</div>
+<div id="applied-econometrics-with-r" class="section level3">
+<h3 class="hasAnchor">
+<a href="#applied-econometrics-with-r" class="anchor"></a>Applied Econometrics with R</h3>
+<p>From the publisher’s website:</p>
+<blockquote>
+<p>This is the first book on applied econometrics using the R system for statistical computing and graphics. It presents hands-on examples for a wide range of econometric models, from classical linear regression models for cross-section, time series or panel data and the common non-linear models of microeconometrics such as logit, probit and tobit models, to recent semiparametric extensions. In addition, it provides a chapter on programming, including simulations, optimization, and an introduction to R tools enabling reproducible econometric research. An R package accompanying this book, AER, is available from the Comprehensive R Archive Network (CRAN) at <a href="http://CRAN.R-project.org/package=AER" class="uri">http://CRAN.R-project.org/package=AER</a>.</p>
+</blockquote>
+<p>Kleiber, Christian and Achim Zeileis. <em>Applied Econometrics with R</em>. ISBN 978-0-387-77316-2, Springer-Verlag, 2008, New York. <a href="http://www.springer.com/us/book/9780387773162" class="uri">http://www.springer.com/us/book/9780387773162</a></p>
+
+</div>
 <div id="bibliography" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bibliography" class="anchor"></a>Bibliography</h2>
@@ -569,31 +4007,6 @@ VAR1_forecast &lt;-<span class="st"> </span><span class="kw">predict.lm</span>(u
 <p>Hadley Wickham. <em>testthat: Get Started with Testing</em>. R package version 1.0.2. <a href="https://CRAN.R-project.org/package=testthat" class="uri">https://CRAN.R-project.org/package=testthat</a></p>
 <p>Jeffrey M. Wooldridge (2013). <em>Introductory Econometrics: A Modern Approach</em>. Mason, Ohio :South-Western Cengage Learning.</p>
 <p>Yihui Xie (2017). <em>knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. R package version 1.16. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a></p>
-
-</div>
-<div id="appendix" class="section level1">
-<h1 class="hasAnchor">
-<a href="#appendix" class="anchor"></a>Appendix</h1>
-<div id="using-r-for-introductory-econometrics" class="section level3">
-<h3 class="hasAnchor">
-<a href="#using-r-for-introductory-econometrics" class="anchor"></a><strong>Using R for Introductory Econometrics</strong>
-</h3>
-<p>This is an excellent open source complimentary text to “Introductory Econometrics” by Jeffrey M. Wooldridge and should be your number one resource. This excerpt from the book’s website:</p>
-<blockquote>
-<p>This book introduces the popular, powerful and free programming language and software package R with a focus on the implementation of standard tools and methods used in econometrics. Unlike other books on similar topics, it does not attempt to provide a self-contained discussion of econometric models and methods. Instead, it builds on the excellent and popular textbook “Introductory Econometrics” by Jeffrey M. Wooldridge.</p>
-</blockquote>
-<p>Hess, Florian. <em>Using R for Introductory Econometrics</em>. ISBN: 978-1-523-28513-6, CreateSpace Independent Publishing Platform, 2016, Dusseldorf, Germany.</p>
-<p><a href="https://urfie.net">url: https://urfie.net</a>.</p>
-</div>
-<div id="applied-econometrics-with-r" class="section level3">
-<h3 class="hasAnchor">
-<a href="#applied-econometrics-with-r" class="anchor"></a><strong>Applied Econometrics with R</strong>
-</h3>
-<p>From the publisher’s website:</p>
-<blockquote>
-<p>This is the first book on applied econometrics using the R system for statistical computing and graphics. It presents hands-on examples for a wide range of econometric models, from classical linear regression models for cross-section, time series or panel data and the common non-linear models of microeconometrics such as logit, probit and tobit models, to recent semiparametric extensions. In addition, it provides a chapter on programming, including simulations, optimization, and an introduction to R tools enabling reproducible econometric research. An R package accompanying this book, AER, is available from the Comprehensive R Archive Network (CRAN) at <a href="http://CRAN.R-project.org/package=AER" class="uri">http://CRAN.R-project.org/package=AER</a>.</p>
-</blockquote>
-<p>Kleiber, Christian and Achim Zeileis. <em>Applied Econometrics with R</em>. ISBN 978-0-387-77316-2, Springer-Verlag, 2008, New York. <a href="http://www.springer.com/us/book/9780387773162" class="uri">http://www.springer.com/us/book/9780387773162</a></p>
 </div>
 </div>
 </div>
@@ -622,8 +4035,11 @@ VAR1_forecast &lt;-<span class="st"> </span><span class="kw">predict.lm</span>(u
       <li><a href="#chapter-16-simultaneous-equations-models">Chapter 16: Simultaneous Equations Models</a></li>
       <li><a href="#chapter-17-limited-dependent-variable-models-and-sample-selection-corrections">Chapter 17: Limited Dependent Variable Models and Sample Selection Corrections</a></li>
       <li><a href="#chapter-18-advanced-time-series-topics">Chapter 18: Advanced Time Series Topics</a></li>
-      <li><a href="#bibliography">Bibliography</a></li>
-      <li><a href="#appendix">Appendix</a></li>
+      <li>
+<a href="#appendix">Appendix</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#bibliography">Bibliography</a></li>
+      </ul>
+</li>
       </ul>
 </div>
       </div>

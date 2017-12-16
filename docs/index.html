@@ -45,7 +45,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/wooldridge-vignette.html">wooldridge-vignette</a>
+      <a href="articles/Introductory-Econometrics-Examples.html">Introductory Econometrics Examples</a>
     </li>
   </ul>
 </li>
@@ -64,10 +64,11 @@
       
       </header><div class="row">
   <div class="contents col-md-9">
-    <div id="wooldridge" class="section level1">
+    
+
+<div id="wooldridge" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#wooldridge" class="anchor"></a>wooldridge</h1></div>
-
 <p>Economics students new to both econometrics and <strong>R</strong> may find the simultaneous introduction to both a bit challenging. However, if your text is <strong>“Introductory Econometrics: A Modern Approach”</strong> by Jeffrey M. Wooldridge, then you are in luck!</p>
 <p>The <code>wooldridge</code> data package aims to lighten the task by loading any data set from the text through a single command. The package contains documentation for each set and all data has been compressed to 62.73% of its original size. Just install the package, load it, and use the <code>data()</code> function to call the data set you need to work with.</p>
 <p><em><strong>But wait…there’s more!</strong></em> Act now and you will receive the <a href="https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf"><code>wooldridge-vignette</code></a>!✨ The vignette illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modeling with <strong>R</strong>. The vignette also includes an Appendix to helpful resources, such as <em>Using R for Introductory Econometrics</em> by Florian Hess.</p>
@@ -76,14 +77,12 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>Install directly from CRAN, which depends on R version &gt;= 3.4.0.</p>
+<p>Install directly from CRAN, which depends on R version &gt;= 3.0.0.</p>
 <pre class="{r}"><code>install.packages("wooldridge")</code></pre>
-<p>Or, install from the Github master branch on R version &gt;= 3.4.0.</p>
+<p>Or, install from the Github master branch.</p>
 <pre class="{r}"><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("JustinMShea/wooldridge")</a></code></pre>
-<p>For developer version (with dependencies relaxed to R version &gt;= 3.1.0), install from the GitHub dev branch. Note: the vignette may fail to build with older versions of R, knitr, and devtools. However, you can download it <a href="https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf">here</a>.</p>
+<p>For developer version, install from the GitHub dev branch.</p>
 <pre class="{r}"><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("JustinMShea/wooldridge@dev")</a></code></pre>
-<p>Or</p>
-<pre class="{r}"><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("JustinMShea/wooldridge@dev", build_vignettes = TRUE)</a></code></pre>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
@@ -96,10 +95,9 @@ data("jtrain")</code></pre>
 <pre class="{r}"><code>View(jtrain)</code></pre>
 <p>Check out the documentation on <code>jtrain</code>, including variable column names and what they are.</p>
 <pre class="{r}"><code><a href="reference/jtrain.html">?jtrain</a></code></pre>
-<p>In addition, load the <a href="https://github.com/JustinMShea/wooldridge/tree/master/vignettes/wooldridge-vignette.pdf"><code>wooldridge-vignette</code></a> for a recreation of examples from the text.</p>
-<pre class="{r}"><code><a href="articles/wooldridge-vignette.html"> vignette("wooldridge-vignette")</a></code></pre>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3" id="sidebar">
@@ -121,6 +119,7 @@ data("jtrain")</code></pre>
 <li><a href="https://cran.r-project.org/package=wooldridge"><img src="http://www.r-pkg.org/badges/version/wooldridge" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://travis-ci.org/JustinMShea/wooldridge"><img src="https://travis-ci.org/JustinMShea/wooldridge.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/JustinMShea/wooldRidge"><img src="https://ci.appveyor.com/api/projects/status/github/JustinMShea/wooldRidge?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
+<li><a href="https://CRAN.R-project.org/package=wooldridge"><img src="https://cranlogs.r-pkg.org/badges/wooldridge"></a></li>
 </ul>
 </div>
 </div>

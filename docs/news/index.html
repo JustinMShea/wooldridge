@@ -68,7 +68,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/wooldridge-vignette.html">wooldridge-vignette</a>
+      <a href="../articles/Introductory-Econometrics-Examples.html">Introductory Econometrics Examples</a>
     </li>
   </ul>
 </li>
@@ -95,41 +95,65 @@
     </div>
 
     <div class="contents">
+    <div id="wooldridge-1-2-1" class="section level1">
+<h1 class="hasAnchor">
+<a href="#wooldridge-1-2-1" class="anchor"></a>wooldridge 1.2.1</h1>
+<div id="new-documentation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#new-documentation" class="anchor"></a>NEW DOCUMENTATION</h3>
+<p>Created a Github pages site for the package, eleminating the need for generating a pdf vignette.</p>
+</div>
+<div id="description" class="section level3">
+<h3 class="hasAnchor">
+<a href="#description" class="anchor"></a>DESCRIPTION</h3>
+<p>Relaxed dependency from <code>R (&gt;= 3.4.0)</code> to <code>R (&gt;= 3.0.0)</code> as we no longer need to be concerned about build fails when kniting the .pdf vignette. Minor content edits to Description section.</p>
+</div>
+<div id="readme-md" class="section level3">
+<h3 class="hasAnchor">
+<a href="#readme-md" class="anchor"></a>README.md</h3>
+<p>Added downloads by month badge. Updates reflecting changes above.</p>
+</div>
+<div id="updates-to-vignette" class="section level3">
+<h3 class="hasAnchor">
+<a href="#updates-to-vignette" class="anchor"></a>Updates to vignette</h3>
+<p>Name change to “Introductory Econometrics Examples”. In addition, I updated stargazer output to <code>type = "html"</code>. Finally, added forecast content to the chapter 18 example.</p>
+</div>
+<div id="tests" class="section level3">
+<h3 class="hasAnchor">
+<a href="#tests" class="anchor"></a>tests</h3>
+<p>Added two additional tests on build. One tests checks if 105 data sets are present. The other tests if each one loads correctly and is of class <code>data.frame</code>.</p>
+</div>
+</div>
     <div id="wooldridge-1-2-0" class="section level1">
 <h1 class="hasAnchor">
 <a href="#wooldridge-1-2-0" class="anchor"></a>wooldridge 1.2.0</h1>
-<div id="integrate-descriptions-of-data-sets" class="section level2">
-<h2 class="hasAnchor">
-<a href="#integrate-descriptions-of-data-sets" class="anchor"></a>Integrate Descriptions of data sets</h2>
-<p>In previous versions, the documentation mainly contained the column variable names to all data sets, which is all that is available on the text book companion site. After scouring the internet, I acquired a lone .pdf, listing descriptions of original sources as well as the page numbers on which the data set appears, for 101 of the 105 data sets! In addition, most of it appears to be written by Wooldridge himself and contains interesting commentary and features of the data set. After wrangling the .pdf into a proper data.frame, I programmatically extracted the useful elements and wove them into the roxygen2 style .R files.</p>
+<div id="new-documentation-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#new-documentation-1" class="anchor"></a>NEW DOCUMENTATION</h3>
+<p>In previous versions, the documentation merely contained column variable names and dimensions of each data set. This version has been updated to include a plethora of additional information for 101 data sets. Updates include descriptions for each column variable, the original sources Wooldridge used to acquire each data set, detailed notes describing suggested analysis approaches, and page numbers for each data set located in the text. The source of this information comes from a .pdf file titled the “DATA SET HANDBOOK” by Jeffrey M. Wooldridge. I wrote a script which iteratively extracted its contents and inserted them into roxygen2 style .R files for each data set.</p>
 </div>
-<div id="updates-to-vignette" class="section level2">
-<h2 class="hasAnchor">
-<a href="#updates-to-vignette" class="anchor"></a>Updates to vignette</h2>
-<p>Fixed chapter 6 misspelling of the data set called within the load function. The example still worked due to lazy loading of data.</p>
-<p>While I have an old affinity for Farnsworth document, it was pointed out to me that it contains some outdated information. I removed it as it might do new learners more harm than good. In its place, I added a citation for the book, Applied Econometrics with R. While I already cited the package, it should go in the Appendix as a resource to expand knowledge beyond the text.</p>
+<div id="updates-to-vignette-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#updates-to-vignette-1" class="anchor"></a>Updates to vignette</h3>
+<p>Fixed an error in chapter 6, misspelling the name of the data set called within the data function. The model example still worked due to lazy loading of data.</p>
+<p>While I have an old affinity for the Farnsworth Econometrics document, it contains some outdated information. I removed it as it might do new learners more harm than good. In its place I added a citation for the book, “Applied Econometrics with R”. While I previously cited the AER package, the book should go in the Appendix as a resource for those considering expanding their knowledge beyond this introductory text.</p>
 <p>The newly acquired original description of data sets have also been added for every example, with the syntax for calling documentation on each one.</p>
 </div>
-<div id="updates-to-readme-md" class="section level2">
-<h2 class="hasAnchor">
-<a href="#updates-to-readme-md" class="anchor"></a>Updates to README.md</h2>
+<div id="updates-to-readme-md" class="section level3">
+<h3 class="hasAnchor">
+<a href="#updates-to-readme-md" class="anchor"></a>Updates to README.md</h3>
 <p>Added instructions to access dev branch, which I pushed to Github.</p>
 </div>
 </div>
     <div id="wooldridge-1-1-0" class="section level1">
 <h1 class="hasAnchor">
 <a href="#wooldridge-1-1-0" class="anchor"></a>wooldridge 1.1.0</h1>
-<div id="updates-to-vignette-1" class="section level2">
-<h2 class="hasAnchor">
-<a href="#updates-to-vignette-1" class="anchor"></a>Updates to vignette</h2>
+<div id="updates-to-vignette-2" class="section level3">
+<h3 class="hasAnchor">
+<a href="#updates-to-vignette-2" class="anchor"></a>Updates to vignette</h3>
 <p>I removed written descriptions of the example problems, putting more emphasis on viewing clean code. Short notes point to what function arguments are used or to various R packages. For descriptions of the examples and rational behind each problem, students should refer to their textbook as the content offered by Wooldridge is quite clear.</p>
 <p>A bibliography section has been added, including package citations and their authors.</p>
 <p>An Appendix has been added, pointing readers to a few excellent sources for computing Econometric models with R. These are “Econometrics in R” by Grant Farnsworth and “Using R for Introductory Econometrics” by Florian Hess.</p>
-</div>
-<div id="updates-to-readme-md-1" class="section level2">
-<h2 class="hasAnchor">
-<a href="#updates-to-readme-md-1" class="anchor"></a>Updates to README.md</h2>
-<p>Improved readability.</p>
 </div>
 </div>
     <div id="wooldridge-1-0-0" class="section level1">
@@ -144,6 +168,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#wooldridge-1-2-1">1.2.1</a></li>
         <li><a href="#wooldridge-1-2-0">1.2.0</a></li>
         <li><a href="#wooldridge-1-1-0">1.1.0</a></li>
         <li><a href="#wooldridge-1-0-0">1.0.0</a></li>
