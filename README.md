@@ -8,7 +8,7 @@ Economics students new to both econometrics and **R** may find the simultaneous 
 
 The `wooldridge` data package aims to lighten the task by loading any data set from the text through a single command. The package contains documentation for each set and all data has been compressed to 62.73% of its original size. Just install the package, load it, and use the `data()` function to call the data set you need to work with.
 
-_**But wait...there's more!**_ Act now and you will receive the  [`wooldridge-vignette`](https://cran.r-project.org/web/packages/wooldridge/vignettes/wooldridge-vignette.pdf)!:sparkles: 
+_**But wait...there's more!**_ Act now and you will receive example formulas for every chapter of [Introductory Econometrics](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html).!:sparkles:  For a pdf version, click [**here**](https://cran.r-project.org/web/packages/wooldridge/vignettes/wooldridge-vignette.pdf)
 
 The vignette illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix to helpful resources, such as *Using R for Introductory Econometrics* by Florian Hess.
 
@@ -31,12 +31,6 @@ Or, install from the Github master branch.
 devtools::install_github("JustinMShea/wooldridge")
 ```
 
-For developer version, install from the GitHub dev branch.
-
-```{r}
-devtools::install_github("JustinMShea/wooldridge@dev")
-```
-
 ## Example
 
 Load the `wooldridge` package and use the `data()` function to load the desired data set.
@@ -48,13 +42,13 @@ library(wooldridge)
 data("jtrain")
 ```
 
-View the `jtrain` data set
+If using RStudio, View the `jtrain` data set
 
 ```{r}
 View(jtrain)
 ```
 
-Check out the documentation on `jtrain`, including variable column names and what they are.
+Check out the documentation for `jtrain`. It includes variable column names, original source of data, as well as page number(s) where the data appear in the text.
 
 ```{r}
 ?jtrain
