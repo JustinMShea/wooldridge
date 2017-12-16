@@ -5,36 +5,38 @@ output: github_document
 
 # wooldridge 1.2.1
 
+### NEW DOCUMENTATION
+
+Created a Github pages site for the package, eleminating the need for generating a pdf vignette.
+
+
 ### DESCRIPTION
 
-Relaxed dependency from `R (>= 3.4.0)` to `R (>= 3.0.0)`. 
-Minor content edits to Description section.
+Relaxed dependency from `R (>= 3.4.0)` to `R (>= 3.0.0)` as we no longer need to be concerned about build fails when kniting the .pdf vignette. Minor content edits to Description section.
 
-### Adding pkgdown
-
-Created a Github pages site for the package.
 
 ### README.md
 
-Updates to links from pdf vignette to Github pages site as well as `R (>= 3.0.0)`.
-Added downloads by month button as well.
+Added downloads by month badge. Updates reflecting changes above.
+
 
 ### Updates to vignette
 
-Changed the name of the vignette to "Introductory Econometrics Examples".
+Name change to "Introductory Econometrics Examples".
 In addition, I updated stargazer output to `type = "html"`.
+Finally, added forecast content to the chapter 18 example.
 
 ### tests
 
-Added two additional tests. One tests checks if 105 data sets are present. The other tests if they all load correctly as `data.frames`.
+Added two additional tests on build. One tests checks if 105 data sets are present. The other tests if each one loads correctly and is of class `data.frame`.
 
 
 
 # wooldridge 1.2.0
 
-### Integrate Descriptions of data sets
+### NEW DOCUMENTATION
 
-In previous versions, the documentation merely contained the column variable names and dimensions of the data set. After scouring the internet, I acquired a lone .pdf written by Wooldridge, listing descriptions of original sources of the data sets as well as corresponding page numbers for 101 of the 105 data sets. In addition, the document contains interesting commentary and variable descriptions. After wrangling the .pdf into a proper data.frame, I programmatically extracted its contents into roxygen2 style .R files for each data set.
+In previous versions, the documentation merely contained column variable names and dimensions of each data set. This version has been updated to include a plethora of additional information for 101 data sets. Updates include descriptions for each column variable, the original sources Wooldridge used to acquire each data set, detailed notes describing suggested analysis approaches, and page numbers for each data set located in the text. The source of this information comes from a .pdf file titled the "DATA SET HANDBOOK" by Jeffrey M. Wooldridge. I wrote a script which iteratively extracted its contents and inserted them into roxygen2 style .R files for each data set.
 
 ### Updates to vignette
 
@@ -57,10 +59,6 @@ I removed written descriptions of the example problems, putting more emphasis on
 A bibliography section has been added, including package citations and their authors.
 
 An Appendix has been added, pointing readers to a few excellent sources for computing Econometric models with R. These are "Econometrics in R" by Grant Farnsworth and "Using R for Introductory Econometrics" by Florian Hess.
-
-### Updates to README.md 
-
-Improved readability.
 
 
 # wooldridge 1.0.0
