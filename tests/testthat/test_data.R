@@ -9,8 +9,18 @@ test_that("Do any files exist in /data that are not .RData files?", {
 })
 
 
+test_that("Are there 105 data sets in the package?", {
+        
+expect_equal(length(data(list = c(data(package = "wooldridge")$results[,3]))), 105)
 
-test_that("Is the '/data' directory smaller than 5MB? (CRAN limit is 5mb)", {
-        data_size <- sum(file.info(list.files("data"))$size)
-        expect_lt(data_size, 5000000)
+})
+
+
+test_that("Do data sets load and are they data.frames?", {
+        
+        data(list = c(data(package = "wooldridge")$results[,3]))
+        
+        for (i in ls()) {
+               expect_match(class(get(i)), "data.frame")
+        }
 })

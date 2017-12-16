@@ -91,12 +91,9 @@ for (i in dataset_list) {
   
 }
 
-# Next, clear .env and import the new .RData files to check.
-new_data_list <- list.files("data")
-for (i in new_data_list) {
-  path <- paste0("data/",i)
-  load(path)
-}
+# Create datalist
+tools::add_datalist(getwd())
+
 
 ######################################
 ## Compute efficiency of compression #
