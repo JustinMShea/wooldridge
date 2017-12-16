@@ -2,13 +2,13 @@
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/wooldridge)](https://cran.r-project.org/package=wooldridge) [![Travis](https://travis-ci.org/JustinMShea/wooldridge.svg?branch=master)](https://travis-ci.org/JustinMShea/wooldridge) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/JustinMShea/wooldridge?branch=master&svg=true)](https://ci.appveyor.com/project/JustinMShea/wooldridge)   [![](http://cranlogs.r-pkg.org/badges/wooldridge)](http://cran.rstudio.com/web/packages/wooldridge/index.html)
 
-# wooldridge 
+# wooldridge: 105 Data Sets from Introductory Econometrics. 
 
 Economics students new to both econometrics and **R** may find the simultaneous introduction to both a bit challenging. However, if your text is **"Introductory Econometrics: A Modern Approach"** by Jeffrey M. Wooldridge, then you are in luck! 
 
 The `wooldridge` data package aims to lighten the task by loading any data set from the text through a single command. The package contains documentation for each set and all data has been compressed to 62.73% of its original size. Just install the package, load it, and use the `data()` function to call the data set you need to work with.
 
-_**But wait...there's more!**_ Act now and you will receive example formulas for every chapter of [Introductory Econometrics](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html).!:sparkles:  For a pdf version, click [**here**](https://cran.r-project.org/web/packages/wooldridge/vignettes/wooldridge-vignette.pdf)
+_**But wait...there's more!**_ Act now and you will receive example formulas for every chapter of [Introductory Econometrics](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html)!:sparkles:  For a pdf version, click [**here**](https://cran.r-project.org/web/packages/wooldridge/vignettes/wooldridge-vignette.pdf)
 
 The vignette illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix to helpful resources, such as *Using R for Introductory Econometrics* by Florian Hess.
 
