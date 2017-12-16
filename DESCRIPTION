@@ -1,7 +1,7 @@
 Package: wooldridge
 Type: Package
 Title: 105 Data Sets from "Introductory Econometrics: A Modern Approach" by Jeffrey M. Wooldridge
-Version: 1.2.0.9122
+Version: 1.2.1
 Authors@R: person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea@roosevelt.edu")  
 Maintainer: Justin M. Shea <jshea@roosevelt.edu>
 Description: Students exploring both econometrics and R may find the simultaneous 
@@ -20,7 +20,6 @@ Description: Students exploring both econometrics and R may find the simultaneou
     and solutions to examples from each chapter of the text. Note: Data sets are 
     from the 5th edition (Wooldridge 2013, ISBN-13:978-1-111-53104-1), and are 
     compatible with all others.
-
 Depends: R (>= 3.0.0)
 License: GPL-3
 Encoding: UTF-8
