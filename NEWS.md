@@ -7,12 +7,12 @@ output: github_document
 
 ### DESCRIPTION
 
-Relaxed depency from `R (>= 3.4.0)` to `R (>= 3.0.0)`. 
+Relaxed dependency from `R (>= 3.4.0)` to `R (>= 3.0.0)`. 
 Minor content edits to Description section.
 
 ### Adding pkgdown
 
-Created a Github pages site for the package, which will include the vigenttes.
+Created a Github pages site for the package.
 
 ### README.md
 
@@ -22,11 +22,11 @@ Added downloads by month button as well.
 ### Updates to vignette
 
 Changed the name of the vignette to "Introductory Econometrics Examples".
-In addition, I changed stargazer output to `type = "html"`.
+In addition, I updated stargazer output to `type = "html"`.
 
 ### tests
 
-Added additional tests, checking number of data sets and if they all load correctly as `data.frames`.
+Added two additional tests. One tests checks if 105 data sets are present. The other tests if they all load correctly as `data.frames`.
 
 
 
@@ -34,13 +34,13 @@ Added additional tests, checking number of data sets and if they all load correc
 
 ### Integrate Descriptions of data sets
 
-In previous versions, the documentation merely contained the column variable names and dimensions of the data set, which is all that was available. After scouring the internet, I acquired a lone .pdf written by Wooldridge, listing descriptions of original sources of the data sets as well as corresponding page numbers in the text for 101 of the 105 data sets. In addition, the document contains interesting commentary and variable descriptions. After wrangling the .pdf into a proper data.frame, I programmatically extracted the useful elements and wrote them into roxygen2 style .R files.
+In previous versions, the documentation merely contained the column variable names and dimensions of the data set. After scouring the internet, I acquired a lone .pdf written by Wooldridge, listing descriptions of original sources of the data sets as well as corresponding page numbers for 101 of the 105 data sets. In addition, the document contains interesting commentary and variable descriptions. After wrangling the .pdf into a proper data.frame, I programmatically extracted its contents into roxygen2 style .R files for each data set.
 
 ### Updates to vignette
 
-Fixed chapter 6 misspelling of the data set called within the load function. The example still worked due to lazy loading of data.
+Fixed an error in chapter 6, misspelling the name of the data set called within the data function. The model example still worked due to lazy loading of data.
 
-While I have an old affinity for Farnsworth document, it was pointed out to me that it contains some outdated information. I removed it as it might do new learners more harm than good. In its place, I added a citation for the book, Applied Econometrics with R. While I already cited the package, it should go in the Appendix as a resource to expand knowledge beyond the text.
+While I have an old affinity for the Farnsworth Econometrics document, it contains some outdated information. I removed it as it might do new learners more harm than good. In its place I added a citation for the book, "Applied Econometrics with R". While I previously cited the AER package, the book should go in the Appendix as a resource for those considering expanding their knowledge beyond this introductory text.
 
 The newly acquired original description of data sets have also been added for every example, with the syntax for calling documentation on each one.
 
