@@ -1,25 +1,26 @@
 Package: wooldridge
 Type: Package
 Title: 105 Data Sets from "Introductory Econometrics: A Modern Approach" by Jeffrey M. Wooldridge
-Version: 1.2.0.9121
+Version: 1.2.0.9122
 Authors@R: person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea@roosevelt.edu")  
 Maintainer: Justin M. Shea <jshea@roosevelt.edu>
-Description: Students new to econometrics and R may find themselves challenged by data 
-    management tasks inherent to both. The wooldridge data package aims to lighten 
-    the task by efficiently loading any data set from the text with a single command. 
-    Collectively, all data sets have been compressed to 62.73% of their original
-    size. Most sets have robust documentation including page numbers on which they 
-    are used, original data sources, original year of publication, and notes which 
-    chronicle their history while offering ideas for further exploration and research.
-    To resurrect a data set, one can pass it's name to the `data()` function or just
-    define it as the `data =` argument of the model function. The data will lazily load 
-    and, provided the syntax is correct, model estimates shall spring forth from 
-    the otherwise lifeless abyss of your R console! If the syntax is an issue, the 
-    wooldridge-vignette displays solutions to examples from each chapter of the 
-    text, providing a relevant introduction to econometric modeling with R. The vignette 
-    closes with an Appendix of recommended sources for R and econometrics. Note: 
-    Data sets are from the 5th edition (Wooldridge 2013, ISBN-13:978-1-111-53104-1), 
-    and are compatible with all others.
+Description: Students exploring both econometrics and R may find the simultaneous 
+    introduction to both challenging. However, if the text is "Introductory 
+    Econometrics: A Modern Approach" by Jeffrey M. Wooldridge, they are in luck! 
+    The wooldridge data package aims to lighten the task by efficiently loading 
+    any data set from the text with a single command. Collectively, the data sets 
+    have been efficiently compressed to a fraction of their original size and are 
+    well documented. Help files conjtain relevant page numbers of the text, 
+    the original source and time of publication, as well as notes which 
+    offering ideas for further analysis, exploration, and research. To resurrect 
+    a data set, simply load it with the `data()` function or load it lazily with 
+    the `data =` argument of any model function. Provided the syntax is correct, 
+    model estimates shall spring forth from the otherwise lifeless abyss of a 
+    student's R console! If model syntax is an issue, a vignette contains code 
+    and solutions to examples from each chapter of the text. Note: Data sets are 
+    from the 5th edition (Wooldridge 2013, ISBN-13:978-1-111-53104-1), and are 
+    compatible with all others.
+
 Depends: R (>= 3.0.0)
 License: GPL-3
 Encoding: UTF-8
@@ -27,5 +28,5 @@ LazyData: true
 RoxygenNote: 6.0.1
 Suggests: knitr, rmarkdown, testthat, AER, plm, prais, stargazer
 VignetteBuilder: knitr
-URL: https://CRAN.R-project.org/package=wooldridge
+URL: https://justinmshea.github.io/wooldridge
 BugReports: https://github.com/JustinMShea/wooldridge/issues
