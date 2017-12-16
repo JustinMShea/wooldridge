@@ -1,14 +1,12 @@
 ---
-title: "wooldridge-vignette"
+title: "Introductory Econometrics Examples"
 author: "Justin M Shea"
 date: ' '
 output:
-  pdf_document:
-    toc: yes
   rmarkdown::html_document:
     toc: yes
 vignette: >
-  %\VignetteIndexEntry{wooldridge-vignette}  
+  %\VignetteIndexEntry{Introductory-Econometrics-Examples}  
   %\VignetteEngine{knitr::rmarkdown}  
   %\VignetteEncoding{UTF-8}
 
@@ -67,7 +65,7 @@ log_wage_model <- lm(lwage ~ educ, data = wage1)
 
 Print the results. I'm using the `stargazer` package to print the model results in a clean and easy to read format. See the bibliography for more information.
 
-```{r, results = 'asis', warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, type = "html"}
 stargazer(log_wage_model, single.row = TRUE, header = FALSE)
 ```
 
@@ -87,7 +85,7 @@ hourly_wage_model <- lm(lwage ~ educ + exper + tenure, data = wage1)
 
 Print the estimated model coefficients:
 
-```{r, results = 'asis', warning=FALSE, message=FALSE}
+```{r, type = "html", warning=FALSE, message=FALSE}
 stargazer(hourly_wage_model,  single.row = TRUE, header = FALSE)
 ```
 
@@ -132,7 +130,7 @@ linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_1987_nonuni
 
 Finally, print the complete summary statistic diagnostics of the model.
 
-```{r, results = 'asis', warning=FALSE, message=FALSE}
+```{r, type = "html", warning=FALSE, message=FALSE}
 stargazer(linear_model,  single.row = TRUE, header = FALSE)
 ```
 
@@ -242,7 +240,7 @@ Estimate the coefficient with the usual `lm` regression model but this time, sta
 housing_standard <- lm(scale(price)~0+scale(nox)+scale(crime)+scale(rooms)+scale(dist) + scale(stratio), data = hprice2)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE}
+```{r, type = "html", warning=FALSE, message=FALSE}
 stargazer(housing_standard,  single.row = TRUE, header = FALSE)
 ```
 
@@ -260,7 +258,7 @@ housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms+I(rooms^2) + stratio
 
 Compare the results with the model from `example 6.1`.
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(housing_standard, housing_interactive, single.row = TRUE, header = FALSE)
 ```
 
@@ -291,7 +289,7 @@ Estimate the coefficients of the above linear model on the `hprice` data set.
 housing_qualitative <- lm(lprice ~ llotsize + lsqrft + bdrms + colonial, data = hprice1)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(housing_qualitative,  single.row = TRUE, header = FALSE)
 ```
 
@@ -326,7 +324,7 @@ GPA_WLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)
 
 Compare the OLS and WLS model in the table below:
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE)
 ```
 
@@ -369,7 +367,7 @@ smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem,
 
 The table below compares the results of both models side by side. By removing the outlier firm, $sales$ become a more significant determination of R&D expenditures.
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(all_rdchem, smallest_rdchem,  single.row = TRUE, header = FALSE)
 ```
 
@@ -390,7 +388,7 @@ data("intdef")
 tbill_model <- lm(i3 ~ inf + def, data = intdef)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(tbill_model, single.row = TRUE, header = FALSE)
 ```
 
@@ -414,7 +412,7 @@ barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + af
 barium_anova <- anova(barium_imports, barium_seasonal)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(barium_imports, barium_seasonal,  single.row = TRUE, header = FALSE)
 
 stargazer(barium_anova,  single.row = TRUE, header = FALSE)
@@ -442,7 +440,7 @@ wage_time <- lm(lhrwage ~ loutphr + t, data = earns)
 wage_diff <- lm(diff(lhrwage) ~ diff(loutphr), data = earns)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(wage_time, wage_diff,  single.row = TRUE, header = FALSE)
 ```
 
@@ -490,7 +488,7 @@ $$\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t$$
 return_mu <- residuals(return_AR1)
 mu2_hat_model <- lm(return_mu^2 ~ return_1, data = return_AR1$model)
 ```
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(return_AR1, mu2_hat_model,  single.row = TRUE, header = FALSE)
 ```
 
@@ -510,7 +508,7 @@ mu2_hat_1 <- return_mu[-NROW(return_mu)]^2
 arch_model <- lm(mu2_hat ~ mu2_hat_1)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(arch_model, single.row = TRUE, header = FALSE)
 ```
 
@@ -532,7 +530,7 @@ data("traffic1")
 DD_model <- lm(cdthrte ~ copen + cadmn, data = traffic1)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(DD_model,  single.row = TRUE, header = FALSE)
 ```
 
@@ -551,7 +549,7 @@ scrap_panel <- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain,
             index = c('fcode','year'), model = 'within', effect ='individual')
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(scrap_panel,  single.row = TRUE, header = FALSE)
 ```
 
@@ -589,7 +587,7 @@ library("AER")
 wage_educ_IV <- ivreg(lwage ~ educ | fatheduc, data = mroz)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(wage_educ_model, fatheduc_model, wage_educ_IV, single.row = TRUE, header = FALSE)
 ```
 
@@ -619,7 +617,7 @@ library("AER")
 educ_sibs_IV <- ivreg(lwage ~ educ | sibs, data = wage2)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(educ_sibs_model, educ_sibs_IV, wage_educ_IV,  single.row = TRUE, header = FALSE)
 ```
 
@@ -637,7 +635,7 @@ data("mroz")
 wage_educ_exper_IV <- ivreg(lwage ~ educ + exper + expersq | exper + expersq + motheduc + fatheduc, data = mroz)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE, echo=FALSE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE, echo=FALSE}
 stargazer(wage_educ_exper_IV,  single.row = TRUE, header = FALSE)
 ```
 
@@ -673,7 +671,7 @@ library(AER)
 inflation_IV <- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(open_model, inflation_IV,  single.row = TRUE, header = FALSE)
 ```
 
@@ -709,7 +707,7 @@ econ_crim_poisson <- glm(formula, data = crime1, family = poisson)
 
 Use the `stargazer` package to easily compare diagnostic tables of both models.
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, type = "html", warning=FALSE, message=FALSE, tidy=TRUE}
 stargazer(econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALSE)
 ```
 
@@ -743,7 +741,7 @@ $$\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}$$
 unem_inf_VAR1 <- lm(unem ~ unem_1 + inf_1, data = phillips_train)
 ```
 
-```{r, results = 'asis', warning=FALSE, message=FALSE, echo=FALSE}
+```{r, type = "html", warning=FALSE, message=FALSE, echo=FALSE}
 stargazer(unem_AR1, unem_inf_VAR1,  single.row = TRUE, header = FALSE)
 ```
 
