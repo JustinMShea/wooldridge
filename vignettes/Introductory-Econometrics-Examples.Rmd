@@ -779,7 +779,7 @@ This is an excellent open source complimentary text to "Introductory Econometric
 
 Hess, Florian. _Using R for Introductory Econometrics_. ISBN: 978-1-523-28513-6, CreateSpace Independent Publishing Platform, 2016, Dusseldorf, Germany. 
 
-[url: https://urfie.net](https://urfie.net).
+[url: http://www.urfie.net/](http://www.urfie.net/).
 
 
 ###Applied Econometrics with R
