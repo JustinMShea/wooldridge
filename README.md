@@ -4,15 +4,14 @@
 
 # wooldridge: 105 Data Sets for Econometrics 
 
-Economics students new to both econometrics and **R** may find the simultaneous introduction to both a bit challenging. However, if your text is **"Introductory Econometrics: A Modern Approach"** by Jeffrey M. Wooldridge, then you are in luck! 
+Economics students new to both econometrics and **R** may find the introduction to both challenging. However, if one's text is **"Introductory Econometrics: A Modern Approach"** by Jeffrey M. Wooldridge, they are in luck! 
 
-The `wooldridge` data package aims to lighten the task by loading any data set from the text through a single command. The package contains documentation for each set and all data has been compressed to 62.73% of its original size. Just install the package, load it, and use the `data()` function to call the data set you need to work with.
+The `wooldridge` data package aims to lighten the task by easily loading any data set from the text. The package contains documentation for each set and all data has been compressed to 62.73% of its original size. Just install the package, load it, and call the set you wish to work with.
 
-_**But wait...there's more!**_ Act now and you will receive example formulas for every chapter of [Introductory Econometrics](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html)!:sparkles:  For a pdf version, click [**here**](https://cran.r-project.org/web/packages/wooldridge/vignettes/wooldridge-vignette.pdf)
+_**But wait...there's more!**_ A vignette, [Introductory Econometrics Examples](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html):sparkles: illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix of helpful resources, such as *Using R for Introductory Econometrics* by Florian Hess.
 
-The vignette illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix to helpful resources, such as *Using R for Introductory Econometrics* by Florian Hess.
 
-While the course companion site provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometric modeling introduces one to software tools capable of scaling with the demands of modern methods in statistical computing.
+While the original course companion site provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometric modeling introduces one to software tools capable of scaling with the demands of modern methods in statistical computing. And, working with R is fun.
 
 **Note:** All data sets are from the 5th edition (Wooldridge 2013, `ISBN-13: 978-1-111-53104-1`), which is compatible with most other editions.
 
