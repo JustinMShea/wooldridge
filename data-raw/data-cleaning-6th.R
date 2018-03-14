@@ -70,8 +70,6 @@ countymurders$arrestrate <- as.numeric(countymurders$arrestrate)
  # Create data description files for six files above converted to .txt #
 #######################################################################
 
-# Nor are they found in the 5th or 6th edition of other file formats, such as excel.
-# In previous additions <= 4th, these dataa sets didn't exist.
 list.files(data_folder, pattern = ".txt$")
 
 # Upload file with data set descriptions.
@@ -127,7 +125,7 @@ documentation <- function(name, data) {
         space <- "#'"
         blank <- " "
         
-        # Paste all strings together to prepare for file for line by line write.
+        # Paste all strings together to preparefile for line by line write.
         documentation <- c(title, space, intro, space, section, space, text, space, type, space, usage, space, message, start, items, end, source, example, data_label, blank, blank)
         
         # Write out 1 string per line, into a .R file labeled to match each dataset
