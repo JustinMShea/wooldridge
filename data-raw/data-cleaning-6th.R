@@ -97,13 +97,29 @@ documentation <- function(name, data) {
         
         start <- paste0("#' ","\\itemize{")
         
-        # transform variables and descriptions into roxygen2 ready format.  
+        # Extract variable descriptions from stata files.
+        ## Stata zip file downloaded from 6th edition companion site.
+        # http://academic.cengage.com/resource_uploads/downloads/130527010X_522192.zip
+        # files "approval.dta", "catholic.dta", "census2000.dta","countymurders.dta", 
+        # "econmath.dta", "meapsingle.dta" manually moved to "stata" folder.
+        library(readstata13)
+                # Define Location of dataset, save base name.
+                file_location <- paste0(getwd(), "/stata/", name, ".dta")
+                # Load dataset
+                x <- read.dta13(file_location)
+                # Extract attributes containing name and description from stata file attr.
+                assign(paste0(name,'_desc'), data.frame(names=attr(x, "names"), 
+                                                     discription=attr(x, "var.labels")))
+                # remove x as the data set is not needed.
+                rm(x)
+                
+        #  Write to roxygen2 ready format.  
         items <- matrix(data = NA, nrow=length(colnames(data)), ncol = 1)
-        
         for(i in desc) {
-                items[i] <- paste0("#'  \\item","{",desc[i,1],"}{Description not provided}")
+                items[i] <- paste0("#'  \\item","{",get(paste0(name,'_desc'))[i,1],"}{ ",get(paste0(name,'_desc'))[i,2],"}")
         }
         
+        # More roxygen2 style syntax, written into .R files.
         end <- "#' }"
         source <- "#' @source \\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}"
         example <- paste0("#' @examples ", " str(",file_name,")")    
