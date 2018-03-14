@@ -18,16 +18,16 @@ While the original course companion site provides publicly available data sets f
 
 ## Installation
 
-Install directly from CRAN, which depends on R version >= 3.0.0.
+Install directly from CRAN, which depends on R version >= 3.4.
 
 ```{r}
 install.packages("wooldridge")
 ```
 
-Or, install from the Github master branch.
+Or, install from the Github dev branch, which depends on R version >= 3.0. In addition, data sets from the 6th edition (`approval`, `catholic`, `census2000`, `countymurders`, `econmath`, and `meapsingle`) are included in the dev branch.
 
 ```{r}
-devtools::install_github("JustinMShea/wooldridge")
+devtools::install_github("JustinMShea/wooldridge@dev")
 ```
 
 ## Example
@@ -37,7 +37,6 @@ Data set names match those in the text.
 
 ```{r}
 library(wooldridge)
-
 data("jtrain")
 ```
 
