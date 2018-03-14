@@ -18,13 +18,15 @@ While the original course companion site provides publicly available data sets f
 
 ## Installation
 
-Install directly from CRAN, which depends on R version >= 3.4.
+Install `v1.2` directly from CRAN, which depends on **R >= 3.4**.
 
 ```{r}
 install.packages("wooldridge")
 ```
 
-Or, install from the Github dev branch, which depends on R version >= 3.0. In addition, data sets from the 6th edition (`approval`, `catholic`, `census2000`, `countymurders`, `econmath`, and `meapsingle`) are included in the dev branch.
+Or, install v`1.2.1.9000` from the @dev branch, which depends on **R >= 3.0**. 
+
+In addition, data sets from the 6th edition (`approval`, `catholic`, `census2000`, `countymurders`, `econmath`, and `meapsingle`) are included on the dev branch.
 
 ```{r}
 devtools::install_github("JustinMShea/wooldridge@dev")
