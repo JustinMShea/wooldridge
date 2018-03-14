@@ -66,9 +66,6 @@ countymurders$arrestrate <- as.numeric(countymurders$arrestrate)
 # econmath OK
 # meapsingle OK
 
-
-
-
   #######################################################################
  # Create data description files for six files above converted to .txt #
 #######################################################################
@@ -77,39 +74,51 @@ countymurders$arrestrate <- as.numeric(countymurders$arrestrate)
 # In previous additions <= 4th, these dataa sets didn't exist.
 list.files(data_folder, pattern = ".txt$")
 
+# Upload file with data set descriptions.
+doc_path <- path.expand("~/R/wooldridge/data-raw/WooldridgeDataSetHandbook_6eUTF.txt")
+data_doc <- read.delim(doc_path, stringsAsFactors = FALSE)
+colnames(data_doc) <- c("Name", "Source", "Text")
+data_doc$Name <- tolower(gsub(".RAW","", data_doc$Name))
+
 # Write documentation function to build documentation files from .txt imports.      
 documentation <- function(name, data) {        
-                          file_name <- name
-                          desc <- data.frame(variable=names(data))
-                         
-                # roxygen2 style syntax, written into .R files.
-                title <- paste0("#' ", file_name)
-                intro <- paste0("#' ", "Data from wooldRidge package loads lazily. Type data('",file_name, "') into the console.")
-                type  <- paste0("#' @docType data")
-                usage <- paste0("#' @usage data('", file_name,"')")
-                message <- paste("#'", "@format", "A", class(data), "with", NROW(data), "rows and", NCOL(data), "variables:", sep = " ")
-                start <- paste0("#' ","\\describe{")
-
-                # transform variables and descriptions into roxygen2 ready format.  
-                items <- matrix(data = NA, nrow=length(colnames(data)), ncol = 1)
-                for(i in desc) {
-                        items[i] <- paste0("#'  \\item","{",desc[i,1],"}{Description not provided}")
-                }
-
-                end <- "#' }"
-                source <- "#' @source \\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}"
-                example <- paste0("#' @examples ", " str(",file_name,")")    
-                data_label <- paste0("\"", file_name,"\"")
-                space <- "#'"
-                blank <- " "
-
-                # Paste all strings together to prepare for file for line by line write.
-                help_file <- c(title, space, intro, space, type, space, usage, space, message, start, items, end, source, example, data_label, blank, blank)
-
-                # Write out 1 string per line, into a .R file labeled to match each dataset
-                write(help_file, paste(paste(getwd(),"R", file_name, sep = "/"),"R", sep ="."), append = TRUE)
-                
-                # function run complete.
+        file_name <- name
+        desc <- data.frame(variable=names(data))
+        
+        # roxygen2 style syntax, written into .R files.
+        title <- paste0("#' ", as.character(name))
+        intro <- paste0("#' ", "Wooldridge ", data_doc[data_doc$Name == file_name,]$Source, " Data loads lazily.")
+        section <- paste0("#' @section ", data_doc[data_doc$Name == file_name,]$Notes)
+        text <- paste0("#' ", data_doc[data_doc$Name == file_name,]$Text)
+        type  <- paste0("#' @docType data")
+        usage <- paste0("#' @usage data('", as.character(name),"')")
+        example <- paste0("#' @examples "," str(",as.character(name),")")
+        message <- paste("#'", "@format", "A", class(data), "with", NROW(data), "observations on", NCOL(data), "variables:", sep = " ")
+        
+        start <- paste0("#' ","\\itemize{")
+        
+        # transform variables and descriptions into roxygen2 ready format.  
+        items <- matrix(data = NA, nrow=length(colnames(data)), ncol = 1)
+        
+        for(i in desc) {
+                items[i] <- paste0("#'  \\item","{",desc[i,1],"}{Description not provided}")
+        }
+        
+        end <- "#' }"
+        source <- "#' @source \\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}"
+        example <- paste0("#' @examples ", " str(",file_name,")")    
+        data_label <- paste0("\"", file_name,"\"")
+        space <- "#'"
+        blank <- " "
+        
+        # Paste all strings together to prepare for file for line by line write.
+        documentation <- c(title, space, intro, space, section, space, text, space, type, space, usage, space, message, start, items, end, source, example, data_label, blank, blank)
+        
+        # Write out 1 string per line, into a .R file labeled to match each dataset
+        # in the roxygen2 documentation format.
+        write(documentation, paste(paste(getwd(),"R", file_name, sep = "/"),"R", sep ="."), append = TRUE)
+        
+        # function run complete.
 } 
 
 # Call the functions

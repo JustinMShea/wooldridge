@@ -1,0 +1,8 @@
+﻿Name	Source	Text
+APPROVAL.RAW	Source: Harbridge, L., J. Krosnick, and J.M. Wooldridge (forthcoming), “Presidential Approval and Gas Prices: Sociotropic or Pocketbook Influence?” in New Explorations in Political Psychology, ed. J. Krosnick. New York: Psychology Press (Taylor and Francis Group). Professor Harbridge kindly provided the data, of which I have used a subset.	Used in Text: 343, 371, 400
+CATHOLIC.RAW	Source: Altonji, J.G., T.E. Elder, and C.R. Taber (2005), “An Evaluation of Instrumental Variable Strategies for Estimating the Effects of Catholic Schooling,” Journal of Human Resources 40, 791-821. Professor Elder kindly provided a subset of the data, with some variables stripped away for confidentiality reasons.	Used in Text: pages 267, 551 
+CENSUS2000.RAW	Source: Obtained from the United States Census Bureau by Professor Alberto Abadie of the Harvard Kennedy School of Government. Professor Abadie kindly provided the data.	Used in Text:  pages 452-453
+COUNTYMURDERS.RAW	Source: Compiled by J. Monroe Gamble for a Summer Research Opportunities Program (SROP) at Michigan State University, Summer 2014. Monroe obtained data from the U.S. Census Bureau, the FBI Uniform Crime Reports, and the Death Penalty Information Center.	Used in Text: pages 16, 58, 431, 457
+ECONMATH.RAW	Source: Compiled by Professor Charles Ballard, Michigan State University Department of Economics. Professor Ballard kindly provided the data.	Used in Text: 167, 185
+MEAPSINGLE.RAW	Source: Collected by Professor Leslie Papke, an economics professor at MSU, from the Michigan Department of Education web site, www.michigan.gov/mde, and the U.S. Census Bureau. Professor Papke kindly provided the data.	Used in Text: 100, 145-146, 198
+
