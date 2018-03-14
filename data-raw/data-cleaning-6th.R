@@ -3,7 +3,7 @@
  # Explore and clean the Six edition Data that is corrupted #
 ############################################################
   
-data_folder <-  "Data Sets- R"
+data_folder <- "Data Sets- R"
   
 # list files in the data set file, and verify they downloaded.
 length(list.files(data_folder))
@@ -35,14 +35,38 @@ file.rename(rfile_names, txtfile_names)
 
 # Are there any files left with a ".r" extension? No.
 list.files(data_folder, pattern = ".r$")
+ 
 
-# import .txt data
+ # import .txt data #
+data_folder <-  "Data Sets- R"
+
 clean_names <- gsub(".txt","", list.files(data_folder, pattern = ".txt$"))
 
 for(i in clean_names) {
         file_location <- paste(paste(getwd(), data_folder, i, sep = "/"),"txt", sep =".")
-        assign(i, readr::read_csv(file_location))
+        assign(i, read.csv(file_location, header=TRUE, stringsAsFactors = FALSE))
 }
+
+
+## Check and clean file variables
+# approval OK
+# catholic
+catholic$hsgrad <- as.integer(catholic$hsgrad)
+
+# census2000
+census2000$state <- as.factor(census2000$state)
+
+# countymurders
+countymurders$arrests <- as.integer(countymurders$arrests)
+countymurders$rpcincmaint <- as.numeric(countymurders$rpcincmaint)
+countymurders$rpcpersinc <- as.numeric(countymurders$rpcpersinc)
+countymurders$rpcunemins <- as.numeric(countymurders$rpcunemins)
+countymurders$arrestrate <- as.numeric(countymurders$arrestrate)
+
+# econmath OK
+# meapsingle OK
+
+
 
 
   #######################################################################
@@ -88,9 +112,6 @@ documentation <- function(name, data) {
                 # function run complete.
 } 
 
-# View list of txt files to document
-clean_names
-
 # Call the functions
 documentation("approval", approval)
 documentation("catholic", catholic)
@@ -104,14 +125,13 @@ documentation("meapsingle", meapsingle)
  # Write all data sets to high compression xz .Rdata files #
 ###########################################################
 
-# Create "data" folder
-dir.create("data")
-
 # Create list of all datasets (from .Rdata and .r/txt files)
-# loop over list and write to individual files...'save' dynamics require care.
-# Commented out, so they don't execute.
+# View list of txt files to document
+data_folder <-  "Data Sets- R"
+clean_names <- gsub(".txt","", list.files(data_folder, pattern = ".txt$"))
+dataset_list <- clean_names
 
- dataset_list <- clean_names
+# loop over list and write to individual files...'save' arguements require consideration.
  for (i in dataset_list) {
  save(list = i, file = paste0("data/", i, ".RData"), compress = "xz", compression_level = 9)
  }

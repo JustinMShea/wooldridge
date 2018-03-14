@@ -4,6 +4,7 @@
 ######################################
 
 data_folder <-  "R data sets for 5e"
+data_folder <-  "Data Sets- R"
 
 # Lets find out how big the original datasets are
 original_size <- sum(file.info(paste(data_folder, list.files(data_folder), sep = "//"))$size)
@@ -21,3 +22,7 @@ new_size # 2,092,800
 original_size <- sum(file.info(paste(data_folder, list.files(data_folder), sep = "//"))$size)
 compression_efficiency <- new_size/original_size * 100 
 compression_efficiency
+
+# Run command to check values.
+File_values <- tools::checkRdaFiles("data")
+

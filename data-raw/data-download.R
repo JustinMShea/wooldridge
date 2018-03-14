@@ -20,9 +20,12 @@ download_data <- function(url, zipfile_name) {
 } 
 
 ## Define the path to the data sets on the textbook website
-# woolridge_cengage_url_6th  <- "http://academic.cengage.com/resource_uploads/downloads/130527010X_514733.zip"  
-# zipfile_name <- "Wooldridge-6th.zip"
+woolridge_cengage_url_6th  <- "http://academic.cengage.com/resource_uploads/downloads/130527010X_514733.zip"  
+zipfile_name <- "Wooldridge-6th.zip"
+download_data(woolridge_cengage_url_6th, zipfile_name)
 
+
+# 5th Edition
 woolridge_cengage_url_5th <- "http://academic.cengage.com/resource_uploads/downloads/1111531048_374625.zip"
 
 download_data(woolridge_cengage_url_5th, "Wooldridge-5th.zip")

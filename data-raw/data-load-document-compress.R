@@ -83,13 +83,16 @@ for(i in RData_names) {
 
 dir.create("data")
 
-dataset_list <- c(RData_names)
+dataset_list <- gsub(".RData", "", list.files("data", pattern = ".RData$"))
 
 for (i in dataset_list) {
   
   save(list = i, file = paste0("data/", i, ".RData"), compress = "xz", compression_level = 9)
   
 }
+
+# Lets find out how big the compressed datasets are.
+sum(file.info(paste("data", list.files("data"), sep = "//"))$size)
 
 # Create datalist
 tools::add_datalist(getwd())

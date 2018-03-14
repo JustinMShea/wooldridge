@@ -3,6 +3,7 @@ affairs
 airfare
 alcohol
 apple
+approval
 athlet1
 athlet2
 attend
@@ -16,12 +17,15 @@ bwght
 bwght2
 campus
 card
+catholic
 cement
+census2000
 ceosal1
 ceosal2
 charity
 consump
 corn
+countymurders
 cps78_85
 cps91
 crime1
@@ -31,6 +35,7 @@ crime4
 discrim
 driving
 earns
+econmath
 elem94_95
 engin
 expendshares
@@ -69,6 +74,7 @@ mathpnl
 meap00_01
 meap01
 meap93
+meapsingle
 minwage
 mlb1
 mroz
