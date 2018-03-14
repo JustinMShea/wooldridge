@@ -6,12 +6,12 @@
 \title{census2000}
 \format{A data.frame with 29501 observations on 6 variables:
 \itemize{
- \item{state}{Description not provided}
- \item{puma}{Description not provided}
- \item{educ}{Description not provided}
- \item{lweekinc}{Description not provided}
- \item{exper}{Description not provided}
- \item{expersq}{Description not provided}
+ \item \strong{state: }{State (ICPSR code)}
+ \item \strong{puma: }{Public Use Microdata Area}
+ \item \strong{educ: }{educational attainment}
+ \item \strong{lweekinc: }{log(weekly income)}
+ \item \strong{exper: }{years workforce experience}
+ \item \strong{expersq: }{exper^2}
 }}
 \source{
 \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}

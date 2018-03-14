@@ -6,26 +6,26 @@
 \title{countymurders}
 \format{A data.frame with 37349 observations on 20 variables:
 \itemize{
- \item{arrests}{Description not provided}
- \item{countyid}{Description not provided}
- \item{density}{Description not provided}
- \item{popul}{Description not provided}
- \item{perc1019}{Description not provided}
- \item{perc2029}{Description not provided}
- \item{percblack}{Description not provided}
- \item{percmale}{Description not provided}
- \item{rpcincmaint}{Description not provided}
- \item{rpcpersinc}{Description not provided}
- \item{rpcunemins}{Description not provided}
- \item{year}{Description not provided}
- \item{murders}{Description not provided}
- \item{murdrate}{Description not provided}
- \item{arrestrate}{Description not provided}
- \item{statefips}{Description not provided}
- \item{countyfips}{Description not provided}
- \item{execs}{Description not provided}
- \item{lpopul}{Description not provided}
- \item{execrate}{Description not provided}
+ \item \strong{arrests: }{# of murder arrests}
+ \item \strong{countyid: }{county identifier: 1000*statefips + countyfips}
+ \item \strong{density: }{population density; per square mile}
+ \item \strong{popul: }{county population}
+ \item \strong{perc1019: }{percent pop. age 10-19}
+ \item \strong{perc2029: }{percent pop. age 20-29}
+ \item \strong{percblack: }{percent population black}
+ \item \strong{percmale: }{percent population male}
+ \item \strong{rpcincmaint: }{real per capita income maintenance}
+ \item \strong{rpcpersinc: }{real per capita personal income}
+ \item \strong{rpcunemins: }{real per capita unem insurance payments}
+ \item \strong{year: }{1980-1996}
+ \item \strong{murders: }{# of murders}
+ \item \strong{murdrate: }{murders per 10,000 people}
+ \item \strong{arrestrate: }{murder arrests per 10,000}
+ \item \strong{statefips: }{state FIPS code}
+ \item \strong{countyfips: }{county FIPS code}
+ \item \strong{execs: }{# of executions}
+ \item \strong{lpopul: }{log(popul)}
+ \item \strong{execrate: }{executions per 10,000}
 }}
 \source{
 \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}

@@ -12,19 +12,19 @@
 #'
 #' @format A data.frame with 7430 observations on 13 variables:
 #' \itemize{
-#'  \item{id}{Description not provided}
-#'  \item{read12}{Description not provided}
-#'  \item{math12}{Description not provided}
-#'  \item{female}{Description not provided}
-#'  \item{asian}{Description not provided}
-#'  \item{hispan}{Description not provided}
-#'  \item{black}{Description not provided}
-#'  \item{motheduc}{Description not provided}
-#'  \item{fatheduc}{Description not provided}
-#'  \item{lfaminc}{Description not provided}
-#'  \item{hsgrad}{Description not provided}
-#'  \item{cathhs}{Description not provided}
-#'  \item{parcath}{Description not provided}
+#'  \item \strong{id: }{person identifier}
+#'  \item \strong{read12: }{reading standardized score}
+#'  \item \strong{math12: }{mathematics standardized score}
+#'  \item \strong{female: }{=1 if female}
+#'  \item \strong{asian: }{=1 if Asian}
+#'  \item \strong{hispan: }{=1 if Hispanic}
+#'  \item \strong{black: }{=1 if black}
+#'  \item \strong{motheduc: }{mother's years of education}
+#'  \item \strong{fatheduc: }{father's years of education}
+#'  \item \strong{lfaminc: }{log of family income}
+#'  \item \strong{hsgrad: }{=1 if graduated from high school by 1994}
+#'  \item \strong{cathhs: }{=1 if attended Catholic HS}
+#'  \item \strong{parcath: }{=1 if a parent reports being Catholic}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 #' @examples  str(catholic)

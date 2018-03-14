@@ -110,15 +110,15 @@ documentation <- function(name, data) {
                 # Extract attributes containing name and description from stata file attr.
                 assign(paste0(name,'_desc'), data.frame(names=attr(x, "names"), 
                                                      discription=attr(x, "var.labels")))
+                # initialize matrix
+                items <- matrix(data = NA, nrow=length(names(x)), ncol = 1)
                 # remove x as the data set is not needed.
                 rm(x)
-                
+
         #  Write to roxygen2 ready format.  
-        items <- matrix(data = NA, nrow=length(colnames(data)), ncol = 1)
-        for(i in desc) {
-                items[i] <- paste0("#'  \\item","{",get(paste0(name,'_desc'))[i,1],"}{ ",get(paste0(name,'_desc'))[i,2],"}")
+        for(i in 1:nrow(items)) {
+                items[i] <- paste0("#'  \\item \\strong{",get(paste0(name,'_desc'))[i,1],": }{",gsub("%","percent", as.character(get(paste0(name,'_desc'))[i,2])),"}")
         }
-        
         # More roxygen2 style syntax, written into .R files.
         end <- "#' }"
         source <- "#' @source \\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}"

@@ -6,24 +6,24 @@
 \title{meapsingle}
 \format{A data.frame with 229 observations on 18 variables:
 \itemize{
- \item{dcode}{Description not provided}
- \item{bcode}{Description not provided}
- \item{math4}{Description not provided}
- \item{read4}{Description not provided}
- \item{enroll}{Description not provided}
- \item{exppp}{Description not provided}
- \item{free}{Description not provided}
- \item{reduced}{Description not provided}
- \item{lunch}{Description not provided}
- \item{medinc}{Description not provided}
- \item{totchild}{Description not provided}
- \item{married}{Description not provided}
- \item{single}{Description not provided}
- \item{pctsgle}{Description not provided}
- \item{zipcode}{Description not provided}
- \item{lenroll}{Description not provided}
- \item{lexppp}{Description not provided}
- \item{lmedinc}{Description not provided}
+ \item \strong{dcode: }{district code}
+ \item \strong{bcode: }{building code}
+ \item \strong{math4: }{percent satisfactory, 4th grade math}
+ \item \strong{read4: }{percent satisfactory, 4th grade reading}
+ \item \strong{enroll: }{school enrollment}
+ \item \strong{exppp: }{expenditures per pupil, $}
+ \item \strong{free: }{percent eligible, free lunch}
+ \item \strong{reduced: }{percent eligible, reduced lunch}
+ \item \strong{lunch: }{free + reduced}
+ \item \strong{medinc: }{zipcode median family, $ (1999)}
+ \item \strong{totchild: }{# of children (in zipcode)}
+ \item \strong{married: }{# of children in married-couple families}
+ \item \strong{single: }{# of children not in married-couple families}
+ \item \strong{pctsgle: }{percent of children not in married-couple families}
+ \item \strong{zipcode: }{school zipcode}
+ \item \strong{lenroll: }{log(enroll)}
+ \item \strong{lexppp: }{log(exppp)}
+ \item \strong{lmedinc: }{log(medinc)}
 }}
 \source{
 \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}

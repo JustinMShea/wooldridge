@@ -12,22 +12,22 @@
 #'
 #' @format A data.frame with 78 observations on 16 variables:
 #' \itemize{
-#'  \item{id}{Description not provided}
-#'  \item{month}{Description not provided}
-#'  \item{year}{Description not provided}
-#'  \item{sp500}{Description not provided}
-#'  \item{cpi}{Description not provided}
-#'  \item{cpifood}{Description not provided}
-#'  \item{approve}{Description not provided}
-#'  \item{gasprice}{Description not provided}
-#'  \item{unemploy}{Description not provided}
-#'  \item{katrina}{Description not provided}
-#'  \item{rgasprice}{Description not provided}
-#'  \item{lrgasprice}{Description not provided}
-#'  \item{X11.Sep}{Description not provided}
-#'  \item{iraqinvade}{Description not provided}
-#'  \item{lsp500}{Description not provided}
-#'  \item{lcpifood}{Description not provided}
+#'  \item \strong{id: }{id}
+#'  \item \strong{month: }{month}
+#'  \item \strong{year: }{year}
+#'  \item \strong{sp500: }{S&P 500 index}
+#'  \item \strong{cpi: }{Consumer Price Index}
+#'  \item \strong{cpifood: }{CPI for food}
+#'  \item \strong{approve: }{Gallup approval rate, percent}
+#'  \item \strong{gasprice: }{average gas price, cents}
+#'  \item \strong{unemploy: }{unemployment rate, percent}
+#'  \item \strong{katrina: }{=1 for three months after Hurricane Katrina}
+#'  \item \strong{rgasprice: }{real gas price, 100*(gasprice/cpi)}
+#'  \item \strong{lrgasprice: }{log(rgasprice)}
+#'  \item \strong{sep11: }{=1 for 09/2001 and two months following}
+#'  \item \strong{iraqinvade: }{=1 for three months after Iraq invasion}
+#'  \item \strong{lsp500: }{log(sp500)}
+#'  \item \strong{lcpifood: }{log(cpifood)}
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 #' @examples  str(approval)
