@@ -9,9 +9,9 @@ test_that("Do any files exist in /data that are not .RData files?", {
 })
 
 
-test_that("Are there 105 data sets in the package?", {
+test_that("Are there 111 data sets in the package?", {
         
-expect_equal(length(data(list = c(data(package = "wooldridge")$results[,3]))), 105)
+expect_equal(length(data(list = c(data(package = "wooldridge")$results[,3]))), 111)
 
 })
 
