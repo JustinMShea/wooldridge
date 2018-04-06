@@ -31,17 +31,6 @@ Finally, added forecast content to the chapter 18 example.
 Added two additional tests on build. One tests checks if 105 data sets are present. The other tests if each one loads correctly and is of class `data.frame`.
 
 
-
-# wooldridge 1.2.1
-
-### Updates to vignette
-
-Created gitpages site for the package and replaced the .pdf vignette with .html.
-
-### Updates to DESCIRIPTION
-
-Dependency rolled back to R (>= 3.0.0). Previously R (>= 3.4)
-
 # wooldridge 1.2.0
 
 ### NEW DOCUMENTATION
