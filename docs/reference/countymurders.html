@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>campus — campus • wooldridge</title>
+<title>countymurders — countymurders • wooldridge</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="campus — campus" />
+<meta property="og:title" content="countymurders — countymurders" />
 
-<meta property="og:description" content="Wooldridge Source: These data were collected by Daniel Martin, a former MSU undergraduate, for a final project. They come from the FBI Uniform Crime Reports and are for the year 1992. Data loads lazily." />
+<meta property="og:description" content="Wooldridge Source: Compiled by J. Monroe Gamble for a Summer Research Opportunities Program (SROP) at Michigan State University, Summer 2014. Monroe obtained data from the U.S. Census Bureau, the FBI Uniform Crime Reports, and the Death Penalty Information Center. Data loads lazily." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -103,49 +103,73 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>campus</h1>
+    <h1>countymurders</h1>
     
-    <div class="hidden name"><code>campus.Rd</code></div>
+    <div class="hidden name"><code>countymurders.Rd</code></div>
     </div>
 
     
-    <p>Wooldridge Source: These data were collected by Daniel Martin, a former MSU undergraduate, for a final project. They come from the FBI Uniform Crime Reports and are for the year 1992. Data loads lazily.</p>
+    <p>Wooldridge Source: Compiled by J. Monroe Gamble for a Summer Research Opportunities Program (SROP) at Michigan State University, Summer 2014. Monroe obtained data from the U.S. Census Bureau, the FBI Uniform Crime Reports, and the Death Penalty Information Center. Data loads lazily.</p>
     
 
-    <pre class="usage"><span class='fu'>data</span>(<span class='st'>'campus'</span>)</pre>
+    <pre class="usage"><span class='fu'>data</span>(<span class='st'>'countymurders'</span>)</pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data.frame with 97 observations on 7 variables:</p><ul>
-<li><p><strong>enroll:</strong> total enrollment</p></li>
-<li><p><strong>priv:</strong> =1 if private college</p></li>
-<li><p><strong>police:</strong> employed officers</p></li>
-<li><p><strong>crime:</strong> total campus crimes</p></li>
-<li><p><strong>lcrime:</strong> log(crime)</p></li>
-<li><p><strong>lenroll:</strong> log(enroll)</p></li>
-<li><p><strong>lpolice:</strong> log(police)</p></li>
+    <p>A data.frame with 37349 observations on 20 variables:</p><ul>
+<li><p><strong>arrests: </strong># of murder arrests</p></li>
+<li><p><strong>countyid: </strong>county identifier: 1000*statefips + countyfips</p></li>
+<li><p><strong>density: </strong>population density; per square mile</p></li>
+<li><p><strong>popul: </strong>county population</p></li>
+<li><p><strong>perc1019: </strong>percent pop. age 10-19</p></li>
+<li><p><strong>perc2029: </strong>percent pop. age 20-29</p></li>
+<li><p><strong>percblack: </strong>percent population black</p></li>
+<li><p><strong>percmale: </strong>percent population male</p></li>
+<li><p><strong>rpcincmaint: </strong>real per capita income maintenance</p></li>
+<li><p><strong>rpcpersinc: </strong>real per capita personal income</p></li>
+<li><p><strong>rpcunemins: </strong>real per capita unem insurance payments</p></li>
+<li><p><strong>year: </strong>1980-1996</p></li>
+<li><p><strong>murders: </strong># of murders</p></li>
+<li><p><strong>murdrate: </strong>murders per 10,000 people</p></li>
+<li><p><strong>arrestrate: </strong>murder arrests per 10,000</p></li>
+<li><p><strong>statefips: </strong>state FIPS code</p></li>
+<li><p><strong>countyfips: </strong>county FIPS code</p></li>
+<li><p><strong>execs: </strong># of executions</p></li>
+<li><p><strong>lpopul: </strong>log(popul)</p></li>
+<li><p><strong>execrate: </strong>executions per 10,000</p></li>
 </ul>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&amp;product_isbn_issn=9781111531041'>https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&amp;product_isbn_issn=9781111531041</a></p>
+    <p><a href='http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge'>http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge</a></p>
     
-    <h2 class="hasAnchor" id="notes"><a class="anchor" href="#notes"></a>Notes</h2>
+    <h2 class="hasAnchor" id="used-in-text"><a class="anchor" href="#used-in-text"></a>Used in Text</h2>
 
-    <p>Colleges and universities are now required to provide much better, more detailed crime data. A very rich data set can now be obtained, even a panel data set for colleges across different years. Statistics on male/female ratios, fraction of men/women in fraternities or sororities, policy variables – such as a “safe house” for women on campus, as was started at MSU in 1994 – could be added as explanatory variables. The crime rate in the host town would be a good control.</p>
-<p>Used in Text: pages 131-132</p>
+    <p>pages 16, 58, 431, 457</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='fu'>str</span>(<span class='no'>campus</span>)</div><div class='output co'>#&gt; 'data.frame':	97 obs. of  7 variables:
-#&gt;  $ enroll : num  21836 6485 2123 8240 19793 ...
-#&gt;  $ priv   : int  0 0 0 0 0 1 0 0 1 0 ...
-#&gt;  $ police : int  24 13 3 17 30 9 20 44 7 18 ...
-#&gt;  $ crime  : int  446 1 1 121 470 25 67 1327 43 484 ...
-#&gt;  $ lcrime : num  6.1 0 0 4.8 6.15 ...
-#&gt;  $ lenroll: num  9.99 8.78 7.66 9.02 9.89 ...
-#&gt;  $ lpolice: num  3.18 2.56 1.1 2.83 3.4 ...
-#&gt;  - attr(*, "time.stamp")= chr "25 Jun 2011 23:03"</div></pre>
+    <pre class="examples"><div class='input'> <span class='fu'>str</span>(<span class='no'>countymurders</span>)</div><div class='output co'>#&gt; 'data.frame':	37349 obs. of  20 variables:
+#&gt;  $ arrests    : int  2 3 2 7 3 1 1 2 0 5 ...
+#&gt;  $ countyid   : int  1001 1001 1001 1001 1001 1001 1001 1001 1001 1001 ...
+#&gt;  $ density    : num  54 53.7 53.8 53.8 53.9 ...
+#&gt;  $ popul      : int  32216 31984 32036 32056 32128 32248 32888 33264 33632 33992 ...
+#&gt;  $ perc1019   : num  20.6 20.2 19.7 19.1 18.5 ...
+#&gt;  $ perc2029   : num  15.3 15.6 15.7 15.9 15.9 ...
+#&gt;  $ percblack  : num  22.3 22.1 21.8 21.5 21.3 ...
+#&gt;  $ percmale   : num  40.2 40.4 40.4 40.5 40.5 ...
+#&gt;  $ rpcincmaint: num  168 168 167 177 166 ...
+#&gt;  $ rpcpersinc : num  8781 8233 8328 8546 8965 ...
+#&gt;  $ rpcunemins : num  29.2 43.9 71.4 72.2 40.4 ...
+#&gt;  $ year       : int  1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 ...
+#&gt;  $ murders    : int  2 1 3 7 2 2 4 1 0 3 ...
+#&gt;  $ murdrate   : num  0.621 0.313 0.936 2.184 0.623 ...
+#&gt;  $ arrestrate : num  0.621 0.938 0.624 2.184 0.934 ...
+#&gt;  $ statefips  : int  1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ countyfips : int  1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ execs      : int  0 0 0 0 0 0 0 0 0 0 ...
+#&gt;  $ lpopul     : num  10.4 10.4 10.4 10.4 10.4 ...
+#&gt;  $ execrate   : num  0 0 0 0 0 0 0 0 0 0 ...</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -155,7 +179,7 @@
 
       <li><a href="#source">Source</a></li>
 
-      <li><a href="#notes">Notes</a></li>
+      <li><a href="#used-in-text">Used in Text</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

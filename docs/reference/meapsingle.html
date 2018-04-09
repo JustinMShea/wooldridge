@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>campus — campus • wooldridge</title>
+<title>meapsingle — meapsingle • wooldridge</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="campus — campus" />
+<meta property="og:title" content="meapsingle — meapsingle" />
 
-<meta property="og:description" content="Wooldridge Source: These data were collected by Daniel Martin, a former MSU undergraduate, for a final project. They come from the FBI Uniform Crime Reports and are for the year 1992. Data loads lazily." />
+<meta property="og:description" content="Wooldridge Source: Collected by Professor Leslie Papke, an economics professor at MSU, from the Michigan Department of Education web site, www.michigan.gov/mde, and the U.S. Census Bureau. Professor Papke kindly provided the data. Data loads lazily." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -103,49 +103,69 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>campus</h1>
+    <h1>meapsingle</h1>
     
-    <div class="hidden name"><code>campus.Rd</code></div>
+    <div class="hidden name"><code>meapsingle.Rd</code></div>
     </div>
 
     
-    <p>Wooldridge Source: These data were collected by Daniel Martin, a former MSU undergraduate, for a final project. They come from the FBI Uniform Crime Reports and are for the year 1992. Data loads lazily.</p>
+    <p>Wooldridge Source: Collected by Professor Leslie Papke, an economics professor at MSU, from the Michigan Department of Education web site, www.michigan.gov/mde, and the U.S. Census Bureau. Professor Papke kindly provided the data. Data loads lazily.</p>
     
 
-    <pre class="usage"><span class='fu'>data</span>(<span class='st'>'campus'</span>)</pre>
+    <pre class="usage"><span class='fu'>data</span>(<span class='st'>'meapsingle'</span>)</pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data.frame with 97 observations on 7 variables:</p><ul>
-<li><p><strong>enroll:</strong> total enrollment</p></li>
-<li><p><strong>priv:</strong> =1 if private college</p></li>
-<li><p><strong>police:</strong> employed officers</p></li>
-<li><p><strong>crime:</strong> total campus crimes</p></li>
-<li><p><strong>lcrime:</strong> log(crime)</p></li>
-<li><p><strong>lenroll:</strong> log(enroll)</p></li>
-<li><p><strong>lpolice:</strong> log(police)</p></li>
+    <p>A data.frame with 229 observations on 18 variables:</p><ul>
+<li><p><strong>dcode: </strong>district code</p></li>
+<li><p><strong>bcode: </strong>building code</p></li>
+<li><p><strong>math4: </strong>percent satisfactory, 4th grade math</p></li>
+<li><p><strong>read4: </strong>percent satisfactory, 4th grade reading</p></li>
+<li><p><strong>enroll: </strong>school enrollment</p></li>
+<li><p><strong>exppp: </strong>expenditures per pupil, $</p></li>
+<li><p><strong>free: </strong>percent eligible, free lunch</p></li>
+<li><p><strong>reduced: </strong>percent eligible, reduced lunch</p></li>
+<li><p><strong>lunch: </strong>free + reduced</p></li>
+<li><p><strong>medinc: </strong>zipcode median family, $ (1999)</p></li>
+<li><p><strong>totchild: </strong># of children (in zipcode)</p></li>
+<li><p><strong>married: </strong># of children in married-couple families</p></li>
+<li><p><strong>single: </strong># of children not in married-couple families</p></li>
+<li><p><strong>pctsgle: </strong>percent of children not in married-couple families</p></li>
+<li><p><strong>zipcode: </strong>school zipcode</p></li>
+<li><p><strong>lenroll: </strong>log(enroll)</p></li>
+<li><p><strong>lexppp: </strong>log(exppp)</p></li>
+<li><p><strong>lmedinc: </strong>log(medinc)</p></li>
 </ul>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&amp;product_isbn_issn=9781111531041'>https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&amp;product_isbn_issn=9781111531041</a></p>
+    <p><a href='http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge'>http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge</a></p>
     
-    <h2 class="hasAnchor" id="notes"><a class="anchor" href="#notes"></a>Notes</h2>
+    <h2 class="hasAnchor" id="used-in-text"><a class="anchor" href="#used-in-text"></a>Used in Text</h2>
 
-    <p>Colleges and universities are now required to provide much better, more detailed crime data. A very rich data set can now be obtained, even a panel data set for colleges across different years. Statistics on male/female ratios, fraction of men/women in fraternities or sororities, policy variables – such as a “safe house” for women on campus, as was started at MSU in 1994 – could be added as explanatory variables. The crime rate in the host town would be a good control.</p>
-<p>Used in Text: pages 131-132</p>
+    <p>100, 145-146, 198</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='fu'>str</span>(<span class='no'>campus</span>)</div><div class='output co'>#&gt; 'data.frame':	97 obs. of  7 variables:
-#&gt;  $ enroll : num  21836 6485 2123 8240 19793 ...
-#&gt;  $ priv   : int  0 0 0 0 0 1 0 0 1 0 ...
-#&gt;  $ police : int  24 13 3 17 30 9 20 44 7 18 ...
-#&gt;  $ crime  : int  446 1 1 121 470 25 67 1327 43 484 ...
-#&gt;  $ lcrime : num  6.1 0 0 4.8 6.15 ...
-#&gt;  $ lenroll: num  9.99 8.78 7.66 9.02 9.89 ...
-#&gt;  $ lpolice: num  3.18 2.56 1.1 2.83 3.4 ...
-#&gt;  - attr(*, "time.stamp")= chr "25 Jun 2011 23:03"</div></pre>
+    <pre class="examples"><div class='input'> <span class='fu'>str</span>(<span class='no'>meapsingle</span>)</div><div class='output co'>#&gt; 'data.frame':	229 obs. of  18 variables:
+#&gt;  $ dcode   : int  63010 63010 63270 63270 63010 63010 63010 63130 63130 63130 ...
+#&gt;  $ bcode   : int  3030 3133 2023 2978 316 5670 1494 1631 1753 2254 ...
+#&gt;  $ math4   : num  92.8 100 72.1 76.1 95.2 88.6 95.2 66.7 83.9 95.7 ...
+#&gt;  $ read4   : num  82.5 94.3 46.5 65.7 80.6 72.7 90.5 46.3 44.6 56.5 ...
+#&gt;  $ enroll  : int  607 370 220 356 329 331 288 452 428 238 ...
+#&gt;  $ exppp   : num  6620 6620 5608 5830 6620 ...
+#&gt;  $ free    : num  1 0 5.9 8.1 0.3 1.2 12.2 50.2 40.2 24.4 ...
+#&gt;  $ reduced : num  0.7 0 5 2.8 0.3 0.9 5.2 17.5 10 17.6 ...
+#&gt;  $ lunch   : num  1.7 0 10.9 10.9 0.6 2.1 17.4 67.7 50.2 42 ...
+#&gt;  $ medinc  : int  110322 110322 65119 65119 109313 109313 109313 43750 43750 43750 ...
+#&gt;  $ totchild: int  4076 4076 2524 2524 3486 3486 3486 4651 4651 4651 ...
+#&gt;  $ married : int  3542 3542 2091 2091 3241 3241 3241 3258 3258 3258 ...
+#&gt;  $ single  : int  534 534 433 433 245 245 245 1393 1393 1393 ...
+#&gt;  $ pctsgle : num  13.1 13.1 17.16 17.16 7.03 ...
+#&gt;  $ zipcode : int  48009 48009 48017 48017 48025 48025 48025 48030 48030 48030 ...
+#&gt;  $ lenroll : num  6.41 5.91 5.39 5.87 5.8 ...
+#&gt;  $ lexppp  : num  8.8 8.8 8.63 8.67 8.8 ...
+#&gt;  $ lmedinc : num  11.6 11.6 11.1 11.1 11.6 ...</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -155,7 +175,7 @@
 
       <li><a href="#source">Source</a></li>
 
-      <li><a href="#notes">Notes</a></li>
+      <li><a href="#used-in-text">Used in Text</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

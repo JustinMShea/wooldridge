@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>campus — campus • wooldridge</title>
+<title>catholic — catholic • wooldridge</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="campus — campus" />
+<meta property="og:title" content="catholic — catholic" />
 
-<meta property="og:description" content="Wooldridge Source: These data were collected by Daniel Martin, a former MSU undergraduate, for a final project. They come from the FBI Uniform Crime Reports and are for the year 1992. Data loads lazily." />
+<meta property="og:description" content="Wooldridge Source: Altonji, J.G., T.E. Elder, and C.R. Taber (2005), “An Evaluation of Instrumental Variable Strategies for Estimating the Effects of Catholic Schooling,” Journal of Human Resources 40, 791-821. Professor Elder kindly provided a subset of the data, with some variables stripped away for confidentiality reasons. Data loads lazily." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -103,49 +103,59 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>campus</h1>
+    <h1>catholic</h1>
     
-    <div class="hidden name"><code>campus.Rd</code></div>
+    <div class="hidden name"><code>catholic.Rd</code></div>
     </div>
 
     
-    <p>Wooldridge Source: These data were collected by Daniel Martin, a former MSU undergraduate, for a final project. They come from the FBI Uniform Crime Reports and are for the year 1992. Data loads lazily.</p>
+    <p>Wooldridge Source: Altonji, J.G., T.E. Elder, and C.R. Taber (2005), “An Evaluation of Instrumental Variable Strategies for Estimating the Effects of Catholic Schooling,” Journal of Human Resources 40, 791-821. Professor Elder kindly provided a subset of the data, with some variables stripped away for confidentiality reasons. Data loads lazily.</p>
     
 
-    <pre class="usage"><span class='fu'>data</span>(<span class='st'>'campus'</span>)</pre>
+    <pre class="usage"><span class='fu'>data</span>(<span class='st'>'catholic'</span>)</pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data.frame with 97 observations on 7 variables:</p><ul>
-<li><p><strong>enroll:</strong> total enrollment</p></li>
-<li><p><strong>priv:</strong> =1 if private college</p></li>
-<li><p><strong>police:</strong> employed officers</p></li>
-<li><p><strong>crime:</strong> total campus crimes</p></li>
-<li><p><strong>lcrime:</strong> log(crime)</p></li>
-<li><p><strong>lenroll:</strong> log(enroll)</p></li>
-<li><p><strong>lpolice:</strong> log(police)</p></li>
+    <p>A data.frame with 7430 observations on 13 variables:</p><ul>
+<li><p><strong>id: </strong>person identifier</p></li>
+<li><p><strong>read12: </strong>reading standardized score</p></li>
+<li><p><strong>math12: </strong>mathematics standardized score</p></li>
+<li><p><strong>female: </strong>=1 if female</p></li>
+<li><p><strong>asian: </strong>=1 if Asian</p></li>
+<li><p><strong>hispan: </strong>=1 if Hispanic</p></li>
+<li><p><strong>black: </strong>=1 if black</p></li>
+<li><p><strong>motheduc: </strong>mother's years of education</p></li>
+<li><p><strong>fatheduc: </strong>father's years of education</p></li>
+<li><p><strong>lfaminc: </strong>log of family income</p></li>
+<li><p><strong>hsgrad: </strong>=1 if graduated from high school by 1994</p></li>
+<li><p><strong>cathhs: </strong>=1 if attended Catholic HS</p></li>
+<li><p><strong>parcath: </strong>=1 if a parent reports being Catholic</p></li>
 </ul>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&amp;product_isbn_issn=9781111531041'>https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&amp;product_isbn_issn=9781111531041</a></p>
+    <p><a href='http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge'>http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge</a></p>
     
-    <h2 class="hasAnchor" id="notes"><a class="anchor" href="#notes"></a>Notes</h2>
+    <h2 class="hasAnchor" id="used-in-text"><a class="anchor" href="#used-in-text"></a>Used in Text</h2>
 
-    <p>Colleges and universities are now required to provide much better, more detailed crime data. A very rich data set can now be obtained, even a panel data set for colleges across different years. Statistics on male/female ratios, fraction of men/women in fraternities or sororities, policy variables – such as a “safe house” for women on campus, as was started at MSU in 1994 – could be added as explanatory variables. The crime rate in the host town would be a good control.</p>
-<p>Used in Text: pages 131-132</p>
+    <p>pages 267, 551</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='fu'>str</span>(<span class='no'>campus</span>)</div><div class='output co'>#&gt; 'data.frame':	97 obs. of  7 variables:
-#&gt;  $ enroll : num  21836 6485 2123 8240 19793 ...
-#&gt;  $ priv   : int  0 0 0 0 0 1 0 0 1 0 ...
-#&gt;  $ police : int  24 13 3 17 30 9 20 44 7 18 ...
-#&gt;  $ crime  : int  446 1 1 121 470 25 67 1327 43 484 ...
-#&gt;  $ lcrime : num  6.1 0 0 4.8 6.15 ...
-#&gt;  $ lenroll: num  9.99 8.78 7.66 9.02 9.89 ...
-#&gt;  $ lpolice: num  3.18 2.56 1.1 2.83 3.4 ...
-#&gt;  - attr(*, "time.stamp")= chr "25 Jun 2011 23:03"</div></pre>
+    <pre class="examples"><div class='input'> <span class='fu'>str</span>(<span class='no'>catholic</span>)</div><div class='output co'>#&gt; 'data.frame':	7430 obs. of  13 variables:
+#&gt;  $ id      : int  124902 124915 124916 124932 124944 124947 124966 124968 124972 124974 ...
+#&gt;  $ read12  : num  61.4 58.3 59.3 49.6 57.6 ...
+#&gt;  $ math12  : num  49.8 59.8 50.4 45 54.3 ...
+#&gt;  $ female  : int  0 0 1 1 1 1 1 0 0 0 ...
+#&gt;  $ asian   : int  0 0 0 0 0 0 0 0 0 0 ...
+#&gt;  $ hispan  : int  0 0 0 0 0 0 0 0 0 0 ...
+#&gt;  $ black   : int  0 0 0 0 0 0 0 0 0 0 ...
+#&gt;  $ motheduc: num  14 14 14 12 12 12 14 14 14 14 ...
+#&gt;  $ fatheduc: num  12 14 11 14 12 11 14 14 14 12 ...
+#&gt;  $ lfaminc : num  10.3 10.3 10.3 10.3 10.7 ...
+#&gt;  $ hsgrad  : int  1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ cathhs  : int  0 0 0 0 0 0 0 0 0 0 ...
+#&gt;  $ parcath : int  1 1 1 1 1 1 1 1 1 1 ...</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -155,7 +165,7 @@
 
       <li><a href="#source">Source</a></li>
 
-      <li><a href="#notes">Notes</a></li>
+      <li><a href="#used-in-text">Used in Text</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
