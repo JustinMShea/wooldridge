@@ -3,11 +3,23 @@ title: "NEWS"
 output: github_document
 ---
 
+# wooldridge 1.3.0
+
+Added six additional data sets and documentation for the most recent edition,
+"Introductory Econometrics: A Modern Approach, 6th edition" (Wooldridge 2016, 
+ISBN-13: 978-1-305-27010-7).
+
+Further compression of data sets by writing a function to delete unnecessary
+attributes attached to each data.frame. Excess attributes were assigned to
+each data.frame during the import from Stata .dta files. In addition,
+the row.names attribute was saved as a character so I converted each one
+to integer, which reduced the size of each data set and the package as a whole.
+
 # wooldridge 1.2.1
 
 ### NEW DOCUMENTATION
 
-Created a Github pages site for the package, eleminating the need for generating a pdf vignette.
+Created a Github pages site for the package, eliminating the need for generating a pdf vignette.
 
 
 ### DESCRIPTION

@@ -1,25 +1,26 @@
 Package: wooldridge
 Type: Package
-Title: 105 Data Sets from "Introductory Econometrics: A Modern Approach" by Jeffrey M. Wooldridge
-Version: 1.2.1.9000
-Authors@R: person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea@roosevelt.edu")  
-Maintainer: Justin M. Shea <jshea@roosevelt.edu>
-Description: Students exploring both econometrics and R may find the simultaneous 
-    introduction to both challenging. However, if the text is "Introductory 
-    Econometrics: A Modern Approach" by Jeffrey M. Wooldridge, they are in luck! 
+Title: 111 Data Sets from "Introductory Econometrics: A Modern Approach, 6e" by Jeffrey M. Wooldridge
+Version: 1.3.0
+Authors@R: c(
+    person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea@roosevelt.edu"),
+    person("Kennth H.", "Brown", role = c("ctb"), email = "KennethBrown@MissouriState.edu"))
+Description: Students learning both econometrics and R may find the introduction 
+    to both challenging. However, if the text is "Introductory Econometrics: 
+    A Modern Approach" by Jeffrey M. Wooldridge, they are in luck! 
     The wooldridge data package aims to lighten the task by efficiently loading 
-    any data set from the text with a single command. Collectively, the data sets 
-    have been efficiently compressed to a fraction of their original size and are 
-    well documented. Help files conjtain relevant page numbers of the text, 
-    the original source and time of publication, as well as notes which 
-    offering ideas for further analysis, exploration, and research. To resurrect 
-    a data set, simply load it with the `data()` function or load it lazily with 
-    the `data =` argument of any model function. Provided the syntax is correct, 
-    model estimates shall spring forth from the otherwise lifeless abyss of a 
-    student's R console! If model syntax is an issue, a vignette contains code 
-    and solutions to examples from each chapter of the text. Note: Data sets are 
-    from the 5th edition (Wooldridge 2013, ISBN-13:978-1-111-53104-1), and are 
-    compatible with all others.
+    any data set found in the text with a single command. Data sets have all been 
+    compressed to a fraction of their original size and are well documented. 
+    Documentation files contain the page numbers of the text where each set is used, 
+    the original source, time of publication, and notes suggesting ideas for further 
+    exploratory data analysis and research. To resurrect a data set, simply load 
+    it with the "data("data")" function. In addition, data will also load lazily  
+    by defining it using the "data = data" argument of any model function. Provided 
+    the model syntax is correct, estimates shall spring forth from the otherwise 
+    lifeless abyss of one's R console! If you need brush up on model syntax, a 
+    vignette contains code  and solutions to examples from each chapter of the text. 
+    Note: Data sets are from the 6th edition (Wooldridge 2016, ISBN-13: 978-1-305-27010-7), 
+    and are backwards compatible with all versions of the text.
 Depends: R (>= 3.0.0)
 License: GPL-3
 Encoding: UTF-8
