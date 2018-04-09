@@ -15,9 +15,9 @@ vignette: >
 
 ## Introduction
 
-This vignette contains examples from every chapter of _Introductory Econometrics: A Modern Approach_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with **R**.
+This vignette contains examples from every chapter of _Introductory Econometrics: A Modern Approach, 6e_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with **R**.
 
-Students new to both econometrics and **R** may find the introduction to both a bit challenging. In particular, the process of loading and preparing data prior to building one's first econometric model can present challenges. The `wooldridge` data package aims to lighten this task. It contains 105 data sets from _Introductory Econometrics: A Modern Approach_, which can be loaded with a simple call to the `data()` function.
+Students new to both econometrics and **R** may find the introduction to both a bit challenging. In particular, the process of loading and preparing data prior to building one's first econometric model can present challenges. The `wooldridge` data package aims to lighten this task. It contains 111 data sets from _Introductory Econometrics: A Modern Approach, 6e_, which can be loaded with a simple call to the `data()` function.
 
 While the course companion site provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometric modeling introduces one to software tools capable of scaling with the demands of modern methods in statistical computing.
 
@@ -786,10 +786,10 @@ Hess, Florian. _Using R for Introductory Econometrics_. ISBN: 978-1-523-28513-6,
 
 From the publisher's website:
 
->    This is the first book on applied econometrics using the R system for statistical computing and graphics. It presents hands-on examples for a wide range of econometric models, from classical linear regression models for cross-section, time series or panel data and the common non-linear models of microeconometrics such as logit, probit and tobit models, to recent semiparametric extensions. In addition, it provides a chapter on programming, including simulations, optimization, and an introduction to R tools enabling reproducible econometric research. An R package accompanying this book, AER, is available from the Comprehensive R Archive Network (CRAN) at http://CRAN.R-project.org/package=AER.
+>    This is the first book on applied econometrics using the R system for statistical computing and graphics. It presents hands-on examples for a wide range of econometric models, from classical linear regression models for cross-section, time series or panel data and the common non-linear models of microeconometrics such as logit, probit and tobit models, to recent semiparametric extensions. In addition, it provides a chapter on programming, including simulations, optimization, and an introduction to R tools enabling reproducible econometric research. An R package accompanying this book, AER, is available from the Comprehensive R Archive Network (CRAN) at https://CRAN.R-project.org/package=AER.
 
 Kleiber, Christian  and Achim Zeileis. _Applied Econometrics with R_. ISBN 978-0-387-77316-2,
-Springer-Verlag, 2008, New York. [http://www.springer.com/us/book/9780387773162](http://www.springer.com/us/book/9780387773162)
+Springer-Verlag, 2008, New York. [https://www.springer.com/us/book/9780387773162](https://www.springer.com/us/book/9780387773162)
 
 \newpage
 
@@ -808,7 +808,7 @@ Springer-Verlag. ISBN 978-0-387-77316-2. URL https://CRAN.R-project.org/package=
 Franz Mohr (2015). _prais: Prais-Winsten Estimation Procedure for AR(1) Serial Correlation_. R package version 0.1.1. https://CRAN.R-project.org/package=prais
 
 
-R Core Team (2017). _R: A language and environment for statistical computing_. 
+R Core Team (2018). _R: A language and environment for statistical computing_. 
 R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
 
 
@@ -818,11 +818,11 @@ Hadley Wickham and Winston Chang (2016). _devtools: Tools to Make Developing R P
 Hadley Wickham. _testthat: Get Started with Testing_. R package version 1.0.2. https://CRAN.R-project.org/package=testthat
 
 
-Jeffrey M. Wooldridge (2013). _Introductory Econometrics: A Modern Approach_. 
+Jeffrey M. Wooldridge (2016). _Introductory Econometrics: A Modern Approach_. 
 Mason, Ohio :South-Western Cengage Learning.
 
 
-Yihui Xie (2017). _knitr: A General-Purpose Package for Dynamic Report Generation in R_. R package version 1.16. https://CRAN.R-project.org/package=knitr
+Yihui Xie (2018). _knitr: A General-Purpose Package for Dynamic Report Generation in R_. R package version 1.16. https://CRAN.R-project.org/package=knitr
 
  
 
