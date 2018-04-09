@@ -18,7 +18,9 @@ While the original course companion site provides publicly available data sets f
 
 ## Installation
 
+
 Install `v1.3` directly from CRAN, contains 6th edition data sets and depends on **R >= 3.0**.
+
 
 ```{r}
 install.packages("wooldridge")
@@ -32,7 +34,6 @@ Data set names match those in the text.
 
 ```{r}
 library(wooldridge)
-
 data("jtrain")
 ```
 
