@@ -1,6 +1,6 @@
 
 
-[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/wooldridge)](https://cran.r-project.org/package=wooldridge) [![Travis](https://travis-ci.org/JustinMShea/wooldridge.svg?branch=master)](https://travis-ci.org/JustinMShea/wooldridge) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/JustinMShea/wooldridge?branch=master&svg=true)](https://ci.appveyor.com/project/JustinMShea/wooldridge)   [![](https://cranlogs.r-pkg.org/badges/wooldridge)](https://cran.rstudio.com/web/packages/wooldridge/index.html)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/wooldridge)](https://cran.r-project.org/package=wooldridge) [![Travis](https://travis-ci.org/JustinMShea/wooldridge.svg?branch=master)](https://travis-ci.org/JustinMShea/wooldridge) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/JustinMShea/wooldridge?branch=master&svg=true)](https://ci.appveyor.com/project/JustinMShea/wooldridge)   [![](https://cranlogs.r-pkg.org/badges/wooldridge)](https://CRAN.R-project.org/package=wooldridge)
 
 # wooldridge: 111 Data Sets for Econometrics 
 
@@ -13,7 +13,7 @@ _**But wait...there's more!**_ A vignette, [Introductory Econometrics Examples](
 
 While the original course companion site provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometric modeling introduces one to software tools capable of scaling with the demands of modern methods in statistical computing. And, working with R is fun.
 
-**Note:** All data sets are from the 6th edition (Wooldridge 2016, `ISBN-13: 978-1-305-27010-7`), which is compatible with most other editions.
+**Note:** All data sets are from the 6th edition (Wooldridge 2016, `ISBN-13: 978-1-305-27010-7`), which is backwards compatible with all other editions.
 
 
 ## Installation
