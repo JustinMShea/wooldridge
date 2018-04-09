@@ -27,20 +27,68 @@ data_doc <- read.delim(doc_path, stringsAsFactors = FALSE)
 colnames(data_doc) <- c("Name", "Source", "Text", "Notes")
 data_doc$Name <- tolower(gsub(".RAW","", data_doc$Name))
 
+
+
   #############################################################################
  # Loop over .RData files in data_folder folder, importing all and labeling. #
 # In addition, transform descriptions in Roxygen2 .R files.                 #
 ############################################################################
 
+
+## Create function to strip extra unnecessary attributes and redude data.frame size
+
+strAtributes <- function(x) { 
+        
+        # identify attributes to Nullify and iterate over them
+        attribute_vec <- c("datalabel", "formats", "types", "val.labels", "var.labels", "version")
+        
+        for(i in attribute_vec) {
+                
+                attr(x, i) <-  NULL
+        }
+        
+        # converte row.names that might be save as memory hog chars to integers
+        attr(x, "row.names") <- as.integer(attributes(x)$row.names)
+        
+        return(x)
+        
+}
+
+## Iterate over data file and load data into workenvironment
+
 for(i in RData_names) {
+        
   # Define Location of dataset, save base name.
   file_location <- paste0(getwd(), "/", data_folder, "/", i, ".RData")
-  file_name <- i
+  
   # Load dataset
   load(file_location)
-  # rewrite to
+  
+  # Remove attributes and cut down data size
+  data <- strAtributes(data)
+  
+  # assign character string name to resulting imported object generically named "data".
   assign(i, data)
   
+  # remove desc file, which will be used in the next step
+  rm(desc)
+  
+}
+
+## Iterate over data files and extract documentation info and write to roxygen2 files
+
+for(i in RData_names) {
+        
+        # Define Location of dataset, save base name.
+        file_location <- paste0(getwd(), "/", data_folder, "/", i, ".RData")
+        file_name <- i
+        
+        # Load dataset information
+        load(file_location)
+        
+        # remove "data" object, keep "desc" object
+        rm(data)
+        
   # Start documentation. Use contents of 'desc' metadata to construct
   # documentation using roxygen2 style syntax, written into .R files.
   # This automagically creates documentation for all data sets.
@@ -84,6 +132,7 @@ for(i in RData_names) {
 dir.create("data")
 
 dataset_list <- gsub(".RData", "", list.files("data", pattern = ".RData$"))
+
 
 for (i in dataset_list) {
   
