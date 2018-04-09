@@ -16,11 +16,6 @@ data_folder <-  "R data sets for 5e"
 # Create character vector of base names of .RData files.
 RData_names <- gsub(".RData", "", list.files(data_folder, pattern = ".RData$"))
 
-# If necessary, clear R directory and create new one
-unlink("R", recursive = TRUE)
-dir.create("R")
-
-
 # Upload file with data set descriptions.
 doc_path <- path.expand("~/R/wooldridge/data-raw/WooldridgeDataSetHandbook_5eUTF.txt")
 data_doc <- read.delim(doc_path, stringsAsFactors = FALSE)
@@ -76,6 +71,10 @@ for(i in RData_names) {
 }
 
 ## Iterate over data files and extract documentation info and write to roxygen2 files
+
+# If necessary, clear R directory and create new one
+unlink("R", recursive = TRUE)
+dir.create("R")
 
 for(i in RData_names) {
         
