@@ -81,7 +81,7 @@
 <p>The <code>wooldridge</code> data package aims to lighten the task by easily loading any data set from the text. The package contains documentation for each set and all data has been compressed to a fraction its original size. Just install the package, load it, and call the data you wish to work with.</p>
 <p><em><strong>But wait…there’s more!</strong></em> A vignette, <a href="https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html">Introductory Econometrics Examples</a>✨ illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with <strong>R</strong>. The vignette also includes an Appendix of helpful resources, such as <em>Using R for Introductory Econometrics</em> by Florian Hess.</p>
 <p>While the original course companion site provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, <strong>R</strong> is the open source option. Furthermore, using <strong>R</strong> while building a foundation in econometric modeling introduces one to software tools capable of scaling with the demands of modern methods in statistical computing. And, working with R is fun.</p>
-<p><strong>Note:</strong> All data sets are from the 6th edition (Wooldridge 2016, <code>ISBN-13: 978-1-305-27010-7</code>), which is compatible with most other editions.</p>
+<p><strong>Note:</strong> All data sets are from the 6th edition (Wooldridge 2016, <code>ISBN-13: 978-1-305-27010-7</code>), which is backwards compatible with all other editions.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -93,7 +93,6 @@
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load the <code>wooldridge</code> package and use the <code>data()</code> function to load the desired data set. Data set names match those in the text.</p>
 <pre class="{r}"><code>library(wooldridge)
-
 data("jtrain")</code></pre>
 <p>If using RStudio, View the <code>jtrain</code> data set</p>
 <pre class="{r}"><code>View(jtrain)</code></pre>
@@ -131,10 +130,10 @@ data("jtrain")</code></pre>
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=wooldridge"><img src="http://www.r-pkg.org/badges/version/wooldridge" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://cran.r-project.org/package=wooldridge"><img src="https://www.r-pkg.org/badges/version/wooldridge" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://travis-ci.org/JustinMShea/wooldridge"><img src="https://travis-ci.org/JustinMShea/wooldridge.svg?branch=master" alt="Travis"></a></li>
 <li><a href="https://ci.appveyor.com/project/JustinMShea/wooldridge"><img src="https://ci.appveyor.com/api/projects/status/github/JustinMShea/wooldridge?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
-<li><a href="http://cran.rstudio.com/web/packages/wooldridge/index.html"><img src="http://cranlogs.r-pkg.org/badges/wooldridge"></a></li>
+<li><a href="https://CRAN.R-project.org/package=wooldridge"><img src="https://cranlogs.r-pkg.org/badges/wooldridge"></a></li>
 </ul>
 </div>
 </div>
