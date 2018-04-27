@@ -28,18 +28,22 @@ install.packages("wooldridge")
 
 ## Example
 
-Load the `wooldridge` package and use the `data()` function to load the desired data set. Data set names match those in the text.
+Load the `wooldridge` package and use the `data()` function to load the desired data set. Data set names match those in the text. Once loaded, it becomes very easy to run models required in the text.
 
 ```{r}
 library(wooldridge)
-data("jtrain")
+
+data("wage1")
+
+lm(lwage ~ educ + exper + tenure, data = wage1)
 ```
 
 ## Documentation 
+
 It's always recommended that one read supporting documentation for data sets of interest. This becomes trivially easy with the `wooldridge` package with the following command.
 
 ```{r}
-?jtrain
+?wage1
 ```
 
 Documentation includes variable column names, original source of data, and page number(s) where data appear in the text.
