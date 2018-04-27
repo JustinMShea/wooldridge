@@ -78,26 +78,32 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#wooldridge-111-data-sets-for-econometrics" class="anchor"></a>wooldridge: 111 Data Sets for Econometrics</h1></div>
 <p>Economics students new to both econometrics and <strong>R</strong> may find the introduction to both challenging. However, if their text is <strong>“Introductory Econometrics: A Modern Approach, 6e”</strong> by Jeffrey M. Wooldridge, they are in luck!</p>
-<p>The <code>wooldridge</code> data package aims to lighten the task by easily loading any data set from the text. The package contains documentation for each set and all data has been compressed to a fraction its original size. Just install the package, load it, and call the data you wish to work with.</p>
+<p>The <code>wooldridge</code> data package aims to lighten the task by easily loading any data set from the text. The package contains full documentation for every data set and all data have been compressed to a fraction original size. Just install the package, load it, and call the data you wish to work with.</p>
 <p><em><strong>But wait…there’s more!</strong></em> A vignette, <a href="https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html">Introductory Econometrics Examples</a>✨ illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with <strong>R</strong>. The vignette also includes an Appendix of helpful resources, such as <em>Using R for Introductory Econometrics</em> by Florian Hess.</p>
-<p>While the original course companion site provides publicly available data sets for Eviews, Excel, and Stata commercial software, <strong>R</strong> is the open source option. Furthermore, using <strong>R</strong> while building a foundation in econometric modeling introduces one to software capable of scaling with the demands of modern statistical computing. And, working with R is fun.</p>
+<p>While the original course companion site provides publicly available data sets for Eviews, Excel, and Stata commercial software, this package is the <strong>official R open source option</strong>. Using <strong>R</strong> while building a foundation in econometric modeling introduces one to software capable of scaling with the demands of modern statistical computing. And once you get the hang of it, doing econometrics with <strong>R</strong> is very satisfying.</p>
 <p><strong>Note:</strong> All data sets are from the 6th edition (Wooldridge 2016, <code>ISBN-13: 978-1-305-27010-7</code>), which is backwards compatible with all other editions.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>Install <code>wooldridge v1.3</code> directly from The Comprehensive R Archive Network. The package contains all 6th edition data sets and depends on <strong>R &gt;= 3.0</strong>.</p>
+<p>Install <code>wooldridge v1.3</code> directly from The Comprehensive R Archive Network (<strong>CRAN</strong>). The package contains all data sets from the 6th edition and depends on <strong>R &gt;= 3.0.0</strong>.</p>
 <pre class="{r}"><code>install.packages("wooldridge")</code></pre>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>Load the <code>wooldridge</code> package and use the <code>data()</code> function to load the desired data set. Data set names match those in the text.</p>
+<p>Load the <code>wooldridge</code> package and use the <code>data()</code> function to bring the desired data set into the working environment. Data set names match those in the text. Once present in the working environment, modelling data is quick and easy, leaving learners with more time to focus on interpretation.</p>
 <pre class="{r}"><code>library(wooldridge)
-data("jtrain")</code></pre>
-<p>If using RStudio, View the <code>jtrain</code> data set</p>
-<pre class="{r}"><code>View(jtrain)</code></pre>
-<p>Check out the documentation for <code>jtrain</code>. It includes variable column names, original source of data, as well as page number(s) where the data appear in the text.</p>
-<pre class="{r}"><code><a href="reference/jtrain.html">?jtrain</a></code></pre>
+
+data("wage1")
+
+lm(lwage ~ educ + exper + tenure, data = wage1)</code></pre>
+</div>
+<div id="documentation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#documentation" class="anchor"></a>Documentation</h2>
+<p>It’s always recommended that one read supporting documentation for data sets of interest. This becomes trivially easy with the <code>wooldridge</code> package with the following command.</p>
+<pre class="{r}"><code><a href="reference/wage1.html">?wage1</a></code></pre>
+<p>Documentation includes variable column names, original source of data, and page number(s) where data appear in the text.</p>
 </div>
 </div>
 
