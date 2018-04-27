@@ -28,7 +28,7 @@ install.packages("wooldridge")
 
 ## Example
 
-Load the `wooldridge` package and use the `data()` function to load the desired data set. Data set names match those in the text. Once loaded, it becomes very easy to run models required in the text.
+Load the `wooldridge` package and use the `data()` function to bring the desired data set into the working environment. Data set names match those in the text. Once present in the working environment, modelling data is quick and easy, leaving learners with more time to focus on interpretation.
 
 ```{r}
 library(wooldridge)
