@@ -17,13 +17,10 @@ vignette: >
 
 This vignette contains examples from every chapter of _Introductory Econometrics: A Modern Approach, 6e_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with **R**.
 
-Students new to both econometrics and **R** may find the introduction to both a bit challenging. In particular, the process of loading and preparing data prior to building one's first econometric model can present challenges. The `wooldridge` data package aims to lighten this task. It contains 111 data sets from _Introductory Econometrics: A Modern Approach, 6e_, which can be loaded with a simple call to the `data()` function.
+In addition, the **Appendix** cites good sources on using R for econometrics. 
 
-While the course companion site provides publicly available data sets for Eviews, Excel, MiniTab, and Stata commercial software, **R** is the open source option. Furthermore, using **R** while building a foundation in econometric modeling introduces one to software tools capable of scaling with the demands of modern methods in statistical computing.
 
-In addition, the **Appendix** cites additional sources about using R for econometrics. 
-
-Now, install and load the `wooldridge` package and lets get started.
+Now, install and load the `wooldridge` package and lets get started!
 
 ```{r, echo = TRUE, eval = FALSE, warning=FALSE}
 install.packages("wooldridge")
@@ -38,11 +35,12 @@ library(stargazer)
 library(knitr)
 ```
 
+
 \newpage
 
 ## Chapter 2: The Simple Regression Model
 
-**`Example 2.10:` A Log Wage Equation**
+###**`Example 2.10:` A Log Wage Equation**
 
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ$$
@@ -61,8 +59,7 @@ Estimate a linear relationship between the _log of wage_ and _education_.
 log_wage_model <- lm(lwage ~ educ, data = wage1)
 ```
 
-Print the results. I'm using the `stargazer` package to print the model results in a clean and easy to read format. See the bibliography for more information.
-
+Print the results.
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(log_wage_model, type = "html", single.row = TRUE, header = FALSE)
 ```
@@ -71,7 +68,7 @@ stargazer(log_wage_model, type = "html", single.row = TRUE, header = FALSE)
 
 ## Chapter 3: Multiple Regression Analysis: Estimation
 
-**`Example 3.2:` Hourly Wage Equation**
+###**`Example 3.2:` Hourly Wage Equation**
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure$$
 
@@ -91,7 +88,7 @@ stargazer(type = "html",hourly_wage_model,  single.row = TRUE, header = FALSE)
 
 ## Chapter 4: Multiple Regression Analysis: Inference
 
-**`Example 4.7` Effect of Job Training on Firm Scrap Rates**
+###**`Example 4.7` Effect of Job Training on Firm Scrap Rates**
 
 Load the `jtrain` data set and if you are using R Studio, `View` the data set.
 
@@ -105,28 +102,24 @@ From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), _Are Training Subsid
 View(jtrain)
 ```
 
-Create a logical index, identifying which observations occur in 1987 and are non-union.
-
-```{r} 
-index <- jtrain$year == 1987 & jtrain$union == 0
-```
-
-Next, subset the jtrain data by the new index. This returns a data.frame of `jtrain` data of non-union firms for the year 1987.
-
-```{r}
-jtrain_1987_nonunion <- jtrain[index, ]
-```
 
 Now create the linear model regressing `hrsemp`(total hours training/total employees trained), the `lsales`(log of annual sales), and `lemploy`(the log of the number of the employees), against `lscrap`(the log of the scrape rate).
+
+This time, add the `subset` argument of the linear model function to indicate that we only want to estimate the model using observations which occur in `1987` and are not `union`.
+
 
 $$lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy$$
 
 
 ```{r}
-linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_1987_nonunion)
+linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain, 
+                   subset = (jtrain$year == 1987 & jtrain$union == 0))
 ```
 
 Finally, print the complete summary statistic diagnostics of the model.
+```{r, eval=FALSE, warning=FALSE, message=FALSE}
+linear_model
+```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",linear_model,  single.row = TRUE, header = FALSE)
@@ -136,7 +129,7 @@ stargazer(type = "html",linear_model,  single.row = TRUE, header = FALSE)
 
 ## Chapter 5: Multiple Regression Analysis: OLS Asymptotics
 
-**`Example 5.3:` Economic Model of Crime**
+###**`Example 5.3:` Economic Model of Crime**
 
 From  J. Grogger (1991), _Certainty vs. Severity of Punishment_, Economic Inquiry 29, 297-309. Professor Grogger kindly provided a subset of the data he used in his article.
 
@@ -201,7 +194,9 @@ $$P(X^2_{2} > 4.09) \approx 0.129$$
 
 ## Chapter 6: Multiple Regression: Further Issues
 
-**`Example 6.1:` Effects of Pollution on Housing Prices, standardized.**
+###**`Example 6.1:` Effects of Pollution on Housing Prices, standardized.**
+
+Data from _Hedonic Housing Prices and the Demand for Clean Air_, by Harrison, D. and D.L.Rubinfeld, Journal of Environmental Economics and Management 5, 81-102. Diego Garcia, a former Ph.D. student in economics at MIT, kindly provided these data, which he obtained from the book Regression Diagnostics: Identifying Influential Data and Sources of Collinearity, by D.A. Belsey, E. Kuh, and R. Welsch, 1990. New York: Wiley. 
 
 
 $$price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \beta_5stratio + \mu$$
@@ -229,8 +224,6 @@ data("hprice2")
 ?hprice2
 ```
 
-Data from _Hedonic Housing Prices and the Demand for Clean Air_, by Harrison, D. and D.L.Rubinfeld, Journal of Environmental Economics and Management 5, 81-102. Diego Garcia, a former Ph.D. student in economics at MIT, kindly provided these data, which he obtained from the book Regression Diagnostics: Identifying Influential Data and Sources of Collinearity, by D.A. Belsey, E. Kuh, and R. Welsch, 1990. New York: Wiley. 
-
 
 Estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wrapping each variable with R's `scale` function:
 
@@ -245,7 +238,7 @@ stargazer(type = "html",housing_standard,  single.row = TRUE, header = FALSE)
 
 \newpage
 
-**`Example 6.2:` Effects of Pollution on Housing Prices, Quadratic Interactive Term**
+###**`Example 6.2:` Effects of Pollution on Housing Prices, Quadratic Interactive Term**
 
 Modify the housing model, adding a quadratic term in _rooms_: 
 
@@ -264,16 +257,13 @@ stargazer(type = "html",housing_standard, housing_interactive, single.row = TRUE
 
 ## Chapter 7: Multiple Regression Analysis with Qualitative Information 
 
-**`Example 7.4:` Housing Price Regression, Qualitative Binary variable**
+###**`Example 7.4:` Housing Price Regression, Qualitative Binary variable**
 
-This time, use the `hrprice1` data.
+This time, use the `hrprice1` data. Data collected from the real estate pages of the Boston Globe during 1990. These are homes that sold in the Boston, MA area.
 
 ```{r}
 data("hprice1")
 ```
-Data collected from the real estate pages of the Boston Globe during 1990. These are homes that sold in the Boston, MA area.
-
-If you recently worked with `hprice2`, it may be helpful to view the documentation on this data set and read the variable names.
 
 ```{r, eval=FALSE}
 ?hprice1
@@ -295,20 +285,17 @@ stargazer(type = "html",housing_qualitative,  single.row = TRUE, header = FALSE)
 
 ## Chapter 8: Heteroskedasticity
 
-**`Example 8.9:` Determinants of Personal Computer Ownership**
+###**`Example 8.9:` Determinants of Personal Computer Ownership**
 
 $$\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial $$
 Christopher Lemmon, a former MSU undergraduate, collected these data from a survey he took of MSU students in Fall 1994. Load `gpa1` and create a new variable combining the `fathcoll` and `mothcoll`, into `parcoll`. This new column indicates if either parent went to college.
 
-```{r, message=FALSE, eval=FALSE}
+```{r, message=FALSE}
 data("gpa1")
-?gpa1
-```
-```{r}
-gpa1$parcoll <- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)
-```
 
-```{r}
+gpa1$parcoll <- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)
+
+
 GPA_OLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1)
 ```
 
@@ -331,18 +318,16 @@ stargazer(type = "html",GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE)
 
 ## Chapter 9: More on Specification and Data Issues
 
-**`Example 9.8:` R&D Intensity and Firm Size**
+###**`Example 9.8:` R&D Intensity and Firm Size**
 
 
 $$rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu$$
 
 From _Businessweek R&D Scoreboard_, October 25, 1991. Load the data and estimate the model.
 
-```{r, message=FALSE, eval=FALSE}
+```{r, message=FALSE}
 data("rdchem")
-?rdchem 
-```
-```{r}
+
 all_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem)
 ```
 
@@ -374,15 +359,14 @@ stargazer(type = "html",all_rdchem, smallest_rdchem,  single.row = TRUE, header 
 
 ## Chapter 10: Basic Regression Analysis with Time Series Data
 
-**`Example 10.2:` Effects of Inflation and Deficits on Interest Rates**
+###**`Example 10.2:` Effects of Inflation and Deficits on Interest Rates**
 
 $$\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t$$
 Data from the _Economic Report of the President, 2004_, Tables B-64, B-73, and B-79.
-```{r, message=FALSE, eval=FALSE}
+
+```{r, message=FALSE}
 data("intdef")
-?intdef
-```
-```{r}
+
 tbill_model <- lm(i3 ~ inf + def, data = intdef)
 ```
 
@@ -391,28 +375,35 @@ stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE)
 ```
 
 
-**`Example 10.11:` Seasonal Effects of Antidumping Filings**
+###**`Example 10.11:` Seasonal Effects of Antidumping Filings**
 
 C.M. Krupp and P.S. Pollard (1999), _Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry_, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988. 
 
-```{r, message=FALSE, eval=FALSE}
+```{r, message=FALSE, tidy=TRUE}
 data("barium")
-?barium
-```
-```{r, tidy=TRUE}
+
 barium_imports <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 ```
 
-Estimate a new model, `barium_seasonal` which accounts for seasonality by adding dummy variables contained in the data. Compute the `anova` between the two models.
+Estimate a new model, `barium_seasonal` which accounts for seasonality by adding dummy variables contained in the data. 
 
 ```{r, tidy=TRUE}
 barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6 + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec, data = barium)
+```
+
+Compare both models:
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+stargazer(type = "html",barium_imports, barium_seasonal,  single.row = TRUE, header = FALSE)
+```
+
+Now, compute the `anova` between the two models.
+
+```{r}
 barium_anova <- anova(barium_imports, barium_seasonal)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",barium_imports, barium_seasonal,  single.row = TRUE, header = FALSE)
-
 stargazer(type = "html",barium_anova,  single.row = TRUE, header = FALSE)
 ```
 
@@ -420,17 +411,15 @@ stargazer(type = "html",barium_anova,  single.row = TRUE, header = FALSE)
 
 ## Chapter 11: Further Issues in Using OLS with with Time Series Data
 
-**`Example 11.7:` Wages and Productivity**
+###**`Example 11.7:` Wages and Productivity**
 
 
 $$\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t$$
 Data from the _Economic Report of the President, 1989_, Table B-47. The data are for the non-farm business sector.
 
-```{r, message=FALSE, eval=FALSE}
+```{r, message=FALSE}
 data("earns")
-?earns
-```
-```{r}
+
 wage_time <- lm(lhrwage ~ loutphr + t, data = earns)
 ```
 
@@ -447,11 +436,13 @@ stargazer(type = "html",wage_time, wage_diff,  single.row = TRUE, header = FALSE
 
 ## Chapter 12: Serial Correlation and Heteroskedasticiy in Time Series Regressions
 
-**`Example 12.4`: Prais-Winsten Estimation in the Event Study**
+###**`Example 12.4`: Prais-Winsten Estimation in the Event Study**
 
 ```{r, tidy=TRUE}
 data("barium")
-barium_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
+
+barium_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, 
+                   data = barium)
 ```
 
 
@@ -473,7 +464,7 @@ barium_prais_winsten
 
 \newpage
 
-**`Example 12.8:` Heteroskedasticity and the Efficient Markets Hypothesis**
+###**`Example 12.8:` Heteroskedasticity and the Efficient Markets Hypothesis**
 
 These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, [www.nyse.com](https://www.nyse.com/data-and-tech). 
 
@@ -501,7 +492,7 @@ stargazer(type = "html",return_AR1, mu2_hat_model,  single.row = TRUE, header = 
 
 \newpage
 
-**`Example 12.9:` ARCH in Stock Returns**
+###**`Example 12.9:` ARCH in Stock Returns**
 
 
 $$\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t$$
@@ -523,7 +514,7 @@ stargazer(type = "html",arch_model, single.row = TRUE, header = FALSE)
 
 ## Chapter 13: Pooling Cross Sections across Time: Simple Panel Data Methods
 
-**`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
+###**`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
 
 Wooldridge collected these data from two sources, the 1992 _Statistical Abstract of the United States_ (Tables 1009, 1012) and _A Digest of State Alcohol-Highway Safety Related Legislation_, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. 
 $$\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}$$
@@ -544,7 +535,7 @@ stargazer(type = "html",DD_model,  single.row = TRUE, header = FALSE)
 
 ## Chapter 14: Advanced Panel Data Methods
 
-**`Example 14.1:` Effect of Job Training on Firm Scrap Rates**
+###**`Example 14.1:` Effect of Job Training on Firm Scrap Rates**
 
 In this section, we will estimate a linear panel modeg using the `plm` function from the `plm: Linear Models for Panel Data` package. See the bibliography for more information.
 
@@ -563,7 +554,7 @@ stargazer(type = "html",scrap_panel,  single.row = TRUE, header = FALSE)
 
 ## Chapter 15: Instrumental Variables Estimation and Two Stage Least Squares
 
-**`Example 15.1:` Estimating the Return to Education for Married Women**
+###**`Example 15.1:` Estimating the Return to Education for Married Women**
 
 T.A. Mroz (1987), _The Sensitivity of an Empirical Model of Married Women's Hours of Work to Economic and Statistical Assumptions_, Econometrica 55, 765-799. Professor Ernst R. Berndt, of MIT, kindly provided the data, which he obtained from Professor Mroz.
 
@@ -600,7 +591,7 @@ stargazer(type = "html",wage_educ_model, fatheduc_model, wage_educ_IV, single.ro
 
 \newpage
 
-**`Example 15.2:` Estimating the Return to Education for Men**
+###**`Example 15.2:` Estimating the Return to Education for Men**
 
 Data from M. Blackburn and D. Neumark (1992), _Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials_, Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which Wooldridge uses the data for 1980.
 
@@ -629,7 +620,7 @@ stargazer(type = "html",educ_sibs_model, educ_sibs_IV, wage_educ_IV,  single.row
 
 \newpage
 
-**`Example 15.5:` Return to Education for Working Women**
+###**`Example 15.5:` Return to Education for Working Women**
 
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_2exper + \beta_3exper^2$$
@@ -649,14 +640,14 @@ stargazer(type = "html",wage_educ_exper_IV,  single.row = TRUE, header = FALSE)
 
 ## Chapter 16: Simultaneous Equations Models
 
-**`Example 16.4:` INFLATION AND OPENNESS**
+###**`Example 16.4:` INFLATION AND OPENNESS**
 
 Data from D. Romer (1993), _Openness and Inflation: Theory and Evidence_, Quarterly Journal of Economics 108, 869-903. The data are included in the article.
 
 $$inf = \beta_{10} + \alpha_1open + \beta_{11}log(pcinc) + \mu_1$$
 $$open = \beta_{20} + \alpha_2inf + \beta_{21}log(pcinc) + \beta_{22}log(land) + \mu_2$$
 
-**`Example 16.6:` INFLATION AND OPENNESS**
+###**`Example 16.6:` INFLATION AND OPENNESS**
 
 $$\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)$$
 
@@ -687,7 +678,7 @@ stargazer(type = "html",open_model, inflation_IV,  single.row = TRUE, header = F
 
 ## Chapter 17: Limited Dependent Variable Models and Sample Selection Corrections
 
-**`Example 17.3:` POISSON REGRESSION FOR NUMBER OF ARRESTS**
+###**`Example 17.3:` POISSON REGRESSION FOR NUMBER OF ARRESTS**
 
 ```{r, tidy=TRUE, warning=FALSE}
 data("crime1")
@@ -722,7 +713,7 @@ stargazer(type = "html",econ_crime_model, econ_crim_poisson,  single.row = TRUE,
 
 ## Chapter 18: Advanced Time Series Topics
 
-**`Example 18.8:` FORECASTING THE U.S. UNEMPLOYMENT RATE**
+###**`Example 18.8:` FORECASTING THE U.S. UNEMPLOYMENT RATE**
 
 Data from _Economic Report of the President, 2004_, Tables B-42 and B-64.
 
