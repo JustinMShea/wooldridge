@@ -6,14 +6,14 @@
 
 Economics students new to both econometrics and **R** may find the introduction to both challenging. However, if their text is **"Introductory Econometrics: A Modern Approach, 6e"** by Jeffrey M. Wooldridge, they are in luck! 
 
-The `wooldridge` data package aims to lighten the task by easily loading any data set from the text. The package contains full documentation for every data set and all data have been compressed to a fraction original size. Just install the package, load it, and call the data you wish to work with.
+The `wooldridge` data package aims to lighten the task by easily loading any data set from the text. The package contains full documentation for every data set and all data have been compressed to a fraction of their original size. Just install the package, load it, and call the data you wish to work with.
 
-_**But wait...there's more!**_ A vignette, [Introductory Econometrics Examples](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html):sparkles: illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix of helpful resources, such as *Using R for Introductory Econometrics* by Florian Hess.
+_**But wait...there's more!**_ A vignette, [Introductory Econometrics Examples](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html):sparkles:, illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix of helpful resources, such as *Using R for Introductory Econometrics* by Florian Hess.
 
 
-While the original course companion site provides publicly available data sets for Eviews, Excel, and Stata commercial software, this package is the **official R open source option**. Using **R** while building a foundation in econometric modeling introduces one to software capable of scaling with the demands of modern statistical computing. And once you get the hang of it, doing econometrics with **R** is very satisfying. 
+While the original course companion site provides publicly available data sets for Eviews, Excel, and Stata commercial software, this package is the **official R open source option**. Using **R** while building a foundation in econometric modeling, not only saves learners a few units of currency, but also introduces them to software capable of scaling with the demands of modern statistical computing.
 
-**Note:** All data sets are from the 6th edition (Wooldridge 2016, `ISBN-13: 978-1-305-27010-7`), which is backwards compatible with all other editions.
+**Note:** All data sets are from the 6th edition (Wooldridge 2016, `ISBN-13: 978-1-305-27010-7`), which is compatible with all other editions.
 
 
 ## Installation
