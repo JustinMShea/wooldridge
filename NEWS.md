@@ -3,6 +3,11 @@ title: "NEWS"
 output: github_document
 ---
 
+# wooldridge dev
+
+Working on vignette to improve examples.
+
+
 # wooldridge 1.3.0
 
 Added six additional data sets and documentation for the most recent edition,
