@@ -54,7 +54,7 @@ data("wage1")
 These are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.
 
 ```{r}
-plot(y = wage1$lwage+1, x = wage1$educ, col = "darkgreen", main = "Wages vs. Education, 1976", xlab = "years of education", ylab = "log (hourly wages)")
+plot(y = wage1$lwage+1, x = wage1$educ, col = "blue", main = "Wages vs. Education, 1976", xlab = "years of education", ylab = "log (hourly wages)")
 ```
 
 Estimate a linear relationship between the _log of wage_ and _education_.
