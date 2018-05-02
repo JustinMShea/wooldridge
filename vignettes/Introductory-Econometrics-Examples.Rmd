@@ -53,16 +53,29 @@ data("wage1")
 ```
 These are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.
 
+```{r}
+plot(y = wage1$lwage+1, x = wage1$educ, col = "darkgreen", main = "Wages vs. Education, 1976", xlab = "years of education", ylab = "log (hourly wages)")
+```
+
 Estimate a linear relationship between the _log of wage_ and _education_.
 
 ```{r}
 log_wage_model <- lm(lwage ~ educ, data = wage1)
+summary(log_wage_model)
 ```
 
 Print the results.
+
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(log_wage_model, type = "html", single.row = TRUE, header = FALSE)
 ```
+
+View the plot again, with the linear model.
+```{r}
+plot(y = wage1$lwage, x = wage1$educ, main = "A Log Wage Equation", xlab = "years of education", ylab = "log of average hourly wages", frame = FALSE)
+abline(log_wage_model, col = "blue", lwd=2)
+```
+
 
 \newpage
 
