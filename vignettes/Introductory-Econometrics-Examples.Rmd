@@ -53,27 +53,42 @@ data("wage1")
 ```
 These are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.
 
-```{r}
-plot(y = wage1$lwage+1, x = wage1$educ, col = "blue", main = "Wages vs. Education, 1976", xlab = "years of education", ylab = "log (hourly wages)")
+First, make a scatter-plot of the two variables and look for possible patterns in the relationship between them.
+
+```{r, tidy=TRUE}
+plot(y = wage1$wage, x = wage1$educ, col = "blue", xaxt="n", frame = FALSE, main = "Wages vs. Education, 1976", xlab = "years of education", ylab = "Hourly wages")
+axis(side = 1, at = c(0,6,12,18))
 ```
 
-Estimate a linear relationship between the _log of wage_ and _education_.
+It appears that _**on average**_, more years of education, leads to higher wages.
+
+The example in the text investigates what the _**percentage**_ change between wages and education might be. So, we must use the $log($`wage`$)$.
+
+Build a linear model to estimate the relationship between the _log of wage_ (`lwage`) and _education_ (`educ`).
 
 ```{r}
 log_wage_model <- lm(lwage ~ educ, data = wage1)
+```
+
+Print the `summary` of the results.
+
+```{r, echo = TRUE, eval = FALSE, warning=FALSE}
 summary(log_wage_model)
 ```
 
-Print the results.
+
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(log_wage_model, type = "html", single.row = TRUE, header = FALSE)
 ```
 
-View the plot again, with the linear model.
-```{r}
-plot(y = wage1$lwage, x = wage1$educ, main = "A Log Wage Equation", xlab = "years of education", ylab = "log of average hourly wages", frame = FALSE)
+Plot the $log($`wage`$)$ vs `educ`, adding a line estimated with the linear model.
+
+```{r, tidy=TRUE}
+plot(y = wage1$lwage, x = wage1$educ, main = "A Log Wage Equation", xlab = "years of education", ylab = "log of average hourly wages",  xaxt="n", frame = FALSE)
+axis(side = 1, at = c(0,6,12,18))
 abline(log_wage_model, col = "blue", lwd=2)
+
 ```
 
 
