@@ -4,7 +4,7 @@
 
 # wooldridge: 111 Data Sets for Econometrics 
 
-Economics students new to both econometrics and **R** may find the introduction to both challenging. However, if their text is **"Introductory Econometrics: A Modern Approach, 6e"** by Jeffrey M. Wooldridge, they are in luck! 
+Economics students new to both econometrics and **R** may find the introduction to both challenging. However, if their text is **"Introductory Econometrics: A Modern Approach, 6e"** by Jeffrey M. Wooldridge, they are in luck!
 
 The `wooldridge` data package aims to lighten the task by easily loading any data set from the text. The package contains full documentation for every data set and all data have been compressed to a fraction of their original size. Just install the package, load it, and call the data you wish to work with.
 
@@ -40,7 +40,7 @@ lm(lwage ~ educ + exper + tenure, data = wage1)
 
 ## Documentation 
 
-It's always recommended that one read supporting documentation for data sets of interest. This becomes trivially easy with the `wooldridge` package with the following command.
+It's always recommended that one read supporting documentation for data sets of interest. This becomes trivially easy with the `wooldridge` package:
 
 ```{r}
 ?wage1
