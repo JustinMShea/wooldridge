@@ -101,16 +101,20 @@ $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure$$
 Plot the variables.
 
 ```{r, tidy=TRUE}
-#par(mfrow=c(1,3))
-plot(y = wage1$lwage, x = wage1$educ, col = "blue", xaxt="n", frame = FALSE, main = "Wages vs. Education", xlab = "years of education", ylab = "Hourly wages")
+par(mfrow=c(1,3))
+plot(y = wage1$lwage, x = wage1$educ, xaxt="n", frame = FALSE, main = "Wages vs. Education", xlab = "years of education", ylab = "Hourly wages")
 axis(side = 1, at = c(0,6,12,18))
+abline(lm(lwage ~ educ, data=wage1), col = "blue", lwd=2)
 
-plot(y = wage1$lwage, x = wage1$exper, col = "blue", xaxt="n", frame = FALSE, main = "Wages vs. Experience", xlab = "years of experience", ylab = "Hourly wages")
+plot(y = wage1$lwage, x = wage1$exper, xaxt="n", frame = FALSE, main = "Wages vs. Experience", xlab = "years of experience", ylab = "Hourly wages")
 axis(side = 1, at = c(0,12.5,25.50,38,52))
+abline(lm(lwage ~ exper, data=wage1), col = "blue", lwd=2)
 
-plot(y = wage1$lwage, x = wage1$tenure, col = "blue", xaxt="n", frame = FALSE, main = "Wages vs. Tenure", xlab = "years with emloyer", ylab = "Hourly wages")
+plot(y = wage1$lwage, x = wage1$tenure, xaxt="n", frame = FALSE, main = "Wages vs. Tenure", xlab = "years with emloyer", ylab = "Hourly wages")
 axis(side = 1, at = c(0,11,22,33,44))
+abline(lm(lwage ~ tenure, data=wage1), col = "blue", lwd=2)
 ```
+
 Estimate the model regressing _education_, _experience_, and _tenure_ against _log(wage)_. The `wage1` data should still be in your working environment.
 
 ```{r}
@@ -123,10 +127,11 @@ Print the estimated model coefficients:
 stargazer(type = "html",hourly_wage_model,  single.row = TRUE, header = FALSE)
 ```
 
-Plot the coefficients for a quick comparison.
+Plot the coefficients, representing percentage impact of each variable on $log($`wage`$)$ for a quick comparison.
 
 ```{r}
-barplot(hourly_wage_model$coefficients[-1])
+barplot(100*hourly_wage_model$coefficients[-1], ylab = "Percentage", 
+        main = "Coefficients of Hourly Wage Equation")
 ```
 
 ## Chapter 4: Multiple Regression Analysis: Inference
@@ -143,13 +148,11 @@ From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), _Are Training Subsid
 
 ```{r, echo = TRUE, eval = FALSE, warning=FALSE}
 ?jtrain
-View(jtrain)
 ```
-
 
 Now create the linear model regressing `hrsemp`(total hours training/total employees trained), the `lsales`(log of annual sales), and `lemploy`(the log of the number of the employees), against `lscrap`(the log of the scrape rate).
 
-This time, add the `subset` argument of the linear model function to indicate that we only want to estimate the model using observations which occur in `1987` and are not `union`.
+This time, use the `subset` argument of the `lm` function to indicate that we need to model observations which occurred in `1987` and are not `union`.
 
 
 $$lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy$$
@@ -167,14 +170,23 @@ summary(linear_model)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",linear_model,  single.row = TRUE, header = FALSE)
+stargazer(type = "html", linear_model, single.row = TRUE, header = FALSE)
 ```
 
-Plot the coefficients for a quick comparison.
+Plot the coefficients, representing the impact of each variable on $log($`scrape`$)$ for a quick comparison.
 
 ```{r}
-barplot(linear_model$coefficients[-1])
+coefficient <- coef(linear_model)[-1]
+ confidence <- confint(linear_model, level = 0.95)[-1,]
 
+graph <- drop(barplot(coefficient, ylim = range(c(confidence)),
+              main = "Coefficients & 95% C.I. of variables on Firm Scrap Rates"))  
+
+arrows(graph, coefficient, graph, confidence[,1], angle=90, length=0.55, col="blue", lwd=2)
+arrows(graph, coefficient, graph, confidence[,2], angle=90, length=0.55, col="blue", lwd=2)
+
+
+```
 ```
 
 ## Chapter 5: Multiple Regression Analysis: OLS Asymptotics
