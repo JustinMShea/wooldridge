@@ -138,29 +138,53 @@ barplot(100*hourly_wage_model$coefficients[-1], ylab = "Percentage",
 
 ###**`Example 4.7` Effect of Job Training on Firm Scrap Rates**
 
-Load the `jtrain` data set and if you are using R Studio, `View` the data set.
+Load the `jtrain` data set. 
 
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE, message=FALSE}
 data("jtrain")
 ```
 
-From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), _Are Training Subsidies Effective? The Michigan Experience_, Industrial and Labor Relations Review 46, 625-636. The authors kindly provided the data.
-
 ```{r, echo = TRUE, eval = FALSE, warning=FALSE}
 ?jtrain
 ```
 
+From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), _Are Training Subsidies Effective? The Michigan Experience_, Industrial and Labor Relations Review 46, 625-636. The authors kindly provided the data.
+
+First, use the `subset` function and create a new data object which
+contains those observations which occurred in `1987` and are not `union`.
+
+```{r}
+jtrain_1987_non <- subset(jtrain, subset = (year == 1987 & union == 0))
+```
+
+Now, explore relationships among the independent and dependent variables visually.
+
+```{r, tidy=TRUE}
+par(mfrow=c(1,3))
+plot(y = jtrain_1987_non$lscrap, x = jtrain_1987_non$hrsemp, frame = FALSE, xlab = "Total (hours/employees) trained", ylab = "Log(scrap rate per 100)")
+#axis(side = 1, at = c(0,6,12,18))
+abline(lm(lscrap ~ hrsemp, data=jtrain_1987_non), col = "blue", lwd=2)
+
+plot(y = jtrain_1987_non$lscrap, x = jtrain_1987_non$lsales, frame = FALSE, xlab = "Log(annual sales $)", ylab = "Log(scrap rate per 100)")
+#axis(side = 1, at = c(0,12.5,25.50,38,52))
+abline(lm(lscrap ~ lsales, data=jtrain_1987_non), col = "blue", lwd=2)
+
+plot(y = jtrain_1987_non$lscrap, x = jtrain_1987_non$lemploy, frame = FALSE, xlab = "Log(# employees at plant)", ylab = "Log(scrap rate per 100)")
+#axis(side = 1, at = c(0,11,22,33,44))
+abline(lm(lscrap ~ lemploy, data=jtrain_1987_non), col = "blue", lwd=2)
+```
+
+
+
+
+
 Now create the linear model regressing `hrsemp`(total hours training/total employees trained), the `lsales`(log of annual sales), and `lemploy`(the log of the number of the employees), against `lscrap`(the log of the scrape rate).
-
-This time, use the `subset` argument of the `lm` function to indicate that we need to model observations which occurred in `1987` and are not `union`.
-
 
 $$lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy$$
 
 
 ```{r, tidy=TRUE}
-linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain, 
-                   subset = (year == 1987 & union == 0))
+linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_1987_non)
 ```
 
 Finally, print the complete summary diagnostics of the model.
