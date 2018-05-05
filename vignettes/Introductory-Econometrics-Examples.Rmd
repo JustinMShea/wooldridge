@@ -225,8 +225,7 @@ summary(linear_model)
 stargazer(type = "html", linear_model, single.row = TRUE, header = FALSE)
 ```
 
-Plot the coefficients, representing the impact of each variable on $log($`scrape`$)$ for a quick comparison. As you can observe from,
-for some variables, the confidence intervals are quite wide.
+Plot the coefficients, representing the impact of each variable on $log($`scrape`$)$ for a quick comparison. As you can observe, for some variables, the confidence intervals are wide.
 
 ```{r}
 coefficient <- coef(linear_model)[-1]

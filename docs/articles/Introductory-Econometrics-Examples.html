@@ -542,7 +542,7 @@ F Statistic
 </td>
 </tr>
 </table>
-<p>Plot the coefficients, representing the impact of each variable on <span class="math inline">\(log(\)</span><code>scrape</code><span class="math inline">\()\)</span> for a quick comparison. As you can observe from, for some variables, the confidence intervals are quite wide.</p>
+<p>Plot the coefficients, representing the impact of each variable on <span class="math inline">\(log(\)</span><code>scrape</code><span class="math inline">\()\)</span> for a quick comparison. As you can observe, for some variables, the confidence intervals are wide.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">coefficient &lt;-<span class="st"> </span><span class="kw">coef</span>(linear_model)[<span class="op">-</span><span class="dv">1</span>]
  confidence &lt;-<span class="st"> </span><span class="kw">confint</span>(linear_model, <span class="dt">level =</span> <span class="fl">0.95</span>)[<span class="op">-</span><span class="dv">1</span>,]
 
