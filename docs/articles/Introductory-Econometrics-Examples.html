@@ -235,24 +235,27 @@ F Statistic
 <h3 class="hasAnchor">
 <a href="#example-3-2-hourly-wage-equation" class="anchor"></a><strong><code>Example 3.2:</code> Hourly Wage Equation</strong>
 </h3>
-<p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure\]</span> Plot the variables.</p>
+<p>Plot the variables against <code>lwage</code>, and visually compare their distributions, and slope of the simple regression line.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
-<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Wages vs. Education"</span>, 
-    <span class="dt">xlab =</span> <span class="st">"years of education"</span>, <span class="dt">ylab =</span> <span class="st">"Hourly wages"</span>)
+
+<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"years of education"</span>, 
+    <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+<span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">line =</span> <span class="fl">2.5</span>, <span class="st">"Hourly wages"</span>, <span class="dt">cex =</span> <span class="fl">1.25</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">12</span>, <span class="dv">18</span>))
 <span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> wage1), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
 
-<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>exper, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Wages vs. Experience"</span>, 
-    <span class="dt">xlab =</span> <span class="st">"years of experience"</span>, <span class="dt">ylab =</span> <span class="st">"Hourly wages"</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">12.5</span>, <span class="fl">25.5</span>, <span class="dv">38</span>, <span class="dv">52</span>))
+<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>exper, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"years of experience"</span>, 
+    <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">12.5</span>, <span class="dv">25</span>, <span class="fl">37.5</span>, <span class="dv">50</span>))
 <span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>exper, <span class="dt">data =</span> wage1), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
 
-<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>tenure, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Wages vs. Tenure"</span>, 
-    <span class="dt">xlab =</span> <span class="st">"years with emloyer"</span>, <span class="dt">ylab =</span> <span class="st">"Hourly wages"</span>)
+<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>tenure, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"years with employer"</span>, 
+    <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">11</span>, <span class="dv">22</span>, <span class="dv">33</span>, <span class="dv">44</span>))
 <span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>tenure, <span class="dt">data =</span> wage1), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</code></pre></div>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
 <p>Estimate the model regressing <em>education</em>, <em>experience</em>, and <em>tenure</em> against <em>log(wage)</em>. The <code>wage1</code> data should still be in your working environment.</p>
+<p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hourly_wage_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>tenure, <span class="dt">data =</span> wage1)</code></pre></div>
 <p>Print the estimated model coefficients:</p>
 <table style="text-align:center" class="table">
@@ -390,28 +393,35 @@ F Statistic
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"jtrain"</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><a href="../reference/jtrain.html">?jtrain</a></code></pre></div>
 <p>From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), <em>Are Training Subsidies Effective? The Michigan Experience</em>, Industrial and Labor Relations Review 46, 625-636. The authors kindly provided the data.</p>
-<p>First, use the <code>subset</code> function and create a new data object which contains those observations which occurred in <code>1987</code> and are not <code>union</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">jtrain_1987_non &lt;-<span class="st"> </span><span class="kw">subset</span>(jtrain, <span class="dt">subset =</span> (year <span class="op">==</span><span class="st"> </span><span class="dv">1987</span> <span class="op">&amp;</span><span class="st"> </span>union <span class="op">==</span><span class="st"> </span><span class="dv">0</span>))</code></pre></div>
-<p>Now, explore relationships among the independent and dependent variables visually.</p>
+<p>First, use the <code>subset</code> function and it’s argument by the same name to return observations which occurred in <strong>1987</strong> and are not <strong>union</strong>. At the same time, use the <code>select</code> argument to return only the variables of interest for this problem.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">jtrain_subset &lt;-<span class="st"> </span><span class="kw">subset</span>(jtrain, <span class="dt">subset =</span> (year <span class="op">==</span><span class="st"> </span><span class="dv">1987</span> <span class="op">&amp;</span><span class="st"> </span>union <span class="op">==</span><span class="st"> </span><span class="dv">0</span>),
+                          <span class="dt">select =</span> <span class="kw">c</span>(year, union, lscrap, hrsemp, lsales, lemploy))</code></pre></div>
+<p>Next, test for missing values. One can “eyeball” these with R Studio’s <code>View</code> function, but a more precise approach combines the <code>sum</code> and <code>is.na</code> functions to return the total number of observations equal to <code>NA</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">is.na</span>(jtrain_subset))</code></pre></div>
+<pre><code>## [1] 156</code></pre>
+<p>While <code>R</code>’s <code>lm</code> function will automatically remove missing <code>NA</code> values, eliminating these manually will produce more clearly proportioned graphs for exploratory analysis. Call the <code>na.omit</code> function to remove all missing values and assign the new <code>data.frame</code> object the name <strong><code>jtrain_clean</code></strong>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">jtrain_clean &lt;-<span class="st"> </span><span class="kw">na.omit</span>(jtrain_subset)</code></pre></div>
+<p>Use <code>jtrain_clean</code> to plot the variables of interest against <code>lscrap</code>. Visually observe the respective distributions for each variable, and compare the slope of the simple regression lines.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
-<span class="kw">plot</span>(<span class="dt">y =</span> jtrain_1987_non<span class="op">$</span>lscrap, <span class="dt">x =</span> jtrain_1987_non<span class="op">$</span>hrsemp, <span class="dt">frame =</span> <span class="ot">FALSE</span>, 
-    <span class="dt">xlab =</span> <span class="st">"Total (hours/employees) trained"</span>, <span class="dt">ylab =</span> <span class="st">"Log(scrap rate per 100)"</span>)
-<span class="co"># axis(side = 1, at = c(0,6,12,18))</span>
-<span class="kw">abline</span>(<span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>hrsemp, <span class="dt">data =</span> jtrain_1987_non), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
 
-<span class="kw">plot</span>(<span class="dt">y =</span> jtrain_1987_non<span class="op">$</span>lscrap, <span class="dt">x =</span> jtrain_1987_non<span class="op">$</span>lsales, <span class="dt">frame =</span> <span class="ot">FALSE</span>, 
-    <span class="dt">xlab =</span> <span class="st">"Log(annual sales $)"</span>, <span class="dt">ylab =</span> <span class="st">"Log(scrap rate per 100)"</span>)
-<span class="co"># axis(side = 1, at = c(0,12.5,25.50,38,52))</span>
-<span class="kw">abline</span>(<span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>lsales, <span class="dt">data =</span> jtrain_1987_non), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+point_size &lt;-<span class="st"> </span><span class="fl">1.75</span>
 
-<span class="kw">plot</span>(<span class="dt">y =</span> jtrain_1987_non<span class="op">$</span>lscrap, <span class="dt">x =</span> jtrain_1987_non<span class="op">$</span>lemploy, <span class="dt">frame =</span> <span class="ot">FALSE</span>, 
-    <span class="dt">xlab =</span> <span class="st">"Log(# employees at plant)"</span>, <span class="dt">ylab =</span> <span class="st">"Log(scrap rate per 100)"</span>)
-<span class="co"># axis(side = 1, at = c(0,11,22,33,44))</span>
-<span class="kw">abline</span>(<span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_1987_non), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-17-1.png" width="700"></p>
+<span class="kw">plot</span>(<span class="dt">y =</span> jtrain_clean<span class="op">$</span>lscrap, <span class="dt">x =</span> jtrain_clean<span class="op">$</span>hrsemp, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Total (hours/employees) trained"</span>, 
+    <span class="dt">ylab =</span> <span class="st">""</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">cex =</span> point_size)
+<span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">line =</span> <span class="dv">2</span>, <span class="st">"Log(scrap rate)"</span>, <span class="dt">cex =</span> <span class="fl">1.25</span>)
+<span class="kw">abline</span>(<span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>hrsemp, <span class="dt">data =</span> jtrain_clean), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+
+<span class="kw">plot</span>(<span class="dt">y =</span> jtrain_clean<span class="op">$</span>lscrap, <span class="dt">x =</span> jtrain_clean<span class="op">$</span>lsales, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Log(annual sales $)"</span>, 
+    <span class="dt">ylab =</span> <span class="st">" "</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">cex =</span> point_size)
+<span class="kw">abline</span>(<span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>lsales, <span class="dt">data =</span> jtrain_clean), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+
+<span class="kw">plot</span>(<span class="dt">y =</span> jtrain_clean<span class="op">$</span>lscrap, <span class="dt">x =</span> jtrain_clean<span class="op">$</span>lemploy, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Log(# employees at plant)"</span>, 
+    <span class="dt">ylab =</span> <span class="st">" "</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">cex =</span> point_size)
+<span class="kw">abline</span>(<span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_clean), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</code></pre></div>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-19-1.png" width="700"></p>
 <p>Now create the linear model regressing <code>hrsemp</code>(total hours training/total employees trained), the <code>lsales</code>(log of annual sales), and <code>lemploy</code>(the log of the number of the employees), against <code>lscrap</code>(the log of the scrape rate).</p>
 <p><span class="math display">\[lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy\]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>hrsemp <span class="op">+</span><span class="st"> </span>lsales <span class="op">+</span><span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_1987_non)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>hrsemp <span class="op">+</span><span class="st"> </span>lsales <span class="op">+</span><span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_clean)</code></pre></div>
 <p>Finally, print the complete summary diagnostics of the model.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(linear_model)</code></pre></div>
 <table style="text-align:center" class="table">
@@ -532,7 +542,7 @@ F Statistic
 </td>
 </tr>
 </table>
-<p>Plot the coefficients, representing the impact of each variable on <span class="math inline">\(log(\)</span><code>scrape</code><span class="math inline">\()\)</span> for a quick comparison.</p>
+<p>Plot the coefficients, representing the impact of each variable on <span class="math inline">\(log(\)</span><code>scrape</code><span class="math inline">\()\)</span> for a quick comparison. As you can observe from, for some variables, the confidence intervals are quite wide.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">coefficient &lt;-<span class="st"> </span><span class="kw">coef</span>(linear_model)[<span class="op">-</span><span class="dv">1</span>]
  confidence &lt;-<span class="st"> </span><span class="kw">confint</span>(linear_model, <span class="dt">level =</span> <span class="fl">0.95</span>)[<span class="op">-</span><span class="dv">1</span>,]
 
@@ -541,7 +551,7 @@ graph &lt;-<span class="st"> </span><span class="kw">drop</span>(<span class="kw
 
 <span class="kw">arrows</span>(graph, coefficient, graph, confidence[,<span class="dv">1</span>], <span class="dt">angle=</span><span class="dv">90</span>, <span class="dt">length=</span><span class="fl">0.55</span>, <span class="dt">col=</span><span class="st">"blue"</span>, <span class="dt">lwd=</span><span class="dv">2</span>)
 <span class="kw">arrows</span>(graph, coefficient, graph, confidence[,<span class="dv">2</span>], <span class="dt">angle=</span><span class="dv">90</span>, <span class="dt">length=</span><span class="fl">0.55</span>, <span class="dt">col=</span><span class="st">"blue"</span>, <span class="dt">lwd=</span><span class="dv">2</span>)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-21-1.png" width="700"> ```</p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 </div>
 </div>
 <div id="chapter-5-multiple-regression-analysis-ols-asymptotics" class="section level2">
@@ -1298,7 +1308,7 @@ y_axis &lt;-<span class="st"> "R&amp;D as a percentage of sales"</span>
 
 <span class="kw">plot</span>(rdintens <span class="op">~</span><span class="st"> </span>sales, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">data =</span> rdchem, <span class="dt">main =</span> plot_title, 
     <span class="dt">xlab =</span> x_axis, <span class="dt">ylab =</span> y_axis)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-42-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-44-1.png" width="700"></p>
 <p>So, we can estimate the model without that data point to gain a better understanding of how <code>sales</code> and <code>profmarg</code> describe <code>rdintens</code> for most firms. We can use the <code>subset</code> argument of the linear model function to indicate that we only want to estimate the model using data that is less than the highest sales.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smallest_rdchem &lt;-<span class="st"> </span><span class="kw">lm</span>(rdintens <span class="op">~</span><span class="st"> </span>sales <span class="op">+</span><span class="st"> </span>profmarg, <span class="dt">data =</span> rdchem, 
                       <span class="dt">subset =</span> (sales <span class="op">&lt;</span><span class="st"> </span><span class="kw">max</span>(sales)))</code></pre></div>
