@@ -77,7 +77,7 @@ summary(log_wage_model)
 
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(log_wage_model, type = "html", single.row = TRUE, header = FALSE)
+stargazer(type = "html", log_wage_model, single.row = TRUE, header = FALSE, digits = 5)
 ```
 
 Plot the $log($`wage`$)$ vs `educ`, adding a line estimated with the linear model.
@@ -153,7 +153,7 @@ summary(hourly_wage_model)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html", hourly_wage_model,  single.row = TRUE, header = FALSE)
+stargazer(type = "html", hourly_wage_model,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 For the years of experience variable, or `exper`, the coefficient and Standard Error is:
@@ -259,7 +259,7 @@ summary(linear_model)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html", linear_model, single.row = TRUE, header = FALSE)
+stargazer(type = "html", linear_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 Plot the coefficients, representing the impact of each variable on $log($`scrap`$)$ for a quick comparison. As you can observe, for some variables, the confidence intervals are wide.
@@ -429,7 +429,7 @@ housing_standard <- lm(scale(price)~0+scale(nox)+scale(crime)+scale(rooms)+scale
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",housing_standard,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",housing_standard,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -447,7 +447,7 @@ housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms+I(rooms^2) + stratio
 Compare the results with the model from `example 6.1`.
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",housing_standard, housing_interactive, single.row = TRUE, header = FALSE)
+stargazer(type = "html",housing_standard, housing_interactive, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 \newpage
@@ -475,7 +475,7 @@ housing_qualitative <- lm(lprice ~ llotsize + lsqrft + bdrms + colonial, data = 
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",housing_qualitative,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",housing_qualitative,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 \newpage
@@ -507,7 +507,7 @@ GPA_WLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)
 Compare the OLS and WLS model in the table below:
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -548,7 +548,7 @@ smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem,
 The table below compares the results of both models side by side. By removing the outlier firm, $sales$ become a more significant determination of R&D expenditures.
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",all_rdchem, smallest_rdchem,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",all_rdchem, smallest_rdchem,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -568,7 +568,7 @@ tbill_model <- lm(i3 ~ inf + def, data = intdef)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE)
+stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -591,7 +591,7 @@ barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + af
 Compare both models:
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",barium_imports, barium_seasonal,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",barium_imports, barium_seasonal,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 Now, compute the `anova` between the two models.
@@ -601,7 +601,7 @@ barium_anova <- anova(barium_imports, barium_seasonal)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",barium_anova,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",barium_anova,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 \newpage
@@ -625,7 +625,7 @@ wage_diff <- lm(diff(lhrwage) ~ diff(loutphr), data = earns)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",wage_time, wage_diff,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",wage_time, wage_diff,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -651,7 +651,7 @@ barium_prais_winsten <- prais.winsten(lchnimp ~ lchempi + lgas + lrtwex + befile
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html", barium_model, single.row = TRUE, header = FALSE)
+stargazer(type = "html", barium_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 ```{r}
@@ -683,7 +683,7 @@ return_mu <- residuals(return_AR1)
 mu2_hat_model <- lm(return_mu^2 ~ return_1, data = return_AR1$model)
 ```
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",return_AR1, mu2_hat_model,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",return_AR1, mu2_hat_model,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -703,7 +703,7 @@ arch_model <- lm(mu2_hat ~ mu2_hat_1)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",arch_model, single.row = TRUE, header = FALSE)
+stargazer(type = "html",arch_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -725,7 +725,7 @@ DD_model <- lm(cdthrte ~ copen + cadmn, data = traffic1)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",DD_model,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",DD_model,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 \newpage
@@ -744,7 +744,7 @@ scrap_panel <- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain,
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",scrap_panel,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",scrap_panel,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 \newpage
@@ -782,7 +782,7 @@ wage_educ_IV <- ivreg(lwage ~ educ | fatheduc, data = mroz)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",wage_educ_model, fatheduc_model, wage_educ_IV, single.row = TRUE, header = FALSE)
+stargazer(type = "html",wage_educ_model, fatheduc_model, wage_educ_IV, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -812,7 +812,7 @@ educ_sibs_IV <- ivreg(lwage ~ educ | sibs, data = wage2)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",educ_sibs_model, educ_sibs_IV, wage_educ_IV,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",educ_sibs_model, educ_sibs_IV, wage_educ_IV,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 \newpage
@@ -830,7 +830,7 @@ wage_educ_exper_IV <- ivreg(lwage ~ educ + exper + expersq | exper + expersq + m
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE, echo=FALSE}
-stargazer(type = "html",wage_educ_exper_IV,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",wage_educ_exper_IV,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 \newpage
@@ -866,7 +866,7 @@ inflation_IV <- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",open_model, inflation_IV,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",open_model, inflation_IV,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -902,7 +902,7 @@ econ_crim_poisson <- glm(formula, data = crime1, family = poisson)
 Use the `stargazer` package to easily compare diagnostic tables of both models.
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -936,7 +936,7 @@ unem_inf_VAR1 <- lm(unem ~ unem_1 + inf_1, data = phillips_train)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",unem_AR1, unem_inf_VAR1,  single.row = TRUE, header = FALSE)
+stargazer(type = "html",unem_AR1, unem_inf_VAR1,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 Now, use the `subset` argument to create our testing data set containing observation after 1996.
