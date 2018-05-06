@@ -42,9 +42,6 @@ library(knitr)
 
 ###**`Example 2.10:` A Log Wage Equation**
 
-
-$$\widehat{log(wage)} = \beta_0 + \beta_1educ$$
-
 Load the `wage1` data and check out the documentation.
 
 ```{r, message=FALSE, eval=FALSE}
@@ -65,6 +62,8 @@ It appears that _**on average**_, more years of education, leads to higher wages
 The example in the text investigates what the _**percentage**_ change between wages and education might be. So, we must use the $log($`wage`$)$.
 
 Build a linear model to estimate the relationship between the _log of wage_ (`lwage`) and _education_ (`educ`).
+
+$$\widehat{log(wage)} = \beta_0 + \beta_1educ$$
 
 ```{r}
 log_wage_model <- lm(lwage ~ educ, data = wage1)
@@ -127,9 +126,12 @@ hourly_wage_model <- lm(lwage ~ educ + exper + tenure, data = wage1)
 ```
 
 Print the estimated model coefficients:
+```{r, eval=FALSE}
+coefficients(hourly_wage_model)
+```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",hourly_wage_model,  single.row = TRUE, header = FALSE)
+```{r, echo=FALSE}
+kable(coefficients(hourly_wage_model), digits=4, col.names = "Coefficients", align = 'l')
 ```
 
 Plot the coefficients, representing percentage impact of each variable on $log($`wage`$)$ for a quick comparison.
@@ -140,6 +142,41 @@ barplot(100*hourly_wage_model$coefficients[-1], ylab = "Percentage",
 ```
 
 ## Chapter 4: Multiple Regression Analysis: Inference
+
+###**`Example 4.1` Hourly Wage Equation (continued)**
+
+Using the same model estimated in **`example: 3.2`**, examine and compare the standard errors associated with each coefficient. Like the textbook, these are contained in parenthesis next to each associated coefficient.
+
+
+```{r, eval=FALSE}
+summary(hourly_wage_model)
+```
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+stargazer(type = "html", hourly_wage_model,  single.row = TRUE, header = FALSE)
+```
+
+For the years of experience variable, or `exper`, the coefficient and Standard Error is:
+
+```{r}
+round(summary(hourly_wage_model)$coefficients["exper",c("Estimate","Std. Error")], 4)
+```
+
+Plot the coefficients, representing the impact of each variable on $log($`wage`$)$ as well as their confidence intervals.
+
+```{r}
+coefficient <- 100*coef(hourly_wage_model)[-1]
+ confidence <- 100*confint(hourly_wage_model, level = 0.95)[-1,]
+
+graph <- drop(barplot(coefficient, ylim = range(c(confidence)),
+              main = "Coefficients & 95% C.I. of variables on Hourly Wages"))  
+
+arrows(graph, coefficient, graph, confidence[,1], angle=90, length=0.55, col="blue", lwd=1)
+arrows(graph, coefficient, graph, confidence[,2], angle=90, length=0.55, col="blue", lwd=1)
+
+
+```
+
 
 ###**`Example 4.7` Effect of Job Training on Firm Scrap Rates**
 
@@ -225,7 +262,7 @@ summary(linear_model)
 stargazer(type = "html", linear_model, single.row = TRUE, header = FALSE)
 ```
 
-Plot the coefficients, representing the impact of each variable on $log($`scrape`$)$ for a quick comparison. As you can observe, for some variables, the confidence intervals are wide.
+Plot the coefficients, representing the impact of each variable on $log($`scrap`$)$ for a quick comparison. As you can observe, for some variables, the confidence intervals are wide.
 
 ```{r}
 coefficient <- coef(linear_model)[-1]
@@ -243,18 +280,31 @@ arrows(graph, coefficient, graph, confidence[,2], angle=90, length=0.55, col="bl
 
 ## Chapter 5: Multiple Regression Analysis: OLS Asymptotics
 
+###**`Example 5.1:` Housing Prices and Distance From an Incinerator**
+
+Load the `hprice3` data set.
+
+```{r}
+data("hprice3")
+```
+
+In this example, we will need to construct a general `quality` variable from variables `rooms`, `area`, `land`, and `baths`. We can do this by creating a simple character string of the variables, assigning it the name `quality`.
+
+```{r}
+quality <- c("rooms", "area", "land", "baths")
+```
+
+$price = \alpha + \beta_1 dist + \beta_2 quality$ 
+
+Estimate the model. Note the use of the `get` function wrapped around `quality`. This removes the `" "` and makes them visible as data objects associated with the `price3` data set.
+
+```{r}
+lm(price ~ dist + get(quality), data = hprice3)
+```
+
+
+
 ###**`Example 5.3:` Economic Model of Crime**
-
-From  J. Grogger (1991), _Certainty vs. Severity of Punishment_, Economic Inquiry 29, 297-309. Professor Grogger kindly provided a subset of the data he used in his article.
-
-$$narr86 = \beta_0 + \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86 + \mu$$
-
-$narr86:$ number of times arrested, 1986.  
-$pcnv:$ proportion of prior arrests leading to convictions.  
-$avgsen:$ average sentence served, length in months.  
-$tottime:$ time in prison since reaching the age of 18, length in months.  
-$ptime86:$ months in prison during 1986.  
-$qemp86:$ quarters employed, 1986.
 
 Load the `crime1` data set.
 
@@ -263,7 +313,39 @@ data("crime1")
 ?crime1
 ```
 
+From  J. Grogger (1991), _Certainty vs. Severity of Punishment_, Economic Inquiry 29, 297-309. 
+Professor Grogger kindly provided a subset of the data he used in his article.
+
+$narr86:$ number of times arrested, 1986.  
+$pcnv:$ proportion of prior arrests leading to convictions.  
+$avgsen:$ average sentence served, length in months.  
+$tottime:$ time in prison since reaching the age of 18, length in months.  
+$ptime86:$ months in prison during 1986.  
+$qemp86:$ quarters employed, 1986.
+
+Explore the data
+
+```{r, tidy=TRUE, fig.height=3}
+par(mfrow=c(1,3))
+
+point_size <- 1.75
+
+plot(y = jtrain_clean$lscrap, x = jtrain_clean$hrsemp, frame = FALSE, 
+main = "Total (hours/employees) trained", ylab = "", xlab="", pch = 21, bg = "lightgrey", cex=point_size)
+mtext(side=2, line=2, "Log(scrap rate)", cex=1.25)
+abline(lm(lscrap ~ hrsemp, data=jtrain_clean), col = "blue", lwd=2)
+
+plot(y = jtrain_clean$lscrap, x = jtrain_clean$lsales, frame = FALSE, main = "Log(annual sales $)", ylab = " ", xlab="", pch = 21, bg = "lightgrey", cex=point_size)
+abline(lm(lscrap ~ lsales, data=jtrain_clean), col = "blue", lwd=2)
+
+plot(y = jtrain_clean$lscrap, x = jtrain_clean$lemploy, frame = FALSE, main = "Log(# employees at plant)", ylab = " ", xlab="", pch = 21, bg = "lightgrey", cex=point_size)
+abline(lm(lscrap ~ lemploy, data=jtrain_clean), col = "blue", lwd=2)
+```
+
 Estimate the model.
+
+
+$$narr86 = \beta_0 + \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86 + \mu$$
 
 ```{r, tidy = TRUE}
 restricted_model <- lm(narr86 ~ pcnv + ptime86 + qemp86, data = crime1)
@@ -275,7 +357,8 @@ Create a new variable `restricted_model_u` containing the residuals $\tilde{\mu}
 restricted_model_u <- restricted_model$residuals
 ```
 
-Next, regress `pcnv, ptime86, qemp86, avgsen`, and `tottime`, against the residuals $\tilde{\mu}$ saved in `restricted_model_u`.
+Next, regress `pcnv, ptime86, qemp86, avgsen`, and `tottime`, against the residuals 
+$\tilde{\mu}$ saved in `restricted_model_u`.
 
 $$\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86$$
 
