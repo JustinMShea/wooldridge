@@ -422,11 +422,12 @@ housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms + I(rooms^2) + strat
 
 Compare the results with the model from `example 6.1`.
 ```{r, eval=FALSE}
+summary(housing_level)
 summary(housing_interactive)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html", housing_standardized, housing_interactive, single.row = TRUE, header = FALSE, digits=5)
+stargazer(type = "html", housing_level, housing_interactive, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 Estimate the minimum turning point of the `rooms` interactive term:
@@ -436,10 +437,9 @@ $$x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}$$
 ```{r, tidy=TRUE}
 beta_1 <- summary(housing_interactive)$coefficients["rooms",1] 
 beta_2 <- summary(housing_interactive)$coefficients["I(rooms^2)",1]
-
 turning_point <- abs(beta_1 / (2*beta_2))
 
-turning_point
+print(turning_point)
 ```
 
 Compute the percent change across a range of average rooms. Include the smallest, 

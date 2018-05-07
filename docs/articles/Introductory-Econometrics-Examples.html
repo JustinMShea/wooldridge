@@ -1045,7 +1045,8 @@ F Statistic
 <p><span class="math display">\[log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_interactive &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>lnox <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(dist) <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(rooms<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)</code></pre></div>
 <p>Compare the results with the model from <code>example 6.1</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(housing_interactive)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(housing_level)
+<span class="kw">summary</span>(housing_interactive)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -1068,7 +1069,7 @@ F Statistic
 <td style="text-align:left">
 </td>
 <td>
-scale(price)
+price
 </td>
 <td>
 lprice
@@ -1090,50 +1091,20 @@ lprice
 </tr>
 <tr>
 <td style="text-align:left">
-scale(nox)
+nox
 </td>
 <td>
--0.34045<sup>***</sup> (0.04450)
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-scale(crime)
-</td>
-<td>
--0.14328<sup>***</sup> (0.03069)
+-2,706.43300<sup>***</sup> (354.08690)
 </td>
 <td>
 </td>
 </tr>
 <tr>
 <td style="text-align:left">
-scale(rooms)
+crime
 </td>
 <td>
-0.51389<sup>***</sup> (0.03000)
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-scale(dist)
-</td>
-<td>
--0.23484<sup>***</sup> (0.04298)
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-scale(stratio)
-</td>
-<td>
--0.27028<sup>***</sup> (0.02994)
+-153.60100<sup>***</sup> (32.92883)
 </td>
 <td>
 </td>
@@ -1163,9 +1134,20 @@ log(dist)
 rooms
 </td>
 <td>
+6,735.49800<sup>***</sup> (393.60370)
 </td>
 <td>
 -0.54511<sup>***</sup> (0.16545)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+dist
+</td>
+<td>
+-1,026.80600<sup>***</sup> (188.10790)
+</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -1183,6 +1165,7 @@ I(rooms2)
 stratio
 </td>
 <td>
+-1,149.20400<sup>***</sup> (127.42870)
 </td>
 <td>
 -0.04759<sup>***</sup> (0.00585)
@@ -1193,6 +1176,7 @@ stratio
 Constant
 </td>
 <td>
+20,871.13000<sup>***</sup> (5,054.59900)
 </td>
 <td>
 13.38548<sup>***</sup> (0.56647)
@@ -1229,7 +1213,7 @@ R<sup>2</sup>
 Adjusted R<sup>2</sup>
 </td>
 <td>
-0.63203
+0.63202
 </td>
 <td>
 0.59884
@@ -1237,24 +1221,24 @@ Adjusted R<sup>2</sup>
 </tr>
 <tr>
 <td style="text-align:left">
-Residual Std. Error
+Residual Std. Error (df = 500)
 </td>
 <td>
-0.60601 (df = 501)
+5,586.19800
 </td>
 <td>
-0.25921 (df = 500)
+0.25921
 </td>
 </tr>
 <tr>
 <td style="text-align:left">
-F Statistic
+F Statistic (df = 5; 500)
 </td>
 <td>
-174.82220<sup>***</sup> (df = 5; 501)
+174.47330<sup>***</sup>
 </td>
 <td>
-151.77040<sup>***</sup> (df = 5; 500)
+151.77040<sup>***</sup>
 </td>
 </tr>
 <tr>
@@ -1274,10 +1258,9 @@ F Statistic
 <p><span class="math display">\[x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">beta_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_interactive)<span class="op">$</span>coefficients[<span class="st">"rooms"</span>, <span class="dv">1</span>]
 beta_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_interactive)<span class="op">$</span>coefficients[<span class="st">"I(rooms^2)"</span>, <span class="dv">1</span>]
-
 turning_point &lt;-<span class="st"> </span><span class="kw">abs</span>(beta_<span class="dv">1</span><span class="op">/</span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>beta_<span class="dv">2</span>))
 
-turning_point</code></pre></div>
+<span class="kw">print</span>(turning_point)</code></pre></div>
 <pre><code>## [1] 4.37763</code></pre>
 <p>Compute the percent change across a range of average rooms. Include the smallest, turning point, and largest.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Rooms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, turning_point, <span class="dv">5</span>, <span class="fl">5.5</span>, <span class="fl">6.5</span>, <span class="fl">7.5</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms))
