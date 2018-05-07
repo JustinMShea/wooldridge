@@ -346,56 +346,6 @@ abline(lm(lprice ~ larea, data=hprice3), col = "blue", lwd=2)
 ```
 
 
-###**`Example 5.3:` Economic Model of Crime**
-
-Load the `crime1` data set.
-
-```{r, message=FALSE, eval=FALSE}
-data("crime1")
-?crime1
-```
-
-From  J. Grogger (1991), _Certainty vs. Severity of Punishment_, Economic Inquiry 
-29, 297-309. Professor Grogger kindly provided a subset of the data he used in his 
-article.
-
-$narr86:$ number of times arrested, 1986.  
-$pcnv:$ proportion of prior arrests leading to convictions.  
-$avgsen:$ average sentence served, length in months.  
-$tottime:$ time in prison since reaching the age of 18, length in months.  
-$ptime86:$ months in prison during 1986.  
-$qemp86:$ quarters employed, 1986.
-
-
-Estimate the model.
-
-
-$$narr86 = \beta_0 + \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86 + \mu$$
-
-```{r, tidy = TRUE}
-crime_model <- lm(narr86 ~ pcnv + ptime86 + qemp86, data = crime1)
-```
-
-Create a new variable `crime_u` containing the residuals $\tilde{\mu}$ from the above regression.
-
-```{r}
-crime_u <- crime_model$residuals
-```
-
-Next, regress `pcnv, ptime86, qemp86, avgsen`, and `tottime`, against the residuals 
-$\tilde{\mu}$ saved in `crime_u`.
-
-$$\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86$$
-
-
-```{r, tidy = TRUE}
-restricted_model <- lm(crime_u ~ pcnv + ptime86 + qemp86 + avgsen + tottime, data = crime1)
-
-```
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html", crime_model, restricted_model,  single.row = TRUE, header = FALSE, digits=5)
-```
 
 
 \newpage
@@ -513,7 +463,7 @@ housing_model_frame <- model.frame(housing_interactive)
 housing_sq <- abs(beta_1*housing_model_frame[,"rooms"]) + 
               beta_2*housing_model_frame[,"I(rooms^2)"]
 
-plot(y=hprice2$lprice, x=housing_sq)
+#plot(y=hprice2$lprice, x=housing_sq)
 ```
 
 Graph the log of the selling price against the number of rooms. Superimpose a

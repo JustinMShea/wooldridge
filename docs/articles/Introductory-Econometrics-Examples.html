@@ -782,203 +782,7 @@ F Statistic
 </table>
 <p>Adding <code>area</code> improves the quality of the model, but also substantially reduces the coefficient for <code>dist</code>. Plotting illustrates the a larger coefficient for <code>area</code>.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-36-1.png" width="700"></p>
-</div>
-<div id="example-5-3-economic-model-of-crime" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-5-3-economic-model-of-crime" class="anchor"></a><strong><code>Example 5.3:</code> Economic Model of Crime</strong>
-</h3>
-<p>Load the <code>crime1</code> data set.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"crime1"</span>)
-?crime1</code></pre></div>
-<p>From J. Grogger (1991), <em>Certainty vs. Severity of Punishment</em>, Economic Inquiry 29, 297-309. Professor Grogger kindly provided a subset of the data he used in his article.</p>
-<p><span class="math inline">\(narr86:\)</span> number of times arrested, 1986.<br><span class="math inline">\(pcnv:\)</span> proportion of prior arrests leading to convictions.<br><span class="math inline">\(avgsen:\)</span> average sentence served, length in months.<br><span class="math inline">\(tottime:\)</span> time in prison since reaching the age of 18, length in months.<br><span class="math inline">\(ptime86:\)</span> months in prison during 1986.<br><span class="math inline">\(qemp86:\)</span> quarters employed, 1986.</p>
-<p>Estimate the model.</p>
-<p><span class="math display">\[narr86 = \beta_0 + \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86 + \mu\]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">crime_model &lt;-<span class="st"> </span><span class="kw">lm</span>(narr86 <span class="op">~</span><span class="st"> </span>pcnv <span class="op">+</span><span class="st"> </span>ptime86 <span class="op">+</span><span class="st"> </span>qemp86, <span class="dt">data =</span> crime1)</code></pre></div>
-<p>Create a new variable <code>crime_u</code> containing the residuals <span class="math inline">\(\tilde{\mu}\)</span> from the above regression.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">crime_u &lt;-<span class="st"> </span>crime_model<span class="op">$</span>residuals</code></pre></div>
-<p>Next, regress <code>pcnv, ptime86, qemp86, avgsen</code>, and <code>tottime</code>, against the residuals <span class="math inline">\(\tilde{\mu}\)</span> saved in <code>crime_u</code>.</p>
-<p><span class="math display">\[\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86\]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">restricted_model &lt;-<span class="st"> </span><span class="kw">lm</span>(crime_u <span class="op">~</span><span class="st"> </span>pcnv <span class="op">+</span><span class="st"> </span>ptime86 <span class="op">+</span><span class="st"> </span>qemp86 <span class="op">+</span><span class="st"> </span>avgsen <span class="op">+</span><span class="st"> </span>tottime, 
-    <span class="dt">data =</span> crime1)</code></pre></div>
-<table style="text-align:center" class="table">
-<tr>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="2">
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-narr86
-</td>
-<td>
-crime_u
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(1)
-</td>
-<td>
-(2)
-</td>
-</tr>
-<tr>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-pcnv
-</td>
-<td>
--0.14993<sup>***</sup> (0.04087)
-</td>
-<td>
--0.00130 (0.04086)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-ptime86
-</td>
-<td>
--0.03442<sup>***</sup> (0.00859)
-</td>
-<td>
--0.00484 (0.00892)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-qemp86
-</td>
-<td>
--0.10411<sup>***</sup> (0.01039)
-</td>
-<td>
-0.00102 (0.01040)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-avgsen
-</td>
-<td>
-</td>
-<td>
--0.00705 (0.01241)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-tottime
-</td>
-<td>
-</td>
-<td>
-0.01210 (0.00958)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
-0.71177<sup>***</sup> (0.03301)
-</td>
-<td>
--0.00571 (0.03315)
-</td>
-</tr>
-<tr>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-2,725
-</td>
-<td>
-2,725
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.04132
-</td>
-<td>
-0.00149
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Adjusted R<sup>2</sup>
-</td>
-<td>
-0.04027
-</td>
-<td>
--0.00034
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Residual Std. Error
-</td>
-<td>
-0.84160 (df = 2721)
-</td>
-<td>
-0.84128 (df = 2719)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-F Statistic
-</td>
-<td>
-39.09581<sup>***</sup> (df = 3; 2721)
-</td>
-<td>
-0.81357 (df = 5; 2719)
-</td>
-</tr>
-<tr>
-<td colspan="3" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td colspan="2" style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
-</td>
-</tr>
-</table>
+
 </div>
 </div>
 <div id="chapter-6-multiple-regression-further-issues" class="section level2">
@@ -1520,7 +1324,6 @@ Percent.Change &lt;-<span class="st"> </span><span class="dv">100</span> <span c
 </tr>
 </tbody>
 </table>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-52-1.png" width="700"></p>
 <p>Graph the log of the selling price against the number of rooms. Superimpose a linear model as well as a quadratic model and examine the difference.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rooms_interaction &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(rooms<span class="op">^</span><span class="dv">2</span>), <span class="dt">data =</span> hprice2)
 
@@ -1530,7 +1333,7 @@ Percent.Change &lt;-<span class="st"> </span><span class="dv">100</span> <span c
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))
 <span class="kw">abline</span>(<span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>rooms, <span class="dt">data =</span> hprice2), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="fl">2.5</span>)
 <span class="kw">points</span>(hprice2<span class="op">$</span>rooms, <span class="kw">fitted</span>(rooms_interaction), <span class="dt">col =</span> <span class="st">"red"</span>, <span class="dt">pch =</span> <span class="dv">20</span>)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-53-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-48-1.png" width="700"></p>
 
 </div>
 </div>
@@ -1871,7 +1674,7 @@ y_axis &lt;-<span class="st"> "R&amp;D as a percentage of sales"</span>
 
 <span class="kw">plot</span>(rdintens <span class="op">~</span><span class="st"> </span>sales, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">data =</span> rdchem, <span class="dt">main =</span> plot_title, 
     <span class="dt">xlab =</span> x_axis, <span class="dt">ylab =</span> y_axis)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-63-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-58-1.png" width="700"></p>
 <p>So, we can estimate the model without that data point to gain a better understanding of how <code>sales</code> and <code>profmarg</code> describe <code>rdintens</code> for most firms. We can use the <code>subset</code> argument of the linear model function to indicate that we only want to estimate the model using data that is less than the highest sales.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smallest_rdchem &lt;-<span class="st"> </span><span class="kw">lm</span>(rdintens <span class="op">~</span><span class="st"> </span>sales <span class="op">+</span><span class="st"> </span>profmarg, <span class="dt">data =</span> rdchem, 
                       <span class="dt">subset =</span> (sales <span class="op">&lt;</span><span class="st"> </span><span class="kw">max</span>(sales)))</code></pre></div>
