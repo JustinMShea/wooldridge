@@ -156,25 +156,27 @@ summary(hourly_wage_model)
 stargazer(type = "html", hourly_wage_model,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
-For the years of experience variable, or `exper`, the coefficient and Standard Error is:
+For the years of experience variable, or `exper`, use coefficient and Standard Error 
+to compute the $t$ statistic:
 
-```{r}
-round(summary(hourly_wage_model)$coefficients["exper",c("Estimate","Std. Error")], 4)
+$$t_{exper} = \frac{0.004121}{0.001723} = 2.391$$
+
+Fortunately, `R` includes this in the model `lm` diagnostics:
+
+
+```{r, eval=FALSE}
+summary(hourly_wage_model)$coefficients
 ```
 
-Plot the coefficients, representing the impact of each variable on $log($`wage`$)$ as well as their confidence intervals.
+```{r, echo=FALSE}
+kable(summary(hourly_wage_model)$coefficients, align="l", digits=5)
+```
+
+Plot the $t$ statistics for a visual comparison of coefficients:
 
 ```{r}
-coefficient <- 100*coef(hourly_wage_model)[-1]
- confidence <- 100*confint(hourly_wage_model, level = 0.95)[-1,]
-
-graph <- drop(barplot(coefficient, ylim = range(c(confidence)),
-              main = "Coefficients & 95% C.I. of variables on Hourly Wages"))  
-
-arrows(graph, coefficient, graph, confidence[,1], angle=90, length=0.55, col="blue", lwd=1)
-arrows(graph, coefficient, graph, confidence[,2], angle=90, length=0.55, col="blue", lwd=1)
-
-
+barplot(summary(hourly_wage_model)$coefficients[-1, "t value"], ylab = "t statistic", 
+        main = "t statistics of Hourly Wage Equation")
 ```
 
 
@@ -225,7 +227,7 @@ Use `jtrain_clean` to plot the variables of interest against `lscrap`. Visually
 observe the respective distributions for each variable, and compare the slope of 
 the simple regression lines.
 
-```{r, tidy=TRUE, fig.height=3}
+```{r, echo=FALSE, fig.height=3}
 par(mfrow=c(1,3))
 
 point_size <- 1.75
@@ -288,20 +290,60 @@ Load the `hprice3` data set.
 data("hprice3")
 ```
 
-In this example, we will need to construct a general `quality` variable from variables `rooms`, `area`, `land`, and `baths`. We can do this by creating a simple character string of the variables, assigning it the name `quality`.
+Graph the prices of housing against distance from an incinerator:
 
-```{r}
-quality <- c("rooms", "area", "land", "baths")
+```{r, echo=FALSE}
+plot(y = hprice3$price, x = hprice3$dist, main = "Housing Prices and Distance From an Incinerator", xlab = "Distance to Incinerator in feet", ylab = "Selling Price",  frame = FALSE, pch = 21, bg = "lightgrey")
+abline(lm(price ~ dist, data=hprice3), col = "blue", lwd=2)
+
 ```
 
-$price = \alpha + \beta_1 dist + \beta_2 quality$ 
 
-Estimate the model. Note the use of the `get` function wrapped around `quality`. This removes the `" "` and makes them visible as data objects associated with the `price3` data set.
+Next, model the $log($`price`$)$ against the $log($`dist`$)$ to estimate the percentage relationship between the two.
+
+$$price = \alpha + \beta_1 dist$$
 
 ```{r}
-lm(price ~ dist + get(quality), data = hprice3)
+price_dist_model <- lm(lprice ~ ldist, data = hprice3)
 ```
 
+Create another model that controls for "quality" variables, such as square footage `area` per house.
+
+$$price = \alpha + \beta_1 dist + \beta_2 area$$
+
+```{r}
+price_area_model <- lm(lprice ~ ldist + larea, data = hprice3)
+```
+
+Compare the coefficients of both models.  
+
+```{r, eval=FALSE}
+summary(price_dist_model)
+summary(price_area_model)
+```
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+stargazer(type = "html",price_dist_model, price_area_model,  single.row = TRUE, header = FALSE, digits=5)
+```
+
+Adding `area` improves the quality of the model, but also substantially reduces the
+coefficient for `dist`. Plotting illustrates the a larger coefficient for `area`.
+
+```{r, echo=FALSE}
+par(mfrow=c(1,2))
+
+point_size <- 0.80
+
+plot(y = hprice3$lprice, x = hprice3$ldist, frame = FALSE, 
+main = "Log(distance from incinerator)", ylab = "", xlab="", 
+pch = 21, bg = "lightgrey", cex=point_size)
+mtext(side=2, line=2, "Log(price)", cex=1.25)
+abline(lm(lprice ~ ldist, data=hprice3), col = "blue", lwd=2)
+
+plot(y = hprice3$lprice, x = hprice3$larea, frame = FALSE, main = "Log(square footage of house)", ylab = " ", xlab="", pch = 21, bg = "lightgrey", cex=point_size)
+abline(lm(lprice ~ larea, data=hprice3), col = "blue", lwd=2)
+
+```
 
 
 ###**`Example 5.3:` Economic Model of Crime**
@@ -313,8 +355,9 @@ data("crime1")
 ?crime1
 ```
 
-From  J. Grogger (1991), _Certainty vs. Severity of Punishment_, Economic Inquiry 29, 297-309. 
-Professor Grogger kindly provided a subset of the data he used in his article.
+From  J. Grogger (1991), _Certainty vs. Severity of Punishment_, Economic Inquiry 
+29, 297-309. Professor Grogger kindly provided a subset of the data he used in his 
+article.
 
 $narr86:$ number of times arrested, 1986.  
 $pcnv:$ proportion of prior arrests leading to convictions.  
@@ -323,24 +366,6 @@ $tottime:$ time in prison since reaching the age of 18, length in months.
 $ptime86:$ months in prison during 1986.  
 $qemp86:$ quarters employed, 1986.
 
-Explore the data
-
-```{r, tidy=TRUE, fig.height=3}
-par(mfrow=c(1,3))
-
-point_size <- 1.75
-
-plot(y = jtrain_clean$lscrap, x = jtrain_clean$hrsemp, frame = FALSE, 
-main = "Total (hours/employees) trained", ylab = "", xlab="", pch = 21, bg = "lightgrey", cex=point_size)
-mtext(side=2, line=2, "Log(scrap rate)", cex=1.25)
-abline(lm(lscrap ~ hrsemp, data=jtrain_clean), col = "blue", lwd=2)
-
-plot(y = jtrain_clean$lscrap, x = jtrain_clean$lsales, frame = FALSE, main = "Log(annual sales $)", ylab = " ", xlab="", pch = 21, bg = "lightgrey", cex=point_size)
-abline(lm(lscrap ~ lsales, data=jtrain_clean), col = "blue", lwd=2)
-
-plot(y = jtrain_clean$lscrap, x = jtrain_clean$lemploy, frame = FALSE, main = "Log(# employees at plant)", ylab = " ", xlab="", pch = 21, bg = "lightgrey", cex=point_size)
-abline(lm(lscrap ~ lemploy, data=jtrain_clean), col = "blue", lwd=2)
-```
 
 Estimate the model.
 
@@ -348,44 +373,30 @@ Estimate the model.
 $$narr86 = \beta_0 + \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86 + \mu$$
 
 ```{r, tidy = TRUE}
-restricted_model <- lm(narr86 ~ pcnv + ptime86 + qemp86, data = crime1)
+crime_model <- lm(narr86 ~ pcnv + ptime86 + qemp86, data = crime1)
 ```
 
-Create a new variable `restricted_model_u` containing the residuals $\tilde{\mu}$ from the above regression.
+Create a new variable `crime_u` containing the residuals $\tilde{\mu}$ from the above regression.
 
 ```{r}
-restricted_model_u <- restricted_model$residuals
+crime_u <- crime_model$residuals
 ```
 
 Next, regress `pcnv, ptime86, qemp86, avgsen`, and `tottime`, against the residuals 
-$\tilde{\mu}$ saved in `restricted_model_u`.
+$\tilde{\mu}$ saved in `crime_u`.
 
 $$\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86$$
 
 
 ```{r, tidy = TRUE}
-LM_u_model <- lm(restricted_model_u ~ pcnv + ptime86 + qemp86 + avgsen + tottime, data = crime1)
-summary(LM_u_model)$r.square
+restricted_model <- lm(crime_u ~ pcnv + ptime86 + qemp86 + avgsen + tottime, data = crime1)
+
 ```
 
-$$LM = 2,725(0.0015)$$
-
-```{r}
-LM_test <- nobs(LM_u_model) * 0.0015
-LM_test
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+stargazer(type = "html", crime_model, restricted_model,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
-
-```{r}
-qchisq(1 - 0.10, 2)
-```
-
-The _p_-value is:
-$$P(X^2_{2} > 4.09) \approx 0.129$$
-
-```{r}
-1-pchisq(LM_test, 2)
-```
 
 \newpage
 
@@ -396,7 +407,6 @@ $$P(X^2_{2} > 4.09) \approx 0.129$$
 Data from _Hedonic Housing Prices and the Demand for Clean Air_, by Harrison, D. and D.L.Rubinfeld, Journal of Environmental Economics and Management 5, 81-102. Diego Garcia, a former Ph.D. student in economics at MIT, kindly provided these data, which he obtained from the book Regression Diagnostics: Identifying Influential Data and Sources of Collinearity, by D.A. Belsey, E. Kuh, and R. Welsch, 1990. New York: Wiley. 
 
 
-$$price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \beta_5stratio + \mu$$
 
 $price$: median housing price.
 
@@ -411,8 +421,6 @@ $dist$: weighted distance of the community to 5 employment centers.
 $stratio$: average student-teacher ratio of schools in the community.
 
 
-$$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio$$
-
 Load the `hprice2` data and view the documentation.
 
 
@@ -422,14 +430,32 @@ data("hprice2")
 ```
 
 
-Estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wrapping each variable with R's `scale` function:
+Estimate the coefficient with the usual `lm` regression model.
+
+$$price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \beta_5stratio + \mu$$
 
 ```{r, tidy = TRUE}
-housing_standard <- lm(scale(price)~0+scale(nox)+scale(crime)+scale(rooms)+scale(dist) + scale(stratio), data = hprice2)
+housing_level <- lm(price ~ nox + crime + rooms + dist + stratio, data = hprice2)
+```
+
+Estimate the same model, but standardized coefficients by wrapping each variable 
+with R's `scale` function:
+
+$$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio$$
+
+```{r, tidy = TRUE}
+housing_standardized <- lm(scale(price) ~ 0 + scale(nox) + scale(crime) + scale(rooms) + scale(dist) + scale(stratio), data = hprice2)
+```
+
+Compare results, and observe
+
+```{r, eval=FALSE}
+summary(housing_level)
+summary(housing_standardized)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",housing_standard,  single.row = TRUE, header = FALSE, digits=5)
+stargazer(type = "html",housing_level, housing_standardized,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -437,17 +463,72 @@ stargazer(type = "html",housing_standard,  single.row = TRUE, header = FALSE, di
 
 ###**`Example 6.2:` Effects of Pollution on Housing Prices, Quadratic Interactive Term**
 
-Modify the housing model, adding a quadratic term in _rooms_: 
+Modify the housing model from **`example 6.1`**, adding a quadratic term in _rooms_: 
 
 $$log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu$$
 ```{r}
-housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms+I(rooms^2) + stratio, data = hprice2)
+housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms + I(rooms^2) + stratio, data = hprice2)
 ```
 
 Compare the results with the model from `example 6.1`.
+```{r, eval=FALSE}
+summary(housing_interactive)
+```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",housing_standard, housing_interactive, single.row = TRUE, header = FALSE, digits=5)
+stargazer(type = "html", housing_standardized, housing_interactive, single.row = TRUE, header = FALSE, digits=5)
+```
+
+Estimate the minimum turning point of the `rooms` interactive term:
+
+$$x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}$$
+
+```{r, tidy=TRUE}
+beta_1 <- summary(housing_interactive)$coefficients["rooms",1] 
+beta_2 <- summary(housing_interactive)$coefficients["I(rooms^2)",1]
+
+turning_point <- abs(beta_1 / (2*beta_2))
+
+turning_point
+```
+
+Compute the percent change across a range of average rooms. Include the smallest, 
+turning point, and largest.
+
+```{r, tidy=TRUE}
+Rooms <- c(min(hprice2$rooms), 4, turning_point, 5, 5.5, 6.5, 7.5, max(hprice2$rooms))
+Percent.Change <- 100*(beta_1 + 2*beta_2*Rooms)
+
+kable(data.frame(Rooms, Percent.Change))
+```
+
+```{r, tidy=TRUE, echo=FALSE}
+from <- min(hprice2$rooms)
+to <- max(hprice2$rooms)
+rooms <- seq(from=from, to =to, by = ((to - from)/(NROW(hprice2)-1)))
+quadratic <- abs(100*summary(housing_interactive)$coefficients["rooms",1] + 200*summary(housing_interactive)$coefficients["I(rooms^2)",1]*rooms)
+
+housing_model_frame <- model.frame(housing_interactive)
+
+housing_sq <- abs(beta_1*housing_model_frame[,"rooms"]) + 
+              beta_2*housing_model_frame[,"I(rooms^2)"]
+
+plot(y=hprice2$lprice, x=housing_sq)
+```
+
+Graph the log of the selling price against the number of rooms. Superimpose a
+linear model as well as a quadratic model and examine the difference.
+
+```{r, tidy=TRUE}
+rooms_interaction <- lm(lprice ~ rooms + I(rooms^2), data = hprice2)
+
+par(mfrow=c(1,1))
+plot(y = hprice2$lprice, x = hprice2$rooms, xaxt="n", frame = FALSE, main = "Effects of Pollution on Housing Prices", xlab = "Rooms", ylab = "Log(selling price)")
+axis(side = 1, at = c(min(hprice2$rooms), 4, 5, 6, 7, 8, max(hprice2$rooms)))
+abline(lm(lprice ~ rooms, data = hprice2), col="blue", lwd=2.5)
+points(hprice2$rooms, fitted(rooms_interaction), col = "red", pch=20)
+
+
 ```
 
 \newpage
@@ -472,6 +553,10 @@ Estimate the coefficients of the above linear model on the `hprice` data set.
 
 ```{r, tidy=TRUE}
 housing_qualitative <- lm(lprice ~ llotsize + lsqrft + bdrms + colonial, data = hprice1)
+```
+
+```{r, eval=FALSE}
+summary(housing_qualitative)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
