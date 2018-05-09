@@ -103,11 +103,15 @@
 </h3>
 <p>Load the <code>wage1</code> data and check out the documentation.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"wage1"</span>)
+
 ?wage1</code></pre></div>
-<p>These are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.</p>
+<p>The documentation indicates these are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.</p>
+<p><strong><span class="math inline">\(wage\)</span>:</strong> average hourly earnings</p>
+<p><strong><span class="math inline">\(educ\)</span>:</strong> years of education</p>
 <p>First, make a scatter-plot of the two variables and look for possible patterns in the relationship between them.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>wage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, 
-    <span class="dt">main =</span> <span class="st">"Wages vs. Education, 1976"</span>, <span class="dt">xlab =</span> <span class="st">"years of education"</span>, <span class="dt">ylab =</span> <span class="st">"Hourly wages"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>wage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">col =</span> <span class="st">"darkgreen"</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, 
+    <span class="dt">cex =</span> <span class="fl">1.25</span>, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Wages vs. Education, 1976"</span>, 
+    <span class="dt">xlab =</span> <span class="st">"years of education"</span>, <span class="dt">ylab =</span> <span class="st">"Hourly wages"</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">12</span>, <span class="dv">18</span>))</code></pre></div>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <p>It appears that <em><strong>on average</strong></em>, more years of education, leads to higher wages.</p>
@@ -219,9 +223,10 @@ F Statistic
 </td>
 </tr>
 </table>
-<p>Plot the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span> vs <code>educ</code>, adding a line estimated with the linear model.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">main =</span> <span class="st">"A Log Wage Equation"</span>, <span class="dt">xlab =</span> <span class="st">"years of education"</span>, 
-    <span class="dt">ylab =</span> <span class="st">"log of average hourly wages"</span>, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>)
+<p>Plot the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span> vs <code>educ</code>, adding a line representing the least squares fit.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">main =</span> <span class="st">"A Log Wage Equation"</span>, <span class="dt">col =</span> <span class="st">"darkgreen"</span>, 
+    <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">cex =</span> <span class="fl">1.25</span>, <span class="dt">xlab =</span> <span class="st">"years of education"</span>, <span class="dt">ylab =</span> <span class="st">"log of average hourly wages"</span>, 
+    <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">12</span>, <span class="dv">18</span>))
 <span class="kw">abline</span>(log_wage_model, <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</code></pre></div>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
@@ -235,26 +240,32 @@ F Statistic
 <h3 class="hasAnchor">
 <a href="#example-3-2-hourly-wage-equation" class="anchor"></a><strong><code>Example 3.2:</code> Hourly Wage Equation</strong>
 </h3>
-<p>Plot the variables against <code>lwage</code>, and visually compare their distributions, and slope of the simple regression line.</p>
+<p>Check the documentation for variable information</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><a href="../reference/wage1.html">?wage1</a></code></pre></div>
+<p><strong><span class="math inline">\(lwage\)</span>:</strong> log of the average hourly earnings</p>
+<p><strong><span class="math inline">\(educ\)</span>:</strong> years of education</p>
+<p><strong><span class="math inline">\(exper\)</span>:</strong> years of potential experience</p>
+<p><strong><span class="math inline">\(tenutre\)</span>:</strong> years with current employer</p>
+<p>Plot the variables against <code>lwage</code> and compare their distributions and slope (<span class="math inline">\(\beta\)</span>) of the simple regression lines.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
 
-<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"years of education"</span>, 
-    <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">col =</span> <span class="st">"darkgreen"</span>, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, 
+    <span class="dt">main =</span> <span class="st">"years of education"</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
 <span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">line =</span> <span class="fl">2.5</span>, <span class="st">"Hourly wages"</span>, <span class="dt">cex =</span> <span class="fl">1.25</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">12</span>, <span class="dv">18</span>))
-<span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> wage1), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> wage1), <span class="dt">col =</span> <span class="st">"darkblue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
 
-<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>exper, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"years of experience"</span>, 
-    <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>exper, <span class="dt">col =</span> <span class="st">"darkgreen"</span>, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, 
+    <span class="dt">main =</span> <span class="st">"years of experience"</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">12.5</span>, <span class="dv">25</span>, <span class="fl">37.5</span>, <span class="dv">50</span>))
-<span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>exper, <span class="dt">data =</span> wage1), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>exper, <span class="dt">data =</span> wage1), <span class="dt">col =</span> <span class="st">"darkblue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
 
-<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>tenure, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"years with employer"</span>, 
-    <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+<span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>tenure, <span class="dt">col =</span> <span class="st">"darkgreen"</span>, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, 
+    <span class="dt">main =</span> <span class="st">"years with employer"</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">11</span>, <span class="dv">22</span>, <span class="dv">33</span>, <span class="dv">44</span>))
-<span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>tenure, <span class="dt">data =</span> wage1), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
-<p>Estimate the model regressing <em>education</em>, <em>experience</em>, and <em>tenure</em> against <em>log(wage)</em>. The <code>wage1</code> data should still be in your working environment.</p>
+<span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>tenure, <span class="dt">data =</span> wage1), <span class="dt">col =</span> <span class="st">"darkblue"</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</code></pre></div>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
+<p>Estimate the model regressing <em>educ</em>, <em>exper</em>, and <em>tenure</em> against <em>log(wage)</em>.</p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hourly_wage_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>tenure, <span class="dt">data =</span> wage1)</code></pre></div>
 <p>Print the estimated model coefficients:</p>
@@ -286,15 +297,15 @@ F Statistic
 <p>Plot the coefficients, representing percentage impact of each variable on <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span> for a quick comparison.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="dv">100</span><span class="op">*</span>hourly_wage_model<span class="op">$</span>coefficients[<span class="op">-</span><span class="dv">1</span>], <span class="dt">ylab =</span> <span class="st">"Percentage"</span>, 
         <span class="dt">main =</span> <span class="st">"Coefficients of Hourly Wage Equation"</span>)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-14-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
 </div>
 </div>
 <div id="chapter-4-multiple-regression-analysis-inference" class="section level2">
 <h2 class="hasAnchor">
 <a href="#chapter-4-multiple-regression-analysis-inference" class="anchor"></a>Chapter 4: Multiple Regression Analysis: Inference</h2>
-<div id="example-4-1-hourly-wage-equation-continued" class="section level3">
+<div id="example-4-1-hourly-wage-equation" class="section level3">
 <h3 class="hasAnchor">
-<a href="#example-4-1-hourly-wage-equation-continued" class="anchor"></a><strong><code>Example 4.1</code> Hourly Wage Equation (continued)</strong>
+<a href="#example-4-1-hourly-wage-equation" class="anchor"></a><strong><code>Example 4.1</code> Hourly Wage Equation</strong>
 </h3>
 <p>Using the same model estimated in <strong><code>example: 3.2</code></strong>, examine and compare the standard errors associated with each coefficient. Like the textbook, these are contained in parenthesis next to each associated coefficient.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(hourly_wage_model)</code></pre></div>
@@ -418,7 +429,7 @@ F Statistic
 </table>
 <p>For the years of experience variable, or <code>exper</code>, use coefficient and Standard Error to compute the <span class="math inline">\(t\)</span> statistic:</p>
 <p><span class="math display">\[t_{exper} = \frac{0.004121}{0.001723} = 2.391\]</span></p>
-<p>Fortunately, <code>R</code> includes this in the model <code>lm</code> diagnostics:</p>
+<p>Fortunately, <code>R</code> includes <span class="math inline">\(t\)</span> statistics in the <code>summary</code> of model diagnostics.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(hourly_wage_model)<span class="op">$</span>coefficients</code></pre></div>
 <table class="table">
 <thead><tr class="header">
@@ -459,10 +470,10 @@ F Statistic
 </tr>
 </tbody>
 </table>
-<p>Plot the <span class="math inline">\(t\)</span> statistics for a visual comparison of coefficients:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">summary</span>(hourly_wage_model)<span class="op">$</span>coefficients[<span class="op">-</span><span class="dv">1</span>, <span class="st">"t value"</span>], <span class="dt">ylab =</span> <span class="st">"t statistic"</span>, 
-        <span class="dt">main =</span> <span class="st">"t statistics of Hourly Wage Equation"</span>)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-19-1.png" width="700"></p>
+<p>Plot the <span class="math inline">\(t\)</span> statistics for a visual comparison:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">summary</span>(hourly_wage_model)<span class="op">$</span>coefficients[<span class="op">-</span><span class="dv">1</span>, <span class="st">"t value"</span>], 
+        <span class="dt">ylab =</span> <span class="st">"t statistic"</span>, <span class="dt">main =</span> <span class="st">"t statistics of Hourly Wage Equation"</span>)</code></pre></div>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-20-1.png" width="700"></p>
 </div>
 <div id="example-4-7-effect-of-job-training-on-firm-scrap-rates" class="section level3">
 <h3 class="hasAnchor">
@@ -472,6 +483,12 @@ F Statistic
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"jtrain"</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><a href="../reference/jtrain.html">?jtrain</a></code></pre></div>
 <p>From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), <em>Are Training Subsidies Effective? The Michigan Experience</em>, Industrial and Labor Relations Review 46, 625-636. The authors kindly provided the data.</p>
+<p><strong><span class="math inline">\(year:\)</span></strong> 1987, 1988, or 1989</p>
+<p><strong><span class="math inline">\(union:\)</span></strong> =1 if unionized</p>
+<p><strong><span class="math inline">\(lscrap:\)</span></strong> Log(scrap rate per 100 items)</p>
+<p><strong><span class="math inline">\(hrsemp:\)</span></strong> (total hours training) / (total employees trained)</p>
+<p><strong><span class="math inline">\(lsales:\)</span></strong> Log(annual sales, $)</p>
+<p><strong><span class="math inline">\(lemploy:\)</span></strong> Log(umber of employees at plant)</p>
 <p>First, use the <code>subset</code> function and it’s argument by the same name to return observations which occurred in <strong>1987</strong> and are not <strong>union</strong>. At the same time, use the <code>select</code> argument to return only the variables of interest for this problem.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">jtrain_subset &lt;-<span class="st"> </span><span class="kw">subset</span>(jtrain, <span class="dt">subset =</span> (year <span class="op">==</span><span class="st"> </span><span class="dv">1987</span> <span class="op">&amp;</span><span class="st"> </span>union <span class="op">==</span><span class="st"> </span><span class="dv">0</span>),
                           <span class="dt">select =</span> <span class="kw">c</span>(year, union, lscrap, hrsemp, lsales, lemploy))</code></pre></div>
@@ -480,8 +497,8 @@ F Statistic
 <pre><code>## [1] 156</code></pre>
 <p>While <code>R</code>’s <code>lm</code> function will automatically remove missing <code>NA</code> values, eliminating these manually will produce more clearly proportioned graphs for exploratory analysis. Call the <code>na.omit</code> function to remove all missing values and assign the new <code>data.frame</code> object the name <strong><code>jtrain_clean</code></strong>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">jtrain_clean &lt;-<span class="st"> </span><span class="kw">na.omit</span>(jtrain_subset)</code></pre></div>
-<p>Use <code>jtrain_clean</code> to plot the variables of interest against <code>lscrap</code>. Visually observe the respective distributions for each variable, and compare the slope of the simple regression lines.</p>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-25-1.png" width="700"></p>
+<p>Use <code>jtrain_clean</code> to plot the variables of interest against <code>lscrap</code>. Visually observe the respective distributions for each variable, and compare the slope (<span class="math inline">\(\beta\)</span>) of the simple regression lines.</p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-26-1.png" width="700"></p>
 <p>Now create the linear model regressing <code>hrsemp</code>(total hours training/total employees trained), the <code>lsales</code>(log of annual sales), and <code>lemploy</code>(the log of the number of the employees), against <code>lscrap</code>(the log of the scrape rate).</p>
 <p><span class="math display">\[lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>hrsemp <span class="op">+</span><span class="st"> </span>lsales <span class="op">+</span><span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_clean)</code></pre></div>
@@ -605,7 +622,7 @@ F Statistic
 </td>
 </tr>
 </table>
-<p>Plot the coefficients, representing the impact of each variable on <span class="math inline">\(log(\)</span><code>scrap</code><span class="math inline">\()\)</span> for a quick comparison. As you can observe, for some variables, the confidence intervals are wide.</p>
+<p>Plot the coefficients, representing the impact of each variable on <span class="math inline">\(log(\)</span><code>scrap</code><span class="math inline">\()\)</span> for a quick comparison. As you can observe, for some variables, the confidence intervals are wider than others.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">coefficient &lt;-<span class="st"> </span><span class="kw">coef</span>(linear_model)[<span class="op">-</span><span class="dv">1</span>]
  confidence &lt;-<span class="st"> </span><span class="kw">confint</span>(linear_model, <span class="dt">level =</span> <span class="fl">0.95</span>)[<span class="op">-</span><span class="dv">1</span>,]
 
@@ -614,7 +631,7 @@ graph &lt;-<span class="st"> </span><span class="kw">drop</span>(<span class="kw
 
 <span class="kw">arrows</span>(graph, coefficient, graph, confidence[,<span class="dv">1</span>], <span class="dt">angle=</span><span class="dv">90</span>, <span class="dt">length=</span><span class="fl">0.55</span>, <span class="dt">col=</span><span class="st">"blue"</span>, <span class="dt">lwd=</span><span class="dv">2</span>)
 <span class="kw">arrows</span>(graph, coefficient, graph, confidence[,<span class="dv">2</span>], <span class="dt">angle=</span><span class="dv">90</span>, <span class="dt">length=</span><span class="fl">0.55</span>, <span class="dt">col=</span><span class="st">"blue"</span>, <span class="dt">lwd=</span><span class="dv">2</span>)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-29-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-30-1.png" width="700"></p>
 </div>
 </div>
 <div id="chapter-5-multiple-regression-analysis-ols-asymptotics" class="section level2">
@@ -626,15 +643,18 @@ graph &lt;-<span class="st"> </span><span class="kw">drop</span>(<span class="kw
 </h3>
 <p>Load the <code>hprice3</code> data set.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"hprice3"</span>)</code></pre></div>
+<p><strong><span class="math inline">\(lprice:\)</span></strong> Log(selling price)</p>
+<p><strong><span class="math inline">\(ldist:\)</span></strong> Log(distance from house to incinerator, feet)</p>
+<p><strong><span class="math inline">\(larea:\)</span></strong> Log(square footage of house)</p>
 <p>Graph the prices of housing against distance from an incinerator:</p>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-31-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-32-1.png" width="700" style="display: block; margin: auto;"></p>
 <p>Next, model the <span class="math inline">\(log(\)</span><code>price</code><span class="math inline">\()\)</span> against the <span class="math inline">\(log(\)</span><code>dist</code><span class="math inline">\()\)</span> to estimate the percentage relationship between the two.</p>
 <p><span class="math display">\[price = \alpha + \beta_1 dist\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">price_dist_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>ldist, <span class="dt">data =</span> hprice3)</code></pre></div>
 <p>Create another model that controls for “quality” variables, such as square footage <code>area</code> per house.</p>
 <p><span class="math display">\[price = \alpha + \beta_1 dist + \beta_2 area\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">price_area_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>ldist <span class="op">+</span><span class="st"> </span>larea, <span class="dt">data =</span> hprice3)</code></pre></div>
-<p>Compare the coefficients of both models.</p>
+<p>Compare the coefficients of both models. Notice that adding <code>area</code> improves the quality of the model, but also reduces the coefficient size of <code>dist</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(price_dist_model)
 <span class="kw">summary</span>(price_area_model)</code></pre></div>
 <table style="text-align:center" class="table">
@@ -780,8 +800,8 @@ F Statistic
 </td>
 </tr>
 </table>
-<p>Adding <code>area</code> improves the quality of the model, but also substantially reduces the coefficient for <code>dist</code>. Plotting illustrates the a larger coefficient for <code>area</code>.</p>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-36-1.png" width="700"></p>
+<p>Graphing illustrates the larger coefficient for <code>area</code>.</p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-37-1.png" width="700"></p>
 
 </div>
 </div>
@@ -792,6 +812,9 @@ F Statistic
 <h3 class="hasAnchor">
 <a href="#example-6-1-effects-of-pollution-on-housing-prices-standardized-" class="anchor"></a><strong><code>Example 6.1:</code> Effects of Pollution on Housing Prices, standardized.</strong>
 </h3>
+<p>Load the <code>hprice2</code> data and view the documentation.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"hprice2"</span>)
+?hprice2</code></pre></div>
 <p>Data from <em>Hedonic Housing Prices and the Demand for Clean Air</em>, by Harrison, D. and D.L.Rubinfeld, Journal of Environmental Economics and Management 5, 81-102. Diego Garcia, a former Ph.D. student in economics at MIT, kindly provided these data, which he obtained from the book Regression Diagnostics: Identifying Influential Data and Sources of Collinearity, by D.A. Belsey, E. Kuh, and R. Welsch, 1990. New York: Wiley.</p>
 <p><span class="math inline">\(price\)</span>: median housing price.</p>
 <p><span class="math inline">\(nox\)</span>: Nitrous Oxide concentration; parts per million.</p>
@@ -799,11 +822,8 @@ F Statistic
 <p><span class="math inline">\(rooms\)</span>: average number of rooms in houses in the community.</p>
 <p><span class="math inline">\(dist\)</span>: weighted distance of the community to 5 employment centers.</p>
 <p><span class="math inline">\(stratio\)</span>: average student-teacher ratio of schools in the community.</p>
-<p>Load the <code>hprice2</code> data and view the documentation.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"hprice2"</span>)
-?hprice2</code></pre></div>
-<p>Estimate the coefficient with the usual <code>lm</code> regression model.</p>
 <p><span class="math display">\[price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \beta_5stratio + \mu\]</span></p>
+<p>Estimate the usual <code>lm</code> model.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_level &lt;-<span class="st"> </span><span class="kw">lm</span>(price <span class="op">~</span><span class="st"> </span>nox <span class="op">+</span><span class="st"> </span>crime <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span>dist <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)</code></pre></div>
 <p>Estimate the same model, but standardized coefficients by wrapping each variable with R’s <code>scale</code> function:</p>
 <p><span class="math display">\[\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio\]</span></p>
@@ -1041,12 +1061,15 @@ F Statistic
 <h3 class="hasAnchor">
 <a href="#example-6-2-effects-of-pollution-on-housing-prices-quadratic-interactive-term" class="anchor"></a><strong><code>Example 6.2:</code> Effects of Pollution on Housing Prices, Quadratic Interactive Term</strong>
 </h3>
-<p>Modify the housing model from <strong><code>example 6.1</code></strong>, adding a quadratic term in <em>rooms</em>:</p>
+<p>Modify the housing model from <strong><code>example 4.5</code></strong>, adding a quadratic term in <em>rooms</em>:</p>
 <p><span class="math display">\[log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu\]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_interactive &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>lnox <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(dist) <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(rooms<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_model_<span class="fl">4.5</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>lnox <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(dist) <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)
+
+housing_model_<span class="fl">6.2</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>lnox <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(dist) <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(rooms<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>stratio, 
+    <span class="dt">data =</span> hprice2)</code></pre></div>
 <p>Compare the results with the model from <code>example 6.1</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(housing_level)
-<span class="kw">summary</span>(housing_interactive)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(housing_model_<span class="fl">4.5</span>)
+<span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -1068,10 +1091,7 @@ F Statistic
 <tr>
 <td style="text-align:left">
 </td>
-<td>
-price
-</td>
-<td>
+<td colspan="2">
 lprice
 </td>
 </tr>
@@ -1091,29 +1111,10 @@ lprice
 </tr>
 <tr>
 <td style="text-align:left">
-nox
-</td>
-<td>
--2,706.43300<sup>***</sup> (354.08690)
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-crime
-</td>
-<td>
--153.60100<sup>***</sup> (32.92883)
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
 lnox
 </td>
 <td>
+-0.95354<sup>***</sup> (0.11674)
 </td>
 <td>
 -0.90168<sup>***</sup> (0.11469)
@@ -1124,6 +1125,7 @@ lnox
 log(dist)
 </td>
 <td>
+-0.13434<sup>***</sup> (0.04310)
 </td>
 <td>
 -0.08678<sup>**</sup> (0.04328)
@@ -1134,20 +1136,10 @@ log(dist)
 rooms
 </td>
 <td>
-6,735.49800<sup>***</sup> (393.60370)
+0.25453<sup>***</sup> (0.01853)
 </td>
 <td>
 -0.54511<sup>***</sup> (0.16545)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-dist
-</td>
-<td>
--1,026.80600<sup>***</sup> (188.10790)
-</td>
-<td>
 </td>
 </tr>
 <tr>
@@ -1165,7 +1157,7 @@ I(rooms2)
 stratio
 </td>
 <td>
--1,149.20400<sup>***</sup> (127.42870)
+-0.05245<sup>***</sup> (0.00590)
 </td>
 <td>
 -0.04759<sup>***</sup> (0.00585)
@@ -1176,7 +1168,7 @@ stratio
 Constant
 </td>
 <td>
-20,871.13000<sup>***</sup> (5,054.59900)
+11.08386<sup>***</sup> (0.31811)
 </td>
 <td>
 13.38548<sup>***</sup> (0.56647)
@@ -1202,7 +1194,7 @@ Observations
 R<sup>2</sup>
 </td>
 <td>
-0.63567
+0.58403
 </td>
 <td>
 0.60281
@@ -1213,7 +1205,7 @@ R<sup>2</sup>
 Adjusted R<sup>2</sup>
 </td>
 <td>
-0.63202
+0.58071
 </td>
 <td>
 0.59884
@@ -1221,24 +1213,24 @@ Adjusted R<sup>2</sup>
 </tr>
 <tr>
 <td style="text-align:left">
-Residual Std. Error (df = 500)
+Residual Std. Error
 </td>
 <td>
-5,586.19800
+0.26500 (df = 501)
 </td>
 <td>
-0.25921
+0.25921 (df = 500)
 </td>
 </tr>
 <tr>
 <td style="text-align:left">
-F Statistic (df = 5; 500)
+F Statistic
 </td>
 <td>
-174.47330<sup>***</sup>
+175.85520<sup>***</sup> (df = 4; 501)
 </td>
 <td>
-151.77040<sup>***</sup>
+151.77040<sup>***</sup> (df = 5; 500)
 </td>
 </tr>
 <tr>
@@ -1254,16 +1246,16 @@ F Statistic (df = 5; 500)
 </td>
 </tr>
 </table>
-<p>Estimate the minimum turning point of the <code>rooms</code> interactive term:</p>
+<p>Estimate the minimum turning point at which the <code>rooms</code> interactive term changes from negative to positive.</p>
 <p><span class="math display">\[x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}\]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">beta_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_interactive)<span class="op">$</span>coefficients[<span class="st">"rooms"</span>, <span class="dv">1</span>]
-beta_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_interactive)<span class="op">$</span>coefficients[<span class="st">"I(rooms^2)"</span>, <span class="dv">1</span>]
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">beta_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)<span class="op">$</span>coefficients[<span class="st">"rooms"</span>, <span class="dv">1</span>]
+beta_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)<span class="op">$</span>coefficients[<span class="st">"I(rooms^2)"</span>, <span class="dv">1</span>]
 turning_point &lt;-<span class="st"> </span><span class="kw">abs</span>(beta_<span class="dv">1</span><span class="op">/</span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>beta_<span class="dv">2</span>))
 
 <span class="kw">print</span>(turning_point)</code></pre></div>
 <pre><code>## [1] 4.37763</code></pre>
 <p>Compute the percent change across a range of average rooms. Include the smallest, turning point, and largest.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Rooms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, turning_point, <span class="dv">5</span>, <span class="fl">5.5</span>, <span class="fl">6.5</span>, <span class="fl">7.5</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Rooms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, turning_point, <span class="dv">5</span>, <span class="fl">5.5</span>, <span class="fl">6.45</span>, <span class="fl">7.5</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms))
 Percent.Change &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>(beta_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>beta_<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>Rooms)
 
 <span class="kw">kable</span>(<span class="kw">data.frame</span>(Rooms, Percent.Change))</code></pre></div>
@@ -1294,8 +1286,8 @@ Percent.Change &lt;-<span class="st"> </span><span class="dv">100</span> <span c
 <td align="right">13.976023</td>
 </tr>
 <tr class="even">
-<td align="right">6.50000</td>
-<td align="right">26.428263</td>
+<td align="right">6.45000</td>
+<td align="right">25.805651</td>
 </tr>
 <tr class="odd">
 <td align="right">7.50000</td>
@@ -1307,16 +1299,17 @@ Percent.Change &lt;-<span class="st"> </span><span class="dv">100</span> <span c
 </tr>
 </tbody>
 </table>
-<p>Graph the log of the selling price against the number of rooms. Superimpose a linear model as well as a quadratic model and examine the difference.</p>
+<p>Graph the log of the selling price against the number of rooms. Superimpose a simple model as well as a quadratic model and examine the difference.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rooms_interaction &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(rooms<span class="op">^</span><span class="dv">2</span>), <span class="dt">data =</span> hprice2)
 
 <span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))
+
 <span class="kw">plot</span>(<span class="dt">y =</span> hprice2<span class="op">$</span>lprice, <span class="dt">x =</span> hprice2<span class="op">$</span>rooms, <span class="dt">xaxt =</span> <span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Effects of Pollution on Housing Prices"</span>, 
     <span class="dt">xlab =</span> <span class="st">"Rooms"</span>, <span class="dt">ylab =</span> <span class="st">"Log(selling price)"</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))
 <span class="kw">abline</span>(<span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>rooms, <span class="dt">data =</span> hprice2), <span class="dt">col =</span> <span class="st">"blue"</span>, <span class="dt">lwd =</span> <span class="fl">2.5</span>)
 <span class="kw">points</span>(hprice2<span class="op">$</span>rooms, <span class="kw">fitted</span>(rooms_interaction), <span class="dt">col =</span> <span class="st">"red"</span>, <span class="dt">pch =</span> <span class="dv">20</span>)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-48-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-49-1.png" width="700"></p>
 
 </div>
 </div>
@@ -1327,9 +1320,15 @@ Percent.Change &lt;-<span class="st"> </span><span class="dv">100</span> <span c
 <h3 class="hasAnchor">
 <a href="#example-7-4-housing-price-regression-qualitative-binary-variable" class="anchor"></a><strong><code>Example 7.4:</code> Housing Price Regression, Qualitative Binary variable</strong>
 </h3>
-<p>This time, use the <code>hrprice1</code> data. Data collected from the real estate pages of the Boston Globe during 1990. These are homes that sold in the Boston, MA area.</p>
+<p>This time, use the <code>hrprice1</code> data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"hprice1"</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><a href="../reference/hprice1.html">?hprice1</a></code></pre></div>
+<p>Data collected from the real estate pages of the Boston Globe during 1990. These are homes that sold in the Boston, MA area.</p>
+<p><strong><span class="math inline">\(lprice:\)</span></strong> Log(house price, $1000s)</p>
+<p><strong><span class="math inline">\(llotsize:\)</span></strong> Log(size of lot in square feet)</p>
+<p><strong><span class="math inline">\(lsqrft:\)</span></strong> Log(size of house in square feet)</p>
+<p><strong><span class="math inline">\(bdrms:\)</span></strong> number of bdrms</p>
+<p><strong><span class="math inline">\(colonial:\)</span></strong> =1 if home is colonial style</p>
 <p><span class="math display">\[\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \beta_3bdrms + \beta_4colonial \]</span></p>
 <p>Estimate the coefficients of the above linear model on the <code>hprice</code> data set.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_qualitative &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>llotsize <span class="op">+</span><span class="st"> </span>lsqrft <span class="op">+</span><span class="st"> </span>bdrms <span class="op">+</span><span class="st"> </span>colonial, <span class="dt">data =</span> hprice1)</code></pre></div>
@@ -1657,7 +1656,7 @@ y_axis &lt;-<span class="st"> "R&amp;D as a percentage of sales"</span>
 
 <span class="kw">plot</span>(rdintens <span class="op">~</span><span class="st"> </span>sales, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">data =</span> rdchem, <span class="dt">main =</span> plot_title, 
     <span class="dt">xlab =</span> x_axis, <span class="dt">ylab =</span> y_axis)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-58-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-59-1.png" width="700"></p>
 <p>So, we can estimate the model without that data point to gain a better understanding of how <code>sales</code> and <code>profmarg</code> describe <code>rdintens</code> for most firms. We can use the <code>subset</code> argument of the linear model function to indicate that we only want to estimate the model using data that is less than the highest sales.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smallest_rdchem &lt;-<span class="st"> </span><span class="kw">lm</span>(rdintens <span class="op">~</span><span class="st"> </span>sales <span class="op">+</span><span class="st"> </span>profmarg, <span class="dt">data =</span> rdchem, 
                       <span class="dt">subset =</span> (sales <span class="op">&lt;</span><span class="st"> </span><span class="kw">max</span>(sales)))</code></pre></div>
