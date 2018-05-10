@@ -63,6 +63,7 @@ plot(y = wage1$wage, x = wage1$educ, col = "darkgreen", pch = 21, bg = "lightgre
      cex=1.25, xaxt="n", frame = FALSE, main = "Wages vs. Education, 1976", 
      xlab = "years of education", ylab = "Hourly wages")
 axis(side = 1, at = c(0,6,12,18))
+rug(wage1$wage, side=2, col="darkgreen")
 ```
 
 It appears that _**on average**_, more years of education, leads to higher wages.
@@ -92,12 +93,13 @@ Plot the $log($`wage`$)$ vs `educ`, adding a line representing the least squares
 fit.
 
 ```{r, tidy=TRUE}
-plot(y = wage1$lwage, x = wage1$educ, main = "A Log Wage Equation", col = "darkgreen", 
-     pch = 21, bg = "lightgrey", cex=1.25,xlab = "years of education", 
-     ylab = "log of average hourly wages",  xaxt="n", frame = FALSE)
+plot(y = wage1$lwage, x = wage1$educ, main = "A Log Wage Equation", 
+     col = "darkgreen", pch = 21, bg = "lightgrey", cex=1.25,
+     xlab = "years of education", ylab = "log of average hourly wages",
+     xaxt="n", frame = FALSE)
 axis(side = 1, at = c(0,6,12,18))
 abline(log_wage_model, col = "blue", lwd=2)
-
+rug(wage1$lwage, side=2, col="darkgreen")
 ```
 
 
@@ -162,8 +164,8 @@ kable(coefficients(hourly_wage_model), digits=4, col.names = "Coefficients", ali
 Plot the coefficients, representing percentage impact of each variable on $log($`wage`$)$ for a quick comparison.
 
 ```{r}
-barplot(100*hourly_wage_model$coefficients[-1], ylab = "Percentage", 
-        main = "Coefficients of Hourly Wage Equation")
+barplot(sort(100*hourly_wage_model$coefficients[-1]), horiz=TRUE, las=1,
+        ylab = " ", main = "Coefficients of Hourly Wage Equation")
 ```
 
 ## Chapter 4: Multiple Regression Analysis: Inference
@@ -197,11 +199,36 @@ summary(hourly_wage_model)$coefficients
 kable(summary(hourly_wage_model)$coefficients, align="l", digits=5)
 ```
 
+```{r, tidy=TRUE, fig.height=8, eval=FALSE, echo=FALSE}
+par(mfrow=c(2,2))
+
+plot(y = hourly_wage_model$residuals, x = hourly_wage_model$fitted.values , col="darkgreen", xaxt="n", 
+     frame = FALSE, main = "Fitted Values", xlab = "", ylab = "")
+mtext(side=2, line=2.5, "Model Residuals", cex=1.25)
+abline(0, 0, col = "darkblue", lty=2, lwd=2)
+
+plot(y = hourly_wage_model$residuals, x = wage1$educ, col="darkgreen", xaxt="n", 
+     frame = FALSE, main = "years of education", xlab = "", ylab = "")
+axis(side = 1, at = c(0,6,12,18))
+abline(0, 0, col = "darkblue", lty=2, lwd=2)
+
+plot(y = hourly_wage_model$residuals, x = wage1$exper, col="darkgreen", xaxt="n", 
+     frame = FALSE, main = "years of experience", xlab = "", ylab = "")
+mtext(side=2, line=2.5, "Model Residuals", cex=1.25)
+axis(side = 1, at = c(0,12.5,25,37.5,50))
+abline(0, 0, col = "darkblue", lty=2, lwd=2)
+
+plot(y = hourly_wage_model$residuals, x = wage1$tenure, col="darkgreen", xaxt="n", 
+     frame = FALSE, main = "years with employer", xlab = "", ylab = "")
+axis(side = 1, at = c(0,11,22,33,44))
+abline(0, 0, col = "darkblue", lty=2, lwd=2)
+```
+
 Plot the $t$ statistics for a visual comparison:
 
 ```{r}
-barplot(summary(hourly_wage_model)$coefficients[-1, "t value"], 
-        ylab = "t statistic", main = "t statistics of Hourly Wage Equation")
+barplot(sort(summary(hourly_wage_model)$coefficients[-1, "t value"]), horiz=TRUE, las=1, 
+        ylab = " ", main = "t statistics of Hourly Wage Equation")
 ```
 
 
@@ -303,9 +330,11 @@ summary(linear_model)
 stargazer(type = "html", linear_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
-Plot the coefficients, representing the impact of each variable on $log($`scrap`$)$ for a quick comparison. As you can observe, for some variables, the confidence intervals are wider than others.
 
-```{r}
+```{r, echo=FALSE, eval=FALSE}
+#Plot the coefficients, representing the impact of each variable on $log($`scrap`$)$ for a quick comparison. As you can observe, for some variables, the confidence intervals are wider than others.
+
+
 coefficient <- coef(linear_model)[-1]
  confidence <- confint(linear_model, level = 0.95)[-1,]
 
@@ -522,14 +551,19 @@ simple model as well as a quadratic model and examine the difference.
 ```{r, tidy=TRUE}
 rooms_interaction <- lm(lprice ~ rooms + I(rooms^2), data = hprice2)
 
-par(mfrow=c(1,1))
+par(mfrow=c(1,2))
 
-plot(y = hprice2$lprice, x = hprice2$rooms, xaxt="n", frame = FALSE,
-     main = "Effects of Pollution on Housing Prices", 
-     xlab = "Rooms", ylab = "Log(selling price)")
+plot(y = hprice2$lprice, x = hprice2$rooms, xaxt="n", pch = 21, bg = "lightgrey",
+     frame = FALSE, main = "lprice ~ rooms", xlab = "Rooms", ylab = "")
+mtext(side=2, line=2, "Log( selling price )", cex=1.25)
 axis(side = 1, at = c(min(hprice2$rooms), 4, 5, 6, 7, 8, max(hprice2$rooms)))
-abline(lm(lprice ~ rooms, data = hprice2), col="blue", lwd=2.5)
-points(hprice2$rooms, fitted(rooms_interaction), col = "red", pch=20)
+abline(lm(lprice ~ rooms, data = hprice2), col="red", lwd=2.5)
+
+plot(y = hprice2$lprice, x = hprice2$rooms, xaxt="n", pch = 21, bg = "lightgrey",
+     frame = FALSE, main = "lprice ~ rooms + I(rooms^2)", xlab = "Rooms", ylab = " ")
+axis(side = 1, at = c(min(hprice2$rooms), 4, 5, 6, 7, 8, max(hprice2$rooms)))
+lines(sort(hprice2$rooms), sort(fitted(rooms_interaction)), col = "red", lwd=2.5)
+
 
 
 ```
@@ -550,7 +584,8 @@ data("hprice1")
 ?hprice1
 ```
 
-Data collected from the real estate pages of the Boston Globe during 1990. These are homes that sold in the Boston, MA area.
+Data collected from the real estate pages of the Boston Globe during 1990. 
+These are homes that sold in the Boston, MA area.
 
 **$lprice:$** Log(house price, $1000s)
 
@@ -561,6 +596,37 @@ Data collected from the real estate pages of the Boston Globe during 1990. These
 **$bdrms:$** number of bdrms
 
 **$colonial:$** =1 if home is colonial style
+
+```{r, tidy=TRUE, fig.height=8, eval=FALSE, echo=FALSE}
+par(mfrow=c(2,2))
+
+palette(rainbow(6, alpha = 0.8))
+plot(y = hprice1$lprice, x = hprice1$llotsize, col=hprice1$bdrms, pch = 19,
+     frame = FALSE, main = "Log(lot size)", xlab = "", ylab = "")
+mtext(side=2, line=2, "Log( selling price )", cex=1.25)
+
+
+plot(y = hprice1$lprice, x = hprice1$lsqrft, col=hprice1$bdrms, pch=19,
+     frame = FALSE, main = "Log(home size)", xlab = "Rooms", ylab = " ")
+legend(8, 5.8, sort(unique(hprice1$bdrms)), col = 1:length(hprice1$bdrms), 
+       pch=19, title = "bdrms")
+
+
+hprice1$colonial <- as.factor(hprice1$colonial)
+
+palette(rainbow(2, alpha = 0.8))
+plot(y = hprice1$lprice, x = hprice1$llotsize, col=hprice1$colonial, pch = 19, bg = "lightgrey",
+     frame = FALSE, main = "Log(lot size)", xlab = "", ylab = "")
+mtext(side=2, line=2, "Log( selling price )", cex=1.25)
+
+
+plot(y = hprice1$lprice, x = hprice1$lsqrft, col=hprice1$colonial, pch=19,
+     frame = FALSE, main = "Log(home size)", xlab = "Rooms", ylab = " ")
+legend(8, 5.25, unique(hprice1$colonial), col=1:length(hprice1$colonial), pch=19, title = "colonial")
+```
+
+
+
 
 
 $$\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \beta_3bdrms + \beta_4colonial $$
