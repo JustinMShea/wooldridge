@@ -531,45 +531,53 @@ $$x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}$$
 ```{r, tidy=TRUE}
 beta_1 <- summary(housing_model_6.2)$coefficients["rooms",1] 
 beta_2 <- summary(housing_model_6.2)$coefficients["I(rooms^2)",1]
-
 turning_point <- abs(beta_1 / (2*beta_2))
-
 print(turning_point)
 ```
 
 Observe the percent change at various rooms for both the linear model from example 4.5 as well as the quadratic model in example 6.2. 
 
-```{r, tidy=TRUE}
+```{r, tidy=TRUE, fig.show="hold"}
 Avg.Rooms <- c(min(hprice2$rooms), 4, turning_point, 5.5, 6.4216564, 7.5, max(hprice2$rooms))
 Rooms.quadratic <-  100*(beta_1 + 2*beta_2*Avg.Rooms)
 Rooms.linear <- 100*rep(summary(housing_model_4.5)$coefficients["rooms",1], length(Avg.Rooms))
 
 row_names <- c("Minimum", "4 Rooms", "turning point", "5.5 rooms", "equal effect", "7.5 rooms", "Maximum")
-kable(data.frame(Avg.Rooms, Rooms.linear, Rooms.quadratic, row.names=row_names), 
-      caption="Percent Change per variable for each increase in Average Rooms", 
-      row.names = TRUE, digits=2)
+rooms_data <- data.frame(Avg.Rooms, Rooms.linear, Rooms.quadratic, row.names=row_names)
+kable(rooms_data, caption="Rate of Change in Selling Price per Room by Model", row.names=TRUE, digits=2)
+
+plot(x=rooms_data$Avg.Rooms, y=rooms_data$Rooms.quadratic, type="l", lwd=2, col="red",
+     frame=FALSE, ylab="Percent", xlab="Rooms", main="Rate of Change in Selling Price per Room by Model")
+abline(h=rooms_data$Rooms.linear, col="blue", lwd=2)
+abline(h=0, col="green", lty=2)
+abline(v=6.4216564, lty=2)
+legend(3.56, 50, legend=c("Example 6.2: Quadratic", "Example 4.5: Linear", 
+                          "Quadratic Turning Point", "Coefficient Equality"), 
+                           col=c("red", "blue", "green", "black"), 
+       lty=c(1,1,2,2), lwd=c(2,2,1,1), cex=0.8, box.lty=0,text.font=2)
 ```
 
 
-Observe the difference visually by graphing the log(selling price) against the number of rooms. Superimpose the linear model and again for the quadratic model and examine the difference.
-The blue vertical line represents the quadratic model turning point of 4.38 rooms.
+Observe the difference by graphing the log(selling price) against the number of rooms, 
+superimposing the linear and quadratic models for comparison. The blue 
+vertical line represents the quadratic model turning point of 4.38 rooms.
 
 ```{r, tidy=TRUE}
 par(mfrow=c(1,2))
 
-plot(y = hprice2$lprice, x = hprice2$rooms, xaxt="n", pch = 21, bg = "lightgrey",
-     main = "lprice ~ rooms", xlab = "Rooms", ylab = "")
- mtext(side=2, line=2, "Log( selling price )", cex=1.25)
- axis(side = 1, at = c(3, round(turning_point,2), 5.5, 7, max(hprice2$rooms)))
- abline(lm(lprice ~ rooms, data = hprice2), col="red", lwd=2.5)
- abline(v=turning_point,  col="blue")
+plot(y = jitter(hprice2$lprice), x = jitter(hprice2$rooms), xaxt= "n" , frame = FALSE, 
+     pch = 21, bg = "lightgrey", main = "lprice ~ rooms", xlab = "Rooms", ylab = "")
+  mtext(side=2, line=2, "Log( selling price )", cex=1.25)
+  axis(side = 1, at = c(round(turning_point,2), 5.5, 7, max(hprice2$rooms)))
+  abline(lm(lprice ~ rooms, data = hprice2), col = "red", lwd = 2.5)
+  abline(v=turning_point,  col="blue", lty = 2)
+  legend("bottomright", legend="Model", col="red", lty=1, lwd=2 , cex=0.8, box.lty=0,text.font=2)
 
-visreg(housing_model_6.2, "rooms", band=FALSE, line=list(col="red"),
-       points=list(cex=1, pch = 21, col="black", bg = "lightgrey"),
-       main = "lprice ~ rooms + I(rooms^2)", xlab = "Rooms", ylab="",
-       xaxt="n")
- abline(v=turning_point,  col="blue")
- axis(side = 1, at = c(3, round(turning_point,2), 5.5, 7, max(hprice2$rooms)))
+visreg::visreg(housing_model_6.2, "rooms", band=FALSE, axes=FALSE, xlab="Rooms", ylab="", line=list(col="red"), 
+               points=list(cex=1, pch=21, col="black", bg="lightgrey"), main="lprice ~ rooms + I(rooms^2)")
+  abline(v = turning_point,  col = "blue", lty = 2)
+  axis(side = 1, at = c(round(turning_point, 2), 5.5, 7, max(hprice2$rooms)))
+    legend("bottomright", legend="Turning", col="blue", lty=2, lwd=1, cex=0.8, box.lty=0,text.font=2)
 ```
 
 
