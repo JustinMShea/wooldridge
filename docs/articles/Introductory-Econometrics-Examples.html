@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">wooldridge</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.3.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.3.1</span>
       </span>
     </div>
 
@@ -827,8 +827,9 @@ F Statistic
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_level &lt;-<span class="st"> </span><span class="kw">lm</span>(price <span class="op">~</span><span class="st"> </span>nox <span class="op">+</span><span class="st"> </span>crime <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span>dist <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)</code></pre></div>
 <p>Estimate the same model, but standardized coefficients by wrapping each variable with R’s <code>scale</code> function:</p>
 <p><span class="math display">\[\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio\]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_standardized &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">scale</span>(price) <span class="op">~</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(nox) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(crime) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(rooms) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(dist) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(stratio), <span class="dt">data =</span> hprice2)</code></pre></div>
-<p>Compare results, and observe</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_standardized &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">scale</span>(price) <span class="op">~</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(nox) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(crime) <span class="op">+</span><span class="st"> </span>
+<span class="st">                           </span><span class="kw">scale</span>(rooms) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(dist) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(stratio), <span class="dt">data =</span> hprice2)</code></pre></div>
+<p>Compare results, and observe that while the coefficients are much easier to compare and contrast with the new model, the <strong><span class="math inline">\(R^2\)</span></strong> statistic remains identical.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(housing_level)
 <span class="kw">summary</span>(housing_standardized)</code></pre></div>
 <table style="text-align:center" class="table">
@@ -1259,18 +1260,20 @@ F Statistic
 <p><span class="math display">\[x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">beta_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)<span class="op">$</span>coefficients[<span class="st">"rooms"</span>,<span class="dv">1</span>] 
 beta_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)<span class="op">$</span>coefficients[<span class="st">"I(rooms^2)"</span>,<span class="dv">1</span>]
+
 turning_point &lt;-<span class="st"> </span><span class="kw">abs</span>(beta_<span class="dv">1</span> <span class="op">/</span><span class="st"> </span>(<span class="dv">2</span><span class="op">*</span>beta_<span class="dv">2</span>))
 
 <span class="kw">print</span>(turning_point)</code></pre></div>
 <pre><code>## [1] 4.37763</code></pre>
 <p>Observe the percent change at various rooms for both the linear model from example 4.5 as well as the quadratic model in example 6.2.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Avg.Rooms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, turning_point, <span class="fl">5.5</span>, <span class="fl">6.4216564</span>, <span class="fl">7.5</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms))
-
 Rooms.quadratic &lt;-<span class="st">  </span><span class="dv">100</span><span class="op">*</span>(beta_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">*</span>beta_<span class="dv">2</span><span class="op">*</span>Avg.Rooms)
 Rooms.linear &lt;-<span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">rep</span>(<span class="kw">summary</span>(housing_model_<span class="fl">4.5</span>)<span class="op">$</span>coefficients[<span class="st">"rooms"</span>,<span class="dv">1</span>], <span class="kw">length</span>(Avg.Rooms))
 
-<span class="kw">kable</span>(<span class="kw">data.frame</span>(Avg.Rooms, Rooms.linear, Rooms.quadratic, <span class="dt">row.names =</span> <span class="kw">c</span>(<span class="st">"Minimum"</span>, <span class="st">"4 Rooms"</span>, <span class="st">"turning point"</span>, <span class="st">"5.5 rooms"</span>, <span class="st">"equal effect"</span>, <span class="st">"7.5 rooms"</span>, <span class="st">"Maximum"</span>)), <span class="dt">row.names =</span> <span class="ot">TRUE</span>, <span class="dt">digits=</span><span class="dv">2</span>,
-      <span class="dt">caption=</span><span class="st">"Percent Change per variable for each increase in Average Rooms"</span>)</code></pre></div>
+row_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Minimum"</span>, <span class="st">"4 Rooms"</span>, <span class="st">"turning point"</span>, <span class="st">"5.5 rooms"</span>, <span class="st">"equal effect"</span>, <span class="st">"7.5 rooms"</span>, <span class="st">"Maximum"</span>)
+<span class="kw">kable</span>(<span class="kw">data.frame</span>(Avg.Rooms, Rooms.linear, Rooms.quadratic, <span class="dt">row.names=</span>row_names), 
+      <span class="dt">caption=</span><span class="st">"Percent Change per variable for each increase in Average Rooms"</span>, 
+      <span class="dt">row.names =</span> <span class="ot">TRUE</span>, <span class="dt">digits=</span><span class="dv">2</span>)</code></pre></div>
 <table class="table">
 <caption>Percent Change per variable for each increase in Average Rooms</caption>
 <thead><tr class="header">
@@ -1324,21 +1327,22 @@ Rooms.linear &lt;-<span class="st"> </span><span class="dv">100</span><span clas
 </tr>
 </tbody>
 </table>
-<p>Observe the difference visually by graphing the log(selling price) against the number of rooms. Superimpose a the linear model and then do the same for the quadratic model to examine the difference. The blue vertical line represents the quadratic model turning point of 4.38 rooms.</p>
+<p>Observe the difference visually by graphing the log(selling price) against the number of rooms. Superimpose the linear model and again for the quadratic model and examine the difference. The blue vertical line represents the quadratic model turning point of 4.38 rooms.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
 
 <span class="kw">plot</span>(<span class="dt">y =</span> hprice2<span class="op">$</span>lprice, <span class="dt">x =</span> hprice2<span class="op">$</span>rooms, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>,
-  <span class="dt">main =</span> <span class="st">"lprice ~ rooms"</span>, <span class="dt">xlab =</span> <span class="st">"Rooms"</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
-<span class="kw">mtext</span>(<span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="dv">2</span>, <span class="st">"Log( selling price )"</span>, <span class="dt">cex=</span><span class="fl">1.25</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="kw">round</span>(turning_point,<span class="dv">2</span>), <span class="fl">5.5</span>, <span class="dv">7</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))
-<span class="kw">abline</span>(<span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>rooms, <span class="dt">data =</span> hprice2), <span class="dt">col=</span><span class="st">"red"</span>, <span class="dt">lwd=</span><span class="fl">2.5</span>)
-<span class="kw">abline</span>(<span class="dt">v=</span>turning_point,  <span class="dt">col=</span><span class="st">"blue"</span>)
+     <span class="dt">main =</span> <span class="st">"lprice ~ rooms"</span>, <span class="dt">xlab =</span> <span class="st">"Rooms"</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+ <span class="kw">mtext</span>(<span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="dv">2</span>, <span class="st">"Log( selling price )"</span>, <span class="dt">cex=</span><span class="fl">1.25</span>)
+ <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="kw">round</span>(turning_point,<span class="dv">2</span>), <span class="fl">5.5</span>, <span class="dv">7</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))
+ <span class="kw">abline</span>(<span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>rooms, <span class="dt">data =</span> hprice2), <span class="dt">col=</span><span class="st">"red"</span>, <span class="dt">lwd=</span><span class="fl">2.5</span>)
+ <span class="kw">abline</span>(<span class="dt">v=</span>turning_point,  <span class="dt">col=</span><span class="st">"blue"</span>)
 
 <span class="kw">visreg</span>(housing_model_<span class="fl">6.2</span>, <span class="st">"rooms"</span>, <span class="dt">band=</span><span class="ot">FALSE</span>, <span class="dt">line=</span><span class="kw">list</span>(<span class="dt">col=</span><span class="st">"red"</span>),
        <span class="dt">points=</span><span class="kw">list</span>(<span class="dt">cex=</span><span class="dv">1</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">col=</span><span class="st">"black"</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>),
-    <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">main =</span> <span class="st">"lprice ~ rooms + I(rooms^2)"</span>, <span class="dt">xlab =</span> <span class="st">"Rooms"</span>, <span class="dt">ylab=</span><span class="st">""</span>)
-<span class="kw">abline</span>(<span class="dt">v=</span>turning_point,  <span class="dt">col=</span><span class="st">"blue"</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="kw">round</span>(turning_point,<span class="dv">2</span>), <span class="fl">5.5</span>, <span class="dv">7</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))</code></pre></div>
+       <span class="dt">main =</span> <span class="st">"lprice ~ rooms + I(rooms^2)"</span>, <span class="dt">xlab =</span> <span class="st">"Rooms"</span>, <span class="dt">ylab=</span><span class="st">""</span>,
+       <span class="dt">xaxt=</span><span class="st">"n"</span>)
+ <span class="kw">abline</span>(<span class="dt">v=</span>turning_point,  <span class="dt">col=</span><span class="st">"blue"</span>)
+ <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="kw">round</span>(turning_point,<span class="dv">2</span>), <span class="fl">5.5</span>, <span class="dv">7</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))</code></pre></div>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-50-1.png" width="700"></p>
 
 </div>

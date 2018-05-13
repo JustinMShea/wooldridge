@@ -481,10 +481,11 @@ with R's `scale` function:
 $$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio$$
 
 ```{r, tidy = TRUE}
-housing_standardized <- lm(scale(price) ~ 0 + scale(nox) + scale(crime) + scale(rooms) + scale(dist) + scale(stratio), data = hprice2)
+housing_standardized <- lm(scale(price) ~ 0 + scale(nox) + scale(crime) + 
+                           scale(rooms) + scale(dist) + scale(stratio), data = hprice2)
 ```
 
-Compare results, and observe
+Compare results, and observe that while the coefficients are much easier to compare and contrast with the new model, the **$R^2$** statistic remains identical.
 
 ```{r, eval=FALSE}
 summary(housing_level)
@@ -530,6 +531,7 @@ $$x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}$$
 ```{r, tidy=TRUE}
 beta_1 <- summary(housing_model_6.2)$coefficients["rooms",1] 
 beta_2 <- summary(housing_model_6.2)$coefficients["I(rooms^2)",1]
+
 turning_point <- abs(beta_1 / (2*beta_2))
 
 print(turning_point)
@@ -539,34 +541,35 @@ Observe the percent change at various rooms for both the linear model from examp
 
 ```{r, tidy=TRUE}
 Avg.Rooms <- c(min(hprice2$rooms), 4, turning_point, 5.5, 6.4216564, 7.5, max(hprice2$rooms))
-
 Rooms.quadratic <-  100*(beta_1 + 2*beta_2*Avg.Rooms)
 Rooms.linear <- 100*rep(summary(housing_model_4.5)$coefficients["rooms",1], length(Avg.Rooms))
 
-kable(data.frame(Avg.Rooms, Rooms.linear, Rooms.quadratic, row.names = c("Minimum", "4 Rooms", "turning point", "5.5 rooms", "equal effect", "7.5 rooms", "Maximum")), row.names = TRUE, digits=2,
-      caption="Percent Change per variable for each increase in Average Rooms")
-
+row_names <- c("Minimum", "4 Rooms", "turning point", "5.5 rooms", "equal effect", "7.5 rooms", "Maximum")
+kable(data.frame(Avg.Rooms, Rooms.linear, Rooms.quadratic, row.names=row_names), 
+      caption="Percent Change per variable for each increase in Average Rooms", 
+      row.names = TRUE, digits=2)
 ```
 
 
-Observe the difference visually by graphing the log(selling price) against the number of rooms. Superimpose a the linear model and then do the same for the quadratic model to examine the difference.
+Observe the difference visually by graphing the log(selling price) against the number of rooms. Superimpose the linear model and again for the quadratic model and examine the difference.
 The blue vertical line represents the quadratic model turning point of 4.38 rooms.
 
 ```{r, tidy=TRUE}
 par(mfrow=c(1,2))
 
 plot(y = hprice2$lprice, x = hprice2$rooms, xaxt="n", pch = 21, bg = "lightgrey",
-  main = "lprice ~ rooms", xlab = "Rooms", ylab = "")
-mtext(side=2, line=2, "Log( selling price )", cex=1.25)
-axis(side = 1, at = c(3, round(turning_point,2), 5.5, 7, max(hprice2$rooms)))
-abline(lm(lprice ~ rooms, data = hprice2), col="red", lwd=2.5)
-abline(v=turning_point,  col="blue")
+     main = "lprice ~ rooms", xlab = "Rooms", ylab = "")
+ mtext(side=2, line=2, "Log( selling price )", cex=1.25)
+ axis(side = 1, at = c(3, round(turning_point,2), 5.5, 7, max(hprice2$rooms)))
+ abline(lm(lprice ~ rooms, data = hprice2), col="red", lwd=2.5)
+ abline(v=turning_point,  col="blue")
 
 visreg(housing_model_6.2, "rooms", band=FALSE, line=list(col="red"),
        points=list(cex=1, pch = 21, col="black", bg = "lightgrey"),
-    xaxt="n", main = "lprice ~ rooms + I(rooms^2)", xlab = "Rooms", ylab="")
-abline(v=turning_point,  col="blue")
-axis(side = 1, at = c(3, round(turning_point,2), 5.5, 7, max(hprice2$rooms)))
+       main = "lprice ~ rooms + I(rooms^2)", xlab = "Rooms", ylab="",
+       xaxt="n")
+ abline(v=turning_point,  col="blue")
+ axis(side = 1, at = c(3, round(turning_point,2), 5.5, 7, max(hprice2$rooms)))
 ```
 
 
