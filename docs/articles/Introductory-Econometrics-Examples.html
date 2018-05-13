@@ -109,8 +109,8 @@
 <p><strong><span class="math inline">\(wage\)</span>:</strong> average hourly earnings</p>
 <p><strong><span class="math inline">\(educ\)</span>:</strong> years of education</p>
 <p>First, make a scatter-plot of the two variables and look for possible patterns in the relationship between them.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>wage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">col =</span> <span class="st">"darkgreen"</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>,     
-     <span class="dt">cex=</span><span class="fl">1.25</span>, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Wages vs. Education, 1976"</span>, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>wage, <span class="dt">x =</span> <span class="kw">jitter</span>(wage1<span class="op">$</span>educ), <span class="dt">col =</span> <span class="st">"darkgreen"</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>,     
+     <span class="dt">cex=</span><span class="dv">1</span>, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"Wages vs. Education, 1976"</span>, 
      <span class="dt">xlab =</span> <span class="st">"years of education"</span>, <span class="dt">ylab =</span> <span class="st">"Hourly wages"</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">18</span>))
 <span class="kw">rug</span>(wage1<span class="op">$</span>wage, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">"darkgreen"</span>)</code></pre></div>
@@ -225,8 +225,8 @@ F Statistic
 </tr>
 </table>
 <p>Plot the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span> vs <code>educ</code>, adding a line representing the least squares fit.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">main =</span> <span class="st">"A Log Wage Equation"</span>, 
-     <span class="dt">col =</span> <span class="st">"darkgreen"</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">cex=</span><span class="fl">1.25</span>,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> <span class="kw">jitter</span>(wage1<span class="op">$</span>educ), <span class="dt">main =</span> <span class="st">"A Log Wage Equation"</span>, 
+     <span class="dt">col =</span> <span class="st">"darkgreen"</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>, <span class="dt">cex=</span><span class="dv">1</span>,
      <span class="dt">xlab =</span> <span class="st">"years of education"</span>, <span class="dt">ylab =</span> <span class="st">"log of average hourly wages"</span>,
      <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">18</span>))
@@ -255,15 +255,12 @@ F Statistic
 <span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>educ, <span class="dt">col=</span><span class="st">"darkgreen"</span>, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"years of education"</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
 <span class="kw">mtext</span>(<span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="fl">2.5</span>, <span class="st">"Hourly wages"</span>, <span class="dt">cex=</span><span class="fl">1.25</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">18</span>))
-<span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data=</span>wage1), <span class="dt">col =</span> <span class="st">"darkblue"</span>, <span class="dt">lwd=</span><span class="dv">2</span>)
 
 <span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>exper, <span class="dt">col=</span><span class="st">"darkgreen"</span>, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"years of experience"</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">12.5</span>,<span class="dv">25</span>,<span class="fl">37.5</span>,<span class="dv">50</span>))
-<span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>exper, <span class="dt">data=</span>wage1), <span class="dt">col =</span> <span class="st">"darkblue"</span>, <span class="dt">lwd=</span><span class="dv">2</span>)
 
 <span class="kw">plot</span>(<span class="dt">y =</span> wage1<span class="op">$</span>lwage, <span class="dt">x =</span> wage1<span class="op">$</span>tenure, <span class="dt">col=</span><span class="st">"darkgreen"</span>, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"years with employer"</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">11</span>,<span class="dv">22</span>,<span class="dv">33</span>,<span class="dv">44</span>))
-<span class="kw">abline</span>(<span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>tenure, <span class="dt">data=</span>wage1), <span class="dt">col =</span> <span class="st">"darkblue"</span>, <span class="dt">lwd=</span><span class="dv">2</span>)</code></pre></div>
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">11</span>,<span class="dv">22</span>,<span class="dv">33</span>,<span class="dv">44</span>))</code></pre></div>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
 <p>Estimate the model regressing <em>educ</em>, <em>exper</em>, and <em>tenure</em> against <em>log(wage)</em>.</p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure\]</span></p>
@@ -298,6 +295,19 @@ F Statistic
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">sort</span>(<span class="dv">100</span><span class="op">*</span>hourly_wage_model<span class="op">$</span>coefficients[<span class="op">-</span><span class="dv">1</span>]), <span class="dt">horiz=</span><span class="ot">TRUE</span>, <span class="dt">las=</span><span class="dv">1</span>,
         <span class="dt">ylab =</span> <span class="st">" "</span>, <span class="dt">main =</span> <span class="st">"Coefficients of Hourly Wage Equation"</span>)</code></pre></div>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(visreg)
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))
+
+<span class="kw">visreg</span>(hourly_wage_model, <span class="st">"educ"</span>, <span class="dt">band=</span><span class="ot">FALSE</span>, <span class="dt">jitter =</span> <span class="ot">TRUE</span>, <span class="dt">points=</span><span class="kw">list</span>(<span class="dt">col=</span><span class="st">"darkgreen"</span>, <span class="dt">cex=</span><span class="fl">1.1</span>, <span class="dt">pch=</span><span class="dv">1</span>), <span class="dt">frame=</span><span class="ot">FALSE</span>, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">main =</span> <span class="st">"years of education"</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+<span class="kw">mtext</span>(<span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="fl">2.5</span>, <span class="st">"Hourly wages"</span>, <span class="dt">cex=</span><span class="fl">1.25</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">18</span>))
+
+<span class="kw">visreg</span>(hourly_wage_model, <span class="st">"exper"</span>, <span class="dt">band=</span><span class="ot">FALSE</span>, <span class="dt">jitter =</span> <span class="ot">TRUE</span>, <span class="dt">points=</span><span class="kw">list</span>(<span class="dt">col=</span><span class="st">"darkgreen"</span>, <span class="dt">cex=</span><span class="fl">1.1</span>, <span class="dt">pch=</span><span class="dv">1</span>), <span class="dt">frame=</span><span class="ot">FALSE</span>, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">main =</span> <span class="st">"years of experience"</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">12.5</span>,<span class="dv">25</span>,<span class="fl">37.5</span>,<span class="dv">50</span>))
+
+<span class="kw">visreg</span>(hourly_wage_model, <span class="st">"tenure"</span>, <span class="dt">band=</span><span class="ot">FALSE</span>, <span class="dt">jitter =</span> <span class="ot">TRUE</span>, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">points=</span><span class="kw">list</span>(<span class="dt">col=</span><span class="st">"darkgreen"</span>, <span class="dt">cex=</span><span class="fl">1.1</span>, <span class="dt">pch=</span><span class="dv">1</span>), <span class="dt">frame=</span><span class="ot">FALSE</span>,  <span class="dt">main =</span> <span class="st">"years of employer"</span>, <span class="dt">xlab =</span> <span class="st">""</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">11</span>,<span class="dv">22</span>,<span class="dv">33</span>,<span class="dv">44</span>))</code></pre></div>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-16-1.png" width="700"></p>
 </div>
 </div>
 <div id="chapter-4-multiple-regression-analysis-inference" class="section level2">
@@ -473,7 +483,7 @@ F Statistic
 <p>Plot the <span class="math inline">\(t\)</span> statistics for a visual comparison:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">sort</span>(<span class="kw">summary</span>(hourly_wage_model)<span class="op">$</span>coefficients[<span class="op">-</span><span class="dv">1</span>, <span class="st">"t value"</span>]), <span class="dt">horiz=</span><span class="ot">TRUE</span>, <span class="dt">las=</span><span class="dv">1</span>, 
         <span class="dt">ylab =</span> <span class="st">" "</span>, <span class="dt">main =</span> <span class="st">"t statistics of Hourly Wage Equation"</span>)</code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-21-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-22-1.png" width="700"></p>
 </div>
 <div id="example-4-7-effect-of-job-training-on-firm-scrap-rates" class="section level3">
 <h3 class="hasAnchor">
@@ -498,7 +508,7 @@ F Statistic
 <p>While <code>R</code>’s <code>lm</code> function will automatically remove missing <code>NA</code> values, eliminating these manually will produce more clearly proportioned graphs for exploratory analysis. Call the <code>na.omit</code> function to remove all missing values and assign the new <code>data.frame</code> object the name <strong><code>jtrain_clean</code></strong>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">jtrain_clean &lt;-<span class="st"> </span><span class="kw">na.omit</span>(jtrain_subset)</code></pre></div>
 <p>Use <code>jtrain_clean</code> to plot the variables of interest against <code>lscrap</code>. Visually observe the respective distributions for each variable, and compare the slope (<span class="math inline">\(\beta\)</span>) of the simple regression lines.</p>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-27-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-28-1.png" width="700"></p>
 <p>Now create the linear model regressing <code>hrsemp</code>(total hours training/total employees trained), the <code>lsales</code>(log of annual sales), and <code>lemploy</code>(the log of the number of the employees), against <code>lscrap</code>(the log of the scrape rate).</p>
 <p><span class="math display">\[lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>hrsemp <span class="op">+</span><span class="st"> </span>lsales <span class="op">+</span><span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_clean)</code></pre></div>
@@ -637,7 +647,7 @@ F Statistic
 <p><strong><span class="math inline">\(ldist:\)</span></strong> Log(distance from house to incinerator, feet)</p>
 <p><strong><span class="math inline">\(larea:\)</span></strong> Log(square footage of house)</p>
 <p>Graph the prices of housing against distance from an incinerator:</p>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-33-1.png" width="700" style="display: block; margin: auto;"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-34-1.png" width="700" style="display: block; margin: auto;"></p>
 <p>Next, model the <span class="math inline">\(log(\)</span><code>price</code><span class="math inline">\()\)</span> against the <span class="math inline">\(log(\)</span><code>dist</code><span class="math inline">\()\)</span> to estimate the percentage relationship between the two.</p>
 <p><span class="math display">\[price = \alpha + \beta_1 dist\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">price_dist_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>ldist, <span class="dt">data =</span> hprice3)</code></pre></div>
@@ -791,7 +801,7 @@ F Statistic
 </tr>
 </table>
 <p>Graphing illustrates the larger coefficient for <code>area</code>.</p>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-38-1.png" width="700"></p>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-39-1.png" width="700"></p>
 
 </div>
 </div>
@@ -1088,6 +1098,16 @@ lprice
 <td style="text-align:left">
 </td>
 <td>
+Example 4.5
+</td>
+<td>
+Example 6.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
 (1)
 </td>
 <td>
@@ -1243,66 +1263,82 @@ turning_point &lt;-<span class="st"> </span><span class="kw">abs</span>(beta_<sp
 
 <span class="kw">print</span>(turning_point)</code></pre></div>
 <pre><code>## [1] 4.37763</code></pre>
-<p>Compute the percent change across a range of average rooms. Include the smallest, turning point, and largest.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Rooms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, turning_point, <span class="dv">5</span>, <span class="fl">5.5</span>, <span class="fl">6.45</span>, <span class="fl">7.5</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms))
-Percent.Change &lt;-<span class="st"> </span><span class="dv">100</span><span class="op">*</span>(beta_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">*</span>beta_<span class="dv">2</span><span class="op">*</span>Rooms)
+<p>Observe the percent change at various rooms for both the linear model from example 4.5 as well as the quadratic model in example 6.2.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Avg.Rooms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, turning_point, <span class="fl">5.5</span>, <span class="fl">6.4216564</span>, <span class="fl">7.5</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms))
 
-<span class="kw">kable</span>(<span class="kw">data.frame</span>(Rooms, Percent.Change))</code></pre></div>
+Rooms.quadratic &lt;-<span class="st">  </span><span class="dv">100</span><span class="op">*</span>(beta_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">*</span>beta_<span class="dv">2</span><span class="op">*</span>Avg.Rooms)
+Rooms.linear &lt;-<span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">rep</span>(<span class="kw">summary</span>(housing_model_<span class="fl">4.5</span>)<span class="op">$</span>coefficients[<span class="st">"rooms"</span>,<span class="dv">1</span>], <span class="kw">length</span>(Avg.Rooms))
+
+<span class="kw">kable</span>(<span class="kw">data.frame</span>(Avg.Rooms, Rooms.linear, Rooms.quadratic, <span class="dt">row.names =</span> <span class="kw">c</span>(<span class="st">"Minimum"</span>, <span class="st">"4 Rooms"</span>, <span class="st">"turning point"</span>, <span class="st">"5.5 rooms"</span>, <span class="st">"equal effect"</span>, <span class="st">"7.5 rooms"</span>, <span class="st">"Maximum"</span>)), <span class="dt">row.names =</span> <span class="ot">TRUE</span>, <span class="dt">digits=</span><span class="dv">2</span>,
+      <span class="dt">caption=</span><span class="st">"Percent Change per variable for each increase in Average Rooms"</span>)</code></pre></div>
 <table class="table">
+<caption>Percent Change per variable for each increase in Average Rooms</caption>
 <thead><tr class="header">
-<th align="right">Rooms</th>
-<th align="right">Percent.Change</th>
+<th></th>
+<th align="right">Avg.Rooms</th>
+<th align="right">Rooms.linear</th>
+<th align="right">Rooms.quadratic</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="right">3.56000</td>
-<td align="right">-10.181324</td>
+<td>Minimum</td>
+<td align="right">3.56</td>
+<td align="right">25.45</td>
+<td align="right">-10.18</td>
 </tr>
 <tr class="even">
-<td align="right">4.00000</td>
-<td align="right">-4.702338</td>
+<td>4 Rooms</td>
+<td align="right">4.00</td>
+<td align="right">25.45</td>
+<td align="right">-4.70</td>
 </tr>
 <tr class="odd">
-<td align="right">4.37763</td>
-<td align="right">0.000000</td>
+<td>turning point</td>
+<td align="right">4.38</td>
+<td align="right">25.45</td>
+<td align="right">0.00</td>
 </tr>
 <tr class="even">
-<td align="right">5.00000</td>
-<td align="right">7.749903</td>
+<td>5.5 rooms</td>
+<td align="right">5.50</td>
+<td align="right">25.45</td>
+<td align="right">13.98</td>
 </tr>
 <tr class="odd">
-<td align="right">5.50000</td>
-<td align="right">13.976023</td>
+<td>equal effect</td>
+<td align="right">6.42</td>
+<td align="right">25.45</td>
+<td align="right">25.45</td>
 </tr>
 <tr class="even">
-<td align="right">6.45000</td>
-<td align="right">25.805651</td>
+<td>7.5 rooms</td>
+<td align="right">7.50</td>
+<td align="right">25.45</td>
+<td align="right">38.88</td>
 </tr>
 <tr class="odd">
-<td align="right">7.50000</td>
-<td align="right">38.880503</td>
-</tr>
-<tr class="even">
-<td align="right">8.78000</td>
-<td align="right">54.819367</td>
+<td>Maximum</td>
+<td align="right">8.78</td>
+<td align="right">25.45</td>
+<td align="right">54.82</td>
 </tr>
 </tbody>
 </table>
-<p>Graph the log of the selling price against the number of rooms. Superimpose a simple model as well as a quadratic model and examine the difference.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rooms_interaction &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(rooms<span class="op">^</span><span class="dv">2</span>), <span class="dt">data =</span> hprice2)
-
-<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+<p>Observe the difference visually by graphing the log(selling price) against the number of rooms. Superimpose a the linear model and then do the same for the quadratic model to examine the difference. The blue vertical line represents the quadratic model turning point of 4.38 rooms.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
 
 <span class="kw">plot</span>(<span class="dt">y =</span> hprice2<span class="op">$</span>lprice, <span class="dt">x =</span> hprice2<span class="op">$</span>rooms, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>,
-     <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"lprice ~ rooms"</span>, <span class="dt">xlab =</span> <span class="st">"Rooms"</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
+  <span class="dt">main =</span> <span class="st">"lprice ~ rooms"</span>, <span class="dt">xlab =</span> <span class="st">"Rooms"</span>, <span class="dt">ylab =</span> <span class="st">""</span>)
 <span class="kw">mtext</span>(<span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="dv">2</span>, <span class="st">"Log( selling price )"</span>, <span class="dt">cex=</span><span class="fl">1.25</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="kw">round</span>(turning_point,<span class="dv">2</span>), <span class="fl">5.5</span>, <span class="dv">7</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))
 <span class="kw">abline</span>(<span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>rooms, <span class="dt">data =</span> hprice2), <span class="dt">col=</span><span class="st">"red"</span>, <span class="dt">lwd=</span><span class="fl">2.5</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span>turning_point,  <span class="dt">col=</span><span class="st">"blue"</span>)
 
-<span class="kw">plot</span>(<span class="dt">y =</span> hprice2<span class="op">$</span>lprice, <span class="dt">x =</span> hprice2<span class="op">$</span>rooms, <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>,
-     <span class="dt">frame =</span> <span class="ot">FALSE</span>, <span class="dt">main =</span> <span class="st">"lprice ~ rooms + I(rooms^2)"</span>, <span class="dt">xlab =</span> <span class="st">"Rooms"</span>, <span class="dt">ylab =</span> <span class="st">" "</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))
-<span class="kw">lines</span>(<span class="kw">sort</span>(hprice2<span class="op">$</span>rooms), <span class="kw">sort</span>(<span class="kw">fitted</span>(rooms_interaction)), <span class="dt">col =</span> <span class="st">"red"</span>, <span class="dt">lwd=</span><span class="fl">2.5</span>)</code></pre></div>
+<span class="kw">visreg</span>(housing_model_<span class="fl">6.2</span>, <span class="st">"rooms"</span>, <span class="dt">band=</span><span class="ot">FALSE</span>, <span class="dt">line=</span><span class="kw">list</span>(<span class="dt">col=</span><span class="st">"red"</span>),
+       <span class="dt">points=</span><span class="kw">list</span>(<span class="dt">cex=</span><span class="dv">1</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">col=</span><span class="st">"black"</span>, <span class="dt">bg =</span> <span class="st">"lightgrey"</span>),
+    <span class="dt">xaxt=</span><span class="st">"n"</span>, <span class="dt">main =</span> <span class="st">"lprice ~ rooms + I(rooms^2)"</span>, <span class="dt">xlab =</span> <span class="st">"Rooms"</span>, <span class="dt">ylab=</span><span class="st">""</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span>turning_point,  <span class="dt">col=</span><span class="st">"blue"</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="kw">round</span>(turning_point,<span class="dv">2</span>), <span class="fl">5.5</span>, <span class="dv">7</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms)))</code></pre></div>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-50-1.png" width="700"></p>
 
 </div>
