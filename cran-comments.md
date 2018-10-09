@@ -1,24 +1,22 @@
 
 # Test environments passing
-* Local: R version 3.4.3 (2017-11-30), x86_64-w64-mingw32 (64-bit)
-* win-builder: , R Under development (unstable) (2018-01-04 r74054), x86_64-w64-mingw32(64-bit)
-* travis-ci: R version 3.4.2 (2017-01-27), x86_64-pc-linux-gnu (64-bit), Ubuntu 14.04.5 LTS, R 3.4.1 
-* AppVeyor: R version 3.4.3 Patched (2018-01-05 r74073), i386-w64-mingw32/i386 (32-bit), Windows Server 2012 R2 x64 (build 9600)
+* Local: R version 3.5.1 (2018-07-02), x86_64-pc-linux-gnu (64-bit)
+* win-builder: R version 3.5.1 (2018-07-02), using platform: x86_64-w64-mingw32 (64-bit)
+* AppVeyor: 3.5.1 Patched (2018-10-07 r75413), Platform: x86_64-w64-mingw32/x64 (64-bit), Running under: Windows Server 2012 R2 x64 (build 9600)
+* travis-ci: R version 3.5.1 (2017-01-27, Travis error?), Platform: x86_64-pc-linux-gnu (64-bit), Running under: Ubuntu 14.04.5 LTS
 
 
 ## Local R CMD check results
-There were no ERRORs, WARNINGs or NOTEs
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 1 notes
 R CMD check succeeded
 
-
 ## win-builder
+checking installed package size ... NOTE
 Status: 1 NOTE
-Possibly mis-spelled words in DESCRIPTION: 
-Econometrics (3:41)
-Wooldridge (4:33, 23:14)
-econometrics (8:45, 22:40)
-wooldridge (10:60, 19:70)
+  installed size is  5.3Mb
+  sub-directories of 1Mb or more:
+    data   4.7Mb
+(CRAN Granted exception on version 1.3.0)
 
 ## travis-ci
 Done. Your build exited with 0.
