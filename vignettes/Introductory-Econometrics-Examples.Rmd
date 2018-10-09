@@ -750,7 +750,7 @@ Hess, Florian. _Using R for Introductory Econometrics_. ISBN: 978-1-523-28513-6,
 
 From the publisher's website:
 
->    This is the first book on applied econometrics using the R system for statistical computing and graphics. It presents hands-on examples for a wide range of econometric models, from classical linear regression models for cross-section, time series or panel data and the common non-linear models of microeconometrics such as logit, probit and tobit models, to recent semiparametric extensions. In addition, it provides a chapter on programming, including simulations, optimization, and an introduction to R tools enabling reproducible econometric research. An R package accompanying this book, AER, is available from the Comprehensive R Archive Network (CRAN) at http://CRAN.R-project.org/package=AER.
+>    This is the first book on applied econometrics using the R system for statistical computing and graphics. It presents hands-on examples for a wide range of econometric models, from classical linear regression models for cross-section, time series or panel data and the common non-linear models of microeconometrics such as logit, probit and tobit models, to recent semiparametric extensions. In addition, it provides a chapter on programming, including simulations, optimization, and an introduction to R tools enabling reproducible econometric research. An R package accompanying this book, AER, is available from the Comprehensive R Archive Network (CRAN) at https://CRAN.R-project.org/package=AER.
 
 Kleiber, Christian  and Achim Zeileis. _Applied Econometrics with R_. ISBN 978-0-387-77316-2,
 Springer-Verlag, 2008, New York. [http://www.springer.com/us/book/9780387773162](http://www.springer.com/us/book/9780387773162)
@@ -765,11 +765,9 @@ Package.” _Journal of Statistical Software_, *27*(2), 1-43. doi:
 
 Marek Hlavac (2018). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2.1. URL: https://CRAN.R-project.org/package=stargazer
 
-
 Christian Kleiber and Achim Zeileis (2008). _Applied Econometrics with R_. New York: Springer-Verlag. ISBN 978-0-387-77316-2. URL: https://CRAN.R-project.org/package=AER
 
-
- Franz X. Mohr (2018). _prais: Prais-Winsten Estimator for AR(1) Serial Correlation._ R package version 1.0.0. URL: https://CRAN.R-project.org/package=prais
+Franz X. Mohr (2018). _prais: Prais-Winsten Estimator for AR(1) Serial Correlation._ R package version 1.0.0. URL: https://CRAN.R-project.org/package=prais
 
 R Core Team (2018). _R: A language and environment for statistical computing_. 
 R Foundation for Statistical Computing, Vienna, Austria. URL: https://www.R-project.org/.
