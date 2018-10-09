@@ -1,7 +1,7 @@
 Package: wooldridge
 Type: Package
 Title: 111 Data Sets from "Introductory Econometrics: A Modern Approach, 6e" by Jeffrey M. Wooldridge
-Version: 1.3.0
+Version: 1.3.1
 Authors@R: c(
     person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea@roosevelt.edu"),
     person("Kennth H.", "Brown", role = c("ctb"), email = "KennethBrown@MissouriState.edu"))
@@ -13,20 +13,16 @@ Description: Students learning both econometrics and R may find the introduction
     compressed to a fraction of their original size and are well documented. 
     Documentation files contain the page numbers of the text where each set is used, 
     the original source, time of publication, and notes suggesting ideas for further 
-    exploratory data analysis and research. To resurrect a data set, simply load 
-    it with the "data("data")" function. In addition, data will also load lazily  
-    by defining it using the "data = data" argument of any model function. Provided 
-    the model syntax is correct, estimates shall spring forth from the otherwise 
-    lifeless abyss of one's R console! If you need brush up on model syntax, a 
-    vignette contains code  and solutions to examples from each chapter of the text. 
-    Note: Data sets are from the 6th edition (Wooldridge 2016, ISBN-13: 978-1-305-27010-7), 
+    exploratory data analysis and research. If one need's to brush-up on model syntax, a 
+    vignette contains R solutions to examples from each chapter of the text. 
+    Data sets are from the 6th edition (Wooldridge 2016, ISBN-13: 978-1-305-27010-7), 
     and are backwards compatible with all versions of the text.
-Depends: R (>= 3.0.0)
+Depends: R (>= 3.2.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Suggests: knitr, rmarkdown, testthat, AER, plm, prais, stargazer
+Suggests: AER, knitr, plm, prais, rmarkdown, stargazer, testthat
 VignetteBuilder: knitr
 URL: https://justinmshea.github.io/wooldridge
 BugReports: https://github.com/JustinMShea/wooldridge/issues
