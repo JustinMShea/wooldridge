@@ -9,6 +9,11 @@ devtools::document()
 # Build a vignette template
 devtools::use_vignette()
 
+# Setup Continuos Integration checks
+devtools::use_travis()
+devtools::use_appveyor()
+#devtools::use_coverage(pkg = ".", type = c("codecov", "coveralls"))
+
 # Remove the extra data_folder folder
 unlink(data_folder, recursive = TRUE)
 
