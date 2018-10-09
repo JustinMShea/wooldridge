@@ -158,7 +158,7 @@ data("crime1")
 
 Estimate the model.
 
-```{r, tidy = TRUE}
+```{r, }
 restricted_model <- lm(narr86 ~ pcnv + ptime86 + qemp86, data = crime1)
 ```
 
@@ -173,7 +173,7 @@ Next, regress `pcnv, ptime86, qemp86, avgsen`, and `tottime`, against the residu
 $$\tilde{\mu} = \beta_1pcnv + \beta_2avgsen + \beta_3tottime + \beta_4ptime86 + \beta_5qemp86$$
 
 
-```{r, tidy = TRUE}
+```{r, }
 LM_u_model <- lm(restricted_model_u ~ pcnv + ptime86 + qemp86 + avgsen + tottime, data = crime1)
 summary(LM_u_model)$r.square
 ```
@@ -234,7 +234,7 @@ Data from _Hedonic Housing Prices and the Demand for Clean Air_, by Harrison, D.
 
 Estimate the coefficient with the usual `lm` regression model but this time, standardized coefficients by wrapping each variable with R's `scale` function:
 
-```{r, tidy = TRUE}
+```{r, }
 housing_standard <- lm(scale(price)~0+scale(nox)+scale(crime)+scale(rooms)+scale(dist) + scale(stratio), data = hprice2)
 ```
 
@@ -256,7 +256,7 @@ housing_interactive <- lm(lprice ~ lnox + log(dist) + rooms+I(rooms^2) + stratio
 
 Compare the results with the model from `example 6.1`.
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",housing_standard, housing_interactive, single.row = TRUE, header = FALSE)
 ```
 
@@ -283,11 +283,11 @@ $$\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \be
 
 Estimate the coefficients of the above linear model on the `hprice` data set.
 
-```{r, tidy=TRUE}
+```{r}
 housing_qualitative <- lm(lprice ~ llotsize + lsqrft + bdrms + colonial, data = hprice1)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",housing_qualitative,  single.row = TRUE, header = FALSE)
 ```
 
@@ -322,7 +322,7 @@ GPA_WLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)
 
 Compare the OLS and WLS model in the table below:
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE)
 ```
 
@@ -348,7 +348,7 @@ all_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem)
 
 Plotting the data reveals the outlier on the far right of the plot, which will skew the results of our model.
 
-```{r, tidy=TRUE}
+```{r}
 plot_title <- "FIGURE 9.1: Scatterplot of R&D intensity against firm sales"
 x_axis <- "firm sales (in millions of dollars)"
 y_axis <- "R&D as a percentage of sales"
@@ -365,7 +365,7 @@ smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem,
 
 The table below compares the results of both models side by side. By removing the outlier firm, $sales$ become a more significant determination of R&D expenditures.
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",all_rdchem, smallest_rdchem,  single.row = TRUE, header = FALSE)
 ```
 
@@ -386,7 +386,7 @@ data("intdef")
 tbill_model <- lm(i3 ~ inf + def, data = intdef)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE)
 ```
 
@@ -399,18 +399,18 @@ C.M. Krupp and P.S. Pollard (1999), _Market Responses to Antidumpting Laws: Some
 data("barium")
 ?barium
 ```
-```{r, tidy=TRUE}
+```{r}
 barium_imports <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 ```
 
 Estimate a new model, `barium_seasonal` which accounts for seasonality by adding dummy variables contained in the data. Compute the `anova` between the two models.
 
-```{r, tidy=TRUE}
+```{r}
 barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6 + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec, data = barium)
 barium_anova <- anova(barium_imports, barium_seasonal)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",barium_imports, barium_seasonal,  single.row = TRUE, header = FALSE)
 
 stargazer(type = "html",barium_anova,  single.row = TRUE, header = FALSE)
@@ -438,7 +438,7 @@ wage_time <- lm(lhrwage ~ loutphr + t, data = earns)
 wage_diff <- lm(diff(lhrwage) ~ diff(loutphr), data = earns)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",wage_time, wage_diff,  single.row = TRUE, header = FALSE)
 ```
 
@@ -449,20 +449,20 @@ stargazer(type = "html",wage_time, wage_diff,  single.row = TRUE, header = FALSE
 
 **`Example 12.4`: Prais-Winsten Estimation in the Event Study**
 
-```{r, tidy=TRUE}
+```{r}
 data("barium")
 barium_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 ```
 
 
-Load the `prais` package, use the `prais.winsten` function to estimate.
+Load the `prais` package, use the `prais_winsten` function to estimate.
 
-```{r, tidy=TRUE}
+```{r}
 library(prais)
-barium_prais_winsten <- prais.winsten(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
+barium_prais_winsten <- prais_winsten(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html", barium_model, single.row = TRUE, header = FALSE)
 ```
 
@@ -494,7 +494,7 @@ $$\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t$$
 return_mu <- residuals(return_AR1)
 mu2_hat_model <- lm(return_mu^2 ~ return_1, data = return_AR1$model)
 ```
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",return_AR1, mu2_hat_model,  single.row = TRUE, header = FALSE)
 ```
 
@@ -514,7 +514,7 @@ mu2_hat_1 <- return_mu[-NROW(return_mu)]^2
 arch_model <- lm(mu2_hat ~ mu2_hat_1)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",arch_model, single.row = TRUE, header = FALSE)
 ```
 
@@ -536,7 +536,7 @@ data("traffic1")
 DD_model <- lm(cdthrte ~ copen + cadmn, data = traffic1)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",DD_model,  single.row = TRUE, header = FALSE)
 ```
 
@@ -548,14 +548,14 @@ stargazer(type = "html",DD_model,  single.row = TRUE, header = FALSE)
 
 In this section, we will estimate a linear panel modeg using the `plm` function from the `plm: Linear Models for Panel Data` package. See the bibliography for more information.
 
-```{r, tidy=TRUE, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE}
 library(plm)
 data("jtrain")
 scrap_panel <- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain,
             index = c('fcode','year'), model = 'within', effect ='individual')
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",scrap_panel,  single.row = TRUE, header = FALSE)
 ```
 
@@ -593,7 +593,7 @@ library("AER")
 wage_educ_IV <- ivreg(lwage ~ educ | fatheduc, data = mroz)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",wage_educ_model, fatheduc_model, wage_educ_IV, single.row = TRUE, header = FALSE)
 ```
 
@@ -623,7 +623,7 @@ library("AER")
 educ_sibs_IV <- ivreg(lwage ~ educ | sibs, data = wage2)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",educ_sibs_model, educ_sibs_IV, wage_educ_IV,  single.row = TRUE, header = FALSE)
 ```
 
@@ -636,12 +636,12 @@ $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_2exper + \beta_3exper^2$$
 
 Use the  `ivreg` function in the `AER (Applied Econometrics with R)` package to estimate.
 
-```{r, tidy=TRUE}
+```{r}
 data("mroz")
 wage_educ_exper_IV <- ivreg(lwage ~ educ + exper + expersq | exper + expersq + motheduc + fatheduc, data = mroz)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE, echo=FALSE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 stargazer(type = "html",wage_educ_exper_IV,  single.row = TRUE, header = FALSE)
 ```
 
@@ -677,44 +677,8 @@ library(AER)
 inflation_IV <- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",open_model, inflation_IV,  single.row = TRUE, header = FALSE)
-```
-
-
-\newpage
-
-
-## Chapter 17: Limited Dependent Variable Models and Sample Selection Corrections
-
-**`Example 17.3:` POISSON REGRESSION FOR NUMBER OF ARRESTS**
-
-```{r, tidy=TRUE, warning=FALSE}
-data("crime1")
-```
-
-Sometimes, when estimating a model with many variables, defining a `model` object containing the formula makes for much cleaner code. 
-
-```{r, tidy=TRUE, warning=FALSE}
-formula <- (narr86 ~ pcnv + avgsen + tottime + ptime86 + qemp86 + inc86 + black + hispan + born60)
-```
-
-Then, pass the `formula` object into the `lm` function, and define the `data` argument as usual. 
-
-```{r, tidy=TRUE, warning=FALSE}
-econ_crime_model <- lm(formula, data = crime1)
-```
-
-To estimate the `poisson` regression, use the general linear model function `glm` and define the `family` argument as `poisson`.
-
-```{r, tidy=TRUE, warning=FALSE}
-econ_crim_poisson <- glm(formula, data = crime1, family = poisson)
-```
-
-Use the `stargazer` package to easily compare diagnostic tables of both models.
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALSE)
 ```
 
 
@@ -795,36 +759,29 @@ Springer-Verlag, 2008, New York. [http://www.springer.com/us/book/9780387773162]
 
 ## Bibliography
 
-Yves Croissant, Giovanni Millo (2008). _Panel Data Econometrics in R: The plm Package_. Journal of Statistical Software 27(2). URL www.jstatsoft.org/v27/i02/.
+Croissant Y, Millo G (2008). "Panel Data Econometrics in R: The plm
+Package.” _Journal of Statistical Software_, *27*(2), 1-43. doi:
+10.18637/jss.v027.i02 (URL: http://doi.org/10.18637/jss.v027.i02).
+
+Marek Hlavac (2018). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2.1. URL: https://CRAN.R-project.org/package=stargazer
 
 
-Marek Hlavac (2015). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2. https://CRAN.R-project.org/package=stargazer
+Christian Kleiber and Achim Zeileis (2008). _Applied Econometrics with R_. New York: Springer-Verlag. ISBN 978-0-387-77316-2. URL: https://CRAN.R-project.org/package=AER
 
 
-Christian Kleiber and Achim Zeileis (2008). _Applied Econometrics with R_. New York:
-Springer-Verlag. ISBN 978-0-387-77316-2. URL https://CRAN.R-project.org/package=AER
+ Franz X. Mohr (2018). _prais: Prais-Winsten Estimator for AR(1) Serial Correlation._ R package version 1.0.0. URL: https://CRAN.R-project.org/package=prais
+
+R Core Team (2018). _R: A language and environment for statistical computing_. 
+R Foundation for Statistical Computing, Vienna, Austria. URL: https://www.R-project.org/.
 
 
-Franz Mohr (2015). _prais: Prais-Winsten Estimation Procedure for AR(1) Serial Correlation_. R package version 0.1.1. https://CRAN.R-project.org/package=prais
+Hadley Wickham. testthat: Get Started with Testing. The R Journal, vol. 3, no. 1, pp. 5--10, 2011. URL: https://CRAN.R-project.org/package=testthat
 
 
-R Core Team (2017). _R: A language and environment for statistical computing_. 
-R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+Jeffrey M. Wooldridge (2016). _Introductory Econometrics: A Modern Approach, 6th edition_. ISBN-13: 978-1-305-27010-7. Mason, Ohio :South-Western Cengage Learning. 
 
+Yihui Xie (2019). _knitr: A General-Purpose Package for Dynamic Report Generation in R_. R package version 1.20. https://CRAN.R-project.org/package=knitr
 
-Hadley Wickham and Winston Chang (2016). _devtools: Tools to Make Developing R Packages Easier_. R package version 1.12.0. https://CRAN.R-project.org/package=devtools
-
-
-Hadley Wickham. _testthat: Get Started with Testing_. R package version 1.0.2. https://CRAN.R-project.org/package=testthat
-
-
-Jeffrey M. Wooldridge (2013). _Introductory Econometrics: A Modern Approach_. 
-Mason, Ohio :South-Western Cengage Learning.
-
-
-Yihui Xie (2017). _knitr: A General-Purpose Package for Dynamic Report Generation in R_. R package version 1.16. https://CRAN.R-project.org/package=knitr
-
- 
 
 
 
