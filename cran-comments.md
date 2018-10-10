@@ -5,9 +5,13 @@
 * AppVeyor: 3.5.1 Patched (2018-10-07 r75413), Platform: x86_64-w64-mingw32/x64 (64-bit), Running under: Windows Server 2012 R2 x64 (build 9600)
 * travis-ci: R version 3.5.1 (2017-01-27, Travis error?), Platform: x86_64-pc-linux-gnu (64-bit), Running under: Ubuntu 14.04.5 LTS
 
-
 ## Local R CMD check results
-0 errors | 0 warnings | 1 notes
+Checking installed package size ... NOTE
+  installed size is  5.3Mb
+  sub-directories of 1Mb or more:
+    data   4.7Mb
+R CMD check results
+0 errors | 0 warnings | 1 note
 R CMD check succeeded
 
 ## win-builder
@@ -16,7 +20,7 @@ Status: 1 NOTE
   installed size is  5.3Mb
   sub-directories of 1Mb or more:
     data   4.7Mb
-(CRAN Granted exception on version 1.3.0)
+(CRAN granted previos exception on version 1.3.0)
 
 ## travis-ci
 Done. Your build exited with 0.

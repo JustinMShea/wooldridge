@@ -3,12 +3,12 @@ title: "NEWS"
 output: github_document
 ---
 
-# wooldridge 1.3.1
 
+# wooldridge 1.3.1
 
 Updated vignette to reflect breaking changes to the *prais* package api in which the function *prais.winsten* became *prais_winsten*. Minor changes in DESCRIPTION file to content. Also, bumped R dependency up to *R (>= 3.2.0)* to bring this package inline with the maximum dependency of its dependent packages (prais).
 
-Updated vignette to remove *tidy = TRUE* markdown chunk parameters as breaking changes appear to have been made and, which now require the installion of a seperate package. I like to keep dependencies to a minimal for this reason.
+Updated vignette to add new graphs through chapter 7. Also, remove *tidy = TRUE* markdown chunk parameters as breaking changes appear to have been made, which now require the installion of a seperate package.
 
 Removed chapter 17 examples for now, as *glm(formula, family = poisson, cata=crime1)* is outputing an error which requires deeper exploration.
 
