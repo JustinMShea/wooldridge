@@ -19,7 +19,6 @@ This vignette contains examples from every chapter of _Introductory Econometrics
 
 In addition, the **Appendix** cites good sources on using **R** for econometrics. 
 
-
 Now, install and load the `wooldridge` package and lets get started!
 
 ```{r, echo = TRUE, eval = FALSE, warning=FALSE}
@@ -40,7 +39,7 @@ library(knitr)
 
 ## Chapter 2: The Simple Regression Model
 
-###**`Example 2.10:` A Log Wage Equation**
+### **`Example 2.10:` A Log Wage Equation**
 
 Load the `wage1` data and check out the documentation.
 
@@ -58,9 +57,10 @@ The documentation indicates these are data from the 1976 Current Population Surv
 
 First, make a scatter-plot of the two variables and look for possible patterns in the relationship between them.
 
-```{r, tidy=TRUE}
-plot(y = wage1$wage, x = jitter(wage1$educ), col = "darkgreen", pch = 21, bg = "lightgrey",     
-     cex=1, xaxt="n", frame = FALSE, main = "Wages vs. Education, 1976", 
+
+```{r, echo=FALSE}
+plot(y = wage1$wage, x = wage1$educ, col = "darkgreen", pch = 21, bg = "lightgrey",     
+     cex=1.25, xaxt="n", frame = FALSE, main = "Wages vs. Education, 1976", 
      xlab = "years of education", ylab = "Hourly wages")
 axis(side = 1, at = c(0,6,12,18))
 rug(wage1$wage, side=2, col="darkgreen")
@@ -92,9 +92,10 @@ stargazer(type = "html", log_wage_model, single.row = TRUE, header = FALSE, digi
 Plot the $log($`wage`$)$ vs `educ`, adding a line representing the least squares
 fit.
 
-```{r, tidy=TRUE}
-plot(y = wage1$lwage, x = jitter(wage1$educ), main = "A Log Wage Equation", 
-     col = "darkgreen", pch = 21, bg = "lightgrey", cex=1,
+
+```{r, echo=FALSE}
+plot(y = wage1$lwage, x = wage1$educ, main = "A Log Wage Equation", 
+     col = "darkgreen", pch = 21, bg = "lightgrey", cex=1.25,
      xlab = "years of education", ylab = "log of average hourly wages",
      xaxt="n", frame = FALSE)
 axis(side = 1, at = c(0,6,12,18))
@@ -107,7 +108,7 @@ rug(wage1$lwage, side=2, col="darkgreen")
 
 ## Chapter 3: Multiple Regression Analysis: Estimation
 
-###**`Example 3.2:` Hourly Wage Equation**
+### **`Example 3.2:` Hourly Wage Equation**
 
 Check the documentation for variable information
 
@@ -126,7 +127,7 @@ Check the documentation for variable information
 Plot the variables against `lwage` and compare their distributions
 and slope ($\beta$) of the simple regression lines.
 
-```{r, tidy=TRUE, fig.height=3}
+```{r, fig.height=3, echo=FALSE}
 par(mfrow=c(1,3))
 
 plot(y = wage1$lwage, x = wage1$educ, col="darkgreen", xaxt="n", frame = FALSE, main = "years of education", xlab = "", ylab = "")
@@ -160,13 +161,13 @@ kable(coefficients(hourly_wage_model), digits=4, col.names = "Coefficients", ali
 
 Plot the coefficients, representing percentage impact of each variable on $log($`wage`$)$ for a quick comparison.
 
-```{r}
+```{r, echo=FALSE}
 barplot(sort(100*hourly_wage_model$coefficients[-1]), horiz=TRUE, las=1,
         ylab = " ", main = "Coefficients of Hourly Wage Equation")
 ```
 
 
-```{r, tidy=TRUE, fig.height=3}
+```{r, echo=FALSE, fig.height=3}
 library(visreg)
 par(mfrow=c(1,3))
 
@@ -183,7 +184,7 @@ axis(side = 1, at = c(0,11,22,33,44))
 
 ## Chapter 4: Multiple Regression Analysis: Inference
 
-###**`Example 4.1` Hourly Wage Equation**
+### **`Example 4.1` Hourly Wage Equation**
 
 Using the same model estimated in **`example: 3.2`**, examine and compare the standard errors associated with each coefficient. Like the textbook, these are contained in parenthesis next to each associated coefficient.
 
@@ -212,7 +213,7 @@ summary(hourly_wage_model)$coefficients
 kable(summary(hourly_wage_model)$coefficients, align="l", digits=5)
 ```
 
-```{r, tidy=TRUE, fig.height=8, eval=FALSE, echo=FALSE}
+```{r, fig.height=8, eval=FALSE, echo=FALSE}
 par(mfrow=c(2,2))
 
 plot(y = hourly_wage_model$residuals, x = hourly_wage_model$fitted.values , col="darkgreen", xaxt="n", 
@@ -239,13 +240,13 @@ abline(0, 0, col = "darkblue", lty=2, lwd=2)
 
 Plot the $t$ statistics for a visual comparison:
 
-```{r}
+```{r, echo=FALSE}
 barplot(sort(summary(hourly_wage_model)$coefficients[-1, "t value"]), horiz=TRUE, las=1, 
         ylab = " ", main = "t statistics of Hourly Wage Equation")
 ```
 
 
-###**`Example 4.7` Effect of Job Training on Firm Scrap Rates**
+### **`Example 4.7` Effect of Job Training on Firm Scrap Rates**
 
 Load the `jtrain` data set. 
 
@@ -281,7 +282,7 @@ the `select` argument to return only the variables of interest for this problem.
 
 ```{r}
 jtrain_subset <- subset(jtrain, subset = (year == 1987 & union == 0),
-                          select = c(year, union, lscrap, hrsemp, lsales, lemploy))
+                        select = c(year, union, lscrap, hrsemp, lsales, lemploy))
 ```
 
 Next, test for missing values. One can "eyeball" these with R Studio's `View`
@@ -329,7 +330,7 @@ Now create the linear model regressing `hrsemp`(total hours training/total emplo
 $$lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy$$
 
 
-```{r, tidy=TRUE}
+```{r}
 linear_model <- lm(lscrap ~ hrsemp + lsales + lemploy, data = jtrain_clean)
 ```
 
@@ -346,8 +347,6 @@ stargazer(type = "html", linear_model, single.row = TRUE, header = FALSE, digits
 
 ```{r, echo=FALSE, eval=FALSE}
 #Plot the coefficients, representing the impact of each variable on $log($`scrap`$)$ for a quick comparison. As you can observe, for some variables, the confidence intervals are wider than others.
-
-
 coefficient <- coef(linear_model)[-1]
  confidence <- confint(linear_model, level = 0.95)[-1,]
 
@@ -357,13 +356,12 @@ graph <- drop(barplot(coefficient, ylim = range(c(confidence)),
 arrows(graph, coefficient, graph, confidence[,1], angle=90, length=0.55, col="blue", lwd=2)
 arrows(graph, coefficient, graph, confidence[,2], angle=90, length=0.55, col="blue", lwd=2)
 
-
 ```
 
 
 ## Chapter 5: Multiple Regression Analysis: OLS Asymptotics
 
-###**`Example 5.1:` Housing Prices and Distance From an Incinerator**
+### **`Example 5.1:` Housing Prices and Distance From an Incinerator**
 
 Load the `hprice3` data set.
 
@@ -386,7 +384,6 @@ par(mfrow=c(1,2))
 
 plot(y = hprice3$price, x = hprice3$dist, main = " ", xlab = "Distance to Incinerator in feet", ylab = "Selling Price",  frame = FALSE, pch = 21, bg = "lightgrey")
 abline(lm(price ~ dist, data=hprice3), col = "blue", lwd=2)
-
 ```
 
 
@@ -413,7 +410,7 @@ summary(price_dist_model)
 summary(price_area_model)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",price_dist_model, price_area_model,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -437,12 +434,11 @@ abline(lm(lprice ~ larea, data=hprice3), col = "blue", lwd=2)
 
 
 
-
 \newpage
 
 ## Chapter 6: Multiple Regression: Further Issues
 
-###**`Example 6.1:` Effects of Pollution on Housing Prices, standardized.**
+### **`Example 6.1:` Effects of Pollution on Housing Prices, standardized.**
 
 Load the `hprice2` data and view the documentation.
 
@@ -471,7 +467,7 @@ $$price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \be
 
 Estimate the usual `lm` model.
 
-```{r, tidy = TRUE}
+```{r}
 housing_level <- lm(price ~ nox + crime + rooms + dist + stratio, data = hprice2)
 ```
 
@@ -480,9 +476,10 @@ with R's `scale` function:
 
 $$\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio$$
 
-```{r, tidy = TRUE}
-housing_standardized <- lm(scale(price) ~ 0 + scale(nox) + scale(crime) + 
-                           scale(rooms) + scale(dist) + scale(stratio), data = hprice2)
+
+
+```{r}
+housing_standardized <- lm(scale(price) ~ 0 + scale(nox) + scale(crime) + scale(rooms) + scale(dist) + scale(stratio), data = hprice2)
 ```
 
 Compare results, and observe that while the coefficients are much easier to compare and contrast with the new model, the **$R^2$** statistic remains identical.
@@ -499,12 +496,12 @@ stargazer(type = "html",housing_level, housing_standardized,  single.row = TRUE,
 
 \newpage
 
-###**`Example 6.2:` Effects of Pollution on Housing Prices, Quadratic Interactive Term**
+### **`Example 6.2:` Effects of Pollution on Housing Prices, Quadratic Interactive Term**
 
 Modify the housing model from **`example 4.5`**, adding a quadratic term in _rooms_: 
 
 $$log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu$$
-```{r, tidy=TRUE}
+```{r}
 housing_model_4.5 <- lm(lprice ~ lnox + log(dist) + rooms + stratio, data = hprice2)
 
 housing_model_6.2 <- lm(lprice ~ lnox + log(dist) + rooms + I(rooms^2) + stratio, 
@@ -518,9 +515,9 @@ summary(housing_model_4.5)
 summary(housing_model_6.2)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html", housing_model_4.5, housing_model_6.2, single.row = TRUE, 
-          header = FALSE, digits=5, column.labels = c("Example 4.5", "Example 6.2"))
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+stargazer(type = "html", housing_model_4.5 , housing_model_6.2, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 Estimate the minimum turning point at which the `rooms` interactive term changes
@@ -528,16 +525,30 @@ from negative to positive.
 
 $$x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}$$
 
-```{r, tidy=TRUE}
+```{r}
 beta_1 <- summary(housing_model_6.2)$coefficients["rooms",1] 
 beta_2 <- summary(housing_model_6.2)$coefficients["I(rooms^2)",1]
 turning_point <- abs(beta_1 / (2*beta_2))
 print(turning_point)
 ```
 
-Observe the percent change at various rooms for both the linear model from example 4.5 as well as the quadratic model in example 6.2. 
 
-```{r, tidy=TRUE, fig.show="hold"}
+Compute the percent change across a range of average rooms. Include the smallest, 
+turning point, and largest.
+
+```{r}
+Rooms <- c(min(hprice2$rooms), 4, turning_point, 5, 5.5, 6.45, 7.5, max(hprice2$rooms))
+Percent.Change <- 100*(beta_1 + 2*beta_2*Rooms)
+
+kable(data.frame(Rooms, Percent.Change))
+```
+
+```{r, echo=FALSE}
+from <- min(hprice2$rooms)
+to <- max(hprice2$rooms)
+rooms <- seq(from=from, to =to, by = ((to - from)/(NROW(hprice2)-1)))
+quadratic <- abs(100*summary(housing_model_6.2)$coefficients["rooms",1] + 200*summary(housing_model_6.2)$coefficients["I(rooms^2)",1]*rooms)
+
 Avg.Rooms <- c(min(hprice2$rooms), 4, turning_point, 5.5, 6.4216564, 7.5, max(hprice2$rooms))
 Rooms.quadratic <-  100*(beta_1 + 2*beta_2*Avg.Rooms)
 Rooms.linear <- 100*rep(summary(housing_model_4.5)$coefficients["rooms",1], length(Avg.Rooms))
@@ -558,11 +569,14 @@ legend(3.56, 50, legend=c("Example 6.2: Quadratic", "Example 4.5: Linear",
 ```
 
 
+
 Observe the difference by graphing the log(selling price) against the number of rooms, 
 superimposing the linear and quadratic models for comparison. The blue 
 vertical line represents the quadratic model turning point of 4.38 rooms.
 
-```{r, tidy=TRUE}
+```{r, echo=FALSE}
+rooms_interaction <- lm(lprice ~ rooms + I(rooms^2), data = hprice2)
+
 par(mfrow=c(1,2))
 
 plot(y = jitter(hprice2$lprice), x = jitter(hprice2$rooms), xaxt= "n" , frame = FALSE, 
@@ -581,12 +595,11 @@ visreg::visreg(housing_model_6.2, "rooms", band=FALSE, axes=FALSE, xlab="Rooms",
 ```
 
 
-
 \newpage
 
 ## Chapter 7: Multiple Regression Analysis with Qualitative Information 
 
-###**`Example 7.4:` Housing Price Regression, Qualitative Binary variable**
+### **`Example 7.4:` Housing Price Regression, Qualitative Binary variable**
 
 This time, use the `hrprice1` data. 
 
@@ -611,7 +624,7 @@ These are homes that sold in the Boston, MA area.
 
 **$colonial:$** =1 if home is colonial style
 
-```{r, tidy=TRUE, fig.height=8, eval=FALSE, echo=FALSE}
+```{r, fig.height=8, eval=FALSE, echo=FALSE}
 par(mfrow=c(2,2))
 
 palette(rainbow(6, alpha = 0.8))
@@ -647,15 +660,16 @@ $$\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \be
 
 Estimate the coefficients of the above linear model on the `hprice` data set.
 
-```{r, tidy=TRUE}
+```{r}
 housing_qualitative <- lm(lprice ~ llotsize + lsqrft + bdrms + colonial, data = hprice1)
 ```
+
 
 ```{r, eval=FALSE}
 summary(housing_qualitative)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",housing_qualitative,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -663,7 +677,7 @@ stargazer(type = "html",housing_qualitative,  single.row = TRUE, header = FALSE,
 
 ## Chapter 8: Heteroskedasticity
 
-###**`Example 8.9:` Determinants of Personal Computer Ownership**
+### **`Example 8.9:` Determinants of Personal Computer Ownership**
 
 $$\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial $$
 Christopher Lemmon, a former MSU undergraduate, collected these data from a survey he took of MSU students in Fall 1994. Load `gpa1` and create a new variable combining the `fathcoll` and `mothcoll`, into `parcoll`. This new column indicates if either parent went to college.
@@ -672,7 +686,6 @@ Christopher Lemmon, a former MSU undergraduate, collected these data from a surv
 data("gpa1")
 
 gpa1$parcoll <- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)
-
 
 GPA_OLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1)
 ```
@@ -687,7 +700,7 @@ GPA_WLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1, weights = 1/weights)
 
 Compare the OLS and WLS model in the table below:
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -696,7 +709,7 @@ stargazer(type = "html",GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE, di
 
 ## Chapter 9: More on Specification and Data Issues
 
-###**`Example 9.8:` R&D Intensity and Firm Size**
+### **`Example 9.8:` R&D Intensity and Firm Size**
 
 
 $$rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu$$
@@ -711,7 +724,7 @@ all_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem)
 
 Plotting the data reveals the outlier on the far right of the plot, which will skew the results of our model.
 
-```{r, tidy=TRUE}
+```{r, echo=FALSE}
 plot_title <- "FIGURE 9.1: Scatterplot of R&D intensity against firm sales"
 x_axis <- "firm sales (in millions of dollars)"
 y_axis <- "R&D as a percentage of sales"
@@ -728,7 +741,8 @@ smallest_rdchem <- lm(rdintens ~ sales + profmarg, data = rdchem,
 
 The table below compares the results of both models side by side. By removing the outlier firm, $sales$ become a more significant determination of R&D expenditures.
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",all_rdchem, smallest_rdchem,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -737,7 +751,7 @@ stargazer(type = "html",all_rdchem, smallest_rdchem,  single.row = TRUE, header 
 
 ## Chapter 10: Basic Regression Analysis with Time Series Data
 
-###**`Example 10.2:` Effects of Inflation and Deficits on Interest Rates**
+### **`Example 10.2:` Effects of Inflation and Deficits on Interest Rates**
 
 $$\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t$$
 Data from the _Economic Report of the President, 2004_, Tables B-64, B-73, and B-79.
@@ -748,32 +762,37 @@ data("intdef")
 tbill_model <- lm(i3 ~ inf + def, data = intdef)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
-###**`Example 10.11:` Seasonal Effects of Antidumping Filings**
+### **`Example 10.11:` Seasonal Effects of Antidumping Filings**
 
 C.M. Krupp and P.S. Pollard (1999), _Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry_, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988. 
 
-```{r, message=FALSE, tidy=TRUE}
+```{r, message=FALSE}
 data("barium")
-
 barium_imports <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
 ```
 
-Estimate a new model, `barium_seasonal` which accounts for seasonality by adding dummy variables contained in the data. 
+Estimate a new model, `barium_seasonal` which accounts for seasonality by adding dummy variables contained in the data. Although it adds a few key strokes, sometimes storing the model syntax in it's own object prior to passing it to the estimation function reads more clearly. Observe this personal preference below.
 
-```{r, tidy=TRUE}
-barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6 + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec, data = barium)
+```{r}
+formula <- lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6 + 
+                     feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec
+
+barium_seasonal <- lm(formula, data = barium)
 ```
 
 Compare both models:
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",barium_imports, barium_seasonal,  single.row = TRUE, header = FALSE, digits=5)
 ```
+
+
 
 Now, compute the `anova` between the two models.
 
@@ -781,7 +800,7 @@ Now, compute the `anova` between the two models.
 barium_anova <- anova(barium_imports, barium_seasonal)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",barium_anova,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -789,7 +808,7 @@ stargazer(type = "html",barium_anova,  single.row = TRUE, header = FALSE, digits
 
 ## Chapter 11: Further Issues in Using OLS with with Time Series Data
 
-###**`Example 11.7:` Wages and Productivity**
+### **`Example 11.7:` Wages and Productivity**
 
 
 $$\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t$$
@@ -805,7 +824,7 @@ wage_time <- lm(lhrwage ~ loutphr + t, data = earns)
 wage_diff <- lm(diff(lhrwage) ~ diff(loutphr), data = earns)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",wage_time, wage_diff,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -814,9 +833,9 @@ stargazer(type = "html",wage_time, wage_diff,  single.row = TRUE, header = FALSE
 
 ## Chapter 12: Serial Correlation and Heteroskedasticiy in Time Series Regressions
 
-###**`Example 12.4`: Prais-Winsten Estimation in the Event Study**
+### **`Example 12.4`: Prais-Winsten Estimation in the Event Study**
 
-```{r, tidy=TRUE}
+```{r}
 data("barium")
 
 barium_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, 
@@ -824,14 +843,15 @@ barium_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec
 ```
 
 
-Load the `prais` package, use the `prais.winsten` function to estimate.
+Load the `prais` package, use the `prais_winsten` function to estimate.
 
-```{r, tidy=TRUE}
+```{r}
 library(prais)
-barium_prais_winsten <- prais.winsten(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
+barium_prais_winsten <- prais_winsten(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, 
+                                      data = barium)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html", barium_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -842,7 +862,7 @@ barium_prais_winsten
 
 \newpage
 
-###**`Example 12.8:` Heteroskedasticity and the Efficient Markets Hypothesis**
+### **`Example 12.8:` Heteroskedasticity and the Efficient Markets Hypothesis**
 
 These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, [www.nyse.com](https://www.nyse.com/data-and-tech). 
 
@@ -863,14 +883,16 @@ $$\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t$$
 return_mu <- residuals(return_AR1)
 mu2_hat_model <- lm(return_mu^2 ~ return_1, data = return_AR1$model)
 ```
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html", return_AR1, mu2_hat_model,  single.row = TRUE, header = FALSE, digits=5)
+
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+stargazer(type = "html",return_AR1, mu2_hat_model,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
 \newpage
 
-###**`Example 12.9:` ARCH in Stock Returns**
+### **`Example 12.9:` ARCH in Stock Returns**
 
 
 $$\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t$$
@@ -878,12 +900,12 @@ $$\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t$$
 We still have `return_mu` in the working environment so we can use it to create $\hat{\mu^2_t}$, (`mu2_hat`) and $\hat{\mu^2_{t-1}}$ (`mu2_hat_1`). Notice the use `R`'s matrix subset operations to perform the lag operation. We drop the first observation of `mu2_hat` and squared the results. Next, we remove the last observation of `mu2_hat_1` using the subtraction operator combined with a call to the `NROW` function on `return_mu`. Now, both contain $688$ observations and we can estimate a standard linear model.
 
 ```{r}
-mu2_hat  <- return_mu[-1]^2
-mu2_hat_1 <- return_mu[-NROW(return_mu)]^2
+  mu2_hat  <- return_mu[-1]^2
+ mu2_hat_1 <- return_mu[-NROW(return_mu)]^2
 arch_model <- lm(mu2_hat ~ mu2_hat_1)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",arch_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -892,7 +914,7 @@ stargazer(type = "html",arch_model, single.row = TRUE, header = FALSE, digits=5)
 
 ## Chapter 13: Pooling Cross Sections across Time: Simple Panel Data Methods
 
-###**`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
+### **`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
 
 Wooldridge collected these data from two sources, the 1992 _Statistical Abstract of the United States_ (Tables 1009, 1012) and _A Digest of State Alcohol-Highway Safety Related Legislation_, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. 
 $$\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}$$
@@ -905,7 +927,7 @@ data("traffic1")
 DD_model <- lm(cdthrte ~ copen + cadmn, data = traffic1)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",DD_model,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -913,18 +935,18 @@ stargazer(type = "html",DD_model,  single.row = TRUE, header = FALSE, digits=5)
 
 ## Chapter 14: Advanced Panel Data Methods
 
-###**`Example 14.1:` Effect of Job Training on Firm Scrap Rates**
+### **`Example 14.1:` Effect of Job Training on Firm Scrap Rates**
 
-In this section, we will estimate a linear panel modeg using the `plm` function from the `plm: Linear Models for Panel Data` package. See the bibliography for more information.
+In this section, we will estimate a linear panel model using the `plm` function from the `plm: Linear Models for Panel Data` package. See the bibliography for more information.
 
-```{r, tidy=TRUE, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE}
 library(plm)
 data("jtrain")
 scrap_panel <- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain,
-            index = c('fcode','year'), model = 'within', effect ='individual')
+                   index = c('fcode','year'), model = 'within', effect ='individual')
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",scrap_panel,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -932,7 +954,7 @@ stargazer(type = "html",scrap_panel,  single.row = TRUE, header = FALSE, digits=
 
 ## Chapter 15: Instrumental Variables Estimation and Two Stage Least Squares
 
-###**`Example 15.1:` Estimating the Return to Education for Married Women**
+### **`Example 15.1:` Estimating the Return to Education for Married Women**
 
 T.A. Mroz (1987), _The Sensitivity of an Empirical Model of Married Women's Hours of Work to Economic and Statistical Assumptions_, Econometrica 55, 765-799. Professor Ernst R. Berndt, of MIT, kindly provided the data, which he obtained from Professor Mroz.
 
@@ -962,14 +984,16 @@ library("AER")
 wage_educ_IV <- ivreg(lwage ~ educ | fatheduc, data = mroz)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",wage_educ_model, fatheduc_model, wage_educ_IV, single.row = TRUE, header = FALSE, digits=5)
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+stargazer(type = "html",wage_educ_model, fatheduc_model, wage_educ_IV, 
+          single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
 \newpage
 
-###**`Example 15.2:` Estimating the Return to Education for Men**
+### **`Example 15.2:` Estimating the Return to Education for Men**
 
 Data from M. Blackburn and D. Neumark (1992), _Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials_, Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which Wooldridge uses the data for 1980.
 
@@ -992,25 +1016,28 @@ library("AER")
 educ_sibs_IV <- ivreg(lwage ~ educ | sibs, data = wage2)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",educ_sibs_model, educ_sibs_IV, wage_educ_IV,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 \newpage
 
-###**`Example 15.5:` Return to Education for Working Women**
+### **`Example 15.5:` Return to Education for Working Women**
 
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_2exper + \beta_3exper^2$$
 
 Use the  `ivreg` function in the `AER (Applied Econometrics with R)` package to estimate.
 
-```{r, tidy=TRUE}
+```{r}
 data("mroz")
-wage_educ_exper_IV <- ivreg(lwage ~ educ + exper + expersq | exper + expersq + motheduc + fatheduc, data = mroz)
+wage_educ_exper_IV <- ivreg(lwage ~ educ + exper + expersq | exper + expersq + motheduc + fatheduc, 
+                            data = mroz)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE, echo=FALSE}
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 stargazer(type = "html",wage_educ_exper_IV,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
@@ -1018,14 +1045,14 @@ stargazer(type = "html",wage_educ_exper_IV,  single.row = TRUE, header = FALSE, 
 
 ## Chapter 16: Simultaneous Equations Models
 
-###**`Example 16.4:` INFLATION AND OPENNESS**
+### **`Example 16.4:` INFLATION AND OPENNESS**
 
 Data from D. Romer (1993), _Openness and Inflation: Theory and Evidence_, Quarterly Journal of Economics 108, 869-903. The data are included in the article.
 
 $$inf = \beta_{10} + \alpha_1open + \beta_{11}log(pcinc) + \mu_1$$
 $$open = \beta_{20} + \alpha_2inf + \beta_{21}log(pcinc) + \beta_{22}log(land) + \mu_2$$
 
-###**`Example 16.6:` INFLATION AND OPENNESS**
+### **`Example 16.6:` INFLATION AND OPENNESS**
 
 $$\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)$$
 
@@ -1046,44 +1073,8 @@ library(AER)
 inflation_IV <- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",open_model, inflation_IV,  single.row = TRUE, header = FALSE, digits=5)
-```
-
-
-\newpage
-
-
-## Chapter 17: Limited Dependent Variable Models and Sample Selection Corrections
-
-###**`Example 17.3:` POISSON REGRESSION FOR NUMBER OF ARRESTS**
-
-```{r, tidy=TRUE, warning=FALSE}
-data("crime1")
-```
-
-Sometimes, when estimating a model with many variables, defining a `model` object containing the formula makes for much cleaner code. 
-
-```{r, tidy=TRUE, warning=FALSE}
-formula <- (narr86 ~ pcnv + avgsen + tottime + ptime86 + qemp86 + inc86 + black + hispan + born60)
-```
-
-Then, pass the `formula` object into the `lm` function, and define the `data` argument as usual. 
-
-```{r, tidy=TRUE, warning=FALSE}
-econ_crime_model <- lm(formula, data = crime1)
-```
-
-To estimate the `poisson` regression, use the general linear model function `glm` and define the `family` argument as `poisson`.
-
-```{r, tidy=TRUE, warning=FALSE}
-econ_crim_poisson <- glm(formula, data = crime1, family = poisson)
-```
-
-Use the `stargazer` package to easily compare diagnostic tables of both models.
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, tidy=TRUE}
-stargazer(type = "html",econ_crime_model, econ_crim_poisson,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -1091,7 +1082,7 @@ stargazer(type = "html",econ_crime_model, econ_crim_poisson,  single.row = TRUE,
 
 ## Chapter 18: Advanced Time Series Topics
 
-###**`Example 18.8:` FORECASTING THE U.S. UNEMPLOYMENT RATE**
+### **`Example 18.8:` FORECASTING THE U.S. UNEMPLOYMENT RATE**
 
 Data from _Economic Report of the President, 2004_, Tables B-42 and B-64.
 
@@ -1127,7 +1118,8 @@ Finally, `cbind` or "column bind" both forecasts as well as the year and unemplo
 ```{r, warning=FALSE, message=FALSE, echo=TRUE}
 phillips_test <- subset(phillips, year >= 1997)
 
-AR1_forecast <- predict.lm(unem_AR1, newdata = phillips_test)
+ AR1_forecast <- predict.lm(unem_AR1, newdata = phillips_test)
+ 
 VAR1_forecast <- predict.lm(unem_inf_VAR1, newdata = phillips_test)
 
 kable(cbind(phillips_test[ ,c("year", "unem")], AR1_forecast, VAR1_forecast))
@@ -1140,7 +1132,7 @@ kable(cbind(phillips_test[ ,c("year", "unem")], AR1_forecast, VAR1_forecast))
 # Appendix
 
 
-###Using R for Introductory Econometrics
+### Using R for Introductory Econometrics
 
 This is an excellent open source complimentary text to "Introductory Econometrics" by Jeffrey M. Wooldridge and should be your number one resource. This excerpt from the book's website:
 
@@ -1151,7 +1143,7 @@ Hess, Florian. _Using R for Introductory Econometrics_. ISBN: 978-1-523-28513-6,
 [url: http://www.urfie.net/](http://www.urfie.net/).
 
 
-###Applied Econometrics with R
+### Applied Econometrics with R
 
 From the publisher's website:
 
@@ -1164,36 +1156,28 @@ Springer-Verlag, 2008, New York. [https://www.springer.com/us/book/9780387773162
 
 ## Bibliography
 
-Yves Croissant, Giovanni Millo (2008). _Panel Data Econometrics in R: The plm Package_. Journal of Statistical Software 27(2). URL www.jstatsoft.org/v27/i02/.
+Croissant Y, Millo G (2008). "Panel Data Econometrics in R: The plm
+Package.” _Journal of Statistical Software_, *27*(2), 1-43. doi:
+10.18637/jss.v027.i02 (URL: http://doi.org/10.18637/jss.v027.i02).
 
-
-Marek Hlavac (2015). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2. https://CRAN.R-project.org/package=stargazer
-
-
-Christian Kleiber and Achim Zeileis (2008). _Applied Econometrics with R_. New York:
-Springer-Verlag. ISBN 978-0-387-77316-2. URL https://CRAN.R-project.org/package=AER
-
-
-Franz Mohr (2015). _prais: Prais-Winsten Estimation Procedure for AR(1) Serial Correlation_. R package version 0.1.1. https://CRAN.R-project.org/package=prais
-
+Marek Hlavac (2018). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2.1. URL: https://CRAN.R-project.org/package=stargazer
 
 R Core Team (2018). _R: A language and environment for statistical computing_. 
 R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
 
+Christian Kleiber and Achim Zeileis (2008). _Applied Econometrics with R_. New York: Springer-Verlag. ISBN 978-0-387-77316-2. URL: https://CRAN.R-project.org/package=AER
 
-Hadley Wickham and Winston Chang (2016). _devtools: Tools to Make Developing R Packages Easier_. R package version 1.12.0. https://CRAN.R-project.org/package=devtools
+Franz X. Mohr (2018). _prais: Prais-Winsten Estimator for AR(1) Serial Correlation._ R package version 1.0.0. URL: https://CRAN.R-project.org/package=prais
 
+R Core Team (2018). _R: A language and environment for statistical computing_. 
+R Foundation for Statistical Computing, Vienna, Austria. URL: https://www.R-project.org/.
 
-Hadley Wickham. _testthat: Get Started with Testing_. R package version 1.0.2. https://CRAN.R-project.org/package=testthat
+Hadley Wickham. testthat: Get Started with Testing. The R Journal, vol. 3, no. 1, pp. 5--10, 2011. URL: https://CRAN.R-project.org/package=testthat
 
+Jeffrey M. Wooldridge (2016). _Introductory Econometrics: A Modern Approach, 6th edition_. ISBN-13: 978-1-305-27010-7. Mason, Ohio :South-Western Cengage Learning. 
 
-Jeffrey M. Wooldridge (2016). _Introductory Econometrics: A Modern Approach_. 
-Mason, Ohio :South-Western Cengage Learning.
+Yihui Xie (2018). _knitr: A General-Purpose Package for Dynamic Report Generation in R_. R package version 1.20. https://CRAN.R-project.org/package=knitr
 
-
-Yihui Xie (2018). _knitr: A General-Purpose Package for Dynamic Report Generation in R_. R package version 1.16. https://CRAN.R-project.org/package=knitr
-
- 
 
 
 
