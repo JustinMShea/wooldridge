@@ -19,7 +19,7 @@ While the original course companion site provides publicly available data sets f
 ## Installation
 
 
-Install `wooldridge v1.3` directly from The Comprehensive R Archive Network (**CRAN**). The package contains all data sets from the 6th edition and depends on **R >= 3.0.0**.
+Install `wooldridge v1.3` directly from The Comprehensive R Archive Network (**CRAN**). The package contains all data sets from the 6th edition and depends on **R >= 3.2.0**.
 
 
 ```{r}
