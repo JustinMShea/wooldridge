@@ -39,7 +39,7 @@ library(knitr)
 
 ## Chapter 2: The Simple Regression Model
 
-###**`Example 2.10:` A Log Wage Equation**
+### **`Example 2.10:` A Log Wage Equation**
 
 Load the `wage1` data and check out the documentation.
 
@@ -106,7 +106,7 @@ rug(wage1$lwage, side=2, col="darkgreen")
 
 ## Chapter 3: Multiple Regression Analysis: Estimation
 
-###**`Example 3.2:` Hourly Wage Equation**
+### **`Example 3.2:` Hourly Wage Equation**
 
 Check the documentation for variable information
 
@@ -169,7 +169,7 @@ barplot(sort(100*hourly_wage_model$coefficients[-1]), horiz=TRUE, las=1,
 
 ## Chapter 4: Multiple Regression Analysis: Inference
 
-###**`Example 4.1` Hourly Wage Equation**
+### **`Example 4.1` Hourly Wage Equation**
 
 Using the same model estimated in **`example: 3.2`**, examine and compare the standard errors associated with each coefficient. Like the textbook, these are contained in parenthesis next to each associated coefficient.
 
@@ -231,7 +231,7 @@ barplot(sort(summary(hourly_wage_model)$coefficients[-1, "t value"]), horiz=TRUE
 ```
 
 
-###**`Example 4.7` Effect of Job Training on Firm Scrap Rates**
+### **`Example 4.7` Effect of Job Training on Firm Scrap Rates**
 
 Load the `jtrain` data set. 
 
@@ -346,7 +346,7 @@ arrows(graph, coefficient, graph, confidence[,2], angle=90, length=0.55, col="bl
 
 ## Chapter 5: Multiple Regression Analysis: OLS Asymptotics
 
-###**`Example 5.1:` Housing Prices and Distance From an Incinerator**
+### **`Example 5.1:` Housing Prices and Distance From an Incinerator**
 
 Load the `hprice3` data set.
 
@@ -424,7 +424,7 @@ abline(lm(lprice ~ larea, data=hprice3), col = "blue", lwd=2)
 
 ## Chapter 6: Multiple Regression: Further Issues
 
-###**`Example 6.1:` Effects of Pollution on Housing Prices, standardized.**
+### **`Example 6.1:` Effects of Pollution on Housing Prices, standardized.**
 
 Load the `hprice2` data and view the documentation.
 
@@ -481,7 +481,7 @@ stargazer(type = "html",housing_level, housing_standardized,  single.row = TRUE,
 
 \newpage
 
-###**`Example 6.2:` Effects of Pollution on Housing Prices, Quadratic Interactive Term**
+### **`Example 6.2:` Effects of Pollution on Housing Prices, Quadratic Interactive Term**
 
 Modify the housing model from **`example 4.5`**, adding a quadratic term in _rooms_: 
 
@@ -566,7 +566,7 @@ lines(sort(hprice2$rooms), sort(fitted(rooms_interaction)), col = "red", lwd=2.5
 
 ## Chapter 7: Multiple Regression Analysis with Qualitative Information 
 
-###**`Example 7.4:` Housing Price Regression, Qualitative Binary variable**
+### **`Example 7.4:` Housing Price Regression, Qualitative Binary variable**
 
 This time, use the `hrprice1` data. 
 
@@ -644,7 +644,7 @@ stargazer(type = "html",housing_qualitative,  single.row = TRUE, header = FALSE,
 
 ## Chapter 8: Heteroskedasticity
 
-###**`Example 8.9:` Determinants of Personal Computer Ownership**
+### **`Example 8.9:` Determinants of Personal Computer Ownership**
 
 $$\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial $$
 Christopher Lemmon, a former MSU undergraduate, collected these data from a survey he took of MSU students in Fall 1994. Load `gpa1` and create a new variable combining the `fathcoll` and `mothcoll`, into `parcoll`. This new column indicates if either parent went to college.
@@ -677,7 +677,7 @@ stargazer(type = "html",GPA_OLS, GPA_WLS,  single.row = TRUE, header = FALSE, di
 
 ## Chapter 9: More on Specification and Data Issues
 
-###**`Example 9.8:` R&D Intensity and Firm Size**
+### **`Example 9.8:` R&D Intensity and Firm Size**
 
 
 $$rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu$$
@@ -719,7 +719,7 @@ stargazer(type = "html",all_rdchem, smallest_rdchem,  single.row = TRUE, header 
 
 ## Chapter 10: Basic Regression Analysis with Time Series Data
 
-###**`Example 10.2:` Effects of Inflation and Deficits on Interest Rates**
+### **`Example 10.2:` Effects of Inflation and Deficits on Interest Rates**
 
 $$\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t$$
 Data from the _Economic Report of the President, 2004_, Tables B-64, B-73, and B-79.
@@ -736,7 +736,7 @@ stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE, digits=5
 ```
 
 
-###**`Example 10.11:` Seasonal Effects of Antidumping Filings**
+### **`Example 10.11:` Seasonal Effects of Antidumping Filings**
 
 C.M. Krupp and P.S. Pollard (1999), _Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry_, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988. 
 
@@ -773,7 +773,7 @@ stargazer(type = "html",barium_anova,  single.row = TRUE, header = FALSE, digits
 
 ## Chapter 11: Further Issues in Using OLS with with Time Series Data
 
-###**`Example 11.7:` Wages and Productivity**
+### **`Example 11.7:` Wages and Productivity**
 
 
 $$\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t$$
@@ -798,7 +798,7 @@ stargazer(type = "html",wage_time, wage_diff,  single.row = TRUE, header = FALSE
 
 ## Chapter 12: Serial Correlation and Heteroskedasticiy in Time Series Regressions
 
-###**`Example 12.4`: Prais-Winsten Estimation in the Event Study**
+### **`Example 12.4`: Prais-Winsten Estimation in the Event Study**
 
 ```{r}
 data("barium")
@@ -826,7 +826,7 @@ barium_prais_winsten
 
 \newpage
 
-###**`Example 12.8:` Heteroskedasticity and the Efficient Markets Hypothesis**
+### **`Example 12.8:` Heteroskedasticity and the Efficient Markets Hypothesis**
 
 These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, [www.nyse.com](https://www.nyse.com/data-and-tech). 
 
@@ -855,7 +855,7 @@ stargazer(type = "html",return_AR1, mu2_hat_model,  single.row = TRUE, header = 
 
 \newpage
 
-###**`Example 12.9:` ARCH in Stock Returns**
+### **`Example 12.9:` ARCH in Stock Returns**
 
 
 $$\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t$$
@@ -877,7 +877,7 @@ stargazer(type = "html",arch_model, single.row = TRUE, header = FALSE, digits=5)
 
 ## Chapter 13: Pooling Cross Sections across Time: Simple Panel Data Methods
 
-###**`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
+### **`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
 
 Wooldridge collected these data from two sources, the 1992 _Statistical Abstract of the United States_ (Tables 1009, 1012) and _A Digest of State Alcohol-Highway Safety Related Legislation_, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. 
 $$\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}$$
@@ -898,9 +898,9 @@ stargazer(type = "html",DD_model,  single.row = TRUE, header = FALSE, digits=5)
 
 ## Chapter 14: Advanced Panel Data Methods
 
-###**`Example 14.1:` Effect of Job Training on Firm Scrap Rates**
+### **`Example 14.1:` Effect of Job Training on Firm Scrap Rates**
 
-In this section, we will estimate a linear panel modeg using the `plm` function from the `plm: Linear Models for Panel Data` package. See the bibliography for more information.
+In this section, we will estimate a linear panel model using the `plm` function from the `plm: Linear Models for Panel Data` package. See the bibliography for more information.
 
 ```{r, warning=FALSE, message=FALSE}
 library(plm)
@@ -917,7 +917,7 @@ stargazer(type = "html",scrap_panel,  single.row = TRUE, header = FALSE, digits=
 
 ## Chapter 15: Instrumental Variables Estimation and Two Stage Least Squares
 
-###**`Example 15.1:` Estimating the Return to Education for Married Women**
+### **`Example 15.1:` Estimating the Return to Education for Married Women**
 
 T.A. Mroz (1987), _The Sensitivity of an Empirical Model of Married Women's Hours of Work to Economic and Statistical Assumptions_, Econometrica 55, 765-799. Professor Ernst R. Berndt, of MIT, kindly provided the data, which he obtained from Professor Mroz.
 
@@ -955,7 +955,7 @@ stargazer(type = "html",wage_educ_model, fatheduc_model, wage_educ_IV, single.ro
 
 \newpage
 
-###**`Example 15.2:` Estimating the Return to Education for Men**
+### **`Example 15.2:` Estimating the Return to Education for Men**
 
 Data from M. Blackburn and D. Neumark (1992), _Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials_, Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which Wooldridge uses the data for 1980.
 
@@ -985,7 +985,7 @@ stargazer(type = "html",educ_sibs_model, educ_sibs_IV, wage_educ_IV,  single.row
 
 \newpage
 
-###**`Example 15.5:` Return to Education for Working Women**
+### **`Example 15.5:` Return to Education for Working Women**
 
 
 $$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_2exper + \beta_3exper^2$$
@@ -1006,14 +1006,14 @@ stargazer(type = "html",wage_educ_exper_IV,  single.row = TRUE, header = FALSE, 
 
 ## Chapter 16: Simultaneous Equations Models
 
-###**`Example 16.4:` INFLATION AND OPENNESS**
+### **`Example 16.4:` INFLATION AND OPENNESS**
 
 Data from D. Romer (1993), _Openness and Inflation: Theory and Evidence_, Quarterly Journal of Economics 108, 869-903. The data are included in the article.
 
 $$inf = \beta_{10} + \alpha_1open + \beta_{11}log(pcinc) + \mu_1$$
 $$open = \beta_{20} + \alpha_2inf + \beta_{21}log(pcinc) + \beta_{22}log(land) + \mu_2$$
 
-###**`Example 16.6:` INFLATION AND OPENNESS**
+### **`Example 16.6:` INFLATION AND OPENNESS**
 
 $$\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)$$
 
@@ -1043,7 +1043,7 @@ stargazer(type = "html",open_model, inflation_IV,  single.row = TRUE, header = F
 
 ## Chapter 18: Advanced Time Series Topics
 
-###**`Example 18.8:` FORECASTING THE U.S. UNEMPLOYMENT RATE**
+### **`Example 18.8:` FORECASTING THE U.S. UNEMPLOYMENT RATE**
 
 Data from _Economic Report of the President, 2004_, Tables B-42 and B-64.
 
@@ -1092,7 +1092,7 @@ kable(cbind(phillips_test[ ,c("year", "unem")], AR1_forecast, VAR1_forecast))
 # Appendix
 
 
-###Using R for Introductory Econometrics
+### Using R for Introductory Econometrics
 
 This is an excellent open source complimentary text to "Introductory Econometrics" by Jeffrey M. Wooldridge and should be your number one resource. This excerpt from the book's website:
 
@@ -1103,7 +1103,7 @@ Hess, Florian. _Using R for Introductory Econometrics_. ISBN: 978-1-523-28513-6,
 [url: http://www.urfie.net/](http://www.urfie.net/).
 
 
-###Applied Econometrics with R
+### Applied Econometrics with R
 
 From the publisher's website:
 
