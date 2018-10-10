@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>pntsprd � pntsprd • wooldridge</title>
+<title>pntsprd — pntsprd • wooldridge</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,19 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+<meta property="og:title" content="pntsprd — pntsprd" />
+
+<meta property="og:description" content="Wooldridge Source: Collected by Scott Resnick, a former MSU undergraduate, from various newspaper sources. Data loads lazily." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -32,6 +38,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -47,8 +55,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">wooldridge</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">wooldridge</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.3.0</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -73,13 +85,14 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -87,10 +100,12 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>pntsprd</h1>
+    
+    <div class="hidden name"><code>pntsprd.Rd</code></div>
     </div>
 
     
@@ -122,7 +137,7 @@
     
     <h2 class="hasAnchor" id="notes"><a class="anchor" href="#notes"></a>Notes</h2>
 
-    <p>The data are for the 1994-1995 men�s college basketball seasons. The spread is for the day before the game was played. One might collect more recent data and determine whether the spread has become a less accurate predictor of the actual outcome in more recent years. In other words, in the simple regression of the actual score differential on the spread, is the variance larger in more recent years. (We should fully expect the slope coefficient not to be statistically different from one.)</p>
+    <p>The data are for the 1994-1995 men’s college basketball seasons. The spread is for the day before the game was played. One might collect more recent data and determine whether the spread has become a less accurate predictor of the actual outcome in more recent years. In other words, in the simple regression of the actual score differential on the spread, is the variance larger in more recent years. (We should fully expect the slope coefficient not to be statistically different from one.)</p>
 <p>Used in Text: pages 300, 624, 697</p>
     
 
@@ -140,13 +155,7 @@
 #&gt;  $ scrdiff: int  11 8 30 -1 -2 26 7 23 -1 35 ...
 #&gt;  $ sprdcvr: int  1 1 1 0 0 1 0 1 0 1 ...
 #&gt;  $ favwin : int  1 1 1 0 0 1 1 1 0 1 ...
-#&gt;  - attr(*, "datalabel")= chr ""
-#&gt;  - attr(*, "time.stamp")= chr "25 Jun 2011 23:03"
-#&gt;  - attr(*, "formats")= chr  "%9.0g" "%9.0g" "%9.0g" "%9.0g" ...
-#&gt;  - attr(*, "types")= int  252 252 254 251 251 251 251 251 251 251 ...
-#&gt;  - attr(*, "val.labels")= chr  "" "" "" "" ...
-#&gt;  - attr(*, "var.labels")= chr  "favored team's score" "underdog's score" "las vegas spread" "=1 if favored team at home" ...
-#&gt;  - attr(*, "version")= int 10</div></pre>
+#&gt;  - attr(*, "time.stamp")= chr "25 Jun 2011 23:03"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -170,11 +179,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
