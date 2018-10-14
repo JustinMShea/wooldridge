@@ -9,6 +9,7 @@ vignette: >
   %\VignetteIndexEntry{Introductory Econometrics Examples}  
   %\VignetteEngine{knitr::rmarkdown}  
   %\VignetteEncoding{UTF-8}
+bibliography: vignette.bib
 ---
 
 \newpage
@@ -1177,8 +1178,6 @@ Hadley Wickham. testthat: Get Started with Testing. The R Journal, vol. 3, no. 1
 Jeffrey M. Wooldridge (2016). _Introductory Econometrics: A Modern Approach, 6th edition_. ISBN-13: 978-1-305-27010-7. Mason, Ohio :South-Western Cengage Learning. 
 
 Yihui Xie (2018). _knitr: A General-Purpose Package for Dynamic Report Generation in R_. R package version 1.20. https://CRAN.R-project.org/package=knitr
-
-
 
 
 
