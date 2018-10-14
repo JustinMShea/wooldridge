@@ -90,8 +90,8 @@
 <p>This vignette contains examples from every chapter of <em>Introductory Econometrics: A Modern Approach, 6e</em> by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with <strong>R</strong>.</p>
 <p>In addition, the <strong>Appendix</strong> cites good sources on using <strong>R</strong> for econometrics.</p>
 <p>Now, install and load the <code>wooldridge</code> package and lets get started!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">"wooldridge"</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(wooldridge)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"wooldridge"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(wooldridge)</code></pre></div>
 
 </div>
 <div id="chapter-2-the-simple-regression-model" class="section level2">
@@ -102,9 +102,9 @@
 <a href="#example-2-10-a-log-wage-equation" class="anchor"></a><strong><code>Example 2.10:</code> A Log Wage Equation</strong>
 </h3>
 <p>Load the <code>wage1</code> data and check out the documentation.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"wage1"</span>)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">?wage1</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"wage1"</span>)
+
+?wage1</code></pre></div>
 <p>The documentation indicates these are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.</p>
 <p><strong><span class="math inline">\(wage\)</span>:</strong> average hourly earnings</p>
 <p><strong><span class="math inline">\(educ\)</span>:</strong> years of education</p>
@@ -114,9 +114,9 @@
 <p>The example in the text investigates what the <em><strong>percentage</strong></em> change between wages and education might be. So, we must use the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span>.</p>
 <p>Build a linear model to estimate the relationship between the <em>log of wage</em> (<code>lwage</code>) and <em>education</em> (<code>educ</code>).</p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ\]</span></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">log_wage_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> wage1)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">log_wage_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> wage1)</code></pre></div>
 <p>Print the <code>summary</code> of the results.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">summary</span>(log_wage_model)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(log_wage_model)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -232,7 +232,7 @@ F Statistic
 <a href="#example-3-2-hourly-wage-equation" class="anchor"></a><strong><code>Example 3.2:</code> Hourly Wage Equation</strong>
 </h3>
 <p>Check the documentation for variable information</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">?wage1</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><a href="../reference/wage1.html">?wage1</a></code></pre></div>
 <p><strong><span class="math inline">\(lwage\)</span>:</strong> log of the average hourly earnings</p>
 <p><strong><span class="math inline">\(educ\)</span>:</strong> years of education</p>
 <p><strong><span class="math inline">\(exper\)</span>:</strong> years of potential experience</p>
@@ -241,9 +241,9 @@ F Statistic
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
 <p>Estimate the model regressing <em>educ</em>, <em>exper</em>, and <em>tenure</em> against <em>log(wage)</em>.</p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure\]</span></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">hourly_wage_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>tenure, <span class="dt">data =</span> wage1)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hourly_wage_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>tenure, <span class="dt">data =</span> wage1)</code></pre></div>
 <p>Print the estimated model coefficients:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">coefficients</span>(hourly_wage_model)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">coefficients</span>(hourly_wage_model)</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th></th>
@@ -280,7 +280,7 @@ F Statistic
 <a href="#example-4-1-hourly-wage-equation" class="anchor"></a><strong><code>Example 4.1</code> Hourly Wage Equation</strong>
 </h3>
 <p>Using the same model estimated in <strong><code>example: 3.2</code></strong>, examine and compare the standard errors associated with each coefficient. Like the textbook, these are contained in parenthesis next to each associated coefficient.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">summary</span>(hourly_wage_model)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(hourly_wage_model)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -402,7 +402,7 @@ F Statistic
 <p>For the years of experience variable, or <code>exper</code>, use coefficient and Standard Error to compute the <span class="math inline">\(t\)</span> statistic:</p>
 <p><span class="math display">\[t_{exper} = \frac{0.004121}{0.001723} = 2.391\]</span></p>
 <p>Fortunately, <code>R</code> includes <span class="math inline">\(t\)</span> statistics in the <code>summary</code> of model diagnostics.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">summary</span>(hourly_wage_model)<span class="op">$</span>coefficients</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(hourly_wage_model)<span class="op">$</span>coefficients</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th></th>
@@ -450,8 +450,8 @@ F Statistic
 <a href="#example-4-7-effect-of-job-training-on-firm-scrap-rates" class="anchor"></a><strong><code>Example 4.7</code> Effect of Job Training on Firm Scrap Rates</strong>
 </h3>
 <p>Load the <code>jtrain</code> data set.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"jtrain"</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">?jtrain</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"jtrain"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><a href="../reference/jtrain.html">?jtrain</a></code></pre></div>
 <p>From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), <em>Are Training Subsidies Effective? The Michigan Experience</em>, Industrial and Labor Relations Review 46, 625-636. The authors kindly provided the data.</p>
 <p><strong><span class="math inline">\(year:\)</span></strong> 1987, 1988, or 1989</p>
 <p><strong><span class="math inline">\(union:\)</span></strong> =1 if unionized</p>
@@ -460,20 +460,20 @@ F Statistic
 <p><strong><span class="math inline">\(lsales:\)</span></strong> Log(annual sales, $)</p>
 <p><strong><span class="math inline">\(lemploy:\)</span></strong> Log(umber of employees at plant)</p>
 <p>First, use the <code>subset</code> function and it’s argument by the same name to return observations which occurred in <strong>1987</strong> and are not <strong>union</strong>. At the same time, use the <code>select</code> argument to return only the variables of interest for this problem.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">jtrain_subset &lt;-<span class="st"> </span><span class="kw">subset</span>(jtrain, <span class="dt">subset =</span> (year <span class="op">==</span><span class="st"> </span><span class="dv">1987</span> <span class="op">&amp;</span><span class="st"> </span>union <span class="op">==</span><span class="st"> </span><span class="dv">0</span>),</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">                          <span class="dt">select =</span> <span class="kw">c</span>(year, union, lscrap, hrsemp, lsales, lemploy))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">jtrain_subset &lt;-<span class="st"> </span><span class="kw">subset</span>(jtrain, <span class="dt">subset =</span> (year <span class="op">==</span><span class="st"> </span><span class="dv">1987</span> <span class="op">&amp;</span><span class="st"> </span>union <span class="op">==</span><span class="st"> </span><span class="dv">0</span>),
+                          <span class="dt">select =</span> <span class="kw">c</span>(year, union, lscrap, hrsemp, lsales, lemploy))</code></pre></div>
 <p>Next, test for missing values. One can “eyeball” these with R Studio’s <code>View</code> function, but a more precise approach combines the <code>sum</code> and <code>is.na</code> functions to return the total number of observations equal to <code>NA</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">is.na</span>(jtrain_subset))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">is.na</span>(jtrain_subset))</code></pre></div>
 <pre><code>## [1] 156</code></pre>
 <p>While <code>R</code>’s <code>lm</code> function will automatically remove missing <code>NA</code> values, eliminating these manually will produce more clearly proportioned graphs for exploratory analysis. Call the <code>na.omit</code> function to remove all missing values and assign the new <code>data.frame</code> object the name <strong><code>jtrain_clean</code></strong>.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">jtrain_clean &lt;-<span class="st"> </span><span class="kw">na.omit</span>(jtrain_subset)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">jtrain_clean &lt;-<span class="st"> </span><span class="kw">na.omit</span>(jtrain_subset)</code></pre></div>
 <p>Use <code>jtrain_clean</code> to plot the variables of interest against <code>lscrap</code>. Visually observe the respective distributions for each variable, and compare the slope (<span class="math inline">\(\beta\)</span>) of the simple regression lines.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-27-1.png" width="700"></p>
 <p>Now create the linear model regressing <code>hrsemp</code>(total hours training/total employees trained), the <code>lsales</code>(log of annual sales), and <code>lemploy</code>(the log of the number of the employees), against <code>lscrap</code>(the log of the scrape rate).</p>
 <p><span class="math display">\[lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy\]</span></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>hrsemp <span class="op">+</span><span class="st"> </span>lsales <span class="op">+</span><span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_clean)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linear_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lscrap <span class="op">~</span><span class="st"> </span>hrsemp <span class="op">+</span><span class="st"> </span>lsales <span class="op">+</span><span class="st"> </span>lemploy, <span class="dt">data =</span> jtrain_clean)</code></pre></div>
 <p>Finally, print the complete summary diagnostics of the model.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">summary</span>(linear_model)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(linear_model)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -602,7 +602,7 @@ F Statistic
 <a href="#example-5-1-housing-prices-and-distance-from-an-incinerator" class="anchor"></a><strong><code>Example 5.1:</code> Housing Prices and Distance From an Incinerator</strong>
 </h3>
 <p>Load the <code>hprice3</code> data set.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"hprice3"</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"hprice3"</span>)</code></pre></div>
 <p><strong><span class="math inline">\(lprice:\)</span></strong> Log(selling price)</p>
 <p><strong><span class="math inline">\(ldist:\)</span></strong> Log(distance from house to incinerator, feet)</p>
 <p><strong><span class="math inline">\(larea:\)</span></strong> Log(square footage of house)</p>
@@ -610,13 +610,13 @@ F Statistic
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-33-1.png" width="700" style="display: block; margin: auto;"></p>
 <p>Next, model the <span class="math inline">\(log(\)</span><code>price</code><span class="math inline">\()\)</span> against the <span class="math inline">\(log(\)</span><code>dist</code><span class="math inline">\()\)</span> to estimate the percentage relationship between the two.</p>
 <p><span class="math display">\[price = \alpha + \beta_1 dist\]</span></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">price_dist_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>ldist, <span class="dt">data =</span> hprice3)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">price_dist_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>ldist, <span class="dt">data =</span> hprice3)</code></pre></div>
 <p>Create another model that controls for “quality” variables, such as square footage <code>area</code> per house.</p>
 <p><span class="math display">\[price = \alpha + \beta_1 dist + \beta_2 area\]</span></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">price_area_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>ldist <span class="op">+</span><span class="st"> </span>larea, <span class="dt">data =</span> hprice3)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">price_area_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>ldist <span class="op">+</span><span class="st"> </span>larea, <span class="dt">data =</span> hprice3)</code></pre></div>
 <p>Compare the coefficients of both models. Notice that adding <code>area</code> improves the quality of the model, but also reduces the coefficient size of <code>dist</code>.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">summary</span>(price_dist_model)</a>
-<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">summary</span>(price_area_model)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(price_dist_model)
+<span class="kw">summary</span>(price_area_model)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -773,8 +773,8 @@ F Statistic
 <a href="#example-6-1-effects-of-pollution-on-housing-prices-standardized-" class="anchor"></a><strong><code>Example 6.1:</code> Effects of Pollution on Housing Prices, standardized.</strong>
 </h3>
 <p>Load the <code>hprice2</code> data and view the documentation.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"hprice2"</span>)</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2">?hprice2</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"hprice2"</span>)
+?hprice2</code></pre></div>
 <p>Data from <em>Hedonic Housing Prices and the Demand for Clean Air</em>, by Harrison, D. and D.L.Rubinfeld, Journal of Environmental Economics and Management 5, 81-102. Diego Garcia, a former Ph.D. student in economics at MIT, kindly provided these data, which he obtained from the book Regression Diagnostics: Identifying Influential Data and Sources of Collinearity, by D.A. Belsey, E. Kuh, and R. Welsch, 1990. New York: Wiley.</p>
 <p><span class="math inline">\(price\)</span>: median housing price.</p>
 <p><span class="math inline">\(nox\)</span>: Nitrous Oxide concentration; parts per million.</p>
@@ -784,13 +784,13 @@ F Statistic
 <p><span class="math inline">\(stratio\)</span>: average student-teacher ratio of schools in the community.</p>
 <p><span class="math display">\[price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \beta_5stratio + \mu\]</span></p>
 <p>Estimate the usual <code>lm</code> model.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">housing_level &lt;-<span class="st"> </span><span class="kw">lm</span>(price <span class="op">~</span><span class="st"> </span>nox <span class="op">+</span><span class="st"> </span>crime <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span>dist <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_level &lt;-<span class="st"> </span><span class="kw">lm</span>(price <span class="op">~</span><span class="st"> </span>nox <span class="op">+</span><span class="st"> </span>crime <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span>dist <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)</code></pre></div>
 <p>Estimate the same model, but standardized coefficients by wrapping each variable with R’s <code>scale</code> function:</p>
 <p><span class="math display">\[\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio\]</span></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">housing_standardized &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">scale</span>(price) <span class="op">~</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(nox) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(crime) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(rooms) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(dist) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(stratio), <span class="dt">data =</span> hprice2)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_standardized &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">scale</span>(price) <span class="op">~</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(nox) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(crime) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(rooms) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(dist) <span class="op">+</span><span class="st"> </span><span class="kw">scale</span>(stratio), <span class="dt">data =</span> hprice2)</code></pre></div>
 <p>Compare results, and observe</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">summary</span>(housing_level)</a>
-<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="kw">summary</span>(housing_standardized)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(housing_level)
+<span class="kw">summary</span>(housing_standardized)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -1022,13 +1022,13 @@ F Statistic
 </h3>
 <p>Modify the housing model from <strong><code>example 4.5</code></strong>, adding a quadratic term in <em>rooms</em>:</p>
 <p><span class="math display">\[log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu\]</span></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">housing_model_<span class="fl">4.5</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>lnox <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(dist) <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">housing_model_<span class="fl">6.2</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>lnox <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(dist) <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(rooms<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>stratio, </a>
-<a class="sourceLine" id="cb27-4" data-line-number="4">                        <span class="dt">data =</span> hprice2)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_model_<span class="fl">4.5</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>lnox <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(dist) <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span>stratio, <span class="dt">data =</span> hprice2)
+
+housing_model_<span class="fl">6.2</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>lnox <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(dist) <span class="op">+</span><span class="st"> </span>rooms <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(rooms<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>stratio, 
+                        <span class="dt">data =</span> hprice2)</code></pre></div>
 <p>Compare the results with the model from <code>example 6.1</code>.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">summary</span>(housing_model_<span class="fl">4.5</span>)</a>
-<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(housing_model_<span class="fl">4.5</span>)
+<span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -1207,17 +1207,17 @@ F Statistic
 </table>
 <p>Estimate the minimum turning point at which the <code>rooms</code> interactive term changes from negative to positive.</p>
 <p><span class="math display">\[x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}\]</span></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">beta_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)<span class="op">$</span>coefficients[<span class="st">"rooms"</span>,<span class="dv">1</span>] </a>
-<a class="sourceLine" id="cb29-2" data-line-number="2">beta_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)<span class="op">$</span>coefficients[<span class="st">"I(rooms^2)"</span>,<span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb29-3" data-line-number="3">turning_point &lt;-<span class="st"> </span><span class="kw">abs</span>(beta_<span class="dv">1</span> <span class="op">/</span><span class="st"> </span>(<span class="dv">2</span><span class="op">*</span>beta_<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb29-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb29-5" data-line-number="5"><span class="kw">print</span>(turning_point)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">beta_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)<span class="op">$</span>coefficients[<span class="st">"rooms"</span>,<span class="dv">1</span>] 
+beta_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">summary</span>(housing_model_<span class="fl">6.2</span>)<span class="op">$</span>coefficients[<span class="st">"I(rooms^2)"</span>,<span class="dv">1</span>]
+turning_point &lt;-<span class="st"> </span><span class="kw">abs</span>(beta_<span class="dv">1</span> <span class="op">/</span><span class="st"> </span>(<span class="dv">2</span><span class="op">*</span>beta_<span class="dv">2</span>))
+
+<span class="kw">print</span>(turning_point)</code></pre></div>
 <pre><code>## [1] 4.37763</code></pre>
 <p>Compute the percent change across a range of average rooms. Include the smallest, turning point, and largest.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">Rooms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, turning_point, <span class="dv">5</span>, <span class="fl">5.5</span>, <span class="fl">6.45</span>, <span class="fl">7.5</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms))</a>
-<a class="sourceLine" id="cb31-2" data-line-number="2">Percent.Change &lt;-<span class="st"> </span><span class="dv">100</span><span class="op">*</span>(beta_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">*</span>beta_<span class="dv">2</span><span class="op">*</span>Rooms)</a>
-<a class="sourceLine" id="cb31-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="kw">kable</span>(<span class="kw">data.frame</span>(Rooms, Percent.Change))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Rooms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">min</span>(hprice2<span class="op">$</span>rooms), <span class="dv">4</span>, turning_point, <span class="dv">5</span>, <span class="fl">5.5</span>, <span class="fl">6.45</span>, <span class="fl">7.5</span>, <span class="kw">max</span>(hprice2<span class="op">$</span>rooms))
+Percent.Change &lt;-<span class="st"> </span><span class="dv">100</span><span class="op">*</span>(beta_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">*</span>beta_<span class="dv">2</span><span class="op">*</span>Rooms)
+
+<span class="kw">kable</span>(<span class="kw">data.frame</span>(Rooms, Percent.Change))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Rooms</th>
@@ -1271,8 +1271,8 @@ F Statistic
 <a href="#example-7-4-housing-price-regression-qualitative-binary-variable" class="anchor"></a><strong><code>Example 7.4:</code> Housing Price Regression, Qualitative Binary variable</strong>
 </h3>
 <p>This time, use the <code>hrprice1</code> data.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"hprice1"</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">?hprice1</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"hprice1"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><a href="../reference/hprice1.html">?hprice1</a></code></pre></div>
 <p>Data collected from the real estate pages of the Boston Globe during 1990. These are homes that sold in the Boston, MA area.</p>
 <p><strong><span class="math inline">\(lprice:\)</span></strong> Log(house price, $1000s)</p>
 <p><strong><span class="math inline">\(llotsize:\)</span></strong> Log(size of lot in square feet)</p>
@@ -1281,8 +1281,8 @@ F Statistic
 <p><strong><span class="math inline">\(colonial:\)</span></strong> =1 if home is colonial style</p>
 <p><span class="math display">\[\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \beta_3bdrms + \beta_4colonial \]</span></p>
 <p>Estimate the coefficients of the above linear model on the <code>hprice</code> data set.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">housing_qualitative &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>llotsize <span class="op">+</span><span class="st"> </span>lsqrft <span class="op">+</span><span class="st"> </span>bdrms <span class="op">+</span><span class="st"> </span>colonial, <span class="dt">data =</span> hprice1)</a></code></pre></div>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">summary</span>(housing_qualitative)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">housing_qualitative &lt;-<span class="st"> </span><span class="kw">lm</span>(lprice <span class="op">~</span><span class="st"> </span>llotsize <span class="op">+</span><span class="st"> </span>lsqrft <span class="op">+</span><span class="st"> </span>bdrms <span class="op">+</span><span class="st"> </span>colonial, <span class="dt">data =</span> hprice1)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(housing_qualitative)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -1419,16 +1419,16 @@ F Statistic
 <a href="#example-8-9-determinants-of-personal-computer-ownership" class="anchor"></a><strong><code>Example 8.9:</code> Determinants of Personal Computer Ownership</strong>
 </h3>
 <p><span class="math display">\[\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial \]</span> Christopher Lemmon, a former MSU undergraduate, collected these data from a survey he took of MSU students in Fall 1994. Load <code>gpa1</code> and create a new variable combining the <code>fathcoll</code> and <code>mothcoll</code>, into <code>parcoll</code>. This new column indicates if either parent went to college.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"gpa1"</span>)</a>
-<a class="sourceLine" id="cb36-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb36-3" data-line-number="3">gpa1<span class="op">$</span>parcoll &lt;-<span class="st"> </span><span class="kw">as.integer</span>(gpa1<span class="op">$</span>fathcoll<span class="op">==</span><span class="dv">1</span> <span class="op">|</span><span class="st"> </span>gpa1<span class="op">$</span>mothcoll)</a>
-<a class="sourceLine" id="cb36-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb36-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb36-6" data-line-number="6">GPA_OLS &lt;-<span class="st"> </span><span class="kw">lm</span>(PC <span class="op">~</span><span class="st"> </span>hsGPA <span class="op">+</span><span class="st"> </span>ACT <span class="op">+</span><span class="st"> </span>parcoll, <span class="dt">data =</span> gpa1)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"gpa1"</span>)
+
+gpa1<span class="op">$</span>parcoll &lt;-<span class="st"> </span><span class="kw">as.integer</span>(gpa1<span class="op">$</span>fathcoll<span class="op">==</span><span class="dv">1</span> <span class="op">|</span><span class="st"> </span>gpa1<span class="op">$</span>mothcoll)
+
+
+GPA_OLS &lt;-<span class="st"> </span><span class="kw">lm</span>(PC <span class="op">~</span><span class="st"> </span>hsGPA <span class="op">+</span><span class="st"> </span>ACT <span class="op">+</span><span class="st"> </span>parcoll, <span class="dt">data =</span> gpa1)</code></pre></div>
 <p>Calculate the weights and then pass them to the <code>weights</code> argument.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">weights &lt;-<span class="st"> </span>GPA_OLS<span class="op">$</span>fitted.values <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span><span class="op">-</span>GPA_OLS<span class="op">$</span>fitted.values)</a>
-<a class="sourceLine" id="cb37-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb37-3" data-line-number="3">GPA_WLS &lt;-<span class="st"> </span><span class="kw">lm</span>(PC <span class="op">~</span><span class="st"> </span>hsGPA <span class="op">+</span><span class="st"> </span>ACT <span class="op">+</span><span class="st"> </span>parcoll, <span class="dt">data =</span> gpa1, <span class="dt">weights =</span> <span class="dv">1</span><span class="op">/</span>weights)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">weights &lt;-<span class="st"> </span>GPA_OLS<span class="op">$</span>fitted.values <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span><span class="op">-</span>GPA_OLS<span class="op">$</span>fitted.values)
+
+GPA_WLS &lt;-<span class="st"> </span><span class="kw">lm</span>(PC <span class="op">~</span><span class="st"> </span>hsGPA <span class="op">+</span><span class="st"> </span>ACT <span class="op">+</span><span class="st"> </span>parcoll, <span class="dt">data =</span> gpa1, <span class="dt">weights =</span> <span class="dv">1</span><span class="op">/</span>weights)</code></pre></div>
 <p>Compare the OLS and WLS model in the table below:</p>
 <table style="text-align:center" class="table">
 <tr>
@@ -1596,14 +1596,14 @@ F Statistic (df = 3; 137)
 </h3>
 <p><span class="math display">\[rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu\]</span></p>
 <p>From <em>Businessweek R&amp;D Scoreboard</em>, October 25, 1991. Load the data and estimate the model.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"rdchem"</span>)</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb38-3" data-line-number="3">all_rdchem &lt;-<span class="st"> </span><span class="kw">lm</span>(rdintens <span class="op">~</span><span class="st"> </span>sales <span class="op">+</span><span class="st"> </span>profmarg, <span class="dt">data =</span> rdchem)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"rdchem"</span>)
+
+all_rdchem &lt;-<span class="st"> </span><span class="kw">lm</span>(rdintens <span class="op">~</span><span class="st"> </span>sales <span class="op">+</span><span class="st"> </span>profmarg, <span class="dt">data =</span> rdchem)</code></pre></div>
 <p>Plotting the data reveals the outlier on the far right of the plot, which will skew the results of our model.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-61-1.png" width="700"></p>
 <p>So, we can estimate the model without that data point to gain a better understanding of how <code>sales</code> and <code>profmarg</code> describe <code>rdintens</code> for most firms. We can use the <code>subset</code> argument of the linear model function to indicate that we only want to estimate the model using data that is less than the highest sales.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">smallest_rdchem &lt;-<span class="st"> </span><span class="kw">lm</span>(rdintens <span class="op">~</span><span class="st"> </span>sales <span class="op">+</span><span class="st"> </span>profmarg, <span class="dt">data =</span> rdchem, </a>
-<a class="sourceLine" id="cb39-2" data-line-number="2">                      <span class="dt">subset =</span> (sales <span class="op">&lt;</span><span class="st"> </span><span class="kw">max</span>(sales)))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smallest_rdchem &lt;-<span class="st"> </span><span class="kw">lm</span>(rdintens <span class="op">~</span><span class="st"> </span>sales <span class="op">+</span><span class="st"> </span>profmarg, <span class="dt">data =</span> rdchem, 
+                      <span class="dt">subset =</span> (sales <span class="op">&lt;</span><span class="st"> </span><span class="kw">max</span>(sales)))</code></pre></div>
 <p>The table below compares the results of both models side by side. By removing the outlier firm, <span class="math inline">\(sales\)</span> become a more significant determination of R&amp;D expenditures.</p>
 <table style="text-align:center" class="table">
 <tr>
@@ -1759,9 +1759,9 @@ F Statistic
 <a href="#example-10-2-effects-of-inflation-and-deficits-on-interest-rates" class="anchor"></a><strong><code>Example 10.2:</code> Effects of Inflation and Deficits on Interest Rates</strong>
 </h3>
 <p><span class="math display">\[\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t\]</span> Data from the <em>Economic Report of the President, 2004</em>, Tables B-64, B-73, and B-79.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"intdef"</span>)</a>
-<a class="sourceLine" id="cb40-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb40-3" data-line-number="3">tbill_model &lt;-<span class="st"> </span><span class="kw">lm</span>(i3 <span class="op">~</span><span class="st"> </span>inf <span class="op">+</span><span class="st"> </span>def, <span class="dt">data =</span> intdef)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"intdef"</span>)
+
+tbill_model &lt;-<span class="st"> </span><span class="kw">lm</span>(i3 <span class="op">~</span><span class="st"> </span>inf <span class="op">+</span><span class="st"> </span>def, <span class="dt">data =</span> intdef)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -1878,10 +1878,10 @@ F Statistic
 <a href="#example-10-11-seasonal-effects-of-antidumping-filings" class="anchor"></a><strong><code>Example 10.11:</code> Seasonal Effects of Antidumping Filings</strong>
 </h3>
 <p>C.M. Krupp and P.S. Pollard (1999), <em>Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry</em>, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"barium"</span>)</a>
-<a class="sourceLine" id="cb41-2" data-line-number="2">barium_imports &lt;-<span class="st"> </span><span class="kw">lm</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6, <span class="dt">data =</span> barium)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"barium"</span>)
+barium_imports &lt;-<span class="st"> </span><span class="kw">lm</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6, <span class="dt">data =</span> barium)</code></pre></div>
 <p>Estimate a new model, <code>barium_seasonal</code> which accounts for seasonality by adding dummy variables contained in the data.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">barium_seasonal &lt;-<span class="st"> </span><span class="kw">lm</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6 <span class="op">+</span><span class="st"> </span>feb <span class="op">+</span><span class="st"> </span>mar <span class="op">+</span><span class="st"> </span>apr <span class="op">+</span><span class="st"> </span>may <span class="op">+</span><span class="st"> </span>jun <span class="op">+</span><span class="st"> </span>jul <span class="op">+</span><span class="st"> </span>aug <span class="op">+</span><span class="st"> </span>sep <span class="op">+</span><span class="st"> </span>oct <span class="op">+</span><span class="st"> </span>nov <span class="op">+</span><span class="st"> </span>dec, <span class="dt">data =</span> barium)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">barium_seasonal &lt;-<span class="st"> </span><span class="kw">lm</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6 <span class="op">+</span><span class="st"> </span>feb <span class="op">+</span><span class="st"> </span>mar <span class="op">+</span><span class="st"> </span>apr <span class="op">+</span><span class="st"> </span>may <span class="op">+</span><span class="st"> </span>jun <span class="op">+</span><span class="st"> </span>jul <span class="op">+</span><span class="st"> </span>aug <span class="op">+</span><span class="st"> </span>sep <span class="op">+</span><span class="st"> </span>oct <span class="op">+</span><span class="st"> </span>nov <span class="op">+</span><span class="st"> </span>dec, <span class="dt">data =</span> barium)</code></pre></div>
 <p>Compare both models:</p>
 <table style="text-align:center" class="table">
 <tr>
@@ -2182,7 +2182,7 @@ F Statistic
 </tr>
 </table>
 <p>Now, compute the <code>anova</code> between the two models.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1">barium_anova &lt;-<span class="st"> </span><span class="kw">anova</span>(barium_imports, barium_seasonal)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">barium_anova &lt;-<span class="st"> </span><span class="kw">anova</span>(barium_imports, barium_seasonal)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="8" style="border-bottom: 1px solid black">
@@ -2385,10 +2385,10 @@ Pr(&gt; F)
 <a href="#example-11-7-wages-and-productivity" class="anchor"></a><strong><code>Example 11.7:</code> Wages and Productivity</strong>
 </h3>
 <p><span class="math display">\[\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t\]</span> Data from the <em>Economic Report of the President, 1989</em>, Table B-47. The data are for the non-farm business sector.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"earns"</span>)</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb44-3" data-line-number="3">wage_time &lt;-<span class="st"> </span><span class="kw">lm</span>(lhrwage <span class="op">~</span><span class="st"> </span>loutphr <span class="op">+</span><span class="st"> </span>t, <span class="dt">data =</span> earns)</a></code></pre></div>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">wage_diff &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">diff</span>(lhrwage) <span class="op">~</span><span class="st"> </span><span class="kw">diff</span>(loutphr), <span class="dt">data =</span> earns)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"earns"</span>)
+
+wage_time &lt;-<span class="st"> </span><span class="kw">lm</span>(lhrwage <span class="op">~</span><span class="st"> </span>loutphr <span class="op">+</span><span class="st"> </span>t, <span class="dt">data =</span> earns)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wage_diff &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">diff</span>(lhrwage) <span class="op">~</span><span class="st"> </span><span class="kw">diff</span>(loutphr), <span class="dt">data =</span> earns)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -2553,13 +2553,13 @@ F Statistic
 <h3 class="hasAnchor">
 <a href="#example-12-4-prais-winsten-estimation-in-the-event-study" class="anchor"></a><strong><code>Example 12.4</code>: Prais-Winsten Estimation in the Event Study</strong>
 </h3>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"barium"</span>)</a>
-<a class="sourceLine" id="cb46-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb46-3" data-line-number="3">barium_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6, </a>
-<a class="sourceLine" id="cb46-4" data-line-number="4">                   <span class="dt">data =</span> barium)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"barium"</span>)
+
+barium_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6, 
+                   <span class="dt">data =</span> barium)</code></pre></div>
 <p>Load the <code>prais</code> package, use the <code>prais_winsten</code> function to estimate.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">library</span>(prais)</a>
-<a class="sourceLine" id="cb47-2" data-line-number="2">barium_prais_winsten &lt;-<span class="st"> </span><span class="kw">prais_winsten</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6, <span class="dt">data =</span> barium)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(prais)
+barium_prais_winsten &lt;-<span class="st"> </span><span class="kw">prais_winsten</span>(lchnimp <span class="op">~</span><span class="st"> </span>lchempi <span class="op">+</span><span class="st"> </span>lgas <span class="op">+</span><span class="st"> </span>lrtwex <span class="op">+</span><span class="st"> </span>befile6 <span class="op">+</span><span class="st"> </span>affile6 <span class="op">+</span><span class="st"> </span>afdec6, <span class="dt">data =</span> barium)</code></pre></div>
 <pre><code>## Iteration 0: rho = 0
 ## Iteration 1: rho = 0.2708
 ## Iteration 2: rho = 0.291
@@ -2710,7 +2710,7 @@ F Statistic
 </td>
 </tr>
 </table>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">barium_prais_winsten</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">barium_prais_winsten</code></pre></div>
 <pre><code>## 
 ## Call:
 ## prais_winsten(formula = lchnimp ~ lchempi + lgas + lrtwex + befile6 + 
@@ -2731,12 +2731,12 @@ F Statistic
 </h3>
 <p>These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, <a href="https://www.nyse.com/data-and-tech">www.nyse.com</a>.</p>
 <p><span class="math display">\[return_t = \beta_0 + \beta_1return_{t-1} + \mu_t\]</span></p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"nyse"</span>)</a>
-<a class="sourceLine" id="cb51-2" data-line-number="2">?nyse </a></code></pre></div>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">return_AR1 &lt;-<span class="kw">lm</span>(return <span class="op">~</span><span class="st"> </span>return_<span class="dv">1</span>, <span class="dt">data =</span> nyse)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"nyse"</span>)
+?nyse </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">return_AR1 &lt;-<span class="kw">lm</span>(return <span class="op">~</span><span class="st"> </span>return_<span class="dv">1</span>, <span class="dt">data =</span> nyse)</code></pre></div>
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t\]</span></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">return_mu &lt;-<span class="st"> </span><span class="kw">residuals</span>(return_AR1)</a>
-<a class="sourceLine" id="cb53-2" data-line-number="2">mu2_hat_model &lt;-<span class="st"> </span><span class="kw">lm</span>(return_mu<span class="op">^</span><span class="dv">2</span> <span class="op">~</span><span class="st"> </span>return_<span class="dv">1</span>, <span class="dt">data =</span> return_AR1<span class="op">$</span>model)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">return_mu &lt;-<span class="st"> </span><span class="kw">residuals</span>(return_AR1)
+mu2_hat_model &lt;-<span class="st"> </span><span class="kw">lm</span>(return_mu<span class="op">^</span><span class="dv">2</span> <span class="op">~</span><span class="st"> </span>return_<span class="dv">1</span>, <span class="dt">data =</span> return_AR1<span class="op">$</span>model)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -2880,9 +2880,9 @@ F Statistic (df = 1; 687)
 </h3>
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t\]</span></p>
 <p>We still have <code>return_mu</code> in the working environment so we can use it to create <span class="math inline">\(\hat{\mu^2_t}\)</span>, (<code>mu2_hat</code>) and <span class="math inline">\(\hat{\mu^2_{t-1}}\)</span> (<code>mu2_hat_1</code>). Notice the use <code>R</code>’s matrix subset operations to perform the lag operation. We drop the first observation of <code>mu2_hat</code> and squared the results. Next, we remove the last observation of <code>mu2_hat_1</code> using the subtraction operator combined with a call to the <code>NROW</code> function on <code>return_mu</code>. Now, both contain <span class="math inline">\(688\)</span> observations and we can estimate a standard linear model.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">mu2_hat  &lt;-<span class="st"> </span>return_mu[<span class="op">-</span><span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb54-2" data-line-number="2">mu2_hat_<span class="dv">1</span> &lt;-<span class="st"> </span>return_mu[<span class="op">-</span><span class="kw">NROW</span>(return_mu)]<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb54-3" data-line-number="3">arch_model &lt;-<span class="st"> </span><span class="kw">lm</span>(mu2_hat <span class="op">~</span><span class="st"> </span>mu2_hat_<span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu2_hat  &lt;-<span class="st"> </span>return_mu[<span class="op">-</span><span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span>
+mu2_hat_<span class="dv">1</span> &lt;-<span class="st"> </span>return_mu[<span class="op">-</span><span class="kw">NROW</span>(return_mu)]<span class="op">^</span><span class="dv">2</span>
+arch_model &lt;-<span class="st"> </span><span class="kw">lm</span>(mu2_hat <span class="op">~</span><span class="st"> </span>mu2_hat_<span class="dv">1</span>)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -2995,9 +2995,9 @@ F Statistic
 <a href="#example-13-7-effect-of-drunk-driving-laws-on-traffic-fatalities" class="anchor"></a><strong><code>Example 13.7:</code> Effect of Drunk Driving Laws on Traffic Fatalities</strong>
 </h3>
 <p>Wooldridge collected these data from two sources, the 1992 <em>Statistical Abstract of the United States</em> (Tables 1009, 1012) and <em>A Digest of State Alcohol-Highway Safety Related Legislation</em>, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. <span class="math display">\[\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}\]</span></p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"traffic1"</span>)</a>
-<a class="sourceLine" id="cb55-2" data-line-number="2">?traffic1</a></code></pre></div>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">DD_model &lt;-<span class="st"> </span><span class="kw">lm</span>(cdthrte <span class="op">~</span><span class="st"> </span>copen <span class="op">+</span><span class="st"> </span>cadmn, <span class="dt">data =</span> traffic1)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"traffic1"</span>)
+?traffic1</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DD_model &lt;-<span class="st"> </span><span class="kw">lm</span>(cdthrte <span class="op">~</span><span class="st"> </span>copen <span class="op">+</span><span class="st"> </span>cadmn, <span class="dt">data =</span> traffic1)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -3118,10 +3118,10 @@ F Statistic
 <a href="#example-14-1-effect-of-job-training-on-firm-scrap-rates" class="anchor"></a><strong><code>Example 14.1:</code> Effect of Job Training on Firm Scrap Rates</strong>
 </h3>
 <p>In this section, we will estimate a linear panel model using the <code>plm</code> function from the <code>plm: Linear Models for Panel Data</code> package. See the bibliography for more information.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="kw">library</span>(plm)</a>
-<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="kw">data</span>(<span class="st">"jtrain"</span>)</a>
-<a class="sourceLine" id="cb57-3" data-line-number="3">scrap_panel &lt;-<span class="st"> </span><span class="kw">plm</span>(lscrap <span class="op">~</span><span class="st"> </span>d88 <span class="op">+</span><span class="st"> </span>d89 <span class="op">+</span><span class="st"> </span>grant <span class="op">+</span><span class="st"> </span>grant_<span class="dv">1</span>, <span class="dt">data =</span> jtrain,</a>
-<a class="sourceLine" id="cb57-4" data-line-number="4">            <span class="dt">index =</span> <span class="kw">c</span>(<span class="st">'fcode'</span>,<span class="st">'year'</span>), <span class="dt">model =</span> <span class="st">'within'</span>, <span class="dt">effect =</span><span class="st">'individual'</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plm)
+<span class="kw">data</span>(<span class="st">"jtrain"</span>)
+scrap_panel &lt;-<span class="st"> </span><span class="kw">plm</span>(lscrap <span class="op">~</span><span class="st"> </span>d88 <span class="op">+</span><span class="st"> </span>d89 <span class="op">+</span><span class="st"> </span>grant <span class="op">+</span><span class="st"> </span>grant_<span class="dv">1</span>, <span class="dt">data =</span> jtrain,
+            <span class="dt">index =</span> <span class="kw">c</span>(<span class="st">'fcode'</span>,<span class="st">'year'</span>), <span class="dt">model =</span> <span class="st">'within'</span>, <span class="dt">effect =</span><span class="st">'individual'</span>)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -3243,15 +3243,15 @@ F Statistic
 </h3>
 <p>T.A. Mroz (1987), <em>The Sensitivity of an Empirical Model of Married Women’s Hours of Work to Economic and Statistical Assumptions</em>, Econometrica 55, 765-799. Professor Ernst R. Berndt, of MIT, kindly provided the data, which he obtained from Professor Mroz.</p>
 <p><span class="math display">\[log(wage) = \beta_0 + \beta_1educ + \mu\]</span></p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"mroz"</span>)</a>
-<a class="sourceLine" id="cb58-2" data-line-number="2">?mroz</a></code></pre></div>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">wage_educ_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> mroz)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"mroz"</span>)
+?mroz</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wage_educ_model &lt;-<span class="st"> </span><span class="kw">lm</span>(lwage <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> mroz)</code></pre></div>
 <p><span class="math display">\[\widehat{educ} = \beta_0 + \beta_1fatheduc\]</span></p>
 <p>We run the typical linear model, but notice the use of the <code>subset</code> argument. <code>inlf</code> is a binary variable in which a value of 1 means they are “In the Labor Force”. By sub-setting the <code>mroz</code> data.frame by observations in which <code>inlf==1</code>, only working women will be in the sample.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">fatheduc_model &lt;-<span class="st"> </span><span class="kw">lm</span>(educ <span class="op">~</span><span class="st"> </span>fatheduc, <span class="dt">data =</span> mroz, <span class="dt">subset =</span> (inlf<span class="op">==</span><span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fatheduc_model &lt;-<span class="st"> </span><span class="kw">lm</span>(educ <span class="op">~</span><span class="st"> </span>fatheduc, <span class="dt">data =</span> mroz, <span class="dt">subset =</span> (inlf<span class="op">==</span><span class="dv">1</span>))</code></pre></div>
 <p>In this section, we will perform an <strong>Instrumental-Variable Regression</strong>, using the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package. See the bibliography for more information.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">library</span>(<span class="st">"AER"</span>)</a>
-<a class="sourceLine" id="cb61-2" data-line-number="2">wage_educ_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">|</span><span class="st"> </span>fatheduc, <span class="dt">data =</span> mroz)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"AER"</span>)
+wage_educ_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">|</span><span class="st"> </span>fatheduc, <span class="dt">data =</span> mroz)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="4" style="border-bottom: 1px solid black">
@@ -3458,13 +3458,13 @@ F Statistic (df = 1; 426)
 </h3>
 <p>Data from M. Blackburn and D. Neumark (1992), <em>Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials</em>, Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which Wooldridge uses the data for 1980.</p>
 <p><span class="math display">\[\widehat{educ} = \beta_0 + sibs\]</span></p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"wage2"</span>)</a>
-<a class="sourceLine" id="cb62-2" data-line-number="2">?wage2</a></code></pre></div>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">educ_sibs_model &lt;-<span class="st"> </span><span class="kw">lm</span>(educ <span class="op">~</span><span class="st"> </span>sibs, <span class="dt">data =</span> wage2)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"wage2"</span>)
+?wage2</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">educ_sibs_model &lt;-<span class="st"> </span><span class="kw">lm</span>(educ <span class="op">~</span><span class="st"> </span>sibs, <span class="dt">data =</span> wage2)</code></pre></div>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + educ\]</span></p>
 <p>Again, estimate the model using the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">library</span>(<span class="st">"AER"</span>)</a>
-<a class="sourceLine" id="cb64-2" data-line-number="2">educ_sibs_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">|</span><span class="st"> </span>sibs, <span class="dt">data =</span> wage2)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"AER"</span>)
+educ_sibs_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">|</span><span class="st"> </span>sibs, <span class="dt">data =</span> wage2)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="4" style="border-bottom: 1px solid black">
@@ -3661,8 +3661,8 @@ F Statistic
 </h3>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_2exper + \beta_3exper^2\]</span></p>
 <p>Use the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package to estimate.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"mroz"</span>)</a>
-<a class="sourceLine" id="cb65-2" data-line-number="2">wage_educ_exper_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>expersq <span class="op">|</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>expersq <span class="op">+</span><span class="st"> </span>motheduc <span class="op">+</span><span class="st"> </span>fatheduc, <span class="dt">data =</span> mroz)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"mroz"</span>)
+wage_educ_exper_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(lwage <span class="op">~</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>expersq <span class="op">|</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>expersq <span class="op">+</span><span class="st"> </span>motheduc <span class="op">+</span><span class="st"> </span>fatheduc, <span class="dt">data =</span> mroz)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -3790,13 +3790,13 @@ Residual Std. Error
 <a href="#example-16-6-inflation-and-openness" class="anchor"></a><strong><code>Example 16.6:</code> INFLATION AND OPENNESS</strong>
 </h3>
 <p><span class="math display">\[\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)\]</span></p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"openness"</span>)</a>
-<a class="sourceLine" id="cb66-2" data-line-number="2">?openness</a></code></pre></div>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">open_model &lt;-<span class="kw">lm</span>(open <span class="op">~</span><span class="st"> </span>lpcinc <span class="op">+</span><span class="st"> </span>lland, <span class="dt">data =</span> openness)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"openness"</span>)
+?openness</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">open_model &lt;-<span class="kw">lm</span>(open <span class="op">~</span><span class="st"> </span>lpcinc <span class="op">+</span><span class="st"> </span>lland, <span class="dt">data =</span> openness)</code></pre></div>
 <p><span class="math display">\[\widehat{inf} = \beta_0 + \beta_{1}open + \beta_{2}log(pcinc)\]</span></p>
 <p>Use the <code>ivreg</code> function in the <code>AER (Applied Econometrics with R)</code> package to estimate.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="kw">library</span>(AER)</a>
-<a class="sourceLine" id="cb68-2" data-line-number="2">inflation_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(inf <span class="op">~</span><span class="st"> </span>open <span class="op">+</span><span class="st"> </span>lpcinc <span class="op">|</span><span class="st"> </span>lpcinc <span class="op">+</span><span class="st"> </span>lland, <span class="dt">data =</span> openness)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(AER)
+inflation_IV &lt;-<span class="st"> </span><span class="kw">ivreg</span>(inf <span class="op">~</span><span class="st"> </span>open <span class="op">+</span><span class="st"> </span>lpcinc <span class="op">|</span><span class="st"> </span>lpcinc <span class="op">+</span><span class="st"> </span>lland, <span class="dt">data =</span> openness)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -3982,15 +3982,15 @@ F Statistic
 <a href="#example-18-8-forecasting-the-u-s--unemployment-rate" class="anchor"></a><strong><code>Example 18.8:</code> FORECASTING THE U.S. UNEMPLOYMENT RATE</strong>
 </h3>
 <p>Data from <em>Economic Report of the President, 2004</em>, Tables B-42 and B-64.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="kw">data</span>(<span class="st">"phillips"</span>)</a>
-<a class="sourceLine" id="cb69-2" data-line-number="2">?phillips</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"phillips"</span>)
+?phillips</code></pre></div>
 <p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}\]</span></p>
 <p>Estimate the linear model in the usual way and note the use of the <code>subset</code> argument to define data equal to and before the year 1996.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">phillips_train &lt;-<span class="st"> </span><span class="kw">subset</span>(phillips, year <span class="op">&lt;=</span><span class="st"> </span><span class="dv">1996</span>)</a>
-<a class="sourceLine" id="cb70-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb70-3" data-line-number="3">unem_AR1 &lt;-<span class="st"> </span><span class="kw">lm</span>(unem <span class="op">~</span><span class="st"> </span>unem_<span class="dv">1</span>, <span class="dt">data =</span> phillips_train)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">phillips_train &lt;-<span class="st"> </span><span class="kw">subset</span>(phillips, year <span class="op">&lt;=</span><span class="st"> </span><span class="dv">1996</span>)
+
+unem_AR1 &lt;-<span class="st"> </span><span class="kw">lm</span>(unem <span class="op">~</span><span class="st"> </span>unem_<span class="dv">1</span>, <span class="dt">data =</span> phillips_train)</code></pre></div>
 <p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}\]</span></p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">unem_inf_VAR1 &lt;-<span class="st"> </span><span class="kw">lm</span>(unem <span class="op">~</span><span class="st"> </span>unem_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>inf_<span class="dv">1</span>, <span class="dt">data =</span> phillips_train)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">unem_inf_VAR1 &lt;-<span class="st"> </span><span class="kw">lm</span>(unem <span class="op">~</span><span class="st"> </span>unem_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>inf_<span class="dv">1</span>, <span class="dt">data =</span> phillips_train)</code></pre></div>
 <table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -4135,12 +4135,12 @@ F Statistic
 </tr>
 </table>
 <p>Now, use the <code>subset</code> argument to create our testing data set containing observation after 1996. Next, pass the both the model object and the test set to the <code>predict</code> function for both models. Finally, <code>cbind</code> or “column bind” both forecasts as well as the year and unemployment rate of the test set.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1">phillips_test &lt;-<span class="st"> </span><span class="kw">subset</span>(phillips, year <span class="op">&gt;=</span><span class="st"> </span><span class="dv">1997</span>)</a>
-<a class="sourceLine" id="cb72-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb72-3" data-line-number="3">AR1_forecast &lt;-<span class="st"> </span><span class="kw">predict.lm</span>(unem_AR1, <span class="dt">newdata =</span> phillips_test)</a>
-<a class="sourceLine" id="cb72-4" data-line-number="4">VAR1_forecast &lt;-<span class="st"> </span><span class="kw">predict.lm</span>(unem_inf_VAR1, <span class="dt">newdata =</span> phillips_test)</a>
-<a class="sourceLine" id="cb72-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb72-6" data-line-number="6"><span class="kw">kable</span>(<span class="kw">cbind</span>(phillips_test[ ,<span class="kw">c</span>(<span class="st">"year"</span>, <span class="st">"unem"</span>)], AR1_forecast, VAR1_forecast))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">phillips_test &lt;-<span class="st"> </span><span class="kw">subset</span>(phillips, year <span class="op">&gt;=</span><span class="st"> </span><span class="dv">1997</span>)
+
+AR1_forecast &lt;-<span class="st"> </span><span class="kw">predict.lm</span>(unem_AR1, <span class="dt">newdata =</span> phillips_test)
+VAR1_forecast &lt;-<span class="st"> </span><span class="kw">predict.lm</span>(unem_inf_VAR1, <span class="dt">newdata =</span> phillips_test)
+
+<span class="kw">kable</span>(<span class="kw">cbind</span>(phillips_test[ ,<span class="kw">c</span>(<span class="st">"year"</span>, <span class="st">"unem"</span>)], AR1_forecast, VAR1_forecast))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th></th>
