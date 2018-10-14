@@ -19,7 +19,7 @@ While the original course companion site provides publicly available data sets f
 ## Installation
 
 
-Install `wooldridge v1.3` directly from The Comprehensive R Archive Network (**CRAN**). The package contains all data sets from the 6th edition and depends on **R >= 3.2.0**.
+Install directly from The Comprehensive R Archive Network (**CRAN**). All data sets are from the 6th edition and depends on **R >= 3.2.0**.
 
 
 ```{r}
@@ -28,14 +28,16 @@ install.packages("wooldridge")
 
 ## Example
 
-Load the `wooldridge` package and use the `data()` function to bring the desired data set into the working environment. Data set names match those in the text. Once present in the working environment, modelling data is quick and easy, leaving learners with more time to focus on interpretation.
+Load the `wooldridge` package and use the `data()` function to bring the desired data set into the working environment. Data set names match those in the text. Once present in the working environment, modelling data is quick and easy, leaving learners with more time to focus on interpretation of results and general diagnostics.
 
 ```{r}
 library(wooldridge)
 
 data("wage1")
 
-lm(lwage ~ educ + exper + tenure, data = wage1)
+wageModel <- lm(lwage ~ educ + exper + tenure, data = wage1)
+
+summary(wageModel)
 ```
 
 ## Documentation 
