@@ -263,11 +263,10 @@ First, use the `subset` function and it's argument by the same name to return
 observations which occurred in **1987** and are not **union**. At the same time, use
 the `select` argument to return only the variables of interest for this problem.
 
- 
 
 ```{r}
 jtrain_subset <- subset(jtrain, subset = (year == 1987 & union == 0),
-                          select = c(year, union, lscrap, hrsemp, lsales, lemploy))
+                        select = c(year, union, lscrap, hrsemp, lsales, lemploy))
 ```
 
 Next, test for missing values. One can "eyeball" these with R Studio's `View`
@@ -310,7 +309,7 @@ abline(lm(lscrap ~ lemploy, data=jtrain_clean), col = "blue", lwd=2)
 ```
 
 
-Now create the linear model regressing `hrsemp`(total hours training/total employees trained), the `lsales`(log of annual sales), and `lemploy`(the log of the number of the employees), against `lscrap`(the log of the scrape rate).
+Now create the linear model regressing `hrsemp`(total hours training/total employees trained), `lsales`(log of annual sales), and `lemploy`(the log of the number of the employees), against `lscrap`(the log of the scrape rate).
 
 $$lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy$$
 
@@ -538,7 +537,6 @@ housing_model_frame <- model.frame(housing_model_6.2)
 housing_sq <- abs(beta_1*housing_model_frame[,"rooms"]) + 
               beta_2*housing_model_frame[,"I(rooms^2)"]
 
-#plot(y=hprice2$lprice, x=housing_sq)
 ```
 
 Graph the log of the selling price against the number of rooms. Superimpose a
@@ -653,7 +651,6 @@ Christopher Lemmon, a former MSU undergraduate, collected these data from a surv
 data("gpa1")
 
 gpa1$parcoll <- as.integer(gpa1$fathcoll==1 | gpa1$mothcoll)
-
 
 GPA_OLS <- lm(PC ~ hsGPA + ACT + parcoll, data = gpa1)
 ```
@@ -943,7 +940,7 @@ fatheduc_model <- lm(educ ~ fatheduc, data = mroz, subset = (inlf==1))
 In this section, we will perform an **Instrumental-Variable Regression**, using the  `ivreg` function in the `AER (Applied Econometrics with R)` package. See the bibliography for more information.
 
 ```{r, message=FALSE}
-library("AER")
+library(AER)
 wage_educ_IV <- ivreg(lwage ~ educ | fatheduc, data = mroz)
 ```
 
@@ -974,7 +971,7 @@ $$\widehat{log(wage)} = \beta_0 + educ$$
 Again, estimate the model using the  `ivreg` function in the `AER (Applied Econometrics with R)` package.
 
 ```{r, message=FALSE}
-library("AER")
+library(AER)
 educ_sibs_IV <- ivreg(lwage ~ educ | sibs, data = wage2)
 ```
 
