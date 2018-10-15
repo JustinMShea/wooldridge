@@ -6,7 +6,7 @@
 
 Economics students new to both econometrics and **R** may find the introduction to both challenging. However, if their text is **"Introductory Econometrics: A Modern Approach, 6e"** by Jeffrey M. Wooldridge, they are in luck!
 
-The `wooldridge` data package aims to lighten the task by easily loading any data set from the text. The package contains full documentation for every data set and all data have been compressed to a fraction of their original size. Just install the package, load it, and call the data you wish to work with.
+The `wooldridge` package aims to lighten the task by easily loading any data set from the text. The package contains full documentation for each set and all data have been compressed to a fraction of their original size. Just install the package, load it, and call the data you wish to work with.
 
 _**But wait...there's more!**_ A vignette, [Introductory Econometrics Examples](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html):sparkles:, illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix of helpful resources, such as *Using R for Introductory Econometrics* by Florian Hess.
 
@@ -19,12 +19,21 @@ While the original course companion site provides publicly available data sets f
 ## Installation
 
 
-Install directly from The Comprehensive R Archive Network (**CRAN**). All data sets are from the 6th edition and depends on **R >= 3.2.0**.
+One can Install `wooldridge` directly from The Comprehensive R Archive Network (**CRAN**), which depends on **R >= 3.2.0**.
 
 
 ```{r}
 install.packages("wooldridge")
 ```
+## Documentation 
+
+It's always recommended that one read supporting documentation for data sets of interest. This becomes trivial with the `wooldridge` package:
+
+```{r}
+?wage1
+```
+
+Documentation includes Wooldridge's original **source**, data **format**, variable names and their descriptions, as well as page numbers where each set is referenced in the text. Some sets even contain additional **notes** suggesting related research projects or exploration.
 
 ## Example
 
@@ -40,14 +49,6 @@ wageModel <- lm(lwage ~ educ + exper + tenure, data = wage1)
 summary(wageModel)
 ```
 
-## Documentation 
 
-It's always recommended that one read supporting documentation for data sets of interest. This becomes trivially easy with the `wooldridge` package:
-
-```{r}
-?wage1
-```
-
-Documentation includes variable column names, original source of data, and page number(s) where data appear in the text.
 
 
