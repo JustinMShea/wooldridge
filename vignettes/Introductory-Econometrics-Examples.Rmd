@@ -452,7 +452,7 @@ $$price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \be
 
 Estimate the usual `lm` model.
 
-```{r, tidy = TRUE}
+```{r}
 housing_level <- lm(price ~ nox + crime + rooms + dist + stratio, data = hprice2)
 ```
 
