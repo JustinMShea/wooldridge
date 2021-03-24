@@ -1,7 +1,7 @@
 Package: wooldridge
 Type: Package
-Title: 111 Data Sets from "Introductory Econometrics: A Modern Approach, 6e" by Jeffrey M. Wooldridge
-Version: 1.3.1
+Title: 115 Data Sets from "Introductory Econometrics: A Modern Approach, 7e" by Jeffrey M. Wooldridge
+Version: 1.4.0
 Authors@R: c(
     person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea@roosevelt.edu"),
     person("Kennth H.", "Brown", role = c("ctb"), email = "KennethBrown@MissouriState.edu"))
@@ -15,14 +15,14 @@ Description: Students learning both econometrics and R may find the introduction
     the original source, time of publication, and notes suggesting ideas for further 
     exploratory data analysis and research. If one need's to brush-up on model syntax, a 
     vignette contains R solutions to examples from each chapter of the text. 
-    Data sets are from the 6th edition (Wooldridge 2016, ISBN-13: 978-1-305-27010-7), 
+    Data sets are from the 7th edition (Wooldridge 2020, ISBN-13: 978-1-337-55886-0), 
     and are backwards compatible with all versions of the text.
-Depends: R (>= 3.2.0)
+Depends: R (>= 3.5.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.0
-Suggests: AER, knitr, plm, prais, rmarkdown, stargazer, testthat
+RoxygenNote: 7.1.1
+Suggests: AER, knitr, plm, prais, rmarkdown, stargazer, tinytest
 VignetteBuilder: knitr
 URL: https://justinmshea.github.io/wooldridge
 BugReports: https://github.com/JustinMShea/wooldridge/issues
