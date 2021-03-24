@@ -1,0 +1,40 @@
+#' labsup
+#'
+#' Wooldridge Source:  The subset of data for black or Hispanic women used in J.A. Angrist and W.E. Evans (1998) Data loads lazily.
+#'
+#' @section Notes: This example can promote an interesting discussion of instrument validity, and in particular, how a variable that is beyond our control – for example, whether the first two children have the same gender – can, nevertheless, affect subsequent economic choices. Students are asked to think about such issues in Computer Exercise C13 in Chapter 15. A more egregious version of this mistake would be to treat a variable such as age as a suitable instrument because it is beyond our control: clearly age has a direct effect on many economic outcomes that would play the role of the dependent variable.
+#'
+#' Used in Text: pages 530-531
+#'
+#' @docType data
+#'
+#' @usage data('labsup')
+#'
+#' @format A data.frame with 31857 observations on 20 variables:
+#' \itemize{
+#'  \item \strong{kids: }{number of kids}
+#'  \item \strong{morekids: }{had more than 2 kids}
+#'  \item \strong{boys2: }{first two births boys}
+#'  \item \strong{girls2: }{first two births girls}
+#'  \item \strong{boy1st: }{first birth boy}
+#'  \item \strong{boy2nd: }{second birth boy}
+#'  \item \strong{samesex: }{first two kids are of same sex}
+#'  \item \strong{multi2nd: }{=1 if 2nd birth is twin}
+#'  \item \strong{age: }{age of mom}
+#'  \item \strong{agefstm: }{age of mom at first birth}
+#'  \item \strong{black: }{=1 of black}
+#'  \item \strong{hispan: }{=1 if hispanic}
+#'  \item \strong{worked: }{mom worked last year}
+#'  \item \strong{weeks: }{weeks worked mom}
+#'  \item \strong{hours: }{hours of work per week, mom}
+#'  \item \strong{labinc: }{mom's labor income, $1000s}
+#'  \item \strong{faminc: }{family income, $1000s}
+#'  \item \strong{nonmomi: }{'non-mom' income, $1000s}
+#'  \item \strong{educ: }{mom's years of education}
+#'  \item \strong{agesq: }{}
+#' }
+#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge}
+#' @examples  str(labsup)
+"labsup"
+ 
+ 
