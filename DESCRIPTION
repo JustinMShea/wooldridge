@@ -6,14 +6,11 @@ Authors@R: c(
     person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea@roosevelt.edu"),
     person("Kennth H.", "Brown", role = c("ctb"), email = "KennethBrown@MissouriState.edu"))
 Description: Students learning both econometrics and R may find the introduction 
-    to both challenging. However, if the text is "Introductory Econometrics: 
-    A Modern Approach" by Jeffrey M. Wooldridge, they are in luck! 
-    The wooldridge data package aims to lighten the task by efficiently loading 
-    any data set found in the text with a single command. Data sets have all been 
-    compressed to a fraction of their original size and are well documented. 
-    Documentation files contain the page numbers of the text where each set is used, 
-    the original source, time of publication, and notes suggesting ideas for further 
-    exploratory data analysis and research. If one need's to brush-up on model syntax, a 
+    to both challenging. The wooldridge data package aims to lighten the task by efficiently 
+    loading any data set found in the text with a single command. Data sets have been 
+    compressed to a fraction of their original size. Documentation files contain page numbers, 
+    the original source, time of publication, and notes from the author suggesting avenues for 
+    further analysis and research. If one needs an introduction to linear model syntax, a 
     vignette contains R solutions to examples from each chapter of the text. 
     Data sets are from the 7th edition (Wooldridge 2020, ISBN-13: 978-1-337-55886-0), 
     and are backwards compatible with all versions of the text.
