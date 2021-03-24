@@ -17,10 +17,15 @@ _**But wait...there's more!**_ A vignette, [Introductory Econometrics Examples](
 
 ## Installation
 
-One can Install `wooldridge` directly from The Comprehensive R Archive Network (**CRAN**). Recent additions to the data set has bumped the dependency up to **R >= 3.5.0**.
-
+One can Install `wooldridge` directly from Github or The Comprehensive R Archive Network (**CRAN**). Recent additions to the data set has bumped the dependency up to **R >= 3.5.0**.
 
 ```{r}
+# 7th edition
+remotes::install_github("JustinMShea/wooldridge")
+```
+
+```{r}
+# 6th edition
 install.packages("wooldridge")
 ```
 ## Documentation 
