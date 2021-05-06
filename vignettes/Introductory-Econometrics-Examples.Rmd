@@ -1115,25 +1115,26 @@ Springer-Verlag, 2008, New York. [https://www.springer.com/us/book/9780387773162
 
 Croissant Y, Millo G (2008). "Panel Data Econometrics in R: The plm
 Package.” _Journal of Statistical Software_, *27*(2), 1-43. doi:
-10.18637/jss.v027.i02 (URL: http://doi.org/10.18637/jss.v027.i02).
+10.18637/jss.v027.i02 (URL: https://doi.org/10.18637/jss.v027.i02).
 
 Marek Hlavac (2018). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2.1. URL: https://CRAN.R-project.org/package=stargazer
 
-R Core Team (2018). _R: A language and environment for statistical computing_. 
-R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+R Core Team (2021). _R: A language and environment for statistical
+computing_. R Foundation for Statistical Computing, Vienna,
+Austria. URL https://www.R-project.org/.
 
 Christian Kleiber and Achim Zeileis (2008). _Applied Econometrics with R_. New York: Springer-Verlag. ISBN 978-0-387-77316-2. URL: https://CRAN.R-project.org/package=AER
 
-Franz X. Mohr (2018). _prais: Prais-Winsten Estimator for AR(1) Serial Correlation._ R package version 1.0.0. URL: https://CRAN.R-project.org/package=prais
+Franz X. Mohr (2019). _prais: Prais-Winsten Estimator for AR(1) Serial Correlation._ R package version 1.1.1. URL: https://CRAN.R-project.org/package=prais
 
-R Core Team (2018). _R: A language and environment for statistical computing_. 
-R Foundation for Statistical Computing, Vienna, Austria. URL: https://www.R-project.org/.
+van der Loo M (2020). “A method for deriving information from
+running R code.” _The R Journal_, Accepted for publication. <URL:
+https://arxiv.org/abs/2002.07472>.
 
-Hadley Wickham. testthat: Get Started with Testing. The R Journal, vol. 3, no. 1, pp. 5--10, 2011. URL: https://CRAN.R-project.org/package=testthat
+Jeffrey M. Wooldridge (2020). _Introductory Econometrics: A Modern Approach, 7th edition_. ISBN-13: 978-1-337-55886-0. Mason, Ohio :South-Western Cengage Learning. 
 
-Jeffrey M. Wooldridge (2016). _Introductory Econometrics: A Modern Approach, 6th edition_. ISBN-13: 978-1-305-27010-7. Mason, Ohio :South-Western Cengage Learning. 
-
-Yihui Xie (2018). _knitr: A General-Purpose Package for Dynamic Report Generation in R_. R package version 1.20. https://CRAN.R-project.org/package=knitr
+Yihui Xie (2021). _knitr: A General-Purpose Package for Dynamic
+  Report Generation in R_. R package version 1.33. https://CRAN.R-project.org/package=knitr
 
 
 
