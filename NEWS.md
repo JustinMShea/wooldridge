@@ -2,7 +2,15 @@
 title: "NEWS"
 output: github_document
 ---
+# wooldridge 1.4.0
 
+Add new data sets for the 7th addressing issues #5. These are JTRAIN98, LABSUP, NCAA_RPI, and SCHOOL93_98.
+
+Swapped out `testthat` for `tinytest` for greater reliability of course. #tinyverse
+
+Updated bibliography in vignette
+
+Bumped R dependency up to **R (>= 3.5.0)**
 
 # wooldridge 1.3.1
 
