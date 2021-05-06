@@ -4,13 +4,15 @@
 \name{okun}
 \alias{okun}
 \title{okun}
-\format{A data.frame with 47 observations on 4 variables:
+\format{
+A data.frame with 47 observations on 4 variables:
 \itemize{
  \item \strong{year:} 1959 through 2005
  \item \strong{pcrgdp:} percentage change in real GDP
  \item \strong{unem:} civilian unemployment rate
  \item \strong{cunem:} unem - unem[_n-1]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

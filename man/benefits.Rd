@@ -4,7 +4,8 @@
 \name{benefits}
 \alias{benefits}
 \title{benefits}
-\format{A data.frame with 1848 observations on 18 variables:
+\format{
+A data.frame with 1848 observations on 18 variables:
 \itemize{
  \item \strong{distid:} district identifier
  \item \strong{schid:} school identifier
@@ -24,7 +25,8 @@
  \item \strong{lunchbar:} within-district avg of lunch
  \item \strong{lenrollbar:} within-district avg of lenroll
  \item \strong{lstaffbar:} within-district avg of lstaff
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

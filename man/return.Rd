@@ -4,7 +4,8 @@
 \name{return}
 \alias{return}
 \title{return}
-\format{A data.frame with 142 observations on 12 variables:
+\format{
+A data.frame with 142 observations on 12 variables:
 \itemize{
  \item \strong{roe:} return on equity, 1990
  \item \strong{rok:} return on capital, 1990
@@ -18,7 +19,8 @@
  \item \strong{lsalary:} log(salary)
  \item \strong{lsp90:} log(sp90)
  \item \strong{lnetinc:} log(netinc)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

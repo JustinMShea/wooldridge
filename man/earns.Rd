@@ -4,7 +4,8 @@
 \name{earns}
 \alias{earns}
 \title{earns}
-\format{A data.frame with 41 observations on 14 variables:
+\format{
+A data.frame with 41 observations on 14 variables:
 \itemize{
  \item \strong{year:} 1947 to 1987
  \item \strong{wkearns:} avg. real weekly earnings
@@ -20,7 +21,8 @@
  \item \strong{goutph_1:} goutphr[_n-1]
  \item \strong{goutph_2:} goutphr[_n-2]
  \item \strong{lwkhours:} log(wkhours)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

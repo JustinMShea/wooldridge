@@ -4,7 +4,8 @@
 \name{big9salary}
 \alias{big9salary}
 \title{big9salary}
-\format{A data.frame with 786 observations on 30 variables:
+\format{
+A data.frame with 786 observations on 30 variables:
 \itemize{
  \item \strong{id:} person identifier
  \item \strong{year:} 92, 95, or 99
@@ -36,7 +37,8 @@
  \item \strong{pubindxsq:} pubindx^2
  \item \strong{pubindx0:} =1 if pubindx == 0
  \item \strong{lpubindx:} log(pubindx) if pubindx > 0
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

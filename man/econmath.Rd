@@ -4,7 +4,8 @@
 \name{econmath}
 \alias{econmath}
 \title{econmath}
-\format{A data.frame with 856 observations on 17 variables:
+\format{
+A data.frame with 856 observations on 17 variables:
 \itemize{
  \item \strong{age: }{age in years}
  \item \strong{work: }{hours worked per week}
@@ -23,7 +24,8 @@
  \item \strong{fathcoll: }{=1 if father has BA}
  \item \strong{mothcoll: }{=1 if mother has BA}
  \item \strong{score: }{course score, in percent}
-}}
+}
+}
 \source{
 \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 }

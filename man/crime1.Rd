@@ -4,7 +4,8 @@
 \name{crime1}
 \alias{crime1}
 \title{crime1}
-\format{A data.frame with 2725 observations on 16 variables:
+\format{
+A data.frame with 2725 observations on 16 variables:
 \itemize{
  \item \strong{narr86:} # times arrested, 1986
  \item \strong{nfarr86:} # felony arrests, 1986
@@ -22,7 +23,8 @@
  \item \strong{pcnvsq:} pcnv^2
  \item \strong{pt86sq:} ptime86^2
  \item \strong{inc86sq:} inc86^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

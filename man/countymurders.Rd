@@ -4,7 +4,8 @@
 \name{countymurders}
 \alias{countymurders}
 \title{countymurders}
-\format{A data.frame with 37349 observations on 20 variables:
+\format{
+A data.frame with 37349 observations on 20 variables:
 \itemize{
  \item \strong{arrests: }{# of murder arrests}
  \item \strong{countyid: }{county identifier: 1000*statefips + countyfips}
@@ -26,7 +27,8 @@
  \item \strong{execs: }{# of executions}
  \item \strong{lpopul: }{log(popul)}
  \item \strong{execrate: }{executions per 10,000}
-}}
+}
+}
 \source{
 \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 }

@@ -4,7 +4,8 @@
 \name{phillips}
 \alias{phillips}
 \title{phillips}
-\format{A data.frame with 56 observations on 7 variables:
+\format{
+A data.frame with 56 observations on 7 variables:
 \itemize{
  \item \strong{year:} 1948 through 2003
  \item \strong{unem:} civilian unemployment rate, percent
@@ -13,7 +14,8 @@
  \item \strong{unem_1:} unem[_n-1]
  \item \strong{cinf:} inf - inf_1
  \item \strong{cunem:} unem - unem_1
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

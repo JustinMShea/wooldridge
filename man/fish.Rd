@@ -4,7 +4,8 @@
 \name{fish}
 \alias{fish}
 \title{fish}
-\format{A data.frame with 97 observations on 20 variables:
+\format{
+A data.frame with 97 observations on 20 variables:
 \itemize{
  \item \strong{prca:} price for Asian buyers
  \item \strong{prcw:} price for white buyers
@@ -26,7 +27,8 @@
  \item \strong{lavgp_1:} lavgprc[_n-1]
  \item \strong{gavgprc:} lavgprc - lavgp_1
  \item \strong{gavgp_1:} gavgprc[_n-1]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

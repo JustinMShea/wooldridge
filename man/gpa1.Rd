@@ -4,7 +4,8 @@
 \name{gpa1}
 \alias{gpa1}
 \title{gpa1}
-\format{A data.frame with 141 observations on 29 variables:
+\format{
+A data.frame with 141 observations on 29 variables:
 \itemize{
  \item \strong{age:} in years
  \item \strong{soph:} =1 if sophomore
@@ -35,7 +36,8 @@
  \item \strong{gradMI:} =1 if Michigan high school
  \item \strong{fathcoll:} =1 if father college grad
  \item \strong{mothcoll:} =1 if mother college grad
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

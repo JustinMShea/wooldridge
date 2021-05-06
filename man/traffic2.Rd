@@ -4,7 +4,8 @@
 \name{traffic2}
 \alias{traffic2}
 \title{traffic2}
-\format{A data.frame with 108 observations on 48 variables:
+\format{
+A data.frame with 108 observations on 48 variables:
 \itemize{
  \item \strong{year:} 1981 to 1989
  \item \strong{totacc:} statewide total accidents
@@ -54,7 +55,8 @@
  \item \strong{spdt:} spdlaw*t
  \item \strong{beltt:} beltlaw*t
  \item \strong{prcfat_1:} prcfat[_n-1]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{minwage}
 \alias{minwage}
 \title{minwage}
-\format{A data.frame with 612 observations on 58 variables:
+\format{
+A data.frame with 612 observations on 58 variables:
 \itemize{
  \item \strong{emp232:} employment, sector 232, 1000s
  \item \strong{wage232:} hourly wage, sector 232, $
@@ -64,7 +65,8 @@
  \item \strong{gemp314:} 
  \item \strong{gwage314:} 
  \item \strong{t:} linear time trend, 1 to 612
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

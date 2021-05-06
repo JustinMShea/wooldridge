@@ -4,7 +4,8 @@
 \name{expendshares}
 \alias{expendshares}
 \title{expendshares}
-\format{A data.frame with 1519 observations on 13 variables:
+\format{
+A data.frame with 1519 observations on 13 variables:
 \itemize{
  \item \strong{sfood:} share of food expenditures (out of total)
  \item \strong{sfuel:} share of fuel expenditures
@@ -19,7 +20,8 @@
  \item \strong{ltotexpend:} log(totexpend)
  \item \strong{lincome:} log(income)
  \item \strong{agesq:} age^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

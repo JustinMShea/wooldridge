@@ -4,7 +4,8 @@
 \name{crime3}
 \alias{crime3}
 \title{crime3}
-\format{A data.frame with 106 observations on 12 variables:
+\format{
+A data.frame with 106 observations on 12 variables:
 \itemize{
  \item \strong{district:} district number
  \item \strong{year:} 72 or 78
@@ -18,7 +19,8 @@
  \item \strong{cavgclr:} change in avgclr
  \item \strong{cclrprc1:} change in clrprc1
  \item \strong{cclrprc2:} change in clrprc2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

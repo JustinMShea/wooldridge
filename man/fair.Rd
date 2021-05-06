@@ -4,7 +4,8 @@
 \name{fair}
 \alias{fair}
 \title{fair}
-\format{A data.frame with 21 observations on 28 variables:
+\format{
+A data.frame with 21 observations on 28 variables:
 \itemize{
  \item \strong{year:} 1916 to 1992, by 4
  \item \strong{V:} prop. dem. vote
@@ -27,7 +28,8 @@
  \item \strong{Ig3:} I*g3
  \item \strong{Ip151md:} I*p15*(1-d)
  \item \strong{In1md:} I*n*(1-d)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

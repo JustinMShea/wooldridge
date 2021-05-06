@@ -4,7 +4,8 @@
 \name{apple}
 \alias{apple}
 \title{apple}
-\format{A data.frame with 660 observations on 17 variables:
+\format{
+A data.frame with 660 observations on 17 variables:
 \itemize{
  \item \strong{id:} respondent identifier
  \item \strong{educ:} years schooling
@@ -23,7 +24,8 @@
  \item \strong{num5_17:} # in household 5 to 17
  \item \strong{num18_64:} # in household 18 to 64
  \item \strong{numgt64:} # in household older than 64
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

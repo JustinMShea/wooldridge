@@ -4,7 +4,8 @@
 \name{barium}
 \alias{barium}
 \title{barium}
-\format{A data.frame with 131 observations on 31 variables:
+\format{
+A data.frame with 131 observations on 31 variables:
 \itemize{
  \item \strong{chnimp:} Chinese imports, bar. chl.
  \item \strong{bchlimp:} total imports bar. chl.
@@ -37,7 +38,8 @@
  \item \strong{nov:} 
  \item \strong{dec:} 
  \item \strong{percchn:} percent imports from china
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

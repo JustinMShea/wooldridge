@@ -4,7 +4,8 @@
 \name{cement}
 \alias{cement}
 \title{cement}
-\format{A data.frame with 312 observations on 30 variables:
+\format{
+A data.frame with 312 observations on 30 variables:
 \itemize{
  \item \strong{year:} 1964-1989
  \item \strong{month:} 1-12
@@ -36,7 +37,8 @@
  \item \strong{oct:} =1 if month == 10
  \item \strong{nov:} =1 if month == 11
  \item \strong{dec:} =1 if month == 12
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

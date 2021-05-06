@@ -4,7 +4,8 @@
 \name{jtrain3}
 \alias{jtrain3}
 \title{jtrain3}
-\format{A data.frame with 2675 observations on 20 variables:
+\format{
+A data.frame with 2675 observations on 20 variables:
 \itemize{
  \item \strong{train:} =1 if in job training
  \item \strong{age:} in years, 1977
@@ -26,7 +27,8 @@
  \item \strong{travgre:} train*avgre
  \item \strong{unem78:} =1 if unem. all of '78
  \item \strong{em78:} 1 - unem78
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{consump}
 \alias{consump}
 \title{consump}
-\format{A data.frame with 37 observations on 24 variables:
+\format{
+A data.frame with 37 observations on 24 variables:
 \itemize{
  \item \strong{year:} 1959-1995
  \item \strong{i3:} 3 mo. T-bill rate
@@ -30,7 +31,8 @@
  \item \strong{gy_2:} gy[_n-2]
  \item \strong{r3_2:} r3[_n-2]
  \item \strong{lc_ly_2:} lc_ly[_n-2]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

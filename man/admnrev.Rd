@@ -4,14 +4,16 @@
 \name{admnrev}
 \alias{admnrev}
 \title{admnrev}
-\format{A data.frame with 153 observations on 5 variables:
+\format{
+A data.frame with 153 observations on 5 variables:
 \itemize{
  \item \strong{state:} state postal code
  \item \strong{year:} 85, 90, or 95
  \item \strong{admnrev:} =1 if admin. revoc. law
  \item \strong{daysfrst:} days suspended, first offense
  \item \strong{daysscnd:} days suspended, second offense
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

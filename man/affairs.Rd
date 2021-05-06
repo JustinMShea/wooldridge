@@ -4,7 +4,8 @@
 \name{affairs}
 \alias{affairs}
 \title{affairs}
-\format{A data.frame with 601 observations on 19 variables:
+\format{
+A data.frame with 601 observations on 19 variables:
 \itemize{
  \item \strong{id:} identifier
  \item \strong{male:} =1 if male
@@ -25,7 +26,8 @@
  \item \strong{smerel:} relig == 4
  \item \strong{slghtrel:} relig == 3
  \item \strong{notrel:} relig == 2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

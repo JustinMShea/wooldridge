@@ -4,12 +4,14 @@
 \name{audit}
 \alias{audit}
 \title{audit}
-\format{A data.frame with 241 observations on 3 variables:
+\format{
+A data.frame with 241 observations on 3 variables:
 \itemize{
  \item \strong{w:} =1 if white app. got job offer
  \item \strong{b:} =1 if black app. got job offer
  \item \strong{y:} b - w
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

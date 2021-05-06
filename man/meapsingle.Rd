@@ -4,7 +4,8 @@
 \name{meapsingle}
 \alias{meapsingle}
 \title{meapsingle}
-\format{A data.frame with 229 observations on 18 variables:
+\format{
+A data.frame with 229 observations on 18 variables:
 \itemize{
  \item \strong{dcode: }{district code}
  \item \strong{bcode: }{building code}
@@ -24,7 +25,8 @@
  \item \strong{lenroll: }{log(enroll)}
  \item \strong{lexppp: }{log(exppp)}
  \item \strong{lmedinc: }{log(medinc)}
-}}
+}
+}
 \source{
 \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 }

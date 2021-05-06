@@ -4,7 +4,8 @@
 \name{fringe}
 \alias{fringe}
 \title{fringe}
-\format{A data.frame with 616 observations on 39 variables:
+\format{
+A data.frame with 616 observations on 39 variables:
 \itemize{
  \item \strong{annearn:} annual earnings, $
  \item \strong{hrearn:} hourly earnings, $
@@ -45,7 +46,8 @@
  \item \strong{lannearn:} log(annearn)
  \item \strong{peratio:} pension/annearn
  \item \strong{vserat:} (vacdays+sicklve)/annearn
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

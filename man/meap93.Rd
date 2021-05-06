@@ -4,7 +4,8 @@
 \name{meap93}
 \alias{meap93}
 \title{meap93}
-\format{A data.frame with 408 observations on 17 variables:
+\format{
+A data.frame with 408 observations on 17 variables:
 \itemize{
  \item \strong{lnchprg:} perc of studs in sch lnch prog
  \item \strong{enroll:} school enrollment
@@ -23,7 +24,8 @@
  \item \strong{lstaff:} log(staff)
  \item \strong{bensal:} benefits/salary
  \item \strong{lsalary:} log(salary)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

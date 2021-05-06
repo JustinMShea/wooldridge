@@ -4,7 +4,8 @@
 \name{attend}
 \alias{attend}
 \title{attend}
-\format{A data.frame with 680 observations on 11 variables:
+\format{
+A data.frame with 680 observations on 11 variables:
 \itemize{
  \item \strong{attend:} classes attended out of 32
  \item \strong{termGPA:} GPA for term
@@ -17,7 +18,8 @@
  \item \strong{soph:} =1 if sophomore
  \item \strong{missed:} number of classes missed
  \item \strong{stndfnl:} (final - mean)/sd
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

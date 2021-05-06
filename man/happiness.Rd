@@ -4,7 +4,8 @@
 \name{happiness}
 \alias{happiness}
 \title{happiness}
-\format{A data.frame with 17137 observations on 33 variables:
+\format{
+A data.frame with 17137 observations on 33 variables:
 \itemize{
  \item \strong{year:} gss year for this respondent
  \item \strong{workstat:} work force status
@@ -39,7 +40,8 @@
  \item \strong{y04:} 
  \item \strong{y06:} =1 if year == 2006
  \item \strong{unem10:} =1 if unemployed in last 10 years
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

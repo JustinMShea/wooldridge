@@ -4,7 +4,8 @@
 \name{crime4}
 \alias{crime4}
 \title{crime4}
-\format{A data.frame with 630 observations on 59 variables:
+\format{
+A data.frame with 630 observations on 59 variables:
 \itemize{
  \item \strong{county:} county identifier
  \item \strong{year:} 81 to 87
@@ -65,7 +66,8 @@
  \item \strong{clpolpc:} lpolpc - lpolpc[t-1]
  \item \strong{cltaxpc:} ltaxpc - ltaxpc[t-1]
  \item \strong{clmix:} lmix - lmix[t-1]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

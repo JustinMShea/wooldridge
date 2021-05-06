@@ -4,7 +4,8 @@
 \name{intdef}
 \alias{intdef}
 \title{intdef}
-\format{A data.frame with 56 observations on 13 variables:
+\format{
+A data.frame with 56 observations on 13 variables:
 \itemize{
  \item \strong{year:} 1948 to 2003
  \item \strong{i3:} 3 month T-bill rate
@@ -19,7 +20,8 @@
  \item \strong{cinf:} inf - inf_1
  \item \strong{cdef:} def - def_1
  \item \strong{y77:} =1 if year >= 1977; change in FY
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{intqrt}
 \alias{intqrt}
 \title{intqrt}
-\format{A data.frame with 124 observations on 23 variables:
+\format{
+A data.frame with 124 observations on 23 variables:
 \itemize{
  \item \strong{r3:} bond equiv. yield, 3 mo T-bill
  \item \strong{r6:} bond equiv. yield, 6 mo T-bill
@@ -29,7 +30,8 @@
  \item \strong{cr3_1:} cr3[_n-1]
  \item \strong{r6_1:} r6[_n-1]
  \item \strong{cspr63:} spr63 - spr63_1
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

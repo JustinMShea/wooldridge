@@ -4,7 +4,8 @@
 \name{crime2}
 \alias{crime2}
 \title{crime2}
-\format{A data.frame with 92 observations on 34 variables:
+\format{
+A data.frame with 92 observations on 34 variables:
 \itemize{
  \item \strong{pop:} population
  \item \strong{crimes:} total number index crimes
@@ -40,7 +41,8 @@
  \item \strong{clpopden:} change in lpopden
  \item \strong{lcrmrt_1:} lcrmrte lagged
  \item \strong{ccrmrte:} change in crmrte
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

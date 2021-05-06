@@ -4,7 +4,8 @@
 \name{cps78_85}
 \alias{cps78_85}
 \title{cps78_85}
-\format{A data.frame with 1084 observations on 15 variables:
+\format{
+A data.frame with 1084 observations on 15 variables:
 \itemize{
  \item \strong{educ:} years of schooling
  \item \strong{south:} =1 if live in south
@@ -21,7 +22,8 @@
  \item \strong{y85fem:} y85*female
  \item \strong{y85educ:} y85*educ
  \item \strong{y85union:} y85*union
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

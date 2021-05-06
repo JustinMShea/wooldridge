@@ -4,7 +4,8 @@
 \name{elem94_95}
 \alias{elem94_95}
 \title{elem94_95}
-\format{A data.frame with 1848 observations on 14 variables:
+\format{
+A data.frame with 1848 observations on 14 variables:
 \itemize{
  \item \strong{distid:} district identifier
  \item \strong{schid:} school identifier
@@ -20,7 +21,8 @@
  \item \strong{lavgsal:} log(avgsal)
  \item \strong{lenrol:} log(enrol)
  \item \strong{lstaff:} log(staff)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

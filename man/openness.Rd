@@ -4,7 +4,8 @@
 \name{openness}
 \alias{openness}
 \title{openness}
-\format{A data.frame with 114 observations on 12 variables:
+\format{
+A data.frame with 114 observations on 12 variables:
 \itemize{
  \item \strong{open:} imports as percent GDP, '73-
  \item \strong{inf:} avg. annual inflation, '73-
@@ -18,7 +19,8 @@
  \item \strong{linf:} log(inf)
  \item \strong{opendec:} open/100
  \item \strong{linfdec:} log(inf/100)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

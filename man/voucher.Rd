@@ -4,7 +4,8 @@
 \name{voucher}
 \alias{voucher}
 \title{voucher}
-\format{A data.frame with 990 observations on 19 variables:
+\format{
+A data.frame with 990 observations on 19 variables:
 \itemize{
  \item \strong{studyid:} student identifier
  \item \strong{black:} = 1 if African-American
@@ -25,7 +26,8 @@
  \item \strong{choiceyrs2:} = 1 if choiceyrs == 2
  \item \strong{choiceyrs3:} = 1 if choiceyrs == 3
  \item \strong{choiceyrs4:} = 1 if choiceyrs == 4
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

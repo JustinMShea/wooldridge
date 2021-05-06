@@ -4,7 +4,8 @@
 \name{prminwge}
 \alias{prminwge}
 \title{prminwge}
-\format{A data.frame with 38 observations on 25 variables:
+\format{
+A data.frame with 38 observations on 25 variables:
 \itemize{
  \item \strong{year:} 1950-1987
  \item \strong{avgmin:} weighted avg min wge, 44 indust
@@ -31,7 +32,8 @@
  \item \strong{mincov:} (avgmin/avgwage)*avgcov
  \item \strong{lmincov:} log(mincov)
  \item \strong{lavgmin:} log(avgmin)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

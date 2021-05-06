@@ -4,7 +4,8 @@
 \name{athlet2}
 \alias{athlet2}
 \title{athlet2}
-\format{A data.frame with 30 observations on 10 variables:
+\format{
+A data.frame with 30 observations on 10 variables:
 \itemize{
  \item \strong{dscore:} home scr. - vist. scr., 1993
  \item \strong{dinstt:} diff. in-state tuit., 1994
@@ -16,7 +17,8 @@
  \item \strong{vtwrd:} =1 if vist. win. record, 1993
  \item \strong{dwinrec:} htwrd - vtwrd
  \item \strong{dpriv:} htpriv - vtpriv
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

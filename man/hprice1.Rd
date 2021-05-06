@@ -4,7 +4,8 @@
 \name{hprice1}
 \alias{hprice1}
 \title{hprice1}
-\format{A data.frame with 88 observations on 10 variables:
+\format{
+A data.frame with 88 observations on 10 variables:
 \itemize{
  \item \strong{price:} house price, $1000s
  \item \strong{assess:} assessed value, $1000s
@@ -16,7 +17,8 @@
  \item \strong{lassess:} log(assess
  \item \strong{llotsize:} log(lotsize)
  \item \strong{lsqrft:} log(sqrft)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

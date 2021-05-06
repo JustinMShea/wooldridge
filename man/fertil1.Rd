@@ -4,7 +4,8 @@
 \name{fertil1}
 \alias{fertil1}
 \title{fertil1}
-\format{A data.frame with 1129 observations on 27 variables:
+\format{
+A data.frame with 1129 observations on 27 variables:
 \itemize{
  \item \strong{year:} 72 to 84, even
  \item \strong{educ:} years of schooling
@@ -33,7 +34,8 @@
  \item \strong{y80educ:} 
  \item \strong{y82educ:} 
  \item \strong{y84educ:} 
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

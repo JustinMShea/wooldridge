@@ -4,7 +4,8 @@
 \name{vote1}
 \alias{vote1}
 \title{vote1}
-\format{A data.frame with 173 observations on 10 variables:
+\format{
+A data.frame with 173 observations on 10 variables:
 \itemize{
  \item \strong{state:} state postal code
  \item \strong{district:} congressional district
@@ -16,7 +17,8 @@
  \item \strong{lexpendA:} log(expendA)
  \item \strong{lexpendB:} log(expendB)
  \item \strong{shareA:} 100*(expendA/(expendA+expendB))
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{driving}
 \alias{driving}
 \title{driving}
-\format{A data.frame with 1200 observations on 56 variables:
+\format{
+A data.frame with 1200 observations on 56 variables:
 \itemize{
  \item \strong{year:} 1980 through 2004
  \item \strong{state:} 48 continental states, alphabetical
@@ -62,7 +63,8 @@
  \item \strong{d03:} 
  \item \strong{d04:} =1 if year == 2004
  \item \strong{vehicmilespc:} 
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

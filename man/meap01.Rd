@@ -4,7 +4,8 @@
 \name{meap01}
 \alias{meap01}
 \title{meap01}
-\format{A data.frame with 1823 observations on 11 variables:
+\format{
+A data.frame with 1823 observations on 11 variables:
 \itemize{
  \item \strong{dcode:} district code
  \item \strong{bcode:} building code
@@ -17,7 +18,8 @@
  \item \strong{lenroll:} log(enroll)
  \item \strong{lexpend:} log(expend)
  \item \strong{lexppp:} log(exppp)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

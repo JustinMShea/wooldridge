@@ -4,7 +4,8 @@
 \name{ceosal1}
 \alias{ceosal1}
 \title{ceosal1}
-\format{A data.frame with 209 observations on 12 variables:
+\format{
+A data.frame with 209 observations on 12 variables:
 \itemize{
  \item \strong{salary:} 1990 salary, thousands $
  \item \strong{pcsalary:} percent change salary, 89-90
@@ -18,7 +19,8 @@
  \item \strong{utility:} =1 if transport. or utilties
  \item \strong{lsalary:} natural log of salary
  \item \strong{lsales:} natural log of sales
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

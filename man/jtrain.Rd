@@ -4,7 +4,8 @@
 \name{jtrain}
 \alias{jtrain}
 \title{jtrain}
-\format{A data.frame with 471 observations on 30 variables:
+\format{
+A data.frame with 471 observations on 30 variables:
 \itemize{
  \item \strong{year:} 1987, 1988, or 1989
  \item \strong{fcode:} firm code number
@@ -36,7 +37,8 @@
  \item \strong{cgrant_1:} cgrant[_n-1]
  \item \strong{chrsemp:} hrsemp - hrsemp[_n-1]
  \item \strong{clhrsemp:} lhrsemp - lhrsemp[_n-1]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

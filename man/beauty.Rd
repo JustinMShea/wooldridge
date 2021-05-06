@@ -4,7 +4,8 @@
 \name{beauty}
 \alias{beauty}
 \title{beauty}
-\format{A data.frame with 1260 observations on 17 variables:
+\format{
+A data.frame with 1260 observations on 17 variables:
 \itemize{
  \item \strong{wage:} hourly wage
  \item \strong{lwage:} log(wage)
@@ -23,7 +24,8 @@
  \item \strong{service:} =1 if service industry
  \item \strong{expersq:} exper^2
  \item \strong{educ:} years of schooling
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{fertil2}
 \alias{fertil2}
 \title{fertil2}
-\format{A data.frame with 4361 observations on 27 variables:
+\format{
+A data.frame with 4361 observations on 27 variables:
 \itemize{
  \item \strong{mnthborn:} month woman born
  \item \strong{yearborn:} year woman born
@@ -33,7 +34,8 @@
  \item \strong{frsthalf:} =1 if mnthborn <= 6
  \item \strong{educ0:} =1 if educ == 0
  \item \strong{evermarr:} =1 if ever married
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

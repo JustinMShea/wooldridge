@@ -4,7 +4,8 @@
 \name{beveridge}
 \alias{beveridge}
 \title{beveridge}
-\format{A data.frame with 135 observations on 8 variables:
+\format{
+A data.frame with 135 observations on 8 variables:
 \itemize{
  \item \strong{month:} dec 200 through feb 2012
  \item \strong{urate:} unemployment rate, percent
@@ -14,7 +15,8 @@
  \item \strong{vrate_1:} L.vrate
  \item \strong{curate:} D.urate
  \item \strong{cvrate:} D.vrate
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

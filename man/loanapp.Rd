@@ -4,7 +4,8 @@
 \name{loanapp}
 \alias{loanapp}
 \title{loanapp}
-\format{A data.frame with 1989 observations on 59 variables:
+\format{
+A data.frame with 1989 observations on 59 variables:
 \itemize{
  \item \strong{occ:} occupancy
  \item \strong{loanamt:} loan amt in thousands
@@ -65,7 +66,8 @@
  \item \strong{loanprc:} amt/price
  \item \strong{thick:} =1 if rep > 2
  \item \strong{white:} =1 if applicant white
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

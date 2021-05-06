@@ -4,7 +4,8 @@
 \name{lawsch85}
 \alias{lawsch85}
 \title{lawsch85}
-\format{A data.frame with 156 observations on 21 variables:
+\format{
+A data.frame with 156 observations on 21 variables:
 \itemize{
  \item \strong{rank:} law school ranking
  \item \strong{salary:} median starting salary
@@ -27,7 +28,8 @@
  \item \strong{r41_60:} =1 if ranked 41-60
  \item \strong{llibvol:} log(libvol)
  \item \strong{lcost:} log(cost)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

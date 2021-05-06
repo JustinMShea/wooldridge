@@ -4,7 +4,8 @@
 \name{infmrt}
 \alias{infmrt}
 \title{infmrt}
-\format{A data.frame with 102 observations on 12 variables:
+\format{
+A data.frame with 102 observations on 12 variables:
 \itemize{
  \item \strong{year:} 1987 or 1990
  \item \strong{infmort:} deaths per 1,000 live births
@@ -18,7 +19,8 @@
  \item \strong{lphysic:} log(physic)
  \item \strong{DC:} =1 for Washington DC
  \item \strong{lpopul:} log(popul)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

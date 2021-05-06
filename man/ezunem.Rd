@@ -4,7 +4,8 @@
 \name{ezunem}
 \alias{ezunem}
 \title{ezunem}
-\format{A data.frame with 198 observations on 37 variables:
+\format{
+A data.frame with 198 observations on 37 variables:
 \itemize{
  \item \strong{year:} 1980 to 1988
  \item \strong{uclms:} unemployment claims
@@ -43,7 +44,8 @@
  \item \strong{guclms:} luclms - luclms[_n-1]
  \item \strong{cez:} ez - ez[_n-1]
  \item \strong{city:} city identifier, 1 through 22
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

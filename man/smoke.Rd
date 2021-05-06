@@ -4,7 +4,8 @@
 \name{smoke}
 \alias{smoke}
 \title{smoke}
-\format{A data.frame with 807 observations on 10 variables:
+\format{
+A data.frame with 807 observations on 10 variables:
 \itemize{
  \item \strong{educ:} years of schooling
  \item \strong{cigpric:} state cig. price, cents/pack
@@ -16,7 +17,8 @@
  \item \strong{lincome:} log(income)
  \item \strong{agesq:} age^2
  \item \strong{lcigpric:} log(cigprice)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

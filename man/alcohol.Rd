@@ -4,7 +4,8 @@
 \name{alcohol}
 \alias{alcohol}
 \title{alcohol}
-\format{A data.frame with 9822 observations on 33 variables:
+\format{
+A data.frame with 9822 observations on 33 variables:
 \itemize{
  \item \strong{abuse:} =1 if abuse alcohol
  \item \strong{status:} out of workforce = 1; unemployed = 2, employed = 3
@@ -39,7 +40,8 @@
  \item \strong{cigtaxsq:} cigtax^2
  \item \strong{ethanolsq:} ethanol^2
  \item \strong{educsq:} educ^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

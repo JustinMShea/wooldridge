@@ -4,7 +4,8 @@
 \name{volat}
 \alias{volat}
 \title{volat}
-\format{A data.frame with 558 observations on 17 variables:
+\format{
+A data.frame with 558 observations on 17 variables:
 \itemize{
  \item \strong{date:} 1947.01 to 1993.06
  \item \strong{sp500:} S&P 500 index
@@ -23,7 +24,8 @@
  \item \strong{pcsp_1:} pcip[_n-1]
  \item \strong{pcsp_2:} pcip[_n-2]
  \item \strong{pcsp_3:} pcip[_n-3]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

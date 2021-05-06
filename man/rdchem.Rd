@@ -4,7 +4,8 @@
 \name{rdchem}
 \alias{rdchem}
 \title{rdchem}
-\format{A data.frame with 32 observations on 8 variables:
+\format{
+A data.frame with 32 observations on 8 variables:
 \itemize{
  \item \strong{rd:} R&D spending, millions
  \item \strong{sales:} firm sales, millions
@@ -14,7 +15,8 @@
  \item \strong{salessq:} sales^2
  \item \strong{lsales:} log(sales)
  \item \strong{lrd:} log(rd)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

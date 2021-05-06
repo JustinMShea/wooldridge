@@ -4,7 +4,8 @@
 \name{wageprc}
 \alias{wageprc}
 \title{wageprc}
-\format{A data.frame with 286 observations on 20 variables:
+\format{
+A data.frame with 286 observations on 20 variables:
 \itemize{
  \item \strong{price:} consumer price index
  \item \strong{wage:} nominal hourly wage
@@ -26,7 +27,8 @@
  \item \strong{gwage_11:} 
  \item \strong{gwage_12:} 
  \item \strong{gprice_1:} gprice[_n-1]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

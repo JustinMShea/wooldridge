@@ -4,7 +4,8 @@
 \name{murder}
 \alias{murder}
 \title{murder}
-\format{A data.frame with 153 observations on 13 variables:
+\format{
+A data.frame with 153 observations on 13 variables:
 \itemize{
  \item \strong{id:} state identifier
  \item \strong{state:} postal code
@@ -19,7 +20,8 @@
  \item \strong{cunem:} unem - unem[_n-1]
  \item \strong{cexec_1:} cexec[_n-1]
  \item \strong{cunem_1:} cunem[_n-1]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

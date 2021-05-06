@@ -4,7 +4,8 @@
 \name{mlb1}
 \alias{mlb1}
 \title{mlb1}
-\format{A data.frame with 353 observations on 47 variables:
+\format{
+A data.frame with 353 observations on 47 variables:
 \itemize{
  \item \strong{salary:} 1993 season salary
  \item \strong{teamsal:} team payroll
@@ -53,7 +54,8 @@
  \item \strong{blckph:} black*perchisp
  \item \strong{hisppb:} hispan*percblck
  \item \strong{lsalary:} log(salary)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

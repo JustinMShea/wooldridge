@@ -4,7 +4,8 @@
 \name{prison}
 \alias{prison}
 \title{prison}
-\format{A data.frame with 714 observations on 45 variables:
+\format{
+A data.frame with 714 observations on 45 variables:
 \itemize{
  \item \strong{state:} alphabetical; DC = 9
  \item \strong{year:} 80 to 93
@@ -51,7 +52,8 @@
  \item \strong{gpris:} lpris - lpris[_n-1]
  \item \strong{final1:} =1 if fnl dec on litig, curr yr
  \item \strong{final2:} =1 if dec on litig, prev 2 yrs
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

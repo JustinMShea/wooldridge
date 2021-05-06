@@ -4,7 +4,8 @@
 \name{hprice3}
 \alias{hprice3}
 \title{hprice3}
-\format{A data.frame with 321 observations on 19 variables:
+\format{
+A data.frame with 321 observations on 19 variables:
 \itemize{
  \item \strong{year:} 1978, 1981
  \item \strong{age:} age of house
@@ -25,7 +26,8 @@
  \item \strong{larea:} log(area)
  \item \strong{lland:} log(land)
  \item \strong{linstsq:} linst^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

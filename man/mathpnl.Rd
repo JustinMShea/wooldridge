@@ -4,7 +4,8 @@
 \name{mathpnl}
 \alias{mathpnl}
 \title{mathpnl}
-\format{A data.frame with 3850 observations on 52 variables:
+\format{
+A data.frame with 3850 observations on 52 variables:
 \itemize{
  \item \strong{distid:} district identifier
  \item \strong{intid:} intermediate school district
@@ -58,7 +59,8 @@
  \item \strong{lrexpp_1:} lrexpp[_n-1]
  \item \strong{grexpp:} lrexpp - lrexpp_1
  \item \strong{grexpp_1:} grexpp[_n-1]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

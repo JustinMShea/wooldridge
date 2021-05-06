@@ -4,7 +4,8 @@
 \name{k401ksubs}
 \alias{k401ksubs}
 \title{k401ksubs}
-\format{A data.frame with 9275 observations on 11 variables:
+\format{
+A data.frame with 9275 observations on 11 variables:
 \itemize{
  \item \strong{e401k:} =1 if eligble for 401(k)
  \item \strong{inc:} annual income, $1000s
@@ -17,7 +18,8 @@
  \item \strong{pira:} =1 if have IRA
  \item \strong{incsq:} inc^2
  \item \strong{agesq:} age^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

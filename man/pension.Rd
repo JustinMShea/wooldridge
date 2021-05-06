@@ -4,7 +4,8 @@
 \name{pension}
 \alias{pension}
 \title{pension}
-\format{A data.frame with 194 observations on 19 variables:
+\format{
+A data.frame with 194 observations on 19 variables:
 \itemize{
  \item \strong{id:} family identifier
  \item \strong{pyears:} years in pension plan
@@ -25,7 +26,8 @@
  \item \strong{stckin89:} =1 if owned stock in 1989
  \item \strong{irain89:} =1 if had IRA in 1989
  \item \strong{pctstck:} 0=mstbnds,50=mixed,100=mststcks
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{gpa2}
 \alias{gpa2}
 \title{gpa2}
-\format{A data.frame with 4137 observations on 12 variables:
+\format{
+A data.frame with 4137 observations on 12 variables:
 \itemize{
  \item \strong{sat:} combined SAT score
  \item \strong{tothrs:} total hours through fall semest
@@ -18,7 +19,8 @@
  \item \strong{white:} =1 if white
  \item \strong{black:} =1 if black
  \item \strong{hsizesq:} hsize^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{htv}
 \alias{htv}
 \title{htv}
-\format{A data.frame with 1230 observations on 23 variables:
+\format{
+A data.frame with 1230 observations on 23 variables:
 \itemize{
  \item \strong{wage:} hourly wage, 1991
  \item \strong{abil:} abil. measure, not standardized
@@ -29,7 +30,8 @@
  \item \strong{lwage:} log(wage)
  \item \strong{expersq:} exper^2
  \item \strong{ctuit:} tuit18 - tuit17
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

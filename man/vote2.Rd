@@ -4,7 +4,8 @@
 \name{vote2}
 \alias{vote2}
 \title{vote2}
-\format{A data.frame with 186 observations on 26 variables:
+\format{
+A data.frame with 186 observations on 26 variables:
 \itemize{
  \item \strong{state:} state postal code
  \item \strong{district:} U.S. Congressional district
@@ -32,7 +33,8 @@
  \item \strong{win88:} =1 by definition
  \item \strong{win90:} =1 if inc. wins, 1990
  \item \strong{cwin:} win90 - win88
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{wage2}
 \alias{wage2}
 \title{wage2}
-\format{A data.frame with 935 observations on 17 variables:
+\format{
+A data.frame with 935 observations on 17 variables:
 \itemize{
  \item \strong{wage:} monthly earnings
  \item \strong{hours:} average weekly hours
@@ -23,7 +24,8 @@
  \item \strong{meduc:} mother's education
  \item \strong{feduc:} father's education
  \item \strong{lwage:} natural log of wage
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

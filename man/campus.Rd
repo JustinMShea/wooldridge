@@ -4,7 +4,8 @@
 \name{campus}
 \alias{campus}
 \title{campus}
-\format{A data.frame with 97 observations on 7 variables:
+\format{
+A data.frame with 97 observations on 7 variables:
 \itemize{
  \item \strong{enroll:} total enrollment
  \item \strong{priv:} =1 if private college
@@ -13,7 +14,8 @@
  \item \strong{lcrime:} log(crime)
  \item \strong{lenroll:} log(enroll)
  \item \strong{lpolice:} log(police)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

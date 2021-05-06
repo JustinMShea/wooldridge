@@ -4,7 +4,8 @@
 \name{lowbrth}
 \alias{lowbrth}
 \title{lowbrth}
-\format{A data.frame with 100 observations on 36 variables:
+\format{
+A data.frame with 100 observations on 36 variables:
 \itemize{
  \item \strong{year:} 1987 or 1990
  \item \strong{lowbrth:} perc births low weight
@@ -42,7 +43,8 @@
  \item \strong{clphypc:} change in lphypc
  \item \strong{lpopul:} log(popul)
  \item \strong{clpopul:} change in lpopul
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

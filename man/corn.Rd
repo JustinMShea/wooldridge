@@ -4,14 +4,16 @@
 \name{corn}
 \alias{corn}
 \title{corn}
-\format{A data.frame with 37 observations on 5 variables:
+\format{
+A data.frame with 37 observations on 5 variables:
 \itemize{
  \item \strong{county:} county number
  \item \strong{cornhec:} corn per hectare
  \item \strong{soyhec:} soybeans per hectare
  \item \strong{cornpix:} corn pixels per hectare
  \item \strong{soypix:} soy pixels per hectare
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{recid}
 \alias{recid}
 \title{recid}
-\format{A data.frame with 1445 observations on 18 variables:
+\format{
+A data.frame with 1445 observations on 18 variables:
 \itemize{
  \item \strong{black:} =1 if black
  \item \strong{alcohol:} =1 if alcohol problems
@@ -24,7 +25,8 @@
  \item \strong{durat:} min(time until return, follow)
  \item \strong{cens:} =1 if duration right censored
  \item \strong{ldurat:} log(durat)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

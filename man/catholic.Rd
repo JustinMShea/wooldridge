@@ -4,7 +4,8 @@
 \name{catholic}
 \alias{catholic}
 \title{catholic}
-\format{A data.frame with 7430 observations on 13 variables:
+\format{
+A data.frame with 7430 observations on 13 variables:
 \itemize{
  \item \strong{id: }{person identifier}
  \item \strong{read12: }{reading standardized score}
@@ -19,7 +20,8 @@
  \item \strong{hsgrad: }{=1 if graduated from high school by 1994}
  \item \strong{cathhs: }{=1 if attended Catholic HS}
  \item \strong{parcath: }{=1 if a parent reports being Catholic}
-}}
+}
+}
 \source{
 \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 }

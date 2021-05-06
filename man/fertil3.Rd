@@ -4,7 +4,8 @@
 \name{fertil3}
 \alias{fertil3}
 \title{fertil3}
-\format{A data.frame with 72 observations on 24 variables:
+\format{
+A data.frame with 72 observations on 24 variables:
 \itemize{
  \item \strong{gfr:} births per 1000 women 15-44
  \item \strong{pe:} real value pers. exemption, $
@@ -30,7 +31,8 @@
  \item \strong{cgfr_3:} cgfr[_n-3]
  \item \strong{cgfr_4:} cgfr[_n-4]
  \item \strong{gfr_2:} gfr[_n-2]
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

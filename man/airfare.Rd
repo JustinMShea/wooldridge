@@ -4,7 +4,8 @@
 \name{airfare}
 \alias{airfare}
 \title{airfare}
-\format{A data.frame with 4596 observations on 14 variables:
+\format{
+A data.frame with 4596 observations on 14 variables:
 \itemize{
  \item \strong{year:} 1997, 1998, 1999, 2000
  \item \strong{id:} route identifier
@@ -20,7 +21,8 @@
  \item \strong{ldistsq:} ldist^2
  \item \strong{concen:} = bmktshr
  \item \strong{lpassen:} log(passen)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

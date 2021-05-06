@@ -4,7 +4,8 @@
 \name{wagepan}
 \alias{wagepan}
 \title{wagepan}
-\format{A data.frame with 4360 observations on 44 variables:
+\format{
+A data.frame with 4360 observations on 44 variables:
 \itemize{
  \item \strong{nr:} person identifier
  \item \strong{year:} 1980 to 1987
@@ -50,7 +51,8 @@
  \item \strong{d86:} 
  \item \strong{d87:} 
  \item \strong{expersq:} exper^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

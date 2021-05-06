@@ -4,7 +4,8 @@
 \name{traffic1}
 \alias{traffic1}
 \title{traffic1}
-\format{A data.frame with 51 observations on 13 variables:
+\format{
+A data.frame with 51 observations on 13 variables:
 \itemize{
  \item \strong{state:} 
  \item \strong{admn90:} =1 if admin. revoc., '90
@@ -19,7 +20,8 @@
  \item \strong{cadmn:} admn90 - admn85
  \item \strong{copen:} open90 - open85
  \item \strong{cspeed:} speed90 - speed85
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

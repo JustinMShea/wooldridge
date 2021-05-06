@@ -4,7 +4,8 @@
 \name{ceosal2}
 \alias{ceosal2}
 \title{ceosal2}
-\format{A data.frame with 177 observations on 15 variables:
+\format{
+A data.frame with 177 observations on 15 variables:
 \itemize{
  \item \strong{salary:} 1990 compensation, $1000s
  \item \strong{age:} in years
@@ -21,7 +22,8 @@
  \item \strong{comtensq:} comten^2
  \item \strong{ceotensq:} ceoten^2
  \item \strong{profmarg:} profits as percent of sales
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

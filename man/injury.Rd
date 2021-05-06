@@ -4,7 +4,8 @@
 \name{injury}
 \alias{injury}
 \title{injury}
-\format{A data.frame with 7150 observations on 30 variables:
+\format{
+A data.frame with 7150 observations on 30 variables:
 \itemize{
  \item \strong{durat:} duration of benefits
  \item \strong{afchnge:} =1 if after change in benefits
@@ -36,7 +37,8 @@
  \item \strong{manuf:} =1 if manufacturing industry
  \item \strong{construc:} =1 if construction industry
  \item \strong{highlpre:} highearn*lprewage
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

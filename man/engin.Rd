@@ -4,7 +4,8 @@
 \name{engin}
 \alias{engin}
 \title{engin}
-\format{A data.frame with 403 observations on 17 variables:
+\format{
+A data.frame with 403 observations on 17 variables:
 \itemize{
  \item \strong{male:} =1 if male
  \item \strong{educ:} highest grade completed
@@ -23,7 +24,8 @@
  \item \strong{pexpersq:} pexper^2
  \item \strong{mleeduc:} male*educ
  \item \strong{mleeduc0:} male*(educ - 14)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

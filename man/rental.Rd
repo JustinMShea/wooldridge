@@ -4,7 +4,8 @@
 \name{rental}
 \alias{rental}
 \title{rental}
-\format{A data.frame with 128 observations on 23 variables:
+\format{
+A data.frame with 128 observations on 23 variables:
 \itemize{
  \item \strong{city:} city label, 1 to 64
  \item \strong{year:} 80 or 90
@@ -29,7 +30,8 @@
  \item \strong{pctstu:} percent of population students
  \item \strong{cpctstu:} change in pctstu
  \item \strong{y90:} =1 if year == 90
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

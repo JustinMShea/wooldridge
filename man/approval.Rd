@@ -4,7 +4,8 @@
 \name{approval}
 \alias{approval}
 \title{approval}
-\format{A data.frame with 78 observations on 16 variables:
+\format{
+A data.frame with 78 observations on 16 variables:
 \itemize{
  \item \strong{id: }{id}
  \item \strong{month: }{month}
@@ -22,7 +23,8 @@
  \item \strong{iraqinvade: }{=1 for three months after Iraq invasion}
  \item \strong{lsp500: }{log(sp500)}
  \item \strong{lcpifood: }{log(cpifood)}
-}}
+}
+}
 \source{
 \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 }

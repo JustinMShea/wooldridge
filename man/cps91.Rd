@@ -4,7 +4,8 @@
 \name{cps91}
 \alias{cps91}
 \title{cps91}
-\format{A data.frame with 5634 observations on 24 variables:
+\format{
+A data.frame with 5634 observations on 24 variables:
 \itemize{
  \item \strong{husage:} husband's age
  \item \strong{husunion:} =1 if hus. in union
@@ -30,7 +31,8 @@
  \item \strong{inlf:} =1 if wife in labor force
  \item \strong{hrwage:} earns/hours
  \item \strong{lwage:} log(hrwage)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

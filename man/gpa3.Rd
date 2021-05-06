@@ -4,7 +4,8 @@
 \name{gpa3}
 \alias{gpa3}
 \title{gpa3}
-\format{A data.frame with 732 observations on 23 variables:
+\format{
+A data.frame with 732 observations on 23 variables:
 \itemize{
  \item \strong{term:} fall = 1, spring = 2
  \item \strong{sat:} SAT score
@@ -29,7 +30,8 @@
  \item \strong{cseason:} change in season
  \item \strong{hsperc:} percentile in h.s.
  \item \strong{football:} =1 if football player
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

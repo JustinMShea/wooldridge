@@ -4,7 +4,8 @@
 \name{sleep75}
 \alias{sleep75}
 \title{sleep75}
-\format{A data.frame with 706 observations on 34 variables:
+\format{
+A data.frame with 706 observations on 34 variables:
 \itemize{
  \item \strong{age:} in years
  \item \strong{black:} =1 if black
@@ -40,7 +41,8 @@
  \item \strong{yrsmarr:} years married
  \item \strong{hrwage:} hourly wage
  \item \strong{agesq:} age^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

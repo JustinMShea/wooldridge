@@ -4,7 +4,8 @@
 \name{slp75_81}
 \alias{slp75_81}
 \title{slp75_81}
-\format{A data.frame with 239 observations on 20 variables:
+\format{
+A data.frame with 239 observations on 20 variables:
 \itemize{
  \item \strong{age75:} age in 1975
  \item \strong{educ75:} years educ in '75
@@ -26,7 +27,8 @@
  \item \strong{cslpnap:} change in slpnap
  \item \strong{ctotwrk:} change in totwrk
  \item \strong{cyngkid:} change in yngkid
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

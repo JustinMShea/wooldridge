@@ -4,7 +4,8 @@
 \name{inven}
 \alias{inven}
 \title{inven}
-\format{A data.frame with 37 observations on 13 variables:
+\format{
+A data.frame with 37 observations on 13 variables:
 \itemize{
  \item \strong{year:} 1959-1995
  \item \strong{i3:} 3 mo. T-bill rate
@@ -19,7 +20,8 @@
  \item \strong{cinf:} inf - inf[_n-1]
  \item \strong{ginven:} log(inven) - log(inven[_n-1])
  \item \strong{ggdp:} log(gdp) - log(gdp[_n-1])
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

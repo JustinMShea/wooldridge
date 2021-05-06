@@ -4,7 +4,8 @@
 \name{saving}
 \alias{saving}
 \title{saving}
-\format{A data.frame with 100 observations on 7 variables:
+\format{
+A data.frame with 100 observations on 7 variables:
 \itemize{
  \item \strong{sav:} annual savings, $
  \item \strong{inc:} annual income, $
@@ -13,7 +14,8 @@
  \item \strong{age:} age of household head
  \item \strong{black:} =1 if household head is black
  \item \strong{cons:} annual consumption, $
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

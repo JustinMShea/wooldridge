@@ -4,7 +4,8 @@
 \name{jtrain2}
 \alias{jtrain2}
 \title{jtrain2}
-\format{A data.frame with 445 observations on 19 variables:
+\format{
+A data.frame with 445 observations on 19 variables:
 \itemize{
  \item \strong{train:} =1 if assigned to job training
  \item \strong{age:} age in 1977
@@ -25,7 +26,8 @@
  \item \strong{lre78:} log(re78); zero if re78 == 0
  \item \strong{agesq:} age^2
  \item \strong{mostrn:} months in training
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

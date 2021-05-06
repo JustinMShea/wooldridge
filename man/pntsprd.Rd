@@ -4,7 +4,8 @@
 \name{pntsprd}
 \alias{pntsprd}
 \title{pntsprd}
-\format{A data.frame with 553 observations on 12 variables:
+\format{
+A data.frame with 553 observations on 12 variables:
 \itemize{
  \item \strong{favscr:} favored team's score
  \item \strong{undscr:} underdog's score
@@ -18,7 +19,8 @@
  \item \strong{scrdiff:} favscr - undscr
  \item \strong{sprdcvr:} =1 if spread covered
  \item \strong{favwin:} =1 if favored team wins
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

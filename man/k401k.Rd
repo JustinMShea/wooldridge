@@ -4,7 +4,8 @@
 \name{k401k}
 \alias{k401k}
 \title{k401k}
-\format{A data.frame with 1534 observations on 8 variables:
+\format{
+A data.frame with 1534 observations on 8 variables:
 \itemize{
  \item \strong{prate:} participation rate, percent
  \item \strong{mrate:} 401k plan match rate
@@ -14,7 +15,8 @@
  \item \strong{totemp:} total number of firm employees
  \item \strong{sole:} = 1 if 401k is firm's sole plan
  \item \strong{ltotemp:} log of totemp
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

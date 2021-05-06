@@ -4,7 +4,8 @@
 \name{bwght}
 \alias{bwght}
 \title{bwght}
-\format{A data.frame with 1388 observations on 14 variables:
+\format{
+A data.frame with 1388 observations on 14 variables:
 \itemize{
  \item \strong{faminc:} 1988 family income, $1000s
  \item \strong{cigtax:} cig. tax in home state, 1988
@@ -20,7 +21,8 @@
  \item \strong{bwghtlbs:} birth weight, pounds
  \item \strong{packs:} packs smked per day while preg
  \item \strong{lfaminc:} log(faminc)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

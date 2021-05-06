@@ -4,7 +4,8 @@
 \name{card}
 \alias{card}
 \title{card}
-\format{A data.frame with 3010 observations on 34 variables:
+\format{
+A data.frame with 3010 observations on 34 variables:
 \itemize{
  \item \strong{id:} person identifier
  \item \strong{nearc2:} =1 if near 2 yr college, 1966
@@ -40,7 +41,8 @@
  \item \strong{exper:} age - educ - 6
  \item \strong{lwage:} log(wage)
  \item \strong{expersq:} exper^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

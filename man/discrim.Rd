@@ -4,7 +4,8 @@
 \name{discrim}
 \alias{discrim}
 \title{discrim}
-\format{A data.frame with 410 observations on 37 variables:
+\format{
+A data.frame with 410 observations on 37 variables:
 \itemize{
  \item \strong{psoda:} price of medium soda, 1st wave
  \item \strong{pfries:} price of small fries, 1st wave
@@ -43,7 +44,8 @@
  \item \strong{BK:} =1 if Burger King
  \item \strong{KFC:} =1 if Kentucky Fried Chicken
  \item \strong{RR:} =1 if Roy Rogers
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

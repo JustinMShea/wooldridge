@@ -4,7 +4,8 @@
 \name{nbasal}
 \alias{nbasal}
 \title{nbasal}
-\format{A data.frame with 269 observations on 22 variables:
+\format{
+A data.frame with 269 observations on 22 variables:
 \itemize{
  \item \strong{marr:} =1 if married
  \item \strong{wage:} annual salary, thousands $
@@ -28,7 +29,8 @@
  \item \strong{expersq:} exper^2
  \item \strong{agesq:} age^2
  \item \strong{marrblck:} marr*black
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

@@ -4,7 +4,8 @@
 \name{charity}
 \alias{charity}
 \title{charity}
-\format{A data.frame with 4268 observations on 8 variables:
+\format{
+A data.frame with 4268 observations on 8 variables:
 \itemize{
  \item \strong{respond:} =1 if responded with gift
  \item \strong{gift:} amount of gift, Dutch guilders
@@ -14,7 +15,8 @@
  \item \strong{mailsyear:} number of mailings per year
  \item \strong{giftlast:} amount of most recent gift
  \item \strong{avggift:} average of past gifts
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

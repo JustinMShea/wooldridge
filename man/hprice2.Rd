@@ -4,7 +4,8 @@
 \name{hprice2}
 \alias{hprice2}
 \title{hprice2}
-\format{A data.frame with 506 observations on 12 variables:
+\format{
+A data.frame with 506 observations on 12 variables:
 \itemize{
  \item \strong{price:} median housing price, $
  \item \strong{crime:} crimes committed per capita
@@ -18,7 +19,8 @@
  \item \strong{lprice:} log(price)
  \item \strong{lnox:} log(nox)
  \item \strong{lproptax:} log(proptax)
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

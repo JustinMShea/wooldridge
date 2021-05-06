@@ -4,7 +4,8 @@
 \name{athlet1}
 \alias{athlet1}
 \title{athlet1}
-\format{A data.frame with 118 observations on 23 variables:
+\format{
+A data.frame with 118 observations on 23 variables:
 \itemize{
  \item \strong{year:} 1992 or 1993
  \item \strong{apps:} # applics for admission
@@ -29,7 +30,8 @@
  \item \strong{ctop25:} change in top25
  \item \strong{bball:} =1 if btitle or finfour
  \item \strong{cbball:} change in bball
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

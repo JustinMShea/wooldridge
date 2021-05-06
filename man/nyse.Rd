@@ -4,7 +4,8 @@
 \name{nyse}
 \alias{nyse}
 \title{nyse}
-\format{A data.frame with 691 observations on 8 variables:
+\format{
+A data.frame with 691 observations on 8 variables:
 \itemize{
  \item \strong{price:} NYSE stock price index
  \item \strong{return:} 100*(p - p(-1))/p(-1))
@@ -14,7 +15,8 @@
  \item \strong{price_2:} 
  \item \strong{cprice:} price - price_1
  \item \strong{cprice_1:} lagged cprice
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

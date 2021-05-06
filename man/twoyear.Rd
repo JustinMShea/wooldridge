@@ -4,7 +4,8 @@
 \name{twoyear}
 \alias{twoyear}
 \title{twoyear}
-\format{A data.frame with 6763 observations on 23 variables:
+\format{
+A data.frame with 6763 observations on 23 variables:
 \itemize{
  \item \strong{female:} =1 if female
  \item \strong{phsrank:} percent high school rank; 100 = best
@@ -29,7 +30,8 @@
  \item \strong{nc:} =1 if north central
  \item \strong{south:} =1 if south
  \item \strong{totcoll:} jc + univ
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

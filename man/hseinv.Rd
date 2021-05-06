@@ -4,7 +4,8 @@
 \name{hseinv}
 \alias{hseinv}
 \title{hseinv}
-\format{A data.frame with 42 observations on 14 variables:
+\format{
+A data.frame with 42 observations on 14 variables:
 \itemize{
  \item \strong{year:} 1947-1988
  \item \strong{inv:} real housing inv, millions $
@@ -20,7 +21,8 @@
  \item \strong{linvpc_1:} linvpc[_n-1]
  \item \strong{gprice:} lprice - lprice_1
  \item \strong{ginvpc:} linvpc - linvpc_1
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }

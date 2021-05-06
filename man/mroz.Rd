@@ -4,7 +4,8 @@
 \name{mroz}
 \alias{mroz}
 \title{mroz}
-\format{A data.frame with 753 observations on 22 variables:
+\format{
+A data.frame with 753 observations on 22 variables:
 \itemize{
  \item \strong{inlf:} =1 if in lab frce, 1975
  \item \strong{hours:} hours worked, 1975
@@ -28,7 +29,8 @@
  \item \strong{nwifeinc:} (faminc - wage*hours)/1000
  \item \strong{lwage:} log(wage)
  \item \strong{expersq:} exper^2
-}}
+}
+}
 \source{
 \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781111531041}
 }
