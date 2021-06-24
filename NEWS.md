@@ -2,6 +2,11 @@
 title: "NEWS"
 output: github_document
 ---
+
+# wooldridge 1.4-1
+
+Add `LazyDataCompression: xz` to DESCRIPTION file
+
 # wooldridge 1.4.0
 
 Add new data sets for the 7th addressing issues #5. These are JTRAIN98, LABSUP, NCAA_RPI, and SCHOOL93_98.
