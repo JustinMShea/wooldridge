@@ -2,7 +2,7 @@
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/wooldridge)](https://cran.r-project.org/package=wooldridge)
 [![status](https://tinyverse.netlify.com/badge/wooldridge)](https://CRAN.R-project.org/package=wooldridge)
-[![Travis](https://travis-ci.org/JustinMShea/wooldridge.svg?branch=master)](https://travis-ci.org/JustinMShea/wooldridge) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/JustinMShea/wooldridge?branch=master&svg=true)](https://ci.appveyor.com/project/JustinMShea/wooldridge)   [![](https://cranlogs.r-pkg.org/badges/wooldridge)](https://CRAN.R-project.org/package=wooldridge)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/JustinMShea/wooldridge?branch=master&svg=true)](https://ci.appveyor.com/project/JustinMShea/wooldridge)   [![](https://cranlogs.r-pkg.org/badges/grand-total/wooldridge)](https://CRAN.R-project.org/package=wooldridge)
 
 # wooldridge: 115 Data Sets for Econometrics 
 
