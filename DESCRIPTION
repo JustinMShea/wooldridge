@@ -22,5 +22,5 @@ RoxygenNote: 7.1.1
 Suggests: AER, knitr, plm, prais, rmarkdown, stargazer, tinytest
 VignetteBuilder: knitr
 LazyDataCompression: xz
-URL: https://justinmshea.github.io/wooldridge
-BugReports: https://github.com/JustinMShea/wooldridge/issues
+URL: https://justinmshea.github.io/wooldridge/
+BugReports: https://github.com/JustinMShea/wooldridge/issues/
