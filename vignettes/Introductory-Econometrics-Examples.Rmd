@@ -15,9 +15,9 @@ vignette: >
 
 ## Introduction
 
-This vignette contains examples from every chapter of _Introductory Econometrics: A Modern Approach, 6e_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with **R**.
+This vignette reproduces examples from various chapters of _Introductory Econometrics: A Modern Approach, 7e_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with **R**.
 
-In addition, the **Appendix** cites good sources on using **R** for econometrics. 
+In addition, the **Appendix** cites a few sources using **R** for econometrics. Of note, in 2020 Florian Hess published a 2nd edition of [_Using R for Introductory Econometrics_](http://www.urfie.net/); it is excellent. The Hess text is a companion to wooldridge for `R` users, and offers an in depth treatment with several worked examples from each chapter. Indeed, his exxample use this `wooldridge` package as well.
 
 Now, install and load the `wooldridge` package and lets get started!
 
