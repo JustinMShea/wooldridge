@@ -740,40 +740,6 @@ tbill_model <- lm(Tbill3mo ~ cpi + deficit, data = intdef3) # model relationship
 stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
-
-### **`Example 10.11:` Seasonal Effects of Antidumping Filings**
-
-C.M. Krupp and P.S. Pollard (1999), _Market Responses to Antidumpting Laws: Some Evidence from the U.S. Chemical Industry_, Canadian Journal of Economics 29, 199-227. Dr. Krupp kindly provided the data. They are monthly data covering February 1978 through December 1988. 
-
-```{r, message=FALSE}
-data("barium")
-barium_imports <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
-```
-
-Estimate a new model, `barium_seasonal` which accounts for seasonality by adding dummy variables contained in the data. 
-
-```{r}
-barium_seasonal <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6 + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec, data = barium)
-```
-
-Compare both models:
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",barium_imports, barium_seasonal,  single.row = TRUE, header = FALSE, digits=5)
-```
-
-
-
-Now, compute the `anova` between the two models.
-
-```{r}
-barium_anova <- anova(barium_imports, barium_seasonal)
-```
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",barium_anova,  single.row = TRUE, header = FALSE, digits=5)
-```
-
 \newpage
 
 ## Chapter 11: Further Issues in Using OLS with with Time Series Data
