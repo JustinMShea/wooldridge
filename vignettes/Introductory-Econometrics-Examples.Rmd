@@ -722,9 +722,17 @@ $$\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t$$
 Data from the _Economic Report of the President, 2004_, Tables B-64, B-73, and B-79.
 
 ```{r, message=FALSE}
-data("intdef")
+data("intdef") # load data
+library(xts) # load eXtensible Time Series pkg for time series
 
-tbill_model <- lm(i3 ~ inf + def, data = intdef)
+intdef3 <- xts(intdef[ ,-1], order.by = as.Date(intdef$year)) #create xts object
+intdef3 <- intdef3[ ,c("i3", "inf", "def")] # extract variables
+colnames(intdef3) <- c("Tbill3mo", "cpi", "deficit") # give clear names
+
+plot(intdef3, main = "Inflation, Deficits, and Interest Rates",
+     legend.loc = "topleft") # plot.xts to explore
+
+tbill_model <- lm(Tbill3mo ~ cpi + deficit, data = intdef3) # model relationship
 ```
 
 
