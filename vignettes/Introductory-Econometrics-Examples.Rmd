@@ -795,34 +795,6 @@ stargazer(type = "html",wage_time, wage_diff,  single.row = TRUE, header = FALSE
 
 ## Chapter 12: Serial Correlation and Heteroskedasticiy in Time Series Regressions
 
-### **`Example 12.4`: Prais-Winsten Estimation in the Event Study**
-
-```{r}
-data("barium")
-
-barium_model <- lm(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, 
-                   data = barium)
-```
-
-
-Load the `prais` package, use the `prais_winsten` function to estimate.
-
-```{r}
-library(prais)
-barium_prais_winsten <- prais_winsten(lchnimp ~ lchempi + lgas + lrtwex + befile6 + affile6 + afdec6, data = barium)
-```
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html", barium_model, single.row = TRUE, header = FALSE, digits=5)
-```
-
-```{r}
-barium_prais_winsten
-```
-
-
-\newpage
-
 ### **`Example 12.8:` Heteroskedasticity and the Efficient Markets Hypothesis**
 
 These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, [www.nyse.com](https://www.nyse.com/data-and-tech). 
@@ -889,150 +861,6 @@ DD_model <- lm(cdthrte ~ copen + cadmn, data = traffic1)
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",DD_model,  single.row = TRUE, header = FALSE, digits=5)
-```
-
-\newpage
-
-## Chapter 14: Advanced Panel Data Methods
-
-### **`Example 14.1:` Effect of Job Training on Firm Scrap Rates**
-
-In this section, we will estimate a linear panel model using the `plm` function from the `plm: Linear Models for Panel Data` package. See the bibliography for more information.
-
-```{r, warning=FALSE, message=FALSE}
-library(plm)
-data("jtrain")
-scrap_panel <- plm(lscrap ~ d88 + d89 + grant + grant_1, data = jtrain,
-            index = c('fcode','year'), model = 'within', effect ='individual')
-```
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",scrap_panel,  single.row = TRUE, header = FALSE, digits=5)
-```
-
-\newpage
-
-## Chapter 15: Instrumental Variables Estimation and Two Stage Least Squares
-
-### **`Example 15.1:` Estimating the Return to Education for Married Women**
-
-T.A. Mroz (1987), _The Sensitivity of an Empirical Model of Married Women's Hours of Work to Economic and Statistical Assumptions_, Econometrica 55, 765-799. Professor Ernst R. Berndt, of MIT, kindly provided the data, which he obtained from Professor Mroz.
-
-$$log(wage) = \beta_0 + \beta_1educ + \mu$$
-
-```{r, message=FALSE, eval=FALSE}
-data("mroz")
-?mroz
-```
-```{r}
-wage_educ_model <- lm(lwage ~ educ, data = mroz)
-```
-
-
-$$\widehat{educ} = \beta_0 + \beta_1fatheduc$$
-
-We run the typical linear model, but notice the use of the `subset` argument. `inlf` is a binary variable in which a value of 1 means they are "In the Labor Force". By sub-setting the `mroz` data.frame by observations in which `inlf==1`, only working women will be in the sample.
-
-```{r}
-fatheduc_model <- lm(educ ~ fatheduc, data = mroz, subset = (inlf==1))
-```
-
-In this section, we will perform an **Instrumental-Variable Regression**, using the  `ivreg` function in the `AER (Applied Econometrics with R)` package. See the bibliography for more information.
-
-```{r, message=FALSE}
-library(AER)
-wage_educ_IV <- ivreg(lwage ~ educ | fatheduc, data = mroz)
-```
-
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",wage_educ_model, fatheduc_model, wage_educ_IV, single.row = TRUE, header = FALSE, digits=5)
-```
-
-
-\newpage
-
-### **`Example 15.2:` Estimating the Return to Education for Men**
-
-Data from M. Blackburn and D. Neumark (1992), _Unobserved Ability, Efficiency Wages, and Interindustry Wage Differentials_, Quarterly Journal of Economics 107, 1421-1436. Professor Neumark kindly provided the data, of which Wooldridge uses the data for 1980.
-
-$$\widehat{educ} = \beta_0 + sibs$$
-
-```{r, message=FALSE, eval=FALSE}
-data("wage2")
-?wage2
-```{r}
-educ_sibs_model <- lm(educ ~ sibs, data = wage2)
-```
-
-
-$$\widehat{log(wage)} = \beta_0 + educ$$
-
-Again, estimate the model using the  `ivreg` function in the `AER (Applied Econometrics with R)` package.
-
-```{r, message=FALSE}
-library(AER)
-educ_sibs_IV <- ivreg(lwage ~ educ | sibs, data = wage2)
-```
-
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",educ_sibs_model, educ_sibs_IV, wage_educ_IV,  single.row = TRUE, header = FALSE, digits=5)
-```
-
-\newpage
-
-### **`Example 15.5:` Return to Education for Working Women**
-
-
-$$\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_2exper + \beta_3exper^2$$
-
-Use the  `ivreg` function in the `AER (Applied Econometrics with R)` package to estimate.
-
-```{r}
-data("mroz")
-wage_educ_exper_IV <- ivreg(lwage ~ educ + exper + expersq | exper + expersq + motheduc + fatheduc, data = mroz)
-```
-
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
-stargazer(type = "html",wage_educ_exper_IV,  single.row = TRUE, header = FALSE, digits=5)
-```
-
-\newpage
-
-## Chapter 16: Simultaneous Equations Models
-
-### **`Example 16.4:` INFLATION AND OPENNESS**
-
-Data from D. Romer (1993), _Openness and Inflation: Theory and Evidence_, Quarterly Journal of Economics 108, 869-903. The data are included in the article.
-
-$$inf = \beta_{10} + \alpha_1open + \beta_{11}log(pcinc) + \mu_1$$
-$$open = \beta_{20} + \alpha_2inf + \beta_{21}log(pcinc) + \beta_{22}log(land) + \mu_2$$
-
-### **`Example 16.6:` INFLATION AND OPENNESS**
-
-$$\widehat{open} = \beta_0 + \beta_{1}log(pcinc) + \beta_{2}log(land)$$
-
-
-```{r, message=FALSE, eval=FALSE}
-data("openness")
-?openness
-```{r}
-open_model <-lm(open ~ lpcinc + lland, data = openness)
-```
-
-$$\widehat{inf} = \beta_0 + \beta_{1}open + \beta_{2}log(pcinc)$$
-
-Use the  `ivreg` function in the `AER (Applied Econometrics with R)` package to estimate.
-
-```{r}
-library(AER)
-inflation_IV <- ivreg(inf ~ open + lpcinc | lpcinc + lland, data = openness)
-```
-
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-stargazer(type = "html",open_model, inflation_IV,  single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -1113,19 +941,11 @@ Springer-Verlag, 2008, New York. [https://www.springer.com/us/book/9780387773162
 
 ## Bibliography
 
-Croissant Y, Millo G (2008). "Panel Data Econometrics in R: The plm
-Package.” _Journal of Statistical Software_, *27*(2), 1-43. doi:
-10.18637/jss.v027.i02 (URL: https://doi.org/10.18637/jss.v027.i02).
-
 Marek Hlavac (2018). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2.1. URL: https://CRAN.R-project.org/package=stargazer
 
 R Core Team (2021). _R: A language and environment for statistical
 computing_. R Foundation for Statistical Computing, Vienna,
 Austria. URL https://www.R-project.org/.
-
-Christian Kleiber and Achim Zeileis (2008). _Applied Econometrics with R_. New York: Springer-Verlag. ISBN 978-0-387-77316-2. URL: https://CRAN.R-project.org/package=AER
-
-Franz X. Mohr (2019). _prais: Prais-Winsten Estimator for AR(1) Serial Correlation._ R package version 1.1.1. URL: https://CRAN.R-project.org/package=prais
 
 van der Loo M (2020). “A method for deriving information from
 running R code.” _The R Journal_, Accepted for publication. <URL:
