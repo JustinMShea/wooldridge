@@ -3,6 +3,12 @@ title: "NEWS"
 output: github_document
 ---
 
+# wooldridge 1.4-2
+
+- Reduced scope of vignette, removing Suggested pkgs `AER`, `plm`, and `prais` from the DESCRIPTION file. The package builds quicker and cleaner as `AER` & `plm` in particular have grown larger dependency trees over the years.
+
+- Added `xts` workflow examples
+
 # wooldridge 1.4-1
 
 Add `LazyDataCompression: xz` to DESCRIPTION file
