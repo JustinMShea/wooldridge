@@ -723,22 +723,79 @@ Data from the _Economic Report of the President, 2004_, Tables B-64, B-73, and B
 
 ```{r, message=FALSE}
 data("intdef") # load data
-library(xts) # load eXtensible Time Series pkg for time series
+library(xts) # load eXtensible Time Series pkg for time series. Good for plots and maintaining time series index integrity.
+intdef.xts <- xts(intdef[ ,-1], order.by = as.yearmon(intdef$year + 11/12)) #create xts object, format the 4 digit year to post as last month of the year.
 
-intdef3 <- xts(intdef[ ,-1], order.by = as.Date(intdef$year)) #create xts object
-intdef3 <- intdef3[ ,c("i3", "inf", "def")] # extract variables
-colnames(intdef3) <- c("Tbill3mo", "cpi", "deficit") # give clear names
+intdef.xts <- intdef.xts[ ,c("i3", "inf", "def")] # extract variables
+colnames(intdef.xts) <- c("Tbill3mo", "cpi", "deficit") # give clear names
 
-plot(intdef3, main = "Inflation, Deficits, and Interest Rates",
+plot(intdef.xts, main = "Inflation, Deficits, and Interest Rates",
      legend.loc = "topleft") # plot.xts to explore
 
-tbill_model <- lm(Tbill3mo ~ cpi + deficit, data = intdef3) # model relationship
+tbill_model <- lm(Tbill3mo ~ cpi + deficit, data = intdef.xts) # model relationship
 ```
 
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE, digits=5)
 ```
+
+Now lets update the example with current data, pull from the Federal Reserve Economic Research (FRED).
+
+```{r, warning=FALSE, message=FALSE}
+# Tbill, 3 month
+Tbill_3mo <- read.zoo("https://fred.stlouisfed.org/data/TB3MS.txt", 
+                       skip = 11, index.column = 1, header = TRUE, 
+                       format = "%Y-%m", FUN = as.yearmon)
+Tbill_3mo.xts <- as.xts(Tbill_3mo)
+colnames(Tbill_3mo.xts) <- "Tbill_3mo"
+
+Tbill_3mo.xts <- to.yearly(Tbill_3mo.xts, OHLC=FALSE)
+
+# Inflation
+inflation <- read.zoo("https://fred.stlouisfed.org/data/FPCPITOTLZGUSA.txt",
+                       skip = 17, index.column = 1, header = TRUE,
+                      format = "%Y-%m-%d", FUN = as.yearmon)
+index(inflation) <- index(inflation) +11/12 # move Jan to Dec
+inflation.xts <- as.xts(inflation) # transform to xts
+colnames(inflation.xts) <- "inflation"
+
+# Deficit, percent of GDP: Federal outlays - federal receipts
+outlays <- read.zoo("https://fred.stlouisfed.org/data/FYFRGDA188S.txt",
+                    skip = 17, index.column = 1, header = TRUE, 
+                       format = "%Y-%m-%d", FUN = as.yearmon)
+index(outlays) <- index(outlays) + 11/12 # move Jan to Dec
+outlays.xts <- as.xts(outlays)
+colnames(outlays.xts) <- "outlays"
+
+receipts <- read.zoo("https://fred.stlouisfed.org/data/FYONGDA188S.txt",
+                     skip = 17, index.column = 1, header = TRUE, 
+                     format = "%Y-%m-%d", FUN = as.yearmon)
+index(receipts) <- index(receipts) + 11/12 # move Jan to Dec
+receipts.xts <- as.xts(receipts)
+colnames(receipts.xts) <- "receipts"
+
+deficit.xts <- outlays.xts - receipts.xts
+colnames(deficit.xts) <- "deficit"
+
+intdef_new.xts <- merge(Tbill_3mo.xts, inflation.xts, deficit.xts)
+#Plot all
+plot(na.omit(intdef_new.xts), legend.loc = "topright",
+     main = "Annual T-bill (3mo rate), inflation, and deficit (% of GDP)")
+```
+
+Now lets run the model again. Inflation plays a much more prominent role in the 3 month T-bill rate, than the deficit. 
+
+```{r}
+updated_model <- lm(Tbill_3mo ~ inflation + deficit, data = intdef_new.xts)
+```
+
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+updated_model <- lm(Tbill_3mo ~ inflation + deficit, data = intdef_new.xts)
+
+stargazer(type = "html",updated_model, single.row = TRUE, header = FALSE, digits=5)
+```
+
 
 \newpage
 
