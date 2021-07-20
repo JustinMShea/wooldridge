@@ -723,16 +723,26 @@ Data from the _Economic Report of the President, 2004_, Tables B-64, B-73, and B
 
 ```{r, message=FALSE}
 data("intdef") # load data
-library(xts) # load eXtensible Time Series pkg for time series. Good for plots and maintaining time series index integrity.
-intdef.xts <- xts(intdef[ ,-1], order.by = as.yearmon(intdef$year + 11/12)) #create xts object, format the 4 digit year to post as last month of the year.
-
-intdef.xts <- intdef.xts[ ,c("i3", "inf", "def")] # extract variables
-colnames(intdef.xts) <- c("Tbill3mo", "cpi", "deficit") # give clear names
-
-plot(intdef.xts, main = "Inflation, Deficits, and Interest Rates",
-     legend.loc = "topleft") # plot.xts to explore
-
-tbill_model <- lm(Tbill3mo ~ cpi + deficit, data = intdef.xts) # model relationship
+# load eXtensible Time Series package.
+# xts is excellent for time series plots and 
+# properly indexing time series.
+library(xts) 
+# create xts object from data.frame
+# First, index year as yearmon class of monthly data. 
+# Note: I add 11/12 to set the month to December, end of year.
+index <- as.yearmon(intdef$year + 11/12)
+# Next, create the xts object, ordering by the index above.
+intdef.xts <- xts(intdef[ ,-1], order.by = index) 
+# extract 3-month Tbill, inflation, and deficit data
+intdef.xts <- intdef.xts[ ,c("i3", "inf", "def")] 
+# rename with clearer names
+colnames(intdef.xts) <- c("Tbill3mo", "cpi", "deficit") 
+# plot the object, add a title, and place legend at top left.
+plot(x = intdef.xts, 
+     main = "Inflation, Deficits, and Interest Rates",
+     legend.loc = "topleft")
+# Run a Linear regression model
+tbill_model <- lm(Tbill3mo ~ cpi + deficit, data = intdef.xts)
 ```
 
 
@@ -753,35 +763,68 @@ colnames(Tbill_3mo.xts) <- "Tbill_3mo"
 Tbill_3mo.xts <- to.yearly(Tbill_3mo.xts, OHLC=FALSE)
 
 # Inflation
-inflation <- read.zoo("https://fred.stlouisfed.org/data/FPCPITOTLZGUSA.txt",
-                       skip = 17, index.column = 1, header = TRUE,
-                      format = "%Y-%m-%d", FUN = as.yearmon)
-index(inflation) <- index(inflation) +11/12 # move Jan to Dec
-inflation.xts <- as.xts(inflation) # transform to xts
+inflation_url <- "https://fred.stlouisfed.org/data/FPCPITOTLZGUSA.txt"
+# use the read.zoo function to read in the file
+inflation <- read.zoo(file = inflation_url,
+                      skip = 17, 
+                      index.column = 1, 
+                      header = TRUE,
+                      format = "%Y-%m-%d", 
+                      FUN = as.yearmon)
+# read.zoo creates an index too. Lets move Jan to Dec
+index(inflation) <- index(inflation) +11/12 
+# transform to xts time series object
+inflation.xts <- as.xts(inflation)
+# update column names
 colnames(inflation.xts) <- "inflation"
 
-# Deficit, percent of GDP: Federal outlays - federal receipts
-outlays <- read.zoo("https://fred.stlouisfed.org/data/FYFRGDA188S.txt",
-                    skip = 17, index.column = 1, header = TRUE, 
-                       format = "%Y-%m-%d", FUN = as.yearmon)
-index(outlays) <- index(outlays) + 11/12 # move Jan to Dec
+## Deficit, percent of GDP: Federal outlays - federal receipts
+ # Download outlays
+outlays_url <-"https://fred.stlouisfed.org/data/FYFRGDA188S.txt"
+outlays <- read.zoo(file = outlays_url,
+                    skip = 17, 
+                    index.column = 1, 
+                    header = TRUE, 
+                    format = "%Y-%m-%d", 
+                    FUN = as.yearmon)
+# read.zoo creates an index too. Lets move Jan to Dec
+index(outlays) <- index(outlays) + 11/12
+# transform to xts object
 outlays.xts <- as.xts(outlays)
+# update column names
 colnames(outlays.xts) <- "outlays"
 
-receipts <- read.zoo("https://fred.stlouisfed.org/data/FYONGDA188S.txt",
-                     skip = 17, index.column = 1, header = TRUE, 
-                     format = "%Y-%m-%d", FUN = as.yearmon)
-index(receipts) <- index(receipts) + 11/12 # move Jan to Dec
+# Download receipts
+receipts_url <- "https://fred.stlouisfed.org/data/FYONGDA188S.txt"
+receipts <- read.zoo(file = receipts_url,
+                     skip = 17, 
+                     index.column = 1, 
+                     header = TRUE, 
+                     format = "%Y-%m-%d", 
+                     FUN = as.yearmon)
+# read.zoo creates an index too. Lets move Jan to Dec
+index(receipts) <- index(receipts) + 11/12
+# transform to xts object
 receipts.xts <- as.xts(receipts)
+# update column names
 colnames(receipts.xts) <- "receipts"
 
+# create deficits from outlays - receipts
+# xts objects respect their indexing and outline the future
 deficit.xts <- outlays.xts - receipts.xts
 colnames(deficit.xts) <- "deficit"
 
-intdef_new.xts <- merge(Tbill_3mo.xts, inflation.xts, deficit.xts)
+# Merge
+intdef_updated <- merge(Tbill_3mo.xts, 
+                        inflation.xts, 
+                        deficit.xts)
+
+# remove leading and trailing NAs with na.trim 
+intdef_updated <- zoo::na.trim(intdef_updated)
 #Plot all
-plot(na.omit(intdef_new.xts), legend.loc = "topright",
-     main = "Annual T-bill (3mo rate), inflation, and deficit (% of GDP)")
+plot(intdef_updated, 
+     main = "T-bill (3mo rate), inflation, and deficit (% of GDP)",
+     legend.loc = "topright",)
 ```
 
 Now lets run the model again. Inflation plays a much more prominent role in the 3 month T-bill rate, than the deficit. 
