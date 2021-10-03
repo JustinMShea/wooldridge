@@ -102,7 +102,7 @@ I removed written descriptions of the example problems, putting more emphasis on
 
 A bibliography section has been added, including package citations and their authors.
 
-An Appendix has been added, pointing readers to a few excellent sources for computing Econometric models with R. These are "Econometrics in R" by Grant Farnsworth and "Using R for Introductory Econometrics" by Florian Hess.
+An Appendix has been added, pointing readers to a few excellent sources for computing Econometric models with R. These are "Econometrics in R" by Grant Farnsworth and "Using R for Introductory Econometrics" by Florian Heiss.
 
 
 # wooldridge 1.0.0
