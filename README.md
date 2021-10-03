@@ -10,7 +10,7 @@ Economics students new to both Econometrics and **R** may find the introduction 
 
 The `wooldridge` package aims to lighten the task by easily loading any data set from the text. The package contains full documentation for each set and all data have been compressed to a fraction of their original size. Just install the package, load it, and call the data you wish to work with.
 
-_**But wait...there's more!**_ A vignette, [Introductory Econometrics Examples](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html):sparkles:, illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix of R resources, such as *Using R for Introductory Econometrics* by Florian Hess.
+_**But wait...there's more!**_ A vignette, [Introductory Econometrics Examples](https://justinmshea.github.io/wooldridge/articles/Introductory-Econometrics-Examples.html):sparkles:, illustrates solutions to examples from each chapter of the text, offering a relevant introduction to econometric modelling with **R**. The vignette also includes an Appendix of R resources, such as *Using R for Introductory Econometrics* by Florian Heiss.
 
 **Note:** All data sets are from the 7th edition (Wooldridge 2020, `ISBN-13: 978-1-337-55886-0`), which is compatible with all other editions.
 
