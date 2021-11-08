@@ -5,9 +5,11 @@ output: github_document
 
 # wooldridge 1.4-2
 
-- Reduced scope of vignette, removing Suggested pkgs `AER`, `plm`, and `prais` from the DESCRIPTION file. The package builds quicker and cleaner as `AER` & `plm` in particular have grown larger dependency trees over the years. `prias` also has a habit of breaking its api (see notes around release 1.3.1), and this has happened again in the recent relesae of`praise v1.1.2` causing a wooldridge WARNINGS on CRAN, which prompted this update. All in all, someo of these examples are nice, but they are done better elsewhere and so I refer readers to those sources. 
+- Reduced scope of vignette, removing examples and Suggested pkgs `AER`, `plm`, and `prais` from the wooldridge DESCRIPTION file. 
 
-- Added `quantmod` and `xts` to time series example.
+The wooldridge package builds & tests much quicker and cleaner as `AER` & `plm` in particular have grown larger dependency trees over the years. `prias` also has a habit of breaking its API(see notes around release wooldridge 1.3.1), and this has happened yet again in the recent release of `praise v1.1.2`, triggering  `wooldridge` WARNINGS on CRAN. A helpful note from Prof Brian Ripley was quick to follow, with the usual notification that wooldridge would be removed from CRAN. Given its limited use in an example, it makes sense to remove it all together to avoid future complications. After all, my time as maintainer is limited and this data package should be the easiest of my open source packages to maintain. These Vignette examples are nice, but they are given a much better treatment elsewhere and I refer readers to those sources.
+
+- Added `quantmod` and `xts` (very mature and stable packages) to extend a time series example with real data.
 
 # wooldridge 1.4-1
 
