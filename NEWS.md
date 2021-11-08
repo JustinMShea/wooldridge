@@ -5,9 +5,9 @@ output: github_document
 
 # wooldridge 1.4-2
 
-- Reduced scope of vignette, removing Suggested pkgs `AER`, `plm`, and `prais` from the DESCRIPTION file. The package builds quicker and cleaner as `AER` & `plm` in particular have grown larger dependency trees over the years.
+- Reduced scope of vignette, removing Suggested pkgs `AER`, `plm`, and `prais` from the DESCRIPTION file. The package builds quicker and cleaner as `AER` & `plm` in particular have grown larger dependency trees over the years. `prias` also has a habit of breaking its api, and indeed, that was done in its recent release causing a CRAN error that prompted this update. All in all, the examples are nice, but they are done better elsewhere and so I refer readers to those sources. 
 
-- Added `xts` workflow examples
+- Added `quantmod` and `xts` to time series example.
 
 # wooldridge 1.4-1
 
