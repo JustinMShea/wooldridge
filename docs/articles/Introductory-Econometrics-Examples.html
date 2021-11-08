@@ -79,7 +79,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="Introductory-Econometrics-Examples_files/header-attrs-2.9.1/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introductory Econometrics Examples</h1>
@@ -119,12 +119,14 @@
 
 <span class="op">?</span><span class="va">wage1</span></code></pre></div>
 <p>The documentation indicates these are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.</p>
-<p><strong><span class="math inline">\(wage\)</span>:</strong> average hourly earnings</p>
 <p><strong><span class="math inline">\(educ\)</span>:</strong> years of education</p>
+<p><strong><span class="math inline">\(wage\)</span>:</strong> average hourly earnings</p>
+<p><strong><span class="math inline">\(lwage\)</span>:</strong> log of the average hourly earnings</p>
 <p>First, make a scatter-plot of the two variables and look for possible patterns in the relationship between them.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <p>It appears that <em><strong>on average</strong></em>, more years of education, leads to higher wages.</p>
-<p>The example in the text investigates what the <em><strong>percentage</strong></em> change between wages and education might be. So, we must use the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span>.</p>
+<p>The example in the text is interested in the <em>return to another year of education</em>, or what the <em><strong>percentage</strong></em> change in wages one might expect for each additional year of education. To do so, one must use the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span>. This has already been computed in the data set and is defined as <code>lwage</code>.</p>
+<p>The textbook provides excellent discussions around these topics, so please consult it.</p>
 <p>Build a linear model to estimate the relationship between the <em>log of wage</em> (<code>lwage</code>) and <em>education</em> (<code>educ</code>).</p>
 <p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ\]</span></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
@@ -234,7 +236,7 @@ F Statistic
 </td>
 </tr>
 </table>
-<p>Plot the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span> vs <code>educ</code>, adding a line representing the least squares fit.</p>
+<p>Plot the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span> vs <code>educ</code>. The blue line represents the least squares fit.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1811,17 +1813,28 @@ F Statistic
 <p><span class="math display">\[\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t\]</span> Data from the <em>Economic Report of the President, 2004</em>, Tables B-64, B-73, and B-79.</p>
 <div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"intdef"</span><span class="op">)</span> <span class="co"># load data</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/joshuaulrich/xts">xts</a></span><span class="op">)</span> <span class="co"># load eXtensible Time Series pkg for time series. Good for plots and maintaining time series index integrity.</span>
-<span class="va">intdef.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/xts.html">xts</a></span><span class="op">(</span><span class="va">intdef</span><span class="op">[</span> ,<span class="op">-</span><span class="fl">1</span><span class="op">]</span>, order.by <span class="op">=</span> <span class="fu">as.yearmon</span><span class="op">(</span><span class="va">intdef</span><span class="op">$</span><span class="va">year</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span><span class="op">)</span><span class="op">)</span> <span class="co">#create xts object, format the 4 digit year to post as last month of the year.</span>
-
-<span class="va">intdef.xts</span> <span class="op">&lt;-</span> <span class="va">intdef.xts</span><span class="op">[</span> ,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"i3"</span>, <span class="st">"inf"</span>, <span class="st">"def"</span><span class="op">)</span><span class="op">]</span> <span class="co"># extract variables</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">intdef.xts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Tbill3mo"</span>, <span class="st">"cpi"</span>, <span class="st">"deficit"</span><span class="op">)</span> <span class="co"># give clear names</span>
-
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">intdef.xts</span>, main <span class="op">=</span> <span class="st">"Inflation, Deficits, and Interest Rates"</span>,
-     legend.loc <span class="op">=</span> <span class="st">"topleft"</span><span class="op">)</span> <span class="co"># plot.xts to explore</span></code></pre></div>
+<span class="co"># load eXtensible Time Series package.</span>
+<span class="co"># xts is excellent for time series plots and </span>
+<span class="co"># properly indexing time series.</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/joshuaulrich/xts">xts</a></span><span class="op">)</span> 
+<span class="co"># create xts object from data.frame</span>
+<span class="co"># First, index year as yearmon class of monthly data. </span>
+<span class="co"># Note: I add 11/12 to set the month to December, end of year.</span>
+<span class="va">index</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="va">intdef</span><span class="op">$</span><span class="va">year</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span><span class="op">)</span>
+<span class="co"># Next, create the xts object, ordering by the index above.</span>
+<span class="va">intdef.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/xts.html">xts</a></span><span class="op">(</span><span class="va">intdef</span><span class="op">[</span> ,<span class="op">-</span><span class="fl">1</span><span class="op">]</span>, order.by <span class="op">=</span> <span class="va">index</span><span class="op">)</span> 
+<span class="co"># extract 3-month Tbill, inflation, and deficit data</span>
+<span class="va">intdef.xts</span> <span class="op">&lt;-</span> <span class="va">intdef.xts</span><span class="op">[</span> ,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"i3"</span>, <span class="st">"inf"</span>, <span class="st">"def"</span><span class="op">)</span><span class="op">]</span> 
+<span class="co"># rename with clearer names</span>
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">intdef.xts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Tbill3mo"</span>, <span class="st">"cpi"</span>, <span class="st">"deficit"</span><span class="op">)</span> 
+<span class="co"># plot the object, add a title, and place legend at top left.</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">intdef.xts</span>, 
+     main <span class="op">=</span> <span class="st">"Inflation, Deficits, and Interest Rates"</span>,
+     legend.loc <span class="op">=</span> <span class="st">"topleft"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-64-1.png" width="700"></p>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">tbill_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Tbill3mo</span> <span class="op">~</span> <span class="va">cpi</span> <span class="op">+</span> <span class="va">deficit</span>, data <span class="op">=</span> <span class="va">intdef.xts</span><span class="op">)</span> <span class="co"># model relationship</span></code></pre></div>
+<code class="sourceCode R"><span class="co"># Run a Linear regression model</span>
+<span class="va">tbill_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Tbill3mo</span> <span class="op">~</span> <span class="va">cpi</span> <span class="op">+</span> <span class="va">deficit</span>, data <span class="op">=</span> <span class="va">intdef.xts</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -1932,51 +1945,67 @@ F Statistic
 </td>
 </tr>
 </table>
-<p>Now lets update the example with current data, pull from the Federal Reserve Economic Research (FRED).</p>
+<p>Now lets update the example with current data, pull from the Federal Reserve Economic Research (FRED) using the <a href="https://CRAN.R-project.org/package=quantmod">quantmod package</a>. Other than the convenient API, the package also formats time series data into <a href="https://CRAN.R-project.org/package=xts">xts: eXtensible Time Series</a> objects, which add many feature and benefits when working with time series.</p>
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Tbill, 3 month</span>
-<span class="va">Tbill_3mo</span> <span class="op">&lt;-</span> <span class="fu">read.zoo</span><span class="op">(</span><span class="st">"https://fred.stlouisfed.org/data/TB3MS.txt"</span>, 
-                       skip <span class="op">=</span> <span class="fl">11</span>, index.column <span class="op">=</span> <span class="fl">1</span>, header <span class="op">=</span> <span class="cn">TRUE</span>, 
-                       format <span class="op">=</span> <span class="st">"%Y-%m"</span>, FUN <span class="op">=</span> <span class="va">as.yearmon</span><span class="op">)</span>
-<span class="va">Tbill_3mo.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/as.xts.html">as.xts</a></span><span class="op">(</span><span class="va">Tbill_3mo</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">Tbill_3mo.xts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"Tbill_3mo"</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.quantmod.com">quantmod</a></span><span class="op">)</span>
 
-<span class="va">Tbill_3mo.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/to.period.html">to.yearly</a></span><span class="op">(</span><span class="va">Tbill_3mo.xts</span>, OHLC<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>
+<span class="co"># Tbill, 3 month</span>
+<span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html">getSymbols</a></span><span class="op">(</span><span class="st">"TB3MS"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "TB3MS"</code></pre>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># convert to annual observations and convert index to type `yearmon`.</span>
+<span class="va">TB3MS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/to.period.html">to.yearly</a></span><span class="op">(</span><span class="va">TB3MS</span>, OHLC<span class="op">=</span><span class="cn">FALSE</span>, drop.time <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">index</span><span class="op">(</span><span class="va">TB3MS</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="fu">index</span><span class="op">(</span><span class="va">TB3MS</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># Inflation</span>
-<span class="va">inflation</span> <span class="op">&lt;-</span> <span class="fu">read.zoo</span><span class="op">(</span><span class="st">"https://fred.stlouisfed.org/data/FPCPITOTLZGUSA.txt"</span>,
-                       skip <span class="op">=</span> <span class="fl">17</span>, index.column <span class="op">=</span> <span class="fl">1</span>, header <span class="op">=</span> <span class="cn">TRUE</span>,
-                      format <span class="op">=</span> <span class="st">"%Y-%m-%d"</span>, FUN <span class="op">=</span> <span class="va">as.yearmon</span><span class="op">)</span>
-<span class="fu">index</span><span class="op">(</span><span class="va">inflation</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">index</span><span class="op">(</span><span class="va">inflation</span><span class="op">)</span> <span class="op">+</span><span class="fl">11</span><span class="op">/</span><span class="fl">12</span> <span class="co"># move Jan to Dec</span>
-<span class="va">inflation.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/as.xts.html">as.xts</a></span><span class="op">(</span><span class="va">inflation</span><span class="op">)</span> <span class="co"># transform to xts</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">inflation.xts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"inflation"</span>
+<span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html">getSymbols</a></span><span class="op">(</span><span class="st">"FPCPITOTLZGUSA"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "FPCPITOTLZGUSA"</code></pre>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Convert the index to yearmon and shift FRED's Jan 1st to Dec</span>
+<span class="fu">index</span><span class="op">(</span><span class="va">FPCPITOTLZGUSA</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="fu">index</span><span class="op">(</span><span class="va">FPCPITOTLZGUSA</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span>
+<span class="co"># Rename and update column names</span>
+<span class="va">inflation</span> <span class="op">&lt;-</span> <span class="va">FPCPITOTLZGUSA</span>
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">inflation</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"inflation"</span>
 
-<span class="co"># Deficit, percent of GDP: Federal outlays - federal receipts</span>
-<span class="va">outlays</span> <span class="op">&lt;-</span> <span class="fu">read.zoo</span><span class="op">(</span><span class="st">"https://fred.stlouisfed.org/data/FYFRGDA188S.txt"</span>,
-                    skip <span class="op">=</span> <span class="fl">17</span>, index.column <span class="op">=</span> <span class="fl">1</span>, header <span class="op">=</span> <span class="cn">TRUE</span>, 
-                       format <span class="op">=</span> <span class="st">"%Y-%m-%d"</span>, FUN <span class="op">=</span> <span class="va">as.yearmon</span><span class="op">)</span>
-<span class="fu">index</span><span class="op">(</span><span class="va">outlays</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">index</span><span class="op">(</span><span class="va">outlays</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span> <span class="co"># move Jan to Dec</span>
-<span class="va">outlays.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/as.xts.html">as.xts</a></span><span class="op">(</span><span class="va">outlays</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">outlays.xts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"outlays"</span>
+<span class="co">## Deficit, percent of GDP: Federal outlays - federal receipts</span>
+ <span class="co"># Download outlays</span>
+<span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html">getSymbols</a></span><span class="op">(</span><span class="st">"FYFRGDA188S"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "FYFRGDA188S"</code></pre>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"> <span class="co"># Lets move the index from Jan 1st to Dec 30th/31st</span>
+<span class="fu">index</span><span class="op">(</span><span class="va">FYFRGDA188S</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="fu">index</span><span class="op">(</span><span class="va">FYFRGDA188S</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span>
+ <span class="co"># Rename and update column names</span>
+<span class="va">outlays</span> <span class="op">&lt;-</span> <span class="va">FYFRGDA188S</span>
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">outlays</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"outlays"</span>
 
-<span class="va">receipts</span> <span class="op">&lt;-</span> <span class="fu">read.zoo</span><span class="op">(</span><span class="st">"https://fred.stlouisfed.org/data/FYONGDA188S.txt"</span>,
-                     skip <span class="op">=</span> <span class="fl">17</span>, index.column <span class="op">=</span> <span class="fl">1</span>, header <span class="op">=</span> <span class="cn">TRUE</span>, 
-                     format <span class="op">=</span> <span class="st">"%Y-%m-%d"</span>, FUN <span class="op">=</span> <span class="va">as.yearmon</span><span class="op">)</span>
-<span class="fu">index</span><span class="op">(</span><span class="va">receipts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">index</span><span class="op">(</span><span class="va">receipts</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span> <span class="co"># move Jan to Dec</span>
-<span class="va">receipts.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/as.xts.html">as.xts</a></span><span class="op">(</span><span class="va">receipts</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">receipts.xts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"receipts"</span>
+ <span class="co"># Download receipts</span>
+<span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html">getSymbols</a></span><span class="op">(</span><span class="st">"FYONGDA188S"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "FYONGDA188S"</code></pre>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"> <span class="co"># Lets move the index from Jan 1st to Dec 30th/31st</span>
+<span class="fu">index</span><span class="op">(</span><span class="va">FYONGDA188S</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="fu">index</span><span class="op">(</span><span class="va">FYONGDA188S</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span>
+ <span class="co"># Rename and update column names</span>
+<span class="va">receipts</span> <span class="op">&lt;-</span> <span class="va">FYONGDA188S</span>
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">receipts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"receipts"</span></code></pre></div>
+<p>Now that all data has been downloaded, we can calculate the deficit from the federal <code>outlays</code> and <code>receipts</code> data. Next, we will merge our new <code>deficit</code> variable with <code>inflation</code> and <code>TB3MS</code> variables. As these are all <code>xts</code> times series objects, the <code>merge</code> function will automatically key off each series time date index, insuring integrity and alignment among each observation and its respective date. Additionally, xts provides easy chart construction with its plot method.</p>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># create deficits from outlays - receipts</span>
+<span class="co"># xts objects respect their indexing and outline the future</span>
+<span class="va">deficit</span> <span class="op">&lt;-</span> <span class="va">outlays</span> <span class="op">-</span> <span class="va">receipts</span>
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">deficit</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"deficit"</span>
 
-<span class="va">deficit.xts</span> <span class="op">&lt;-</span> <span class="va">outlays.xts</span> <span class="op">-</span> <span class="va">receipts.xts</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">deficit.xts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"deficit"</span>
+<span class="co"># Merge and remove leading and trailing NAs for a balanced data matrix</span>
+<span class="va">intdef_updated</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">TB3MS</span>, <span class="va">inflation</span>, <span class="va">deficit</span><span class="op">)</span>
+<span class="va">intdef_updated</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/na.trim.html">na.trim</a></span><span class="op">(</span><span class="va">intdef_updated</span><span class="op">)</span>
 
-<span class="va">intdef_new.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">Tbill_3mo.xts</span>, <span class="va">inflation.xts</span>, <span class="va">deficit.xts</span><span class="op">)</span>
 <span class="co">#Plot all</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html">na.omit</a></span><span class="op">(</span><span class="va">intdef_new.xts</span><span class="op">)</span>, legend.loc <span class="op">=</span> <span class="st">"topright"</span>,
-     main <span class="op">=</span> <span class="st">"Annual T-bill (3mo rate), inflation, and deficit (% of GDP)"</span><span class="op">)</span></code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-66-1.png" width="700"></p>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">intdef_updated</span>, 
+     main <span class="op">=</span> <span class="st">"T-bill (3mo rate), inflation, and deficit (% of GDP)"</span>,
+     legend.loc <span class="op">=</span> <span class="st">"topright"</span>,<span class="op">)</span></code></pre></div>
+<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-67-1.png" width="700"></p>
 <p>Now lets run the model again. Inflation plays a much more prominent role in the 3 month T-bill rate, than the deficit.</p>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">updated_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Tbill_3mo</span> <span class="op">~</span> <span class="va">inflation</span> <span class="op">+</span> <span class="va">deficit</span>, data <span class="op">=</span> <span class="va">intdef_new.xts</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">updated_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">TB3MS</span> <span class="op">~</span> <span class="va">inflation</span> <span class="op">+</span> <span class="va">deficit</span>, data <span class="op">=</span> <span class="va">intdef_updated</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -1999,7 +2028,7 @@ F Statistic
 <td style="text-align:left">
 </td>
 <td>
-Tbill_3mo
+TB3MS
 </td>
 </tr>
 <tr>
@@ -2011,7 +2040,7 @@ Tbill_3mo
 inflation
 </td>
 <td>
-0.87992<sup>***</sup> (0.09311)
+0.88001<sup>***</sup> (0.09313)
 </td>
 </tr>
 <tr>
@@ -2019,7 +2048,7 @@ inflation
 deficit
 </td>
 <td>
-0.20795<sup>**</sup> (0.09254)
+0.20756<sup>**</sup> (0.09259)
 </td>
 </tr>
 <tr>
@@ -2027,7 +2056,7 @@ deficit
 Constant
 </td>
 <td>
-1.79515<sup>***</sup> (0.52467)
+1.79353<sup>***</sup> (0.52477)
 </td>
 </tr>
 <tr>
@@ -2047,7 +2076,7 @@ Observations
 R<sup>2</sup>
 </td>
 <td>
-0.64011
+0.63996
 </td>
 </tr>
 <tr>
@@ -2055,7 +2084,7 @@ R<sup>2</sup>
 Adjusted R<sup>2</sup>
 </td>
 <td>
-0.62770
+0.62755
 </td>
 </tr>
 <tr>
@@ -2063,7 +2092,7 @@ Adjusted R<sup>2</sup>
 Residual Std. Error
 </td>
 <td>
-1.97715 (df = 58)
+1.97754 (df = 58)
 </td>
 </tr>
 <tr>
@@ -2071,7 +2100,7 @@ Residual Std. Error
 F Statistic
 </td>
 <td>
-51.57920<sup>***</sup> (df = 2; 58)
+51.54762<sup>***</sup> (df = 2; 58)
 </td>
 </tr>
 <tr>
@@ -2098,11 +2127,11 @@ F Statistic
 <a href="#example-11-7-wages-and-productivity" class="anchor"></a><strong><code>Example 11.7:</code> Wages and Productivity</strong>
 </h3>
 <p><span class="math display">\[\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t\]</span> Data from the <em>Economic Report of the President, 1989</em>, Table B-47. The data are for the non-farm business sector.</p>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"earns"</span><span class="op">)</span>
 
 <span class="va">wage_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lhrwage</span> <span class="op">~</span> <span class="va">loutphr</span> <span class="op">+</span> <span class="va">t</span>, data <span class="op">=</span> <span class="va">earns</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">wage_diff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">lhrwage</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">loutphr</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">earns</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <tr>
@@ -2271,13 +2300,13 @@ F Statistic
 </h3>
 <p>These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, <a href="https://www.nyse.com/data-and-tech">www.nyse.com</a>.</p>
 <p><span class="math display">\[return_t = \beta_0 + \beta_1return_{t-1} + \mu_t\]</span></p>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"nyse"</span><span class="op">)</span>
 <span class="op">?</span><span class="va">nyse</span> </code></pre></div>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">return_AR1</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">return</span> <span class="op">~</span> <span class="va">return_1</span>, data <span class="op">=</span> <span class="va">nyse</span><span class="op">)</span></code></pre></div>
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t\]</span></p>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">return_mu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">return_AR1</span><span class="op">)</span>
 <span class="va">mu2_hat_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">return_mu</span><span class="op">^</span><span class="fl">2</span> <span class="op">~</span> <span class="va">return_1</span>, data <span class="op">=</span> <span class="va">return_AR1</span><span class="op">$</span><span class="va">model</span><span class="op">)</span></code></pre></div>
 <table class="table">
@@ -2424,7 +2453,7 @@ F Statistic (df = 1; 687)
 </h3>
 <p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t\]</span></p>
 <p>We still have <code>return_mu</code> in the working environment so we can use it to create <span class="math inline">\(\hat{\mu^2_t}\)</span>, (<code>mu2_hat</code>) and <span class="math inline">\(\hat{\mu^2_{t-1}}\)</span> (<code>mu2_hat_1</code>). Notice the use <code>R</code>’s matrix subset operations to perform the lag operation. We drop the first observation of <code>mu2_hat</code> and squared the results. Next, we remove the last observation of <code>mu2_hat_1</code> using the subtraction operator combined with a call to the <code>NROW</code> function on <code>return_mu</code>. Now, both contain <span class="math inline">\(688\)</span> observations and we can estimate a standard linear model.</p>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mu2_hat</span>  <span class="op">&lt;-</span> <span class="va">return_mu</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span>
 <span class="va">mu2_hat_1</span> <span class="op">&lt;-</span> <span class="va">return_mu</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">NROW</a></span><span class="op">(</span><span class="va">return_mu</span><span class="op">)</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span>
 <span class="va">arch_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mu2_hat</span> <span class="op">~</span> <span class="va">mu2_hat_1</span><span class="op">)</span></code></pre></div>
@@ -2541,10 +2570,10 @@ F Statistic
 <a href="#example-13-7-effect-of-drunk-driving-laws-on-traffic-fatalities" class="anchor"></a><strong><code>Example 13.7:</code> Effect of Drunk Driving Laws on Traffic Fatalities</strong>
 </h3>
 <p>Wooldridge collected these data from two sources, the 1992 <em>Statistical Abstract of the United States</em> (Tables 1009, 1012) and <em>A Digest of State Alcohol-Highway Safety Related Legislation</em>, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. <span class="math display">\[\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}\]</span></p>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"traffic1"</span><span class="op">)</span>
 <span class="op">?</span><span class="va">traffic1</span></code></pre></div>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">DD_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">cdthrte</span> <span class="op">~</span> <span class="va">copen</span> <span class="op">+</span> <span class="va">cadmn</span>, data <span class="op">=</span> <span class="va">traffic1</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <tr>
@@ -2667,17 +2696,17 @@ F Statistic
 <a href="#example-18-8-forecasting-the-u-s--unemployment-rate" class="anchor"></a><strong><code>Example 18.8:</code> FORECASTING THE U.S. UNEMPLOYMENT RATE</strong>
 </h3>
 <p>Data from <em>Economic Report of the President, 2004</em>, Tables B-42 and B-64.</p>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"phillips"</span><span class="op">)</span>
 <span class="op">?</span><span class="va">phillips</span></code></pre></div>
 <p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}\]</span></p>
 <p>Estimate the linear model in the usual way and note the use of the <code>subset</code> argument to define data equal to and before the year 1996.</p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">phillips_train</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">phillips</span>, <span class="va">year</span> <span class="op">&lt;=</span> <span class="fl">1996</span><span class="op">)</span>
 
 <span class="va">unem_AR1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">unem</span> <span class="op">~</span> <span class="va">unem_1</span>, data <span class="op">=</span> <span class="va">phillips_train</span><span class="op">)</span></code></pre></div>
 <p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}\]</span></p>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">unem_inf_VAR1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">unem</span> <span class="op">~</span> <span class="va">unem_1</span> <span class="op">+</span> <span class="va">inf_1</span>, data <span class="op">=</span> <span class="va">phillips_train</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <tr>
@@ -2823,7 +2852,7 @@ F Statistic
 </tr>
 </table>
 <p>Now, use the <code>subset</code> argument to create our testing data set containing observation after 1996. Next, pass the both the model object and the test set to the <code>predict</code> function for both models. Finally, <code>cbind</code> or “column bind” both forecasts as well as the year and unemployment rate of the test set.</p>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">phillips_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">phillips</span>, <span class="va">year</span> <span class="op">&gt;=</span> <span class="fl">1997</span><span class="op">)</span>
 
 <span class="va">AR1_forecast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.lm.html">predict.lm</a></span><span class="op">(</span><span class="va">unem_AR1</span>, newdata <span class="op">=</span> <span class="va">phillips_test</span><span class="op">)</span>
@@ -2919,10 +2948,11 @@ F Statistic
 <div id="bibliography" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bibliography" class="anchor"></a>Bibliography</h2>
-<p>Marek Hlavac (2018). <em>stargazer: Well-Formatted Regression and Summary Statistics Tables</em>. R package version 5.2.1. URL: <a href="https://CRAN.R-project.org/package=stargazer" class="uri">https://CRAN.R-project.org/package=stargazer</a></p>
-<p>R Core Team (2021). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing, Vienna, Austria. URL <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
-<p>van der Loo M (2020). “A method for deriving information from running R code.” <em>The R Journal</em>, Accepted for publication. &lt;URL: <a href="https://arxiv.org/abs/2002.07472" class="uri">https://arxiv.org/abs/2002.07472</a>&gt;.</p>
 <p>Jeffrey M. Wooldridge (2020). <em>Introductory Econometrics: A Modern Approach, 7th edition</em>. ISBN-13: 978-1-337-55886-0. Mason, Ohio :South-Western Cengage Learning.</p>
+<p>Jeffrey A. Ryan and Joshua M. Ulrich (2020). quantmod: Quantitative Financial Modelling Framework. R package version 0.4.18. <a href="https://CRAN.R-project.org/package=quantmod" class="uri">https://CRAN.R-project.org/package=quantmod</a></p>
+<p>R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+<p>Marek Hlavac (2018). <em>stargazer: Well-Formatted Regression and Summary Statistics Tables</em>. R package version 5.2.2. URL: <a href="https://CRAN.R-project.org/package=stargazer" class="uri">https://CRAN.R-project.org/package=stargazer</a></p>
+<p>van der Loo M (2020). tinytest “A method for deriving information from running R code.” <em>The R Journal</em>, Accepted for publication. &lt;URL: <a href="https://arxiv.org/abs/2002.07472" class="uri">https://arxiv.org/abs/2002.07472</a>&gt;.</p>
 <p>Yihui Xie (2021). <em>knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. R package version 1.33. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a></p>
 </div>
 </div>
