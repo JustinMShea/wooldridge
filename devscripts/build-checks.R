@@ -16,6 +16,7 @@ rhub::platforms()$name
 rhub::check(platform = rhub::platforms()$name[1]) # debian-clang-devel"
 rhub::check(platform = rhub::platforms()$name[4]) # debian-gcc-devel
 rhub::check(platform = rhub::platforms()$name[11]) # macos-highsierra-release-cran
+rhub::check(platform = rhub::platforms()$name[12]) # macos-m1-bigsur-release
 rhub::check(platform = rhub::platforms()$name[16]) # windows-x86_64-devel
 rhub::check(platform = rhub::platforms()$name[20]) # windows-x86_64-release 
 
