@@ -51,9 +51,12 @@ data("wage1")
 
 The documentation indicates these are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.
 
+**$educ$:** years of education
+
 **$wage$:** average hourly earnings
 
-**$educ$:** years of education
+**$lwage$:** log of the average hourly earnings
+
 
 First, make a scatter-plot of the two variables and look for possible patterns in the relationship between them.
 
@@ -67,7 +70,9 @@ rug(wage1$wage, side=2, col="darkgreen")
 
 It appears that _**on average**_, more years of education, leads to higher wages.
 
-The example in the text investigates what the _**percentage**_ change between wages and education might be. So, we must use the $log($`wage`$)$.
+The example in the text is interested in the _return to another year of education_, or what the _**percentage**_ change in wages one might expect for each additional year of education. To do so, one must use the $log($`wage`$)$. This has already been computed in the data set and is defined as `lwage`.
+
+The textbook provides excellent discussions around these topics, so please consult it.
 
 Build a linear model to estimate the relationship between the _log of wage_ (`lwage`) and _education_ (`educ`).
 
@@ -88,8 +93,7 @@ summary(log_wage_model)
 stargazer(type = "html", log_wage_model, single.row = TRUE, header = FALSE, digits = 5)
 ```
 
-Plot the $log($`wage`$)$ vs `educ`, adding a line representing the least squares
-fit.
+Plot the $log($`wage`$)$ vs `educ`. The blue line represents the least squares fit.
 
 ```{r, echo=FALSE}
 plot(y = wage1$lwage, x = wage1$educ, main = "A Log Wage Equation", 
@@ -750,77 +754,55 @@ tbill_model <- lm(Tbill3mo ~ cpi + deficit, data = intdef.xts)
 stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
-Now lets update the example with current data, pull from the Federal Reserve Economic Research (FRED).
+Now lets update the example with current data, pull from the Federal Reserve Economic Research (FRED) using the [quantmod package](https://CRAN.R-project.org/package=quantmod). Other than the convenient API, the package also formats time series data into [xts: eXtensible Time Series](https://CRAN.R-project.org/package=xts) objects, which add many feature and benefits when working with time series.
 
-```{r, warning=FALSE, message=FALSE}
+```{r message=FALSE, warning=FALSE}
+library(quantmod)
+
 # Tbill, 3 month
-Tbill_3mo <- read.zoo("https://fred.stlouisfed.org/data/TB3MS.txt", 
-                       skip = 11, index.column = 1, header = TRUE, 
-                       format = "%Y-%m", FUN = as.yearmon)
-Tbill_3mo.xts <- as.xts(Tbill_3mo)
-colnames(Tbill_3mo.xts) <- "Tbill_3mo"
-
-Tbill_3mo.xts <- to.yearly(Tbill_3mo.xts, OHLC=FALSE)
+getSymbols("TB3MS", src = "FRED")
+# convert to annual observations and convert index to type `yearmon`.
+TB3MS <- to.yearly(TB3MS, OHLC=FALSE, drop.time = TRUE)
+index(TB3MS) <- as.yearmon(index(TB3MS))
 
 # Inflation
-inflation_url <- "https://fred.stlouisfed.org/data/FPCPITOTLZGUSA.txt"
-# use the read.zoo function to read in the file
-inflation <- read.zoo(file = inflation_url,
-                      skip = 17, 
-                      index.column = 1, 
-                      header = TRUE,
-                      format = "%Y-%m-%d", 
-                      FUN = as.yearmon)
-# read.zoo creates an index too. Lets move Jan to Dec
-index(inflation) <- index(inflation) +11/12 
-# transform to xts time series object
-inflation.xts <- as.xts(inflation)
-# update column names
-colnames(inflation.xts) <- "inflation"
+getSymbols("FPCPITOTLZGUSA", src = "FRED")
+# Convert the index to yearmon and shift FRED's Jan 1st to Dec
+index(FPCPITOTLZGUSA) <- as.yearmon(index(FPCPITOTLZGUSA)) + 11/12
+# Rename and update column names
+inflation <- FPCPITOTLZGUSA
+colnames(inflation) <- "inflation"
 
 ## Deficit, percent of GDP: Federal outlays - federal receipts
  # Download outlays
-outlays_url <-"https://fred.stlouisfed.org/data/FYFRGDA188S.txt"
-outlays <- read.zoo(file = outlays_url,
-                    skip = 17, 
-                    index.column = 1, 
-                    header = TRUE, 
-                    format = "%Y-%m-%d", 
-                    FUN = as.yearmon)
-# read.zoo creates an index too. Lets move Jan to Dec
-index(outlays) <- index(outlays) + 11/12
-# transform to xts object
-outlays.xts <- as.xts(outlays)
-# update column names
-colnames(outlays.xts) <- "outlays"
+getSymbols("FYFRGDA188S", src = "FRED")
+ # Lets move the index from Jan 1st to Dec 30th/31st
+index(FYFRGDA188S) <- as.yearmon(index(FYFRGDA188S)) + 11/12
+ # Rename and update column names
+outlays <- FYFRGDA188S
+colnames(outlays) <- "outlays"
 
-# Download receipts
-receipts_url <- "https://fred.stlouisfed.org/data/FYONGDA188S.txt"
-receipts <- read.zoo(file = receipts_url,
-                     skip = 17, 
-                     index.column = 1, 
-                     header = TRUE, 
-                     format = "%Y-%m-%d", 
-                     FUN = as.yearmon)
-# read.zoo creates an index too. Lets move Jan to Dec
-index(receipts) <- index(receipts) + 11/12
-# transform to xts object
-receipts.xts <- as.xts(receipts)
-# update column names
-colnames(receipts.xts) <- "receipts"
+ # Download receipts
+getSymbols("FYONGDA188S", src = "FRED")
+ # Lets move the index from Jan 1st to Dec 30th/31st
+index(FYONGDA188S) <- as.yearmon(index(FYONGDA188S)) + 11/12
+ # Rename and update column names
+receipts <- FYONGDA188S
+colnames(receipts) <- "receipts"
+```
 
+Now that all data has been downloaded, we can calculate the deficit from the federal `outlays` and `receipts` data. Next, we will merge our new `deficit` variable with `inflation` and `TB3MS` variables. As these are all `xts` times series objects, the `merge` function will automatically key off each series time date index, insuring integrity and alignment among each observation and its respective date.  Additionally, xts provides easy chart construction with its plot method.
+
+```{r message=FALSE, warning=FALSE}
 # create deficits from outlays - receipts
 # xts objects respect their indexing and outline the future
-deficit.xts <- outlays.xts - receipts.xts
-colnames(deficit.xts) <- "deficit"
+deficit <- outlays - receipts
+colnames(deficit) <- "deficit"
 
-# Merge
-intdef_updated <- merge(Tbill_3mo.xts, 
-                        inflation.xts, 
-                        deficit.xts)
-
-# remove leading and trailing NAs with na.trim 
+# Merge and remove leading and trailing NAs for a balanced data matrix
+intdef_updated <- merge(TB3MS, inflation, deficit)
 intdef_updated <- zoo::na.trim(intdef_updated)
+
 #Plot all
 plot(intdef_updated, 
      main = "T-bill (3mo rate), inflation, and deficit (% of GDP)",
@@ -830,13 +812,13 @@ plot(intdef_updated,
 Now lets run the model again. Inflation plays a much more prominent role in the 3 month T-bill rate, than the deficit. 
 
 ```{r}
-updated_model <- lm(Tbill_3mo ~ inflation + deficit, data = intdef_new.xts)
+updated_model <- lm(TB3MS ~ inflation + deficit, data = intdef_updated)
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-updated_model <- lm(Tbill_3mo ~ inflation + deficit, data = intdef_new.xts)
+updated_model <- lm(TB3MS ~ inflation + deficit, data = intdef_updated)
 
-stargazer(type = "html",updated_model, single.row = TRUE, header = FALSE, digits=5)
+stargazer(type = "html", updated_model, single.row = TRUE, header = FALSE, digits=5)
 ```
 
 
@@ -1015,25 +997,22 @@ Springer-Verlag, 2008, New York. [https://www.springer.com/us/book/9780387773162
 
 ## Bibliography
 
-Marek Hlavac (2018). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2.1. URL: https://CRAN.R-project.org/package=stargazer
+Jeffrey M. Wooldridge (2020). _Introductory Econometrics: A Modern Approach, 7th edition_. ISBN-13: 978-1-337-55886-0. Mason, Ohio :South-Western Cengage Learning. 
 
-R Core Team (2021). _R: A language and environment for statistical
-computing_. R Foundation for Statistical Computing, Vienna,
-Austria. URL https://www.R-project.org/.
+Jeffrey A. Ryan and Joshua M. Ulrich (2020). quantmod:
+Quantitative Financial Modelling Framework. R package version
+0.4.18. https://CRAN.R-project.org/package=quantmod
 
-van der Loo M (2020). “A method for deriving information from
+R Core Team (2021). R: A language and environment for
+statistical computing. R Foundation for Statistical Computing,
+Vienna, Austria. URL https://www.R-project.org/.
+
+Marek Hlavac (2018). _stargazer: Well-Formatted Regression and Summary Statistics Tables_. R package version 5.2.2. URL: https://CRAN.R-project.org/package=stargazer
+
+van der Loo M (2020). tinytest “A method for deriving information from
 running R code.” _The R Journal_, Accepted for publication. <URL:
 https://arxiv.org/abs/2002.07472>.
 
-Jeffrey M. Wooldridge (2020). _Introductory Econometrics: A Modern Approach, 7th edition_. ISBN-13: 978-1-337-55886-0. Mason, Ohio :South-Western Cengage Learning. 
-
 Yihui Xie (2021). _knitr: A General-Purpose Package for Dynamic
-  Report Generation in R_. R package version 1.33. https://CRAN.R-project.org/package=knitr
-
-
-
-
-
-
-
+Report Generation in R_. R package version 1.33. https://CRAN.R-project.org/package=knitr
 
