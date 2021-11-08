@@ -734,7 +734,7 @@ library(xts)
 # create xts object from data.frame
 # First, index year as yearmon class of monthly data. 
 # Note: I add 11/12 to set the month to December, end of year.
-index <- as.yearmon(intdef$year + 11/12)
+index <- zoo::as.yearmon(intdef$year + 11/12)
 # Next, create the xts object, ordering by the index above.
 intdef.xts <- xts(intdef[ ,-1], order.by = index) 
 # extract 3-month Tbill, inflation, and deficit data
@@ -763,12 +763,12 @@ library(quantmod)
 getSymbols("TB3MS", src = "FRED")
 # convert to annual observations and convert index to type `yearmon`.
 TB3MS <- to.yearly(TB3MS, OHLC=FALSE, drop.time = TRUE)
-index(TB3MS) <- as.yearmon(index(TB3MS))
+index(TB3MS) <- zoo::as.yearmon(index(TB3MS))
 
 # Inflation
 getSymbols("FPCPITOTLZGUSA", src = "FRED")
 # Convert the index to yearmon and shift FRED's Jan 1st to Dec
-index(FPCPITOTLZGUSA) <- as.yearmon(index(FPCPITOTLZGUSA)) + 11/12
+index(FPCPITOTLZGUSA) <- zoo::as.yearmon(index(FPCPITOTLZGUSA)) + 11/12
 # Rename and update column names
 inflation <- FPCPITOTLZGUSA
 colnames(inflation) <- "inflation"
@@ -777,7 +777,7 @@ colnames(inflation) <- "inflation"
  # Download outlays
 getSymbols("FYFRGDA188S", src = "FRED")
  # Lets move the index from Jan 1st to Dec 30th/31st
-index(FYFRGDA188S) <- as.yearmon(index(FYFRGDA188S)) + 11/12
+index(FYFRGDA188S) <- zoo::as.yearmon(index(FYFRGDA188S)) + 11/12
  # Rename and update column names
 outlays <- FYFRGDA188S
 colnames(outlays) <- "outlays"
@@ -785,7 +785,7 @@ colnames(outlays) <- "outlays"
  # Download receipts
 getSymbols("FYONGDA188S", src = "FRED")
  # Lets move the index from Jan 1st to Dec 30th/31st
-index(FYONGDA188S) <- as.yearmon(index(FYONGDA188S)) + 11/12
+index(FYONGDA188S) <- zoo::as.yearmon(index(FYONGDA188S)) + 11/12
  # Rename and update column names
 receipts <- FYONGDA188S
 colnames(receipts) <- "receipts"
