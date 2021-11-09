@@ -22,7 +22,7 @@ jobs:
       - name: Install R pkg Linux dependencies 
         if: runner.os == 'Linux'
         run: |
-          sudo apt-get install pandoc textlive-full libmpfr-dev libmpfr-doc
+          sudo apt-get install pandoc texlive-full libmpfr-dev libmpfr-doc
       - name: Install curl
         if: runner.os == 'Linux'
         run: |
