@@ -2,6 +2,12 @@
 title: "NEWS"
 output: github_document
 ---
+# wooldridge 1.4-3
+
+- Implemented Github Actions for R 
+
+- Fix minor spelling mistakes
+
 
 # wooldridge 1.4-2
 
