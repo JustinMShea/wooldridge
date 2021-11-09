@@ -2,6 +2,7 @@
 ^\.Rproj\.user$
 ^data-raw$
 ^devscripts$
+^.github$
 ^\.travis\.yml$
 ^Wooldridge-6th.zip$
 ^Wooldridge-5th.zip$
