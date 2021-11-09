@@ -19,7 +19,7 @@ jobs:
         uses: r-lib/actions/setup-r@f57f1301a053485946083d7a45022b278929a78a
         with:
           r-version: ${{ matrix.r-version }}
-    name: Install R pkg Linux dependencies 
+      - name: Install R pkg Linux dependencies 
         if: runner.os == 'Linux'
         run: |
           sudo apt-get install pandoc libmpfr-dev libmpfr-doc
