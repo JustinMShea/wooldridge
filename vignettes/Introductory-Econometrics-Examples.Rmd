@@ -17,7 +17,7 @@ vignette: >
 
 This vignette reproduces examples from various chapters of _Introductory Econometrics: A Modern Approach, 7e_ by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with **R**.
 
-In addition, the **Appendix** cites a few sources using **R** for econometrics. Of note, in 2020 Florian Hess published a 2nd edition of [_Using R for Introductory Econometrics_](http://www.urfie.net/); it is excellent. The Hess text is a companion to wooldridge for `R` users, and offers an in depth treatment with several worked examples from each chapter. Indeed, his exxample use this `wooldridge` package as well.
+In addition, the **Appendix** cites a few sources using **R** for econometrics. Of note, in 2020 Florian Heiss published a 2nd edition of [_Using R for Introductory Econometrics_](http://www.urfie.net/); it is excellent. The Heiss text is a companion to wooldridge for `R` users, and offers an in depth treatment with several worked examples from each chapter. Indeed, his example use this `wooldridge` package as well.
 
 Now, install and load the `wooldridge` package and lets get started!
 
@@ -979,7 +979,7 @@ This is an excellent open source complimentary text to "Introductory Econometric
 
 >  This book introduces the popular, powerful and free programming language and software package R with a focus on the implementation of standard tools and methods used in econometrics. Unlike other books on similar topics, it does not attempt to provide a self-contained discussion of econometric models and methods. Instead, it builds on the excellent and popular textbook "Introductory Econometrics" by Jeffrey M. Wooldridge.
 
-Hess, Florian. _Using R for Introductory Econometrics_. ISBN: 978-1-523-28513-6, CreateSpace Independent Publishing Platform, 2016, Dusseldorf, Germany. 
+Heiss, Florian. _Using R for Introductory Econometrics_. ISBN: 979-8648424364, CreateSpace Independent Publishing Platform, 2020, Dusseldorf, Germany. 
 
 [url: http://www.urfie.net/](http://www.urfie.net/).
 
