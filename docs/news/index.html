@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">wooldridge</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4-2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4-3</span>
       </span>
     </div>
 
@@ -126,17 +126,22 @@
       <small>Source: <a href='https://github.com/JustinMShea/wooldridge/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="wooldridge-14-2" class="section level1">
-<h1 class="page-header" data-toc-text="1.4-2">
-<a href="#wooldridge-14-2" class="anchor"></a>wooldridge 1.4-2<small> Unreleased </small>
+    <div id="wooldridge-14-3" class="section level1">
+<h1 class="page-header" data-toc-text="1.4-3">
+<a href="#wooldridge-14-3" class="anchor"></a>wooldridge 1.4-3<small> Unreleased </small>
 </h1>
 <ul>
-<li>Reduced scope of vignette, removing examples and Suggested pkgs <code>AER</code>, <code>plm</code>, and <code>prais</code> from the wooldridge DESCRIPTION file.</li>
+<li><p>Implemented Github Actions for R</p></li>
+<li><p>Fix minor spelling mistakes</p></li>
 </ul>
+</div>
+    <div id="wooldridge-14-2" class="section level1">
+<h1 class="page-header" data-toc-text="1.4-2">
+<a href="#wooldridge-14-2" class="anchor"></a>wooldridge 1.4-2<small> 2021-11-08 </small>
+</h1>
+<p>Reduced scope of vignette, removing examples and Suggested pkgs <code>AER</code>, <code>plm</code>, and <code>prais</code> from the wooldridge DESCRIPTION file.</p>
 <p>The wooldridge package builds &amp; tests much quicker and cleaner as <code>AER</code> &amp; <code>plm</code> in particular have grown larger dependency trees over the years. <code>prias</code> also has a habit of breaking its API(see notes around release wooldridge 1.3.1), and this has happened yet again in the recent release of <code>praise v1.1.2</code>, triggering <code>wooldridge</code> WARNINGS on CRAN. A helpful note from Prof Brian Ripley was quick to follow, with the usual notification that wooldridge would be removed from CRAN. Given its limited use in an example, it makes sense to remove it all together to avoid future complications. After all, my time as maintainer is limited and this data package should be the easiest of my open source packages to maintain. These Vignette examples are nice, but they are given a much better treatment elsewhere and I refer readers to those sources.</p>
-<ul>
-<li>Added <code>quantmod</code> and <code>xts</code> (very mature and stable packages) to extend a time series example with real data.</li>
-</ul>
+<p>Added <code>quantmod</code> and <code>xts</code> (very mature and stable packages) to extend a time series example with real data.</p>
 </div>
     <div id="wooldridge-14-1" class="section level1">
 <h1 class="page-header" data-toc-text="1.4-1">
@@ -232,7 +237,7 @@
 <a href="#updates-to-vignette-2" class="anchor"></a>Updates to vignette</h3>
 <p>I removed written descriptions of the example problems, putting more emphasis on viewing clean code. Short notes point to what function arguments are used or to various R packages. For descriptions of the examples and rational behind each problem, students should refer to their textbook as the content offered by Wooldridge is quite clear.</p>
 <p>A bibliography section has been added, including package citations and their authors.</p>
-<p>An Appendix has been added, pointing readers to a few excellent sources for computing Econometric models with R. These are “Econometrics in R” by Grant Farnsworth and “Using R for Introductory Econometrics” by Florian Hess.</p>
+<p>An Appendix has been added, pointing readers to a few excellent sources for computing Econometric models with R. These are “Econometrics in R” by Grant Farnsworth and “Using R for Introductory Econometrics” by Florian Heiss.</p>
 </div>
 </div>
     <div id="wooldridge-100" class="section level1">
