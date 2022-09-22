@@ -902,6 +902,45 @@ stargazer(type = "html",arch_model, single.row = TRUE, header = FALSE, digits=5)
 
 ## Chapter 13: Pooling Cross Sections across Time: Simple Panel Data Methods
 
+### **`Example 13.3:` *Effect of Unemployment (rate) on Crime (rate)*
+```{r}
+library(tidyverse)
+data(package='wooldridge','crime2')
+crime2 %>% as_tibble -> crime2
+# crime2 %>% names
+```
+
+First we have to add missing id and time variable.
+```{r}
+crime2 %>% mutate(id=( rep(1:(nrow(crime2) /2 ),2)%>% sort),
+                  time=rep(1:2,nrow(crime2)/2)) ->crime2
+crime2 %>% select(time,id,crmrte,unem)
+```
+
+The dataset can be shaped to wide format to simplify the differencing
+
+```{r}
+crime2 %>% pivot_wider(id,
+                       names_from=time,
+                       values_from=c(crmrte,unem))->crime_wide
+```
+
+First-differenced dependent and covariate(s) can be computed by subtracing values of period 1 from period 2.
+
+```{r}
+crime_wide%>%mutate(dcrmrte=crmrte_2-crmrte_1,
+                    dunem=unem_2-unem_1)->crime_wide
+# 
+crime_wide%>%select(dcrmrte,dunem,crmrte_1,crmrte_2)
+```
+
+Compute the model
+
+```{r}
+crime_wide %>% lm(data=., dcrmrte~dunem) %>%{ .->mod13.3} %>%summary ->mod13.3s
+mod13.3s
+```
+
 ### **`Example 13.7:` Effect of Drunk Driving Laws on Traffic Fatalities**
 
 Wooldridge collected these data from two sources, the 1992 _Statistical Abstract of the United States_ (Tables 1009, 1012) and _A Digest of State Alcohol-Highway Safety Related Legislation_, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. 
