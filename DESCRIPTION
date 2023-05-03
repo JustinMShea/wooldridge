@@ -1,7 +1,7 @@
 Package: wooldridge
 Type: Package
 Title: 115 Data Sets from "Introductory Econometrics: A Modern Approach, 7e" by Jeffrey M. Wooldridge
-Version: 1.4-3
+Version: 1.4-4
 Authors@R: c(
     person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea@roosevelt.edu"),
     person("Kennth H.", "Brown", role = c("ctb"), email = "KennethBrown@MissouriState.edu"))
@@ -19,7 +19,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
-Suggests: knitr, quantmod, rmarkdown, stargazer, tinytest, xts, zoo
+Suggests: knitr, rmarkdown, stargazer, tinytest, xts, zoo
 VignetteBuilder: knitr
 LazyDataCompression: xz
 URL: https://justinmshea.github.io/wooldridge/

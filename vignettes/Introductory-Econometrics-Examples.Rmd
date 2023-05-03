@@ -756,7 +756,8 @@ stargazer(type = "html",tbill_model, single.row = TRUE, header = FALSE, digits=5
 
 Now lets update the example with current data, pull from the Federal Reserve Economic Research (FRED) using the [quantmod package](https://CRAN.R-project.org/package=quantmod). Other than the convenient API, the package also formats time series data into [xts: eXtensible Time Series](https://CRAN.R-project.org/package=xts) objects, which add many feature and benefits when working with time series.
 
-```{r message=FALSE, warning=FALSE}
+```{r eval=FALSE, FALSE, message=FALSE, warning=FALSE}
+# DO NOT RUN
 library(quantmod)
 
 # Tbill, 3 month
@@ -793,7 +794,8 @@ colnames(receipts) <- "receipts"
 
 Now that all data has been downloaded, we can calculate the deficit from the federal `outlays` and `receipts` data. Next, we will merge our new `deficit` variable with `inflation` and `TB3MS` variables. As these are all `xts` times series objects, the `merge` function will automatically key off each series time date index, insuring integrity and alignment among each observation and its respective date.  Additionally, xts provides easy chart construction with its plot method.
 
-```{r message=FALSE, warning=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+# DO NOT RUN
 # create deficits from outlays - receipts
 # xts objects respect their indexing and outline the future
 deficit <- outlays - receipts
@@ -811,11 +813,13 @@ plot(intdef_updated,
 
 Now lets run the model again. Inflation plays a much more prominent role in the 3 month T-bill rate, than the deficit. 
 
-```{r}
+```{r eval=FALSE}
+# DO NOT RUN
 updated_model <- lm(TB3MS ~ inflation + deficit, data = intdef_updated)
 ```
 
-```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+```{r, eval=FALSE, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+#DO NOT RUN
 updated_model <- lm(TB3MS ~ inflation + deficit, data = intdef_updated)
 
 stargazer(type = "html", updated_model, single.row = TRUE, header = FALSE, digits=5)
@@ -991,7 +995,7 @@ From the publisher's website:
 >    This is the first book on applied econometrics using the R system for statistical computing and graphics. It presents hands-on examples for a wide range of econometric models, from classical linear regression models for cross-section, time series or panel data and the common non-linear models of microeconometrics such as logit, probit and tobit models, to recent semiparametric extensions. In addition, it provides a chapter on programming, including simulations, optimization, and an introduction to R tools enabling reproducible econometric research. An R package accompanying this book, AER, is available from the Comprehensive R Archive Network (CRAN) at https://CRAN.R-project.org/package=AER.
 
 Kleiber, Christian  and Achim Zeileis. _Applied Econometrics with R_. ISBN 978-0-387-77316-2,
-Springer-Verlag, 2008, New York. [https://www.springer.com/us/book/9780387773162](https://www.springer.com/us/book/9780387773162)
+Springer-Verlag, 2008, New York. [https://link.springer.com/book/10.1007/978-0-387-77318-6](https://link.springer.com/book/10.1007/978-0-387-77318-6)
 
 \newpage
 
