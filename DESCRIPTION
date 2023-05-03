@@ -1,7 +1,7 @@
 Package: wooldridge
 Type: Package
 Title: 115 Data Sets from "Introductory Econometrics: A Modern Approach, 7e" by Jeffrey M. Wooldridge
-Version: 1.4-4
+Version: 1.4-3
 Authors@R: c(
     person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea@roosevelt.edu"),
     person("Kennth H.", "Brown", role = c("ctb"), email = "KennethBrown@MissouriState.edu"))
@@ -12,7 +12,7 @@ Description: Students learning both econometrics and R may find the introduction
     the original source, time of publication, and notes from the author suggesting avenues for 
     further analysis and research. If one needs an introduction to R model syntax, a 
     vignette contains solutions to examples from chapters of the text. 
-    Data sets are from the 7th edition (Wooldridge 2020, ISBN-13: 978-1-337-55886-0), 
+    Data sets are from the 7th edition (Wooldridge 2020, ISBN-13 978-1-337-55886-0), 
     and are backwards compatible with all previous versions of the text.
 Depends: R (>= 3.5.0)
 License: GPL-3
