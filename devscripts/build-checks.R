@@ -7,8 +7,7 @@ devtools::check_win_release()
 devtools::check_win_devel()
 
 # R-hub Build
-rhub::list_validated_emails()
-rhub::validate_email()
+
 
 rhub::platforms()
 rhub::platforms()$name
