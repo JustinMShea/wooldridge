@@ -2,9 +2,6 @@
 #'
 #' Wooldridge  Data loads lazily.
 #'
-#' @section 
-#'
-#' 
 #'
 #' @docType data
 #'

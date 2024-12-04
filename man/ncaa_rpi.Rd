@@ -7,20 +7,20 @@
 \format{
 A data.frame with 336 observations on 14 variables:
 \itemize{
- \item \strong{team: }{Name}
- \item \strong{year: }{Year}
- \item \strong{conference: }{Conference}
- \item \strong{postrpi: }{Post Rank}
- \item \strong{prerpi: }{Preseason Rank}
- \item \strong{postrpi_1: }{Post Rank 1 yr ago}
- \item \strong{postrpi_2: }{Post Rank 2 yrs ago}
- \item \strong{recruitrank: }{Recruits Rank}
- \item \strong{wins: }{Number of games won}
- \item \strong{losses: }{Number of games lost}
- \item \strong{winperc: }{Winning Percentage}
- \item \strong{tourney: }{Tournament dummy}
- \item \strong{coachexper: }{Coach Experience}
- \item \strong{power5: }{PowerFive Dummy}
+ \item \strong{team: } Name
+ \item \strong{year: } Year
+ \item \strong{conference: } Conference
+ \item \strong{postrpi: } Post Rank
+ \item \strong{prerpi: } Preseason Rank
+ \item \strong{postrpi_1: } Post Rank 1 yr ago
+ \item \strong{postrpi_2: } Post Rank 2 yrs ago
+ \item \strong{recruitrank: } Recruits Rank
+ \item \strong{wins: } Number of games won
+ \item \strong{losses: } Number of games lost
+ \item \strong{winperc: } Winning Percentage
+ \item \strong{tourney: } Tournament dummy
+ \item \strong{coachexper: } Coach Experience
+ \item \strong{power5: } PowerFive Dummy
 }
 }
 \source{

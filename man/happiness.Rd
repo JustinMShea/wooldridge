@@ -51,10 +51,6 @@ data('happiness')
 \description{
 Wooldridge  Data loads lazily.
 }
-\section{}{
-NA
-}
-
 \examples{
  str(happiness)
 }

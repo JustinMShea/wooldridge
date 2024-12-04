@@ -26,10 +26,6 @@ data('beveridge')
 \description{
 Wooldridge  Data loads lazily.
 }
-\section{}{
-NA
-}
-
 \examples{
  str(beveridge)
 }

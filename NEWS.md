@@ -2,6 +2,9 @@
 title: "NEWS"
 output: github_document
 ---
+# wooldridge 1.4-4
+
+Clear NOTEs on "Lost braces" from documentation. 
 
 # wooldridge 1.4-3
 

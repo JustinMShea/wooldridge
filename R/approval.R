@@ -12,22 +12,22 @@
 #'
 #' @format A data.frame with 78 observations on 16 variables:
 #' \itemize{
-#'  \item \strong{id: }{id}
-#'  \item \strong{month: }{month}
-#'  \item \strong{year: }{year}
-#'  \item \strong{sp500: }{S&P 500 index}
-#'  \item \strong{cpi: }{Consumer Price Index}
-#'  \item \strong{cpifood: }{CPI for food}
-#'  \item \strong{approve: }{Gallup approval rate, percent}
-#'  \item \strong{gasprice: }{average gas price, cents}
-#'  \item \strong{unemploy: }{unemployment rate, percent}
-#'  \item \strong{katrina: }{=1 for three months after Hurricane Katrina}
-#'  \item \strong{rgasprice: }{real gas price, 100*(gasprice/cpi)}
-#'  \item \strong{lrgasprice: }{log(rgasprice)}
-#'  \item \strong{sep11: }{=1 for 09/2001 and two months following}
-#'  \item \strong{iraqinvade: }{=1 for three months after Iraq invasion}
-#'  \item \strong{lsp500: }{log(sp500)}
-#'  \item \strong{lcpifood: }{log(cpifood)}
+#'  \item \strong{id: } id
+#'  \item \strong{month: } month
+#'  \item \strong{year: } year
+#'  \item \strong{sp500: } S&P 500 index
+#'  \item \strong{cpi: } Consumer Price Index
+#'  \item \strong{cpifood: } CPI for food
+#'  \item \strong{approve: } Gallup approval rate, percent
+#'  \item \strong{gasprice: } average gas price, cents
+#'  \item \strong{unemploy: } unemployment rate, percent
+#'  \item \strong{katrina: } =1 for three months after Hurricane Katrina
+#'  \item \strong{rgasprice: } real gas price, 100*(gasprice/cpi)
+#'  \item \strong{lrgasprice: } log(rgasprice)
+#'  \item \strong{sep11: } =1 for 09/2001 and two months following
+#'  \item \strong{iraqinvade: } =1 for three months after Iraq invasion
+#'  \item \strong{lsp500: } log(sp500)
+#'  \item \strong{lcpifood: } log(cpifood)
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
 #' @examples  str(approval)

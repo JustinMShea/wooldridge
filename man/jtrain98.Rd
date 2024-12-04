@@ -7,16 +7,16 @@
 \format{
 A data.frame with 1130 observations on 10 variables:
 \itemize{
- \item \strong{train: }{=1 if in job training}
- \item \strong{age: }{in years}
- \item \strong{educ: }{years of schooling}
- \item \strong{black: }{=1 if black}
- \item \strong{hisp: }{=1 if Hispanic}
- \item \strong{married: }{=1 if married}
- \item \strong{earn96: }{earnings in 1996, $1000s}
- \item \strong{unem96: }{=1 if unemployed all of 1995}
- \item \strong{earn98: }{earnings in 1998, $1000s}
- \item \strong{unem98: }{=1 if unemployed all of 1998}
+ \item \strong{train: } =1 if in job training
+ \item \strong{age: } in years
+ \item \strong{educ: } years of schooling
+ \item \strong{black: } =1 if black
+ \item \strong{hisp: } =1 if Hispanic
+ \item \strong{married: } =1 if married
+ \item \strong{earn96: } earnings in 1996, $1000s
+ \item \strong{unem96: } =1 if unemployed all of 1995
+ \item \strong{earn98: } earnings in 1998, $1000s
+ \item \strong{unem98: }=1 if unemployed all of 1998
 }
 }
 \source{

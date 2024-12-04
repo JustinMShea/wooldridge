@@ -12,24 +12,24 @@
 #'
 #' @format A data.frame with 10668 observations on 18 variables:
 #' \itemize{
-#'  \item \strong{distid: }{}
-#'  \item \strong{schid: }{}
-#'  \item \strong{lunch: }{percent eligible for free lunch}
-#'  \item \strong{enrol: }{number of students}
-#'  \item \strong{exppp: }{exp per pupil}
-#'  \item \strong{math4: }{}
-#'  \item \strong{year: }{1993 = school year 1992-1993}
-#'  \item \strong{y93: }{}
-#'  \item \strong{y94: }{}
-#'  \item \strong{y95: }{}
-#'  \item \strong{y96: }{}
-#'  \item \strong{y97: }{}
-#'  \item \strong{y98: }{}
-#'  \item \strong{rexpp: }{(exppp/cpi)1.605:  1997 $}
-#'  \item \strong{found: }{}
-#'  \item \strong{lenrol: }{log(enrol)}
-#'  \item \strong{lrexpp: }{log(rexpp)}
-#'  \item \strong{lavgrexpp: }{log((rexpp + L.rexpp)/2)}
+#'  \item \strong{distid: }
+#'  \item \strong{schid: }
+#'  \item \strong{lunch: } percent eligible for free lunch
+#'  \item \strong{enrol: } number of students
+#'  \item \strong{exppp: } exp per pupil
+#'  \item \strong{math4: }
+#'  \item \strong{year: } 1993 = school year 1992-1993
+#'  \item \strong{y93: }
+#'  \item \strong{y94: }
+#'  \item \strong{y95: }
+#'  \item \strong{y96: }
+#'  \item \strong{y97: }
+#'  \item \strong{y98: }
+#'  \item \strong{rexpp: } (exppp/cpi)1.605:  1997 $
+#'  \item \strong{found: }
+#'  \item \strong{lenrol: } log(enrol)
+#'  \item \strong{lrexpp: } log(rexpp)
+#'  \item \strong{lavgrexpp: } log((rexpp + L.rexpp)/2)
 #' }
 #' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge}
 #' @examples  str(school93_98)

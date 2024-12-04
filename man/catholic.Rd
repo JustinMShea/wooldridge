@@ -7,19 +7,19 @@
 \format{
 A data.frame with 7430 observations on 13 variables:
 \itemize{
- \item \strong{id: }{person identifier}
- \item \strong{read12: }{reading standardized score}
- \item \strong{math12: }{mathematics standardized score}
- \item \strong{female: }{=1 if female}
- \item \strong{asian: }{=1 if Asian}
- \item \strong{hispan: }{=1 if Hispanic}
- \item \strong{black: }{=1 if black}
- \item \strong{motheduc: }{mother's years of education}
- \item \strong{fatheduc: }{father's years of education}
- \item \strong{lfaminc: }{log of family income}
- \item \strong{hsgrad: }{=1 if graduated from high school by 1994}
- \item \strong{cathhs: }{=1 if attended Catholic HS}
- \item \strong{parcath: }{=1 if a parent reports being Catholic}
+ \item \strong{id: } person identifier
+ \item \strong{read12: } reading standardized score
+ \item \strong{math12: } mathematics standardized score
+ \item \strong{female: } =1 if female
+ \item \strong{asian: } =1 if Asian
+ \item \strong{hispan: } =1 if Hispanic
+ \item \strong{black: } =1 if black
+ \item \strong{motheduc: } mother's years of education
+ \item \strong{fatheduc: } father's years of education
+ \item \strong{lfaminc: } log of family income
+ \item \strong{hsgrad: } =1 if graduated from high school by 1994
+ \item \strong{cathhs: } =1 if attended Catholic HS
+ \item \strong{parcath: } =1 if a parent reports being Catholic
 }
 }
 \source{
