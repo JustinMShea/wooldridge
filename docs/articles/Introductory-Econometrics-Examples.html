@@ -6,19 +6,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Introductory Econometrics Examples • wooldridge</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Introductory Econometrics Examples">
-<meta property="og:description" content="wooldridge">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,25 +32,19 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">wooldridge</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4-3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.4-4</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -64,9 +59,9 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/JustinMShea/wooldridge/">
+  <a href="https://github.com/JustinMShea/wooldridge/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul>
@@ -77,16 +72,17 @@
 </div>
 <!--/.navbar -->
 
-      
 
-      </header><script src="Introductory-Econometrics-Examples_files/header-attrs-2.9.1/header-attrs.js"></script><div class="row">
+
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introductory Econometrics Examples</h1>
-                        <h4 class="author">Justin M Shea</h4>
+                        <h4 data-toc-skip class="author">Justin M
+Shea</h4>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/JustinMShea/wooldridge/blob/master/vignettes/Introductory-Econometrics-Examples.Rmd"><code>vignettes/Introductory-Econometrics-Examples.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/JustinMShea/wooldridge/blob/HEAD/vignettes/Introductory-Econometrics-Examples.Rmd" class="external-link"><code>vignettes/Introductory-Econometrics-Examples.Rmd</code></a></small>
       <div class="hidden name"><code>Introductory-Econometrics-Examples.Rmd</code></div>
 
     </div>
@@ -94,47 +90,73 @@
     
     
 <div style="page-break-after: always;"></div>
-<div id="introduction" class="section level2">
-<h2 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h2>
-<p>This vignette reproduces examples from various chapters of <em>Introductory Econometrics: A Modern Approach, 7e</em> by Jeffrey M. Wooldridge. Each example illustrates how to load data, build econometric models, and compute estimates with <strong>R</strong>.</p>
-<p>In addition, the <strong>Appendix</strong> cites a few sources using <strong>R</strong> for econometrics. Of note, in 2020 Florian Heiss published a 2nd edition of <a href="http://www.urfie.net/"><em>Using R for Introductory Econometrics</em></a>; it is excellent. The Heiss text is a companion to wooldridge for <code>R</code> users, and offers an in depth treatment with several worked examples from each chapter. Indeed, his example use this <code>wooldridge</code> package as well.</p>
-<p>Now, install and load the <code>wooldridge</code> package and lets get started!</p>
+<div class="section level3">
+<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h3>
+<p>This vignette reproduces examples from various chapters of
+<em>Introductory Econometrics: A Modern Approach, 7e</em> by Jeffrey M.
+Wooldridge. Each example illustrates how to load data, build econometric
+models, and compute estimates with <strong>R</strong>.</p>
+<p>In addition, the <strong>Appendix</strong> cites a few sources using
+<strong>R</strong> for econometrics. Of note, in 2020 Florian Heiss
+published a 2nd edition of <a href="http://www.urfie.net/" class="external-link"><em>Using R
+for Introductory Econometrics</em></a>; it is excellent. The Heiss text
+is a companion to wooldridge for <code>R</code> users, and offers an in
+depth treatment with several worked examples from each chapter. Indeed,
+his example use this <code>wooldridge</code> package as well.</p>
+<p>Now, install and load the <code>wooldridge</code> package and lets
+get started!</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"wooldridge"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"wooldridge"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://justinmshea.github.io/wooldridge/">wooldridge</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://justinmshea.github.io/wooldridge/" class="external-link">wooldridge</a></span><span class="op">)</span></span></code></pre></div>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="chapter-2-the-simple-regression-model" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-2-the-simple-regression-model" class="anchor"></a>Chapter 2: The Simple Regression Model</h2>
-<div id="example-2-10-a-log-wage-equation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-2-10-a-log-wage-equation" class="anchor"></a><strong><code>Example 2.10:</code> A Log Wage Equation</strong>
+<div class="section level3">
+<h3 id="chapter-2-the-simple-regression-model">Chapter 2: The Simple Regression Model<a class="anchor" aria-label="anchor" href="#chapter-2-the-simple-regression-model"></a>
 </h3>
+<div class="section level4">
+<h4 id="example-2-10-a-log-wage-equation">
+<strong><code>Example 2.10:</code> A Log Wage Equation</strong><a class="anchor" aria-label="anchor" href="#example-2-10-a-log-wage-equation"></a>
+</h4>
 <p>Load the <code>wage1</code> data and check out the documentation.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"wage1"</span><span class="op">)</span>
-
-<span class="op">?</span><span class="va">wage1</span></code></pre></div>
-<p>The documentation indicates these are data from the 1976 Current Population Survey, collected by Henry Farber when he and Wooldridge were colleagues at MIT in 1988.</p>
-<p><strong><span class="math inline">\(educ\)</span>:</strong> years of education</p>
-<p><strong><span class="math inline">\(wage\)</span>:</strong> average hourly earnings</p>
-<p><strong><span class="math inline">\(lwage\)</span>:</strong> log of the average hourly earnings</p>
-<p>First, make a scatter-plot of the two variables and look for possible patterns in the relationship between them.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"wage1"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="op">?</span><span class="va">wage1</span></span></code></pre></div>
+<p>The documentation indicates these are data from the 1976 Current
+Population Survey, collected by Henry Farber when he and Wooldridge were
+colleagues at MIT in 1988.</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>d</mi><mi>u</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">educ</annotation></semantics></math>:</strong>
+years of education</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mi>a</mi><mi>g</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">wage</annotation></semantics></math>:</strong>
+average hourly earnings</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>w</mi><mi>a</mi><mi>g</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">lwage</annotation></semantics></math>:</strong>
+log of the average hourly earnings</p>
+<p>First, make a scatter-plot of the two variables and look for possible
+patterns in the relationship between them.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
-<p>It appears that <em><strong>on average</strong></em>, more years of education, leads to higher wages.</p>
-<p>The example in the text is interested in the <em>return to another year of education</em>, or what the <em><strong>percentage</strong></em> change in wages one might expect for each additional year of education. To do so, one must use the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span>. This has already been computed in the data set and is defined as <code>lwage</code>.</p>
-<p>The textbook provides excellent discussions around these topics, so please consult it.</p>
-<p>Build a linear model to estimate the relationship between the <em>log of wage</em> (<code>lwage</code>) and <em>education</em> (<code>educ</code>).</p>
-<p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ\]</span></p>
+<p>It appears that <em><strong>on average</strong></em>, more years of
+education, leads to higher wages.</p>
+<p>The example in the text is interested in the <em>return to another
+year of education</em>, or what the <em><strong>percentage</strong></em>
+change in wages one might expect for each additional year of education.
+To do so, one must use the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo></mrow><annotation encoding="application/x-tex">log(</annotation></semantics></math><code>wage</code><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo stretchy="false" form="postfix">)</mo><annotation encoding="application/x-tex">)</annotation></semantics></math>.
+This has already been computed in the data set and is defined as
+<code>lwage</code>.</p>
+<p>The textbook provides excellent discussions around these topics, so
+please consult it.</p>
+<p>Build a linear model to estimate the relationship between the <em>log
+of wage</em> (<code>lwage</code>) and <em>education</em>
+(<code>educ</code>).</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mi>a</mi><mi>g</mi><mi>e</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>e</mi><mi>d</mi><mi>u</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">\widehat{log(wage)} = \beta_0 + \beta_1educ</annotation></semantics></math></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">log_wage_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lwage</span> <span class="op">~</span> <span class="va">educ</span>, data <span class="op">=</span> <span class="va">wage1</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">log_wage_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">lwage</span> <span class="op">~</span> <span class="va">educ</span>, data <span class="op">=</span> <span class="va">wage1</span><span class="op">)</span></span></code></pre></div>
 <p>Print the <code>summary</code> of the results.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">log_wage_model</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">log_wage_model</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
 </td>
@@ -232,38 +254,50 @@ F Statistic
 <em>Note:</em>
 </td>
 <td style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
-<p>Plot the <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span> vs <code>educ</code>. The blue line represents the least squares fit.</p>
+<p>Plot the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo></mrow><annotation encoding="application/x-tex">log(</annotation></semantics></math><code>wage</code><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo stretchy="false" form="postfix">)</mo><annotation encoding="application/x-tex">)</annotation></semantics></math>
+vs <code>educ</code>. The blue line represents the least squares
+fit.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-3-multiple-regression-analysis-estimation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-3-multiple-regression-analysis-estimation" class="anchor"></a>Chapter 3: Multiple Regression Analysis: Estimation</h2>
-<div id="example-3-2-hourly-wage-equation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-3-2-hourly-wage-equation" class="anchor"></a><strong><code>Example 3.2:</code> Hourly Wage Equation</strong>
+<div class="section level3">
+<h3 id="chapter-3-multiple-regression-analysis-estimation">Chapter 3: Multiple Regression Analysis: Estimation<a class="anchor" aria-label="anchor" href="#chapter-3-multiple-regression-analysis-estimation"></a>
 </h3>
+<div class="section level4">
+<h4 id="example-3-2-hourly-wage-equation">
+<strong><code>Example 3.2:</code> Hourly Wage Equation</strong><a class="anchor" aria-label="anchor" href="#example-3-2-hourly-wage-equation"></a>
+</h4>
 <p>Check the documentation for variable information</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="op">?</span><span class="va">wage1</span></code></pre></div>
-<p><strong><span class="math inline">\(lwage\)</span>:</strong> log of the average hourly earnings</p>
-<p><strong><span class="math inline">\(educ\)</span>:</strong> years of education</p>
-<p><strong><span class="math inline">\(exper\)</span>:</strong> years of potential experience</p>
-<p><strong><span class="math inline">\(tenutre\)</span>:</strong> years with current employer</p>
-<p>Plot the variables against <code>lwage</code> and compare their distributions and slope (<span class="math inline">\(\beta\)</span>) of the simple regression lines.</p>
+<code class="sourceCode R"><span><span class="op">?</span><span class="va">wage1</span></span></code></pre></div>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>w</mi><mi>a</mi><mi>g</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">lwage</annotation></semantics></math>:</strong>
+log of the average hourly earnings</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>d</mi><mi>u</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">educ</annotation></semantics></math>:</strong>
+years of education</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>x</mi><mi>p</mi><mi>e</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">exper</annotation></semantics></math>:</strong>
+years of potential experience</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>e</mi><mi>n</mi><mi>u</mi><mi>t</mi><mi>r</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">tenutre</annotation></semantics></math>:</strong>
+years with current employer</p>
+<p>Plot the variables against <code>lwage</code> and compare their
+distributions and slope
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>)
+of the simple regression lines.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
-<p>Estimate the model regressing <em>educ</em>, <em>exper</em>, and <em>tenure</em> against <em>log(wage)</em>.</p>
-<p><span class="math display">\[\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure\]</span></p>
+<p>Estimate the model regressing <em>educ</em>, <em>exper</em>, and
+<em>tenure</em> against <em>log(wage)</em>.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mi>a</mi><mi>g</mi><mi>e</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>e</mi><mi>d</mi><mi>u</mi><mi>c</mi><mo>+</mo><msub><mi>β</mi><mn>3</mn></msub><mi>e</mi><mi>x</mi><mi>p</mi><mi>e</mi><mi>r</mi><mo>+</mo><msub><mi>β</mi><mn>4</mn></msub><mi>t</mi><mi>e</mi><mi>n</mi><mi>u</mi><mi>r</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">\widehat{log(wage)} = \beta_0 + \beta_1educ + \beta_3exper + \beta_4tenure</annotation></semantics></math></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">hourly_wage_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lwage</span> <span class="op">~</span> <span class="va">educ</span> <span class="op">+</span> <span class="va">exper</span> <span class="op">+</span> <span class="va">tenure</span>, data <span class="op">=</span> <span class="va">wage1</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">hourly_wage_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">lwage</span> <span class="op">~</span> <span class="va">educ</span> <span class="op">+</span> <span class="va">exper</span> <span class="op">+</span> <span class="va">tenure</span>, data <span class="op">=</span> <span class="va">wage1</span><span class="op">)</span></span></code></pre></div>
 <p>Print the estimated model coefficients:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coefficients</a></span><span class="op">(</span><span class="va">hourly_wage_model</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coefficients</a></span><span class="op">(</span><span class="va">hourly_wage_model</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left"></th>
@@ -288,21 +322,28 @@ F Statistic
 </tr>
 </tbody>
 </table>
-<p>Plot the coefficients, representing percentage impact of each variable on <span class="math inline">\(log(\)</span><code>wage</code><span class="math inline">\()\)</span> for a quick comparison.</p>
+<p>Plot the coefficients, representing percentage impact of each
+variable on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo></mrow><annotation encoding="application/x-tex">log(</annotation></semantics></math><code>wage</code><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo stretchy="false" form="postfix">)</mo><annotation encoding="application/x-tex">)</annotation></semantics></math>
+for a quick comparison.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
 </div>
 </div>
-<div id="chapter-4-multiple-regression-analysis-inference" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-4-multiple-regression-analysis-inference" class="anchor"></a>Chapter 4: Multiple Regression Analysis: Inference</h2>
-<div id="example-4-1-hourly-wage-equation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-4-1-hourly-wage-equation" class="anchor"></a><strong><code>Example 4.1</code> Hourly Wage Equation</strong>
+<div class="section level3">
+<h3 id="chapter-4-multiple-regression-analysis-inference">Chapter 4: Multiple Regression Analysis: Inference<a class="anchor" aria-label="anchor" href="#chapter-4-multiple-regression-analysis-inference"></a>
 </h3>
-<p>Using the same model estimated in <strong><code>example: 3.2</code></strong>, examine and compare the standard errors associated with each coefficient. Like the textbook, these are contained in parenthesis next to each associated coefficient.</p>
+<div class="section level4">
+<h4 id="example-4-1-hourly-wage-equation">
+<strong><code>Example 4.1</code> Hourly Wage Equation</strong><a class="anchor" aria-label="anchor" href="#example-4-1-hourly-wage-equation"></a>
+</h4>
+<p>Using the same model estimated in
+<strong><code>example: 3.2</code></strong>, examine and compare the
+standard errors associated with each coefficient. Like the textbook,
+these are contained in parenthesis next to each associated
+coefficient.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">hourly_wage_model</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">hourly_wage_model</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
 </td>
@@ -416,15 +457,21 @@ F Statistic
 <em>Note:</em>
 </td>
 <td style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
-<p>For the years of experience variable, or <code>exper</code>, use coefficient and Standard Error to compute the <span class="math inline">\(t\)</span> statistic:</p>
-<p><span class="math display">\[t_{exper} = \frac{0.004121}{0.001723} = 2.391\]</span></p>
-<p>Fortunately, <code>R</code> includes <span class="math inline">\(t\)</span> statistics in the <code>summary</code> of model diagnostics.</p>
+<p>For the years of experience variable, or <code>exper</code>, use
+coefficient and Standard Error to compute the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+statistic:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi>e</mi><mi>x</mi><mi>p</mi><mi>e</mi><mi>r</mi></mrow></msub><mo>=</mo><mfrac><mn>0.004121</mn><mn>0.001723</mn></mfrac><mo>=</mo><mn>2.391</mn></mrow><annotation encoding="application/x-tex">t_{exper} = \frac{0.004121}{0.001723} = 2.391</annotation></semantics></math></p>
+<p>Fortunately, <code>R</code> includes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+statistics in the <code>summary</code> of model diagnostics.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">hourly_wage_model</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">hourly_wage_model</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span></span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left"></th>
@@ -464,46 +511,77 @@ F Statistic
 </tr>
 </tbody>
 </table>
-<p>Plot the <span class="math inline">\(t\)</span> statistics for a visual comparison:</p>
+<p>Plot the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+statistics for a visual comparison:</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-21-1.png" width="700"></p>
 </div>
-<div id="example-4-7-effect-of-job-training-on-firm-scrap-rates" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-4-7-effect-of-job-training-on-firm-scrap-rates" class="anchor"></a><strong><code>Example 4.7</code> Effect of Job Training on Firm Scrap Rates</strong>
-</h3>
+<div class="section level4">
+<h4 id="example-4-7-effect-of-job-training-on-firm-scrap-rates">
+<strong><code>Example 4.7</code> Effect of Job Training on Firm
+Scrap Rates</strong><a class="anchor" aria-label="anchor" href="#example-4-7-effect-of-job-training-on-firm-scrap-rates"></a>
+</h4>
 <p>Load the <code>jtrain</code> data set.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"jtrain"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"jtrain"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="op">?</span><span class="va">jtrain</span></code></pre></div>
-<p>From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), <em>Are Training Subsidies Effective? The Michigan Experience</em>, Industrial and Labor Relations Review 46, 625-636. The authors kindly provided the data.</p>
-<p><strong><span class="math inline">\(year:\)</span></strong> 1987, 1988, or 1989</p>
-<p><strong><span class="math inline">\(union:\)</span></strong> =1 if unionized</p>
-<p><strong><span class="math inline">\(lscrap:\)</span></strong> Log(scrap rate per 100 items)</p>
-<p><strong><span class="math inline">\(hrsemp:\)</span></strong> (total hours training) / (total employees trained)</p>
-<p><strong><span class="math inline">\(lsales:\)</span></strong> Log(annual sales, $)</p>
-<p><strong><span class="math inline">\(lemploy:\)</span></strong> Log(umber of employees at plant)</p>
-<p>First, use the <code>subset</code> function and it’s argument by the same name to return observations which occurred in <strong>1987</strong> and are not <strong>union</strong>. At the same time, use the <code>select</code> argument to return only the variables of interest for this problem.</p>
+<code class="sourceCode R"><span><span class="op">?</span><span class="va">jtrain</span></span></code></pre></div>
+<p>From H. Holzer, R. Block, M. Cheatham, and J. Knott (1993), <em>Are
+Training Subsidies Effective? The Michigan Experience</em>, Industrial
+and Labor Relations Review 46, 625-636. The authors kindly provided the
+data.</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>e</mi><mi>a</mi><mi>r</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">year:</annotation></semantics></math></strong>
+1987, 1988, or 1989</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>n</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">union:</annotation></semantics></math></strong>
+=1 if unionized</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>s</mi><mi>c</mi><mi>r</mi><mi>a</mi><mi>p</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">lscrap:</annotation></semantics></math></strong>
+Log(scrap rate per 100 items)</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>r</mi><mi>s</mi><mi>e</mi><mi>m</mi><mi>p</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">hrsemp:</annotation></semantics></math></strong>
+(total hours training) / (total employees trained)</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>s</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>s</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">lsales:</annotation></semantics></math></strong>
+Log(annual sales, $)</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>e</mi><mi>m</mi><mi>p</mi><mi>l</mi><mi>o</mi><mi>y</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">lemploy:</annotation></semantics></math></strong>
+Log(umber of employees at plant)</p>
+<p>First, use the <code>subset</code> function and it’s argument by the
+same name to return observations which occurred in <strong>1987</strong>
+and are not <strong>union</strong>. At the same time, use the
+<code>select</code> argument to return only the variables of interest
+for this problem.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">jtrain_subset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">jtrain</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1987</span> <span class="op">&amp;</span> <span class="va">union</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>,
-                        select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">union</span>, <span class="va">lscrap</span>, <span class="va">hrsemp</span>, <span class="va">lsales</span>, <span class="va">lemploy</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p>Next, test for missing values. One can “eyeball” these with R Studio’s <code>View</code> function, but a more precise approach combines the <code>sum</code> and <code>is.na</code> functions to return the total number of observations equal to <code>NA</code>.</p>
+<code class="sourceCode R"><span><span class="va">jtrain_subset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">jtrain</span>, subset <span class="op">=</span> <span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1987</span> <span class="op">&amp;</span> <span class="va">union</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>,</span>
+<span>                        select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">union</span>, <span class="va">lscrap</span>, <span class="va">hrsemp</span>, <span class="va">lsales</span>, <span class="va">lemploy</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Next, test for missing values. One can “eyeball” these with R
+Studio’s <code>View</code> function, but a more precise approach
+combines the <code>sum</code> and <code>is.na</code> functions to return
+the total number of observations equal to <code>NA</code>.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">jtrain_subset</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 156</code></pre>
-<p>While <code>R</code>’s <code>lm</code> function will automatically remove missing <code>NA</code> values, eliminating these manually will produce more clearly proportioned graphs for exploratory analysis. Call the <code>na.omit</code> function to remove all missing values and assign the new <code>data.frame</code> object the name <strong><code>jtrain_clean</code></strong>.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">jtrain_subset</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## [1] 156</span></span></code></pre>
+<p>While <code>R</code>’s <code>lm</code> function will automatically
+remove missing <code>NA</code> values, eliminating these manually will
+produce more clearly proportioned graphs for exploratory analysis. Call
+the <code>na.omit</code> function to remove all missing values and
+assign the new <code>data.frame</code> object the name
+<strong><code>jtrain_clean</code></strong>.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">jtrain_clean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html">na.omit</a></span><span class="op">(</span><span class="va">jtrain_subset</span><span class="op">)</span></code></pre></div>
-<p>Use <code>jtrain_clean</code> to plot the variables of interest against <code>lscrap</code>. Visually observe the respective distributions for each variable, and compare the slope (<span class="math inline">\(\beta\)</span>) of the simple regression lines.</p>
+<code class="sourceCode R"><span><span class="va">jtrain_clean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html" class="external-link">na.omit</a></span><span class="op">(</span><span class="va">jtrain_subset</span><span class="op">)</span></span></code></pre></div>
+<p>Use <code>jtrain_clean</code> to plot the variables of interest
+against <code>lscrap</code>. Visually observe the respective
+distributions for each variable, and compare the slope
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>)
+of the simple regression lines.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-27-1.png" width="700"></p>
-<p>Now create the linear model regressing <code>hrsemp</code>(total hours training/total employees trained), <code>lsales</code>(log of annual sales), and <code>lemploy</code>(the log of the number of the employees), against <code>lscrap</code>(the log of the scrape rate).</p>
-<p><span class="math display">\[lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy\]</span></p>
+<p>Now create the linear model regressing <code>hrsemp</code>(total
+hours training/total employees trained), <code>lsales</code>(log of
+annual sales), and <code>lemploy</code>(the log of the number of the
+employees), against <code>lscrap</code>(the log of the scrape rate).</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>s</mi><mi>c</mi><mi>r</mi><mi>a</mi><mi>p</mi><mo>=</mo><mi>α</mi><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>h</mi><mi>r</mi><mi>s</mi><mi>e</mi><mi>m</mi><mi>p</mi><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>l</mi><mi>s</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>s</mi><mo>+</mo><msub><mi>β</mi><mn>3</mn></msub><mi>l</mi><mi>e</mi><mi>m</mi><mi>p</mi><mi>l</mi><mi>o</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">lscrap = \alpha + \beta_1 hrsemp + \beta_2 lsales + \beta_3 lemploy</annotation></semantics></math></p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">linear_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lscrap</span> <span class="op">~</span> <span class="va">hrsemp</span> <span class="op">+</span> <span class="va">lsales</span> <span class="op">+</span> <span class="va">lemploy</span>, data <span class="op">=</span> <span class="va">jtrain_clean</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">linear_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">lscrap</span> <span class="op">~</span> <span class="va">hrsemp</span> <span class="op">+</span> <span class="va">lsales</span> <span class="op">+</span> <span class="va">lemploy</span>, data <span class="op">=</span> <span class="va">jtrain_clean</span><span class="op">)</span></span></code></pre></div>
 <p>Finally, print the complete summary diagnostics of the model.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">linear_model</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">linear_model</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
 </td>
@@ -617,40 +695,52 @@ F Statistic
 <em>Note:</em>
 </td>
 <td style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
 </div>
 </div>
-<div id="chapter-5-multiple-regression-analysis-ols-asymptotics" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-5-multiple-regression-analysis-ols-asymptotics" class="anchor"></a>Chapter 5: Multiple Regression Analysis: OLS Asymptotics</h2>
-<div id="example-5-1-housing-prices-and-distance-from-an-incinerator" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-5-1-housing-prices-and-distance-from-an-incinerator" class="anchor"></a><strong><code>Example 5.1:</code> Housing Prices and Distance From an Incinerator</strong>
+<div class="section level3">
+<h3 id="chapter-5-multiple-regression-analysis-ols-asymptotics">Chapter 5: Multiple Regression Analysis: OLS Asymptotics<a class="anchor" aria-label="anchor" href="#chapter-5-multiple-regression-analysis-ols-asymptotics"></a>
 </h3>
+<div class="section level4">
+<h4 id="example-5-1-housing-prices-and-distance-from-an-incinerator">
+<strong><code>Example 5.1:</code> Housing Prices and Distance From
+an Incinerator</strong><a class="anchor" aria-label="anchor" href="#example-5-1-housing-prices-and-distance-from-an-incinerator"></a>
+</h4>
 <p>Load the <code>hprice3</code> data set.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"hprice3"</span><span class="op">)</span></code></pre></div>
-<p><strong><span class="math inline">\(lprice:\)</span></strong> Log(selling price)</p>
-<p><strong><span class="math inline">\(ldist:\)</span></strong> Log(distance from house to incinerator, feet)</p>
-<p><strong><span class="math inline">\(larea:\)</span></strong> Log(square footage of house)</p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"hprice3"</span><span class="op">)</span></span></code></pre></div>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">lprice:</annotation></semantics></math></strong>
+Log(selling price)</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">ldist:</annotation></semantics></math></strong>
+Log(distance from house to incinerator, feet)</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>a</mi><mi>r</mi><mi>e</mi><mi>a</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">larea:</annotation></semantics></math></strong>
+Log(square footage of house)</p>
 <p>Graph the prices of housing against distance from an incinerator:</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-33-1.png" width="700" style="display: block; margin: auto;"></p>
-<p>Next, model the <span class="math inline">\(log(\)</span><code>price</code><span class="math inline">\()\)</span> against the <span class="math inline">\(log(\)</span><code>dist</code><span class="math inline">\()\)</span> to estimate the percentage relationship between the two.</p>
-<p><span class="math display">\[price = \alpha + \beta_1 dist\]</span></p>
+<p>Next, model the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo></mrow><annotation encoding="application/x-tex">log(</annotation></semantics></math><code>price</code><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo stretchy="false" form="postfix">)</mo><annotation encoding="application/x-tex">)</annotation></semantics></math>
+against the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo></mrow><annotation encoding="application/x-tex">log(</annotation></semantics></math><code>dist</code><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo stretchy="false" form="postfix">)</mo><annotation encoding="application/x-tex">)</annotation></semantics></math>
+to estimate the percentage relationship between the two.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi><mo>=</mo><mi>α</mi><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">price = \alpha + \beta_1 dist</annotation></semantics></math></p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">price_dist_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">ldist</span>, data <span class="op">=</span> <span class="va">hprice3</span><span class="op">)</span></code></pre></div>
-<p>Create another model that controls for “quality” variables, such as square footage <code>area</code> per house.</p>
-<p><span class="math display">\[price = \alpha + \beta_1 dist + \beta_2 area\]</span></p>
+<code class="sourceCode R"><span><span class="va">price_dist_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">ldist</span>, data <span class="op">=</span> <span class="va">hprice3</span><span class="op">)</span></span></code></pre></div>
+<p>Create another model that controls for “quality” variables, such as
+square footage <code>area</code> per house.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi><mo>=</mo><mi>α</mi><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>a</mi><mi>r</mi><mi>e</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">price = \alpha + \beta_1 dist + \beta_2 area</annotation></semantics></math></p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">price_area_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">ldist</span> <span class="op">+</span> <span class="va">larea</span>, data <span class="op">=</span> <span class="va">hprice3</span><span class="op">)</span></code></pre></div>
-<p>Compare the coefficients of both models. Notice that adding <code>area</code> improves the quality of the model, but also reduces the coefficient size of <code>dist</code>.</p>
+<code class="sourceCode R"><span><span class="va">price_area_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">ldist</span> <span class="op">+</span> <span class="va">larea</span>, data <span class="op">=</span> <span class="va">hprice3</span><span class="op">)</span></span></code></pre></div>
+<p>Compare the coefficients of both models. Notice that adding
+<code>area</code> improves the quality of the model, but also reduces
+the coefficient size of <code>dist</code>.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">price_dist_model</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">price_area_model</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">price_dist_model</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">price_area_model</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
 </td>
@@ -789,46 +879,62 @@ F Statistic
 <em>Note:</em>
 </td>
 <td colspan="2" style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
-<p>Graphing illustrates the larger coefficient for <code>area</code>.</p>
+<p>Graphing illustrates the larger coefficient for
+<code>area</code>.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-38-1.png" width="700"></p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-6-multiple-regression-further-issues" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-6-multiple-regression-further-issues" class="anchor"></a>Chapter 6: Multiple Regression: Further Issues</h2>
-<div id="example-6-1-effects-of-pollution-on-housing-prices-standardized-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-6-1-effects-of-pollution-on-housing-prices-standardized-" class="anchor"></a><strong><code>Example 6.1:</code> Effects of Pollution on Housing Prices, standardized.</strong>
+<div class="section level3">
+<h3 id="chapter-6-multiple-regression-further-issues">Chapter 6: Multiple Regression: Further Issues<a class="anchor" aria-label="anchor" href="#chapter-6-multiple-regression-further-issues"></a>
 </h3>
+<div class="section level4">
+<h4 id="example-6-1-effects-of-pollution-on-housing-prices-standardized-">
+<strong><code>Example 6.1:</code> Effects of Pollution on Housing
+Prices, standardized.</strong><a class="anchor" aria-label="anchor" href="#example-6-1-effects-of-pollution-on-housing-prices-standardized-"></a>
+</h4>
 <p>Load the <code>hprice2</code> data and view the documentation.</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"hprice2"</span><span class="op">)</span>
-<span class="op">?</span><span class="va">hprice2</span></code></pre></div>
-<p>Data from <em>Hedonic Housing Prices and the Demand for Clean Air</em>, by Harrison, D. and D.L.Rubinfeld, Journal of Environmental Economics and Management 5, 81-102. Diego Garcia, a former Ph.D. student in economics at MIT, kindly provided these data, which he obtained from the book Regression Diagnostics: Identifying Influential Data and Sources of Collinearity, by D.A. Belsey, E. Kuh, and R. Welsch, 1990. New York: Wiley.</p>
-<p><span class="math inline">\(price\)</span>: median housing price.</p>
-<p><span class="math inline">\(nox\)</span>: Nitrous Oxide concentration; parts per million.</p>
-<p><span class="math inline">\(crime\)</span>: number of reported crimes per capita.</p>
-<p><span class="math inline">\(rooms\)</span>: average number of rooms in houses in the community.</p>
-<p><span class="math inline">\(dist\)</span>: weighted distance of the community to 5 employment centers.</p>
-<p><span class="math inline">\(stratio\)</span>: average student-teacher ratio of schools in the community.</p>
-<p><span class="math display">\[price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \beta_5stratio + \mu\]</span></p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"hprice2"</span><span class="op">)</span></span>
+<span><span class="op">?</span><span class="va">hprice2</span></span></code></pre></div>
+<p>Data from <em>Hedonic Housing Prices and the Demand for Clean
+Air</em>, by Harrison, D. and D.L.Rubinfeld, Journal of Environmental
+Economics and Management 5, 81-102. Diego Garcia, a former Ph.D. student
+in economics at MIT, kindly provided these data, which he obtained from
+the book Regression Diagnostics: Identifying Influential Data and
+Sources of Collinearity, by D.A. Belsey, E. Kuh, and R. Welsch, 1990.
+New York: Wiley.</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">price</annotation></semantics></math>:
+median housing price.</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>o</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">nox</annotation></semantics></math>:
+Nitrous Oxide concentration; parts per million.</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>r</mi><mi>i</mi><mi>m</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">crime</annotation></semantics></math>:
+number of reported crimes per capita.</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mi>o</mi><mi>o</mi><mi>m</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">rooms</annotation></semantics></math>:
+average number of rooms in houses in the community.</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">dist</annotation></semantics></math>:
+weighted distance of the community to 5 employment centers.</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi></mrow><annotation encoding="application/x-tex">stratio</annotation></semantics></math>:
+average student-teacher ratio of schools in the community.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>n</mi><mi>o</mi><mi>x</mi><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>c</mi><mi>r</mi><mi>i</mi><mi>m</mi><mi>e</mi><mo>+</mo><msub><mi>β</mi><mn>3</mn></msub><mi>r</mi><mi>o</mi><mi>o</mi><mi>m</mi><mi>s</mi><mo>+</mo><msub><mi>β</mi><mn>4</mn></msub><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi><mo>+</mo><msub><mi>β</mi><mn>5</mn></msub><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mo>+</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">price = \beta_0 + \beta_1nox + \beta_2crime + \beta_3rooms + \beta_4dist + \beta_5stratio + \mu</annotation></semantics></math></p>
 <p>Estimate the usual <code>lm</code> model.</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">housing_level</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">nox</span> <span class="op">+</span> <span class="va">crime</span> <span class="op">+</span> <span class="va">rooms</span> <span class="op">+</span> <span class="va">dist</span> <span class="op">+</span> <span class="va">stratio</span>, data <span class="op">=</span> <span class="va">hprice2</span><span class="op">)</span></code></pre></div>
-<p>Estimate the same model, but standardized coefficients by wrapping each variable with R’s <code>scale</code> function:</p>
-<p><span class="math display">\[\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio\]</span></p>
+<code class="sourceCode R"><span><span class="va">housing_level</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">nox</span> <span class="op">+</span> <span class="va">crime</span> <span class="op">+</span> <span class="va">rooms</span> <span class="op">+</span> <span class="va">dist</span> <span class="op">+</span> <span class="va">stratio</span>, data <span class="op">=</span> <span class="va">hprice2</span><span class="op">)</span></span></code></pre></div>
+<p>Estimate the same model, but standardized coefficients by wrapping
+each variable with R’s <code>scale</code> function:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>z</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>1</mn></msub><mi>z</mi><mi>n</mi><mi>o</mi><mi>x</mi><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>z</mi><mi>c</mi><mi>r</mi><mi>i</mi><mi>m</mi><mi>e</mi><mo>+</mo><msub><mi>β</mi><mn>3</mn></msub><mi>z</mi><mi>r</mi><mi>o</mi><mi>o</mi><mi>m</mi><mi>s</mi><mo>+</mo><msub><mi>β</mi><mn>4</mn></msub><mi>z</mi><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi><mo>+</mo><msub><mi>β</mi><mn>5</mn></msub><mi>z</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi></mrow><annotation encoding="application/x-tex">\widehat{zprice} = \beta_1znox + \beta_2zcrime + \beta_3zrooms + \beta_4zdist + \beta_5zstratio</annotation></semantics></math></p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">housing_standardized</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">price</span><span class="op">)</span> <span class="op">~</span> <span class="fl">0</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">nox</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">crime</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">rooms</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">dist</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">stratio</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">hprice2</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">housing_standardized</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/scale.html" class="external-link">scale</a></span><span class="op">(</span><span class="va">price</span><span class="op">)</span> <span class="op">~</span> <span class="fl">0</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html" class="external-link">scale</a></span><span class="op">(</span><span class="va">nox</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html" class="external-link">scale</a></span><span class="op">(</span><span class="va">crime</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html" class="external-link">scale</a></span><span class="op">(</span><span class="va">rooms</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html" class="external-link">scale</a></span><span class="op">(</span><span class="va">dist</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html" class="external-link">scale</a></span><span class="op">(</span><span class="va">stratio</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">hprice2</span><span class="op">)</span></span></code></pre></div>
 <p>Compare results, and observe</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">housing_level</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">housing_standardized</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">housing_level</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">housing_standardized</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
 </td>
@@ -1048,28 +1154,32 @@ F Statistic
 <em>Note:</em>
 </td>
 <td colspan="2" style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="example-6-2-effects-of-pollution-on-housing-prices-quadratic-interactive-term" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-6-2-effects-of-pollution-on-housing-prices-quadratic-interactive-term" class="anchor"></a><strong><code>Example 6.2:</code> Effects of Pollution on Housing Prices, Quadratic Interactive Term</strong>
-</h3>
-<p>Modify the housing model from <strong><code>example 4.5</code></strong>, adding a quadratic term in <em>rooms</em>:</p>
-<p><span class="math display">\[log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu\]</span></p>
+<div class="section level4">
+<h4 id="example-6-2-effects-of-pollution-on-housing-prices-quadratic-interactive-term">
+<strong><code>Example 6.2:</code> Effects of Pollution on Housing
+Prices, Quadratic Interactive Term</strong><a class="anchor" aria-label="anchor" href="#example-6-2-effects-of-pollution-on-housing-prices-quadratic-interactive-term"></a>
+</h4>
+<p>Modify the housing model from
+<strong><code>example 4.5</code></strong>, adding a quadratic term in
+<em>rooms</em>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mi>o</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>β</mi><mn>3</mn></msub><mi>r</mi><mi>o</mi><mi>o</mi><mi>m</mi><mi>s</mi><mo>+</mo><msub><mi>β</mi><mn>4</mn></msub><mi>r</mi><mi>o</mi><mi>o</mi><mi>m</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msub><mi>β</mi><mn>5</mn></msub><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mo>+</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">log(price) = \beta_0 + \beta_1log(nox) + \beta_2log(dist) + \beta_3rooms + \beta_4rooms^2 + \beta_5stratio + \mu</annotation></semantics></math></p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">housing_model_4.5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">lnox</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">dist</span><span class="op">)</span> <span class="op">+</span> <span class="va">rooms</span> <span class="op">+</span> <span class="va">stratio</span>, data <span class="op">=</span> <span class="va">hprice2</span><span class="op">)</span>
-
-<span class="va">housing_model_6.2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">lnox</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">dist</span><span class="op">)</span> <span class="op">+</span> <span class="va">rooms</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="va">rooms</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="va">stratio</span>, 
-                        data <span class="op">=</span> <span class="va">hprice2</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">housing_model_4.5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">lnox</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="va">dist</span><span class="op">)</span> <span class="op">+</span> <span class="va">rooms</span> <span class="op">+</span> <span class="va">stratio</span>, data <span class="op">=</span> <span class="va">hprice2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">housing_model_6.2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">lnox</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="va">dist</span><span class="op">)</span> <span class="op">+</span> <span class="va">rooms</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html" class="external-link">I</a></span><span class="op">(</span><span class="va">rooms</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="va">stratio</span>, </span>
+<span>                        data <span class="op">=</span> <span class="va">hprice2</span><span class="op">)</span></span></code></pre></div>
 <p>Compare the results with the model from <code>example 6.1</code>.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">housing_model_4.5</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">housing_model_6.2</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">housing_model_4.5</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">housing_model_6.2</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
 </td>
@@ -1241,25 +1351,28 @@ F Statistic
 <em>Note:</em>
 </td>
 <td colspan="2" style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
-<p>Estimate the minimum turning point at which the <code>rooms</code> interactive term changes from negative to positive.</p>
-<p><span class="math display">\[x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}\]</span></p>
+<p>Estimate the minimum turning point at which the <code>rooms</code>
+interactive term changes from negative to positive.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mover><msub><mi>β</mi><mn>1</mn></msub><mo accent="true">̂</mo></mover><mrow><mn>2</mn><mover><msub><mi>β</mi><mn>2</mn></msub><mo accent="true">̂</mo></mover></mrow></mfrac></mrow><annotation encoding="application/x-tex">x = \frac{\hat{\beta_1}}{2\hat{\beta_2}}</annotation></semantics></math></p>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">beta_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">housing_model_6.2</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="st">"rooms"</span>,<span class="fl">1</span><span class="op">]</span> 
-<span class="va">beta_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">housing_model_6.2</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="st">"I(rooms^2)"</span>,<span class="fl">1</span><span class="op">]</span>
-<span class="va">turning_point</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">beta_1</span> <span class="op">/</span> <span class="op">(</span><span class="fl">2</span><span class="op">*</span><span class="va">beta_2</span><span class="op">)</span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">turning_point</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 4.37763</code></pre>
-<p>Compute the percent change across a range of average rooms. Include the smallest, turning point, and largest.</p>
+<code class="sourceCode R"><span><span class="va">beta_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">housing_model_6.2</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="st">"rooms"</span>,<span class="fl">1</span><span class="op">]</span> </span>
+<span><span class="va">beta_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">housing_model_6.2</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="st">"I(rooms^2)"</span>,<span class="fl">1</span><span class="op">]</span></span>
+<span><span class="va">turning_point</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">beta_1</span> <span class="op">/</span> <span class="op">(</span><span class="fl">2</span><span class="op">*</span><span class="va">beta_2</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">turning_point</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## [1] 4.37763</span></span></code></pre>
+<p>Compute the percent change across a range of average rooms. Include
+the smallest, turning point, and largest.</p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">Rooms</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">hprice2</span><span class="op">$</span><span class="va">rooms</span><span class="op">)</span>, <span class="fl">4</span>, <span class="va">turning_point</span>, <span class="fl">5</span>, <span class="fl">5.5</span>, <span class="fl">6.45</span>, <span class="fl">7.5</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">hprice2</span><span class="op">$</span><span class="va">rooms</span><span class="op">)</span><span class="op">)</span>
-<span class="va">Percent.Change</span> <span class="op">&lt;-</span> <span class="fl">100</span><span class="op">*</span><span class="op">(</span><span class="va">beta_1</span> <span class="op">+</span> <span class="fl">2</span><span class="op">*</span><span class="va">beta_2</span><span class="op">*</span><span class="va">Rooms</span><span class="op">)</span>
-
-<span class="fu">kable</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Rooms</span>, <span class="va">Percent.Change</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">Rooms</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">hprice2</span><span class="op">$</span><span class="va">rooms</span><span class="op">)</span>, <span class="fl">4</span>, <span class="va">turning_point</span>, <span class="fl">5</span>, <span class="fl">5.5</span>, <span class="fl">6.45</span>, <span class="fl">7.5</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">hprice2</span><span class="op">$</span><span class="va">rooms</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">Percent.Change</span> <span class="op">&lt;-</span> <span class="fl">100</span><span class="op">*</span><span class="op">(</span><span class="va">beta_1</span> <span class="op">+</span> <span class="fl">2</span><span class="op">*</span><span class="va">beta_2</span><span class="op">*</span><span class="va">Rooms</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">kable</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">Rooms</span>, <span class="va">Percent.Change</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Rooms</th>
@@ -1300,36 +1413,47 @@ F Statistic
 </tr>
 </tbody>
 </table>
-<p>Graph the log of the selling price against the number of rooms. Superimpose a simple model as well as a quadratic model and examine the difference.</p>
+<p>Graph the log of the selling price against the number of rooms.
+Superimpose a simple model as well as a quadratic model and examine the
+difference.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-50-1.png" width="700"></p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-7-multiple-regression-analysis-with-qualitative-information" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-7-multiple-regression-analysis-with-qualitative-information" class="anchor"></a>Chapter 7: Multiple Regression Analysis with Qualitative Information</h2>
-<div id="example-7-4-housing-price-regression-qualitative-binary-variable" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-7-4-housing-price-regression-qualitative-binary-variable" class="anchor"></a><strong><code>Example 7.4:</code> Housing Price Regression, Qualitative Binary variable</strong>
+<div class="section level3">
+<h3 id="chapter-7-multiple-regression-analysis-with-qualitative-information">Chapter 7: Multiple Regression Analysis with Qualitative
+Information<a class="anchor" aria-label="anchor" href="#chapter-7-multiple-regression-analysis-with-qualitative-information"></a>
 </h3>
+<div class="section level4">
+<h4 id="example-7-4-housing-price-regression-qualitative-binary-variable">
+<strong><code>Example 7.4:</code> Housing Price Regression,
+Qualitative Binary variable</strong><a class="anchor" aria-label="anchor" href="#example-7-4-housing-price-regression-qualitative-binary-variable"></a>
+</h4>
 <p>This time, use the <code>hrprice1</code> data.</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"hprice1"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"hprice1"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="op">?</span><span class="va">hprice1</span></code></pre></div>
-<p>Data collected from the real estate pages of the Boston Globe during 1990. These are homes that sold in the Boston, MA area.</p>
-<p><strong><span class="math inline">\(lprice:\)</span></strong> Log(house price, $1000s)</p>
-<p><strong><span class="math inline">\(llotsize:\)</span></strong> Log(size of lot in square feet)</p>
-<p><strong><span class="math inline">\(lsqrft:\)</span></strong> Log(size of house in square feet)</p>
-<p><strong><span class="math inline">\(bdrms:\)</span></strong> number of bdrms</p>
-<p><strong><span class="math inline">\(colonial:\)</span></strong> =1 if home is colonial style</p>
-<p><span class="math display">\[\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \beta_3bdrms + \beta_4colonial \]</span></p>
-<p>Estimate the coefficients of the above linear model on the <code>hprice</code> data set.</p>
+<code class="sourceCode R"><span><span class="op">?</span><span class="va">hprice1</span></span></code></pre></div>
+<p>Data collected from the real estate pages of the Boston Globe during
+1990. These are homes that sold in the Boston, MA area.</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">lprice:</annotation></semantics></math></strong>
+Log(house price, $1000s)</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>l</mi><mi>o</mi><mi>t</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">llotsize:</annotation></semantics></math></strong>
+Log(size of lot in square feet)</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>s</mi><mi>q</mi><mi>r</mi><mi>f</mi><mi>t</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">lsqrft:</annotation></semantics></math></strong>
+Log(size of house in square feet)</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mi>d</mi><mi>r</mi><mi>m</mi><mi>s</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">bdrms:</annotation></semantics></math></strong>
+number of bdrms</p>
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>o</mi><mi>l</mi><mi>o</mi><mi>n</mi><mi>i</mi><mi>a</mi><mi>l</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">colonial:</annotation></semantics></math></strong>
+=1 if home is colonial style</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>l</mi><mi>o</mi><mi>t</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>f</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>β</mi><mn>3</mn></msub><mi>b</mi><mi>d</mi><mi>r</mi><mi>m</mi><mi>s</mi><mo>+</mo><msub><mi>β</mi><mn>4</mn></msub><mi>c</mi><mi>o</mi><mi>l</mi><mi>o</mi><mi>n</mi><mi>i</mi><mi>a</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">\widehat{log(price)} = \beta_0 + \beta_1log(lotsize) + \beta_2log(sqrft) + \beta_3bdrms + \beta_4colonial </annotation></semantics></math></p>
+<p>Estimate the coefficients of the above linear model on the
+<code>hprice</code> data set.</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">housing_qualitative</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">llotsize</span> <span class="op">+</span> <span class="va">lsqrft</span> <span class="op">+</span> <span class="va">bdrms</span> <span class="op">+</span> <span class="va">colonial</span>, data <span class="op">=</span> <span class="va">hprice1</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">housing_qualitative</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">lprice</span> <span class="op">~</span> <span class="va">llotsize</span> <span class="op">+</span> <span class="va">lsqrft</span> <span class="op">+</span> <span class="va">bdrms</span> <span class="op">+</span> <span class="va">colonial</span>, data <span class="op">=</span> <span class="va">hprice1</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">housing_qualitative</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">housing_qualitative</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
 </td>
@@ -1451,34 +1575,43 @@ F Statistic
 <em>Note:</em>
 </td>
 <td style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-8-heteroskedasticity" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-8-heteroskedasticity" class="anchor"></a>Chapter 8: Heteroskedasticity</h2>
-<div id="example-8-9-determinants-of-personal-computer-ownership" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-8-9-determinants-of-personal-computer-ownership" class="anchor"></a><strong><code>Example 8.9:</code> Determinants of Personal Computer Ownership</strong>
+<div class="section level3">
+<h3 id="chapter-8-heteroskedasticity">Chapter 8: Heteroskedasticity<a class="anchor" aria-label="anchor" href="#chapter-8-heteroskedasticity"></a>
 </h3>
-<p><span class="math display">\[\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial \]</span> Christopher Lemmon, a former MSU undergraduate, collected these data from a survey he took of MSU students in Fall 1994. Load <code>gpa1</code> and create a new variable combining the <code>fathcoll</code> and <code>mothcoll</code>, into <code>parcoll</code>. This new column indicates if either parent went to college.</p>
+<div class="section level4">
+<h4 id="example-8-9-determinants-of-personal-computer-ownership">
+<strong><code>Example 8.9:</code> Determinants of Personal Computer
+Ownership</strong><a class="anchor" aria-label="anchor" href="#example-8-9-determinants-of-personal-computer-ownership"></a>
+</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>P</mi><mi>C</mi></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>h</mi><mi>s</mi><mi>G</mi><mi>P</mi><mi>A</mi><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>A</mi><mi>C</mi><mi>T</mi><mo>+</mo><msub><mi>β</mi><mn>3</mn></msub><mi>p</mi><mi>a</mi><mi>r</mi><mi>c</mi><mi>o</mi><mi>l</mi><mi>l</mi><mo>+</mo><msub><mi>β</mi><mn>4</mn></msub><mi>c</mi><mi>o</mi><mi>l</mi><mi>o</mi><mi>n</mi><mi>i</mi><mi>a</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">\widehat{PC} = \beta_0 + \beta_1hsGPA + \beta_2ACT + \beta_3parcoll + \beta_4colonial </annotation></semantics></math>
+Christopher Lemmon, a former MSU undergraduate, collected these data
+from a survey he took of MSU students in Fall 1994. Load
+<code>gpa1</code> and create a new variable combining the
+<code>fathcoll</code> and <code>mothcoll</code>, into
+<code>parcoll</code>. This new column indicates if either parent went to
+college.</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"gpa1"</span><span class="op">)</span>
-
-<span class="va">gpa1</span><span class="op">$</span><span class="va">parcoll</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="va">gpa1</span><span class="op">$</span><span class="va">fathcoll</span><span class="op">==</span><span class="fl">1</span> <span class="op">|</span> <span class="va">gpa1</span><span class="op">$</span><span class="va">mothcoll</span><span class="op">)</span>
-
-<span class="va">GPA_OLS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">PC</span> <span class="op">~</span> <span class="va">hsGPA</span> <span class="op">+</span> <span class="va">ACT</span> <span class="op">+</span> <span class="va">parcoll</span>, data <span class="op">=</span> <span class="va">gpa1</span><span class="op">)</span></code></pre></div>
-<p>Calculate the weights and then pass them to the <code>weights</code> argument.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"gpa1"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gpa1</span><span class="op">$</span><span class="va">parcoll</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer</a></span><span class="op">(</span><span class="va">gpa1</span><span class="op">$</span><span class="va">fathcoll</span><span class="op">==</span><span class="fl">1</span> <span class="op">|</span> <span class="va">gpa1</span><span class="op">$</span><span class="va">mothcoll</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">GPA_OLS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">PC</span> <span class="op">~</span> <span class="va">hsGPA</span> <span class="op">+</span> <span class="va">ACT</span> <span class="op">+</span> <span class="va">parcoll</span>, data <span class="op">=</span> <span class="va">gpa1</span><span class="op">)</span></span></code></pre></div>
+<p>Calculate the weights and then pass them to the <code>weights</code>
+argument.</p>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weights</span> <span class="op">&lt;-</span> <span class="va">GPA_OLS</span><span class="op">$</span><span class="va">fitted.values</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">GPA_OLS</span><span class="op">$</span><span class="va">fitted.values</span><span class="op">)</span>
-
-<span class="va">GPA_WLS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">PC</span> <span class="op">~</span> <span class="va">hsGPA</span> <span class="op">+</span> <span class="va">ACT</span> <span class="op">+</span> <span class="va">parcoll</span>, data <span class="op">=</span> <span class="va">gpa1</span>, weights <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="va">weights</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">weights</span> <span class="op">&lt;-</span> <span class="va">GPA_OLS</span><span class="op">$</span><span class="va">fitted.values</span> <span class="op">*</span> <span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">GPA_OLS</span><span class="op">$</span><span class="va">fitted.values</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">GPA_WLS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">PC</span> <span class="op">~</span> <span class="va">hsGPA</span> <span class="op">+</span> <span class="va">ACT</span> <span class="op">+</span> <span class="va">parcoll</span>, data <span class="op">=</span> <span class="va">gpa1</span>, weights <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="va">weights</span><span class="op">)</span></span></code></pre></div>
 <p>Compare the OLS and WLS model in the table below:</p>
-<table class="table">
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
 </td>
@@ -1629,34 +1762,46 @@ F Statistic (df = 3; 137)
 <em>Note:</em>
 </td>
 <td colspan="2" style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-9-more-on-specification-and-data-issues" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-9-more-on-specification-and-data-issues" class="anchor"></a>Chapter 9: More on Specification and Data Issues</h2>
-<div id="example-9-8-rd-intensity-and-firm-size" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-9-8-rd-intensity-and-firm-size" class="anchor"></a><strong><code>Example 9.8:</code> R&amp;D Intensity and Firm Size</strong>
+<div class="section level3">
+<h3 id="chapter-9-more-on-specification-and-data-issues">Chapter 9: More on Specification and Data Issues<a class="anchor" aria-label="anchor" href="#chapter-9-more-on-specification-and-data-issues"></a>
 </h3>
-<p><span class="math display">\[rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu\]</span></p>
-<p>From <em>Businessweek R&amp;D Scoreboard</em>, October 25, 1991. Load the data and estimate the model.</p>
+<div class="section level4">
+<h4 id="example-9-8-rd-intensity-and-firm-size">
+<strong><code>Example 9.8:</code> R&amp;D Intensity and Firm
+Size</strong><a class="anchor" aria-label="anchor" href="#example-9-8-rd-intensity-and-firm-size"></a>
+</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mi>d</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>s</mi><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>s</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>s</mi><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>p</mi><mi>r</mi><mi>o</mi><mi>f</mi><mi>m</mi><mi>a</mi><mi>r</mi><mi>g</mi><mo>+</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">rdintens = \beta_0 + \beta_1sales + \beta_2profmarg + \mu</annotation></semantics></math></p>
+<p>From <em>Businessweek R&amp;D Scoreboard</em>, October 25, 1991. Load
+the data and estimate the model.</p>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"rdchem"</span><span class="op">)</span>
-
-<span class="va">all_rdchem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">rdintens</span> <span class="op">~</span> <span class="va">sales</span> <span class="op">+</span> <span class="va">profmarg</span>, data <span class="op">=</span> <span class="va">rdchem</span><span class="op">)</span></code></pre></div>
-<p>Plotting the data reveals the outlier on the far right of the plot, which will skew the results of our model.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"rdchem"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">all_rdchem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">rdintens</span> <span class="op">~</span> <span class="va">sales</span> <span class="op">+</span> <span class="va">profmarg</span>, data <span class="op">=</span> <span class="va">rdchem</span><span class="op">)</span></span></code></pre></div>
+<p>Plotting the data reveals the outlier on the far right of the plot,
+which will skew the results of our model.</p>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-61-1.png" width="700"></p>
-<p>So, we can estimate the model without that data point to gain a better understanding of how <code>sales</code> and <code>profmarg</code> describe <code>rdintens</code> for most firms. We can use the <code>subset</code> argument of the linear model function to indicate that we only want to estimate the model using data that is less than the highest sales.</p>
+<p>So, we can estimate the model without that data point to gain a
+better understanding of how <code>sales</code> and <code>profmarg</code>
+describe <code>rdintens</code> for most firms. We can use the
+<code>subset</code> argument of the linear model function to indicate
+that we only want to estimate the model using data that is less than the
+highest sales.</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">smallest_rdchem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">rdintens</span> <span class="op">~</span> <span class="va">sales</span> <span class="op">+</span> <span class="va">profmarg</span>, data <span class="op">=</span> <span class="va">rdchem</span>, 
-                      subset <span class="op">=</span> <span class="op">(</span><span class="va">sales</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">sales</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p>The table below compares the results of both models side by side. By removing the outlier firm, <span class="math inline">\(sales\)</span> become a more significant determination of R&amp;D expenditures.</p>
-<table class="table">
+<code class="sourceCode R"><span><span class="va">smallest_rdchem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">rdintens</span> <span class="op">~</span> <span class="va">sales</span> <span class="op">+</span> <span class="va">profmarg</span>, data <span class="op">=</span> <span class="va">rdchem</span>, </span>
+<span>                      subset <span class="op">=</span> <span class="op">(</span><span class="va">sales</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">sales</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>The table below compares the results of both models side by side. By
+removing the outlier firm,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">sales</annotation></semantics></math>
+become a more significant determination of R&amp;D expenditures.</p>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
 </td>
@@ -1796,46 +1941,50 @@ F Statistic
 <em>Note:</em>
 </td>
 <td colspan="2" style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-10-basic-regression-analysis-with-time-series-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-10-basic-regression-analysis-with-time-series-data" class="anchor"></a>Chapter 10: Basic Regression Analysis with Time Series Data</h2>
-<div id="example-10-2-effects-of-inflation-and-deficits-on-interest-rates" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-10-2-effects-of-inflation-and-deficits-on-interest-rates" class="anchor"></a><strong><code>Example 10.2:</code> Effects of Inflation and Deficits on Interest Rates</strong>
+<div class="section level3">
+<h3 id="chapter-10-basic-regression-analysis-with-time-series-data">Chapter 10: Basic Regression Analysis with Time Series Data<a class="anchor" aria-label="anchor" href="#chapter-10-basic-regression-analysis-with-time-series-data"></a>
 </h3>
-<p><span class="math display">\[\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t\]</span> Data from the <em>Economic Report of the President, 2004</em>, Tables B-64, B-73, and B-79.</p>
+<div class="section level4">
+<h4 id="example-10-2-effects-of-inflation-and-deficits-on-interest-rates">
+<strong><code>Example 10.2:</code> Effects of Inflation and Deficits
+on Interest Rates</strong><a class="anchor" aria-label="anchor" href="#example-10-2-effects-of-inflation-and-deficits-on-interest-rates"></a>
+</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>i</mi><mn>3</mn></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>i</mi><mi>n</mi><msub><mi>f</mi><mi>t</mi></msub><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>d</mi><mi>e</mi><msub><mi>f</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">\widehat{i3} = \beta_0 + \beta_1inf_t + \beta_2def_t</annotation></semantics></math>
+Data from the <em>Economic Report of the President, 2004</em>, Tables
+B-64, B-73, and B-79.</p>
 <div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"intdef"</span><span class="op">)</span> <span class="co"># load data</span>
-<span class="co"># load eXtensible Time Series package.</span>
-<span class="co"># xts is excellent for time series plots and </span>
-<span class="co"># properly indexing time series.</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/joshuaulrich/xts">xts</a></span><span class="op">)</span> 
-<span class="co"># create xts object from data.frame</span>
-<span class="co"># First, index year as yearmon class of monthly data. </span>
-<span class="co"># Note: I add 11/12 to set the month to December, end of year.</span>
-<span class="va">index</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="va">intdef</span><span class="op">$</span><span class="va">year</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span><span class="op">)</span>
-<span class="co"># Next, create the xts object, ordering by the index above.</span>
-<span class="va">intdef.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/xts.html">xts</a></span><span class="op">(</span><span class="va">intdef</span><span class="op">[</span> ,<span class="op">-</span><span class="fl">1</span><span class="op">]</span>, order.by <span class="op">=</span> <span class="va">index</span><span class="op">)</span> 
-<span class="co"># extract 3-month Tbill, inflation, and deficit data</span>
-<span class="va">intdef.xts</span> <span class="op">&lt;-</span> <span class="va">intdef.xts</span><span class="op">[</span> ,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"i3"</span>, <span class="st">"inf"</span>, <span class="st">"def"</span><span class="op">)</span><span class="op">]</span> 
-<span class="co"># rename with clearer names</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">intdef.xts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Tbill3mo"</span>, <span class="st">"cpi"</span>, <span class="st">"deficit"</span><span class="op">)</span> 
-<span class="co"># plot the object, add a title, and place legend at top left.</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">intdef.xts</span>, 
-     main <span class="op">=</span> <span class="st">"Inflation, Deficits, and Interest Rates"</span>,
-     legend.loc <span class="op">=</span> <span class="st">"topleft"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"intdef"</span><span class="op">)</span> <span class="co"># load data</span></span>
+<span><span class="co"># load eXtensible Time Series package.</span></span>
+<span><span class="co"># xts is excellent for time series plots and </span></span>
+<span><span class="co"># properly indexing time series.</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://joshuaulrich.github.io/xts/" class="external-link">xts</a></span><span class="op">)</span> </span>
+<span><span class="co"># create xts object from data.frame</span></span>
+<span><span class="co"># First, index year as yearmon class of monthly data. </span></span>
+<span><span class="co"># Note: I add 11/12 to set the month to December, end of year.</span></span>
+<span><span class="va">index</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.yearmon</a></span><span class="op">(</span><span class="va">intdef</span><span class="op">$</span><span class="va">year</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span><span class="op">)</span></span>
+<span><span class="co"># Next, create the xts object, ordering by the index above.</span></span>
+<span><span class="va">intdef.xts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/xts.html" class="external-link">xts</a></span><span class="op">(</span><span class="va">intdef</span><span class="op">[</span> ,<span class="op">-</span><span class="fl">1</span><span class="op">]</span>, order.by <span class="op">=</span> <span class="va">index</span><span class="op">)</span> </span>
+<span><span class="co"># extract 3-month Tbill, inflation, and deficit data</span></span>
+<span><span class="va">intdef.xts</span> <span class="op">&lt;-</span> <span class="va">intdef.xts</span><span class="op">[</span> ,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"i3"</span>, <span class="st">"inf"</span>, <span class="st">"def"</span><span class="op">)</span><span class="op">]</span> </span>
+<span><span class="co"># rename with clearer names</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">intdef.xts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Tbill3mo"</span>, <span class="st">"cpi"</span>, <span class="st">"deficit"</span><span class="op">)</span> </span>
+<span><span class="co"># plot the object, add a title, and place legend at top left.</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">intdef.xts</span>, </span>
+<span>     main <span class="op">=</span> <span class="st">"Inflation, Deficits, and Interest Rates"</span>,</span>
+<span>     legend.loc <span class="op">=</span> <span class="st">"topleft"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-64-1.png" width="700"></p>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Run a Linear regression model</span>
-<span class="va">tbill_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Tbill3mo</span> <span class="op">~</span> <span class="va">cpi</span> <span class="op">+</span> <span class="va">deficit</span>, data <span class="op">=</span> <span class="va">intdef.xts</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<code class="sourceCode R"><span><span class="co"># Run a Linear regression model</span></span>
+<span><span class="va">tbill_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Tbill3mo</span> <span class="op">~</span> <span class="va">cpi</span> <span class="op">+</span> <span class="va">deficit</span>, data <span class="op">=</span> <span class="va">intdef.xts</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
 </td>
@@ -1941,199 +2090,102 @@ F Statistic
 <em>Note:</em>
 </td>
 <td style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
-<p>Now lets update the example with current data, pull from the Federal Reserve Economic Research (FRED) using the <a href="https://CRAN.R-project.org/package=quantmod">quantmod package</a>. Other than the convenient API, the package also formats time series data into <a href="https://CRAN.R-project.org/package=xts">xts: eXtensible Time Series</a> objects, which add many feature and benefits when working with time series.</p>
+<p>Now lets update the example with current data, pull from the Federal
+Reserve Economic Research (FRED) using the <a href="https://CRAN.R-project.org/package=quantmod" class="external-link">quantmod package</a>.
+Other than the convenient API, the package also formats time series data
+into <a href="https://CRAN.R-project.org/package=xts" class="external-link">xts: eXtensible
+Time Series</a> objects, which add many feature and benefits when
+working with time series.</p>
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.quantmod.com">quantmod</a></span><span class="op">)</span>
-
-<span class="co"># Tbill, 3 month</span>
-<span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html">getSymbols</a></span><span class="op">(</span><span class="st">"TB3MS"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "TB3MS"</code></pre>
+<code class="sourceCode R"><span><span class="co"># DO NOT RUN</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://www.quantmod.com/" class="external-link">quantmod</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Tbill, 3 month</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html" class="external-link">getSymbols</a></span><span class="op">(</span><span class="st">"TB3MS"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></span>
+<span><span class="co"># convert to annual observations and convert index to type `yearmon`.</span></span>
+<span><span class="va">TB3MS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/to.period.html" class="external-link">to.yearly</a></span><span class="op">(</span><span class="va">TB3MS</span>, OHLC<span class="op">=</span><span class="cn">FALSE</span>, drop.time <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html" class="external-link">index</a></span><span class="op">(</span><span class="va">TB3MS</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.yearmon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html" class="external-link">index</a></span><span class="op">(</span><span class="va">TB3MS</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Inflation</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html" class="external-link">getSymbols</a></span><span class="op">(</span><span class="st">"FPCPITOTLZGUSA"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></span>
+<span><span class="co"># Convert the index to yearmon and shift FRED's Jan 1st to Dec</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html" class="external-link">index</a></span><span class="op">(</span><span class="va">FPCPITOTLZGUSA</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.yearmon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html" class="external-link">index</a></span><span class="op">(</span><span class="va">FPCPITOTLZGUSA</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span></span>
+<span><span class="co"># Rename and update column names</span></span>
+<span><span class="va">inflation</span> <span class="op">&lt;-</span> <span class="va">FPCPITOTLZGUSA</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">inflation</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"inflation"</span></span>
+<span></span>
+<span><span class="co">## Deficit, percent of GDP: Federal outlays - federal receipts</span></span>
+<span> <span class="co"># Download outlays</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html" class="external-link">getSymbols</a></span><span class="op">(</span><span class="st">"FYFRGDA188S"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></span>
+<span> <span class="co"># Lets move the index from Jan 1st to Dec 30th/31st</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html" class="external-link">index</a></span><span class="op">(</span><span class="va">FYFRGDA188S</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.yearmon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html" class="external-link">index</a></span><span class="op">(</span><span class="va">FYFRGDA188S</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span></span>
+<span> <span class="co"># Rename and update column names</span></span>
+<span><span class="va">outlays</span> <span class="op">&lt;-</span> <span class="va">FYFRGDA188S</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">outlays</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"outlays"</span></span>
+<span></span>
+<span> <span class="co"># Download receipts</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html" class="external-link">getSymbols</a></span><span class="op">(</span><span class="st">"FYONGDA188S"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></span>
+<span> <span class="co"># Lets move the index from Jan 1st to Dec 30th/31st</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html" class="external-link">index</a></span><span class="op">(</span><span class="va">FYONGDA188S</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.yearmon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html" class="external-link">index</a></span><span class="op">(</span><span class="va">FYONGDA188S</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span></span>
+<span> <span class="co"># Rename and update column names</span></span>
+<span><span class="va">receipts</span> <span class="op">&lt;-</span> <span class="va">FYONGDA188S</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">receipts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"receipts"</span></span></code></pre></div>
+<p>Now that all data has been downloaded, we can calculate the deficit
+from the federal <code>outlays</code> and <code>receipts</code> data.
+Next, we will merge our new <code>deficit</code> variable with
+<code>inflation</code> and <code>TB3MS</code> variables. As these are
+all <code>xts</code> times series objects, the <code>merge</code>
+function will automatically key off each series time date index,
+insuring integrity and alignment among each observation and its
+respective date. Additionally, xts provides easy chart construction with
+its plot method.</p>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># DO NOT RUN</span></span>
+<span><span class="co"># create deficits from outlays - receipts</span></span>
+<span><span class="co"># xts objects respect their indexing and outline the future</span></span>
+<span><span class="va">deficit</span> <span class="op">&lt;-</span> <span class="va">outlays</span> <span class="op">-</span> <span class="va">receipts</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">deficit</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"deficit"</span></span>
+<span></span>
+<span><span class="co"># Merge and remove leading and trailing NAs for a balanced data matrix</span></span>
+<span><span class="va">intdef_updated</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge</a></span><span class="op">(</span><span class="va">TB3MS</span>, <span class="va">inflation</span>, <span class="va">deficit</span><span class="op">)</span></span>
+<span><span class="va">intdef_updated</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/na.trim.html" class="external-link">na.trim</a></span><span class="op">(</span><span class="va">intdef_updated</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#Plot all</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">intdef_updated</span>, </span>
+<span>     main <span class="op">=</span> <span class="st">"T-bill (3mo rate), inflation, and deficit (% of GDP)"</span>,</span>
+<span>     legend.loc <span class="op">=</span> <span class="st">"topright"</span>,<span class="op">)</span></span></code></pre></div>
+<p>Now lets run the model again. Inflation plays a much more prominent
+role in the 3 month T-bill rate, than the deficit.</p>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># convert to annual observations and convert index to type `yearmon`.</span>
-<span class="va">TB3MS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xts/man/to.period.html">to.yearly</a></span><span class="op">(</span><span class="va">TB3MS</span>, OHLC<span class="op">=</span><span class="cn">FALSE</span>, drop.time <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">index</span><span class="op">(</span><span class="va">TB3MS</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="fu">index</span><span class="op">(</span><span class="va">TB3MS</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># Inflation</span>
-<span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html">getSymbols</a></span><span class="op">(</span><span class="st">"FPCPITOTLZGUSA"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "FPCPITOTLZGUSA"</code></pre>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Convert the index to yearmon and shift FRED's Jan 1st to Dec</span>
-<span class="fu">index</span><span class="op">(</span><span class="va">FPCPITOTLZGUSA</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="fu">index</span><span class="op">(</span><span class="va">FPCPITOTLZGUSA</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span>
-<span class="co"># Rename and update column names</span>
-<span class="va">inflation</span> <span class="op">&lt;-</span> <span class="va">FPCPITOTLZGUSA</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">inflation</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"inflation"</span>
-
-<span class="co">## Deficit, percent of GDP: Federal outlays - federal receipts</span>
- <span class="co"># Download outlays</span>
-<span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html">getSymbols</a></span><span class="op">(</span><span class="st">"FYFRGDA188S"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "FYFRGDA188S"</code></pre>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
-<code class="sourceCode R"> <span class="co"># Lets move the index from Jan 1st to Dec 30th/31st</span>
-<span class="fu">index</span><span class="op">(</span><span class="va">FYFRGDA188S</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="fu">index</span><span class="op">(</span><span class="va">FYFRGDA188S</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span>
- <span class="co"># Rename and update column names</span>
-<span class="va">outlays</span> <span class="op">&lt;-</span> <span class="va">FYFRGDA188S</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">outlays</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"outlays"</span>
-
- <span class="co"># Download receipts</span>
-<span class="fu"><a href="https://rdrr.io/pkg/quantmod/man/getSymbols.html">getSymbols</a></span><span class="op">(</span><span class="st">"FYONGDA188S"</span>, src <span class="op">=</span> <span class="st">"FRED"</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "FYONGDA188S"</code></pre>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
-<code class="sourceCode R"> <span class="co"># Lets move the index from Jan 1st to Dec 30th/31st</span>
-<span class="fu">index</span><span class="op">(</span><span class="va">FYONGDA188S</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html">as.yearmon</a></span><span class="op">(</span><span class="fu">index</span><span class="op">(</span><span class="va">FYONGDA188S</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">11</span><span class="op">/</span><span class="fl">12</span>
- <span class="co"># Rename and update column names</span>
-<span class="va">receipts</span> <span class="op">&lt;-</span> <span class="va">FYONGDA188S</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">receipts</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"receipts"</span></code></pre></div>
-<p>Now that all data has been downloaded, we can calculate the deficit from the federal <code>outlays</code> and <code>receipts</code> data. Next, we will merge our new <code>deficit</code> variable with <code>inflation</code> and <code>TB3MS</code> variables. As these are all <code>xts</code> times series objects, the <code>merge</code> function will automatically key off each series time date index, insuring integrity and alignment among each observation and its respective date. Additionally, xts provides easy chart construction with its plot method.</p>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># create deficits from outlays - receipts</span>
-<span class="co"># xts objects respect their indexing and outline the future</span>
-<span class="va">deficit</span> <span class="op">&lt;-</span> <span class="va">outlays</span> <span class="op">-</span> <span class="va">receipts</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">deficit</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"deficit"</span>
-
-<span class="co"># Merge and remove leading and trailing NAs for a balanced data matrix</span>
-<span class="va">intdef_updated</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">TB3MS</span>, <span class="va">inflation</span>, <span class="va">deficit</span><span class="op">)</span>
-<span class="va">intdef_updated</span> <span class="op">&lt;-</span> <span class="fu">zoo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/zoo/man/na.trim.html">na.trim</a></span><span class="op">(</span><span class="va">intdef_updated</span><span class="op">)</span>
-
-<span class="co">#Plot all</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">intdef_updated</span>, 
-     main <span class="op">=</span> <span class="st">"T-bill (3mo rate), inflation, and deficit (% of GDP)"</span>,
-     legend.loc <span class="op">=</span> <span class="st">"topright"</span>,<span class="op">)</span></code></pre></div>
-<p><img src="Introductory-Econometrics-Examples_files/figure-html/unnamed-chunk-67-1.png" width="700"></p>
-<p>Now lets run the model again. Inflation plays a much more prominent role in the 3 month T-bill rate, than the deficit.</p>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">updated_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">TB3MS</span> <span class="op">~</span> <span class="va">inflation</span> <span class="op">+</span> <span class="va">deficit</span>, data <span class="op">=</span> <span class="va">intdef_updated</span><span class="op">)</span></code></pre></div>
-<table class="table">
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="1" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-TB3MS
-</td>
-</tr>
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-inflation
-</td>
-<td>
-0.88001<sup>***</sup> (0.09313)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-deficit
-</td>
-<td>
-0.20756<sup>**</sup> (0.09259)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
-1.79353<sup>***</sup> (0.52477)
-</td>
-</tr>
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-61
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.63996
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Adjusted R<sup>2</sup>
-</td>
-<td>
-0.62755
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Residual Std. Error
-</td>
-<td>
-1.97754 (df = 58)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-F Statistic
-</td>
-<td>
-51.54762<sup>***</sup> (df = 2; 58)
-</td>
-</tr>
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
-</td>
-</tr>
-</table>
+<code class="sourceCode R"><span><span class="co"># DO NOT RUN</span></span>
+<span><span class="va">updated_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">TB3MS</span> <span class="op">~</span> <span class="va">inflation</span> <span class="op">+</span> <span class="va">deficit</span>, data <span class="op">=</span> <span class="va">intdef_updated</span><span class="op">)</span></span></code></pre></div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-11-further-issues-in-using-ols-with-with-time-series-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-11-further-issues-in-using-ols-with-with-time-series-data" class="anchor"></a>Chapter 11: Further Issues in Using OLS with with Time Series Data</h2>
-<div id="example-11-7-wages-and-productivity" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-11-7-wages-and-productivity" class="anchor"></a><strong><code>Example 11.7:</code> Wages and Productivity</strong>
+<div class="section level3">
+<h3 id="chapter-11-further-issues-in-using-ols-with-with-time-series-data">Chapter 11: Further Issues in Using OLS with with Time Series
+Data<a class="anchor" aria-label="anchor" href="#chapter-11-further-issues-in-using-ols-with-with-time-series-data"></a>
 </h3>
-<p><span class="math display">\[\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t\]</span> Data from the <em>Economic Report of the President, 1989</em>, Table B-47. The data are for the non-farm business sector.</p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"earns"</span><span class="op">)</span>
-
-<span class="va">wage_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lhrwage</span> <span class="op">~</span> <span class="va">loutphr</span> <span class="op">+</span> <span class="va">t</span>, data <span class="op">=</span> <span class="va">earns</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">wage_diff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">lhrwage</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">loutphr</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">earns</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<div class="section level4">
+<h4 id="example-11-7-wages-and-productivity">
+<strong><code>Example 11.7:</code> Wages and
+Productivity</strong><a class="anchor" aria-label="anchor" href="#example-11-7-wages-and-productivity"></a>
+</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mi>r</mi><mi>w</mi><mi>a</mi><mi>g</mi><msub><mi>e</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mi>u</mi><mi>t</mi><mi>p</mi><mi>h</mi><msub><mi>r</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>t</mi><mo>+</mo><msub><mi>μ</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">\widehat{log(hrwage_t)} = \beta_0 + \beta_1log(outphr_t) + \beta_2t + \mu_t</annotation></semantics></math>
+Data from the <em>Economic Report of the President, 1989</em>, Table
+B-47. The data are for the non-farm business sector.</p>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"earns"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">wage_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">lhrwage</span> <span class="op">~</span> <span class="va">loutphr</span> <span class="op">+</span> <span class="va">t</span>, data <span class="op">=</span> <span class="va">earns</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wage_diff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html" class="external-link">diff</a></span><span class="op">(</span><span class="va">lhrwage</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html" class="external-link">diff</a></span><span class="op">(</span><span class="va">loutphr</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">earns</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
 </td>
@@ -2284,32 +2336,39 @@ F Statistic
 <em>Note:</em>
 </td>
 <td colspan="2" style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-12-serial-correlation-and-heteroskedasticiy-in-time-series-regressions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-12-serial-correlation-and-heteroskedasticiy-in-time-series-regressions" class="anchor"></a>Chapter 12: Serial Correlation and Heteroskedasticiy in Time Series Regressions</h2>
-<div id="example-12-8-heteroskedasticity-and-the-efficient-markets-hypothesis" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-12-8-heteroskedasticity-and-the-efficient-markets-hypothesis" class="anchor"></a><strong><code>Example 12.8:</code> Heteroskedasticity and the Efficient Markets Hypothesis</strong>
+<div class="section level3">
+<h3 id="chapter-12-serial-correlation-and-heteroskedasticiy-in-time-series-regressions">Chapter 12: Serial Correlation and Heteroskedasticiy in Time Series
+Regressions<a class="anchor" aria-label="anchor" href="#chapter-12-serial-correlation-and-heteroskedasticiy-in-time-series-regressions"></a>
 </h3>
-<p>These are Wednesday closing prices of value-weighted NYSE average, available in many publications. Wooldridge does not recall the particular source used when he collected these data at MIT, but notes probably the easiest way to get similar data is to go to the NYSE web site, <a href="https://www.nyse.com/data-and-tech">www.nyse.com</a>.</p>
-<p><span class="math display">\[return_t = \beta_0 + \beta_1return_{t-1} + \mu_t\]</span></p>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"nyse"</span><span class="op">)</span>
-<span class="op">?</span><span class="va">nyse</span> </code></pre></div>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">return_AR1</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">return</span> <span class="op">~</span> <span class="va">return_1</span>, data <span class="op">=</span> <span class="va">nyse</span><span class="op">)</span></code></pre></div>
-<p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t\]</span></p>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">return_mu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">return_AR1</span><span class="op">)</span>
-<span class="va">mu2_hat_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">return_mu</span><span class="op">^</span><span class="fl">2</span> <span class="op">~</span> <span class="va">return_1</span>, data <span class="op">=</span> <span class="va">return_AR1</span><span class="op">$</span><span class="va">model</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<div class="section level4">
+<h4 id="example-12-8-heteroskedasticity-and-the-efficient-markets-hypothesis">
+<strong><code>Example 12.8:</code> Heteroskedasticity and the
+Efficient Markets Hypothesis</strong><a class="anchor" aria-label="anchor" href="#example-12-8-heteroskedasticity-and-the-efficient-markets-hypothesis"></a>
+</h4>
+<p>These are Wednesday closing prices of value-weighted NYSE average,
+available in many publications. Wooldridge does not recall the
+particular source used when he collected these data at MIT, but notes
+probably the easiest way to get similar data is to go to the NYSE web
+site, <a href="https://www.nyse.com/data-and-tech" class="external-link">www.nyse.com</a>.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mi>e</mi><mi>t</mi><mi>u</mi><mi>r</mi><msub><mi>n</mi><mi>t</mi></msub><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>r</mi><mi>e</mi><mi>t</mi><mi>u</mi><mi>r</mi><msub><mi>n</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>μ</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">return_t = \beta_0 + \beta_1return_{t-1} + \mu_t</annotation></semantics></math></p>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"nyse"</span><span class="op">)</span></span>
+<span><span class="op">?</span><span class="va">nyse</span> </span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">return_AR1</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">return</span> <span class="op">~</span> <span class="va">return_1</span>, data <span class="op">=</span> <span class="va">nyse</span><span class="op">)</span></span></code></pre></div>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><msubsup><mi>μ</mi><mi>t</mi><mn>2</mn></msubsup><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>r</mi><mi>e</mi><mi>t</mi><mi>u</mi><mi>r</mi><msub><mi>n</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>r</mi><mi>e</mi><mi>s</mi><mi>i</mi><mi>d</mi><mi>u</mi><mi>a</mi><msub><mi>l</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">\hat{\mu^2_t} = \beta_0 + \beta_1return_{t-1} + residual_t</annotation></semantics></math></p>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">return_mu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html" class="external-link">residuals</a></span><span class="op">(</span><span class="va">return_AR1</span><span class="op">)</span></span>
+<span><span class="va">mu2_hat_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">return_mu</span><span class="op">^</span><span class="fl">2</span> <span class="op">~</span> <span class="va">return_1</span>, data <span class="op">=</span> <span class="va">return_AR1</span><span class="op">$</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
 </td>
@@ -2441,23 +2500,37 @@ F Statistic (df = 1; 687)
 <em>Note:</em>
 </td>
 <td colspan="2" style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="example-12-9-arch-in-stock-returns" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-12-9-arch-in-stock-returns" class="anchor"></a><strong><code>Example 12.9:</code> ARCH in Stock Returns</strong>
-</h3>
-<p><span class="math display">\[\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t\]</span></p>
-<p>We still have <code>return_mu</code> in the working environment so we can use it to create <span class="math inline">\(\hat{\mu^2_t}\)</span>, (<code>mu2_hat</code>) and <span class="math inline">\(\hat{\mu^2_{t-1}}\)</span> (<code>mu2_hat_1</code>). Notice the use <code>R</code>’s matrix subset operations to perform the lag operation. We drop the first observation of <code>mu2_hat</code> and squared the results. Next, we remove the last observation of <code>mu2_hat_1</code> using the subtraction operator combined with a call to the <code>NROW</code> function on <code>return_mu</code>. Now, both contain <span class="math inline">\(688\)</span> observations and we can estimate a standard linear model.</p>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mu2_hat</span>  <span class="op">&lt;-</span> <span class="va">return_mu</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span>
-<span class="va">mu2_hat_1</span> <span class="op">&lt;-</span> <span class="va">return_mu</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">NROW</a></span><span class="op">(</span><span class="va">return_mu</span><span class="op">)</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span>
-<span class="va">arch_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mu2_hat</span> <span class="op">~</span> <span class="va">mu2_hat_1</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<div class="section level4">
+<h4 id="example-12-9-arch-in-stock-returns">
+<strong><code>Example 12.9:</code> ARCH in Stock
+Returns</strong><a class="anchor" aria-label="anchor" href="#example-12-9-arch-in-stock-returns"></a>
+</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><msubsup><mi>μ</mi><mi>t</mi><mn>2</mn></msubsup><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><mover><msubsup><mi>μ</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mo accent="true">̂</mo></mover><mo>+</mo><mi>r</mi><mi>e</mi><mi>s</mi><mi>i</mi><mi>d</mi><mi>u</mi><mi>a</mi><msub><mi>l</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">\hat{\mu^2_t} = \beta_0 + \hat{\mu^2_{t-1}} + residual_t</annotation></semantics></math></p>
+<p>We still have <code>return_mu</code> in the working environment so we
+can use it to create
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><msubsup><mi>μ</mi><mi>t</mi><mn>2</mn></msubsup><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{\mu^2_t}</annotation></semantics></math>,
+(<code>mu2_hat</code>) and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><msubsup><mi>μ</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{\mu^2_{t-1}}</annotation></semantics></math>
+(<code>mu2_hat_1</code>). Notice the use <code>R</code>’s matrix subset
+operations to perform the lag operation. We drop the first observation
+of <code>mu2_hat</code> and squared the results. Next, we remove the
+last observation of <code>mu2_hat_1</code> using the subtraction
+operator combined with a call to the <code>NROW</code> function on
+<code>return_mu</code>. Now, both contain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>688</mn><annotation encoding="application/x-tex">688</annotation></semantics></math>
+observations and we can estimate a standard linear model.</p>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mu2_hat</span>  <span class="op">&lt;-</span> <span class="va">return_mu</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span><span class="va">mu2_hat_1</span> <span class="op">&lt;-</span> <span class="va">return_mu</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">NROW</a></span><span class="op">(</span><span class="va">return_mu</span><span class="op">)</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span></span>
+<span><span class="va">arch_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mu2_hat</span> <span class="op">~</span> <span class="va">mu2_hat_1</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
 </td>
@@ -2555,27 +2628,35 @@ F Statistic
 <em>Note:</em>
 </td>
 <td style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-13-pooling-cross-sections-across-time-simple-panel-data-methods" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-13-pooling-cross-sections-across-time-simple-panel-data-methods" class="anchor"></a>Chapter 13: Pooling Cross Sections across Time: Simple Panel Data Methods</h2>
-<div id="example-13-7-effect-of-drunk-driving-laws-on-traffic-fatalities" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-13-7-effect-of-drunk-driving-laws-on-traffic-fatalities" class="anchor"></a><strong><code>Example 13.7:</code> Effect of Drunk Driving Laws on Traffic Fatalities</strong>
+<div class="section level3">
+<h3 id="chapter-13-pooling-cross-sections-across-time-simple-panel-data-methods">Chapter 13: Pooling Cross Sections across Time: Simple Panel Data
+Methods<a class="anchor" aria-label="anchor" href="#chapter-13-pooling-cross-sections-across-time-simple-panel-data-methods"></a>
 </h3>
-<p>Wooldridge collected these data from two sources, the 1992 <em>Statistical Abstract of the United States</em> (Tables 1009, 1012) and <em>A Digest of State Alcohol-Highway Safety Related Legislation</em>, 1985 and 1990, published by the U.S. National Highway Traffic Safety Administration. <span class="math display">\[\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}\]</span></p>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"traffic1"</span><span class="op">)</span>
-<span class="op">?</span><span class="va">traffic1</span></code></pre></div>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DD_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">cdthrte</span> <span class="op">~</span> <span class="va">copen</span> <span class="op">+</span> <span class="va">cadmn</span>, data <span class="op">=</span> <span class="va">traffic1</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<div class="section level4">
+<h4 id="example-13-7-effect-of-drunk-driving-laws-on-traffic-fatalities">
+<strong><code>Example 13.7:</code> Effect of Drunk Driving Laws on
+Traffic Fatalities</strong><a class="anchor" aria-label="anchor" href="#example-13-7-effect-of-drunk-driving-laws-on-traffic-fatalities"></a>
+</h4>
+<p>Wooldridge collected these data from two sources, the 1992
+<em>Statistical Abstract of the United States</em> (Tables 1009, 1012)
+and <em>A Digest of State Alcohol-Highway Safety Related
+Legislation</em>, 1985 and 1990, published by the U.S. National Highway
+Traffic Safety Administration.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>Δ</mi><mrow><mi>d</mi><mi>t</mi><mi>h</mi><mi>r</mi><mi>t</mi><mi>e</mi></mrow></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><mi>Δ</mi><mrow><mi>o</mi><mi>p</mi><mi>e</mi><mi>n</mi></mrow><mo>+</mo><mi>Δ</mi><mrow><mi>a</mi><mi>d</mi><mi>m</mi><mi>i</mi><mi>n</mi></mrow></mrow><annotation encoding="application/x-tex">\widehat{\Delta{dthrte}} = \beta_0 + \Delta{open} + \Delta{admin}</annotation></semantics></math></p>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"traffic1"</span><span class="op">)</span></span>
+<span><span class="op">?</span><span class="va">traffic1</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">DD_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">cdthrte</span> <span class="op">~</span> <span class="va">copen</span> <span class="op">+</span> <span class="va">cadmn</span>, data <span class="op">=</span> <span class="va">traffic1</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
 </td>
@@ -2681,34 +2762,39 @@ F Statistic
 <em>Note:</em>
 </td>
 <td style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="chapter-18-advanced-time-series-topics" class="section level2">
-<h2 class="hasAnchor">
-<a href="#chapter-18-advanced-time-series-topics" class="anchor"></a>Chapter 18: Advanced Time Series Topics</h2>
-<div id="example-18-8-forecasting-the-u-s--unemployment-rate" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-18-8-forecasting-the-u-s--unemployment-rate" class="anchor"></a><strong><code>Example 18.8:</code> FORECASTING THE U.S. UNEMPLOYMENT RATE</strong>
+<div class="section level3">
+<h3 id="chapter-18-advanced-time-series-topics">Chapter 18: Advanced Time Series Topics<a class="anchor" aria-label="anchor" href="#chapter-18-advanced-time-series-topics"></a>
 </h3>
-<p>Data from <em>Economic Report of the President, 2004</em>, Tables B-42 and B-64.</p>
-<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"phillips"</span><span class="op">)</span>
-<span class="op">?</span><span class="va">phillips</span></code></pre></div>
-<p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}\]</span></p>
-<p>Estimate the linear model in the usual way and note the use of the <code>subset</code> argument to define data equal to and before the year 1996.</p>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">phillips_train</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">phillips</span>, <span class="va">year</span> <span class="op">&lt;=</span> <span class="fl">1996</span><span class="op">)</span>
-
-<span class="va">unem_AR1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">unem</span> <span class="op">~</span> <span class="va">unem_1</span>, data <span class="op">=</span> <span class="va">phillips_train</span><span class="op">)</span></code></pre></div>
-<p><span class="math display">\[\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}\]</span></p>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">unem_inf_VAR1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">unem</span> <span class="op">~</span> <span class="va">unem_1</span> <span class="op">+</span> <span class="va">inf_1</span>, data <span class="op">=</span> <span class="va">phillips_train</span><span class="op">)</span></code></pre></div>
-<table class="table">
+<div class="section level4">
+<h4 id="example-18-8-forecasting-the-u-s--unemployment-rate">
+<strong><code>Example 18.8:</code> FORECASTING THE U.S. UNEMPLOYMENT
+RATE</strong><a class="anchor" aria-label="anchor" href="#example-18-8-forecasting-the-u-s--unemployment-rate"></a>
+</h4>
+<p>Data from <em>Economic Report of the President, 2004</em>, Tables
+B-42 and B-64.</p>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"phillips"</span><span class="op">)</span></span>
+<span><span class="op">?</span><span class="va">phillips</span></span></code></pre></div>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>u</mi><mi>n</mi><mi>e</mi><mi>m</mi><msub><mi>p</mi><mi>t</mi></msub></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>u</mi><mi>n</mi><mi>e</mi><msub><mi>m</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1}</annotation></semantics></math></p>
+<p>Estimate the linear model in the usual way and note the use of the
+<code>subset</code> argument to define data equal to and before the year
+1996.</p>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">phillips_train</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">phillips</span>, <span class="va">year</span> <span class="op">&lt;=</span> <span class="fl">1996</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">unem_AR1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">unem</span> <span class="op">~</span> <span class="va">unem_1</span>, data <span class="op">=</span> <span class="va">phillips_train</span><span class="op">)</span></span></code></pre></div>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>u</mi><mi>n</mi><mi>e</mi><mi>m</mi><msub><mi>p</mi><mi>t</mi></msub></mrow><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>u</mi><mi>n</mi><mi>e</mi><msub><mi>m</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><mi>i</mi><mi>n</mi><msub><mi>f</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\widehat{unemp_t} = \beta_0 + \beta_1unem_{t-1} + \beta_2inf_{t-1}</annotation></semantics></math></p>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">unem_inf_VAR1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">unem</span> <span class="op">~</span> <span class="va">unem_1</span> <span class="op">+</span> <span class="va">inf_1</span>, data <span class="op">=</span> <span class="va">phillips_train</span><span class="op">)</span></span></code></pre></div>
+<table style="text-align:center" class="table">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
 </td>
@@ -2847,18 +2933,23 @@ F Statistic
 <em>Note:</em>
 </td>
 <td colspan="2" style="text-align:right">
-<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05; <sup></sup>p&lt;0.01
+<sup><em></em></sup>p&lt;0.1; <sup><strong></strong></sup>p&lt;0.05;
+<sup></sup>p&lt;0.01
 </td>
 </tr>
 </table>
-<p>Now, use the <code>subset</code> argument to create our testing data set containing observation after 1996. Next, pass the both the model object and the test set to the <code>predict</code> function for both models. Finally, <code>cbind</code> or “column bind” both forecasts as well as the year and unemployment rate of the test set.</p>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">phillips_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">phillips</span>, <span class="va">year</span> <span class="op">&gt;=</span> <span class="fl">1997</span><span class="op">)</span>
-
-<span class="va">AR1_forecast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.lm.html">predict.lm</a></span><span class="op">(</span><span class="va">unem_AR1</span>, newdata <span class="op">=</span> <span class="va">phillips_test</span><span class="op">)</span>
-<span class="va">VAR1_forecast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.lm.html">predict.lm</a></span><span class="op">(</span><span class="va">unem_inf_VAR1</span>, newdata <span class="op">=</span> <span class="va">phillips_test</span><span class="op">)</span>
-
-<span class="fu">kable</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">phillips_test</span><span class="op">[</span> ,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"year"</span>, <span class="st">"unem"</span><span class="op">)</span><span class="op">]</span>, <span class="va">AR1_forecast</span>, <span class="va">VAR1_forecast</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>Now, use the <code>subset</code> argument to create our testing data
+set containing observation after 1996. Next, pass the both the model
+object and the test set to the <code>predict</code> function for both
+models. Finally, <code>cbind</code> or “column bind” both forecasts as
+well as the year and unemployment rate of the test set.</p>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">phillips_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">phillips</span>, <span class="va">year</span> <span class="op">&gt;=</span> <span class="fl">1997</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">AR1_forecast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.lm.html" class="external-link">predict.lm</a></span><span class="op">(</span><span class="va">unem_AR1</span>, newdata <span class="op">=</span> <span class="va">phillips_test</span><span class="op">)</span></span>
+<span><span class="va">VAR1_forecast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.lm.html" class="external-link">predict.lm</a></span><span class="op">(</span><span class="va">unem_inf_VAR1</span>, newdata <span class="op">=</span> <span class="va">phillips_test</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">kable</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">phillips_test</span><span class="op">[</span> ,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"year"</span>, <span class="st">"unem"</span><span class="op">)</span><span class="op">]</span>, <span class="va">AR1_forecast</span>, <span class="va">VAR1_forecast</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left"></th>
@@ -2922,64 +3013,95 @@ F Statistic
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="appendix" class="section level1">
-<h1 class="hasAnchor">
-<a href="#appendix" class="anchor"></a>Appendix</h1>
-<div id="using-r-for-introductory-econometrics" class="section level3">
-<h3 class="hasAnchor">
-<a href="#using-r-for-introductory-econometrics" class="anchor"></a>Using R for Introductory Econometrics</h3>
-<p>This is an excellent open source complimentary text to “Introductory Econometrics” by Jeffrey M. Wooldridge and should be your number one resource. This excerpt from the book’s website:</p>
+<div class="section level2">
+<h2 id="appendix">Appendix<a class="anchor" aria-label="anchor" href="#appendix"></a>
+</h2>
+<div class="section level4">
+<h4 id="using-r-for-introductory-econometrics">Using R for Introductory Econometrics<a class="anchor" aria-label="anchor" href="#using-r-for-introductory-econometrics"></a>
+</h4>
+<p>This is an excellent open source complimentary text to “Introductory
+Econometrics” by Jeffrey M. Wooldridge and should be your number one
+resource. This excerpt from the book’s website:</p>
 <blockquote>
-<p>This book introduces the popular, powerful and free programming language and software package R with a focus on the implementation of standard tools and methods used in econometrics. Unlike other books on similar topics, it does not attempt to provide a self-contained discussion of econometric models and methods. Instead, it builds on the excellent and popular textbook “Introductory Econometrics” by Jeffrey M. Wooldridge.</p>
+<p>This book introduces the popular, powerful and free programming
+language and software package R with a focus on the implementation of
+standard tools and methods used in econometrics. Unlike other books on
+similar topics, it does not attempt to provide a self-contained
+discussion of econometric models and methods. Instead, it builds on the
+excellent and popular textbook “Introductory Econometrics” by Jeffrey M.
+Wooldridge.</p>
 </blockquote>
-<p>Heiss, Florian. <em>Using R for Introductory Econometrics</em>. ISBN: 979-8648424364, CreateSpace Independent Publishing Platform, 2020, Dusseldorf, Germany.</p>
-<p><a href="http://www.urfie.net/">url: http://www.urfie.net/</a>.</p>
+<p>Heiss, Florian. <em>Using R for Introductory Econometrics</em>. ISBN:
+979-8648424364, CreateSpace Independent Publishing Platform, 2020,
+Dusseldorf, Germany.</p>
+<p><a href="http://www.urfie.net/" class="external-link">url: http://www.urfie.net/</a>.</p>
 </div>
-<div id="applied-econometrics-with-r" class="section level3">
-<h3 class="hasAnchor">
-<a href="#applied-econometrics-with-r" class="anchor"></a>Applied Econometrics with R</h3>
+<div class="section level4">
+<h4 id="applied-econometrics-with-r">Applied Econometrics with R<a class="anchor" aria-label="anchor" href="#applied-econometrics-with-r"></a>
+</h4>
 <p>From the publisher’s website:</p>
 <blockquote>
-<p>This is the first book on applied econometrics using the R system for statistical computing and graphics. It presents hands-on examples for a wide range of econometric models, from classical linear regression models for cross-section, time series or panel data and the common non-linear models of microeconometrics such as logit, probit and tobit models, to recent semiparametric extensions. In addition, it provides a chapter on programming, including simulations, optimization, and an introduction to R tools enabling reproducible econometric research. An R package accompanying this book, AER, is available from the Comprehensive R Archive Network (CRAN) at <a href="https://CRAN.R-project.org/package=AER" class="uri">https://CRAN.R-project.org/package=AER</a>.</p>
+<p>This is the first book on applied econometrics using the R system for
+statistical computing and graphics. It presents hands-on examples for a
+wide range of econometric models, from classical linear regression
+models for cross-section, time series or panel data and the common
+non-linear models of microeconometrics such as logit, probit and tobit
+models, to recent semiparametric extensions. In addition, it provides a
+chapter on programming, including simulations, optimization, and an
+introduction to R tools enabling reproducible econometric research. An R
+package accompanying this book, AER, is available from the Comprehensive
+R Archive Network (CRAN) at <a href="https://CRAN.R-project.org/package=AER" class="external-link uri">https://CRAN.R-project.org/package=AER</a>.</p>
 </blockquote>
-<p>Kleiber, Christian and Achim Zeileis. <em>Applied Econometrics with R</em>. ISBN 978-0-387-77316-2, Springer-Verlag, 2008, New York. <a href="https://www.springer.com/us/book/9780387773162">https://www.springer.com/us/book/9780387773162</a></p>
+<p>Kleiber, Christian and Achim Zeileis. <em>Applied Econometrics with
+R</em>. ISBN 978-0-387-77316-2, Springer-Verlag, 2008, New York. <a href="https://link.springer.com/book/10.1007/978-0-387-77318-6" class="external-link">https://link.springer.com/book/10.1007/978-0-387-77318-6</a></p>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="bibliography" class="section level2">
-<h2 class="hasAnchor">
-<a href="#bibliography" class="anchor"></a>Bibliography</h2>
-<p>Jeffrey M. Wooldridge (2020). <em>Introductory Econometrics: A Modern Approach, 7th edition</em>. ISBN-13: 978-1-337-55886-0. Mason, Ohio :South-Western Cengage Learning.</p>
-<p>Jeffrey A. Ryan and Joshua M. Ulrich (2020). quantmod: Quantitative Financial Modelling Framework. R package version 0.4.18. <a href="https://CRAN.R-project.org/package=quantmod" class="uri">https://CRAN.R-project.org/package=quantmod</a></p>
-<p>R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
-<p>Marek Hlavac (2018). <em>stargazer: Well-Formatted Regression and Summary Statistics Tables</em>. R package version 5.2.2. URL: <a href="https://CRAN.R-project.org/package=stargazer" class="uri">https://CRAN.R-project.org/package=stargazer</a></p>
-<p>van der Loo M (2020). tinytest “A method for deriving information from running R code.” <em>The R Journal</em>, Accepted for publication. &lt;URL: <a href="https://arxiv.org/abs/2002.07472" class="uri">https://arxiv.org/abs/2002.07472</a>&gt;.</p>
-<p>Yihui Xie (2021). <em>knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. R package version 1.33. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a></p>
+<div class="section level3">
+<h3 id="bibliography">Bibliography<a class="anchor" aria-label="anchor" href="#bibliography"></a>
+</h3>
+<p>Jeffrey M. Wooldridge (2020). <em>Introductory Econometrics: A Modern
+Approach, 7th edition</em>. ISBN-13: 978-1-337-55886-0. Mason, Ohio
+:South-Western Cengage Learning.</p>
+<p>Jeffrey A. Ryan and Joshua M. Ulrich (2020). quantmod: Quantitative
+Financial Modelling Framework. R package version 0.4.18. <a href="https://CRAN.R-project.org/package=quantmod" class="external-link uri">https://CRAN.R-project.org/package=quantmod</a></p>
+<p>R Core Team (2021). R: A language and environment for statistical
+computing. R Foundation for Statistical Computing, Vienna, Austria. URL
+<a href="https://www.R-project.org/" class="external-link uri">https://www.R-project.org/</a>.</p>
+<p>Marek Hlavac (2018). <em>stargazer: Well-Formatted Regression and
+Summary Statistics Tables</em>. R package version 5.2.2. URL: <a href="https://CRAN.R-project.org/package=stargazer" class="external-link uri">https://CRAN.R-project.org/package=stargazer</a></p>
+<p>van der Loo M (2020). tinytest “A method for deriving information
+from running R code.” <em>The R Journal</em>, Accepted for publication.
+&lt;URL: <a href="https://arxiv.org/abs/2002.07472" class="external-link uri">https://arxiv.org/abs/2002.07472</a>&gt;.</p>
+<p>Yihui Xie (2021). <em>knitr: A General-Purpose Package for Dynamic
+Report Generation in R</em>. R package version 1.33. <a href="https://CRAN.R-project.org/package=knitr" class="external-link uri">https://CRAN.R-project.org/package=knitr</a></p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
+      </div>
 
 </div>
 
 
 
       <footer><div class="copyright">
-  <p>Developed by Justin M. Shea.</p>
+  <p></p>
+<p>Developed by Justin M. Shea.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer>
 </div>
 
-  
+
+
+
 
 
   </body>
