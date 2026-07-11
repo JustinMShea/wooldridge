@@ -11,10 +11,10 @@ A data.frame with 135 observations on 8 variables:
  \item \strong{urate:} unemployment rate, percent
  \item \strong{vrate:} vacancy rate, percent
  \item \strong{t:} linear time trend
- \item \strong{urate_1:} L.urate
- \item \strong{vrate_1:} L.vrate
- \item \strong{curate:} D.urate
- \item \strong{cvrate:} D.vrate
+ \item \strong{urate_1:} urate_1
+ \item \strong{vrate_1:} vrate_1
+ \item \strong{curate:} urate - urate_1
+ \item \strong{cvrate:} urate - urate_1
 }
 }
 \source{

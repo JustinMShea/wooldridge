@@ -24,7 +24,7 @@ A data.frame with 336 observations on 14 variables:
 }
 }
 \source{
-\url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge}
+\url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781337558860}
 }
 \usage{
 data('ncaa_rpi')

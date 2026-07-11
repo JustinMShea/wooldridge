@@ -33,11 +33,11 @@ A data.frame with 17137 observations on 33 variables:
  \item \strong{occattend:} =1 if attend is 3, 4, or 5
  \item \strong{regattend:} =1 if attend is 6, 7, or 8
  \item \strong{y94:} =1 if year == 1994
- \item \strong{y96:} 
- \item \strong{y98:} 
- \item \strong{y00:} 
- \item \strong{y02:} 
- \item \strong{y04:} 
+ \item \strong{y96:} =1 if year == 1996
+ \item \strong{y98:} =1 if year == 1998
+ \item \strong{y00:} =1 if year == 2000
+ \item \strong{y02:} =1 if year == 2002
+ \item \strong{y04:} =1 if year == 2004
  \item \strong{y06:} =1 if year == 2006
  \item \strong{unem10:} =1 if unemployed in last 10 years
 }
