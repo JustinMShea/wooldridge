@@ -31,7 +31,7 @@
 #'  \item \strong{lrexpp: } log(rexpp)
 #'  \item \strong{lavgrexpp: } log((rexpp + L.rexpp)/2)
 #' }
-#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781337558860}
 #' @examples  str(school93_98)
 "school93_98"
  

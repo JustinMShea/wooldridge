@@ -27,7 +27,7 @@
 #'  \item \strong{coachexper: } Coach Experience
 #'  \item \strong{power5: } PowerFive Dummy
 #' }
-#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781337558860}
 #' @examples  str(ncaa_rpi)
 "ncaa_rpi"
  

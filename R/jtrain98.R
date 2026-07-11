@@ -23,7 +23,7 @@
 #'  \item \strong{earn98: } earnings in 1998, $1000s
 #'  \item \strong{unem98: }=1 if unemployed all of 1998
 #' }
-#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781337558860}
 #' @examples  str(jtrain98)
 "jtrain98"
  
