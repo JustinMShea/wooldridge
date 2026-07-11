@@ -1,8 +1,10 @@
 
-
+ <!-- badges: start -->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/wooldridge)](https://cran.r-project.org/package=wooldridge)
 [![R build status](https://github.com/r-lib/actions/workflows/R-CMD-check/badge.svg)](https://github.com/JustinMShea/wooldridge/actions?workflow=R-CMD-check)
 [![status](https://tinyverse.netlify.com/badge/wooldridge)](https://CRAN.R-project.org/package=wooldridge)
+[![R-CMD-check](https://github.com/JustinMShea/wooldridge/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JustinMShea/wooldridge/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 # wooldridge: 115 Data Sets for Econometrics 
 
