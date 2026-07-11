@@ -3,6 +3,10 @@ title: "NEWS"
 output: github_document
 ---
 
+# wooldridge 1.4-7
+
+- Re-compiled package documentation (`.Rd` files) via `roxygen2` to properly apply the textbook URL fixes implemented in 1.4-6.
+
 # wooldridge 1.4-6
 
 - Fixed broken Cengage textbook URLs in package documentation that were causing redirect limit errors during CRAN checks in issue #16.
