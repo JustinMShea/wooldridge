@@ -2,6 +2,13 @@
 title: "NEWS"
 output: github_document
 ---
+
+# wooldridge 1.4-5
+
+- Updated maintainer email address. 
+- Migrated continuous integration from Travis CI and AppVeyor to modern GitHub Actions. 
+- Fixed broken build and CRAN status badges in the `README.md`. 
+
 # wooldridge 1.4-4
 
 Clear NOTEs on "Lost braces" from documentation. 
