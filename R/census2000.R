@@ -19,7 +19,7 @@
 #'  \item \strong{exper: } years workforce experience
 #'  \item \strong{expersq: } exper^2
 #' }
-#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107}
 #' @examples  str(census2000)
 "census2000"
  

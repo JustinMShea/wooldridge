@@ -26,7 +26,7 @@
 #'  \item \strong{cathhs: } =1 if attended Catholic HS
 #'  \item \strong{parcath: } =1 if a parent reports being Catholic
 #' }
-#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107}
 #' @examples  str(catholic)
 "catholic"
  

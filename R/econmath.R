@@ -30,7 +30,7 @@
 #'  \item \strong{mothcoll: } =1 if mother has BA
 #'  \item \strong{score: } course score, in percent
 #' }
-#' @source \url{http://www.cengage.com/c/introductory-econometrics-a-modern-approach-6e-wooldridge}
+#' @source \url{https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&product_isbn_issn=9781305270107}
 #' @examples  str(econmath)
 "econmath"
  
