@@ -1,29 +1,20 @@
 
-Archived on 2024-12-03 to policy violation. All NOTES related to "Lost bracket"
-have been addressed.
+## Update notes
+* This submission updates the package maintainer's email address. I have transitioned to the University of Illinois Chicago, so the previous address (jshea@roosevelt.edu) is no longer active. This change was coordinated with CRAN administrators via email on 2026-07-11 and Github Issue #15.
+* Migrated continuous integration from AppVeyor and Travis CI to GitHub Actions.
+* Fixed broken status badges in the README.
 
+## Test environments
+* local Ubuntu 22.04, R (release)
+* local Ubuntu 24.04, R (release)
+* GitHub Actions (macOS-latest, release)
+* GitHub Actions (windows-latest, release)
+* GitHub Actions (release, devel, oldrel-1)
 
-# Test environments passing
+## R CMD check results
+0 errors | 0 warnings | 0 notes
 
-# Local: R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
-x86_64-pc-linux-gnu (64-bit), Ubuntu 22.04.5 LTS
-
-## Local R CMD check results
-Status: OK
-R CMD check succeeded
-
-
-# win-builder:  
-using R version 4.4.2 (2024-10-31 ucrt) 
-using platform: x86_64-w64-mingw32 (64-bit)
-* R was compiled by
-    gcc.exe (GCC) 13.3.0
-    GNU Fortran (GCC) 13.3.0
-* running under: Windows Server 2022 x64 (build 20348)
-* using session charset: UTF-8
-
-## Status: 1 NOTE
-Maintainer: 'Justin M. Shea <jshea@roosevelt.edu>' 
-New submission 
-Package was archived on CRAN 
+## Downstream dependencies
+There are currently no reverse depends or reverse imports. 
+The update does not break the reverse suggests (`desk`, `Ecdat`, `sccic`, `VizTest`).
 
