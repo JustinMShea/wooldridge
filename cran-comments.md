@@ -1,12 +1,14 @@
 
-## Update notes
-* This submission updates the package maintainer's email address. I have transitioned to the University of Illinois Chicago, so the previous address (jshea@roosevelt.edu) is no longer active. This change was coordinated with CRAN administrators via email on 2026-07-11 and Github Issue #15.
-* Migrated continuous integration from AppVeyor and Travis CI to GitHub Actions.
-* Fixed broken status badges in the README.
+## Resubmission Notes
+This is a resubmission to address the NOTEs from the previous attempt:
+* **Invalid URLs**: Fixed the Cengage textbook URLs in the `.Rd` files (See https://github.com/JustinMShea/wooldridge/issues/16) that were causing maximum redirect limit errors.
+* **New maintainer**: The email change to `jshea01@uic.edu` is intentional, as I have moved to the University of Illinois Chicago. My previous address is no longer active.
 
 ## Test environments
 * local Ubuntu 22.04, R (release)
+Status: OK R CMD check succeeded
 * local Ubuntu 24.04, R (release)
+Status: OK R CMD check succeeded
 * GitHub Actions (macOS-latest, release)
 * GitHub Actions (windows-latest, release)
 * GitHub Actions (release, devel, oldrel-1)

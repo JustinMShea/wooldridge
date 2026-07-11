@@ -1,7 +1,7 @@
 Package: wooldridge
 Type: Package
 Title: 115 Data Sets from "Introductory Econometrics: A Modern Approach, 8e" by Jeffrey M. Wooldridge
-Version: 1.4-5
+Version: 1.4-6
 Authors@R: c(
     person("Justin M.", "Shea", role = c("aut", "cre"), email = "jshea01@uic.edu"),
     person("Kennth H.", "Brown", role = c("ctb"), email = "KennethBrown@MissouriState.edu"))

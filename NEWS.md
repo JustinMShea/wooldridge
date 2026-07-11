@@ -3,6 +3,10 @@ title: "NEWS"
 output: github_document
 ---
 
+# wooldridge 1.4-6
+
+- Fixed broken Cengage textbook URLs in package documentation that were causing redirect limit errors during CRAN checks in issue #16.
+
 # wooldridge 1.4-5
 
 - Updated maintainer email address. 
